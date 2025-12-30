@@ -3,8 +3,12 @@
 import React, { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
 import { Save, Loader2, Layout, FileText, ChevronRight } from 'lucide-react';
+import { useSearchParams } from 'next/navigation';
 
 export default function ContentManagerPage() {
+    const searchParams = useSearchParams();
+    const pageFilter = searchParams.get('page');
+
     const [loading, setLoading] = useState(true);
     const [saving, setSaving] = useState(false);
     const [contents, setContents] = useState<any[]>([]);
@@ -12,7 +16,7 @@ export default function ContentManagerPage() {
 
     useEffect(() => {
         fetchContents();
-    }, []);
+    }, [pageFilter]);
 
     async function fetchContents() {
         try {
@@ -24,8 +28,14 @@ export default function ContentManagerPage() {
                 .order('order_index');
 
             if (error) throw error;
-            setContents(data || []);
-            if (data && data.length > 0) setSelectedId(data[0].id);
+
+            let filteredData = data || [];
+            if (pageFilter) {
+                filteredData = filteredData.filter(c => c.page_path === pageFilter);
+            }
+
+            setContents(filteredData);
+            if (filteredData.length > 0) setSelectedId(filteredData[0].id);
         } catch (err: any) {
             alert('Error fetching content: ' + err.message);
         } finally {
