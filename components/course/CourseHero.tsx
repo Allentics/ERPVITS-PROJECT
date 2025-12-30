@@ -19,6 +19,16 @@ const CourseHero = ({ course }: { course: Course }) => {
                             <span>{course.id.toUpperCase().replace("-", " ")}</span>
                         </div>
 
+                        {course.badges && course.badges.length > 0 && (
+                            <div className="flex flex-wrap gap-2">
+                                {course.badges.map((badge, idx) => (
+                                    <span key={idx} className="inline-block px-3 py-1 bg-yellow-400 text-blue-900 text-xs font-bold uppercase tracking-wider rounded-full shadow-sm">
+                                        {badge}
+                                    </span>
+                                ))}
+                            </div>
+                        )}
+
                         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
                             {course.heroHeading && !course.heroHeading.startsWith("H1:")
                                 ? course.heroHeading

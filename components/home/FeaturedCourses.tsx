@@ -3,16 +3,38 @@
 import Link from 'next/link';
 import { courses } from '@/lib/courseData';
 import { Clock, IndianRupee, ArrowRight } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { supabase } from '@/lib/supabase';
 import ContactModal from '../ContactModal';
 
 export default function FeaturedCourses() {
-    // Select the 6 featured courses: Ariba, FICO, MM, TRM, SD, Fieldglass
     const featuredIds = ['ariba', 'fico', 'mm', 'trm', 'sd', 'fieldglass'];
-    const featuredCourses = featuredIds.map(id => courses.find(c => c.id === id)).filter(Boolean);
-
+    const [featuredCourses, setFeaturedCourses] = useState<any[]>(
+        featuredIds.map(id => courses.find(c => c.id === id)).filter(Boolean)
+    );
     const [isContactModalOpen, setIsContactModalOpen] = useState(false);
     const [modalTitle, setModalTitle] = useState("Get Started with SAP");
+
+    useEffect(() => {
+        async function fetchFeatured() {
+            try {
+                const { data, error } = await supabase
+                    .from('courses')
+                    .select('*')
+                    .in('id', featuredIds);
+
+                if (data && !error) {
+                    const ordered = featuredIds
+                        .map(id => data.find((c: any) => c.id === id))
+                        .filter(Boolean);
+                    setFeaturedCourses(ordered);
+                }
+            } catch (err) {
+                console.error('Error in FeaturedCourses:', err);
+            }
+        }
+        fetchFeatured();
+    }, []);
 
     const openModal = (title: string) => {
         setModalTitle(title);

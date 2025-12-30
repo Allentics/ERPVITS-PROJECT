@@ -1,5 +1,6 @@
 export const c4cContent = {
     heroHeading: "End-to-End SAP C4C Technical Training with Real-Time Implementation",
+    badges: ["New Batch Starting Soon", "100% Job Oriented"],
     description: "For a cloud developer and SAP consultant working in customer relationship management, cloud application development, and enterprise software, the ERPVITS SAP C4C Technical Training Program is a transformative learning experience. Every organization is in great need of certified SAP C4C technical experts who can build cloud applications and customize customer solutions, integrate business objects, and lead digital transformation. This extensive SAP C4C Technical online training is designed for developers, technical consultants, cloud architects, ERP professionals, and aspiring graduates who are looking for global consulting and implementation positions and features instructor-led training, hands-on lab work, cloud development projects from the actual world, and complete certification support.",
     metaTitle: "SAP C4C Technical Training with Live Projects | Join Now",
     metaDescription: "Advance your career with ERPVITS SAP C4C Technical Training. Get real-world project experience, certification prep & placement support for global SAP roles.",

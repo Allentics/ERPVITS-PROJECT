@@ -35,7 +35,7 @@ const FAQ = ({ course, items }: FAQProps) => {
                                 onClick={() => toggle(idx)}
                                 className="w-full flex justify-between items-center p-5 text-left focus:outline-none"
                             >
-                                <span className="font-semibold text-gray-900 pr-8">{faq.question}</span>
+                                <span className="font-semibold text-gray-900 pr-8">{(faq as any).question || (faq as any).q}</span>
                                 {openIndex === idx ? (
                                     <Minus className="h-5 w-5 text-blue-600 flex-shrink-0" />
                                 ) : (
@@ -53,7 +53,7 @@ const FAQ = ({ course, items }: FAQProps) => {
                                         className="overflow-hidden"
                                     >
                                         <div className="p-5 pt-0 text-gray-600 text-sm leading-relaxed border-t border-transparent">
-                                            {faq.answer}
+                                            {(faq as any).answer || (faq as any).a}
                                         </div>
                                     </motion.div>
                                 )}

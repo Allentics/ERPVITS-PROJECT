@@ -1,106 +1,10 @@
 export const mmContent = {
     heroHeading: "Upskill Your Career with SAP S/4HANA MM Online Training",
+    badges: ["New Batch Starting Soon", "100% Job Oriented"],
     description: "The ERPVITS SAP S/4HANA MM Online Training Program is a step toward a new career track for supply chain professionals and SAP consultants focusing on inventory management, procurement, and enterprise resource planning. Supply chain organizations today seek certified experts in the SAP S/4HANA MM module to help optimize the flow of materials, shrink costly inventory, streamline procurement, and improve overall supply chain management. This all-inclusive SAP MM course is aimed at supply chain professionals, inventory managers, procurement specialists, consultants in ERP, and highly motivated graduates.",
     metaTitle: "SAP S/4HANA MM Online Training | Latest Curriculum",
     metaDescription: "Join ERPVITS SAP S/4HANA MM Online Training to master procurement, inventory, and supply chain management with real-time projects & certification support.",
-    sections: [
-        {
-            type: 'features',
-            title: "Why Choose Our SAP MM Training?",
-            items: [
-                "SAP Certified Trainers with 15+ Years Experience",
-                "100% Hands-On Scenarios in S/4HANA System",
-                "Placement Assistance & Mock Interviews",
-                "Lifetime Access to Class Recordings"
-            ]
-        },
-        {
-            type: 'curriculum',
-            title: "Comprehensive SAP S/4HANA MM Curriculum",
-            modules: [
-                {
-                    title: "Module 1: Introduction to SAP S/4HANA MM (4 Hours)",
-                    topics: [
-                        "Overview of SAP S/4HANA and MM modules",
-                        "Navigation in SAP GUI and Fiori Launchpad",
-                        "Enterprise Structure: Company Code, Plant, Storage Location",
-                        "Purchasing Organizations and Groups",
-                        "Global Settings and Configuration"
-                    ]
-                },
-                {
-                    title: "Module 2: Master Data Management (5 Hours)",
-                    topics: [
-                        "Material Master Record: Views, Types, and Configuration",
-                        "Business Partner (BP) Setup for Vendors",
-                        "Purchasing Info Records (PIR)",
-                        "Source Lists and Quota Arrangements",
-                        "Service Master Data"
-                    ]
-                },
-                {
-                    title: "Module 3: Procurement Processes (Source to Pay) (6 Hours)",
-                    topics: [
-                        "Procurement Cycle Overview (P2P)",
-                        "Purchase Requisitions (PR) and Configuration",
-                        "Request for Quotation (RFQ) and Price Comparison",
-                        "Purchase Orders (PO): Types, Creation, and Management",
-                        "Release Strategy (Approval Workflow) for Purchasing Documents"
-                    ]
-                },
-                {
-                    title: "Module 4: Inventory Management (5 Hours)",
-                    topics: [
-                        "Goods Receipt (GR) processing and effects",
-                        "Goods Issue (GI) to Cost Center/Project",
-                        "Transfer Postings and Stock Transfers",
-                        "Movement Types and their Configuration",
-                        "Physical Inventory Procedures"
-                    ]
-                },
-                {
-                    title: "Module 5: Consumption-Based Planning & MRP (5 Hours)",
-                    topics: [
-                        "MRP Procedures: CBP vs. MRP",
-                        "Master Data for MRP",
-                        "Planning Run execution (Single-Item, Multi-Level)",
-                        "Evaluation of MRP Results",
-                        "Lot Sizing Procedures"
-                    ]
-                },
-                {
-                    title: "Module 6: Valuation & Inventory Accounting (4 Hours)",
-                    topics: [
-                        "Material Valuation Methods (Standard vs Moving Average)",
-                        "Split Valuation",
-                        "Account Determination (Automatic Postings)",
-                        "Integration with Finance (FI)",
-                        "Price Control and Differences"
-                    ]
-                },
-                {
-                    title: "Module 7: Invoice Verification (LIV) (4 Hours)",
-                    topics: [
-                        "Logistics Invoice Verification Process",
-                        "Three-Way Match Principles",
-                        "Invoice Posting and Blocking",
-                        "Credit Memos and Subsequent Debits/Credits",
-                        "Automated Invoice Settlements (ERS)"
-                    ]
-                },
-                {
-                    title: "Module 8: Special Procurement Processes (4 Hours)",
-                    topics: [
-                        "Subcontracting Process",
-                        "Vendor Consignment",
-                        "Pipeline Handling",
-                        "Stock Transport Orders (STO)",
-                        "Service Procurement and Service Entry Sheets"
-                    ]
-                }
-            ]
-        }
-    ],
+
     schema: JSON.stringify({
         "@context": "https://schema.org/",
         "@type": "Course",
@@ -316,170 +220,179 @@ export const mmContent = {
                     }
                 ]
             }
-        ],
-        sections: [
-            {
-                type: 'rich_text',
-                title: "Learn SAP S/4HANA MM from Certified Experts – 100% Hands-On, Job-Oriented Training",
-                content: `Our SAP MM Training is provided only by SAP certified and fully qualified professionals with over 12 years of hands-on materials management and supply chain systems direct implementation experience. All your questions will be answered, and instructors will guide you step by step through challenging inventory problems.
-
-### Certified Instructor Expertise
-All trainers have official SAP S/4HANA MM certifications and have carried out many large scale SAP S/4HANA MM implementations in manufacturing, retail, and distribution sectors. They will not only teach you the theory, but also tell you "stories from the trenches." They will teach you about common pitfalls and best practices from deployments where SAP MM systems manage multi-million dollar inventories.
-
-### 100% Hands-On Learning Methodology
-Instead of boring training with slides and presentations, every training session is complete with live demonstrations and guided lab exercises using SAP S/4 HANA. All of the exercises focus on what was taught in the session. You will learn how to create and manage purchase orders, process goods receipts, perform inventory transactions and cash valuation and configuration on the system.
-
-### Job-Oriented Curriculum Design
-The SAP MM course curriculum is dedicated to tailoring training around the skills and tasks given to SAP MM consultants. Troubleshooting, material management module operations, and other topics will be covered with the tools you need to solve practical issues.
-
-### Interactive Q&A Sessions
-You will get complete access to forums created for all the supplied training and lessons and live instructor hours. All of the complex topics in the lessons will be addressed and planning catered to you and your goals.
-
-### Flexible Batch Timings & Small Batch Sizes
-We provide flexibility with training in the evenings on weekdays and on weekends. Sessions are recorded. We keep batches small, between 8-10 participants, so that the instructors are able to attend to each one of you.
-
-### Placement & Career Support
-SAP MM learning is not the end of the process—it is learning to get placed afterwards. Our dedicated career support team will build an SAP focused resume with you, prepare you with mock interviews and during practices, you will go through real and current interview questions to prepare you for the job.`
-            },
-            {
-                type: 'features',
-                title: "Why Professionals Choose ERPVITS for SAP S/4HANA MM Online Training",
-                items: [
-                    "Trusted by 500+ SAP MM Professionals",
-                    "Accenture, Capgemini, Deloitte, Infosys, and Wipro alumni",
-                    "Custom Pre-assessment and Supply Chain Learning Path",
-                    "Active alumni network and community forum for materials management",
-                    "50+ guided instructional labs from basic to advanced inventory exercises",
-                    "Quarterly updated materials reflecting the most recent SAP S/4HANA MM changes",
-                    "Mock interviews replicating real MM consultant situations",
-                    "One-week focused prep for certification right before the exams"
-                ]
-            },
-            {
-                type: 'list_checker',
-                title: "What's Included in the SAP S/4HANA MM Training",
-                items: [
-                    "**Live Interactive Classes**: 45–50 hours of video-conferenced sessions in 8–12 weeks.",
-                    "**Real-World Projects**: Case studies on material master setup, purchase order management, goods receipts.",
-                    "**Hands-On Lab Environment**: Full time access to practice on SAP S/4HANA MM.",
-                    "**Certification Exam Prep**: Study guides and bootcamp sessions for SAP Certified Associate—SAP S/4HANA MM.",
-                    "**Resume & Interview Coaching**: Mock consulting interviews and tailored resume optimization.",
-                    "**Complete Study Materials**: PDFs, presentations, configuration checklists, interview question banks.",
-                    "**Lifetime Recording Access**: All live sessions recorded and transcribed.",
-                    "**Expert Q&A Sessions**: Weekly live 60 minute sessions for Q&A and guidance.",
-                    "**40-45 Hours of Live Training** | **50+ Hands-On Lab Exercises** | **24/7 SAP MM Lab Access**"
-                ]
-            },
-            {
-                type: 'curriculum',
-                title: "Comprehensive SAP S/4HANA MM Course Curriculum",
-                modules: [
-                    {
-                        title: "Module 1: Introduction to SAP S/4HANA MM (4 Hours)",
-                        topics: [
-                            "Overview of SAP S/4HANA Materials Management",
-                            "Key features: cost reduction, process automation",
-                            "User interface navigation and SAP MM module architecture",
-                            "Organizational structures: company codes, plants, storage locations",
-                            "Integration points with other SAP modules (FI, SD, PP, WM)",
-                            "Hands-On: Navigate SAP S/4HANA MM interface",
-                            "Hands-On: Explore organizational setup and master data"
-                        ]
-                    },
-                    {
-                        title: "Module 2: Material Master Data Management (MDM) (8 Hours)",
-                        topics: [
-                            "Role of material masters in inventory management",
-                            "Material master record creation and maintenance",
-                            "Material types and classifications (FERT, HAWA, ROH, HALB)",
-                            "Views: Basic Data, Sales, Plant, Storage Location",
-                            "Valuation and account assignment",
-                            "Hands-On: Create material masters for different types",
-                            "Hands-On: Configure material views and organizational data"
-                        ]
-                    },
-                    {
-                        title: "Module 3: Purchasing & Purchase Order Processing (7 Hours)",
-                        topics: [
-                            "Purchasing organization structure and buyer setup",
-                            "Vendor/supplier master data creation",
-                            "Purchase requisition creation and management",
-                            "Purchase order types and creation processes",
-                            "Order approval workflows and release strategies",
-                            "PO receipt and invoice matching",
-                            "Hands-On: Create vendors and purchasing data",
-                            "Hands-On: Generate purchase requisitions and convert to POs",
-                            "Hands-On: Execute three-way matching"
-                        ]
-                    },
-                    {
-                        title: "Module 4: Goods Receipt & Inventory Management (7 Hours)",
-                        topics: [
-                            "Goods receipt process and documentation",
-                            "Material receipt posting and inspection",
-                            "Inventory management transactions",
-                            "Stock movement and transfer orders",
-                            "Cycle counting and physical inventory",
-                            "Hands-On: Execute goods receipt procedures",
-                            "Hands-On: Post inventory transactions",
-                            "Hands-On: Perform stock transfers"
-                        ]
-                    },
-                    {
-                        title: "Module 5: Goods Issue & Materials Planning (6 Hours)",
-                        topics: [
-                            "Goods issue process for sales and production",
-                            "Material requirement planning (MRP) overview",
-                            "Reorder point and EOQ calculations",
-                            "Integrated planning in S/4HANA",
-                            "Hands-On: Process goods issue transactions",
-                            "Hands-On: Execute MRP runs and analyze results",
-                            "Hands-On: Monitor demand and supply planning"
-                        ]
-                    },
-                    {
-                        title: "Module 6: Valuation & Inventory Accounting (6 Hours)",
-                        topics: [
-                            "Valuation methods: Standard Price, Moving Average",
-                            "Material valuation strategy in S/4HANA",
-                            "Inventory accounting and GL integration",
-                            "Price differences and variance analysis",
-                            "Hands-On: Configure material valuation methods",
-                            "Hands-On: Execute price changes and variance analysis",
-                            "Hands-On: Reconcile inventory to general ledger"
-                        ]
-                    },
-                    {
-                        title: "Module 7: Warehouse Management Integration (6 Hours)",
-                        topics: [
-                            "Warehouse structure and storage location setup",
-                            "Warehouse management system (WM) principles",
-                            "Storage bins and location management",
-                            "Integration between MM and WM modules",
-                            "Hands-On: Set up warehouse and storage structures",
-                            "Hands-On: Configure bins and storage strategies",
-                            "Hands-On: Execute warehouse operations workflows"
-                        ]
-                    },
-                    {
-                        title: "Module 8: Advanced MM Topics & Best Practices (6 Hours)",
-                        topics: [
-                            "S/4HANA fiori apps for materials management",
-                            "Advanced analytics and reporting dashboards",
-                            "Batch management and serialization",
-                            "Dangerous goods handling",
-                            "Quality management integration",
-                            "Hands-On: Configure fiori apps for MM",
-                            "Hands-On: Build advanced MM dashboards",
-                            "Hands-On: Set up batch and serial management"
-                        ]
-                    }
-                ]
-            },
-            {
-                type: 'rich_text',
-                title: "Who Can Learn SAP S/4HANA MM? – Perfect for Diverse Career Paths",
-                content: `**Supply Chain & Logistics Professionals**
+        ]
+    }),
+    sections: [
+        {
+            type: 'detailed_features',
+            title: "Learn SAP S/4HANA MM from Certified Experts – 100% Hands-On, Job-Oriented Training",
+            subtitle: "Our SAP MM Training is provided only by SAP certified and fully qualified professionals with over 12 years of hands-on materials management and supply chain systems direct implementation experience. All your questions will be answered, and instructors will guide you step by step through challenging inventory problems.",
+            items: [
+                {
+                    title: "Certified Instructor Expertise",
+                    description: "All trainers have official SAP S/4HANA MM certifications and have carried out many large scale SAP S/4HANA MM implementations in manufacturing, retail, and distribution sectors. They will not only teach you the theory, but also tell you \"stories from the trenches.\" They will teach you about common pitfalls and best practices from deployments where SAP MM systems manage multi-million dollar inventories."
+                },
+                {
+                    title: "100% Hands-On Learning Methodology",
+                    description: "Instead of boring training with slides and presentations, every training session is complete with live demonstrations and guided lab exercises using SAP S/4 HANA. All of the exercises focus on what was taught in the session. You will learn how to create and manage purchase orders, process goods receipts, perform inventory transactions and cash valuation and configuration on the system."
+                },
+                {
+                    title: "Job-Oriented Curriculum Design",
+                    description: "The SAP MM course curriculum is dedicated to tailoring training around the skills and tasks given to SAP MM consultants. Troubleshooting, material management module operations, and other topics will be covered with the tools you need to solve practical issues."
+                },
+                {
+                    title: "Interactive Q&A Sessions",
+                    description: "You will get complete access to forums created for all the supplied training and lessons and live instructor hours. All of the complex topics in the lessons will be addressed and planning catered to you and your goals."
+                },
+                {
+                    title: "Flexible Batch Timings & Small Batch Sizes",
+                    description: "We provide flexibility with training in the evenings on weekdays and on weekends. Sessions are recorded. We keep batches small, between 8-10 participants, so that the instructors are able to attend to each one of you."
+                },
+                {
+                    title: "Placement & Career Support",
+                    description: "SAP MM learning is not the end of the process—it is learning to get placed afterwards. Our dedicated career support team will build an SAP focused resume with you, prepare you with mock interviews and during practices, you will go through real and current interview questions to prepare you for the job."
+                }
+            ]
+        },
+        {
+            type: 'features',
+            title: "Why Professionals Choose ERPVITS for SAP S/4HANA MM Online Training",
+            items: [
+                "Trusted by 500+ SAP MM Professionals",
+                "Accenture, Capgemini, Deloitte, Infosys, and Wipro alumni",
+                "Custom Pre-assessment and Supply Chain Learning Path",
+                "Active alumni network and community forum for materials management",
+                "50+ guided instructional labs from basic to advanced inventory exercises",
+                "Quarterly updated materials reflecting the most recent SAP S/4HANA MM changes",
+                "Mock interviews replicating real MM consultant situations",
+                "One-week focused prep for certification right before the exams"
+            ]
+        },
+        {
+            type: 'list_checker',
+            title: "What's Included in the SAP S/4HANA MM Training",
+            items: [
+                "**Live Interactive Classes**: 45–50 hours of video-conferenced sessions in 8–12 weeks.",
+                "**Real-World Projects**: Case studies on material master setup, purchase order management, goods receipts.",
+                "**Hands-On Lab Environment**: Full time access to practice on SAP S/4HANA MM.",
+                "**Certification Exam Prep**: Study guides and bootcamp sessions for SAP Certified Associate—SAP S/4HANA MM.",
+                "**Resume & Interview Coaching**: Mock consulting interviews and tailored resume optimization.",
+                "**Complete Study Materials**: PDFs, presentations, configuration checklists, interview question banks.",
+                "**Lifetime Recording Access**: All live sessions recorded and transcribed.",
+                "**Expert Q&A Sessions**: Weekly live 60 minute sessions for Q&A and guidance.",
+                "**40-45 Hours of Live Training** | **50+ Hands-On Lab Exercises** | **24/7 SAP MM Lab Access**"
+            ]
+        },
+        {
+            type: 'curriculum',
+            title: "Comprehensive SAP S/4HANA MM Course Curriculum",
+            modules: [
+                {
+                    title: "Module 1: Introduction to SAP S/4HANA MM (4 Hours)",
+                    topics: [
+                        "Overview of SAP S/4HANA Materials Management",
+                        "Key features: cost reduction, process automation",
+                        "User interface navigation and SAP MM module architecture",
+                        "Organizational structures: company codes, plants, storage locations",
+                        "Integration points with other SAP modules (FI, SD, PP, WM)",
+                        "Hands-On: Navigate SAP S/4HANA MM interface",
+                        "Hands-On: Explore organizational setup and master data"
+                    ]
+                },
+                {
+                    title: "Module 2: Material Master Data Management (MDM) (8 Hours)",
+                    topics: [
+                        "Role of material masters in inventory management",
+                        "Material master record creation and maintenance",
+                        "Material types and classifications (FERT, HAWA, ROH, HALB)",
+                        "Views: Basic Data, Sales, Plant, Storage Location",
+                        "Valuation and account assignment",
+                        "Hands-On: Create material masters for different types",
+                        "Hands-On: Configure material views and organizational data"
+                    ]
+                },
+                {
+                    title: "Module 3: Purchasing & Purchase Order Processing (7 Hours)",
+                    topics: [
+                        "Purchasing organization structure and buyer setup",
+                        "Vendor/supplier master data creation",
+                        "Purchase requisition creation and management",
+                        "Purchase order types and creation processes",
+                        "Order approval workflows and release strategies",
+                        "PO receipt and invoice matching",
+                        "Hands-On: Create vendors and purchasing data",
+                        "Hands-On: Generate purchase requisitions and convert to POs",
+                        "Hands-On: Execute three-way matching"
+                    ]
+                },
+                {
+                    title: "Module 4: Goods Receipt & Inventory Management (7 Hours)",
+                    topics: [
+                        "Goods receipt process and documentation",
+                        "Material receipt posting and inspection",
+                        "Inventory management transactions",
+                        "Stock movement and transfer orders",
+                        "Cycle counting and physical inventory",
+                        "Hands-On: Execute goods receipt procedures",
+                        "Hands-On: Post inventory transactions",
+                        "Hands-On: Perform stock transfers"
+                    ]
+                },
+                {
+                    title: "Module 5: Goods Issue & Materials Planning (6 Hours)",
+                    topics: [
+                        "Goods issue process for sales and production",
+                        "Material requirement planning (MRP) overview",
+                        "Reorder point and EOQ calculations",
+                        "Integrated planning in S/4HANA",
+                        "Hands-On: Process goods issue transactions",
+                        "Hands-On: Execute MRP runs and analyze results",
+                        "Hands-On: Monitor demand and supply planning"
+                    ]
+                },
+                {
+                    title: "Module 6: Valuation & Inventory Accounting (6 Hours)",
+                    topics: [
+                        "Valuation methods: Standard Price, Moving Average",
+                        "Material valuation strategy in S/4HANA",
+                        "Inventory accounting and GL integration",
+                        "Price differences and variance analysis",
+                        "Hands-On: Configure material valuation methods",
+                        "Hands-On: Execute price changes and variance analysis",
+                        "Hands-On: Reconcile inventory to general ledger"
+                    ]
+                },
+                {
+                    title: "Module 7: Warehouse Management Integration (6 Hours)",
+                    topics: [
+                        "Warehouse structure and storage location setup",
+                        "Warehouse management system (WM) principles",
+                        "Storage bins and location management",
+                        "Integration between MM and WM modules",
+                        "Hands-On: Set up warehouse and storage structures",
+                        "Hands-On: Configure bins and storage strategies",
+                        "Hands-On: Execute warehouse operations workflows"
+                    ]
+                },
+                {
+                    title: "Module 8: Advanced MM Topics & Best Practices (6 Hours)",
+                    topics: [
+                        "S/4HANA fiori apps for materials management",
+                        "Advanced analytics and reporting dashboards",
+                        "Batch management and serialization",
+                        "Dangerous goods handling",
+                        "Quality management integration",
+                        "Hands-On: Configure fiori apps for MM",
+                        "Hands-On: Build advanced MM dashboards",
+                        "Hands-On: Set up batch and serial management"
+                    ]
+                }
+            ]
+        },
+        {
+            type: 'rich_text',
+            title: "Who Can Learn SAP S/4HANA MM? – Perfect for Diverse Career Paths",
+            content: `**Supply Chain & Logistics Professionals**
 * Supply chain managers, inventory managers, procurement specialists, logistics coordinators.
 
 **SAP & ERP Professionals**
@@ -493,11 +406,11 @@ SAP MM learning is not the end of the process—it is learning to get placed aft
 
 **Existing Employees of SAP MM Users**
 * Employees using MM, Super-users, IT teams managing SAP systems.`
-            },
-            {
-                type: 'rich_text',
-                title: "What You'll Master in This SAP S/4HANA MM Online Course",
-                content: `**Functional Mastery**
+        },
+        {
+            type: 'rich_text',
+            title: "What You'll Master in This SAP S/4HANA MM Online Course",
+            content: `**Functional Mastery**
 * **End-to-End Materials Management**: Material flow from procurement to usage, POs, goods receipts, inventory optimization.
 * **Material Master & Organizational Setup**: Material records, purchasing organizations, vendor masters.
 * **Procurement Process Optimization**: PO lifecycle, approval workflows, vendor evaluation.
@@ -508,11 +421,11 @@ SAP MM learning is not the end of the process—it is learning to get placed aft
 * **S/4HANA Fiori Apps & Analytics**: Fiori apps, inventory dashboards, analytical reports.
 * **Advanced Configuration**: Batch/serial numbers, dangerous goods, QM integration.
 * **Integration**: MM with FI, SD, PP, master data synchronization.`
-            },
-            {
-                type: 'rich_text',
-                title: "Experience Real-World SAP S/4HANA MM Scenarios",
-                content: `**Case Study 1: Global Manufacturing Company's Supply Chain Optimization**
+        },
+        {
+            type: 'rich_text',
+            title: "Experience Real-World SAP S/4HANA MM Scenarios",
+            content: `**Case Study 1: Global Manufacturing Company's Supply Chain Optimization**
 * **Scenario**: Multinational manufacturer needs to consolidate materials management across 15 countries.
 * **Your Role**: Design organizational structure, configure material masters and warehouse setup, implement valuation systems.
 * **Deliverables**: Configuration documents, training materials, go-live checklist.
@@ -526,87 +439,87 @@ SAP MM learning is not the end of the process—it is learning to get placed aft
 * **Scenario**: Pharma manufacturer implementing SAP MM with compliance (batch tracking, dangerous goods).
 * **Your Role**: Design compliant MM processes, configure batch/serial tracking, set up dangerous goods procedures.
 * **Deliverables**: Compliance documentation, configuration specs, audit procedures.`
-            },
-            {
-                type: 'rich_text',
-                title: "SAP S/4HANA MM Certification – Your Global Career Credential",
-                content: `**SAP Certified Associate – SAP S/4HANA Materials Management**
+        },
+        {
+            type: 'rich_text',
+            title: "SAP S/4HANA MM Certification – Your Global Career Credential",
+            content: `**SAP Certified Associate – SAP S/4HANA Materials Management**
 * **Exam Code**: C_TS4FI_2020 or equivalent
 * **Focus**: Materials management, procurement, inventory, valuation, planning.
 * **Value**: Demonstrates expertise in end-to-end SAP MM implementation.
 
 **Our Support**: Targeted Exam Preparation, Practice Exams, Exam Strategies, Registration Guidance, Retake Support.
 **Why it Matters**: Global recognition, career acceleration (15-30% premium), competitive advantage.`
-            },
-            {
-                type: 'rich_text',
-                title: "Career Opportunities After SAP S/4HANA MM Training",
-                content: `**1. SAP MM Consultant (Entry Level)**: $105k-$135k (USA) | ₹7-10 LPA (India).
+        },
+        {
+            type: 'rich_text',
+            title: "Career Opportunities After SAP S/4HANA MM Training",
+            content: `**1. SAP MM Consultant (Entry Level)**: $105k-$135k (USA) | ₹7-10 LPA (India).
 **2. Inventory/Materials Manager**: $90k-$130k | ₹6-9 LPA.
 **3. Supply Chain Analyst / Planner**: $85k-$125k | ₹5.5-8.5 LPA.
 **4. Materials Management Integration Consultant**: $120k-$160k | ₹9-13 LPA.
 **5. Solutions Architect**: $160k-$220k+ | ₹13-18 LPA+.`
-            },
-            {
-                type: 'testimonials',
-                title: "Hear from Our Successful SAP S/4HANA MM Learners",
-                items: [
-                    {
-                        name: "Amit Kumar",
-                        role: "SAP MM Consultant at Accenture",
-                        quote: "Outstanding training and real inventory project exposure. I landed a consulting role at Accenture within 8 weeks managing SAP MM implementations."
-                    },
-                    {
-                        name: "Priya Sharma",
-                        role: "Materials Manager",
-                        quote: "The weekend flexibility allowed me to learn while working. My employer was so impressed with my MM skills that they promoted me to Materials Manager."
-                    },
-                    {
-                        name: "Rajesh Patel",
-                        role: "Senior SAP Consultant",
-                        quote: "Best decision I made. The capstone projects were exactly like real client work. I walked into my first consulting role feeling confident."
-                    },
-                    {
-                        name: "Ananya Singh",
-                        role: "Certified SAP MM Professional",
-                        quote: "Superb certification preparation. I passed the SAP MM exam on my first attempt. The mock exams and study materials were spot-on."
-                    },
-                    {
-                        name: "Vikram Desai",
-                        role: "Materials Consultant at Deloitte",
-                        quote: "I didn't just learn SAP MM; I learned how to apply it in complex supply chain environments. The alumni network has brought consulting opportunities."
-                    },
-                    {
-                        name: "Sneha Reddy",
-                        role: "Supply Chain Analyst at Infosys",
-                        quote: "From zero SAP knowledge to landing my dream job in 4 months! The instructors are patient, knowledgeable, and truly care about learner success."
-                    }
-                ]
-            },
-            {
-                type: 'faq',
-                title: "Frequently Asked Questions (FAQs)",
-                items: [
-                    { q: "What is SAP S/4HANA MM and how does ERPVITS help me learn it?", a: "SAP S/4HANA MM manages inventory, procurement, and supply chain. ERPVITS builds confidence through practical training, real-life scenarios, and project guidance." },
-                    { q: "What will I learn in the Material Master module?", a: "Creating and maintaining material records, configuring materials, organizing data, and ensuring master data consistency." },
-                    { q: "What is the Purchase Order Lifecycle in SAP MM?", a: "Requisition, creation, approval workflows, goods receipt, invoice, and three-way match." },
-                    { q: "What are Goods Receipt and Inventory Management?", a: "Goods receipt processes, stock movement, physical inventory counting, and inventory aging management." },
-                    { q: "How does SAP MM support modern supply chain operations?", a: "Covers procurement, inventory, planning, and warehouse management via comprehensive workflows." },
-                    { q: "What is special about SAP MM Program from ERPVITS?", a: "Flexible online classes, live sessions, industry-aligned projects, job assistance, and certification support." },
-                    { q: "Who is eligible for the SAP MM Course?", a: "Anyone interested in supply chain or SAP tech — freshers, professionals, and consultants." },
-                    { q: "What is SAP S/4HANA MM Certification and its importance?", a: "Validates expertise in materials management, boosting career growth. ERPVITS provides complete preparation." },
-                    { q: "What are the fees for SAP MM program at ERPVITS?", a: "Fees vary by mode/batch but include training, certification support, and placement assistance." },
-                    { q: "How much does the SAP MM Certification cost?", a: "Set by SAP Education. ERPVITS provides exam preparation and mentorship." },
-                    { q: "How can I become an SAP MM Consultant through ERPVITS?", a: "Enroll in training, complete projects, earn certification. We assist with career path and placement." },
-                    { q: "What career options can I pursue after the MM course?", a: "MM Consultant, Materials Manager, Supply Chain Analyst, Warehouse Manager, Planning Specialist." },
-                    { q: "How does SAP MM work with the other S/4HANA modules?", a: "Integrates with FI (Finance), SD (Sales), PP (Production), and WM (Warehouse Management)." },
-                    { q: "Does ERPVITS provide SAP MM Training with Placement Assistance?", a: "Yes, full placement support, interview coaching, and connections with hiring partners." },
-                    { q: "Can I take SAP MM Online Training from anywhere?", a: "Yes, accessible globally with live instructor-led sessions and recorded classes." },
-                    { q: "Is SAP MM Training available near me?", a: "Yes, online and onsite options with flexible schedules." },
-                    { q: "What study materials are provided?", a: "PDFs, presentations, configuration guides, tutorials, and official SAP documentation." },
-                    { q: "What makes your SAP MM training different?", a: "Live instruction, hands-on labs, real projects, personalized mentoring, and full placement support." }
-                ]
-            }
-        ]
-    })
+        },
+        {
+            type: 'testimonials',
+            title: "Hear from Our Successful SAP S/4HANA MM Learners",
+            items: [
+                {
+                    name: "Amit Kumar",
+                    role: "SAP MM Consultant at Accenture",
+                    quote: "Outstanding training and real inventory project exposure. I landed a consulting role at Accenture within 8 weeks managing SAP MM implementations."
+                },
+                {
+                    name: "Priya Sharma",
+                    role: "Materials Manager",
+                    quote: "The weekend flexibility allowed me to learn while working. My employer was so impressed with my MM skills that they promoted me to Materials Manager."
+                },
+                {
+                    name: "Rajesh Patel",
+                    role: "Senior SAP Consultant",
+                    quote: "Best decision I made. The capstone projects were exactly like real client work. I walked into my first consulting role feeling confident."
+                },
+                {
+                    name: "Ananya Singh",
+                    role: "Certified SAP MM Professional",
+                    quote: "Superb certification preparation. I passed the SAP MM exam on my first attempt. The mock exams and study materials were spot-on."
+                },
+                {
+                    name: "Vikram Desai",
+                    role: "Materials Consultant at Deloitte",
+                    quote: "I didn't just learn SAP MM; I learned how to apply it in complex supply chain environments. The alumni network has brought consulting opportunities."
+                },
+                {
+                    name: "Sneha Reddy",
+                    role: "Supply Chain Analyst at Infosys",
+                    quote: "From zero SAP knowledge to landing my dream job in 4 months! The instructors are patient, knowledgeable, and truly care about learner success."
+                }
+            ]
+        },
+        {
+            type: 'faq',
+            title: "Frequently Asked Questions (FAQs)",
+            items: [
+                { q: "What is SAP S/4HANA MM and how does ERPVITS help me learn it?", a: "SAP S/4HANA MM manages inventory, procurement, and supply chain. ERPVITS builds confidence through practical training, real-life scenarios, and project guidance." },
+                { q: "What will I learn in the Material Master module?", a: "Creating and maintaining material records, configuring materials, organizing data, and ensuring master data consistency." },
+                { q: "What is the Purchase Order Lifecycle in SAP MM?", a: "Requisition, creation, approval workflows, goods receipt, invoice, and three-way match." },
+                { q: "What are Goods Receipt and Inventory Management?", a: "Goods receipt processes, stock movement, physical inventory counting, and inventory aging management." },
+                { q: "How does SAP MM support modern supply chain operations?", a: "Covers procurement, inventory, planning, and warehouse management via comprehensive workflows." },
+                { q: "What is special about SAP MM Program from ERPVITS?", a: "Flexible online classes, live sessions, industry-aligned projects, job assistance, and certification support." },
+                { q: "Who is eligible for the SAP MM Course?", a: "Anyone interested in supply chain or SAP tech — freshers, professionals, and consultants." },
+                { q: "What is SAP S/4HANA MM Certification and its importance?", a: "Validates expertise in materials management, boosting career growth. ERPVITS provides complete preparation." },
+                { q: "What are the fees for SAP MM program at ERPVITS?", a: "Fees vary by mode/batch but include training, certification support, and placement assistance." },
+                { q: "How much does the SAP MM Certification cost?", a: "Set by SAP Education. ERPVITS provides exam preparation and mentorship." },
+                { q: "How can I become an SAP MM Consultant through ERPVITS?", a: "Enroll in training, complete projects, earn certification. We assist with career path and placement." },
+                { q: "What career options can I pursue after the MM course?", a: "MM Consultant, Materials Manager, Supply Chain Analyst, Warehouse Manager, Planning Specialist." },
+                { q: "How does SAP MM work with the other S/4HANA modules?", a: "Integrates with FI (Finance), SD (Sales), PP (Production), and WM (Warehouse Management)." },
+                { q: "Does ERPVITS provide SAP MM Training with Placement Assistance?", a: "Yes, full placement support, interview coaching, and connections with hiring partners." },
+                { q: "Can I take SAP MM Online Training from anywhere?", a: "Yes, accessible globally with live instructor-led sessions and recorded classes." },
+                { q: "Is SAP MM Training available near me?", a: "Yes, online and onsite options with flexible schedules." },
+                { q: "What study materials are provided?", a: "PDFs, presentations, configuration guides, tutorials, and official SAP documentation." },
+                { q: "What makes your SAP MM training different?", a: "Live instruction, hands-on labs, real projects, personalized mentoring, and full placement support." }
+            ]
+        }
+    ]
+
 };

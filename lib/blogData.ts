@@ -100,6 +100,16 @@ export const blogPosts: BlogPost[] = [
         category: "SAP Career",
         author: "ERPVITS Expert"
     },
+    {
+        id: "top-7-sap-training-institutes",
+        title: "Top 7 SAP Training Institutes in India: Comprehensive Review",
+        description: "Looking for the best SAP training? Review of Top 7 SAP Training Institutes in India including Best Online Career, Henry Harvin, Udemy, ERPVITS, Visualpath, and more.",
+        image: "/images/sap-training-institutes.png",
+        date: "Nov 25, 2025",
+        category: "SAP Career",
+        author: "ERPVITS Expert"
+    }
+    ,
 
 
 

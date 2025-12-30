@@ -1,5 +1,6 @@
 export const aribaContent = {
     heroHeading: "Transform Your Career with the #1 SAP Ariba Online Training Program",
+    badges: ["New Batch Starting Soon", "100% Job Oriented"],
     description: "The ERPVITS SAP Ariba Online Training Program is a new step for individuals to learn various skills within digital procurement, supply chain management, and enterprise resource planning. Organizations are looking for certified SAP Ariba professionals and experts for maintaining procurement efficiency, managing cost and efficiency within the supply chain.",
     metaTitle: "SAP Ariba Online Training | Enroll, Learn & Get Certified",
     metaDescription: "Enroll in SAP Ariba Online Training by ERPVITS. Master sourcing, procurement, and supplier network with led-sessions, live projects & certification support.",
@@ -55,36 +56,47 @@ export const aribaContent = {
     }),
     sections: [
         {
-            type: 'rich_text',
+            type: 'detailed_features',
             title: "Learn SAP Ariba from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            content: `We provide industry SAP Ariba Training which includes interactive teaching, industry projects, and preparation for certification. The training is provided by experts and specialized instructors which ensure having industry knowledge and are certified by SAP with minimum industry experience of 12 years. We emphasize on real time knowledge and training to professionals. Thus, we do not provide SAP Ariba Training in the format of recorded training. Instruction is provided in real time by professionals with industry knowledge and tools to have step by step.
-
-### Certified Instructor Experience
-Our sessions are led by SAP Ariba certified instructors with extensive industry and practical experience. They not only teach the concepts but also share real-world scenarios, tips, and best practices to ensure you gain both theoretical knowledge and practical expertise.
-
-### 100% Hands-On Learning Methodology
-SAP Ariba Course traditionally uses slides and presentation tools to explain concepts. But our program goes further. In every session, you will see live demonstrations on Ariba Software systems, and then you will participate in guided lab exercises that allow you to practice what you learned to reinforce it. By the end of your course, you will have configured requisition workflows, set up supplier master data, managed approval cycles, and executed sourcing events on real systems.
-
-### Job Oriented Curriculum Design
-Our course curriculum design is not focused on academics. This is for you to learn SAP Ariba with specific skills, and understand the responsibilities and the role problem solving expected of an SAP Ariba Consultant. Training also covers real world implementations of procurement policies and also addresses guided buying, and SAP Ariba integration troubleshooting.
-
-### Interactive Q&A Sessions
-Outside of the primary instruction in the classroom, you have additional dedicated Q&A forums and live office hours, where instructors further answer your questions and elaborate on complicated subjects as well as provide personalized instruction based on your pace and your professional objectives.
-
-### Flexible Batch Timings
-Seeing as multiple civilians and overseas professionals have to manage multiple competing priorities; work, family, and education, we run weekday evening batches (6 PM – 9 PM IST) and also offer weekend (Saturday and Sunday) batches. All sessions are recorded, so you can catch up on a missed live session asynchronously.
-
-### Minimal Batch Size for Personal Attention
-Different from massive online courses for which instructors cater to thousands of anonymous learners, we limit our batches to 8-10 attendees. This enables instructors to provide individualized support.
-
-### Career Support
-Learning SAP Ariba is only part of the equation—getting placed is the other part. Our dedicated career support staff helps you craft an SAP-focused resume, prepares you with mock interviews, and walks you through real interview questions.
-
-### Alumni Network & Community Forum
-Become a part of a flourishing network of SAP Ariba practitioners. Provide and receive advice, job leads, and frameworks, ask for and provide help, and establish professional networks.
-
-### Post-Training Support
-Your learning experience does not end with the completion of SAP Ariba Course. For the six months after training, you will receive instructor support whether to help you troubleshoot a real project, clarify tough concepts or prepare for your initial consulting engagements.`
+            subtitle: "We provide industry SAP Ariba Training which includes interactive teaching, industry projects, and preparation for certification. The training is provided by experts and specialized instructors ensuring industry knowledge and certified by SAP with minimum industry experience of 12 years. We emphasize on real-time knowledge and training for professionals.",
+            items: [
+                {
+                    title: "Certified Instructor Experience",
+                    description: "Our sessions are led by SAP Ariba certified instructors with extensive industry and practical experience. They not only teach the concepts but also share real-world scenarios, tips, and best practices to ensure you gain both theoretical knowledge and practical expertise."
+                },
+                {
+                    title: "100% Hands-On Learning Methodology",
+                    description: "SAP Ariba Course traditionally uses slides and presentation tools to explain concepts. But our program goes further. In every session, you will see live demonstrations on Ariba Software systems, and then you will participate in guided lab exercises that allow you to practice what you learned to reinforce it."
+                },
+                {
+                    title: "Job Oriented Curriculum Design",
+                    description: "Our course curriculum design is not focused on academics. This is for you to learn SAP Ariba with specific skills, and understand the responsibilities and the role problem solving expected of an SAP Ariba Consultant. Training also covers real world implementations of procurement policies."
+                },
+                {
+                    title: "Interactive Q&A Sessions",
+                    description: "Outside of the primary instruction in the classroom, you have additional dedicated Q&A forums and live office hours, where instructors further answer your questions and elaborate on complicated subjects as well as provide personalized instruction based on your pace and your professional objectives."
+                },
+                {
+                    title: "Flexible Batch Timings",
+                    description: "Seeing as multiple civilians and overseas professionals have to manage multiple competing priorities; work, family, and education, we run weekday evening batches (6 PM – 9 PM IST) and also offer weekend batches. All sessions are recorded for asynchronous learning."
+                },
+                {
+                    title: "Minimal Batch Size for Personal Attention",
+                    description: "Different from massive online courses for which instructors cater to thousands of anonymous learners, we limit our batches to 8-10 attendees. This enables instructors to provide individualized support."
+                },
+                {
+                    title: "Career Support",
+                    description: "Learning SAP Ariba is only part of the equation—getting placed is the other part. Our dedicated career support staff helps you craft an SAP-focused resume, prepares you with mock interviews, and walks you through real interview questions."
+                },
+                {
+                    title: "Alumni Network & Community Forum",
+                    description: "Become a part of a flourishing network of SAP Ariba practitioners. Provide and receive advice, job leads, and frameworks, ask for and provide help, and establish professional networks."
+                },
+                {
+                    title: "Post-Training Support",
+                    description: "Your learning experience does not end with the completion of SAP Ariba Course. For the six months after training, you will receive instructor support whether to help you troubleshoot a real project, clarify tough concepts or prepare for your initial consulting engagements."
+                }
+            ]
         },
         {
             type: 'features',

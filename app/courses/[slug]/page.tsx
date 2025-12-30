@@ -1,4 +1,4 @@
-import { getCourse, courses } from '@/lib/courseData';
+import { supabase } from '@/lib/supabase';
 import { notFound } from 'next/navigation';
 import Curriculum from '@/components/course/Curriculum';
 import FAQ from '@/components/course/FAQ';
@@ -12,31 +12,52 @@ export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const { slug } = await params;
-    const course = getCourse(slug);
+
+    const { data: course } = await supabase
+        .from('courses')
+        .select('title, meta_title, meta_description, hero_heading')
+        .eq('id', slug)
+        .single();
 
     if (!course) return { title: 'Course Not Found' };
 
     return {
-        title: course.metaTitle || `${course.title} Training | Expert Online Course | ERPVITS`,
-        description: course.metaDescription || course.heroHeading,
+        title: course.meta_title || `${course.title} Training | Expert Online Course | ERPVITS`,
+        description: course.meta_description || course.hero_heading,
     };
 }
 
 export default async function CoursePage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
-    const course = getCourse(slug);
+
+    const { data: course } = await supabase
+        .from('courses')
+        .select('*')
+        .eq('id', slug)
+        .single();
 
     if (!course) {
         notFound();
     }
 
+    // Map DB fields to component expectations if they differ (using snake_case in DB, camelCase in components)
+    const mappedCourse = {
+        ...course,
+        heroHeading: course.hero_heading,
+        heroSubheading: course.hero_subheading,
+        heroImage: course.hero_image,
+        metaTitle: course.meta_title,
+        metaDescription: course.meta_description,
+    };
+
+
     return (
         <main className="bg-white">
             {/* Schema Injection */}
-            {course.schema && (
+            {mappedCourse.schema && (
                 <script
                     type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: course.schema }}
+                    dangerouslySetInnerHTML={{ __html: mappedCourse.schema }}
                 />
             )}
 
@@ -55,11 +76,11 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                             </div>
 
                             <h1 className="text-4xl lg:text-5xl font-extrabold mb-6 leading-tight">
-                                {course.heroHeading}
+                                {mappedCourse.heroHeading || mappedCourse.title}
                             </h1>
 
                             <p className="text-lg text-blue-100 mb-8 leading-relaxed max-w-xl whitespace-pre-line">
-                                {course.description ? course.description.split('\n')[0] : `Master ${course.title} with expert-led training.`}
+                                {mappedCourse.description ? mappedCourse.description.split('\n')[0] : `Master ${mappedCourse.title} with expert-led training.`}
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-4">
@@ -91,9 +112,9 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                         {/* Hero Image / Form Placeholder */}
                         <div className="hidden lg:block relative text-gray-800">
                             <div className="bg-white rounded-2xl p-2 shadow-2xl skew-y-3 transform hover:skew-y-0 transition-transform duration-500">
-                                {course.heroImage ? (
+                                {mappedCourse.heroImage ? (
                                     <div className="bg-gray-100 rounded-xl overflow-hidden shadow-2xl flex items-center justify-center border-2 border-gray-100">
-                                        <img src={course.heroImage} alt={`${course.title} Preview`} className="w-full h-auto object-contain" />
+                                        <img src={mappedCourse.heroImage} alt={`${mappedCourse.title} Preview`} className="w-full h-auto object-contain" />
                                     </div>
                                 ) : (
                                     <div className="bg-gray-100 rounded-xl h-[400px] flex items-center justify-center border-2 border-dashed border-gray-300">
@@ -124,30 +145,23 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                 <div className="lg:col-span-2 space-y-16">
 
                     {/* Overview (Fallback or First Section) */}
-                    {/* Only show default overview if no sections, OR if sections exist, we let SectionRenderer handle it. 
-                  However, standard courses rely on this.
-                  Strategy: If sections exist, assume they COVER the overview. 
-                  Wait, aribaContent.sections[0] IS the overview 'Learn SAP Ariba...'.
-                  So if sections exist, I should output them ALL here.
-              */}
-
-                    {course.sections ? (
-                        <SectionRenderer sections={course.sections} />
+                    {mappedCourse.sections ? (
+                        <SectionRenderer sections={mappedCourse.sections} />
                     ) : (
                         <>
                             <section id="overview" className="scroll-mt-32">
                                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Course Overview</h2>
                                 <div className="prose max-w-none text-gray-600 leading-relaxed whitespace-pre-line">
-                                    {course.description}
+                                    {mappedCourse.description}
                                 </div>
                             </section>
 
                             <section id="highlights" className="bg-orange-50 rounded-2xl p-8 border border-orange-100 scroll-mt-32">
-                                <h2 className="text-2xl font-bold text-gray-900 mb-2">Why Professionals Choose ERPVITS for {course.title}</h2>
+                                <h2 className="text-2xl font-bold text-gray-900 mb-2">Why Professionals Choose ERPVITS for {mappedCourse.title}</h2>
                                 <p className="text-gray-600 mb-8">Trusted by 500+ successful SAP professionals.</p>
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    {course.features.map((feature, i) => (
+                                    {mappedCourse.features?.map((feature: string, i: number) => (
                                         <div key={i} className="flex items-start">
                                             <div className="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
                                                 <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
@@ -159,17 +173,17 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                             </section>
 
                             <section id="curriculum" className="scroll-mt-32">
-                                <Curriculum course={course} />
+                                <Curriculum course={mappedCourse as any} />
                             </section>
 
-                            {!course.features?.length && (
+                            {!mappedCourse.features?.length && (
                                 <section className="py-8 bg-blue-50">
                                     <ComparisonTable />
                                 </section>
                             )}
 
                             <section id="faq" className="scroll-mt-32">
-                                <FAQ course={course} />
+                                <FAQ course={mappedCourse as any} />
                             </section>
                         </>
                     )}
@@ -192,7 +206,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                             <div className="space-y-4 mb-8">
                                 <div className="flex justify-between text-sm">
                                     <span className="text-gray-500">Duration:</span>
-                                    <span className="font-bold text-gray-900">{course.duration || '40-45 Hours'}</span>
+                                    <span className="font-bold text-gray-900">{mappedCourse.duration || '40-45 Hours'}</span>
                                 </div>
                                 <div className="flex justify-between text-sm">
                                     <span className="text-gray-500">Mode:</span>

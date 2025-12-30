@@ -2,62 +2,88 @@
 
 import { Check } from 'lucide-react';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { supabase } from '@/lib/supabase';
 import ContactModal from '../ContactModal';
 
-const plans = [
-    {
-        name: "Self-Paced Program",
-        desc: "Ideal for independent learners",
-        price: "Lifetime Access",
-        features: [
-            "Lifetime access to recordings",
-            "Learning materials included",
-            "Self-study assistance",
-            "Flexible learning timeline",
-            "Certification guidance provided",
-            "24/7 Portal Access",
-            "Resume preparation tips"
-        ],
-        cta: "Start Learning Now",
-        color: "blue",
-        popular: false
-    },
-    {
-        name: "Instructor-Led Program",
-        desc: "Best for career switchers",
-        price: "Live Batches",
-        features: [
-            "Live classes with expert trainers",
-            "Access to study materials & recordings",
-            "Job support included",
-            "Real SAP system access",
-            "Project-based learning"
-        ],
-        cta: "Join Upcoming Batch",
-        color: "orange",
-        popular: true
-    },
-    {
-        name: "Corporate Training",
-        desc: "For teams and organizations",
-        price: "Custom",
-        features: [
-            "Tailored curriculum for team needs",
-            "Dedicated trainer for your organization",
-            "Team coordination & project alignment",
-            "Flexible training schedule",
-            "Post-training support & reports"
-        ],
-        cta: "Request Corporate Quote",
-        color: "gray",
-        popular: false
-    }
-];
+const DEFAULT_CONTENT = {
+    title: "Affordable SAP Training – Flexible Pricing",
+    subtitle: "Choose the program that fits your budget with flexible payment options available",
+    plans: [
+        {
+            name: "Self-Paced Program",
+            desc: "Ideal for independent learners",
+            price: "Lifetime Access",
+            features: [
+                "Lifetime access to recordings",
+                "Learning materials included",
+                "Self-study assistance",
+                "Flexible learning timeline",
+                "Certification guidance provided",
+                "24/7 Portal Access",
+                "Resume preparation tips"
+            ],
+            cta: "Start Learning Now",
+            color: "blue",
+            popular: false
+        },
+        {
+            name: "Instructor-Led Program",
+            desc: "Best for career switchers",
+            price: "Live Batches",
+            features: [
+                "Live classes with expert trainers",
+                "Access to study materials & recordings",
+                "Job support included",
+                "Real SAP system access",
+                "Project-based learning"
+            ],
+            cta: "Join Upcoming Batch",
+            color: "orange",
+            popular: true
+        },
+        {
+            name: "Corporate Training",
+            desc: "For teams and organizations",
+            price: "Custom",
+            features: [
+                "Tailored curriculum for team needs",
+                "Dedicated trainer for your organization",
+                "Team coordination & project alignment",
+                "Flexible training schedule",
+                "Post-training support & reports"
+            ],
+            cta: "Request Corporate Quote",
+            color: "gray",
+            popular: false
+        }
+    ]
+};
 
 export default function PricingPlans() {
     const [isContactModalOpen, setIsContactModalOpen] = useState(false);
     const [modalTitle, setModalTitle] = useState("Get Started with SAP");
+    const [content, setContent] = useState(DEFAULT_CONTENT);
+
+    useEffect(() => {
+        async function fetchPricing() {
+            try {
+                const { data, error } = await supabase
+                    .from('site_content')
+                    .select('content')
+                    .eq('page_path', '/')
+                    .eq('section_key', 'pricing')
+                    .single();
+
+                if (data && !error) {
+                    setContent(data.content);
+                }
+            } catch (err) {
+                console.error('Error fetching Pricing content:', err);
+            }
+        }
+        fetchPricing();
+    }, []);
 
     const openModal = (planName: string) => {
         setModalTitle(`Inquire about ${planName}`);
@@ -73,12 +99,12 @@ export default function PricingPlans() {
             />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl font-bold text-gray-900 mb-4">Affordable SAP Training – Flexible Pricing</h2>
-                    <p className="text-lg text-gray-600">Choose the program that fits your budget with flexible payment options available</p>
+                    <h2 className="text-3xl font-bold text-gray-900 mb-4">{content.title}</h2>
+                    <p className="text-lg text-gray-600">{content.subtitle}</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                    {plans.map((plan, i) => (
+                    {content.plans.map((plan, i) => (
                         <div key={i} className={`bg-white rounded-2xl p-8 shadow-sm border transition-all duration-300 relative hover:-translate-y-2 hover:shadow-xl ${plan.popular ? 'border-orange-500 ring-2 ring-orange-200' : 'border-gray-200'}`}>
                             {plan.popular && (
                                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-orange-500 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide">

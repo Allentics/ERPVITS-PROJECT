@@ -1,5 +1,6 @@
 export const fieldglassContent = {
     heroHeading: "Become a Leader in Managing a Contingent Workforce with SAP Fieldglass Training",
+    badges: ["New Batch Starting Soon", "100% Job Oriented"],
     description: "This SAP Fieldglass training course is specifically tailored for HR professionals, procurement professionals, IT consultants, work program managers, and other professionals who aspire to work in global contingent workforce and services procurement consulting. This SAP Fieldglass course combines hands-on system training, expert instruction with real-world application, and a curriculum designed to a certification.",
     metaTitle: "SAP Fieldglass Online Training | ERPVITS Certification",
     metaDescription: "Master SAP Fieldglass Online Training with ERPVITS. Learn VMS, Contingent Workforce, SOW modules, and integration with SAP S/4HANA. Get certification help.",
@@ -211,33 +212,43 @@ export const fieldglassContent = {
     }),
     sections: [
         {
-            type: 'rich_text',
+            type: 'detailed_features',
             title: "Learn SAP Fieldglass from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            content: `Unlike passive video courses or self-paced modules, our SAP Fieldglass Online Training offers direct training from a SAP certified trainer who has over 10 years of experience in contingent workforce management. Your training is interactive in real-time where trainers explain methodologies and work with you on complex workforce problems.
-
-### Certified Instructor Expertise
-Every one of our trainers has official SAP Fieldglass certifications and has managed numerous enterprise SAP Fieldglass implementations for Fortune 500 companies. Trainers are not just teaching theories; they bring real client stories, common implementation challenges, and industry best practices from live deployments of VMS systems that manage thousands of contingent workers.
-
-### 100% Hands-On Learning Methodology
-Conventional training teaches Fieldglass System concepts through slide decks and classroom training. Our SAP Fieldglass Training does a lot more. Each of the training sessions has live demonstration and training using SAP Fieldglass systems and afterwards you are given real hands-on Fieldglass system training/labs to complete the exercises. At the end of the course, you will have configured and onboarded worker onboarding workflows, created and managed SOW project structures, and handled contingent worker profile management.
-
-### Job-Oriented Curriculum Design
-The course curriculum is designed to fit the real-world skills, tasks, responsibilities, and problem-solving challenges you will encounter in the field as an SAP Fieldglass consultant. Whether you are deploying processes for contingent workforce, configuring vendor portal, streamlined automation for invoicing, or compliance workflows, this training will provide you with actionable clarity that will help you.
-
-### Interactive Q&A Sessions
-In addition to the primary teaching sessions, you have interactive Q&A sessions, as well as live office hours, during which you can post questions, receive clarifications on the more intricate VMS elements, and obtain guidance that is customized to your individual learning velocity and career aspirations.
-
-### Flexible Batch Timings
-Understanding that numerous professionals balance a job, a family, and studies, we provide evening sessions on the weekdays (Monday to Friday, 6 PM to 9 PM IST) and weekend classes (Saturday and Sunday).
-
-### Small Batch Sizes for Personalized Attention
-Unlike massive online courses, which may have thousands of anonymous learners, our classes are limited to 8-10 participants. This allows instructors to tailor their teaching to your particular learning and provide individual constructive attention.
-
-### Placement & Career Support
-Learning SAP Fieldglass is half the journey; for most learners, getting placed constitutes the goal of the course. Our career support team helps you construction a Fieldglass-centered resume, assists with mock interviews, and provides interview questions based on recent hiring trends.
-
-### Ongoing Support Post-Training
-The SAP Fieldglass course and training may mark the end of formal training, but the learning journey will not end there. For any challenge related to concept clarification, any real-world challenges related to the VMS project the participant is working on, we provide instructor support for six months post training.`
+            subtitle: "Unlike passive video courses or self-paced modules, our SAP Fieldglass Online Training offers direct training from a SAP certified trainer who has over 10 years of experience in contingent workforce management. Your training is interactive in real-time where trainers explain methodologies and work with you on complex workforce problems.",
+            items: [
+                {
+                    title: "Certified Instructor Expertise",
+                    description: "Every one of our trainers has official SAP Fieldglass certifications and has managed numerous enterprise SAP Fieldglass implementations for Fortune 500 companies. Trainers are not just teaching theories; they bring real client stories, common implementation challenges, and industry best practices from live deployments of VMS systems that manage thousands of contingent workers."
+                },
+                {
+                    title: "100% Hands-On Learning Methodology",
+                    description: "Conventional training teaches Fieldglass System concepts through slide decks and classroom training. Our SAP Fieldglass Training does a lot more. Each of the training sessions has live demonstration and training using SAP Fieldglass systems and afterwards you are given real hands-on Fieldglass system training/labs to complete the exercises. At the end of the course, you will have configured and onboarded worker onboarding workflows, created and managed SOW project structures, and handled contingent worker profile management."
+                },
+                {
+                    title: "Job-Oriented Curriculum Design",
+                    description: "The course curriculum is designed to fit the real-world skills, tasks, responsibilities, and problem-solving challenges you will encounter in the field as an SAP Fieldglass consultant. Whether you are deploying processes for contingent workforce, configuring vendor portal, streamlined automation for invoicing, or compliance workflows, this training will provide you with actionable clarity that will help you."
+                },
+                {
+                    title: "Interactive Q&A Sessions",
+                    description: "In addition to the primary teaching sessions, you have interactive Q&A sessions, as well as live office hours, during which you can post questions, receive clarifications on the more intricate VMS elements, and obtain guidance that is customized to your individual learning velocity and career aspirations."
+                },
+                {
+                    title: "Flexible Batch Timings",
+                    description: "Understanding that numerous professionals balance a job, a family, and studies, we provide evening sessions on the weekdays (Monday to Friday, 6 PM to 9 PM IST) and weekend classes (Saturday and Sunday)."
+                },
+                {
+                    title: "Small Batch Sizes for Personalized Attention",
+                    description: "Unlike massive online courses, which may have thousands of anonymous learners, our classes are limited to 8-10 participants. This allows instructors to tailor their teaching to your particular learning and provide individual constructive attention."
+                },
+                {
+                    title: "Placement & Career Support",
+                    description: "Learning SAP Fieldglass is half the journey; for most learners, getting placed constitutes the goal of the course. Our career support team helps you construction a Fieldglass-centered resume, assists with mock interviews, and provides interview questions based on recent hiring trends."
+                },
+                {
+                    title: "Ongoing Support Post-Training",
+                    description: "The SAP Fieldglass course and training may mark the end of formal training, but the learning journey will not end there. For any challenge related to concept clarification, any real-world challenges related to the VMS project the participant is working on, we provide instructor support for six months post training."
+                }
+            ]
         },
         {
             type: 'features',

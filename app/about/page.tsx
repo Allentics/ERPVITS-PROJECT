@@ -1,15 +1,58 @@
 import { CheckCircle, Globe, Users, Award } from 'lucide-react';
+import { supabase } from '@/lib/supabase';
 
-export default function AboutPage() {
+export const dynamic = 'force-dynamic';
+
+const DEFAULT_HERO = {
+    title: "About ERPVITS",
+    description: "We are a global leader in SAP training, dedicated to transforming careers through expert-led education and real-world project experience."
+};
+
+const DEFAULT_MISSION = {
+    title: "Our Mission",
+    description: "At ERPVITS, our mission is to bridging the gap between theoretical knowledge and industry demands. We believe that true learning happens through doing, which is why our curriculum is centered around hands-on projects and real-time scenarios.",
+    secondary_description: "With over a decade of experience, we have helped thousands of professionals and students master SAP technologies and secure high-paying roles in top multinational corporations.",
+    stats: [
+        { val: "6000+", label: "Students Trained" },
+        { val: "95%", label: "Placement Rate" },
+        { val: "20+", label: "Countries Reach" },
+        { val: "500+", label: "Hiring Partners" }
+    ]
+};
+
+export default async function AboutPage() {
+    let hero = DEFAULT_HERO;
+    let mission = DEFAULT_MISSION;
+
+    try {
+        const { data: heroData } = await supabase
+            .from('site_content')
+            .select('content')
+            .eq('page_path', '/about')
+            .eq('section_key', 'hero')
+            .single();
+        if (heroData) hero = heroData.content;
+
+        const { data: missionData } = await supabase
+            .from('site_content')
+            .select('content')
+            .eq('page_path', '/about')
+            .eq('section_key', 'mission')
+            .single();
+        if (missionData) mission = missionData.content;
+    } catch (err) {
+        console.error('Error fetching About content:', err);
+    }
+
     return (
         <div className="bg-white min-h-screen">
             {/* Hero */}
             <div className="bg-blue-900 text-white py-20 lg:py-28 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-800 opacity-20 transform -skew-x-12"></div>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-                    <h1 className="text-4xl md:text-5xl font-bold mb-6">About ERPVITS</h1>
+                    <h1 className="text-4xl md:text-5xl font-bold mb-6">{hero.title}</h1>
                     <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-                        We are a global leader in SAP training, dedicated to transforming careers through expert-led education and real-world project experience.
+                        {hero.description}
                     </p>
                 </div>
             </div>
@@ -19,37 +62,27 @@ export default function AboutPage() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                         <div>
-                            <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
+                            <h2 className="text-3xl font-bold text-gray-900 mb-6">{mission.title}</h2>
                             <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                                At ERPVITS, our mission is to bridging the gap between theoretical knowledge and industry demands.
-                                We believe that true learning happens through doing, which is why our curriculum is centered around hands-on projects and real-time scenarios.
+                                {mission.description}
                             </p>
                             <p className="text-gray-600 text-lg leading-relaxed">
-                                With over a decade of experience, we have helped thousands of professionals and students master SAP technologies
-                                and secure high-paying roles in top multinational corporations.
+                                {mission.secondary_description}
                             </p>
                         </div>
                         <div className="grid grid-cols-2 gap-6">
-                            <div className="bg-blue-50 p-6 rounded-xl text-center">
-                                <Users className="h-10 w-10 text-blue-600 mx-auto mb-4" />
-                                <div className="text-3xl font-bold text-gray-900 mb-1">6000+</div>
-                                <div className="text-sm text-gray-600">Students Trained</div>
-                            </div>
-                            <div className="bg-blue-50 p-6 rounded-xl text-center">
-                                <Award className="h-10 w-10 text-blue-600 mx-auto mb-4" />
-                                <div className="text-3xl font-bold text-gray-900 mb-1">95%</div>
-                                <div className="text-sm text-gray-600">Placement Rate</div>
-                            </div>
-                            <div className="bg-blue-50 p-6 rounded-xl text-center">
-                                <Globe className="h-10 w-10 text-blue-600 mx-auto mb-4" />
-                                <div className="text-3xl font-bold text-gray-900 mb-1">20+</div>
-                                <div className="text-sm text-gray-600">Countries Reach</div>
-                            </div>
-                            <div className="bg-blue-50 p-6 rounded-xl text-center">
-                                <CheckCircle className="h-10 w-10 text-blue-600 mx-auto mb-4" />
-                                <div className="text-3xl font-bold text-gray-900 mb-1">500+</div>
-                                <div className="text-sm text-gray-600">Hiring Partners</div>
-                            </div>
+                            {mission.stats.map((stat: any, i: number) => {
+                                const icons = [<Users key="u" />, <Award key="a" />, <Globe key="g" />, <CheckCircle key="c" />];
+                                return (
+                                    <div key={i} className="bg-blue-50 p-6 rounded-xl text-center">
+                                        <div className="h-10 w-10 text-blue-600 mx-auto mb-4">
+                                            {icons[i] || <CheckCircle />}
+                                        </div>
+                                        <div className="text-3xl font-bold text-gray-900 mb-1">{stat.val}</div>
+                                        <div className="text-sm text-gray-600">{stat.label}</div>
+                                    </div>
+                                );
+                            })}
                         </div>
                     </div>
                 </div>

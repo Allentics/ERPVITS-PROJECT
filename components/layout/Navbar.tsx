@@ -1,19 +1,56 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X, ChevronDown, Phone, Mail, Globe } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { courses } from '@/lib/courseData';
+import { courses as localCourses } from '@/lib/courseData';
+import { supabase } from '@/lib/supabase';
 import ContactModal from '../ContactModal';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
     const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+    const [dynCourses, setDynCourses] = useState(localCourses);
+    const [settings, setSettings] = useState({
+        site_email: "info@erpvits.com",
+        site_phone: "+91 84088 78222"
+    });
 
-    const functionalCourses = courses.filter(c => c.category === 'Functional').sort((a, b) => a.title.localeCompare(b.title));
-    const technicalCourses = courses.filter(c => c.category === 'Technical').sort((a, b) => a.title.localeCompare(b.title));
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                // Fetch Settings
+                const { data: settingsData } = await supabase
+                    .from('site_settings')
+                    .select('key, value');
+
+                if (settingsData) {
+                    const mapped = settingsData.reduce((acc: any, item: any) => {
+                        acc[item.key] = item.value;
+                        return acc;
+                    }, {});
+                    setSettings(prev => ({ ...prev, ...mapped }));
+                }
+
+                // Fetch Courses for Dropdowns
+                const { data: coursesData } = await supabase
+                    .from('courses')
+                    .select('id, title, category');
+
+                if (coursesData && coursesData.length > 0) {
+                    setDynCourses(coursesData);
+                }
+            } catch (err) {
+                console.error('Error in Navbar fetchData:', err);
+            }
+        }
+        fetchData();
+    }, []);
+
+    const functionalCourses = dynCourses.filter(c => c.category === 'Functional').sort((a, b) => a.title.localeCompare(b.title));
+    const technicalCourses = dynCourses.filter(c => c.category === 'Technical').sort((a, b) => a.title.localeCompare(b.title));
 
     const toggleDropdown = (name: string) => {
         setActiveDropdown(activeDropdown === name ? null : name);
@@ -31,11 +68,11 @@ const Navbar = () => {
                 <div className="bg-slate-900 text-white text-xs py-2 px-4 hidden lg:block">
                     <div className="max-w-7xl mx-auto flex justify-between items-center">
                         <div className="flex items-center space-x-6">
-                            <a href="mailto:info@erpvits.com" className="flex items-center hover:text-orange-400 transition-colors">
-                                <Mail className="h-3 w-3 mr-2" /> info@erpvits.com
+                            <a href={`mailto:${settings.site_email}`} className="flex items-center hover:text-orange-400 transition-colors">
+                                <Mail className="h-3 w-3 mr-2" /> {settings.site_email}
                             </a>
-                            <a href="tel:+918408878222" className="flex items-center hover:text-orange-400 transition-colors">
-                                <Phone className="h-3 w-3 mr-2" /> +91 84088 78222
+                            <a href={`tel:${settings.site_phone.replace(/\s+/g, '')}`} className="flex items-center hover:text-orange-400 transition-colors">
+                                <Phone className="h-3 w-3 mr-2" /> {settings.site_phone}
                             </a>
                         </div>
                         <div className="flex items-center space-x-4">
@@ -51,10 +88,12 @@ const Navbar = () => {
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="flex justify-between h-20 items-center">
                             {/* Logo */}
-                            <Link href="/" className="flex-shrink-0 flex items-center group">
-                                <span className="text-3xl font-extrabold text-blue-900 tracking-tighter group-hover:text-blue-800 transition-colors">
-                                    ERP<span className="text-orange-500">VITS</span>
-                                </span>
+                            <Link href="/" className="flex-shrink-0 flex items-center">
+                                <img
+                                    src="/images/logo.webp"
+                                    alt="ERPVITS"
+                                    className="h-12 w-auto [filter:invert(1)_hue-rotate(180deg)]"
+                                />
                             </Link>
 
                             {/* Desktop Menu */}

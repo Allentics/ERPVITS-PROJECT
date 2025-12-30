@@ -1,10 +1,50 @@
+"use client";
+
 import Link from 'next/link';
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react';
-import { courses } from '@/lib/courseData';
+import React, { useState, useEffect } from 'react';
+import { courses as localCourses } from '@/lib/courseData';
+import { supabase } from '@/lib/supabase';
 
 const Footer = () => {
-    // Show top 6 courses in footer
-    const popularCourses = courses.slice(0, 6);
+    const [dynCourses, setDynCourses] = useState(localCourses);
+    const [settings, setSettings] = useState({
+        site_email: "info@erpvits.com",
+        site_phone: "+91 84088 78222",
+        site_address: "Global Online Training, Headquartered in India"
+    });
+
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const { data: settingsData } = await supabase
+                    .from('site_settings')
+                    .select('key, value');
+
+                if (settingsData) {
+                    const mapped = settingsData.reduce((acc: any, item: any) => {
+                        acc[item.key] = item.value;
+                        return acc;
+                    }, {});
+                    setSettings(prev => ({ ...prev, ...mapped }));
+                }
+
+                const { data: coursesData } = await supabase
+                    .from('courses')
+                    .select('id, title')
+                    .limit(6);
+
+                if (coursesData && coursesData.length > 0) {
+                    setDynCourses(coursesData);
+                }
+            } catch (err) {
+                console.error('Error in Footer fetchData:', err);
+            }
+        }
+        fetchData();
+    }, []);
+
+    const popularCourses = dynCourses.slice(0, 6);
 
     return (
         <footer className="bg-slate-900 text-gray-300">
@@ -13,7 +53,9 @@ const Footer = () => {
 
                     {/* Column 1: About */}
                     <div>
-                        <span className="text-2xl font-bold text-white mb-4 block">ERPVITS</span>
+                        <Link href="/" className="mb-4 block">
+                            <img src="/images/logo.webp" alt="ERPVITS" className="h-10 w-auto" />
+                        </Link>
                         <p className="text-sm leading-relaxed mb-4">
                             Industry-leading SAP Online Training Institute with 95%+ placement success.
                             Master SAP with confidence and transform your career.
@@ -63,15 +105,15 @@ const Footer = () => {
                         <ul className="space-y-4 text-sm">
                             <li className="flex items-start">
                                 <MapPin className="h-5 w-5 mr-3 text-blue-500 flex-shrink-0" />
-                                <span>Global Online Training<br />Headquartered in India</span>
+                                <span>{settings.site_address}</span>
                             </li>
                             <li className="flex items-center">
                                 <Phone className="h-5 w-5 mr-3 text-blue-500 flex-shrink-0" />
-                                <span>+91 8600 5600 70</span>
+                                <a href={`tel:${settings.site_phone.replace(/\s+/g, '')}`} className="hover:text-white">{settings.site_phone}</a>
                             </li>
                             <li className="flex items-center">
                                 <Mail className="h-5 w-5 mr-3 text-blue-500 flex-shrink-0" />
-                                <a href="mailto:info@erpvits.com" className="hover:text-white">info@erpvits.com</a>
+                                <a href={`mailto:${settings.site_email}`} className="hover:text-white">{settings.site_email}</a>
                             </li>
                         </ul>
                     </div>

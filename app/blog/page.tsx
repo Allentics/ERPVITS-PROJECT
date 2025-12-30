@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { blogPosts } from '@/lib/blogData';
+import { supabase } from '@/lib/supabase';
 
 function formatDate(dateStr: string) {
     const date = new Date(dateStr);
@@ -8,7 +8,18 @@ function formatDate(dateStr: string) {
     return { day, monthShort };
 }
 
-export default function BlogPage() {
+export const dynamic = 'force-dynamic';
+
+export default async function BlogPage() {
+    const { data: blogPosts, error } = await supabase
+        .from('blog_posts')
+        .select('*')
+        .order('date', { ascending: false });
+
+    if (error) {
+        console.error('Error fetching blog posts:', error);
+    }
+
     return (
         <div className="min-h-screen bg-white">
             {/* Breadcrumb */}
@@ -51,7 +62,7 @@ export default function BlogPage() {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
                 <div className="space-y-8">
-                    {blogPosts.map((post) => {
+                    {blogPosts?.map((post: any) => {
                         const { day, monthShort } = formatDate(post.date);
                         return (
                             <div key={post.id} className="flex gap-6 pb-8 border-b border-gray-200 last:border-b-0">

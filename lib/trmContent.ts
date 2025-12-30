@@ -1,5 +1,6 @@
 export const trmContent = {
     heroHeading: "Master the Future of Corporate Treasury with SAP TRM Online Training",
+    badges: ["New Batch Starting Soon", "100% Job Oriented"],
     description: "Unlock premium treasury consulting careers with SAP TRM Online Training (Treasury and Risk Management), Cash Management, Foreign Exchange Operations, Trading of Securities, Derivative Hedging, Advanced Credit Risk Determination. Learn with hands-on training, work with real financial workflows and earn industry-recognized SAP TRM certification.",
     metaTitle: "SAP TRM Online Training | Treasury & Risk Management",
     metaDescription: "SAP TRM Online Training (Treasury and Risk Management) with ERPVITS. Learn cash management, financial instruments & risk analysis through live projects.",
@@ -236,24 +237,31 @@ export const trmContent = {
     }),
     sections: [
         {
-            type: 'rich_text',
+            type: 'detailed_features',
             title: "Learn SAP TRM from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            content: `Our SAP TRM Online Training is executed by certified SAP experts and Treasury and financial systems implementation professionals with 10+ years of direct experience. Unlike self-paced modules or passive video courses, you receive interactive real-time instruction in which instructors share proven methods, answer your direct questions, and walk you through intricate financial scenarios.
-
-### Certified Instructor Expertise
-Trainers are certified in SAP TRM and have substantial experience conducting enterprise-scale implementations. They don’t teach just the theoretical aspects of the subject and instead describe transformative financial implementations in detail.
-
-### 100% Hands-On Learning Methodology
-Each SAP TRM training session incorporates the teaching of the concepts and later live demonstrations on the SAP S/4HANA TRM systems followed by the learners performing guided lab exercises. At the end of the program, you will have completed the configuration of money market instruments, performed foreign exchange transactions, managed securities, and set up derivatives.
-
-### Job-Oriented Curriculum Design
-The course objectives have not been constructed in an academic manner but focused on skills, duties, and consultant level problem-solving. Integrating cash management processes, configuring hedge accounting, and managing credit limits are central to the training.
-
-### Interactive & Flexible
-We have dedicated forums and live Q&A sessions. Sessions are on weekday evenings (6 PM – 9 PM IST) and on weekends (Saturday & Sunday). If you miss a live class, you can catch up on the recorded sessions.
-
-### Placement & Career Support
-To get you ready for interviews, we have real treasury and banking interview questions, help you with mock interviews, and guide you in SAP-focused resume building. You also get support on how to effectively present your project experience.`
+            subtitle: "Our SAP TRM Online Training is executed by certified SAP experts and Treasury and financial systems implementation professionals with 10+ years of direct experience. Unlike self-paced modules or passive video courses, you receive interactive real-time instruction in which instructors share proven methods, answer your direct questions, and walk you through intricate financial scenarios.",
+            items: [
+                {
+                    title: "Certified Instructor Expertise",
+                    description: "Trainers are certified in SAP TRM and have substantial experience conducting enterprise-scale implementations. They don’t teach just the theoretical aspects of the subject and instead describe transformative financial implementations in detail."
+                },
+                {
+                    title: "100% Hands-On Learning Methodology",
+                    description: "Each SAP TRM training session incorporates the teaching of the concepts and later live demonstrations on the SAP S/4HANA TRM systems followed by the learners performing guided lab exercises. At the end of the program, you will have completed the configuration of money market instruments, performed foreign exchange transactions, managed securities, and set up derivatives."
+                },
+                {
+                    title: "Job-Oriented Curriculum Design",
+                    description: "The course objectives have not been constructed in an academic manner but focused on skills, duties, and consultant level problem-solving. Integrating cash management processes, configuring hedge accounting, and managing credit limits are central to the training."
+                },
+                {
+                    title: "Interactive & Flexible",
+                    description: "We have dedicated forums and live Q&A sessions. Sessions are on weekday evenings (6 PM – 9 PM IST) and on weekends (Saturday & Sunday). If you miss a live class, you can catch up on the recorded sessions."
+                },
+                {
+                    title: "Placement & Career Support",
+                    description: "To get you ready for interviews, we have real treasury and banking interview questions, help you with mock interviews, and guide you in SAP-focused resume building. You also get support on how to effectively present your project experience."
+                }
+            ]
         },
         {
             type: 'features',

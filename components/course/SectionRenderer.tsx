@@ -99,6 +99,8 @@ export default function SectionRenderer({ sections }: { sections: Section[] }) {
                         return <Testimonials key={idx} items={section.items as Testimonial[]} title={section.title} />;
                     case 'faq':
                         return <div key={idx} className="-mx-4 sm:-mx-8"><FAQ items={section.items as FAQType[]} /></div>;
+                    case 'detailed_features':
+                        return <DetailedFeatures key={idx} title={section.title} subtitle={section.subtitle} items={section.items as any[]} />;
                     default:
                         return null;
                 }
@@ -106,3 +108,21 @@ export default function SectionRenderer({ sections }: { sections: Section[] }) {
         </div>
     );
 }
+
+const DetailedFeatures = ({ title, subtitle, items }: { title?: string, subtitle?: string, items: { title: string, description: string }[] }) => (
+    <div className="py-12 scroll-mt-24" id="detailed-features">
+        {title && <h2 className="text-3xl font-bold text-gray-900 mb-6 leading-tight">{title}</h2>}
+        {subtitle && <div className="prose max-w-none text-gray-600 mb-10 leading-relaxed whitespace-pre-line text-lg">{subtitle}</div>}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {items.map((item, i) => (
+                <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 group">
+                    <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
+                        <Star className="w-7 h-7 text-blue-600 group-hover:text-white transition-colors" />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">{item.title}</h3>
+                    <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                </div>
+            ))}
+        </div>
+    </div>
+);

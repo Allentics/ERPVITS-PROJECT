@@ -1,5 +1,6 @@
 export const cpiContent = {
     heroHeading: "Master Cloud Integration Skills with Our SAP CPI Training",
+    badges: ["New Batch Starting Soon", "100% Job Oriented"],
     description: "The SAP CPI Training (Cloud Platform Integration) by ERPVITS enables professionals to master cloud integration, API management, and enterprise middleware technologies. As organizations increasingly adopt hybrid environments, the demand for certified SAP CPI experts who can connect cloud and on-premise systems, design integration flows, and enable real-time data exchange continues to rise. This comprehensive SAP CPI course combines instructor-led sessions, hands-on lab practice, and real-world integration projects to help developers, consultants, and cloud architects build the technical and practical skills required for global consulting and implementation careers.",
     metaTitle: "SAP CPI Training with Certification Support | ERPVITS",
     metaDescription: "Master Cloud Integration with SAP CPI Training. Learn cloud connectivity, API management and real-world projects through live sessions & expert training.",
