@@ -4,6 +4,7 @@ import Curriculum from '@/components/course/Curriculum';
 import FAQ from '@/components/course/FAQ';
 import ComparisonTable from '@/components/home/ComparisonTable';
 import SectionRenderer from '@/components/course/SectionRenderer';
+import CourseEnrollmentCTA from '@/components/course/CourseEnrollmentCTA';
 import { Metadata } from 'next';
 
 // Dynamic rendering only to avoid build OOM
@@ -90,9 +91,15 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                         {/* Hero Image / Form Placeholder */}
                         <div className="hidden lg:block relative text-gray-800">
                             <div className="bg-white rounded-2xl p-2 shadow-2xl skew-y-3 transform hover:skew-y-0 transition-transform duration-500">
-                                <div className="bg-gray-100 rounded-xl h-[400px] flex items-center justify-center border-2 border-dashed border-gray-300">
-                                    <span className="text-gray-400 font-bold">Course Preview Image</span>
-                                </div>
+                                {course.heroImage ? (
+                                    <div className="bg-gray-100 rounded-xl overflow-hidden shadow-2xl flex items-center justify-center border-2 border-gray-100">
+                                        <img src={course.heroImage} alt={`${course.title} Preview`} className="w-full h-auto object-contain" />
+                                    </div>
+                                ) : (
+                                    <div className="bg-gray-100 rounded-xl h-[400px] flex items-center justify-center border-2 border-dashed border-gray-300">
+                                        <span className="text-gray-400 font-bold">Course Preview Image</span>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     </div>
@@ -218,22 +225,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                 </div>
             </div>
 
-            <section id="enroll" className="py-20 bg-slate-900 text-center text-white mt-12">
-                <div className="max-w-3xl mx-auto px-4">
-                    <h2 className="text-3xl font-bold mb-6">Ready to Start Your Career?</h2>
-                    <p className="text-xl text-blue-200 mb-10">
-                        Join our upcoming batch and get 100% placement assistance.
-                    </p>
-                    <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="/contact" className="inline-block px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-lg shadow-lg transition-colors">
-                            Reserve Your Seat
-                        </a>
-                        <a href="tel:+918408878222" className="inline-block px-8 py-4 bg-transparent border border-white hover:bg-white/10 text-white font-bold rounded-lg transition-colors">
-                            Call for Details
-                        </a>
-                    </div>
-                </div>
-            </section>
+            <CourseEnrollmentCTA />
         </main>
     );
 }

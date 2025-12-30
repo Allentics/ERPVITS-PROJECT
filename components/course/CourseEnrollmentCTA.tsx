@@ -1,0 +1,35 @@
+"use client";
+
+import { useState } from 'react';
+import ContactModal from '@/components/ContactModal';
+
+export default function CourseEnrollmentCTA() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    return (
+        <section id="enroll" className="py-20 bg-slate-900 text-center text-white mt-12">
+            <ContactModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                title="Reserve Your Seat"
+            />
+            <div className="max-w-3xl mx-auto px-4">
+                <h2 className="text-3xl font-bold mb-6">Ready to Start Your Career?</h2>
+                <p className="text-xl text-blue-200 mb-10">
+                    Join our upcoming batch and get 100% placement assistance.
+                </p>
+                <div className="flex flex-col sm:flex-row justify-center gap-4">
+                    <button
+                        onClick={() => setIsModalOpen(true)}
+                        className="inline-block px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-lg shadow-lg transition-colors"
+                    >
+                        Reserve Your Seat
+                    </button>
+                    <a href="tel:+918408878222" className="inline-block px-8 py-4 bg-transparent border border-white hover:bg-white/10 text-white font-bold rounded-lg transition-colors">
+                        Call for Details
+                    </a>
+                </div>
+            </div>
+        </section>
+    );
+}

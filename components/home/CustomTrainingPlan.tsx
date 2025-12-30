@@ -1,6 +1,47 @@
+"use client";
+
 import { ClipboardList, Target, Award, Calendar } from 'lucide-react';
+import { useState } from 'react';
+import { supabase } from '@/lib/supabase';
 
 export default function CustomTrainingPlan() {
+    const [countryCode, setCountryCode] = useState('+91');
+    const [formData, setFormData] = useState({
+        fullName: '',
+        email: '',
+        phone: '',
+        background: ''
+    });
+    const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setStatus('loading');
+
+        try {
+            const { error } = await supabase
+                .from('contacts')
+                .insert([
+                    {
+                        first_name: formData.fullName.split(' ')[0],
+                        last_name: formData.fullName.split(' ').slice(1).join(' ') || '',
+                        name: formData.fullName,
+                        email: formData.email,
+                        phone: `${countryCode} ${formData.phone}`,
+                        course: 'Custom Training Plan Request',
+                        message: `Background: ${formData.background}`,
+                    }
+                ]);
+
+            if (error) throw error;
+            setStatus('success');
+            setFormData({ fullName: '', email: '', phone: '', background: '' });
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            setStatus('error');
+        }
+    };
+
     return (
         <section className="bg-blue-900 text-white py-20 relative overflow-hidden">
             {/* Decorative */}
@@ -34,36 +75,105 @@ export default function CustomTrainingPlan() {
                     </div>
 
                     <div className="bg-white p-8 rounded-2xl shadow-2xl text-gray-800">
-                        <h3 className="text-2xl font-bold mb-6 text-center text-blue-900">Request Your Custom Plan</h3>
-                        <form className="space-y-4">
-                            <div>
-                                <label className="block text-sm font-semibold mb-1">Full Name</label>
-                                <input type="text" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="John Doe" />
+                        {status === 'success' ? (
+                            <div className="text-center py-12">
+                                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <ClipboardList className="w-8 h-8 text-green-600" />
+                                </div>
+                                <h3 className="text-2xl font-bold text-gray-900 mb-2">Request Received!</h3>
+                                <p className="text-gray-600">Our team will analyze your profile and send your custom roadmap shortly.</p>
+                                <button
+                                    onClick={() => setStatus('idle')}
+                                    className="mt-6 text-orange-500 font-bold hover:underline"
+                                >
+                                    Submit another request
+                                </button>
                             </div>
-                            <div>
-                                <label className="block text-sm font-semibold mb-1">Email Address</label>
-                                <input type="email" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="john@example.com" />
-                            </div>
-                            <div>
-                                <label className="block text-sm font-semibold mb-1">Phone Number</label>
-                                <input type="tel" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="+91 98765 43210" />
-                            </div>
-                            <div>
-                                <label className="block text-sm font-semibold mb-1">Current Role / Background</label>
-                                <select className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent">
-                                    <option>Select your background...</option>
-                                    <option>Student / Fresher</option>
-                                    <option>Finance Professional</option>
-                                    <option>Supply Chain Professional</option>
-                                    <option>HR Professional</option>
-                                    <option>IT / Developer</option>
-                                    <option>Other</option>
-                                </select>
-                            </div>
-                            <button type="button" className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-lg shadow-lg hover:shadow-xl transition-all mt-4">
-                                Get My Free Career Roadmap
-                            </button>
-                        </form>
+                        ) : (
+                            <>
+                                <h3 className="text-2xl font-bold mb-6 text-center text-blue-900">Request Your Custom Plan</h3>
+                                <form className="space-y-4" onSubmit={handleSubmit}>
+                                    <div>
+                                        <label className="block text-sm font-semibold mb-1">Full Name</label>
+                                        <input
+                                            type="text"
+                                            required
+                                            value={formData.fullName}
+                                            onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                                            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                                            placeholder="John Doe"
+                                        />
+                                    </div>
+                                    <div>
+                                        <label className="block text-sm font-semibold mb-1">Email Address</label>
+                                        <input
+                                            type="email"
+                                            required
+                                            value={formData.email}
+                                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                                            placeholder="john@example.com"
+                                        />
+                                    </div>
+                                    <div>
+                                        <label className="block text-sm font-semibold mb-1">Phone Number</label>
+                                        <div className="flex gap-3">
+                                            <select
+                                                value={countryCode}
+                                                onChange={(e) => setCountryCode(e.target.value)}
+                                                className="w-[140px] px-3 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none bg-white text-gray-700"
+                                            >
+                                                <option value="+91">🇮🇳 +91</option>
+                                                <option value="+1">🇺🇸 +1</option>
+                                                <option value="+44">🇬🇧 +44</option>
+                                                <option value="+971">🇦🇪 +971</option>
+                                                <option value="+65">🇸🇬 +65</option>
+                                                <option value="+61">🇦🇺 +61</option>
+                                                <option value="+49">🇩🇪 +49</option>
+                                                <option value="+33">🇫🇷 +33</option>
+                                                <option value="+1">🇨🇦 +1</option>
+                                                <option value="">Other</option>
+                                            </select>
+                                            <input
+                                                type="tel"
+                                                required
+                                                value={formData.phone}
+                                                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                                                className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none"
+                                                placeholder="98765 43210"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label className="block text-sm font-semibold mb-1">Current Role / Background</label>
+                                        <select
+                                            required
+                                            value={formData.background}
+                                            onChange={(e) => setFormData({ ...formData, background: e.target.value })}
+                                            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                                        >
+                                            <option value="">Select your background...</option>
+                                            <option value="Student / Fresher">Student / Fresher</option>
+                                            <option value="Finance Professional">Finance Professional</option>
+                                            <option value="Supply Chain Professional">Supply Chain Professional</option>
+                                            <option value="HR Professional">HR Professional</option>
+                                            <option value="IT / Developer">IT / Developer</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                    <button
+                                        type="submit"
+                                        disabled={status === 'loading'}
+                                        className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-lg shadow-lg hover:shadow-xl transition-all mt-4 disabled:bg-orange-300"
+                                    >
+                                        {status === 'loading' ? 'Submitting...' : 'Get My Free Career Roadmap'}
+                                    </button>
+                                    {status === 'error' && (
+                                        <p className="text-red-500 text-sm text-center">Something went wrong. Please try again.</p>
+                                    )}
+                                </form>
+                            </>
+                        )}
                     </div>
                 </div>
             </div>

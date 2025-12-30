@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import ContactModal from '../ContactModal';
 
 export default function UrgencySection() {
     const [timeLeft, setTimeLeft] = useState({ days: 2, hours: 14, minutes: 22, seconds: 0 });
+    const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -20,6 +22,11 @@ export default function UrgencySection() {
 
     return (
         <section className="bg-orange-50 py-10 border-b border-orange-100">
+            <ContactModal
+                isOpen={isContactModalOpen}
+                onClose={() => setIsContactModalOpen(false)}
+                title="Reserve Your SAP Training Spot"
+            />
             <div className="max-w-4xl mx-auto px-4 text-center">
                 <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 flex items-center justify-center">
                     <span className="mr-2">⏱️</span> NEXT SAP BATCH STARTS IN:
@@ -63,12 +70,18 @@ export default function UrgencySection() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="/contact" className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-md font-bold shadow-md animate-pulse">
+                    <button
+                        onClick={() => setIsContactModalOpen(true)}
+                        className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-md font-bold shadow-md animate-pulse"
+                    >
                         🎯 RESERVE YOUR SEAT NOW - ONLY 5 SPOTS LEFT
-                    </a>
-                    <a href="/contact" className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-md font-bold shadow-md">
+                    </button>
+                    <button
+                        onClick={() => setIsContactModalOpen(true)}
+                        className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-md font-bold shadow-md"
+                    >
                         💳 SECURE SPOT WITH 60% Fees
-                    </a>
+                    </button>
                 </div>
 
                 <div className="mt-8 text-sm text-gray-600">

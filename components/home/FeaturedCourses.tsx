@@ -3,14 +3,29 @@
 import Link from 'next/link';
 import { courses } from '@/lib/courseData';
 import { Clock, IndianRupee, ArrowRight } from 'lucide-react';
+import { useState } from 'react';
+import ContactModal from '../ContactModal';
 
 export default function FeaturedCourses() {
-    // Select the 6 featured courses: Ariba, FICO, MM, TRM, BTP, SAC
-    const featuredIds = ['ariba', 'fico', 'mm', 'trm', 'btp', 'analytics-cloud'];
+    // Select the 6 featured courses: Ariba, FICO, MM, TRM, SD, Fieldglass
+    const featuredIds = ['ariba', 'fico', 'mm', 'trm', 'sd', 'fieldglass'];
     const featuredCourses = featuredIds.map(id => courses.find(c => c.id === id)).filter(Boolean);
+
+    const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+    const [modalTitle, setModalTitle] = useState("Get Started with SAP");
+
+    const openModal = (title: string) => {
+        setModalTitle(title);
+        setIsContactModalOpen(true);
+    };
 
     return (
         <section className="py-20 bg-gray-50">
+            <ContactModal
+                isOpen={isContactModalOpen}
+                onClose={() => setIsContactModalOpen(false)}
+                title={modalTitle}
+            />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl font-bold text-gray-900 mb-4">Master In-Demand SAP Online Training Courses</h2>
@@ -53,7 +68,10 @@ export default function FeaturedCourses() {
                                     >
                                         Learn More <ArrowRight className="ml-2 h-4 w-4" />
                                     </Link>
-                                    <button className="w-full px-4 py-3 bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 hover:text-orange-600 font-medium rounded-lg transition-colors text-sm">
+                                    <button
+                                        onClick={() => openModal(`Fee Offers for ${course.title}`)}
+                                        className="w-full px-4 py-3 bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 hover:text-orange-600 font-medium rounded-lg transition-colors text-sm"
+                                    >
                                         View Current Fee Offers
                                     </button>
                                 </div>
@@ -64,11 +82,14 @@ export default function FeaturedCourses() {
 
                 <div className="mt-16 flex justify-center gap-6">
                     <Link href="/all-courses" className="text-blue-600 font-bold hover:text-blue-800 underline decoration-2 underline-offset-4">
-                        [VIEW ALL 15 COURSES]
+                        [VIEW ALL COURSES]
                     </Link>
-                    <Link href="/contact" className="text-orange-600 font-bold hover:text-orange-800 underline decoration-2 underline-offset-4">
+                    <button
+                        onClick={() => openModal("Course Consultation")}
+                        className="text-orange-600 font-bold hover:text-orange-800 underline decoration-2 underline-offset-4"
+                    >
                         [CONSULT US TO FIND YOUR PERFECT SAP COURSE]
-                    </Link>
+                    </button>
                 </div>
             </div>
         </section>

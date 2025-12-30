@@ -1,5 +1,9 @@
+"use client";
+
 import { Check } from 'lucide-react';
 import Link from 'next/link';
+import { useState } from 'react';
+import ContactModal from '../ContactModal';
 
 const plans = [
     {
@@ -10,7 +14,10 @@ const plans = [
             "Lifetime access to recordings",
             "Learning materials included",
             "Self-study assistance",
-            "Flexible learning timeline"
+            "Flexible learning timeline",
+            "Certification guidance provided",
+            "24/7 Portal Access",
+            "Resume preparation tips"
         ],
         cta: "Start Learning Now",
         color: "blue",
@@ -39,7 +46,8 @@ const plans = [
             "Tailored curriculum for team needs",
             "Dedicated trainer for your organization",
             "Team coordination & project alignment",
-            "Flexible training schedule"
+            "Flexible training schedule",
+            "Post-training support & reports"
         ],
         cta: "Request Corporate Quote",
         color: "gray",
@@ -48,8 +56,21 @@ const plans = [
 ];
 
 export default function PricingPlans() {
+    const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+    const [modalTitle, setModalTitle] = useState("Get Started with SAP");
+
+    const openModal = (planName: string) => {
+        setModalTitle(`Inquire about ${planName}`);
+        setIsContactModalOpen(true);
+    };
+
     return (
         <section className="py-20 bg-gray-50">
+            <ContactModal
+                isOpen={isContactModalOpen}
+                onClose={() => setIsContactModalOpen(false)}
+                title={modalTitle}
+            />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl font-bold text-gray-900 mb-4">Affordable SAP Training – Flexible Pricing</h2>
@@ -79,12 +100,12 @@ export default function PricingPlans() {
                                 ))}
                             </ul>
 
-                            <Link
-                                href="/contact"
+                            <button
+                                onClick={() => openModal(plan.name)}
                                 className={`block w-full text-center py-4 rounded-lg font-bold transition-colors ${plan.popular ? 'bg-orange-500 hover:bg-orange-600 text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-900'}`}
                             >
                                 {plan.cta}
-                            </Link>
+                            </button>
                         </div>
                     ))}
                 </div>

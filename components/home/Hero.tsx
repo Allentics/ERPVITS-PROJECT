@@ -1,12 +1,21 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import ContactModal from '../ContactModal';
 
 const Hero = () => {
+    const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
     return (
         <div className="bg-blue-900 text-white relative overflow-hidden">
+            <ContactModal
+                isOpen={isContactModalOpen}
+                onClose={() => setIsContactModalOpen(false)}
+                title="Start Your SAP Journey"
+            />
+
             {/* Background Elements */}
             <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
             <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-800/20 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2"></div>
@@ -45,12 +54,12 @@ const Hero = () => {
                     transition={{ delay: 0.3 }}
                     className="flex flex-col sm:flex-row justify-center gap-4 mb-16"
                 >
-                    <Link
-                        href="/contact"
+                    <button
+                        onClick={() => setIsContactModalOpen(true)}
                         className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-md font-bold text-lg shadow-lg hover:shadow-orange-500/40 transition-all transform hover:-translate-y-1"
                     >
                         Start Your SAP Training Journey Today
-                    </Link>
+                    </button>
                     <Link
                         href="/all-courses"
                         className="bg-transparent border-2 border-white/20 hover:bg-white/10 text-white px-8 py-4 rounded-md font-bold text-lg transition-all"
@@ -70,13 +79,13 @@ const Hero = () => {
                         { val: "12+ Years", label: "In SAP Industry" },
                         { val: "6000+", label: "Professionals Trained" },
                         { val: "24/7", label: "Team Support" },
-                        { val: "8+", label: "SAP Solution Arthitects" }
+                        { val: "8+", label: "SAP Solution Architects" }
                     ].map((stat, i) => (
-                        <div key={i} className="text-center">
-                            <div className="flex items-center justify-center text-green-400 font-bold mb-1">
-                                <span className="mr-1">✅</span> {stat.val}
+                        <div key={i} className="text-center border border-white/10 bg-white/5 rounded-lg p-6 hover:bg-white/10 transition-colors cursor-default">
+                            <div className="flex items-center justify-center text-green-400 font-bold mb-2 text-xl">
+                                <span className="mr-2">✅</span> {stat.val}
                             </div>
-                            <div className="text-blue-200 text-sm">{stat.label}</div>
+                            <div className="text-blue-100 font-medium">{stat.label}</div>
                         </div>
                     ))}
                 </motion.div>

@@ -1,6 +1,10 @@
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+'use client';
+
+import { Phone, Mail, MapPin } from 'lucide-react';
+import ContactForm from '@/components/ContactForm';
 
 export default function ContactPage() {
+
     return (
         <div className="bg-white min-h-screen">
             {/* Header */}
@@ -64,50 +68,7 @@ export default function ContactPage() {
                     {/* Form */}
                     <div className="bg-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100">
                         <h2 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h2>
-                        <form className="space-y-6">
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">First Name</label>
-                                    <input type="text" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors" placeholder="John" />
-                                </div>
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
-                                    <input type="text" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors" placeholder="Doe" />
-                                </div>
-                            </div>
-
-                            <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                                <input type="email" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors" placeholder="john@example.com" />
-                            </div>
-
-                            <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-                                <input type="tel" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors" placeholder="+91 99999 99999" />
-                            </div>
-
-                            <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-1">Interested Course</label>
-                                <select className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors">
-                                    <option>Select a course...</option>
-                                    <option>SAP Ariba</option>
-                                    <option>SAP MM</option>
-                                    <option>SAP FICO</option>
-                                    <option>Other / Not Sure</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                                <textarea rows={4} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors" placeholder="I'm looking for..."></textarea>
-                            </div>
-
-                            <button type="submit" className="w-full flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors shadow-lg">
-                                Send Message
-                                <Send className="ml-2 h-5 w-5" />
-                            </button>
-                            <p className="text-xs text-center text-gray-500 mt-4">By submitting this form, you agree to our privacy policy.</p>
-                        </form>
+                        <ContactForm />
                     </div>
 
                 </div>
@@ -115,3 +76,4 @@ export default function ContactPage() {
         </div>
     );
 }
+
