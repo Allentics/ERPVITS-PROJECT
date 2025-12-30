@@ -13,10 +13,12 @@ export default function CustomTrainingPlan() {
         background: ''
     });
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setStatus('loading');
+        setErrorMessage('');
 
         try {
             const { error } = await supabase
@@ -36,9 +38,10 @@ export default function CustomTrainingPlan() {
             if (error) throw error;
             setStatus('success');
             setFormData({ fullName: '', email: '', phone: '', background: '' });
-        } catch (error) {
+        } catch (error: any) {
             console.error('Error submitting form:', error);
             setStatus('error');
+            setErrorMessage(error?.message || error?.error_description || JSON.stringify(error) || 'Unknown error occurred');
         }
     };
 
@@ -169,7 +172,10 @@ export default function CustomTrainingPlan() {
                                         {status === 'loading' ? 'Submitting...' : 'Get My Free Career Roadmap'}
                                     </button>
                                     {status === 'error' && (
-                                        <p className="text-red-500 text-sm text-center">Something went wrong. Please try again.</p>
+                                        <div className="bg-red-50 border border-red-200 rounded p-4 mt-4">
+                                            <p className="text-red-700 font-bold mb-1">Submission Failed</p>
+                                            <p className="text-red-600 text-sm">{errorMessage}</p>
+                                        </div>
                                     )}
                                 </form>
                             </>
