@@ -131,7 +131,7 @@ export default function AdminLayout({
                             <Menu size={20} />
                         </button>
                         <h1 className="text-lg font-semibold text-gray-800 ml-2 md:ml-0">
-                            {sidebarItems.find(item => pathname.startsWith(item.href))?.name || 'Admin Panel'}
+                            {sidebarItems.find((item: any) => pathname.startsWith(item.href))?.name || 'Admin Panel'}
                         </h1>
                     </div>
 

@@ -31,7 +31,7 @@ export default function ContentManagerPage() {
 
             let filteredData = data || [];
             if (pageFilter) {
-                filteredData = filteredData.filter(c => c.page_path === pageFilter);
+                filteredData = filteredData.filter((c: any) => c.page_path === pageFilter);
             }
 
             setContents(filteredData);
@@ -132,7 +132,7 @@ export default function ContentManagerPage() {
                                 <textarea
                                     className="w-full h-[500px] p-4 font-mono text-sm bg-gray-900 text-blue-300 rounded-xl outline-none border-2 border-transparent focus:border-blue-500/50 transition-all shadow-inner"
                                     value={JSON.stringify(selectedItem.content, null, 2)}
-                                    onChange={(e) => handleJsonChange(selectedItem.id, e.target.value)}
+                                    onChange={(e: any) => handleJsonChange(selectedItem.id, e.target.value)}
                                     spellCheck={false}
                                 />
                             </div>
