@@ -35,7 +35,7 @@ export default function SettingsPage() {
     }
 
     const handleChange = (key: string, value: string) => {
-        setSettings(prev => prev.map(s => s.key === key ? { ...s, value } : s));
+        setSettings(prev => prev.map((s: any) => s.key === key ? { ...s, value } : s));
     };
 
     const handleSave = async (setting: any) => {
@@ -119,7 +119,7 @@ export default function SettingsPage() {
                         type="text"
                         placeholder="Key (e.g. site_notice)"
                         value={newKey}
-                        onChange={(e) => setNewKey(e.target.value)}
+                        onChange={(e: any) => setNewKey(e.target.value)}
                         className="bg-white border border-blue-200 rounded-lg px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-500"
                         required
                     />
@@ -127,7 +127,7 @@ export default function SettingsPage() {
                         type="text"
                         placeholder="Value"
                         value={newValue}
-                        onChange={(e) => setNewValue(e.target.value)}
+                        onChange={(e: any) => setNewValue(e.target.value)}
                         className="bg-white border border-blue-200 rounded-lg px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-500"
                     />
                     <button
@@ -141,7 +141,7 @@ export default function SettingsPage() {
             </form>
 
             <div className="grid grid-cols-1 gap-6">
-                {settings.map((setting) => (
+                {settings.map((setting: any) => (
                     <div key={setting.key} className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col md:flex-row md:items-center gap-4">
                         <div className="flex-1 space-y-1">
                             <label className="text-xs font-bold text-gray-400 uppercase tracking-wider">{setting.key.replace(/_/g, ' ')}</label>
@@ -155,7 +155,7 @@ export default function SettingsPage() {
                                 <input
                                     type="text"
                                     value={setting.value || ''}
-                                    onChange={(e) => handleChange(setting.key, e.target.value)}
+                                    onChange={(e: any) => handleChange(setting.key, e.target.value)}
                                     className="flex-1 bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-blue-500/20 transition-all font-medium text-slate-900"
                                 />
                             </div>

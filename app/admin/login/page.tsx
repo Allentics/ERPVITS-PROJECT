@@ -94,7 +94,7 @@ export default function LoginPage() {
                                     className="appearance-none block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                                     placeholder="admin@erpvits.com"
                                     value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
+                                    onChange={(e: any) => setEmail(e.target.value)}
                                 />
                             </div>
                         </div>
@@ -116,7 +116,7 @@ export default function LoginPage() {
                                     className="appearance-none block w-full pl-10 pr-10 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                                     placeholder="••••••••"
                                     value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
+                                    onChange={(e: any) => setPassword(e.target.value)}
                                 />
                                 <button
                                     type="button"

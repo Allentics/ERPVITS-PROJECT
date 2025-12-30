@@ -46,7 +46,7 @@ export default function ContentManagerPage() {
     const handleJsonChange = (id: string, value: string) => {
         try {
             const parsed = JSON.parse(value);
-            setContents(prev => prev.map(c => c.id === id ? { ...c, content: parsed } : c));
+            setContents(prev => prev.map((c: any) => c.id === id ? { ...c, content: parsed } : c));
         } catch (e) {
             // Invalid JSON, don't update state yet or handle error
         }
@@ -78,7 +78,7 @@ export default function ContentManagerPage() {
         );
     }
 
-    const selectedItem = contents.find(c => c.id === selectedId);
+    const selectedItem = contents.find((c: any) => c.id === selectedId);
 
     return (
         <div className="max-w-6xl mx-auto space-y-6">
@@ -92,7 +92,7 @@ export default function ContentManagerPage() {
                 <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
                     <div className="p-4 bg-gray-50 border-b font-bold text-sm text-gray-700">Sections</div>
                     <div className="divide-y divide-gray-100">
-                        {contents.map((item) => (
+                        {contents.map((item: any) => (
                             <button
                                 key={item.id}
                                 onClick={() => setSelectedId(item.id)}
