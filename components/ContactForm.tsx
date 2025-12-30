@@ -186,7 +186,7 @@ export default function ContactForm({ className = "", showLabels = true, success
                     value={formData.course}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors bg-white text-gray-900"
                 >
                     <option value="">Select a course...</option>
                     {courses.map((course) => (
