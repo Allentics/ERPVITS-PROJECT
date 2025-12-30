@@ -1,11 +1,11 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { supabase } from '@/lib/supabase';
 import { Save, Loader2, Layout, FileText, ChevronRight } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
 
-export default function ContentManagerPage() {
+function ContentManagerContent() {
     const searchParams = useSearchParams();
     const pageFilter = searchParams.get('page');
 
@@ -146,5 +146,18 @@ export default function ContentManagerPage() {
                 </div>
             </div>
         </div>
+    );
+}
+
+export default function ContentManagerPage() {
+    return (
+        <Suspense fallback={
+            <div className="flex flex-col items-center justify-center py-20">
+                <Loader2 className="animate-spin text-blue-600 mb-2" size={32} />
+                <p className="text-gray-500 text-sm">Loading...</p>
+            </div>
+        }>
+            <ContentManagerContent />
+        </Suspense>
     );
 }
