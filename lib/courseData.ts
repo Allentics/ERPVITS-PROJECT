@@ -563,6 +563,8 @@ export const courses: Course[] = [
     ],
     "faqs": [],
     "inFaqSection": false,
+    "duration": "30-35 hours",
+    "price": "45,000/- INR",
     "category": "Technical"
   },
   {
