@@ -72,7 +72,7 @@ export default function UrgencySection() {
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
                     <button
                         onClick={() => setIsContactModalOpen(true)}
-                        className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-md font-bold shadow-md animate-pulse"
+                        className="bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-md font-bold shadow-md animate-pulse"
                     >
                         🎯 RESERVE YOUR SEAT NOW - ONLY 5 SPOTS LEFT
                     </button>

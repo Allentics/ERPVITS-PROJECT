@@ -80,7 +80,7 @@ const Footer = () => {
                                 </li>
                             ))}
                             <li>
-                                <Link href="/all-courses" className="text-blue-400 hover:text-blue-300 text-sm font-medium">
+                                <Link href="/all-courses" className="text-orange-400 hover:text-orange-300 text-sm font-medium">
                                     View All Courses &rarr;
                                 </Link>
                             </li>
@@ -104,15 +104,15 @@ const Footer = () => {
                         <h3 className="text-white font-semibold mb-4 text-lg">Contact Us</h3>
                         <ul className="space-y-4 text-sm">
                             <li className="flex items-start">
-                                <MapPin className="h-5 w-5 mr-3 text-blue-500 flex-shrink-0" />
+                                <MapPin className="h-5 w-5 mr-3 text-orange-500 flex-shrink-0" />
                                 <span>{settings.site_address}</span>
                             </li>
                             <li className="flex items-center">
-                                <Phone className="h-5 w-5 mr-3 text-blue-500 flex-shrink-0" />
+                                <Phone className="h-5 w-5 mr-3 text-orange-500 flex-shrink-0" />
                                 <a href={`tel:${settings.site_phone.replace(/\s+/g, '')}`} className="hover:text-white">{settings.site_phone}</a>
                             </li>
                             <li className="flex items-center">
-                                <Mail className="h-5 w-5 mr-3 text-blue-500 flex-shrink-0" />
+                                <Mail className="h-5 w-5 mr-3 text-orange-500 flex-shrink-0" />
                                 <a href={`mailto:${settings.site_email}`} className="hover:text-white">{settings.site_email}</a>
                             </li>
                         </ul>

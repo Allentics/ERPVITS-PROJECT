@@ -46,7 +46,7 @@ export default function CustomTrainingPlan() {
     };
 
     return (
-        <section className="bg-blue-900 text-white py-20 relative overflow-hidden">
+        <section className="bg-slate-900 text-white py-20 relative overflow-hidden">
             {/* Decorative */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
 
@@ -56,7 +56,7 @@ export default function CustomTrainingPlan() {
                         <h2 className="text-3xl md:text-4xl font-bold mb-6">
                             Get Your Personalized <span className="text-orange-400">SAP Training Plan</span> – It's FREE!
                         </h2>
-                        <p className="text-blue-200 text-lg mb-8 leading-relaxed">
+                        <p className="text-slate-300 text-lg mb-8 leading-relaxed">
                             Every professional's journey to proficiency in SAP is unique. We will design a personalized training program just for you based on your background, career objectives, and timeline.
                         </p>
 
@@ -68,7 +68,7 @@ export default function CustomTrainingPlan() {
                                 { icon: Calendar, text: "Flexible scheduling options to fit your life" }
                             ].map((item, i) => (
                                 <div key={i} className="flex items-center">
-                                    <div className="w-10 h-10 rounded-full bg-blue-800 flex items-center justify-center mr-4">
+                                    <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center mr-4">
                                         <item.icon className="h-5 w-5 text-orange-400" />
                                     </div>
                                     <span className="font-medium text-lg">{item.text}</span>
@@ -94,7 +94,7 @@ export default function CustomTrainingPlan() {
                             </div>
                         ) : (
                             <>
-                                <h3 className="text-2xl font-bold mb-6 text-center text-blue-900">Request Your Custom Plan</h3>
+                                <h3 className="text-2xl font-bold mb-6 text-center text-slate-900">Request Your Custom Plan</h3>
                                 <form className="space-y-4" onSubmit={handleSubmit}>
                                     <div>
                                         <label className="block text-sm font-semibold mb-1">Full Name</label>

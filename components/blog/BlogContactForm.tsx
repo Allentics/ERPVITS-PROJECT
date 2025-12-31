@@ -69,7 +69,7 @@ export default function BlogContactForm({ slug }: BlogContactFormProps) {
 
     return (
         <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 sticky top-24">
-            <h3 className="text-2xl font-bold text-blue-900 mb-2">Request More Info</h3>
+            <h3 className="text-2xl font-bold text-slate-900 mb-2">Request More Info</h3>
             <p className="text-gray-600 mb-8">Get expert guidance on your SAP career path.</p>
 
             {status === 'success' ? (

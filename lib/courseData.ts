@@ -17,6 +17,43 @@ export interface CurriculumModule {
   topics: string[];
 }
 
+export const defaultFaqs: FAQ[] = [
+  { question: "Do you provide certification support?", answer: "Yes, we provide complete guidance for SAP certification, including practice tests, study materials, and exam booking assistance. Our curriculum is 100% aligned with the latest SAP certification exam blueprints." },
+  { question: "Are the classes live or recorded?", answer: "All our sessions are live instructor-led online classes. We also provide recordings of every session for your lifetime reference so you can review the concepts anytime." },
+  { question: "Do you offer placement assistance?", answer: "Yes, we have a dedicated placement cell that helps with resume building, mock interviews, and connecting you with our 200+ hiring partners across the globe." },
+  { question: "What are the prerequisites for these courses?", answer: "Prerequisites vary by module, but generally, a basic understanding of business processes or IT fundamentals is helpful. We provide foundational sessions for beginners to get them up to speed." },
+  { question: "Is there a group discount available?", answer: "Yes, we offer attractive discounts for group enrollments (3 or more candidates). Please contact our support team for a personalized quote." }
+];
+
+export function getDefaultDetailedFeatures(courseTitle: string) {
+  return [
+    {
+      title: "Certified Industry Experts",
+      description: `Learn ${courseTitle} from instructors with 12+ years of global project experience. Our trainers are SAP certified professionals who bring real-world business scenarios directly to the virtual classroom.`
+    },
+    {
+      title: "100% Hands-On Approach",
+      description: `Master ${courseTitle} through extensive practical sessions. We provide 24/7 server access and guided lab exercises that simulate real implementation projects, ensuring you gain confidence in system configuration.`
+    },
+    {
+      title: "Job-Oriented Curriculum",
+      description: `Our ${courseTitle} training is designed around current market demands. We cover the entire lifecycle — from foundational concepts to advanced configurations — preparing you for global consulting roles.`
+    },
+    {
+      title: "Interactive Live Learning",
+      description: `Experience high-impact, live instructor-led sessions for ${courseTitle}. Get your doubts cleared in real-time, participate in interactive Q&As, and benefit from personalized mentorship throughout the program.`
+    },
+    {
+      title: "Small Batch Priority",
+      description: `We limit our ${courseTitle} batches to 8-10 students to ensure individual attention. This focused environment allows our experts to monitor your progress and provide custom feedback on your learning journey.`
+    },
+    {
+      title: "Placement & Career Success",
+      description: `Our committed career support team helps you build a high-impact profile for ${courseTitle}. We provide resume optimization, conduct mock technical interviews, and connect you with leading global hiring partners.`
+    }
+  ];
+}
+
 export interface Testimonial {
   name: string;
   role: string;
@@ -57,7 +94,7 @@ export interface Course {
 
 export const courses: Course[] = [
   {
-    "id": "ariba",
+    "id": "sap-ariba",
     "title": "SAP Ariba",
     "heroHeading": aribaContent.heroHeading,
     "badges": aribaContent.badges,
@@ -82,7 +119,7 @@ export const courses: Course[] = [
     "schema": aribaContent.schema
   },
   {
-    "id": "fieldglass",
+    "id": "sap-fieldglass",
     "title": "SAP Fieldglass",
     "heroHeading": fieldglassContent.heroHeading,
     "badges": fieldglassContent.badges,
@@ -109,7 +146,7 @@ export const courses: Course[] = [
 
 
   {
-    "id": "mm",
+    "id": "sap-mm",
     "title": "SAP S/4HANA MM",
     "heroHeading": mmContent.heroHeading,
     "badges": mmContent.badges,

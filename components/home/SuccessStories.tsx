@@ -88,7 +88,7 @@ export default function SuccessStories() {
                                 <div>
                                     <h3 className="font-bold text-gray-900">{story.name}</h3>
                                     <p className="text-xs text-gray-500 font-medium uppercase tracking-wide">{story.role}</p>
-                                    <p className="text-xs text-blue-600 font-semibold">{story.company}</p>
+                                    <p className="text-xs text-orange-600 font-semibold">{story.company}</p>
                                 </div>
                             </div>
 
@@ -110,7 +110,7 @@ export default function SuccessStories() {
                             <div className="border-t border-gray-100 pt-4 flex justify-between items-center">
                                 <span className="text-xs text-gray-400 font-medium">{story.course}</span>
                                 {i === 0 && (
-                                    <button className="text-blue-600 text-xs font-bold flex items-center hover:underline">
+                                    <button className="text-orange-600 text-xs font-bold flex items-center hover:underline">
                                         <PlayCircle className="w-4 h-4 mr-1" /> Watch Video
                                     </button>
                                 )}

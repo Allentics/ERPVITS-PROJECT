@@ -9,21 +9,21 @@ export default function CareerServices() {
     ];
 
     return (
-        <section className="py-20 bg-blue-900 text-white">
+        <section className="py-20 bg-slate-900 text-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl font-bold mb-4">Career Transformation Guaranteed</h2>
-                    <p className="text-blue-200 text-lg">Comprehensive career services to ensure your success in landing your dream SAP role</p>
+                    <p className="text-slate-300 text-lg">Comprehensive career services to ensure your success in landing your dream SAP role</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {services.map((s, i) => (
-                        <div key={i} className="bg-blue-800/50 p-6 rounded-xl border border-blue-700 hover:bg-blue-800 transition-colors">
+                        <div key={i} className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:bg-slate-800 transition-colors">
                             <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-6">
                                 <s.icon className="h-6 w-6 text-white" />
                             </div>
                             <h3 className="font-bold text-lg mb-3">{s.title}</h3>
-                            <p className="text-blue-200 text-sm leading-relaxed">{s.desc}</p>
+                            <p className="text-slate-300 text-sm leading-relaxed">{s.desc}</p>
                         </div>
                     ))}
                 </div>

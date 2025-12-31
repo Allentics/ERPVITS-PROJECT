@@ -59,12 +59,23 @@ export default function AllCoursesPage() {
                                 key={course.id}
                                 className="bg-white rounded-xl shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100 overflow-hidden flex flex-col group"
                             >
-                                <div className="h-48 bg-gradient-to-br from-slate-900 to-slate-800 flex items-center justify-center p-6 text-center relative overflow-hidden">
-                                    <div className="absolute inset-0 bg-blue-600 opacity-0 group-hover:opacity-10 transition-opacity"></div>
-                                    <h3 className="text-xl font-bold text-white relative z-10">{course.title}</h3>
-                                    <div className="absolute top-4 right-4 bg-white/10 backdrop-blur-sm px-2 py-1 rounded text-xs text-white font-medium border border-white/20">
+                                <div className="h-48 relative overflow-hidden">
+                                    {course.heroImage ? (
+                                        <img
+                                            src={course.heroImage}
+                                            alt={course.title}
+                                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                        />
+                                    ) : (
+                                        <div className="w-full h-full bg-slate-900 flex items-center justify-center p-6 text-center">
+                                            <h3 className="text-xl font-bold text-white relative z-10">{course.title}</h3>
+                                        </div>
+                                    )}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                                    <div className="absolute top-4 right-4 bg-orange-500 text-white px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider shadow-lg">
                                         {course.category}
                                     </div>
+                                    <h3 className="absolute bottom-4 left-4 text-xl font-bold text-white truncate right-4">{course.title}</h3>
                                 </div>
 
                                 <div className="p-6 flex-1 flex flex-col">

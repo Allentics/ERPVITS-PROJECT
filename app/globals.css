@@ -26,10 +26,12 @@ body {
 }
 
 /* Blog Content Styles */
+/* Blog Content Styles */
 .blog-content h2 {
   font-size: 1.75rem;
   font-weight: 700;
-  color: #1e3a8a;
+  color: #1e293b;
+  /* slate-800 */
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
@@ -37,30 +39,117 @@ body {
 .blog-content h3 {
   font-size: 1.375rem;
   font-weight: 600;
-  color: #1e40af;
+  color: #334155;
+  /* slate-700 */
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
 }
 
 .blog-content p {
-  color: #374151;
-  line-height: 1.75;
-  margin-bottom: 1rem;
+  color: #334155;
+  /* slate-700 - slightly darker for better contrast */
+  font-size: 1.1rem;
+  /* slightly larger text */
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
 }
 
-.blog-content ul {
-  list-style-type: disc;
+.blog-content ul,
+.blog-content ol {
   margin-left: 1.5rem;
-  margin-bottom: 1rem;
-  color: #374151;
+  margin-bottom: 1.5rem;
+  color: #334155;
 }
 
 .blog-content li {
-  margin-bottom: 0.5rem;
-  line-height: 1.75;
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+  padding-left: 0.5rem;
+}
+
+.blog-content blockquote {
+  border-left: 4px solid #f97316;
+  /* orange-500 */
+  padding-left: 1.5rem;
+  font-style: italic;
+  color: #475569;
+  /* slate-600 */
+  margin: 2rem 0;
+  background-color: #f8fafc;
+  /* slate-50 */
+  padding: 1.5rem;
+  border-radius: 0 0.5rem 0.5rem 0;
 }
 
 .blog-content strong {
   font-weight: 600;
   color: #111827;
+}
+
+/* Hide ALL SVG elements in blog content (social icons) */
+.blog-content svg,
+.blog-content svg * {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Hide social media images by alt text */
+.blog-content img[alt*="linkedin" i],
+.blog-content img[alt*="whatsapp" i],
+.blog-content img[alt*="youtube" i],
+.blog-content img[alt*="facebook" i],
+.blog-content img[alt*="twitter" i],
+.blog-content img[alt*="instagram" i],
+.blog-content img[alt*="share" i] {
+  display: none !important;
+}
+
+/* Hide social media images by src */
+.blog-content img[src*="facebook"],
+.blog-content img[src*="twitter"],
+.blog-content img[src*="linkedin"],
+.blog-content img[src*="whatsapp"],
+.blog-content img[src*="youtube"],
+.blog-content img[src*="instagram"],
+.blog-content img[src*="icon"],
+.blog-content img[src*="social"] {
+  display: none !important;
+}
+
+/* Hide code fragments and JSX that shouldn't be in blog content */
+.blog-content p:empty,
+.blog-content div:empty {
+  display: none !important;
+}
+
+/* Hide ALL SVG elements in blog content */
+.blog-content svg {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+}
+
+/* Hide elements with JSX className attribute */
+.blog-content [className] {
+  display: none !important;
+}
+
+/* Hide anchor tags that look like social share buttons */
+.blog-content a[target="_blank"][rel*="noopener"] {
+  display: none !important;
+}
+
+/* Hide divs containing only code artifacts */
+.blog-content div:has(svg),
+.blog-content div:has([viewBox]) {
+  display: none !important;
+}
+
+/* Hide share section and code-like content */
+.blog-content *:has(~ svg) {
+  display: none !important;
 }

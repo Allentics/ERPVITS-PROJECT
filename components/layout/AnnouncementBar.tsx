@@ -22,20 +22,11 @@ export default function AnnouncementBar() {
     if (!isVisible) return null;
 
     return (
-        <div className="bg-yellow-400 text-black text-sm py-2 px-4 relative z-50">
-            <div className="max-w-7xl mx-auto flex justify-center items-center text-center pr-8">
-                <span className="font-bold mr-2">🎉 LIMITED TIME:</span>
-                <span className="hidden sm:inline">Early Bird Special - Save 10% (Only 48 Hours Left!) - </span>
-                <span className="font-mono font-bold bg-black text-white px-2 py-0.5 rounded ml-2">
-                    {String(timeLeft.hours).padStart(2, '0')}:{String(timeLeft.minutes).padStart(2, '0')}:{String(timeLeft.seconds).padStart(2, '0')}
-                </span>
+        <div className="bg-[#fbc02d] text-black text-[13px] py-1.5 px-4 relative z-50 border-b border-black/5">
+            <div className="max-w-7xl mx-auto flex justify-center items-center text-center">
+                <span className="font-extrabold mr-2">🔥 EARLY BIRD SPECIAL:</span>
+                <span className="font-bold">Save 10% on all SAP Online Courses! (Limited Slots)</span>
             </div>
-            <button
-                onClick={() => setIsVisible(false)}
-                className="absolute right-4 top-1/2 -translate-y-1/2 p-1 hover:bg-black/10 rounded-full"
-            >
-                <X className="h-4 w-4" />
-            </button>
         </div>
     );
 }

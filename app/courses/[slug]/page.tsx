@@ -3,27 +3,23 @@ import { notFound } from 'next/navigation';
 import Curriculum from '@/components/course/Curriculum';
 import FAQ from '@/components/course/FAQ';
 import ComparisonTable from '@/components/home/ComparisonTable';
-import SectionRenderer from '@/components/course/SectionRenderer';
+import SectionRenderer, { DetailedFeatures } from '@/components/course/SectionRenderer';
 import CourseEnrollmentCTA from '@/components/course/CourseEnrollmentCTA';
+import ContactForm from '@/components/ContactForm';
 import { Metadata } from 'next';
+import { courses, defaultFaqs, getDefaultDetailedFeatures, Section } from '@/lib/courseData';
 
 // Dynamic rendering only to avoid build OOM
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const { slug } = await params;
-
-    const { data: course } = await supabase
-        .from('courses')
-        .select('title, meta_title, meta_description, hero_heading')
-        .eq('id', slug)
-        .single();
-
-    if (!course) return { title: 'Course Not Found' };
+    const { data: course } = await supabase.from('courses').select('title, meta_title, meta_description').eq('id', slug).single();
+    const local = courses.find(c => c.id === slug);
 
     return {
-        title: course.meta_title || `${course.title} Training | Expert Online Course | ERPVITS`,
-        description: course.meta_description || course.hero_heading,
+        title: course?.meta_title || local?.metaTitle || `${course?.title || local?.title} Online Training | ERPVITS`,
+        description: course?.meta_description || local?.metaDescription || `Master ${course?.title || local?.title} with ERPVITS - Live online training, real projects, and placement assistance.`,
     };
 }
 
@@ -36,18 +32,25 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
         .eq('id', slug)
         .single();
 
-    if (!course) {
+    const localCourse = courses.find(c => c.id === slug);
+    if (!course && !localCourse) {
         notFound();
     }
 
     // Map DB fields to component expectations if they differ (using snake_case in DB, camelCase in components)
+    // Priority: DB values > Local file values
     const mappedCourse = {
+        ...localCourse,
         ...course,
-        heroHeading: course.hero_heading,
-        heroSubheading: course.hero_subheading,
-        heroImage: course.hero_image,
-        metaTitle: course.meta_title,
-        metaDescription: course.meta_description,
+        heroHeading: course?.hero_heading || localCourse?.heroHeading,
+        heroSubheading: course?.hero_subheading || localCourse?.heroSubheading,
+        heroImage: localCourse?.heroImage || course?.hero_image,
+        metaTitle: course?.meta_title || localCourse?.metaTitle,
+        metaDescription: course?.meta_description || localCourse?.metaDescription,
+        sections: (course?.sections && course.sections.length > 0) ? course.sections : localCourse?.sections,
+        features: (course?.features && course.features.length > 0) ? course.features : localCourse?.features,
+        curriculum: (course?.curriculum && course.curriculum.length > 0) ? course.curriculum : localCourse?.curriculum,
+        faqs: (course?.faqs && course.faqs.length > 0) ? course.faqs : (localCourse?.faqs && localCourse.faqs.length > 0 ? localCourse.faqs : defaultFaqs),
     };
 
 
@@ -131,8 +134,12 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
             <div className="bg-white border-b border-gray-200 sticky top-20 z-30 shadow-sm">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex space-x-8 text-sm font-bold text-gray-500 overflow-x-auto whitespace-nowrap">
-                        {['Overview', 'Curriculum', 'Highlights', 'FAQ', 'Enroll'].map((item) => (
-                            <a key={item} href={`#${item.toLowerCase()}`} className="py-4 hover:text-orange-600 border-b-2 border-transparent hover:border-orange-500 transition-colors">
+                        {['Overview', 'Curriculum', 'Why Us', 'FAQ', 'Enroll'].map((item) => (
+                            <a
+                                key={item}
+                                href={`#${item.toLowerCase().replace(' ', '-')}`}
+                                className="py-4 hover:text-orange-600 border-b-2 border-transparent hover:border-orange-500 transition-colors"
+                            >
                                 {item}
                             </a>
                         ))}
@@ -144,49 +151,71 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                 {/* Main Content */}
                 <div className="lg:col-span-2 space-y-16">
 
-                    {/* Overview (Fallback or First Section) */}
-                    {mappedCourse.sections ? (
-                        <SectionRenderer sections={mappedCourse.sections} />
+                    {/* Main Content Area */}
+                    {mappedCourse.sections?.some((s: Section) => s.type === 'detailed_features') ? (
+                        <div id="overview" className="scroll-mt-32">
+                            <SectionRenderer sections={mappedCourse.sections} />
+                        </div>
                     ) : (
-                        <>
+                        <div className="space-y-16">
                             <section id="overview" className="scroll-mt-32">
-                                <h2 className="text-2xl font-bold text-gray-900 mb-6">Course Overview</h2>
-                                <div className="prose max-w-none text-gray-600 leading-relaxed whitespace-pre-line">
-                                    {mappedCourse.description}
-                                </div>
+                                <DetailedFeatures
+                                    title={`Learn ${mappedCourse.title} from Certified Experts – 100% Hands-On, Job-Oriented Training`}
+                                    subtitle={mappedCourse.description}
+                                    items={getDefaultDetailedFeatures(mappedCourse.title)}
+                                />
                             </section>
 
-                            <section id="highlights" className="bg-orange-50 rounded-2xl p-8 border border-orange-100 scroll-mt-32">
-                                <h2 className="text-2xl font-bold text-gray-900 mb-2">Why Professionals Choose ERPVITS for {mappedCourse.title}</h2>
-                                <p className="text-gray-600 mb-8">Trusted by 500+ successful SAP professionals.</p>
-
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    {mappedCourse.features?.map((feature: string, i: number) => (
-                                        <div key={i} className="flex items-start">
-                                            <div className="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
-                                                <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
-                                            </div>
-                                            <span className="text-gray-700 font-medium">{feature}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </section>
-
-                            <section id="curriculum" className="scroll-mt-32">
-                                <Curriculum course={mappedCourse as any} />
-                            </section>
-
-                            {!mappedCourse.features?.length && (
-                                <section className="py-8 bg-blue-50">
-                                    <ComparisonTable />
-                                </section>
+                            {mappedCourse.sections && mappedCourse.sections.length > 0 && (
+                                <SectionRenderer sections={mappedCourse.sections} />
                             )}
-
-                            <section id="faq" className="scroll-mt-32">
-                                <FAQ course={mappedCourse as any} />
-                            </section>
-                        </>
+                        </div>
                     )}
+
+                    {/* Highlights Section (for local data courses that don't have it in sections) */}
+                    {(!mappedCourse.sections || !mappedCourse.sections.some((s: Section) => s.type === 'features')) && mappedCourse.features && mappedCourse.features.length > 0 && (
+                        <section id="why-us" className="bg-orange-50 rounded-2xl p-8 border border-orange-100 scroll-mt-32">
+                            <h2 className="text-2xl font-bold text-gray-900 mb-2">Why Professionals Choose ERPVITS for {mappedCourse.title}</h2>
+                            <p className="text-gray-600 mb-8">Trusted by 500+ successful SAP professionals worldwide.</p>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                {mappedCourse.features.map((feature: string, i: number) => (
+                                    <div key={i} className="flex items-start">
+                                        <div className="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                                            <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
+                                        </div>
+                                        <span className="text-gray-700 font-medium">{feature}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </section>
+                    )}
+
+                    {/* Curriculum Section (rendered separately if not in sections) */}
+                    {(!mappedCourse.sections || !mappedCourse.sections.some((s: Section) => s.type === 'curriculum')) && mappedCourse.curriculum && mappedCourse.curriculum.length > 0 && (
+                        <section id="curriculum" className="scroll-mt-32">
+                            <Curriculum modules={mappedCourse.curriculum} />
+                        </section>
+                    )}
+
+                    {/* Common Bottom sections (FAQ and Form) */}
+                    {(!mappedCourse.sections?.some((s: Section) => s.type === 'faq')) && (
+                        <div id="faq" className="scroll-mt-32">
+                            <FAQ course={mappedCourse as any} />
+                        </div>
+                    )}
+
+                    <section id="enroll" className="scroll-mt-32 pt-16 border-t border-gray-100">
+                        <div className="bg-gray-50 rounded-3xl p-8 md:p-12 border border-blue-50">
+                            <div className="max-w-2xl">
+                                <h2 className="text-3xl font-bold text-gray-900 mb-4 font-display">Enroll Now or Schedule a Free Demo</h2>
+                                <p className="text-gray-600 mb-10 text-lg">
+                                    Fill out the form below to get the latest course brochure, fee details, and schedule for upcoming batches.
+                                </p>
+                            </div>
+                            <ContactForm showLabels={false} className="max-w-none shadow-sm bg-white p-6 md:p-10 rounded-2xl" />
+                        </div>
+                    </section>
                 </div>
 
                 {/* Sidebar */}

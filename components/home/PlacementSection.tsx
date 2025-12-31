@@ -15,10 +15,10 @@ export default function PlacementSection() {
     return (
         <section className="py-20 bg-gray-50 border-t border-gray-100">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 className="text-sm md:text-base font-bold text-blue-900/60 tracking-widest uppercase mb-12">OUR LEARNERS PLACED IN TOP COMPANIES</h2>
+                <h2 className="text-sm md:text-base font-bold text-slate-900/60 tracking-widest uppercase mb-12">OUR LEARNERS PLACED IN TOP COMPANIES</h2>
 
                 {/* Company Cards Layout */}
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 mb-20 text-blue-900 ">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 mb-20 text-slate-900 ">
                     {[
                         { name: "Deloitte", logo: "/images/partners/deloitte.png" },
                         { name: "Accenture", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Accenture.svg/1200px-Accenture.svg.png" },
@@ -54,13 +54,12 @@ export default function PlacementSection() {
                     ))}
                 </div>
 
-                {/* Stats */}
-                <div className="bg-blue-900 rounded-3xl p-10 text-white shadow-2xl mt-12">
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+                <div className="bg-slate-900 rounded-3xl p-8 text-white shadow-2xl mt-12">
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
                         {stats.map((stat, i) => (
                             <div key={i} className="text-center">
-                                <div className="text-3xl lg:text-4xl font-extrabold text-orange-400 mb-2">{stat.val}</div>
-                                <div className="text-xs md:text-sm font-medium text-blue-200 uppercase tracking-wider">{stat.label}</div>
+                                <div className="text-xl md:text-2xl font-black text-orange-400 mb-1">{stat.val}</div>
+                                <div className="text-[9px] md:text-[10px] font-bold text-slate-300 uppercase tracking-widest leading-tight">{stat.label}</div>
                             </div>
                         ))}
                     </div>

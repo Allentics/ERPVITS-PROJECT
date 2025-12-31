@@ -1,11 +1,14 @@
 import { Section, Testimonial, FAQ as FAQType } from '@/lib/courseData';
 import Curriculum from './Curriculum';
 import FAQ from './FAQ';
-import { Check, Star, ShieldCheck } from 'lucide-react';
+import { Check, Star, ShieldCheck, Users, Briefcase, GraduationCap, CheckCircle2 } from 'lucide-react';
 
 const RichText = ({ content }: { content: string }) => {
+    // Remove leading asterisks from lines (stray bullet points)
+    const cleanContent = content.replace(/^\*\s*/gm, '');
+
     // Simple bold parser: **text** -> <strong>text</strong>
-    const parts = content.split(/(\*\*.*?\*\*)/g);
+    const parts = cleanContent.split(/(\*\*.*?\*\*)/g);
     return (
         <div className="prose max-w-none text-gray-600 leading-relaxed whitespace-pre-line">
             {parts.map((part, i) => {
@@ -14,6 +17,58 @@ const RichText = ({ content }: { content: string }) => {
                 }
                 return part;
             })}
+        </div>
+    );
+};
+
+const GroupedList = ({ content }: { content: string }) => {
+    // Parse the content: lines starting with ** are group titles, lines starting with * are items
+    const lines = content.split('\n');
+    const groups: { title: string, items: string[] }[] = [];
+    let introText = "";
+    let currentGroup: { title: string, items: string[] } | null = null;
+
+    lines.forEach(line => {
+        const trimmed = line.trim();
+        if (trimmed.startsWith('**') && trimmed.endsWith('**')) {
+            if (currentGroup) groups.push(currentGroup);
+            currentGroup = { title: trimmed.slice(2, -2), items: [] };
+        } else if (trimmed.startsWith('*') && currentGroup) {
+            currentGroup.items.push(trimmed.slice(1).trim());
+        } else if (trimmed && !currentGroup) {
+            introText += trimmed + " ";
+        }
+    });
+    if (currentGroup) groups.push(currentGroup);
+
+    if (groups.length === 0) return <RichText content={content} />;
+
+    return (
+        <div className="mt-4">
+            {introText && <p className="text-gray-600 mb-8 text-lg leading-relaxed">{introText}</p>}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {groups.map((group, i) => (
+                    <div key={i} className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-md transition-all border-l-4 border-l-blue-600">
+                        <div className="flex items-center gap-3 mb-4">
+                            <div className="p-2 bg-blue-50 rounded-lg text-blue-600">
+                                {group.title.toLowerCase().includes('it') ? <Briefcase size={20} /> :
+                                    group.title.toLowerCase().includes('graduate') ? <GraduationCap size={20} /> :
+                                        group.title.toLowerCase().includes('finance') ? <Users size={20} /> :
+                                            <Users size={20} />}
+                            </div>
+                            <h3 className="font-bold text-gray-900">{group.title}</h3>
+                        </div>
+                        <ul className="space-y-3">
+                            {group.items.map((item, j) => (
+                                <li key={j} className="flex items-start gap-2 text-sm text-gray-600">
+                                    <CheckCircle2 size={16} className="text-green-500 mt-0.5 shrink-0" />
+                                    <span>{item}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };
@@ -75,6 +130,26 @@ const Testimonials = ({ items, title }: { items: Testimonial[], title?: string }
     </div>
 );
 
+export const DetailedFeatures = ({ title, subtitle, items }: { title?: string, subtitle?: string, items: { title: string, description: string }[] }) => (
+    <div className="py-12 scroll-mt-24" id="detailed-features">
+        <div className="mb-12">
+            {title && <h2 className="text-3xl lg:text-4xl font-extrabold text-blue-900 mb-6 leading-tight max-w-4xl">{title}</h2>}
+            {subtitle && <div className="prose max-w-none text-gray-600 leading-relaxed whitespace-pre-line text-lg">{subtitle}</div>}
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {items.map((item, i) => (
+                <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group flex flex-col h-full">
+                    <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors duration-300">
+                        <Star className="w-8 h-8 text-blue-600 group-hover:text-white transition-colors duration-300" />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300 leading-snug">{item.title}</h3>
+                    <p className="text-gray-600 leading-relaxed text-sm flex-grow">{item.description}</p>
+                </div>
+            ))}
+        </div>
+    </div>
+);
+
 export default function SectionRenderer({ sections }: { sections: Section[] }) {
     if (!sections) return null;
 
@@ -83,22 +158,25 @@ export default function SectionRenderer({ sections }: { sections: Section[] }) {
             {sections.map((section, idx) => {
                 switch (section.type) {
                     case 'rich_text':
+                        const isWhoCanLearn = section.title?.toLowerCase().includes('who can') || section.content?.includes('**');
                         return (
                             <section key={idx} className="py-8 scroll-mt-24" id={`section-${idx}`}>
-                                {section.title && <h2 className="text-2xl font-bold text-gray-900 mb-6">{section.title}</h2>}
-                                {section.content && <RichText content={section.content} />}
+                                {section.title && <h2 className="text-3xl font-bold text-gray-900 mb-6 leading-tight">{section.title}</h2>}
+                                {section.content && (
+                                    isWhoCanLearn ? <GroupedList content={section.content} /> : <RichText content={section.content} />
+                                )}
                             </section>
                         );
                     case 'features':
-                        return <FeaturesGrid key={idx} items={section.items as string[]} title={section.title} />;
+                        return <div key={idx} id="why-us" className="scroll-mt-24"><FeaturesGrid items={section.items as string[]} title={section.title} /></div>;
                     case 'list_checker':
                         return <ListChecker key={idx} items={section.items as string[]} title={section.title} />;
                     case 'curriculum':
-                        return <div key={idx} className="-mx-4 sm:-mx-8"><Curriculum modules={section.modules} /></div>;
+                        return <div key={idx} id="curriculum" className="-mx-4 sm:-mx-8 scroll-mt-24"><Curriculum modules={section.modules} /></div>;
                     case 'testimonials':
                         return <Testimonials key={idx} items={section.items as Testimonial[]} title={section.title} />;
                     case 'faq':
-                        return <div key={idx} className="-mx-4 sm:-mx-8"><FAQ items={section.items as FAQType[]} /></div>;
+                        return <div key={idx} id="faq" className="-mx-4 sm:-mx-8 scroll-mt-24"><FAQ items={section.items as FAQType[]} /></div>;
                     case 'detailed_features':
                         return <DetailedFeatures key={idx} title={section.title} subtitle={section.subtitle} items={section.items as any[]} />;
                     default:
@@ -108,21 +186,3 @@ export default function SectionRenderer({ sections }: { sections: Section[] }) {
         </div>
     );
 }
-
-const DetailedFeatures = ({ title, subtitle, items }: { title?: string, subtitle?: string, items: { title: string, description: string }[] }) => (
-    <div className="py-12 scroll-mt-24" id="detailed-features">
-        {title && <h2 className="text-3xl font-bold text-gray-900 mb-6 leading-tight">{title}</h2>}
-        {subtitle && <div className="prose max-w-none text-gray-600 mb-10 leading-relaxed whitespace-pre-line text-lg">{subtitle}</div>}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {items.map((item, i) => (
-                <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 group">
-                    <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                        <Star className="w-7 h-7 text-blue-600 group-hover:text-white transition-colors" />
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">{item.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{item.description}</p>
-                </div>
-            ))}
-        </div>
-    </div>
-);

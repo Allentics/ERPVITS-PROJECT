@@ -46,7 +46,7 @@ const Hero = () => {
     }, []);
 
     return (
-        <div className="bg-blue-900 text-white relative overflow-hidden">
+        <div className="bg-slate-900 text-white relative overflow-hidden">
             <ContactModal
                 isOpen={isContactModalOpen}
                 onClose={() => setIsContactModalOpen(false)}
@@ -55,7 +55,7 @@ const Hero = () => {
 
             {/* Background Elements */}
             <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-800/20 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2"></div>
+            <div className="absolute top-0 right-0 w-1/2 h-full bg-slate-800/20 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2"></div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 relative z-10 text-center">
                 <motion.h1
@@ -64,7 +64,7 @@ const Hero = () => {
                     className="text-4xl lg:text-6xl font-extrabold tracking-tight mb-6"
                 >
                     {content.heading.split(content.highlight_text)[0]}
-                    <span className="text-orange-400">{content.highlight_text}</span>
+                    <span className="text-orange-500">{content.highlight_text}</span>
                     {content.heading.split(content.highlight_text)[1]}
                 </motion.h1>
 
@@ -72,7 +72,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
-                    className="text-xl text-blue-100 font-medium mb-8"
+                    className="text-xl text-slate-100 font-medium mb-8"
                 >
                     {content.subheading}
                 </motion.p>
@@ -81,7 +81,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
-                    className="max-w-3xl mx-auto text-lg text-blue-200 mb-10 leading-relaxed"
+                    className="max-w-3xl mx-auto text-lg text-slate-300 mb-10 leading-relaxed"
                 >
                     {content.description}
                 </motion.p>
@@ -114,10 +114,10 @@ const Hero = () => {
                 >
                     {content.stats.map((stat, i) => (
                         <div key={i} className="text-center border border-white/10 bg-white/5 rounded-lg p-6 hover:bg-white/10 transition-colors cursor-default">
-                            <div className="flex items-center justify-center text-green-400 font-bold mb-2 text-xl">
+                            <div className="flex items-center justify-center text-orange-400 font-bold mb-2 text-xl">
                                 <span className="mr-2">✅</span> {stat.val}
                             </div>
-                            <div className="text-blue-100 font-medium">{stat.label}</div>
+                            <div className="text-slate-100 font-medium">{stat.label}</div>
                         </div>
                     ))}
                 </motion.div>
