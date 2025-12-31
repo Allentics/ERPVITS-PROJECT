@@ -7,8 +7,6 @@ import {
     LayoutDashboard,
     BookOpen,
     FileText,
-    MessageSquare,
-    Settings,
     LogOut,
     Menu,
     X,
@@ -31,8 +29,6 @@ const sidebarItems = [
     { name: 'Blog Posts', href: '/admin/blogs', icon: FileText },
     { name: 'About Page', href: '/admin/content?page=/about', icon: Globe },
     { name: 'Site Content', href: '/admin/content', icon: Layers },
-    { name: 'Contact Submissions', href: '/admin/forms', icon: MessageSquare },
-    { name: 'Settings', href: '/admin/settings', icon: Settings },
 ];
 
 export default function AdminLayout({
