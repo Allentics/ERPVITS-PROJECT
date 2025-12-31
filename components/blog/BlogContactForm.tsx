@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { supabase } from '@/lib/supabase';
+import { courses } from '@/lib/courseData';
 
 interface BlogContactFormProps {
     slug: string;
@@ -16,6 +17,7 @@ export default function BlogContactForm({ slug }: BlogContactFormProps) {
         course: '',
         message: ''
     });
+
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const [errorMessage, setErrorMessage] = useState('');
 
@@ -134,11 +136,9 @@ export default function BlogContactForm({ slug }: BlogContactFormProps) {
                             className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none bg-white"
                         >
                             <option value="">Interested Course</option>
-                            <option value="sap-ariba">SAP Ariba</option>
-                            <option value="sap-fico">SAP FICO</option>
-                            <option value="sap-mm">SAP MM</option>
-                            <option value="sap-sd">SAP SD</option>
-                            <option value="sap-c4c">SAP C4C</option>
+                            {courses.map((course) => (
+                                <option key={course.id} value={course.title}>{course.title}</option>
+                            ))}
                         </select>
                     </div>
                     <div>

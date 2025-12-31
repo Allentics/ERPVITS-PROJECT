@@ -192,7 +192,6 @@ export default function ContactForm({ className = "", showLabels = true, success
                     {courses.map((course) => (
                         <option key={course.id} value={course.title}>{course.title}</option>
                     ))}
-                    <option value="Other / Not Sure">Other / Not Sure</option>
                 </select>
             </div>
 
