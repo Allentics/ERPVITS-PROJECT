@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { courses } from '@/lib/courseData';
+import { submitToGoogleSheets } from '@/app/actions/submitToGoogleSheets';
 
 interface ContactFormProps {
     className?: string;
@@ -53,6 +54,9 @@ export default function ContactForm({ className = "", showLabels = true, success
                 ]);
 
             if (error) throw error;
+
+            // Send to Google Sheets
+            await submitToGoogleSheets(formData);
 
             setStatus('success');
             setFormData({

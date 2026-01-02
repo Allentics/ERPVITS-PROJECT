@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import { CheckCircle } from 'lucide-react';
 import ContactModal from '../ContactModal';
 
 export default function UrgencySection() {
@@ -21,7 +22,7 @@ export default function UrgencySection() {
     }, []);
 
     return (
-        <section className="bg-orange-50 py-10 border-b border-orange-100">
+        <section className="bg-white py-10 border-b border-slate-200">
             <ContactModal
                 isOpen={isContactModalOpen}
                 onClose={() => setIsContactModalOpen(false)}
@@ -39,7 +40,7 @@ export default function UrgencySection() {
                         { label: 'MINUTES', val: timeLeft.minutes },
                         { label: 'SECONDS', val: timeLeft.seconds }
                     ].map((item, i) => (
-                        <div key={i} className="bg-white rounded-lg shadow-sm w-20 md:w-24 py-3 border border-orange-100">
+                        <div key={i} className="bg-white rounded-lg shadow-sm w-20 md:w-24 py-3 border border-slate-200">
                             <div className="text-2xl md:text-4xl font-bold text-orange-600 font-mono">
                                 {String(item.val).padStart(2, '0')}
                             </div>
@@ -48,7 +49,7 @@ export default function UrgencySection() {
                     ))}
                 </div>
 
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-orange-200 mb-8 max-w-2xl mx-auto">
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 mb-8 max-w-2xl mx-auto">
                     <div className="grid grid-cols-2 gap-4 text-left text-sm">
                         <div>
                             <span className="font-semibold text-gray-500 block mb-1">Start Date:</span>
@@ -86,7 +87,7 @@ export default function UrgencySection() {
 
                 <div className="mt-8 text-sm text-gray-600">
                     <div className="flex items-center justify-center space-x-2">
-                        <span className="text-green-500">✅</span>
+                        <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
                         <span>"Just now: Satish Kumar enrolled in SAP FICO Training!"</span>
                     </div>
                 </div>

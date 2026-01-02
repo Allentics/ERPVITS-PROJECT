@@ -8,9 +8,9 @@ export default function ContactPage() {
     return (
         <div className="bg-white min-h-screen">
             {/* Header */}
-            <div className="bg-blue-900 text-white py-20 text-center">
+            <div className="bg-slate-50 text-slate-900 py-20 text-center border-b border-slate-200">
                 <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
-                <p className="text-blue-100 text-lg">We'd love to hear from you. Reach out for course details or career guidance.</p>
+                <p className="text-slate-600 text-lg">We'd love to hear from you. Reach out for course details or career guidance.</p>
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">

@@ -134,7 +134,26 @@ export const DetailedFeatures = ({ title, subtitle, items }: { title?: string, s
     <div className="py-12 scroll-mt-24" id="detailed-features">
         <div className="mb-12">
             {title && <h2 className="text-3xl lg:text-4xl font-extrabold text-blue-900 mb-6 leading-tight max-w-4xl">{title}</h2>}
-            {subtitle && <div className="prose max-w-none text-gray-600 leading-relaxed whitespace-pre-line text-lg">{subtitle}</div>}
+            {subtitle && (
+                <div className="text-gray-600 text-lg leading-relaxed space-y-4">
+                    {subtitle.split('\n').map((line, idx) => {
+                        if (line.trim().includes('✅')) {
+                            const benefits = line.split('✅').map(s => s.trim()).filter(Boolean);
+                            return (
+                                <div key={idx} className="flex flex-wrap gap-4 md:gap-8 py-2">
+                                    {benefits.map((benefit, bIdx) => (
+                                        <div key={bIdx} className="flex items-center font-bold text-gray-900 bg-green-50 px-4 py-2 rounded-lg border border-green-100">
+                                            <CheckCircle2 className="w-5 h-5 text-green-600 mr-2 flex-shrink-0" />
+                                            <span>{benefit}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            );
+                        }
+                        return line.trim() === '' ? <div key={idx} className="h-4" /> : <p key={idx}>{line}</p>;
+                    })}
+                </div>
+            )}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {items.map((item, i) => (

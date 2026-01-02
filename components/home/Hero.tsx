@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { supabase } from '@/lib/supabase';
 import ContactModal from '../ContactModal';
+import { Trophy, Users, Headset, Briefcase } from 'lucide-react';
 
 const DEFAULT_CONTENT = {
     heading: "Empower Your Career with Expert SAP Online Training",
@@ -46,7 +47,7 @@ const Hero = () => {
     }, []);
 
     return (
-        <div className="bg-slate-900 text-white relative overflow-hidden">
+        <div className="bg-slate-50 text-slate-900 relative overflow-hidden">
             <ContactModal
                 isOpen={isContactModalOpen}
                 onClose={() => setIsContactModalOpen(false)}
@@ -54,8 +55,8 @@ const Hero = () => {
             />
 
             {/* Background Elements */}
-            <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-slate-800/20 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2"></div>
+            <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5"></div>
+            <div className="absolute top-0 right-0 w-1/2 h-full bg-orange-100/50 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2"></div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 relative z-10 text-center">
                 <motion.h1
@@ -64,7 +65,7 @@ const Hero = () => {
                     className="text-4xl lg:text-6xl font-extrabold tracking-tight mb-6"
                 >
                     {content.heading.split(content.highlight_text)[0]}
-                    <span className="text-orange-500">{content.highlight_text}</span>
+                    <span className="text-orange-600">{content.highlight_text}</span>
                     {content.heading.split(content.highlight_text)[1]}
                 </motion.h1>
 
@@ -72,7 +73,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
-                    className="text-xl text-slate-100 font-medium mb-8"
+                    className="text-xl text-slate-800 font-medium mb-8"
                 >
                     {content.subheading}
                 </motion.p>
@@ -81,7 +82,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
-                    className="max-w-3xl mx-auto text-lg text-slate-300 mb-10 leading-relaxed"
+                    className="max-w-3xl mx-auto text-lg text-slate-600 mb-10 leading-relaxed"
                 >
                     {content.description}
                 </motion.p>
@@ -94,13 +95,13 @@ const Hero = () => {
                 >
                     <button
                         onClick={() => setIsContactModalOpen(true)}
-                        className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-md font-bold text-lg shadow-lg hover:shadow-orange-500/40 transition-all transform hover:-translate-y-1"
+                        className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-md font-bold text-lg shadow-lg hover:shadow-orange-500/30 transition-all transform hover:-translate-y-1"
                     >
                         {content.cta_primary}
                     </button>
                     <Link
                         href="/all-courses"
-                        className="bg-transparent border-2 border-white/20 hover:bg-white/10 text-white px-8 py-4 rounded-md font-bold text-lg transition-all"
+                        className="bg-transparent border-2 border-slate-300 hover:bg-slate-100 text-slate-900 px-8 py-4 rounded-md font-bold text-lg transition-all"
                     >
                         {content.cta_secondary}
                     </Link>
@@ -110,16 +111,21 @@ const Hero = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.5 }}
-                    className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-white/10 pt-10"
+                    className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-slate-200 pt-10"
                 >
-                    {content.stats.map((stat, i) => (
-                        <div key={i} className="text-center border border-white/10 bg-white/5 rounded-lg p-6 hover:bg-white/10 transition-colors cursor-default">
-                            <div className="flex items-center justify-center text-orange-400 font-bold mb-2 text-xl">
-                                <span className="mr-2">✅</span> {stat.val}
+                    {content.stats.map((stat, i) => {
+                        const icons = [Trophy, Users, Headset, Briefcase];
+                        const Icon = icons[i] || Trophy;
+                        return (
+                            <div key={i} className="text-center border border-slate-200 bg-white rounded-lg p-6 hover:shadow-md transition-all cursor-default shadow-sm group">
+                                <div className="flex items-center justify-center text-orange-600 font-bold mb-2 text-xl">
+                                    <Icon className="w-6 h-6 mr-2 stroke-[2.5]" />
+                                    <span>{stat.val}</span>
+                                </div>
+                                <div className="text-slate-700 font-medium">{stat.label}</div>
                             </div>
-                            <div className="text-slate-100 font-medium">{stat.label}</div>
-                        </div>
-                    ))}
+                        );
+                    })}
                 </motion.div>
             </div>
         </div>
