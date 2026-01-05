@@ -46,17 +46,17 @@ export default function CustomTrainingPlan() {
     };
 
     return (
-        <section className="bg-slate-900 text-white py-20 relative overflow-hidden">
+        <section className="bg-sky-50 text-slate-900 py-20 relative overflow-hidden">
             {/* Decorative */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+            <div className="absolute top-0 right-0 w-96 h-96 bg-orange-100/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div>
-                        <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                            Get Your Personalized <span className="text-orange-400">SAP Training Plan</span> – It's FREE!
+                        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-900">
+                            Get Your Personalized <span className="text-orange-600">SAP Training Plan</span> – It's FREE!
                         </h2>
-                        <p className="text-slate-300 text-lg mb-8 leading-relaxed">
+                        <p className="text-slate-600 text-lg mb-8 leading-relaxed">
                             Every professional's journey to proficiency in SAP is unique. We will design a personalized training program just for you based on your background, career objectives, and timeline.
                         </p>
 
@@ -74,6 +74,29 @@ export default function CustomTrainingPlan() {
                                     <span className="font-medium text-lg">{item.text}</span>
                                 </div>
                             ))}
+                        </div>
+
+                        {/* Popular Career Paths Section */}
+                        <div className="bg-white text-slate-900 rounded-xl p-6 mt-10 shadow-lg border border-slate-200">
+                            <h3 className="text-lg font-bold text-slate-900 mb-5">Popular Career Paths:</h3>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div className="bg-slate-50 p-4 rounded-lg border border-slate-100">
+                                    <div className="font-bold text-slate-900 text-sm">SAP Consultant</div>
+                                    <div className="text-xs text-slate-500 font-medium mt-1">$85K → $150K</div>
+                                </div>
+                                <div className="bg-slate-50 p-4 rounded-lg border border-slate-100">
+                                    <div className="font-bold text-slate-900 text-sm">Technical Architect</div>
+                                    <div className="text-xs text-slate-500 font-medium mt-1">$110K → $180K</div>
+                                </div>
+                                <div className="bg-slate-50 p-4 rounded-lg border border-slate-100">
+                                    <div className="font-bold text-slate-900 text-sm">Analytics Specialist</div>
+                                    <div className="text-xs text-slate-500 font-medium mt-1">$75K → $135K</div>
+                                </div>
+                                <div className="bg-slate-50 p-4 rounded-lg border border-slate-100">
+                                    <div className="font-bold text-slate-900 text-sm">Project Manager</div>
+                                    <div className="text-xs text-slate-500 font-medium mt-1">$95K → $160K</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 

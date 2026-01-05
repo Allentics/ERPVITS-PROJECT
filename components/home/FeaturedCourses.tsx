@@ -124,15 +124,18 @@ export default function FeaturedCourses() {
                     ))}
                 </div>
 
-                <div className="mt-16 flex justify-center gap-6">
-                    <Link href="/all-courses" className="text-orange-600 font-bold hover:text-orange-800 underline decoration-2 underline-offset-4">
-                        [VIEW ALL COURSES]
+                <div className="mt-16 flex flex-col md:flex-row justify-center gap-4">
+                    <Link
+                        href="/all-courses"
+                        className="px-8 py-3 bg-white border-2 border-slate-900 text-slate-900 font-bold rounded-lg hover:bg-slate-50 transition-colors shadow-sm text-center"
+                    >
+                        View All {courses.length} Courses
                     </Link>
                     <button
                         onClick={() => openModal("Course Consultation")}
-                        className="text-orange-600 font-bold hover:text-orange-800 underline decoration-2 underline-offset-4"
+                        className="px-8 py-3 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors shadow-md text-center"
                     >
-                        [CONSULT US TO FIND YOUR PERFECT SAP COURSE]
+                        Find Your Perfect SAP Course - Get Free Skills Assessment
                     </button>
                 </div>
             </div>

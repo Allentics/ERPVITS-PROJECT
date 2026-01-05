@@ -1,37 +1,49 @@
 'use server';
 
+import { google } from 'googleapis';
+import path from 'path';
+
 export async function submitToGoogleSheets(formData: any) {
-    const scriptUrl = 'https://script.google.com/macros/s/AKfycbyb0yoRjzH6mJBu8PcyI-N3uwzBczE7BrciNVaTkFtsXUbPfZdgHB8T0tXNrlzftrGS1Q/exec';
-
     try {
-        const payload = new FormData();
-        payload.append('Date', new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }));
-        payload.append('First Name', formData.firstName);
-        payload.append('Last Name', formData.lastName);
-        payload.append('Email', formData.email);
-        payload.append('Phone', `${formData.countryCode} ${formData.phone}`);
-        payload.append('Course', formData.course);
-        payload.append('Message', formData.message);
-
-        // Google Apps Scripts often follow redirects using fetch
-        const response = await fetch(scriptUrl, {
-            method: 'POST',
-            body: payload,
+        // 1. Authenticate using the Service Account
+        // This allows us to write to ANY sheet shared with the bot email.
+        const auth = new google.auth.GoogleAuth({
+            keyFile: path.join(process.cwd(), 'service-account.json'),
+            scopes: ['https://www.googleapis.com/auth/spreadsheets'],
         });
 
-        if (!response.ok) {
-            // Apps Script sometimes returns 302/redirects which fetch follows automatically, 
-            // but if we get here with a 404 or 500, it failed.
-            throw new Error(`Script returned ${response.status}: ${response.statusText}`);
-        }
+        const sheets = google.sheets({ version: 'v4', auth });
 
-        const result = await response.json();
-        return { success: true, result };
+        // 2. The NEW Spreadsheet ID provided by the user
+        // https://docs.google.com/spreadsheets/d/1uxfO33A_dHJNGZDxMjq_K1ZpMKSN1xgi_pBb_vMUy88/edit
+        const spreadsheetId = '1uxfO33A_dHJNGZDxMjq_K1ZpMKSN1xgi_pBb_vMUy88';
 
+        // 3. Prepare the data
+        const row = [
+            new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }), // Timestamp
+            formData.firstName,
+            formData.lastName,
+            formData.email,
+            `${formData.countryCode} ${formData.phone}`,
+            formData.course,
+            formData.message
+        ];
+
+        // 4. Append to the sheet
+        // Note: If the sheet tab name is not 'Sheet1', this will fail. 
+        // Most new sheets start with 'Sheet1'.
+        await sheets.spreadsheets.values.append({
+            spreadsheetId,
+            range: 'Sheet1!A:G',
+            valueInputOption: 'USER_ENTERED',
+            requestBody: {
+                values: [row],
+            },
+        });
+
+        return { success: true };
     } catch (error: any) {
-        console.error('Google Apps Script Error:', error);
-        // Many scripts don't return valid JSON on success (just text "Success"), so JSON parse might fail.
-        // If specific error needed, we can refine. For now, assume simple success if fetch worked.
+        console.error('Google Sheets API Error:', error);
         return { success: false, error: error.message };
     }
 }

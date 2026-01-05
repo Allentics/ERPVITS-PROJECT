@@ -28,70 +28,68 @@ export default function UrgencySection() {
                 onClose={() => setIsContactModalOpen(false)}
                 title="Reserve Your SAP Training Spot"
             />
-            <div className="max-w-4xl mx-auto px-4 text-center">
-                <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 flex items-center justify-center">
-                    <span className="mr-2">⏱️</span> NEXT SAP BATCH STARTS IN:
+            <div className="max-w-5xl mx-auto px-6 py-10 text-center border-2 border-orange-500 rounded-2xl shadow-xl bg-white relative overflow-hidden">
+                <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-8 flex items-center justify-center gap-2">
+                    <span>🔥</span> Next Live Batch Starting Soon!
                 </h2>
 
-                <div className="flex justify-center gap-4 mb-8">
+                <div className="flex justify-center gap-4 mb-10">
                     {[
                         { label: 'DAYS', val: timeLeft.days },
                         { label: 'HOURS', val: timeLeft.hours },
                         { label: 'MINUTES', val: timeLeft.minutes },
                         { label: 'SECONDS', val: timeLeft.seconds }
                     ].map((item, i) => (
-                        <div key={i} className="bg-white rounded-lg shadow-sm w-20 md:w-24 py-3 border border-slate-200">
-                            <div className="text-2xl md:text-4xl font-bold text-orange-600 font-mono">
+                        <div key={i} className="bg-gray-100 rounded-xl w-20 md:w-28 py-4">
+                            <div className="text-3xl md:text-5xl font-bold text-orange-500 font-mono mb-1">
                                 {String(item.val).padStart(2, '0')}
                             </div>
-                            <div className="text-xs font-bold text-gray-400 mt-1">{item.label}</div>
+                            <div className="text-[10px] md:text-xs font-bold text-gray-500 uppercase tracking-wider">{item.label}</div>
                         </div>
                     ))}
                 </div>
 
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 mb-8 max-w-2xl mx-auto">
-                    <div className="grid grid-cols-2 gap-4 text-left text-sm">
-                        <div>
-                            <span className="font-semibold text-gray-500 block mb-1">Start Date:</span>
-                            <span className="font-bold text-gray-900">November 16, 2025</span>
-                        </div>
-                        <div>
-                            <span className="font-semibold text-gray-500 block mb-1">Format:</span>
-                            <span className="font-bold text-gray-900">Instructor-Led (Live)</span>
-                        </div>
-                        <div>
-                            <span className="font-semibold text-gray-500 block mb-1">Schedule:</span>
-                            <span className="font-bold text-gray-900">Every Saturday & Sunday</span>
-                        </div>
-                        <div>
-                            <span className="font-semibold text-gray-500 block mb-1">Seats Available:</span>
-                            <span className="font-bold text-orange-600">5 of 10 remaining</span>
-                        </div>
+                <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-600 mb-8 font-medium">
+                    <div className="flex items-center gap-2">
+                        <span>📅</span> Start Date: November 4, 2025
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <span>👨‍🏫</span> Format: Instructor-Led (Live)
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <span>🗓️</span> Schedule: Tuesday-Thursday & Saturday
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <span>⭐</span> Rating: 4.9/5.0
                     </div>
                 </div>
 
-                <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <div className="text-red-600 font-bold mb-8 animate-pulse flex items-center justify-center gap-2">
+                    <span>🎯</span> Seats Left: Only 5 of 15 Remaining!
+                </div>
+
+                <div className="flex flex-col md:flex-row justify-center gap-4 max-w-3xl mx-auto">
                     <button
                         onClick={() => setIsContactModalOpen(true)}
-                        className="bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-md font-bold shadow-md animate-pulse"
+                        className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold shadow-lg text-lg flex-1 uppercase tracking-wide transition-transform hover:-translate-y-0.5"
                     >
-                        🎯 RESERVE YOUR SEAT NOW - ONLY 5 SPOTS LEFT
+                        RESERVE YOUR SEAT NOW - LIMITED SPOTS!
                     </button>
                     <button
                         onClick={() => setIsContactModalOpen(true)}
-                        className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-md font-bold shadow-md"
+                        className="bg-white hover:bg-gray-50 text-slate-900 border-2 border-slate-900 px-8 py-4 rounded-lg font-bold shadow-lg text-lg flex-1 uppercase tracking-wide transition-transform hover:-translate-y-0.5"
                     >
-                        💳 SECURE SPOT WITH 60% Fees
+                        SECURE SPOT WITH $99 - PAY REST LATER
                     </button>
                 </div>
 
-                <div className="mt-8 text-sm text-gray-600">
-                    <div className="flex items-center justify-center space-x-2">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
-                        <span>"Just now: Satish Kumar enrolled in SAP FICO Training!"</span>
+                {/* Social Proof - Optional based on screenshot, keeping subtle */}
+                <div className="mt-8 text-xs text-gray-400">
+                    <div className="flex items-center justify-center gap-1">
+                        <CheckCircle className="w-3 h-3 text-green-500" />
+                        <span>Recent enrollment: Satish Kumar (5 mins ago)</span>
                     </div>
                 </div>
-
             </div>
         </section>
     );

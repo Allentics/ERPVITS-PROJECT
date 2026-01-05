@@ -1,203 +1,156 @@
-import { Section, Testimonial, FAQ as FAQType } from '@/lib/courseData';
+import React from 'react';
 import Curriculum from './Curriculum';
+import TargetAudience from './TargetAudience';
+import Prerequisites from './Prerequisites';
+import LearningOutcomes from './LearningOutcomes';
 import FAQ from './FAQ';
-import { Check, Star, ShieldCheck, Users, Briefcase, GraduationCap, CheckCircle2 } from 'lucide-react';
+import ContentWithImage from './ContentWithImage';
+import {
+    Quote, CheckCircle2, UserCheck, Laptop, Briefcase, Clock,
+    Award, Globe, BookOpen, Video, TrendingUp, Headphones,
+    Users, Layers
+} from 'lucide-react';
 
-const RichText = ({ content }: { content: string }) => {
-    // Remove leading asterisks from lines (stray bullet points)
-    const cleanContent = content.replace(/^\*\s*/gm, '');
-
-    // Simple bold parser: **text** -> <strong>text</strong>
-    const parts = cleanContent.split(/(\*\*.*?\*\*)/g);
-    return (
-        <div className="prose max-w-none text-gray-600 leading-relaxed whitespace-pre-line">
-            {parts.map((part, i) => {
-                if (part.startsWith('**') && part.endsWith('**')) {
-                    return <strong key={i} className="font-bold text-gray-900">{part.slice(2, -2)}</strong>;
-                }
-                return part;
-            })}
-        </div>
-    );
+// specific icon mapping based on title keywords
+const getIconForTitle = (title: string) => {
+    const t = title.toLowerCase();
+    if (t.includes('instructor') || t.includes('expert')) return UserCheck;
+    if (t.includes('hands-on') || t.includes('practical')) return Laptop;
+    if (t.includes('job') || t.includes('curriculum')) return Briefcase;
+    if (t.includes('flexible') || t.includes('timings')) return Clock;
+    if (t.includes('certification')) return Award;
+    if (t.includes('lab') || t.includes('access')) return Globe;
+    if (t.includes('study') || t.includes('material')) return BookOpen;
+    if (t.includes('recording')) return Video;
+    if (t.includes('career')) return TrendingUp;
+    if (t.includes('support')) return Headphones;
+    if (t.includes('batch')) return Users;
+    if (t.includes('project')) return Layers;
+    return CheckCircle2;
 };
 
-const GroupedList = ({ content }: { content: string }) => {
-    // Parse the content: lines starting with ** are group titles, lines starting with * are items
-    const lines = content.split('\n');
-    const groups: { title: string, items: string[] }[] = [];
-    let introText = "";
-    let currentGroup: { title: string, items: string[] } | null = null;
-
-    lines.forEach(line => {
-        const trimmed = line.trim();
-        if (trimmed.startsWith('**') && trimmed.endsWith('**')) {
-            if (currentGroup) groups.push(currentGroup);
-            currentGroup = { title: trimmed.slice(2, -2), items: [] };
-        } else if (trimmed.startsWith('*') && currentGroup) {
-            currentGroup.items.push(trimmed.slice(1).trim());
-        } else if (trimmed && !currentGroup) {
-            introText += trimmed + " ";
-        }
-    });
-    if (currentGroup) groups.push(currentGroup);
-
-    if (groups.length === 0) return <RichText content={content} />;
-
+// Defined locally to avoid circular dependency
+export function DetailedFeatures({ badge, title, subtitle, items }: any) {
     return (
-        <div className="mt-4">
-            {introText && <p className="text-gray-600 mb-8 text-lg leading-relaxed">{introText}</p>}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {groups.map((group, i) => (
-                    <div key={i} className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-md transition-all border-l-4 border-l-blue-600">
-                        <div className="flex items-center gap-3 mb-4">
-                            <div className="p-2 bg-blue-50 rounded-lg text-blue-600">
-                                {group.title.toLowerCase().includes('it') ? <Briefcase size={20} /> :
-                                    group.title.toLowerCase().includes('graduate') ? <GraduationCap size={20} /> :
-                                        group.title.toLowerCase().includes('finance') ? <Users size={20} /> :
-                                            <Users size={20} />}
+        <div className="py-12">
+            <div className="text-center mb-12">
+                {badge && <span className="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block">{badge}</span>}
+                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">{title}</h2>
+                {subtitle && <p className="text-gray-600 max-w-2xl mx-auto text-lg">{subtitle}</p>}
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 max-w-7xl mx-auto px-4">
+                {items?.map((item: any, i: number) => {
+                    const isObject = typeof item === 'object' && item !== null;
+                    const ItemIcon = isObject ? getIconForTitle(item.title) : CheckCircle2;
+
+                    return (
+                        <div key={i} className="flex flex-col p-8 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full group">
+                            <div className="w-14 h-14 rounded-xl bg-orange-50 group-hover:bg-orange-500 transition-colors duration-300 flex items-center justify-center text-orange-500 group-hover:text-white mb-6">
+                                <ItemIcon className="w-7 h-7" />
                             </div>
-                            <h3 className="font-bold text-gray-900">{group.title}</h3>
+                            <div className="flex-1">
+                                {isObject ? (
+                                    <>
+                                        <h3 className="font-bold text-slate-900 text-xl mb-3">{item.title}</h3>
+                                        <p className="text-slate-600 leading-relaxed text-[15px]">{item.description}</p>
+                                    </>
+                                ) : (
+                                    <p className="text-slate-700 font-medium text-lg">{item}</p>
+                                )}
+                            </div>
                         </div>
-                        <ul className="space-y-3">
-                            {group.items.map((item, j) => (
-                                <li key={j} className="flex items-start gap-2 text-sm text-gray-600">
-                                    <CheckCircle2 size={16} className="text-green-500 mt-0.5 shrink-0" />
-                                    <span>{item}</span>
-                                </li>
-                            ))}
-                        </ul>
+                    );
+                })}
+            </div>
+        </div>
+    );
+}
+
+export function RichTextSection({ title, content }: any) {
+    return (
+        <div className="py-8 max-w-4xl mx-auto">
+            {title && <h2 className="text-2xl font-bold text-slate-900 mb-6">{title}</h2>}
+            <div className="prose prose-slate max-w-none prose-headings:text-slate-800 prose-p:text-slate-600 prose-li:text-slate-600 bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
+                <div className="whitespace-pre-line leading-relaxed text-gray-700">
+                    {content && content.split('\n').map((line: string, i: number) => {
+                        // Simple bold parsing for **text**
+                        const parts = line.split(/(\*\*.*?\*\*)/g);
+                        return (
+                            <p key={i} className="mb-2">
+                                {parts.map((part, j) => {
+                                    if (part.startsWith('**') && part.endsWith('**')) {
+                                        return <strong key={j} className="text-slate-900">{part.slice(2, -2)}</strong>;
+                                    }
+                                    return part;
+                                })}
+                            </p>
+                        );
+                    })}
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export function TestimonialsSection({ title, items }: any) {
+    return (
+        <div className="py-12 bg-slate-50 rounded-3xl my-8">
+            <div className="text-center mb-10 px-4">
+                <h2 className="text-3xl font-bold text-slate-900">{title}</h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto px-6">
+                {items?.map((item: any, i: number) => (
+                    <div key={i} className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col">
+                        <Quote className="w-8 h-8 text-orange-200 mb-4" />
+                        <p className="text-slate-600 italic mb-6 flex-1">"{item.quote}"</p>
+                        <div className="flex items-center gap-3 mt-auto pt-4 border-t border-slate-50">
+                            <div className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center text-slate-500 font-bold uppercase">
+                                {item.name.charAt(0)}
+                            </div>
+                            <div>
+                                <div className="font-bold text-slate-900 text-sm">{item.name}</div>
+                                <div className="text-xs text-slate-500">{item.role}</div>
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>
         </div>
     );
-};
+}
 
-const FeaturesGrid = ({ items, title }: { items: string[], title?: string }) => (
-    <div className="py-12">
-        {title && <h2 className="text-2xl font-bold text-gray-900 mb-8">{title}</h2>}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {items.map((item, i) => (
-                <div key={i} className="flex items-start bg-orange-50 p-4 rounded-lg border border-orange-100">
-                    <div className="w-6 h-6 rounded-full bg-orange-500 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
-                        <Check className="w-4 h-4 text-white" />
-                    </div>
-                    <span className="text-gray-800 font-medium">{item}</span>
-                </div>
-            ))}
-        </div>
-    </div>
-);
-
-const ListChecker = ({ items, title }: { items: string[], title?: string }) => (
-    <div className="py-12 bg-gray-50 -mx-4 px-4 sm:-mx-8 sm:px-8 rounded-2xl my-8">
-        {title && <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">{title}</h2>}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {items.map((item, i) => (
-                <div key={i} className="flex items-start">
-                    <ShieldCheck className="w-6 h-6 text-blue-600 mr-3 flex-shrink-0 mt-1" />
-                    <div>
-                        <RichText content={item} />
-                    </div>
-                </div>
-            ))}
-        </div>
-    </div>
-);
-
-const Testimonials = ({ items, title }: { items: Testimonial[], title?: string }) => (
-    <div className="py-16">
-        {title && <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">{title}</h2>}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {items.map((t, i) => (
-                <div key={i} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 relative">
-                    <div className="flex text-yellow-400 mb-4">
-                        {[...Array(5)].map((_, idx) => <Star key={idx} className="w-4 h-4 fill-current" />)}
-                    </div>
-                    <p className="text-gray-600 italic mb-6 leading-relaxed">"{t.quote}"</p>
-                    <div className="flex items-center">
-                        <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3 font-bold text-blue-600">
-                            {t.name.charAt(0)}
-                        </div>
-                        <div>
-                            <div className="font-bold text-gray-900 text-sm">{t.name}</div>
-                            <div className="text-xs text-blue-600 font-medium">{t.role}</div>
-                        </div>
-                    </div>
-                </div>
-            ))}
-        </div>
-    </div>
-);
-
-export const DetailedFeatures = ({ title, subtitle, items }: { title?: string, subtitle?: string, items: { title: string, description: string }[] }) => (
-    <div className="py-12 scroll-mt-24" id="detailed-features">
-        <div className="mb-12">
-            {title && <h2 className="text-3xl lg:text-4xl font-extrabold text-blue-900 mb-6 leading-tight max-w-4xl">{title}</h2>}
-            {subtitle && (
-                <div className="text-gray-600 text-lg leading-relaxed space-y-4">
-                    {subtitle.split('\n').map((line, idx) => {
-                        if (line.trim().includes('✅')) {
-                            const benefits = line.split('✅').map(s => s.trim()).filter(Boolean);
-                            return (
-                                <div key={idx} className="flex flex-wrap gap-4 md:gap-8 py-2">
-                                    {benefits.map((benefit, bIdx) => (
-                                        <div key={bIdx} className="flex items-center font-bold text-gray-900 bg-green-50 px-4 py-2 rounded-lg border border-green-100">
-                                            <CheckCircle2 className="w-5 h-5 text-green-600 mr-2 flex-shrink-0" />
-                                            <span>{benefit}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            );
-                        }
-                        return line.trim() === '' ? <div key={idx} className="h-4" /> : <p key={idx}>{line}</p>;
-                    })}
-                </div>
-            )}
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {items.map((item, i) => (
-                <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group flex flex-col h-full">
-                    <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors duration-300">
-                        <Star className="w-8 h-8 text-blue-600 group-hover:text-white transition-colors duration-300" />
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300 leading-snug">{item.title}</h3>
-                    <p className="text-gray-600 leading-relaxed text-sm flex-grow">{item.description}</p>
-                </div>
-            ))}
-        </div>
-    </div>
-);
-
-export default function SectionRenderer({ sections }: { sections: Section[] }) {
+export default function SectionRenderer({ sections }: { sections: any[] }) {
     if (!sections) return null;
 
     return (
-        <div className="space-y-4">
+        <div className="space-y-24">
             {sections.map((section, idx) => {
                 switch (section.type) {
-                    case 'rich_text':
-                        const isWhoCanLearn = section.title?.toLowerCase().includes('who can') || section.content?.includes('**');
-                        return (
-                            <section key={idx} className="py-8 scroll-mt-24" id={`section-${idx}`}>
-                                {section.title && <h2 className="text-3xl font-bold text-gray-900 mb-6 leading-tight">{section.title}</h2>}
-                                {section.content && (
-                                    isWhoCanLearn ? <GroupedList content={section.content} /> : <RichText content={section.content} />
-                                )}
-                            </section>
-                        );
-                    case 'features':
-                        return <div key={idx} id="why-us" className="scroll-mt-24"><FeaturesGrid items={section.items as string[]} title={section.title} /></div>;
-                    case 'list_checker':
-                        return <ListChecker key={idx} items={section.items as string[]} title={section.title} />;
-                    case 'curriculum':
-                        return <div key={idx} id="curriculum" className="-mx-4 sm:-mx-8 scroll-mt-24"><Curriculum modules={section.modules} /></div>;
-                    case 'testimonials':
-                        return <Testimonials key={idx} items={section.items as Testimonial[]} title={section.title} />;
-                    case 'faq':
-                        return <div key={idx} id="faq" className="-mx-4 sm:-mx-8 scroll-mt-24"><FAQ items={section.items as FAQType[]} /></div>;
                     case 'detailed_features':
-                        return <DetailedFeatures key={idx} title={section.title} subtitle={section.subtitle} items={section.items as any[]} />;
+                        return <DetailedFeatures key={idx} {...section} badge={section.badge || "Key Features"} items={section.items} />;
+                    case 'target_audience':
+                        return <TargetAudience key={idx} title={section.title} items={section.items} />;
+                    case 'prerequisites':
+                        return <Prerequisites key={idx} title={section.title} subtitle={section.subtitle} items={section.items} />;
+                    case 'learning_outcomes':
+                        return <LearningOutcomes key={idx} title={section.title} items={section.items} />;
+                    case 'curriculum':
+                        return <section key={idx} id="curriculum" className="scroll-mt-32">
+                            <Curriculum modules={section.modules} />
+                        </section>;
+                    case 'features':
+                        // Fallback replacement for features
+                        return <DetailedFeatures key={idx} items={section.items} title={section.title || "Course Highlights"} />;
+                    case 'list_checker':
+                        return <DetailedFeatures key={idx} items={section.items} title={section.title} />;
+                    case 'rich_text':
+                        return <RichTextSection key={idx} title={section.title} content={section.content} />;
+                    case 'testimonials':
+                        return <TestimonialsSection key={idx} title={section.title} items={section.items} />;
+                    case 'content_with_image':
+                        return <ContentWithImage key={idx} {...section} />;
+                    case 'faq':
+                        return <div key={idx} id="faq" className="scroll-mt-32"><FAQ course={{ faqs: section.items } as any} /></div>;
                     default:
                         return null;
                 }
