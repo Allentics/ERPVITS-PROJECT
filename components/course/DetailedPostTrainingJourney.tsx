@@ -1,8 +1,24 @@
-import React from 'react';
-import { CheckCircle2, Award, Rocket, Target, BookOpen, Clock, Users, ShieldCheck } from 'lucide-react';
+"use client";
 
-export default function DetailedPostTrainingJourney() {
-    const steps = [
+import React from 'react';
+import { CheckCircle2, Award, Rocket, Target, BookOpen, Clock, Users, ShieldCheck, TrendingUp, Briefcase, Headphones } from 'lucide-react';
+
+export default function DetailedPostTrainingJourney({ title, steps: propSteps, courseName = "this course" }: { title?: string, steps?: any[], courseName?: string }) {
+    const scrollToBooking = () => {
+        const element = document.getElementById('detailed-demo-booking');
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    const iconMap: Record<string, any> = {
+        "CheckCircle2": CheckCircle2,
+        "Rocket": Rocket,
+        "TrendingUp": TrendingUp,
+        "Award": Award
+    };
+
+    const defaultSteps = [
         {
             title: "Immediate Post-Training",
             timeline: "Week 1-4",
@@ -12,8 +28,8 @@ export default function DetailedPostTrainingJourney() {
                 "Receive course completion certificate",
                 "Access lifetime review materials and recordings",
                 "Join alumni network and community forum",
-                "Begin resume updates highlighting SAP Ariba expertise",
-                "Apply for SAP Ariba Certification exam",
+                `Begin resume updates highlighting ${courseName} expertise`,
+                `Apply for ${courseName} Certification exam`,
                 "Start job search with career services support",
                 "Participate in alumni networking events",
                 "Receive interview coaching and mock interview feedback"
@@ -25,7 +41,7 @@ export default function DetailedPostTrainingJourney() {
             color: "slate",
             icon: Rocket,
             points: [
-                "Secure first SAP Ariba consulting opportunity (typical timeline)",
+                `Secure first ${courseName} consulting opportunity (typical timeline)`,
                 "Begin real-world project experience",
                 "Continue post-training support from instructors"
             ]
@@ -52,14 +68,16 @@ export default function DetailedPostTrainingJourney() {
             color: "slate",
             icon: Award,
             points: [
-                "Earn SAP Ariba certifications (Procurement, Sourcing, Contracts)",
-                "Build domain expertise in specific industries (manufacturing, retail, finance)",
+                `Earn ${courseName} certifications`,
+                "Build domain expertise in specific industries",
                 "Develop leadership and project management capabilities",
-                "Transition to senior consulting roles or account management",
-                "Explore specializations (integration, analytics, risk management)"
+                "Transition to senior consulting roles",
+                "Explore specializations"
             ]
         }
     ];
+
+    const steps = propSteps || defaultSteps;
 
     return (
         <section className="py-20 bg-slate-50">
@@ -70,7 +88,7 @@ export default function DetailedPostTrainingJourney() {
                         Your Career Journey
                     </span>
                     <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                        What to Expect After Completing SAP Ariba Training
+                        {title || `What to Expect After Completing ${courseName} Training`}
                     </h2>
                     <p className="text-gray-600 text-lg">
                         Your comprehensive growth roadmap from certification to career excellence
@@ -82,40 +100,44 @@ export default function DetailedPostTrainingJourney() {
                     {/* Vertical Line */}
                     <div className="absolute left-6 top-8 bottom-8 w-0.5 bg-slate-200 hidden md:block"></div>
 
-                    {steps.map((step, idx) => (
-                        <div key={idx} className="relative pl-0 md:pl-20">
-                            {/* Icon Marker */}
-                            <div className={`hidden md:flex absolute left-0 w-12 h-12 rounded-full border-4 border-white shadow-sm items-center justify-center z-10 
-                                ${step.color === 'orange' ? 'bg-orange-500 text-white' : 'bg-slate-800 text-white'}`}>
-                                <step.icon className="w-6 h-6" />
-                            </div>
+                    {steps.map((step: any, idx: number) => {
+                        const Icon = typeof step.icon === 'string' ? (iconMap[step.icon] || CheckCircle2) : (step.icon || CheckCircle2);
 
-                            {/* Card content */}
-                            <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 border-b border-slate-100 pb-4">
-                                    <div className="flex items-center gap-4">
-                                        <div className={`md:hidden w-10 h-10 rounded-full flex items-center justify-center text-white
-                                            ${step.color === 'orange' ? 'bg-orange-500' : 'bg-slate-800'}`}>
-                                            <step.icon className="w-5 h-5" />
-                                        </div>
-                                        <h3 className="text-xl font-bold text-slate-900">{step.title}</h3>
-                                    </div>
-                                    <span className="text-sm font-bold text-orange-600 bg-orange-50 px-3 py-1 rounded-full border border-orange-100 inline-block w-fit">
-                                        {step.timeline}
-                                    </span>
+                        return (
+                            <div key={idx} className="relative pl-0 md:pl-20">
+                                {/* Icon Marker */}
+                                <div className={`hidden md:flex absolute left-0 w-12 h-12 rounded-full border-4 border-white shadow-sm items-center justify-center z-10 
+                                    ${step.color === 'orange' ? 'bg-orange-500 text-white' : 'bg-slate-800 text-white'}`}>
+                                    <Icon className="w-6 h-6" />
                                 </div>
 
-                                <ul className="space-y-3">
-                                    {step.points.map((point, pIdx) => (
-                                        <li key={pIdx} className="flex items-start gap-3">
-                                            <div className="w-1.5 h-1.5 rounded-full bg-orange-400 mt-2 flex-shrink-0" />
-                                            <span className="text-slate-600 text-[15px] leading-relaxed">{point}</span>
-                                        </li>
-                                    ))}
-                                </ul>
+                                {/* Card content */}
+                                <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 border-b border-slate-100 pb-4">
+                                        <div className="flex items-center gap-4">
+                                            <div className={`md:hidden w-10 h-10 rounded-full flex items-center justify-center text-white
+                                                ${step.color === 'orange' ? 'bg-orange-500' : 'bg-slate-800'}`}>
+                                                <Icon className="w-5 h-5" />
+                                            </div>
+                                            <h3 className="text-xl font-bold text-slate-900">{step.title}</h3>
+                                        </div>
+                                        <span className="text-sm font-bold text-orange-600 bg-orange-50 px-3 py-1 rounded-full border border-orange-100 inline-block w-fit">
+                                            {step.timeline}
+                                        </span>
+                                    </div>
+
+                                    <ul className="space-y-3">
+                                        {step.points.map((point: string, pIdx: number) => (
+                                            <li key={pIdx} className="flex items-start gap-3">
+                                                <div className="w-1.5 h-1.5 rounded-full bg-orange-400 mt-2 flex-shrink-0" />
+                                                <span className="text-slate-600 text-[15px] leading-relaxed">{point}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        );
+                    })}
                 </div>
 
                 {/* Footer Stats & CTA */}
@@ -151,8 +173,11 @@ export default function DetailedPostTrainingJourney() {
                 </div>
 
                 <div className="text-center">
-                    <p className="text-slate-500 text-sm mb-6">Ready to start your SAP Ariba career journey?</p>
-                    <button className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-10 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+                    <p className="text-slate-500 text-sm mb-6">Ready to start your {courseName} career journey?</p>
+                    <button
+                        onClick={scrollToBooking}
+                        className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-10 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
+                    >
                         Enroll in Next Batch
                     </button>
                 </div>
@@ -161,5 +186,4 @@ export default function DetailedPostTrainingJourney() {
     );
 }
 
-// Helper icons
-import { TrendingUp, Briefcase, Headphones } from 'lucide-react';
+

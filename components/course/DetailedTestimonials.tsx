@@ -1,8 +1,81 @@
-import React from 'react';
-import { Star, Quote, CheckCircle2, Download, FileText, User, Mail, Briefcase, Calendar } from 'lucide-react';
+"use client";
 
-export default function DetailedTestimonials() {
-    const reviews = [
+import React, { useState } from 'react';
+import { Star, Quote, CheckCircle2, Download, FileText, User, Mail, Briefcase, Calendar, Loader2, AlertCircle } from 'lucide-react';
+import { supabase } from '@/lib/supabase';
+import { submitToGoogleSheets } from '@/app/actions/submitToGoogleSheets';
+
+export default function DetailedTestimonials({ items, courseName = "SAP Ariba" }: { items?: any[], courseName?: string }) {
+    const [formData, setFormData] = useState({
+        fullName: '',
+        email: '',
+        role: '',
+        experience: ''
+    });
+    const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+    const [errorMessage, setErrorMessage] = useState('');
+
+    const scrollToBooking = () => {
+        const element = document.getElementById('detailed-demo-booking');
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setStatus('loading');
+        setErrorMessage('');
+
+        try {
+            const names = formData.fullName.trim().split(' ');
+            const firstName = names[0] || '';
+            const lastName = names.slice(1).join(' ') || '';
+
+            const fullMessage = `Desired Role: ${formData.role}\nYears Experience: ${formData.experience}\n\n(Requested Interview Guide)`;
+
+            const { error } = await supabase
+                .from('contacts')
+                .insert([
+                    {
+                        name: formData.fullName,
+                        first_name: firstName,
+                        last_name: lastName,
+                        email: formData.email,
+                        phone: '', // Not collected in this form
+                        course: 'SAP Ariba - Interview Guide',
+                        message: fullMessage,
+                    }
+                ]);
+
+            if (error) throw error;
+
+            await submitToGoogleSheets({
+                firstName,
+                lastName,
+                email: formData.email,
+                countryCode: '',
+                phone: '',
+                course: `${courseName} - Interview Guide`,
+                message: fullMessage
+            });
+
+            setStatus('success');
+            setFormData({ fullName: '', email: '', role: '', experience: '' });
+
+        } catch (error: any) {
+            console.error(error);
+            setStatus('error');
+            setErrorMessage(error.message || 'Submission failed.');
+        }
+    };
+    const defaultReviews = [
+        // ... (Keep existing Ariba reviews as default)
         {
             text: "Outstanding training and real project exposure. I landed a consulting role at Accenture within 2 weeks of completing the course. The hands-on approach and expert instructors made all the difference.",
             author: "Rahul Mehta",
@@ -47,6 +120,20 @@ export default function DetailedTestimonials() {
         }
     ];
 
+    const rawReviews = items || defaultReviews;
+
+    // Normalize reviews to ensure they have color/initial
+    const reviews = rawReviews.map((r, i) => {
+        const colors = ["bg-orange-500", "bg-blue-500", "bg-green-500", "bg-purple-500", "bg-red-500", "bg-indigo-500"];
+        return {
+            text: r.quote || r.text, // Handle mismatch (mmContent uses quote)
+            author: r.name || r.author, // Handle mismatch
+            role: r.role,
+            initial: r.initial || (r.name || r.author || "U").charAt(0).toUpperCase(),
+            color: r.color || colors[i % colors.length]
+        };
+    });
+
     const benefits = [
         "50+ real interview questions with expert answers",
         "Behavioral questions common in SAP consulting interviews",
@@ -65,7 +152,7 @@ export default function DetailedTestimonials() {
                         Student Success Stories
                     </span>
                     <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                        Hear from Our Successful <span className="text-orange-600">SAP Ariba Learners</span>
+                        Hear from Our Successful <span className="text-orange-600">{courseName} Learners</span>
                     </h2>
                     <p className="text-gray-600">Real reviews, real results from professionals who transformed their careers</p>
 
@@ -107,7 +194,10 @@ export default function DetailedTestimonials() {
                 </div>
 
                 <div className="text-center mb-24">
-                    <button className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+                    <button
+                        onClick={scrollToBooking}
+                        className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
+                    >
                         Start Your Success Story Today
                     </button>
                     <p className="mt-4 text-sm text-slate-500">Join 5,000+ successful graduates</p>
@@ -120,10 +210,10 @@ export default function DetailedTestimonials() {
                             <span className="text-green-600 font-bold tracking-wider text-sm mb-2 uppercase">Free Resource</span>
                             <h3 className="text-3xl font-bold text-slate-900 mb-4">
                                 Download the Most Asked <br />
-                                <span className="text-blue-600">SAP Ariba Interview Questions</span>
+                                <span className="text-blue-600">{courseName} Interview Questions</span>
                             </h3>
                             <p className="text-slate-600 mb-8 max-w-md">
-                                Get a comprehensive guide to help you ace your SAP Ariba interviews and land your dream consulting role.
+                                Get a comprehensive guide to help you ace your {courseName} interviews and land your dream consulting role.
                             </p>
                             <div className="space-y-4">
                                 {benefits.map((item, idx) => (
@@ -159,54 +249,109 @@ export default function DetailedTestimonials() {
                                     </div>
                                 </div>
 
-                                <form className="space-y-4">
-                                    <div>
-                                        <label className="block text-xs font-bold text-slate-700 mb-1.5 ml-1">Full Name</label>
-                                        <div className="relative">
-                                            <User className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
-                                            <input type="text" placeholder="Enter your name" className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 transition-colors" />
-                                        </div>
+                                {status === 'success' ? (
+                                    <div className="bg-green-50 border border-green-200 rounded-xl p-6 text-center">
+                                        <CheckCircle2 className="mx-auto h-12 w-12 text-green-500 mb-4" />
+                                        <h3 className="text-lg font-bold text-green-900 mb-2">Guide Sent!</h3>
+                                        <p className="text-green-700 text-sm mb-4">
+                                            Please check your email inbox (and spam folder) for the download link.
+                                        </p>
+                                        <button
+                                            onClick={() => setStatus('idle')}
+                                            className="text-sm text-green-700 hover:underline font-semibold"
+                                        >
+                                            Send to another email
+                                        </button>
                                     </div>
-                                    <div>
-                                        <label className="block text-xs font-bold text-slate-700 mb-1.5 ml-1">Email Address</label>
-                                        <div className="relative">
-                                            <Mail className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
-                                            <input type="email" placeholder="your.email@example.com" className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 transition-colors" />
-                                        </div>
-                                    </div>
-                                    <div className="grid grid-cols-2 gap-4">
+                                ) : (
+                                    <form onSubmit={handleSubmit} className="space-y-4">
+                                        {status === 'error' && (
+                                            <div className="bg-red-50 border border-red-200 p-3 rounded-lg text-sm text-red-700 flex items-center gap-2">
+                                                <AlertCircle className="w-4 h-4" /> {errorMessage}
+                                            </div>
+                                        )}
                                         <div>
-                                            <label className="block text-xs font-bold text-slate-700 mb-1.5 ml-1">Desired Role</label>
+                                            <label className="block text-xs font-bold text-slate-700 mb-1.5 ml-1">Full Name</label>
                                             <div className="relative">
-                                                <Briefcase className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
-                                                <select className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 transition-colors appearance-none text-slate-600">
-                                                    <option>Select role</option>
-                                                    <option>Consultant</option>
-                                                    <option>End User</option>
-                                                </select>
+                                                <User className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
+                                                <input
+                                                    type="text"
+                                                    name="fullName"
+                                                    value={formData.fullName}
+                                                    onChange={handleChange}
+                                                    required
+                                                    placeholder="Enter your name"
+                                                    className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 transition-colors"
+                                                />
                                             </div>
                                         </div>
                                         <div>
-                                            <label className="block text-xs font-bold text-slate-700 mb-1.5 ml-1">Years Experience</label>
+                                            <label className="block text-xs font-bold text-slate-700 mb-1.5 ml-1">Email Address</label>
                                             <div className="relative">
-                                                <Calendar className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
-                                                <select className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 transition-colors appearance-none text-slate-600">
-                                                    <option>Select years</option>
-                                                    <option>0-2 Years</option>
-                                                    <option>3-5 Years</option>
-                                                    <option>5+ Years</option>
-                                                </select>
+                                                <Mail className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
+                                                <input
+                                                    type="email"
+                                                    name="email"
+                                                    value={formData.email}
+                                                    onChange={handleChange}
+                                                    required
+                                                    placeholder="your.email@example.com"
+                                                    className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 transition-colors"
+                                                />
                                             </div>
                                         </div>
-                                    </div>
+                                        <div className="grid grid-cols-2 gap-4">
+                                            <div>
+                                                <label className="block text-xs font-bold text-slate-700 mb-1.5 ml-1">Desired Role</label>
+                                                <div className="relative">
+                                                    <Briefcase className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
+                                                    <select
+                                                        name="role"
+                                                        value={formData.role}
+                                                        onChange={handleChange}
+                                                        className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 transition-colors appearance-none text-slate-600"
+                                                    >
+                                                        <option value="">Select role</option>
+                                                        <option value="Consultant">Consultant</option>
+                                                        <option value="End User">End User</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <label className="block text-xs font-bold text-slate-700 mb-1.5 ml-1">Years Experience</label>
+                                                <div className="relative">
+                                                    <Calendar className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
+                                                    <select
+                                                        name="experience"
+                                                        value={formData.experience}
+                                                        onChange={handleChange}
+                                                        className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 transition-colors appearance-none text-slate-600"
+                                                    >
+                                                        <option value="">Select years</option>
+                                                        <option value="0-2 Years">0-2 Years</option>
+                                                        <option value="3-5 Years">3-5 Years</option>
+                                                        <option value="5+ Years">5+ Years</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                    <button type="button" className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg shadow-md hover:shadow-lg transition-all mt-2 flex items-center justify-center gap-2">
-                                        <Download className="w-4 h-4" /> Download Interview Guide
-                                    </button>
-                                    <p className="text-[10px] text-center text-slate-400 mt-2">
-                                        By downloading, you agree to receive updates about our SAP Ariba training programs.
-                                    </p>
-                                </form>
+                                        <button
+                                            type="submit"
+                                            disabled={status === 'loading'}
+                                            className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg shadow-md hover:shadow-lg transition-all mt-2 flex items-center justify-center gap-2 disabled:bg-green-400"
+                                        >
+                                            {status === 'loading' ? (
+                                                <>Processing...</>
+                                            ) : (
+                                                <><Download className="w-4 h-4" /> Download Interview Guide</>
+                                            )}
+                                        </button>
+                                        <p className="text-[10px] text-center text-slate-400 mt-2">
+                                            By downloading, you agree to receive updates about our {courseName} training programs.
+                                        </p>
+                                    </form>
+                                )}
                             </div>
                         </div>
                     </div>

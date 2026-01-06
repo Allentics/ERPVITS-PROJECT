@@ -18,6 +18,7 @@ import DetailedPostTrainingJourney from './DetailedPostTrainingJourney';
 import DetailedTestimonials from './DetailedTestimonials';
 import DetailedUpcomingBatches from './DetailedUpcomingBatches';
 import DetailedFAQ from './DetailedFAQ';
+import DetailedDemoBooking from './DetailedDemoBooking';
 import {
     Quote, CheckCircle2, UserCheck, Laptop, Briefcase, Clock,
     Award, Globe, BookOpen, Video, TrendingUp, Headphones,
@@ -44,8 +45,8 @@ const getIconForTitle = (title: string) => {
 
 // Defined locally to avoid circular dependency
 export function DetailedFeatures({ badge, title, subtitle, items }: any) {
-    const renderTitle = (t: string) => {
-        if (t.includes("100% Hands-On")) {
+    const renderTitle = (t: any) => {
+        if (typeof t === 'string' && t.includes("100% Hands-On")) {
             const parts = t.split("100% Hands-On");
             return (
                 <>
@@ -146,7 +147,7 @@ export function TestimonialsSection({ title, items }: any) {
     );
 }
 
-export default function SectionRenderer({ sections }: { sections: any[] }) {
+export default function SectionRenderer({ sections, courseName }: { sections: any[]; courseName?: string }) {
     if (!sections) return null;
 
     return (
@@ -156,41 +157,43 @@ export default function SectionRenderer({ sections }: { sections: any[] }) {
                     case 'detailed_features':
                         return <DetailedFeatures key={idx} {...section} badge={section.badge || "Key Features"} items={section.items} />;
                     case 'target_audience':
-                        return <TargetAudience key={idx} title={section.title} items={section.items} />;
+                        return <DetailedTargetAudience key={idx} items={section.items} />;
                     case 'prerequisites':
-                        return <Prerequisites key={idx} title={section.title} subtitle={section.subtitle} items={section.items} />;
+                        return <DetailedPrerequisites key={idx} items={section.items} />;
                     case 'learning_outcomes':
                         return <LearningOutcomes key={idx} title={section.title} items={section.items} />;
                     case 'curriculum':
                         return <section key={idx} id="curriculum" className="scroll-mt-32">
-                            <Curriculum modules={section.modules} />
+                            <Curriculum modules={section.modules} courseName={courseName || section.courseName} />
                         </section>;
                     case 'detailed_curriculum':
                         return <section key={idx} id="curriculum" className="scroll-mt-32">
-                            <DetailedCurriculum modules={section.modules} />
+                            <DetailedCurriculum modules={section.modules} title={section.title} courseName={courseName || section.courseName} />
                         </section>;
                     case 'detailed_prerequisites':
-                        return <DetailedPrerequisites key={idx} />;
+                        return <DetailedPrerequisites key={idx} items={section.items} />;
                     case 'detailed_target_audience':
-                        return <DetailedTargetAudience key={idx} />;
+                        return <DetailedTargetAudience key={idx} items={section.items} title={section.title} subtitle={section.subtitle} />;
                     case 'detailed_learning_outcomes':
-                        return <DetailedLearningOutcomes key={idx} />;
+                        return <DetailedLearningOutcomes key={idx} items={section.items} />;
                     case 'real_world_scenarios':
-                        return <RealWorldScenarios key={idx} />;
+                        return <RealWorldScenarios key={idx} items={section.items} />;
                     case 'detailed_certification':
-                        return <DetailedCertification key={idx} />;
+                        return <DetailedCertification key={idx} items={section.items} title={section.title} subtitle={section.subtitle} badge={section.badge} stats={section.stats} courseName={courseName || section.courseName} description={section.description || section.content} />;
                     case 'detailed_career_opportunities':
-                        return <DetailedCareerOpportunities key={idx} />;
+                        return <DetailedCareerOpportunities key={idx} items={section.items} courseName={courseName || section.courseName} />;
                     case 'detailed_career_roadmap':
                         return <DetailedCareerRoadmap key={idx} />;
                     case 'detailed_post_training_journey':
-                        return <DetailedPostTrainingJourney key={idx} />;
+                        return <DetailedPostTrainingJourney key={idx} steps={section.items} title={section.title} courseName={section.courseName || courseName} />;
                     case 'detailed_testimonials':
-                        return <DetailedTestimonials key={idx} />;
+                        return <DetailedTestimonials key={idx} items={section.items} courseName={courseName || section.courseName} />;
                     case 'detailed_upcoming_batches':
-                        return <DetailedUpcomingBatches key={idx} />;
+                        return <DetailedUpcomingBatches key={idx} batches={section.items} courseName={section.courseName || courseName} />;
                     case 'detailed_faq':
-                        return <DetailedFAQ key={idx} />;
+                        return <DetailedFAQ key={idx} items={section.items} />;
+                    case 'detailed_demo_booking':
+                        return <DetailedDemoBooking key={idx} courseName={courseName} />;
                     case 'features':
                         // Fallback replacement for features
                         return <DetailedFeatures key={idx} items={section.items} title={section.title || "Course Highlights"} />;
@@ -205,7 +208,7 @@ export default function SectionRenderer({ sections }: { sections: any[] }) {
                     case 'whats_included':
                         return <WhatsIncluded key={idx} />;
                     case 'faq':
-                        return <div key={idx} id="faq" className="scroll-mt-32"><FAQ course={{ faqs: section.items } as any} /></div>;
+                        return <DetailedFAQ key={idx} items={section.items} />;
                     default:
                         return null;
                 }

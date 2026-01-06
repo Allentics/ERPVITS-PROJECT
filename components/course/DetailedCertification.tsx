@@ -1,8 +1,16 @@
 import React from 'react';
 import { Award, CheckCircle2, BookOpen, Trophy, TrendingUp, FileCheck } from 'lucide-react';
 
-export default function DetailedCertification() {
-    const certs = [
+export default function DetailedCertification({ items, title, subtitle, badge, stats, courseName = "SAP Ariba", description }: {
+    items?: any[],
+    title?: string,
+    subtitle?: string,
+    badge?: string,
+    stats?: { value: string, label: string }[],
+    courseName?: string,
+    description?: string
+}) {
+    const defaultCerts = [
         {
             title: "SAP Certified Application Associate - SAP Ariba Procurement",
             code: "(C_ARP2P_2408)",
@@ -25,6 +33,8 @@ export default function DetailedCertification() {
             relevance: "Contract management and legal compliance roles"
         }
     ];
+
+    const certs = items || defaultCerts;
 
     const supportFeatures = [
         "Targeted exam preparation aligned to official blueprints",
@@ -52,20 +62,29 @@ export default function DetailedCertification() {
         }
     ];
 
+    const defaultStats = [
+        { value: "3", label: "Certification Tracks" },
+        { value: "95%", label: "First-Time Pass Rate" },
+        { value: "30%", label: "Salary Premium" }
+    ];
+
+    const displayStats = stats || defaultStats;
+
     return (
         <section className="py-16 bg-white">
             <div className="max-w-7xl mx-auto px-4">
                 {/* Header */}
                 <div className="text-center mb-12">
                     <span className="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block">
-                        SAP Certification
+                        {badge || "SAP Certification"}
                     </span>
                     <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                        SAP Ariba Certification from ERPVITS – Global Credential Recognition
+                        {title || `SAP ${courseName} Certification from ERPVITS – Global Credential Recognition`}
                     </h2>
                     <p className="text-gray-600 text-lg">
-                        Complete preparation for all three official SAP Ariba certification tracks
+                        {description || (courseName === 'SAP Ariba' ? "Complete preparation for all three official SAP Ariba certification tracks" : `Comprehensive preparation for official SAP ${courseName} certification`)}
                     </p>
+                    {subtitle && <p className="text-gray-500 mt-2">{subtitle}</p>}
                 </div>
 
                 {/* Cert Cards */}
@@ -78,21 +97,21 @@ export default function DetailedCertification() {
                             <div className="flex-1">
                                 <div className="flex flex-col md:flex-row md:items-center gap-2 mb-3">
                                     <h3 className="font-bold text-slate-900 text-lg">{cert.title}</h3>
-                                    <span className="text-blue-600 font-medium text-sm bg-blue-50 px-2 py-1 rounded border border-blue-100">{cert.code}</span>
+                                    {cert.code && <span className="text-blue-600 font-medium text-sm bg-blue-50 px-2 py-1 rounded border border-blue-100">{cert.code}</span>}
                                 </div>
 
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
                                     <div>
                                         <p className="font-bold text-slate-700 mb-1">Exam Focus:</p>
-                                        <p className="text-slate-600 leading-relaxed">{cert.focus}</p>
+                                        <p className="text-slate-600 leading-relaxed">{cert.focus || cert.description}</p>
                                     </div>
                                     <div>
                                         <p className="font-bold text-slate-700 mb-1">Who It's For:</p>
-                                        <p className="text-slate-600 leading-relaxed">{cert.who}</p>
+                                        <p className="text-slate-600 leading-relaxed">{cert.who || "Aspiring Consultants"}</p>
                                     </div>
                                     <div>
                                         <p className="font-bold text-slate-700 mb-1">Job Relevance:</p>
-                                        <p className="text-slate-600 leading-relaxed">{cert.relevance}</p>
+                                        <p className="text-slate-600 leading-relaxed">{cert.relevance || "High Demand Roles"}</p>
                                     </div>
                                 </div>
                             </div>
@@ -131,16 +150,16 @@ export default function DetailedCertification() {
                 {/* Bottom Stats */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="bg-yellow-50 rounded-xl p-8 text-center border border-yellow-100">
-                        <div className="text-3xl font-bold text-yellow-600 mb-2">3</div>
-                        <div className="text-sm font-medium text-slate-700">Certification Tracks</div>
+                        <div className="text-3xl font-bold text-yellow-600 mb-2">{displayStats[0]?.value}</div>
+                        <div className="text-sm font-medium text-slate-700">{displayStats[0]?.label}</div>
                     </div>
                     <div className="bg-green-50 rounded-xl p-8 text-center border border-green-100">
-                        <div className="text-3xl font-bold text-green-600 mb-2">95%</div>
-                        <div className="text-sm font-medium text-slate-700">First-Time Pass Rate</div>
+                        <div className="text-3xl font-bold text-green-600 mb-2">{displayStats[1]?.value}</div>
+                        <div className="text-sm font-medium text-slate-700">{displayStats[1]?.label}</div>
                     </div>
                     <div className="bg-blue-50 rounded-xl p-8 text-center border border-blue-100">
-                        <div className="text-3xl font-bold text-blue-600 mb-2">30%</div>
-                        <div className="text-sm font-medium text-slate-700">Salary Premium</div>
+                        <div className="text-3xl font-bold text-blue-600 mb-2">{displayStats[2]?.value}</div>
+                        <div className="text-sm font-medium text-slate-700">{displayStats[2]?.label}</div>
                     </div>
                 </div>
             </div>

@@ -49,8 +49,15 @@ const Navbar = () => {
         fetchData();
     }, []);
 
-    const functionalCourses = dynCourses.filter(c => c.category === 'Functional').sort((a, b) => a.title.localeCompare(b.title));
-    const technicalCourses = dynCourses.filter(c => c.category === 'Technical').sort((a, b) => a.title.localeCompare(b.title));
+    const functionalCourses = dynCourses
+        .filter(c => c.category === 'Functional')
+        .filter((c, index, self) => index === self.findIndex((t) => t.title === c.title))
+        .sort((a, b) => a.title.localeCompare(b.title));
+
+    const technicalCourses = dynCourses
+        .filter(c => c.category === 'Technical')
+        .filter((c, index, self) => index === self.findIndex((t) => t.title === c.title))
+        .sort((a, b) => a.title.localeCompare(b.title));
 
     const toggleDropdown = (name: string) => {
         setActiveDropdown(activeDropdown === name ? null : name);

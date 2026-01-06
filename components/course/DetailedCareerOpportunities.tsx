@@ -1,15 +1,22 @@
-import React from 'react';
 import { Briefcase, Building2, TrendingUp, Users, Settings } from 'lucide-react';
 
-export default function DetailedCareerOpportunities() {
-    const roles = [
+const iconMap: Record<string, any> = {
+    "Briefcase": Briefcase,
+    "Building2": Building2,
+    "TrendingUp": TrendingUp,
+    "Users": Users,
+    "Settings": Settings
+};
+
+export default function DetailedCareerOpportunities({ items, courseName = "SAP Ariba" }: { items?: any[], courseName?: string }) {
+    const defaultRoles = [
         {
             title: "SAP Ariba Consultant (Entry Level)",
             salary: "$80,000 - $110,000 (USA) | ₹8 - 12 LPA (India)",
             responsibilities: "Configure workflows, manage user roles, support end users",
             employers: "Accenture, Capgemini, Deloitte, Infosys, Wipro",
             path: "2-3 years -> Mid-level Consultant",
-            icon: Users,
+            icon: "Users",
             color: "blue"
         },
         {
@@ -18,7 +25,7 @@ export default function DetailedCareerOpportunities() {
             responsibilities: "Manage supplier relationships, spend analysis, cost savings",
             employers: "Manufacturing, Retail, Technology, Finance sectors",
             path: "3-5 years -> Senior Analyst / Manager",
-            icon: TrendingUp,
+            icon: "TrendingUp",
             color: "green"
         },
         {
@@ -27,7 +34,7 @@ export default function DetailedCareerOpportunities() {
             responsibilities: "Run sourcing events, evaluate suppliers, negotiate contracts",
             employers: "Consulting, Enterprise, Technology",
             path: "3-5 years -> Sourcing Manager",
-            icon: Briefcase,
+            icon: "Briefcase",
             color: "purple"
         },
         {
@@ -36,7 +43,7 @@ export default function DetailedCareerOpportunities() {
             responsibilities: "Conduct spend analysis, identify savings, drive strategies",
             employers: "Consulting firms, Multinationals",
             path: "3-5 years -> Senior Analyst / Manager",
-            icon: TrendingUp,
+            icon: "TrendingUp",
             color: "orange"
         },
         {
@@ -45,10 +52,12 @@ export default function DetailedCareerOpportunities() {
             responsibilities: "Integrate Ariba with S/4HANA, manage data flows, troubleshoot",
             employers: "Consulting, Technology, Pharma",
             path: "3-5 years -> Senior Consultant / Architect",
-            icon: Settings,
+            icon: "Settings",
             color: "cyan"
         }
     ];
+
+    const roles = items || defaultRoles;
 
     const getColorClasses = (color: string) => {
         const map: any = {
@@ -70,7 +79,7 @@ export default function DetailedCareerOpportunities() {
                         Career Paths
                     </span>
                     <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                        Career Opportunities After SAP Ariba Training
+                        Career Opportunities After {courseName} Training
                     </h2>
                     <p className="text-gray-600 text-lg">
                         Step into global consulting and implementation roles with competitive salaries
@@ -79,8 +88,9 @@ export default function DetailedCareerOpportunities() {
 
                 {/* Roles List */}
                 <div className="space-y-4">
-                    {roles.map((role, idx) => {
+                    {roles.map((role: any, idx: number) => {
                         const colors = getColorClasses(role.color);
+                        const Icon = iconMap[role.icon] || Users;
                         return (
                             <div key={idx} className={`bg-white rounded-xl p-6 border ${colors.border} shadow-sm hover:shadow-md transition-all`}>
                                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
@@ -88,7 +98,7 @@ export default function DetailedCareerOpportunities() {
                                     <div className="lg:col-span-4">
                                         <div className="flex items-center gap-4 mb-2">
                                             <div className={`w-10 h-10 rounded-lg ${colors.bg} ${colors.text} flex items-center justify-center flex-shrink-0`}>
-                                                <role.icon className="w-5 h-5" />
+                                                <Icon className="w-5 h-5" />
                                             </div>
                                             <h3 className="font-bold text-slate-900">{role.title}</h3>
                                         </div>

@@ -3,10 +3,19 @@
 import React, { useState } from 'react';
 import { Plus, Minus, HelpCircle } from 'lucide-react';
 
-export default function DetailedFAQ() {
+export default function DetailedFAQ({ items }: { items?: any[] }) {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
-    const faqs = [
+
+    const scrollToBooking = () => {
+        const element = document.getElementById('detailed-demo-booking');
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    const defaultFaqs = [
+        // ... (Existing Ariba FAQs)
         {
             question: "What is SAP Ariba and how does ERPVITS help me learn it?",
             answer: "SAP Ariba is a cloud-based procurement solution that connects buyers and suppliers. ERPVITS provides comprehensive, hands-on training covering the entire Ariba suite (Upstream & Downstream), ensuring you gain practical skills for real-world implementations."
@@ -85,6 +94,11 @@ export default function DetailedFAQ() {
         }
     ];
 
+    const faqs = (items || defaultFaqs).map((item: any) => ({
+        question: item.question || item.q,
+        answer: item.answer || item.a
+    }));
+
     return (
         <section className="py-20 bg-white">
             <div className="max-w-4xl mx-auto px-4">
@@ -136,7 +150,10 @@ export default function DetailedFAQ() {
 
                 <div className="mt-12 text-center">
                     <p className="text-slate-500 mb-4">Still have questions?</p>
-                    <button className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-xl shadow-md hover:shadow-lg transition-all flex items-center gap-2 mx-auto">
+                    <button
+                        onClick={scrollToBooking}
+                        className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-xl shadow-md hover:shadow-lg transition-all flex items-center gap-2 mx-auto"
+                    >
                         <HelpCircle className="w-5 h-5" /> Contact Admission Team
                     </button>
                 </div>

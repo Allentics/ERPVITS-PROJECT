@@ -1,13 +1,17 @@
 import React from 'react';
 import { CheckCircle2, Star, Info } from 'lucide-react';
 
+import { aribaPrerequisites } from '@/lib/contentHelpers';
+
 interface PrerequisiteItem {
     type: 'required' | 'optional';
     title: string;
     items: string[];
 }
 
-export default function DetailedPrerequisites() {
+export default function DetailedPrerequisites({ items }: { items?: any }) {
+    const data = items || aribaPrerequisites;
+
     return (
         <section className="py-16 bg-white">
             <div className="max-w-7xl mx-auto px-4">
@@ -17,10 +21,10 @@ export default function DetailedPrerequisites() {
                         Prerequisites
                     </span>
                     <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                        SAP Ariba Training Prerequisites – Who Should Enroll?
+                        Course Prerequisites – Who Should Enroll?
                     </h2>
                     <p className="text-gray-600 text-lg">
-                        Designed for professionals with varied backgrounds – from complete beginners to experienced SAP consultants
+                        Designed for professionals with varied backgrounds – from complete beginners to experienced consultants
                     </p>
                 </div>
 
@@ -34,12 +38,7 @@ export default function DetailedPrerequisites() {
                         </div>
                         <h3 className="text-xl font-bold text-slate-900 mb-6">Minimum Requirements</h3>
                         <ul className="space-y-4">
-                            {[
-                                "Basic understanding of procurement processes",
-                                "Familiarity with supply chain concepts",
-                                "Comfortable with web applications",
-                                "Ability to learn complex tools"
-                            ].map((item, idx) => (
+                            {data.minimum.map((item: string, idx: number) => (
                                 <li key={idx} className="flex items-start gap-3">
                                     <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
                                     <span className="text-slate-600 text-[15px]">{item}</span>
@@ -55,12 +54,7 @@ export default function DetailedPrerequisites() {
                         </div>
                         <h3 className="text-xl font-bold text-slate-900 mb-6">Nice to Have (Not Required)</h3>
                         <ul className="space-y-4">
-                            {[
-                                "Prior SAP experience (MM, SD, SRM, FICO)",
-                                "Procurement or finance work experience",
-                                "Exposure to ERP systems",
-                                "Intermediate Excel skills"
-                            ].map((item, idx) => (
+                            {data.nicetohave.map((item: string, idx: number) => (
                                 <li key={idx} className="flex items-start gap-3">
                                     <Star className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5 fill-blue-50" />
                                     <span className="text-slate-600 text-[15px]">{item}</span>

@@ -1,8 +1,17 @@
+"use client";
+
 import React from 'react';
 import { Calendar, Clock, AlertCircle, CheckCircle2, ShieldCheck, Users, Zap } from 'lucide-react';
 
-export default function DetailedUpcomingBatches() {
-    const batches = [
+export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batches: propBatches }: { courseName?: string, batches?: any[] }) {
+    const scrollToBooking = () => {
+        const element = document.getElementById('detailed-demo-booking');
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    const defaultBatches = [
         {
             name: "Batch 1: November 2024 (Weekday)",
             status: "Filling Fast",
@@ -32,6 +41,8 @@ export default function DetailedUpcomingBatches() {
         }
     ];
 
+    const batches = propBatches || defaultBatches;
+
     const features = [
         { icon: Zap, text: "Early-bird discounts for first registration" },
         { icon: Users, text: "Personal mentoring & path consultation" },
@@ -54,7 +65,7 @@ export default function DetailedUpcomingBatches() {
                         Limited Seats Available
                     </span>
                     <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-                        Join Our Next Live Batch – <span className="text-orange-400">SAP Ariba Training</span>
+                        Join Our Next Live Batch – <span className="text-orange-400">{courseName} Training</span>
                     </h2>
                     <p className="text-slate-300 max-w-2xl mx-auto">
                         Secure your spot in our upcoming batches with flexible timings designed for working professionals
@@ -117,7 +128,10 @@ export default function DetailedUpcomingBatches() {
                                 </div>
                             </div>
 
-                            <button className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 rounded-lg shadow-md hover:shadow-lg transition-all text-sm uppercase tracking-wide">
+                            <button
+                                onClick={scrollToBooking}
+                                className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 rounded-lg shadow-md hover:shadow-lg transition-all text-sm uppercase tracking-wide"
+                            >
                                 Register Now
                             </button>
                         </div>

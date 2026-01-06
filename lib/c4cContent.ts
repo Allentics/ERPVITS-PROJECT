@@ -1,3 +1,11 @@
+import {
+    c4cTargetAudience,
+    c4cPrerequisites,
+    c4cLearningOutcomes,
+    c4cRealWorldScenarios
+} from './contentHelpers';
+import { Section } from './courseData';
+
 export const c4cContent = {
     heroHeading: "End-to-End SAP C4C Technical Training with Real-Time Implementation",
     badges: ["New Batch Starting Soon", "100% Job Oriented"],
@@ -6,7 +14,7 @@ export const c4cContent = {
     metaDescription: "Advance your career with ERPVITS SAP C4C Technical Training. Get real-world project experience, certification prep & placement support for global SAP roles.",
     sections: [
         {
-            type: 'features',
+            type: 'detailed_features',
             title: "Why Professionals Choose ERPVITS for SAP C4C Technical Online Training",
             items: [
                 "Trusted by 450+ successful SAP C4C developers.",
@@ -20,7 +28,7 @@ export const c4cContent = {
             ]
         },
         {
-            type: 'curriculum',
+            type: 'detailed_curriculum',
             title: "Comprehensive SAP C4C Technical Course Curriculum",
             modules: [
                 {
@@ -124,7 +132,108 @@ export const c4cContent = {
             ]
         },
         {
-            type: 'faq',
+            type: 'detailed_prerequisites',
+            title: "SAP C4C Training Prerequisites",
+            items: c4cPrerequisites
+        },
+        {
+            type: 'detailed_target_audience',
+            title: "Who Should Learn SAP C4C?",
+            items: c4cTargetAudience
+        },
+        {
+            type: 'detailed_learning_outcomes',
+            title: "What You Will Master",
+            items: c4cLearningOutcomes
+        },
+        {
+            type: 'real_world_scenarios',
+            title: "Real-World SAP C4C Technical Scenarios",
+            items: c4cRealWorldScenarios
+        },
+        {
+            type: 'detailed_certification',
+            title: "SAP C4C Certification – Validate Your Cloud Expertise",
+            subtitle: "We prepare you for C_C4HCX_24 (SAP Certified Application Associate - Solution Architect for CX)",
+            badge: "Industry Standard",
+            content: "Certification proves your ability to build, extend, and integrate cloud solutions using SAP Cloud Applications Studio. It is a key differentiator for technical consultants.",
+            items: [
+                {
+                    title: "Exam Application Support",
+                    description: "Full guidance on exam registration and scheduling."
+                },
+                {
+                    title: "Mock Exams",
+                    description: "Practice with questions that mirror the actual certification format."
+                },
+                {
+                    title: "Code Review Sessions",
+                    description: "Review of key coding patterns and SDK features tested in the exam."
+                },
+                {
+                    title: "Career Mentorship",
+                    description: "Guidance on career paths for certified C4C developers."
+                }
+            ]
+        },
+        {
+            type: 'detailed_career_opportunities',
+            title: "Career Paths After SAP C4C Technical Training",
+            items: [
+                {
+                    role: "SAP C4C Technical Consultant",
+                    salary: "₹10L - ₹18L",
+                    description: "Develop and customize C4C solutions using SDK."
+                },
+                {
+                    role: "Cloud Integration Specialist",
+                    salary: "₹12L - ₹20L",
+                    description: "Manage integrations between C4C and other systems."
+                },
+                {
+                    role: "SAP CX Solution Architect",
+                    salary: "₹25L - ₹40L",
+                    description: "Design end-to-end customer experience solutions."
+                },
+                {
+                    role: "Full Stack Cloud Developer",
+                    salary: "₹15L - ₹25L",
+                    description: "Build extensions and mashups for SAP cloud products."
+                }
+            ]
+        },
+        {
+            type: 'detailed_testimonials',
+            title: "Learner Success Stories",
+            items: [
+                {
+                    name: "Arun Kumar",
+                    role: "Technical Consultant at Infosys",
+                    quote: "The ABSL scripting projects were incredibly detailed. I now feel confident building complex logic in C4C.",
+                    image: "/images/testimonials/arun-c4c.webp"
+                },
+                {
+                    name: "Sarah Lee",
+                    role: "SAP Developer",
+                    quote: "Moving from ABAP to C4C was a challenge, but this course made the transition smooth. The UI Designer module was excellent.",
+                    image: "/images/testimonials/sarah-c4c.webp"
+                },
+                {
+                    name: "Mike Chen",
+                    role: "Cloud Architect",
+                    quote: "The integration scenarios with real web services gave me the practical skills I needed for my current project.",
+                    image: "/images/testimonials/mike-c4c.webp"
+                }
+            ]
+        },
+        {
+            type: 'detailed_demo_booking',
+            title: "Join a Free Live Demo",
+            subtitle: "See the SAP Cloud Applications Studio in action. Meet our expert trainers and get a preview of the course material.",
+            link: "/book-demo"
+        },
+        {
+            type: 'detailed_faq',
             title: "Frequently Asked Questions",
             items: [
                 { q: "What is SAP C4C and how does ERPVITS help me learn it?", a: "SAP C4C (Customer Cloud) is a cloud-based CRM and ERP solution. At ERPVITS we provide in-depth C4C technical training that includes custom development, API integration, and cloud application design to help you become an expert in enterprise cloud programming." },

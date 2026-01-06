@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { aribaContent } from '../lib/aribaContent';
 
-const courseId = 'sap-ariba';
+const courseId = 'ariba';
 
 const escapeSql = (str: string | undefined) => {
     if (!str) return 'NULL';

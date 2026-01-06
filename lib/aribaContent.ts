@@ -1,3 +1,5 @@
+import { aribaTargetAudience, aribaPrerequisites, aribaLearningOutcomes, aribaRealWorldScenarios } from './contentHelpers';
+
 export const aribaContent = {
     heroHeading: "Master SAP Ariba: The Future of Digital Procurement",
     heroSubheading: "Become a certified SAP Ariba Consultant with hands-on training from industry experts.",
@@ -215,16 +217,20 @@ export const aribaContent = {
             ]
         },
         {
-            type: 'detailed_prerequisites'
+            type: 'detailed_prerequisites',
+            items: aribaPrerequisites
         },
         {
-            type: 'detailed_target_audience'
+            type: 'detailed_target_audience',
+            items: aribaTargetAudience
         },
         {
-            type: 'detailed_learning_outcomes'
+            type: 'detailed_learning_outcomes',
+            items: aribaLearningOutcomes
         },
         {
-            type: 'real_world_scenarios'
+            type: 'real_world_scenarios',
+            items: aribaRealWorldScenarios
         },
         {
             type: 'detailed_certification'
@@ -243,6 +249,9 @@ export const aribaContent = {
         },
         {
             type: 'detailed_testimonials'
+        },
+        {
+            type: 'detailed_demo_booking'
         },
         {
             type: 'detailed_faq'

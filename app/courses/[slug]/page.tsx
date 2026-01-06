@@ -4,10 +4,15 @@ import Curriculum from '@/components/course/Curriculum';
 import FAQ from '@/components/course/FAQ';
 import ComparisonTable from '@/components/home/ComparisonTable';
 import SectionRenderer, { DetailedFeatures } from '@/components/course/SectionRenderer';
+import DetailedDemoBooking from '@/components/course/DetailedDemoBooking';
+import DetailedFAQ from '@/components/course/DetailedFAQ';
+import DetailedPrerequisites from '@/components/course/DetailedPrerequisites';
+import DetailedTargetAudience from '@/components/course/DetailedTargetAudience';
 import CourseEnrollmentCTA from '@/components/course/CourseEnrollmentCTA';
 import ContactForm from '@/components/ContactForm';
 import { Metadata } from 'next';
 import { courses, defaultFaqs, getDefaultDetailedFeatures, Section } from '@/lib/courseData';
+import { getGenericPrerequisites, getGenericTargetAudience } from '@/lib/contentHelpers';
 
 // Dynamic rendering only to avoid build OOM
 export const dynamic = 'force-dynamic';
@@ -38,6 +43,8 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
     }
 
     const isAriba = slug === 'sap-ariba' || slug === 'ariba';
+    const isFieldglass = slug === 'sap-fieldglass' || slug === 'fieldglass';
+    const isMM = slug === 'sap-mm' || slug === 'mm' || slug === 'sap-s4hana-mm';
 
     // Map DB fields to component expectations if they differ (using snake_case in DB, camelCase in components)
     // Priority: DB values > Local file values
@@ -49,7 +56,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
         heroImage: localCourse?.heroImage || course?.hero_image,
         metaTitle: course?.meta_title || localCourse?.metaTitle,
         metaDescription: course?.meta_description || localCourse?.metaDescription,
-        sections: isAriba ? localCourse?.sections : ((course?.sections && course.sections.length > 0) ? course.sections : localCourse?.sections),
+        sections: (isAriba || isFieldglass || isMM) ? localCourse?.sections : ((course?.sections && course.sections.length > 0) ? course.sections : localCourse?.sections),
         features: (course?.features && course.features.length > 0) ? course.features : localCourse?.features,
         curriculum: (course?.curriculum && course.curriculum.length > 0) ? course.curriculum : localCourse?.curriculum,
         faqs: (course?.faqs && course.faqs.length > 0) ? course.faqs : (localCourse?.faqs && localCourse.faqs.length > 0 ? localCourse.faqs : defaultFaqs),
@@ -89,7 +96,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-4">
-                                <a href="#enroll" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold shadow-lg hover:shadow-orange-500/40 transition-all text-center">
+                                <a href={(isAriba || isFieldglass || isMM) ? "#detailed-demo-booking" : "#enroll"} className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold shadow-lg hover:shadow-orange-500/40 transition-all text-center">
                                     Book Your Free Demo Today
                                 </a>
                                 <a href="#curriculum" className="bg-white border-2 border-slate-200 hover:border-slate-400 text-slate-700 hover:bg-slate-50 px-8 py-4 rounded-lg font-bold transition-all text-center">
@@ -139,9 +146,9 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                 <div className="space-y-16">
 
                     {/* Main Content Area */}
-                    {(mappedCourse.sections?.some((s: Section) => s.type === 'detailed_features') || isAriba) ? (
+                    {((mappedCourse.sections as Section[])?.some((s: Section) => s.type === 'detailed_features') || isAriba || isMM) ? (
                         <div id="overview" className="scroll-mt-32">
-                            <SectionRenderer sections={mappedCourse.sections} />
+                            <SectionRenderer sections={mappedCourse.sections as Section[]} courseName={mappedCourse.title} />
                         </div>
                     ) : (
                         <div className="space-y-16">
@@ -154,14 +161,36 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                                 />
                             </section>
 
+                            {/* Inject Prerequisites if missing */}
+                            {!mappedCourse.sections?.some((s: any) => s.type === 'detailed_prerequisites' || s.type === 'prerequisites') && (
+                                <DetailedPrerequisites items={getGenericPrerequisites(mappedCourse.title)} />
+                            )}
+
+                            {/* Inject Target Audience if missing */}
+                            {!mappedCourse.sections?.some((s: any) => s.type === 'detailed_target_audience' || s.type === 'target_audience') && (
+                                <DetailedTargetAudience items={getGenericTargetAudience(mappedCourse.title)} />
+                            )}
+
                             {mappedCourse.sections && mappedCourse.sections.length > 0 && (
-                                <SectionRenderer sections={mappedCourse.sections} />
+                                <SectionRenderer sections={mappedCourse.sections as Section[]} courseName={mappedCourse.title} />
                             )}
                         </div>
                     )}
 
+                    {/* Check if standard flow (ariba/detailed) implies prerequisites are inside sections. If not, add them. */}
+                    {((mappedCourse.sections as Section[])?.some((s: Section) => s.type === 'detailed_features') || isAriba || isMM) && (
+                        <>
+                            {!mappedCourse.sections?.some((s: any) => s.type === 'detailed_prerequisites' || s.type === 'prerequisites') && (
+                                <DetailedPrerequisites items={getGenericPrerequisites(mappedCourse.title)} />
+                            )}
+                            {!mappedCourse.sections?.some((s: any) => s.type === 'detailed_target_audience' || s.type === 'target_audience') && (
+                                <DetailedTargetAudience items={getGenericTargetAudience(mappedCourse.title)} />
+                            )}
+                        </>
+                    )}
+
                     {/* Highlights Section (for local data courses that don't have it in sections) */}
-                    {(!mappedCourse.sections || !mappedCourse.sections.some((s: Section) => s.type === 'features')) && (!isAriba) && mappedCourse.features && mappedCourse.features.length > 0 && (
+                    {(!(mappedCourse.sections as Section[]) || !(mappedCourse.sections as Section[]).some((s: Section) => s.type === 'features')) && (!isAriba && !isMM) && mappedCourse.features && mappedCourse.features.length > 0 && (
                         <section id="why-us" className="bg-orange-50 rounded-2xl p-8 border border-orange-100 scroll-mt-32">
                             <h2 className="text-2xl font-bold text-gray-900 mb-2">Why Professionals Choose ERPVITS for {mappedCourse.title}</h2>
                             <p className="text-gray-600 mb-8">Trusted by 500+ successful SAP professionals worldwide.</p>
@@ -180,31 +209,23 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                     )}
 
                     {/* Curriculum Section (rendered separately if not in sections) */}
-                    {(!mappedCourse.sections || !mappedCourse.sections.some((s: Section) => s.type === 'curriculum')) && mappedCourse.curriculum && mappedCourse.curriculum.length > 0 && (
+                    {(!(mappedCourse.sections as Section[]) || !(mappedCourse.sections as Section[]).some((s: Section) => s.type === 'curriculum' || s.type === 'detailed_curriculum')) && mappedCourse.curriculum && mappedCourse.curriculum.length > 0 && (
                         <section id="curriculum" className="scroll-mt-32">
-                            <Curriculum modules={mappedCourse.curriculum} />
+                            <Curriculum modules={mappedCourse.curriculum} courseName={mappedCourse.title} />
                         </section>
                     )}
 
                     {/* Common Bottom sections (FAQ and Form) */}
-                    {(!mappedCourse.sections?.some((s: Section) => s.type === 'faq' || s.type === 'detailed_faq')) && (
+                    {(!(mappedCourse.sections as Section[])?.some((s: Section) => s.type === 'faq' || s.type === 'detailed_faq')) && (
                         <div id="faq" className="scroll-mt-32">
-                            <FAQ course={mappedCourse as any} />
+                            <DetailedFAQ items={mappedCourse.faqs} />
                         </div>
                     )}
 
-                    {!isAriba && (
-                        <section id="enroll" className="scroll-mt-32 pt-16 border-t border-gray-100">
-                            <div className="bg-gray-50 rounded-3xl p-8 md:p-12 border border-blue-50">
-                                <div className="max-w-2xl">
-                                    <h2 className="text-3xl font-bold text-gray-900 mb-4 font-display">Enroll Now or Schedule a Free Demo</h2>
-                                    <p className="text-gray-600 mb-10 text-lg">
-                                        Fill out the form below to get the latest course brochure, fee details, and schedule for upcoming batches.
-                                    </p>
-                                </div>
-                                <ContactForm showLabels={false} className="max-w-none shadow-sm bg-white p-6 md:p-10 rounded-2xl" />
-                            </div>
-                        </section>
+                    {(!(mappedCourse.sections as Section[])?.some((s: Section) => s.type === 'detailed_demo_booking')) && (
+                        <div id="enroll" className="scroll-mt-32">
+                            <DetailedDemoBooking courseName={mappedCourse.title} />
+                        </div>
                     )}
                 </div>
             </div>
