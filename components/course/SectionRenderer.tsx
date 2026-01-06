@@ -5,6 +5,19 @@ import Prerequisites from './Prerequisites';
 import LearningOutcomes from './LearningOutcomes';
 import FAQ from './FAQ';
 import ContentWithImage from './ContentWithImage';
+import WhatsIncluded from './WhatsIncluded';
+import DetailedCurriculum from './DetailedCurriculum';
+import DetailedPrerequisites from './DetailedPrerequisites';
+import DetailedTargetAudience from './DetailedTargetAudience';
+import DetailedLearningOutcomes from './DetailedLearningOutcomes';
+import RealWorldScenarios from './RealWorldScenarios';
+import DetailedCertification from './DetailedCertification';
+import DetailedCareerOpportunities from './DetailedCareerOpportunities';
+import DetailedCareerRoadmap from './DetailedCareerRoadmap';
+import DetailedPostTrainingJourney from './DetailedPostTrainingJourney';
+import DetailedTestimonials from './DetailedTestimonials';
+import DetailedUpcomingBatches from './DetailedUpcomingBatches';
+import DetailedFAQ from './DetailedFAQ';
 import {
     Quote, CheckCircle2, UserCheck, Laptop, Briefcase, Clock,
     Award, Globe, BookOpen, Video, TrendingUp, Headphones,
@@ -31,11 +44,25 @@ const getIconForTitle = (title: string) => {
 
 // Defined locally to avoid circular dependency
 export function DetailedFeatures({ badge, title, subtitle, items }: any) {
+    const renderTitle = (t: string) => {
+        if (t.includes("100% Hands-On")) {
+            const parts = t.split("100% Hands-On");
+            return (
+                <>
+                    {parts[0]}
+                    <span className="text-orange-600">100% Hands-On</span>
+                    {parts[1]}
+                </>
+            );
+        }
+        return t;
+    };
+
     return (
         <div className="py-12">
             <div className="text-center mb-12">
-                {badge && <span className="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block">{badge}</span>}
-                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">{title}</h2>
+                {badge && <span className="bg-orange-500 text-white px-4 py-1.5 rounded-full text-sm font-medium mb-5 inline-block shadow-sm">{badge}</span>}
+                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">{renderTitle(title)}</h2>
                 {subtitle && <p className="text-gray-600 max-w-2xl mx-auto text-lg">{subtitle}</p>}
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 max-w-7xl mx-auto px-4">
@@ -138,6 +165,32 @@ export default function SectionRenderer({ sections }: { sections: any[] }) {
                         return <section key={idx} id="curriculum" className="scroll-mt-32">
                             <Curriculum modules={section.modules} />
                         </section>;
+                    case 'detailed_curriculum':
+                        return <section key={idx} id="curriculum" className="scroll-mt-32">
+                            <DetailedCurriculum modules={section.modules} />
+                        </section>;
+                    case 'detailed_prerequisites':
+                        return <DetailedPrerequisites key={idx} />;
+                    case 'detailed_target_audience':
+                        return <DetailedTargetAudience key={idx} />;
+                    case 'detailed_learning_outcomes':
+                        return <DetailedLearningOutcomes key={idx} />;
+                    case 'real_world_scenarios':
+                        return <RealWorldScenarios key={idx} />;
+                    case 'detailed_certification':
+                        return <DetailedCertification key={idx} />;
+                    case 'detailed_career_opportunities':
+                        return <DetailedCareerOpportunities key={idx} />;
+                    case 'detailed_career_roadmap':
+                        return <DetailedCareerRoadmap key={idx} />;
+                    case 'detailed_post_training_journey':
+                        return <DetailedPostTrainingJourney key={idx} />;
+                    case 'detailed_testimonials':
+                        return <DetailedTestimonials key={idx} />;
+                    case 'detailed_upcoming_batches':
+                        return <DetailedUpcomingBatches key={idx} />;
+                    case 'detailed_faq':
+                        return <DetailedFAQ key={idx} />;
                     case 'features':
                         // Fallback replacement for features
                         return <DetailedFeatures key={idx} items={section.items} title={section.title || "Course Highlights"} />;
@@ -149,6 +202,8 @@ export default function SectionRenderer({ sections }: { sections: any[] }) {
                         return <TestimonialsSection key={idx} title={section.title} items={section.items} />;
                     case 'content_with_image':
                         return <ContentWithImage key={idx} {...section} />;
+                    case 'whats_included':
+                        return <WhatsIncluded key={idx} />;
                     case 'faq':
                         return <div key={idx} id="faq" className="scroll-mt-32"><FAQ course={{ faqs: section.items } as any} /></div>;
                     default:

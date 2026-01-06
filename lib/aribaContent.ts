@@ -7,14 +7,8 @@ export const aribaContent = {
     badges: ["Best Seller", "Job Oriented"],
     metaTitle: "SAP Ariba Training | Certification & Job Support",
     metaDescription: "Learn SAP Ariba from experts. comprehensive module covering Sourcing, Contracts, SLP, Buying & Invoicing. 100% Practical Training with Placement Assistance.",
-    features: [
-        "End-to-End Source to Pay Lifecycle",
-        "Ariba Network Integration",
-        "Supplier Lifecycle & Performance (SLP)",
-        "Strategic Sourcing & Contract Management",
-        "Guided Buying & Invoicing",
-        "Integration with SAP S/4HANA"
-    ],
+
+    features: [],
     sections: [
         {
             type: 'detailed_features',
@@ -89,64 +83,169 @@ export const aribaContent = {
             ]
         },
         {
-            type: 'curriculum',
+            type: 'whats_included'
+        },
+        {
+            type: 'detailed_curriculum',
             title: "SAP Ariba Course Curriculum",
             modules: [
                 {
-                    title: "Introduction to SAP Ariba & Ariba Network",
-                    topics: [
-                        "Overview of Intelligent Spend Management",
-                        "Ariba Network Architecture",
-                        "Upstream vs. Downstream Modules",
-                        "Navigation and Dashboard Customization"
+                    title: "Introduction to SAP Ariba Buying",
+                    duration: "6 hours",
+                    learning_points: [
+                        "Overview of SAP Ariba Buying and procurement ecosystem",
+                        "Key features: cost reduction, automation, compliance",
+                        "User interface navigation and system architecture",
+                        "Sourcing and contract templates configuration",
+                        "Approval workflow design and implementation",
+                        "Core admin activities: users, permissions, realms"
+                    ],
+                    hands_on: [
+                        "Navigate SAP Ariba Buying interface",
+                        "Create first purchase requisition",
+                        "Set up basic approval workflows",
+                        "Configure organization templates"
                     ]
                 },
                 {
-                    title: "Supplier Lifecycle & Performance (SLP)",
-                    topics: [
-                        "Supplier Request & Registration",
-                        "Qualification & Preferred Status",
-                        "Supplier Risk Management",
-                        "Modular Questionnaires"
+                    title: "Master Data Management (MDM)",
+                    duration: "8 hours",
+                    learning_points: [
+                        "User Management: profiles, roles, permissions",
+                        "Supplier Management: onboarding, qualification, tracking",
+                        "Accounting & Plant Management: codes, cost centers",
+                        "Integration with ERP systems"
+                    ],
+                    hands_on: [
+                        "Create and manage user profiles",
+                        "Onboard suppliers into the system",
+                        "Set up accounting structures",
+                        "Configure plant data and ERP integration"
                     ]
                 },
                 {
-                    title: "SAP Ariba Sourcing",
-                    topics: [
-                        "Creating Sourcing Projects",
-                        "RFI, RFP, and Auctions",
-                        "Event Management & Monitoring",
-                        "Awarding & Sourcing Library"
+                    title: "End-to-End Purchasing Process",
+                    duration: "10 hours",
+                    learning_points: [
+                        "Complete purchasing lifecycle management",
+                        "Requisition creation, budget checks, approvals",
+                        "Purchase Order generation and supplier selection",
+                        "Multi-level approval workflows and routing",
+                        "Goods receipt and invoice management",
+                        "Three-way matching and exception handling",
+                        "Reporting and spend analytics"
+                    ],
+                    hands_on: [
+                        "Execute requisition to invoice cycle",
+                        "Set up budget controls",
+                        "Design approval hierarchies",
+                        "Resolve invoice exceptions"
                     ]
                 },
                 {
-                    title: "Contract Management",
-                    topics: [
-                        "Contract Requests & Workspaces",
-                        "Authoring Contracts & Clauses",
-                        "Review & Approval Workflows",
-                        "Integration with Sourcing"
+                    title: "Commerce Automation",
+                    duration: "5 hours",
+                    learning_points: [
+                        "Automation of routine procurement tasks",
+                        "Supplier system integration",
+                        "Invoice automation and payment streamlining",
+                        "EDI and cXML integration for B2B",
+                        "Exception handling workflows"
+                    ],
+                    hands_on: [
+                        "Configure EDI integrations",
+                        "Automate invoice processing",
+                        "Set up exception handling"
                     ]
                 },
                 {
-                    title: "Buying & Invoicing (Procure-to-Pay)",
-                    topics: [
-                        "Guided Buying Configuration",
-                        "Requisitioning & Approval Rules",
-                        "Purchase Orders & Goods Receipts",
-                        "Invoice Reconciliation & Exception Handling"
+                    title: "Supply Chain Collaboration",
+                    duration: "6 hours",
+                    learning_points: [
+                        "SAP Ariba Network overview",
+                        "Real-time order and shipment visibility",
+                        "Supplier collaboration: forecasting, planning, quality",
+                        "Multi-supplier coordination",
+                        "ERP integration for data synchronization"
+                    ],
+                    hands_on: [
+                        "Set up supplier collaboration workflows",
+                        "Track shipments and manage exceptions",
+                        "Conduct collaborative forecasting"
                     ]
                 },
                 {
-                    title: "Integration (CIG)",
-                    topics: [
-                        "Overview of Cloud Integration Gateway",
-                        "Connecting Ariba to S/4HANA",
-                        "Master Data Synchronization",
-                        "Transaction Data Flow"
+                    title: "Guided Buying Implementation",
+                    duration: "8 hours",
+                    learning_points: [
+                        "Purpose and benefits of guided buying",
+                        "Classic vs. guided buying approaches",
+                        "User groups, permissions, and policies",
+                        "Catalog management: punchout, hosted, punch-through",
+                        "Custom form design for non-catalog items",
+                        "User adoption strategies and change management",
+                        "Analytics: adoption, compliance, behavior tracking"
+                    ],
+                    hands_on: [
+                        "Design guided buying portal",
+                        "Configure punchout catalogs",
+                        "Create custom forms",
+                        "Analyze adoption metrics"
+                    ]
+                },
+                {
+                    title: "Advanced Topics & Best Practices",
+                    duration: "7 hours",
+                    learning_points: [
+                        "Cloud Integration Gateway (CIG) with S/4HANA",
+                        "Advanced analytics and custom reporting",
+                        "Risk management and compliance monitoring",
+                        "Contract lifecycle management",
+                        "Supplier performance management and scorecards",
+                        "Troubleshooting common issues",
+                        "Security, compliance, and audit trails"
+                    ],
+                    hands_on: [
+                        "Configure CIG integration",
+                        "Build spend analysis reports",
+                        "Set up supplier performance dashboards",
+                        "Design contract management workflows"
                     ]
                 }
             ]
+        },
+        {
+            type: 'detailed_prerequisites'
+        },
+        {
+            type: 'detailed_target_audience'
+        },
+        {
+            type: 'detailed_learning_outcomes'
+        },
+        {
+            type: 'real_world_scenarios'
+        },
+        {
+            type: 'detailed_certification'
+        },
+        {
+            type: 'detailed_career_opportunities'
+        },
+        {
+            type: 'detailed_career_roadmap'
+        },
+        {
+            type: 'detailed_post_training_journey'
+        },
+        {
+            type: 'detailed_upcoming_batches'
+        },
+        {
+            type: 'detailed_testimonials'
+        },
+        {
+            type: 'detailed_faq'
         }
     ]
 };

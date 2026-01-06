@@ -161,7 +161,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                     )}
 
                     {/* Highlights Section (for local data courses that don't have it in sections) */}
-                    {(!mappedCourse.sections || !mappedCourse.sections.some((s: Section) => s.type === 'features')) && mappedCourse.features && mappedCourse.features.length > 0 && (
+                    {(!mappedCourse.sections || !mappedCourse.sections.some((s: Section) => s.type === 'features')) && (!isAriba) && mappedCourse.features && mappedCourse.features.length > 0 && (
                         <section id="why-us" className="bg-orange-50 rounded-2xl p-8 border border-orange-100 scroll-mt-32">
                             <h2 className="text-2xl font-bold text-gray-900 mb-2">Why Professionals Choose ERPVITS for {mappedCourse.title}</h2>
                             <p className="text-gray-600 mb-8">Trusted by 500+ successful SAP professionals worldwide.</p>
@@ -187,23 +187,25 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                     )}
 
                     {/* Common Bottom sections (FAQ and Form) */}
-                    {(!mappedCourse.sections?.some((s: Section) => s.type === 'faq')) && (
+                    {(!mappedCourse.sections?.some((s: Section) => s.type === 'faq' || s.type === 'detailed_faq')) && (
                         <div id="faq" className="scroll-mt-32">
                             <FAQ course={mappedCourse as any} />
                         </div>
                     )}
 
-                    <section id="enroll" className="scroll-mt-32 pt-16 border-t border-gray-100">
-                        <div className="bg-gray-50 rounded-3xl p-8 md:p-12 border border-blue-50">
-                            <div className="max-w-2xl">
-                                <h2 className="text-3xl font-bold text-gray-900 mb-4 font-display">Enroll Now or Schedule a Free Demo</h2>
-                                <p className="text-gray-600 mb-10 text-lg">
-                                    Fill out the form below to get the latest course brochure, fee details, and schedule for upcoming batches.
-                                </p>
+                    {!isAriba && (
+                        <section id="enroll" className="scroll-mt-32 pt-16 border-t border-gray-100">
+                            <div className="bg-gray-50 rounded-3xl p-8 md:p-12 border border-blue-50">
+                                <div className="max-w-2xl">
+                                    <h2 className="text-3xl font-bold text-gray-900 mb-4 font-display">Enroll Now or Schedule a Free Demo</h2>
+                                    <p className="text-gray-600 mb-10 text-lg">
+                                        Fill out the form below to get the latest course brochure, fee details, and schedule for upcoming batches.
+                                    </p>
+                                </div>
+                                <ContactForm showLabels={false} className="max-w-none shadow-sm bg-white p-6 md:p-10 rounded-2xl" />
                             </div>
-                            <ContactForm showLabels={false} className="max-w-none shadow-sm bg-white p-6 md:p-10 rounded-2xl" />
-                        </div>
-                    </section>
+                        </section>
+                    )}
                 </div>
             </div>
 
