@@ -57,7 +57,7 @@ export default function RealWorldScenarios({ items }: { items?: any[] }) {
                                     <div>
                                         <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Key Responsibilities</h4>
                                         <ul className="space-y-2">
-                                            {item.responsibilities.map((resp, rIdx) => (
+                                            {item.responsibilities?.map((resp: any, rIdx: any) => (
                                                 <li key={rIdx} className="flex items-start gap-2 text-sm text-slate-600">
                                                     <div className="w-1 h-1 rounded-full bg-slate-400 mt-2 flex-shrink-0" />
                                                     <span>{resp}</span>

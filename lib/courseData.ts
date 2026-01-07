@@ -41,6 +41,7 @@ export interface Course {
     duration?: string;
     schema?: string;
     category?: string;
+    badges?: string[];
 }
 
 // Map of content files based on ID

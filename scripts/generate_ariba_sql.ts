@@ -33,7 +33,7 @@ INSERT INTO courses (
     ${escapeSql(aribaContent.title)},
     ${escapeSql(aribaContent.heroHeading)},
     ${escapeSql(aribaContent.heroSubheading)},
-    ${escapeSql(aribaContent.heroImage)},
+    ${escapeSql((aribaContent as any).heroImage)},
     ${escapeSql(aribaContent.description)},
     ${escapeSql(aribaContent.metaTitle)},
     ${escapeSql(aribaContent.metaDescription)},

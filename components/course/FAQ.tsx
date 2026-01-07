@@ -1,14 +1,14 @@
 "use client";
 
 import { useState } from 'react';
-import { Course, FAQ as FAQType } from '@/lib/courseData';
+import { Course } from '@/lib/courseData';
 import { Plus, Minus } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface FAQProps {
     course?: Course;
-    items?: FAQType[];
+    items?: any[];
 }
 
 const FAQ = ({ course, items }: FAQProps) => {
