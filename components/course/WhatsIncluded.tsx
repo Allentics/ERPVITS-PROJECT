@@ -1,8 +1,26 @@
 import React from 'react';
 import { CheckCircle2 } from 'lucide-react';
 
-export default function WhatsIncluded() {
-    const features = [
+interface Feature {
+    title: string;
+    description: string;
+}
+
+interface Stat {
+    value: string;
+    label: string;
+    color: 'blue' | 'purple' | 'emerald' | 'orange';
+}
+
+interface WhatsIncludedProps {
+    features?: Feature[];
+    stats?: Stat[];
+    title?: string;
+    badge?: string;
+}
+
+export default function WhatsIncluded({ features: customFeatures, stats: customStats, title, badge }: WhatsIncludedProps) {
+    const defaultFeatures = [
         {
             title: "Live Interactive Classes",
             description: "45-50 hours of instructor led training over 8-12 weeks via video conference with real-time Q&A"
@@ -37,16 +55,25 @@ export default function WhatsIncluded() {
         }
     ];
 
+    const defaultStats: Stat[] = [
+        { value: "45-50", label: "Hours of Live Training", color: "blue" },
+        { value: "50+", label: "Hands On Lab Exercises", color: "purple" },
+        { value: "24/7", label: "SAP Ariba Lab Access", color: "emerald" }
+    ];
+
+    const features = customFeatures || defaultFeatures;
+    const stats = customStats || defaultStats;
+
     return (
         <section className="py-16 bg-white">
             <div className="max-w-7xl mx-auto px-4">
                 {/* Header */}
                 <div className="text-center mb-12">
                     <span className="bg-emerald-50 text-emerald-600 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block border border-emerald-100">
-                        Complete Learning Package
+                        {badge || "Complete Learning Package"}
                     </span>
                     <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                        What's Included in the SAP Ariba Training
+                        {title || "What's Included in the SAP Ariba Training"}
                     </h2>
                     <p className="text-gray-600 max-w-3xl mx-auto text-lg">
                         Everything you need to become a certified SAP Ariba professional—from live training to career support
@@ -73,24 +100,25 @@ export default function WhatsIncluded() {
                 </div>
 
                 {/* Stats Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {/* Blue Card */}
-                    <div className="bg-blue-50/50 p-8 rounded-2xl border border-blue-100 flex flex-col items-center justify-center text-center">
-                        <div className="text-4xl font-bold text-blue-600 mb-2">45-50</div>
-                        <div className="text-blue-800 font-medium">Hours of Live Training</div>
-                    </div>
+                <div className={`grid grid-cols-1 md:grid-cols-${Math.max(stats.length, 3)} gap-6`}>
+                    {stats.map((stat, idx) => {
+                        const colorClass = stat.color === 'blue' ? 'bg-blue-50/50 border-blue-100 text-blue-600' :
+                            stat.color === 'purple' ? 'bg-purple-50/50 border-purple-100 text-purple-600' :
+                                stat.color === 'orange' ? 'bg-orange-50/50 border-orange-100 text-orange-600' :
+                                    'bg-emerald-50/50 border-emerald-100 text-emerald-600';
 
-                    {/* Purple Card */}
-                    <div className="bg-purple-50/50 p-8 rounded-2xl border border-purple-100 flex flex-col items-center justify-center text-center">
-                        <div className="text-4xl font-bold text-purple-600 mb-2">50+</div>
-                        <div className="text-purple-800 font-medium">Hands On Lab Exercises</div>
-                    </div>
+                        const textClass = stat.color === 'blue' ? 'text-blue-800' :
+                            stat.color === 'purple' ? 'text-purple-800' :
+                                stat.color === 'orange' ? 'text-orange-800' :
+                                    'text-emerald-800';
 
-                    {/* Green Card */}
-                    <div className="bg-emerald-50/50 p-8 rounded-2xl border border-emerald-100 flex flex-col items-center justify-center text-center">
-                        <div className="text-4xl font-bold text-emerald-600 mb-2">24/7</div>
-                        <div className="text-emerald-800 font-medium">SAP Ariba Lab Access</div>
-                    </div>
+                        return (
+                            <div key={idx} className={`${colorClass} p-8 rounded-2xl border flex flex-col items-center justify-center text-center`}>
+                                <div className="text-4xl font-bold mb-2">{stat.value}</div>
+                                <div className={`${textClass} font-medium`}>{stat.label}</div>
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
         </section>

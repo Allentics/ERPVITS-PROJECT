@@ -1,8 +1,10 @@
+import { abapContent } from './abapContent';
 import { c4cContent } from './c4cContent';
 import { cpiContent } from './cpiContent';
 import { ficoContent } from './ficoContent';
 import { fieldglassContent } from './fieldglassContent';
 import { mmContent } from './mmContent';
+import { ppdsContent } from './ppdsContent';
 import { sdContent } from './sdContent';
 import { trmContent } from './trmContent';
 import { aribaContent } from './aribaContent';
@@ -10,7 +12,7 @@ import coursesData from '@/courses.json';
 
 // Define Types
 export interface Section {
-    type: 'target_audience' | 'prerequisites' | 'learning_outcomes' | 'curriculum' | 'detailed_features' | 'features' | 'faq' | 'video' | 'text' | 'detailed_curriculum' | 'detailed_prerequisites' | 'detailed_target_audience' | 'detailed_learning_outcomes' | 'real_world_scenarios' | 'detailed_certification' | 'detailed_career_opportunities' | 'detailed_testimonials' | 'detailed_faq' | 'detailed_upcoming_batches' | 'detailed_demo_booking' | 'detailed_career_roadmap' | 'detailed_post_training_journey' | 'list_checker' | 'rich_text' | 'content_with_image' | 'whats_included' | 'testimonials';
+    type: 'target_audience' | 'prerequisites' | 'learning_outcomes' | 'curriculum' | 'detailed_features' | 'features' | 'faq' | 'video' | 'text' | 'detailed_curriculum' | 'detailed_prerequisites' | 'detailed_target_audience' | 'detailed_learning_outcomes' | 'real_world_scenarios' | 'detailed_certification' | 'detailed_career_opportunities' | 'detailed_companies' | 'detailed_testimonials' | 'detailed_faq' | 'detailed_upcoming_batches' | 'detailed_demo_booking' | 'detailed_career_roadmap' | 'detailed_post_training_journey' | 'list_checker' | 'rich_text' | 'content_with_image' | 'whats_included' | 'testimonials';
     title?: string;
     subtitle?: string;
     items?: any[];
@@ -43,6 +45,10 @@ export interface Course {
 
 // Map of content files based on ID
 const contentMap: Record<string, any> = {
+    'sap-abap': abapContent,
+    'abap': abapContent,
+    'sap-abap-on-cloud': abapContent,
+    'abap-cloud': abapContent,
     'sap-ariba': aribaContent,
     'ariba': aribaContent,
     'c4c-technical': c4cContent,
@@ -50,6 +56,9 @@ const contentMap: Record<string, any> = {
     'fico': ficoContent,
     'sap-fieldglass': fieldglassContent,
     'fieldglass': fieldglassContent,
+    'sap-ppds': ppdsContent,
+    'ppds': ppdsContent,
+    'sap-ppds-training': ppdsContent,
     'sap-mm': mmContent,
     'mm': mmContent,
     'sd': sdContent,

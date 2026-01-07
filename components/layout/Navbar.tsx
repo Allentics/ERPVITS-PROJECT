@@ -40,7 +40,9 @@ const Navbar = () => {
                     .select('id, title, category');
 
                 if (coursesData && coursesData.length > 0) {
-                    setDynCourses(coursesData);
+                    const dbIds = new Set(coursesData.map((c: any) => c.id));
+                    const missingLocal = localCourses.filter(c => !dbIds.has(c.id));
+                    setDynCourses([...coursesData, ...missingLocal]);
                 }
             } catch (err) {
                 console.error('Error in Navbar fetchData:', err);

@@ -10,9 +10,11 @@ interface ContentWithImageProps {
     imageSrc?: string;
     imageAlt?: string;
     layout?: 'left' | 'right';
+    supportTitle?: string;
+    supportText?: string;
 }
 
-export default function ContentWithImage({ title, subtitle, description, items, imageSrc, imageAlt, layout = 'left' }: ContentWithImageProps) {
+export default function ContentWithImage({ title, subtitle, description, items, imageSrc, imageAlt, layout = 'left', supportTitle, supportText }: ContentWithImageProps) {
     return (
         <div className="py-12 bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm my-16">
             <div className={`flex flex-col ${layout === 'right' ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 p-8 lg:p-12`}>
@@ -25,10 +27,7 @@ export default function ContentWithImage({ title, subtitle, description, items, 
                                 alt={imageAlt || title}
                                 className="object-cover w-full h-auto max-h-[500px]"
                             />
-                            <div className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-slate-100">
-                                <div className="text-4xl font-bold text-orange-500">98%</div>
-                                <div className="text-sm font-medium text-slate-600">Placement Success Rate</div>
-                            </div>
+
                         </div>
                     </div>
                 )}
@@ -55,8 +54,8 @@ export default function ContentWithImage({ title, subtitle, description, items, 
                                 <span className="font-bold text-lg">i</span>
                             </div>
                             <div>
-                                <h4 className="font-bold text-blue-900">Complete Support Ecosystem</h4>
-                                <p className="text-sm text-blue-700 mt-1">Join our extensive alumni/learning support ecosystem to guide you through every step of your SAP Ariba learning journey and career transition.</p>
+                                <h4 className="font-bold text-blue-900">{supportTitle || "Complete Support Ecosystem"}</h4>
+                                <p className="text-sm text-blue-700 mt-1">{supportText || "Join our extensive alumni/learning support ecosystem to guide you through every step of your SAP Ariba learning journey and career transition."}</p>
                             </div>
                         </div>
                     </div>

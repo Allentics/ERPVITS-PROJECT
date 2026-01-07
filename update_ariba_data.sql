@@ -4,7 +4,7 @@
 
 UPDATE courses
 SET 
-  hero_image = '/images/sap-ariba-infographic-hero.png',
+  hero_image = NULL,
   sections = '[
     {
         "type": "detailed_features",
@@ -67,6 +67,7 @@ SET
         "title": "Why Professionals Choose ERPVITS for SAP Ariba Training",
         "subtitle": "Success Guarantee & Credibility",
         "description": "ERPVITS has established itself as a trusted training partner for SAP modules, with hundreds of successful learners working at top consulting firms. Our comprehensive support ecosystem and alumni network testimonials speak to the quality of instruction and career acceleration our program delivers.",
+        "imageSrc": "/images/sap-ariba-certification-tips.png",
         "layout": "left",
         "items": [
             "Trained by 500+ successful SAP professionals",

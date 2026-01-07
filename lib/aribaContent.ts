@@ -3,7 +3,7 @@ import { aribaTargetAudience, aribaPrerequisites, aribaLearningOutcomes, aribaRe
 export const aribaContent = {
     heroHeading: "Master SAP Ariba: The Future of Digital Procurement",
     heroSubheading: "Become a certified SAP Ariba Consultant with hands-on training from industry experts.",
-    heroImage: "/images/sap-ariba-infographic-hero.png",
+
     title: "SAP Ariba",
     description: "Our comprehensive SAP Ariba training program covers the entire source-to-pay lifecycle. You will learn how to manage suppliers, contracts, buying, and invoicing using the Ariba Network. This course is designed to make you job-ready with real-world scenarios and hands-on practice.",
     badges: ["Best Seller", "Job Oriented"],
@@ -73,8 +73,6 @@ export const aribaContent = {
             title: "Why Professionals Choose ERPVITS for SAP Ariba Training",
             subtitle: "Success Guarantee & Credibility",
             description: "ERPVITS has established itself as a trusted training partner for SAP modules, with hundreds of successful learners working at top consulting firms. Our comprehensive support ecosystem and alumni network testimonials speak to the quality of instruction and career acceleration our program delivers.",
-            // imageSrc removed as per user request
-            layout: "left",
             items: [
                 "Trained by 500+ successful SAP professionals",
                 "Personalized peer evaluations and learning paths",
@@ -233,7 +231,11 @@ export const aribaContent = {
             items: aribaRealWorldScenarios
         },
         {
-            type: 'detailed_certification'
+            type: 'detailed_certification',
+            imageSrc: "/images/sap-ariba-certification-tips.png"
+        },
+        {
+            type: 'detailed_companies'
         },
         {
             type: 'detailed_career_opportunities'

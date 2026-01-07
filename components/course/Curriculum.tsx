@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { ChevronDown, BookOpen, Clock } from 'lucide-react';
 import * as Accordion from '@radix-ui/react-accordion';

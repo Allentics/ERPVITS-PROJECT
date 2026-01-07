@@ -37,7 +37,17 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
         .eq('id', slug)
         .single();
 
-    const localCourse = courses.find(c => c.id === slug) || (slug === 'ariba' ? courses.find(c => c.id === 'sap-ariba') : undefined);
+    const localCourse = courses.find(c => c.id === slug) ||
+        (slug === 'sap-ariba' || slug === 'ariba' ? courses.find(c => c.id === 'ariba' || c.id === 'sap-ariba') : undefined) ||
+        (slug === 'c4c-technical' || slug === 'sap-c4c' || slug === 'c4c' || slug === 'sap-c4c-technical-training' || slug === 'sap-c4c-technical-online-training' ? courses.find(c => c.id === 'c4c-technical') : undefined) ||
+        (slug === 'sap-fieldglass' || slug === 'fieldglass' ? courses.find(c => c.id === 'fieldglass' || c.id === 'sap-fieldglass') : undefined) ||
+        (slug === 'sap-mm' || slug === 'mm' || slug === 'sap-s4hana-mm' ? courses.find(c => c.id === 'mm' || c.id === 'sap-mm') : undefined) ||
+        (slug === 'sap-fico' || slug === 'fico' || slug === 'fico-training' ? courses.find(c => c.id === 'fico') : undefined) ||
+        (slug === 'sap-trm' || slug === 'trm' || slug === 'sap-treasury-and-risk-management-online-training' ? courses.find(c => c.id === 'trm') : undefined) ||
+        (slug === 'sap-sd' || slug === 'sd' || slug === 'sap-sales-and-distribution-training' ? courses.find(c => c.id === 'sd') : undefined) ||
+        (slug === 'sap-abap' || slug === 'abap' || slug === 'sap-abap-on-cloud' || slug === 'abap-cloud' || slug === 'sap-abap-training' ? courses.find(c => c.id === 'abap-cloud') : undefined) ||
+        (slug === 'sap-cpi' || slug === 'cpi' || slug === 'sap-cpi-training' ? courses.find(c => c.id === 'cpi' || c.id === 'sap-cpi') : undefined) ||
+        (slug === 'sap-ppds' || slug === 'ppds' || slug === 'sap-ppds-training' ? courses.find(c => c.id === 'ppds') : undefined);
     if (!course && !localCourse) {
         notFound();
     }
@@ -45,6 +55,13 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
     const isAriba = slug === 'sap-ariba' || slug === 'ariba';
     const isFieldglass = slug === 'sap-fieldglass' || slug === 'fieldglass';
     const isMM = slug === 'sap-mm' || slug === 'mm' || slug === 'sap-s4hana-mm';
+    const isFICO = slug === 'sap-fico' || slug === 'fico' || slug === 'fico-training';
+    const isTRM = slug === 'sap-trm' || slug === 'trm' || slug === 'sap-treasury-and-risk-management-online-training';
+    const isSD = slug === 'sap-sd' || slug === 'sd' || slug === 'sap-sales-and-distribution-training';
+    const isC4C = slug === 'sap-c4c' || slug === 'c4c' || slug === 'sap-c4c-technical-training' || slug === 'sap-c4c-technical-online-training' || slug === 'c4c-technical';
+    const isABAP = slug === 'sap-abap' || slug === 'abap' || slug === 'sap-abap-on-cloud' || slug === 'abap-cloud' || slug === 'sap-abap-training';
+    const isCPI = slug === 'sap-cpi' || slug === 'cpi' || slug === 'sap-cpi-training';
+    const isPPDS = slug === 'sap-ppds' || slug === 'ppds' || slug === 'sap-ppds-training';
 
     // Map DB fields to component expectations if they differ (using snake_case in DB, camelCase in components)
     // Priority: DB values > Local file values
@@ -53,10 +70,10 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
         ...course,
         heroHeading: course?.hero_heading || localCourse?.heroHeading,
         heroSubheading: course?.hero_subheading || localCourse?.heroSubheading,
-        heroImage: localCourse?.heroImage || course?.hero_image,
+        heroImage: (isAriba || isFICO || isFieldglass || isMM || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS) ? undefined : (localCourse?.heroImage || course?.hero_image),
         metaTitle: course?.meta_title || localCourse?.metaTitle,
         metaDescription: course?.meta_description || localCourse?.metaDescription,
-        sections: (isAriba || isFieldglass || isMM) ? localCourse?.sections : ((course?.sections && course.sections.length > 0) ? course.sections : localCourse?.sections),
+        sections: (isAriba || isFieldglass || isMM || isFICO || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS) ? localCourse?.sections : ((course?.sections && course.sections.length > 0) ? course.sections : localCourse?.sections),
         features: (course?.features && course.features.length > 0) ? course.features : localCourse?.features,
         curriculum: (course?.curriculum && course.curriculum.length > 0) ? course.curriculum : localCourse?.curriculum,
         faqs: (course?.faqs && course.faqs.length > 0) ? course.faqs : (localCourse?.faqs && localCourse.faqs.length > 0 ? localCourse.faqs : defaultFaqs),
@@ -74,66 +91,63 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
             )}
 
             {/* Hero Section */}
-            <div className="bg-gradient-to-r from-white via-gray-50 to-gray-200 text-slate-900 relative overflow-hidden py-20 lg:py-24">
-                <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5"></div>
-                <div className="absolute right-0 top-0 w-1/3 h-full bg-orange-100 blur-3xl rounded-full opacity-60"></div>
+            {/* Hero Section */}
+            {/* Hero Section */}
+            <div className="bg-[#F2F6FD] text-slate-900 relative overflow-hidden py-24 lg:py-32">
+                <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-[0.03]"></div>
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[500px] bg-orange-100/40 blur-[100px] rounded-full opacity-50 pointer-events-none"></div>
 
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        <div>
-                            {/* Badge */}
-                            <div className="flex gap-3 mb-6">
-                                <span className="bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide shadow-lg">New Batch Starting Soon</span>
-                                <span className="bg-white border border-slate-200 text-slate-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide shadow-sm">100% Job Oriented</span>
-                            </div>
+                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
 
-                            <h1 className="text-4xl lg:text-5xl font-extrabold mb-6 leading-tight text-slate-900">
-                                {mappedCourse.heroHeading || mappedCourse.title}
-                            </h1>
-
-                            <p className="text-lg text-slate-600 mb-8 leading-relaxed max-w-xl whitespace-pre-line">
-                                {mappedCourse.description ? mappedCourse.description.split('\n')[0] : `Master ${mappedCourse.title} with expert-led training.`}
-                            </p>
-
-                            <div className="flex flex-col sm:flex-row gap-4">
-                                <a href={(isAriba || isFieldglass || isMM) ? "#detailed-demo-booking" : "#enroll"} className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold shadow-lg hover:shadow-orange-500/40 transition-all text-center">
-                                    Book Your Free Demo Today
-                                </a>
-                                <a href="#curriculum" className="bg-white border-2 border-slate-200 hover:border-slate-400 text-slate-700 hover:bg-slate-50 px-8 py-4 rounded-lg font-bold transition-all text-center">
-                                    View Curriculum
-                                </a>
-                            </div>
-
-                            {/* Stats */}
-                            <div className="flex gap-8 mt-10 pt-8 border-t border-slate-200">
-                                <div>
-                                    <div className="text-2xl font-bold text-slate-900">500+</div>
-                                    <div className="text-xs text-slate-500 uppercase font-semibold">Successful Students</div>
-                                </div>
-                                <div>
-                                    <div className="text-2xl font-bold text-slate-900">98%</div>
-                                    <div className="text-xs text-slate-500 uppercase font-semibold">Placement Rate</div>
-                                </div>
-                                <div>
-                                    <div className="text-2xl font-bold text-slate-900">4.9/5</div>
-                                    <div className="text-xs text-slate-500 uppercase font-semibold">Student Rating</div>
-                                </div>
-                            </div>
+                    {/* Premium Badge */}
+                    <div className="flex justify-center mb-8">
+                        <div className="bg-gradient-to-r from-orange-500 to-red-600 text-white text-sm font-bold px-6 py-2 rounded-full shadow-xl shadow-orange-500/20 flex items-center gap-2">
+                            <span className="text-yellow-200">★</span>
+                            Rated #1 {mappedCourse.title} Training Program 2025
+                            <span className="text-yellow-300">★</span>
                         </div>
+                    </div>
 
-                        {/* Hero Image / Form Placeholder */}
-                        <div className="hidden lg:block relative text-gray-800">
-                            <div className="bg-white rounded-2xl p-2 shadow-xl border border-slate-100">
-                                {mappedCourse.heroImage ? (
-                                    <div className="bg-slate-50 rounded-xl overflow-hidden shadow-inner flex items-center justify-center border border-slate-100">
-                                        <img src={mappedCourse.heroImage} alt={`${mappedCourse.title} Preview`} className="w-full h-auto object-contain" />
-                                    </div>
-                                ) : (
-                                    <div className="bg-slate-50 rounded-xl h-[400px] flex items-center justify-center border-2 border-dashed border-slate-300">
-                                        <span className="text-slate-400 font-bold">Course Preview Image</span>
-                                    </div>
-                                )}
-                            </div>
+                    {/* Heading */}
+                    {/* Heading */}
+                    <h1 className="text-5xl lg:text-7xl font-extrabold mb-8 leading-tight tracking-tight text-slate-900">
+                        {mappedCourse.heroHeading ? (
+                            mappedCourse.heroHeading
+                        ) : (
+                            <>Transform Your Career with <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">{mappedCourse.title}</span></>
+                        )}
+                    </h1>
+
+                    {/* Subheading */}
+                    {/* Subheading */}
+                    <p className="text-xl text-slate-600 mb-12 leading-relaxed max-w-3xl mx-auto">
+                        {mappedCourse.heroSubheading || mappedCourse.description?.substring(0, 150) + "..."}
+                    </p>
+
+                    {/* Buttons */}
+                    <div className="flex flex-col sm:flex-row gap-5 justify-center mb-16">
+                        <a href={(isAriba || isFieldglass || isMM || isFICO || isTRM || isSD || isC4C || isABAP) ? "#detailed-demo-booking" : "#enroll"} className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white px-10 py-4 rounded-lg font-bold shadow-lg shadow-orange-500/25 transition-all flex items-center justify-center gap-2 text-lg">
+                            Book Free Demo Class
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
+                        <a href="#curriculum" className="bg-white border text-slate-700 border-slate-200 hover:border-slate-300 hover:bg-slate-50 px-10 py-4 rounded-lg font-bold transition-all shadow-sm text-lg block text-center">
+                            View Curriculum
+                        </a>
+                    </div>
+
+                    {/* Features/Trust Indicators */}
+                    <div className="flex flex-wrap justify-center gap-8 gap-y-4 text-sm font-semibold text-slate-600">
+                        <div className="flex items-center gap-2">
+                            <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            SAP Certified Trainers
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <svg className="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.956 11.956 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                            100% Job Assistance
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <svg className="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            Lifetime Access
                         </div>
                     </div>
                 </div>
@@ -146,7 +160,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                 <div className="space-y-16">
 
                     {/* Main Content Area */}
-                    {((mappedCourse.sections as Section[])?.some((s: Section) => s.type === 'detailed_features') || isAriba || isMM) ? (
+                    {((mappedCourse.sections as Section[])?.some((s: Section) => s.type === 'detailed_features') || isAriba || isMM || isFICO || isFieldglass || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS) ? (
                         <div id="overview" className="scroll-mt-32">
                             <SectionRenderer sections={mappedCourse.sections as Section[]} courseName={mappedCourse.title} />
                         </div>
@@ -178,7 +192,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                     )}
 
                     {/* Check if standard flow (ariba/detailed) implies prerequisites are inside sections. If not, add them. */}
-                    {((mappedCourse.sections as Section[])?.some((s: Section) => s.type === 'detailed_features') || isAriba || isMM) && (
+                    {((mappedCourse.sections as Section[])?.some((s: Section) => s.type === 'detailed_features') || isAriba || isMM || isFICO || isFieldglass || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS) && (
                         <>
                             {!mappedCourse.sections?.some((s: any) => s.type === 'detailed_prerequisites' || s.type === 'prerequisites') && (
                                 <DetailedPrerequisites items={getGenericPrerequisites(mappedCourse.title)} />
@@ -190,7 +204,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                     )}
 
                     {/* Highlights Section (for local data courses that don't have it in sections) */}
-                    {(!(mappedCourse.sections as Section[]) || !(mappedCourse.sections as Section[]).some((s: Section) => s.type === 'features')) && (!isAriba && !isMM) && mappedCourse.features && mappedCourse.features.length > 0 && (
+                    {(!(mappedCourse.sections as Section[]) || !(mappedCourse.sections as Section[]).some((s: Section) => s.type === 'features')) && (!isAriba && !isMM && !isFICO && !isFieldglass && !isTRM && !isSD && !isC4C && !isABAP && !isCPI && !isPPDS) && mappedCourse.features && mappedCourse.features.length > 0 && (
                         <section id="why-us" className="bg-orange-50 rounded-2xl p-8 border border-orange-100 scroll-mt-32">
                             <h2 className="text-2xl font-bold text-gray-900 mb-2">Why Professionals Choose ERPVITS for {mappedCourse.title}</h2>
                             <p className="text-gray-600 mb-8">Trusted by 500+ successful SAP professionals worldwide.</p>
@@ -211,7 +225,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                     {/* Curriculum Section (rendered separately if not in sections) */}
                     {(!(mappedCourse.sections as Section[]) || !(mappedCourse.sections as Section[]).some((s: Section) => s.type === 'curriculum' || s.type === 'detailed_curriculum')) && mappedCourse.curriculum && mappedCourse.curriculum.length > 0 && (
                         <section id="curriculum" className="scroll-mt-32">
-                            <Curriculum modules={mappedCourse.curriculum} courseName={mappedCourse.title} />
+                            <Curriculum modules={mappedCourse.curriculum} />
                         </section>
                     )}
 

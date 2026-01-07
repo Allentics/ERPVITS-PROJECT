@@ -925,152 +925,7 @@ export const cpiRealWorldScenarios = [
     }
 ];
 
-// --- SAP Fieldglass Content ---
 
-export const fieldglassTargetAudience = [
-    {
-        icon: "Users",
-        color: "text-blue-600",
-        bg: "bg-blue-50",
-        title: "HR & Recruitment Professionals",
-        description: [
-            "HR Managers optimizing contingent workforce",
-            "Recruiters managing vendor relationships",
-            "Talent acquisition specialists",
-            "Workforce planners"
-        ]
-    },
-    {
-        icon: "ShoppingCart",
-        color: "text-green-600",
-        bg: "bg-green-50",
-        title: "Procurement Specialists",
-        description: [
-            "Procurement managers for services",
-            "Vendor management specialists",
-            "Category managers for indirect spend",
-            "Contract managers"
-        ]
-    },
-    {
-        icon: "Laptop",
-        color: "text-purple-600",
-        bg: "bg-purple-50",
-        title: "SAP Consultants",
-        description: [
-            "SAP MM/HCM consultants upskilling",
-            "Functional consultants for cloud solutions",
-            "Implementation partners",
-            "System support analysts"
-        ]
-    }
-];
-
-export const fieldglassPrerequisites = {
-    minimum: [
-        "Understanding of HR or Procurement processes",
-        "Familiarity with contingent workforce concepts",
-        "Basic computer skills and web navigation",
-        "Interest in cloud applications"
-    ],
-    nicetohave: [
-        "Experience with SAP HCM or MM",
-        "Knowledge of Vendor Management Systems (VMS)",
-        "Experience in services procurement",
-        "Basic understanding of SaaS"
-    ]
-};
-
-export const fieldglassLearningOutcomes = [
-    {
-        title: "Contingent Workforce Mgmt",
-        icon: "Users",
-        points: [
-            "Manage entire contingent worker lifecycle",
-            "Create job postings and manage requisitions",
-            "Onboard workers and track compliance",
-            "Process timesheets and expenses"
-        ]
-    },
-    {
-        title: "Services Procurement (SOW)",
-        icon: "FileText",
-        points: [
-            "Manage Statement of Work (SOW) projects",
-            "Handle complex services procurement",
-            "Track deliverables and milestones",
-            "Manage budgets and spend"
-        ]
-    },
-    {
-        title: "Vendor Management",
-        icon: "Briefcase",
-        points: [
-            "Onboard and manage suppliers",
-            "Monitor vendor performance and KPIs",
-            "Configure vendor portals",
-            "Ensure vendor compliance"
-        ]
-    },
-    {
-        title: "Configuration & Admin",
-        icon: "Settings",
-        points: [
-            "Configure company structure and master data",
-            "Manage user roles and permissions",
-            "Set up approval workflows",
-            "Customize notifications and rules"
-        ]
-    }
-];
-
-export const fieldglassRealWorldScenarios = [
-    {
-        title: "Global IT Services Company's Contingent Workforce",
-        icon: "Globe",
-        bg: "bg-blue-50",
-        iconColor: "text-blue-600",
-        scenario: "Multinational IT firm with 50,000+ contractors needs centralized management across 12 countries.",
-        role: "Fieldglass Implementation Lead",
-        responsibilities: [
-            "Design global template with local compliance rules",
-            "Configure standardized onboarding workflows",
-            "Implement automated timesheet-to-invoice matching",
-            "Set up global reporting dashboards"
-        ],
-        outcome: "Centralized visibility, 100% compliance, reduced administrative overhead."
-    },
-    {
-        title: "Retail Vendor Management Automation",
-        icon: "ShoppingBag",
-        bg: "bg-green-50",
-        iconColor: "text-green-600",
-        scenario: "Retail chain with 500+ vendors needs to streamline onboarding and performance tracking.",
-        role: "VMS Consultant",
-        responsibilities: [
-            "Configure self-service supplier portal",
-            "Automate qualification and certification workflows",
-            "Set up supplier performance scorecards",
-            "Implement rate card management"
-        ],
-        outcome: "Faster vendor onboarding, improved vendor quality, standardized rates."
-    },
-    {
-        title: "Enterprise Services Procurement (SOW)",
-        icon: "FileText",
-        bg: "bg-purple-50",
-        iconColor: "text-purple-600",
-        scenario: "Large enterprise wants to gain control over $500M annual services spend.",
-        role: "SOW Solution Architect",
-        responsibilities: [
-            "Design SOW project templates",
-            "Configure milestone-based billing rules",
-            "mplement deliverable tracking",
-            "Integrate SOW spend with ERP budget checks"
-        ],
-        outcome: "Controlled services spend, payment only on delivery, improved budget adherence."
-    }
-];
 
 // --- SAP TRM Content ---
 
@@ -1219,3 +1074,174 @@ export const trmRealWorldScenarios = [
     }
 ];
 
+
+// --- Fieldglass Content ---
+
+export const fieldglassTargetAudience = [
+    {
+        icon: "Laptop",
+        color: "text-blue-600",
+        bg: "bg-blue-50",
+        title: "HR & Recruitment Professionals",
+        description: [
+            "HR managers mastering VMS",
+            "Recruitment specialists automating procurement",
+            "Talent acquisition managers",
+            "HR operations coordinators"
+        ]
+    },
+    {
+        icon: "ShoppingCart",
+        color: "text-green-600",
+        bg: "bg-green-50",
+        title: "Procurement & Vendor Specialists",
+        description: [
+            "Procurement managers in service procurement",
+            "Vendor managers using Fieldglass",
+            "Procurement analysts specializing in VMS",
+            "Category managers for contingent spend"
+        ]
+    },
+    {
+        icon: "Database",
+        color: "text-purple-600",
+        bg: "bg-purple-50",
+        title: "IT & ERP Professionals",
+        description: [
+            "SAP consultants shifting to contingent workforce",
+            "ERP admins seeking VMS expertise",
+            "Technical architects for enterprise solutions",
+            "DB admins supporting Fieldglass"
+        ]
+    },
+    {
+        icon: "Building2",
+        color: "text-orange-600",
+        bg: "bg-orange-50",
+        title: "Finance & Operations Leaders",
+        description: [
+            "Finance managers managing workforce spend",
+            "Operations directors optimizing efficiency",
+            "CFO offices controlling contingent costs",
+            "Internal audit teams ensuring compliance"
+        ]
+    },
+    {
+        icon: "GraduationCap",
+        color: "text-cyan-600",
+        bg: "bg-cyan-50",
+        title: "Fresh Graduates & Career Changers",
+        description: [
+            "MBA/HR graduates aspiring for SAP careers",
+            "IT professionals shifting to enterprise solutions",
+            "Business analysts targeting VMS consulting",
+            "Career changers with HR/procurement skills"
+        ]
+    }
+];
+
+export const fieldglassPrerequisites = {
+    minimum: [
+        "Understanding of HR processes (hiring, onboarding)",
+        "Knowledge of contingent workforce operations",
+        "Experience with web/business applications",
+        "Ability to operate unsupervised"
+    ],
+    nicetohave: [
+        "Prior SAP experience (HR, MM, FICO)",
+        "Experience in HR or procurement domain",
+        "Understanding of ERP systems",
+        "Reporting skills in Excel"
+    ]
+};
+
+export const fieldglassLearningOutcomes = [
+    {
+        title: "Contingent Work Lifecycle",
+        icon: "Users",
+        points: [
+            "Manage worker onboarding & offboarding",
+            "Handle requisitions & assignments",
+            "Process timesheets & approvals",
+            "Ensure compliance & cost control"
+        ]
+    },
+    {
+        title: "SOW Services Procurement",
+        icon: "FileText",
+        points: [
+            "Manage SOW lifecycle & bidding",
+            "Configure billing models & structures",
+            "Automate invoicing & payments",
+            "Track service provider performance"
+        ]
+    },
+    {
+        title: "Vendor Management (VMS)",
+        icon: "Building",
+        points: [
+            "Formulate vendor onboarding processes",
+            "Maintain vendor master data",
+            "Create vendor self-service portals",
+            "Oversee vendor compliance"
+        ]
+    },
+    {
+        title: "Integration & Analytics",
+        icon: "BarChart3",
+        points: [
+            "Connect Fieldglass with SAP S/4HANA",
+            "Analyze contingent workforce spend",
+            "Design KPI dashboards & reports",
+            "Troubleshoot integration flows"
+        ]
+    }
+];
+
+export const fieldglassRealWorldScenarios = [
+    {
+        title: "Global IT Services Contingent Platform",
+        icon: "Globe",
+        bg: "bg-blue-50",
+        iconColor: "text-blue-600",
+        scenario: "MNC with 50,000 contingent workers needs centralized VMS for 12 countries.",
+        role: "Lead SAP Fieldglass Consultant",
+        responsibilities: [
+            "Design corporate governance structure",
+            "Configure onboarding & compliance workflows",
+            "Automate timesheet & invoicing processes",
+            "Establish workforce analytic dashboards"
+        ],
+        outcome: "Centralized control, operational cost reduction, global compliance visibility."
+    },
+    {
+        title: "Retail Vendor Management Automation",
+        icon: "ShoppingBag",
+        bg: "bg-green-50",
+        iconColor: "text-green-600",
+        scenario: "Retail company with 500+ vendors needs to replace manual processes.",
+        role: "Fieldglass Implementation Lead",
+        responsibilities: [
+            "Develop vendor self-service onboarding portal",
+            "Automate qualification & performance tracking",
+            "Create vendor compliance checking procedures",
+            "Build risk assessment workflows"
+        ],
+        outcome: "Streamlined onboarding, automated scaling, enhanced vendor performance tracking."
+    },
+    {
+        title: "Enterprise SOW Implementation",
+        icon: "FileText",
+        bg: "bg-purple-50",
+        iconColor: "text-purple-600",
+        scenario: "Global services company adopting Fieldglass SOW for $500M annual spend projects.",
+        role: "Solution Architect / SOW Specialist",
+        responsibilities: [
+            "Develop SOW structures for engagement models",
+            "Configure bidding & milestone billing",
+            "Design collaboration workflows",
+            "Establish governance procedures"
+        ],
+        outcome: "Streamlined project setup, automated invoicing, improved spend visibility."
+    }
+];

@@ -1133,5 +1133,25 @@
     "curriculum": [],
     "faqs": [],
     "inFaqSection": false
+  },
+  {
+    "id": "ppds",
+    "title": "SAP PPDS",
+    "heroHeading": "Transform Your Career with the #1 SAP PPDS Online Training Program",
+    "description": "The SAP PPDS (Production Planning and Detailed Scheduling) Online Training Program from ERPVITS represents a transformative learning pathway for production planning professionals and SAP consultants. Gain expertise in optimizing production schedules, reducing lead times, and driving operational excellence with our comprehensive, job-oriented curriculum.",
+    "category": "Functional",
+    "features": [
+      "Trusted by 420+ successful SAP PPDS professionals",
+      "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro",
+      "Personalized pre-evaluation and production planning learning path",
+      "Active alumni network and community forum",
+      "40+ guided lab exercises",
+      "Quarterly updated materials",
+      "Mock interviews simulating real PPDS scenarios",
+      "Dedicated certification prep"
+    ],
+    "curriculum": [],
+    "faqs": [],
+    "inFaqSection": false
   }
 ]

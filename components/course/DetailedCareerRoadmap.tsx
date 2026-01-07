@@ -1,7 +1,27 @@
 import React from 'react';
 import { Briefcase, Building2, TrendingUp, Globe, CheckCircle2, Users } from 'lucide-react';
 
-export default function DetailedCareerRoadmap() {
+export default function DetailedCareerRoadmap({ items }: { items?: any[] }) {
+    const defaultSteps = [
+        {
+            stage: "Start (1-3)",
+            title: "Jr. Ariba Consultant",
+            description: "Support projects, process design, configuration basics."
+        },
+        {
+            stage: "Mid-Level (4-6)",
+            title: "Sr. Ariba Consultant / Architect",
+            description: "Lead projects, solution design, client interaction."
+        },
+        {
+            stage: "Senior (7-10+)",
+            title: "Principal Consultant / Manager",
+            description: "Multi-regional accounts, thought leadership, strategic contributions."
+        }
+    ];
+
+    const steps = items || defaultSteps;
+
     return (
         <section className="py-20 bg-white">
             <div className="max-w-7xl mx-auto px-4">
@@ -13,29 +33,14 @@ export default function DetailedCareerRoadmap() {
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-6 mb-12">
-                        {/* Step 1 */}
-                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm text-center relative">
-                            <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm border-4 border-white">1</div>
-                            <h3 className="font-bold text-slate-900 mt-4 mb-1">Start (1-3)</h3>
-                            <div className="text-xs font-bold text-blue-600 uppercase tracking-wider mb-4">Jr. Ariba Consultant</div>
-                            <p className="text-sm text-slate-600">Support projects, process design, configuration basics.</p>
-                        </div>
-
-                        {/* Step 2 */}
-                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm text-center relative">
-                            <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm border-4 border-white">2</div>
-                            <h3 className="font-bold text-slate-900 mt-4 mb-1">Mid-Level (4-6)</h3>
-                            <div className="text-xs font-bold text-blue-600 uppercase tracking-wider mb-4">Sr. Ariba Consultant / Architect</div>
-                            <p className="text-sm text-slate-600">Lead projects, solution design, client interaction.</p>
-                        </div>
-
-                        {/* Step 3 */}
-                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm text-center relative">
-                            <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm border-4 border-white">3</div>
-                            <h3 className="font-bold text-slate-900 mt-4 mb-1">Senior (7-10+)</h3>
-                            <div className="text-xs font-bold text-blue-600 uppercase tracking-wider mb-4">Principal Consultant / Manager</div>
-                            <p className="text-sm text-slate-600">Multi-regional accounts, thought leadership, strategic contributions.</p>
-                        </div>
+                        {steps.map((step, idx) => (
+                            <div key={idx} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm text-center relative">
+                                <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm border-4 border-white">{idx + 1}</div>
+                                <h3 className="font-bold text-slate-900 mt-4 mb-1">{step.stage}</h3>
+                                <div className="text-xs font-bold text-blue-600 uppercase tracking-wider mb-4">{step.title}</div>
+                                <p className="text-sm text-slate-600">{step.description}</p>
+                            </div>
+                        ))}
                     </div>
 
                     {/* Stats Row */}
@@ -55,36 +60,7 @@ export default function DetailedCareerRoadmap() {
                     </div>
                 </div>
 
-                {/* 2. Top Companies */}
-                <div className="mb-24">
-                    <div className="text-center mb-12">
-                        <span className="text-blue-600 text-xs font-bold tracking-widest uppercase mb-2 block">Top Employers</span>
-                        <h2 className="text-3xl font-bold text-slate-900">Top Companies Hiring SAP Ariba Professionals</h2>
-                        <p className="text-gray-600 mt-2">Our alumni work at the world's leading consulting firms and Fortune 500 companies</p>
-                    </div>
 
-                    <div className="space-y-4 max-w-4xl mx-auto">
-                        {[
-                            { tier: "Tier 1 - Global Consulting Firms", companies: ["Accenture", "Deloitte", "Solution Consulting", "PWC", "EY", "IBM Consulting"], color: "bg-blue-600" },
-                            { tier: "Tier 2 - Enterprise SAP Implementation Partners", companies: ["Infosys", "Wipro", "Capgemini", "TCS", "HCL Tech", "Tech Mahindra"], color: "bg-green-600" },
-                            { tier: "Tier 3 - Fortune 500 Enterprises", companies: ["Amazon", "Microsoft", "Apple", "Google", "P&G", "Unilever", "Volkswagen", "Pfizer", "J&J"], color: "bg-purple-600" },
-                            { tier: "Tier 4 - Mid-Market & Regional Leaders", companies: ["Regional consulting firms", "Industry specific service providers", "In-house procurement teams", "SAP system maxributors"], color: "bg-orange-600" }
-                        ].map((row, idx) => (
-                            <div key={idx} className="flex flex-col md:flex-row border border-slate-200 rounded-lg overflow-hidden">
-                                <div className={`${row.color} text-white px-4 py-3 md:w-64 flex items-center justify-center md:justify-start font-bold text-sm flex-shrink-0`}>
-                                    {row.tier}
-                                </div>
-                                <div className="p-3 bg-white flex flex-wrap gap-2 items-center flex-1">
-                                    {row.companies.map((co, cIdx) => (
-                                        <span key={cIdx} className="bg-slate-100 text-slate-700 px-3 py-1 rounded text-xs font-medium border border-slate-200">
-                                            {co}
-                                        </span>
-                                    ))}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
 
                 {/* 3. Hiring Trends */}
                 <div className="mb-16">

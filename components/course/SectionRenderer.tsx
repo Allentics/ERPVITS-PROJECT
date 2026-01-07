@@ -19,6 +19,7 @@ import DetailedTestimonials from './DetailedTestimonials';
 import DetailedUpcomingBatches from './DetailedUpcomingBatches';
 import DetailedFAQ from './DetailedFAQ';
 import DetailedDemoBooking from './DetailedDemoBooking';
+import DetailedCompanies from './DetailedCompanies';
 import {
     Quote, CheckCircle2, UserCheck, Laptop, Briefcase, Clock,
     Award, Globe, BookOpen, Video, TrendingUp, Headphones,
@@ -60,7 +61,7 @@ export function DetailedFeatures({ badge, title, subtitle, items }: any) {
     };
 
     return (
-        <div className="py-12">
+        <div className="py-12 detailed-features-section">
             <div className="text-center mb-12">
                 {badge && <span className="bg-orange-500 text-white px-4 py-1.5 rounded-full text-sm font-medium mb-5 inline-block shadow-sm">{badge}</span>}
                 <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">{renderTitle(title)}</h2>
@@ -164,7 +165,7 @@ export default function SectionRenderer({ sections, courseName }: { sections: an
                         return <LearningOutcomes key={idx} title={section.title} items={section.items} />;
                     case 'curriculum':
                         return <section key={idx} id="curriculum" className="scroll-mt-32">
-                            <Curriculum modules={section.modules} courseName={courseName || section.courseName} />
+                            <Curriculum modules={section.modules} />
                         </section>;
                     case 'detailed_curriculum':
                         return <section key={idx} id="curriculum" className="scroll-mt-32">
@@ -179,11 +180,13 @@ export default function SectionRenderer({ sections, courseName }: { sections: an
                     case 'real_world_scenarios':
                         return <RealWorldScenarios key={idx} items={section.items} />;
                     case 'detailed_certification':
-                        return <DetailedCertification key={idx} items={section.items} title={section.title} subtitle={section.subtitle} badge={section.badge} stats={section.stats} courseName={courseName || section.courseName} description={section.description || section.content} />;
+                        return <DetailedCertification key={idx} items={section.items} title={section.title} subtitle={section.subtitle} badge={section.badge} stats={section.stats} courseName={courseName || section.courseName} description={section.description || section.content} imageSrc={section.imageSrc} />;
                     case 'detailed_career_opportunities':
                         return <DetailedCareerOpportunities key={idx} items={section.items} courseName={courseName || section.courseName} />;
+                    case 'detailed_companies':
+                        return <DetailedCompanies key={idx} courseName={courseName || section.courseName} customData={section.customData} />;
                     case 'detailed_career_roadmap':
-                        return <DetailedCareerRoadmap key={idx} />;
+                        return <DetailedCareerRoadmap key={idx} items={section.items} />;
                     case 'detailed_post_training_journey':
                         return <DetailedPostTrainingJourney key={idx} steps={section.items} title={section.title} courseName={section.courseName || courseName} />;
                     case 'detailed_testimonials':
@@ -206,7 +209,7 @@ export default function SectionRenderer({ sections, courseName }: { sections: an
                     case 'content_with_image':
                         return <ContentWithImage key={idx} {...section} />;
                     case 'whats_included':
-                        return <WhatsIncluded key={idx} />;
+                        return <WhatsIncluded key={idx} {...section} />;
                     case 'faq':
                         return <DetailedFAQ key={idx} items={section.items} />;
                     default:
