@@ -86,7 +86,7 @@ export default function AllCoursesPage() {
                                         </div>
                                         <div className="flex items-center">
                                             <BookOpen className="h-4 w-4 mr-1" />
-                                            <span>{course.curriculum.length} Modules</span>
+                                            <span>{course.curriculum?.length || 0} Modules</span>
                                         </div>
                                     </div>
 
