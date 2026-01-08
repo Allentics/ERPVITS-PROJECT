@@ -108,8 +108,26 @@ export const blogPosts: BlogPost[] = [
         date: "Nov 25, 2025",
         category: "SAP Career",
         author: "ERPVITS Expert"
-    }
-    ,
+    },
+    {
+        id: "sap-mm-course-complete-guide",
+        title: "SAP MM Course: Complete Guide to Materials Management Professional Excellence",
+        description: "Join the best SAP MM course at ERPVITS. Get certified with expert-led training in Materials Management, S/4HANA, and procurement. Enroll now!",
+        image: "/images/sap-mm-course.png",
+        date: "Dec 20, 2025",
+        category: "SAP MM",
+        author: "ERPVITS Expert"
+    },
+    {
+        id: "sap-trm-complementary-technologies",
+        title: "SAP TRM Complementary Technologies for Modern Treasury and Risk Management",
+        description: "Explore how SAP TRM integrates with analytics, automation, and compliance tools to enable real-time insights, risk control, and digital treasury transformation.",
+        image: "/images/sap-trm-complementary.png",
+        date: "Dec 18, 2025",
+        category: "SAP TRM",
+        author: "ERPVITS Expert"
+    },
+
 
 
 
