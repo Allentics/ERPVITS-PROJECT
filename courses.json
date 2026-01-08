@@ -1153,5 +1153,65 @@
     "curriculum": [],
     "faqs": [],
     "inFaqSection": false
+  },
+  {
+    "id": "sap-tm",
+    "title": "SAP TM",
+    "category": "Functional",
+    "description": "Master logistics optimization with SAP TM training online. Learn freight management, planning, hands-on labs, real projects, and certification support.",
+    "features": [],
+    "curriculum": [],
+    "faqs": [],
+    "inFaqSection": false
+  },
+  {
+    "id": "sap-ewm",
+    "title": "SAP EWM",
+    "category": "Functional",
+    "description": "Master modern warehouse operations with SAP EWM training online. Learn warehouse optimization, inventory management, RF operations, and S/4HANA integration.",
+    "features": [],
+    "curriculum": [],
+    "faqs": [],
+    "inFaqSection": false
+  },
+  {
+    "id": "sap-ibp",
+    "title": "SAP IBP",
+    "category": "Functional",
+    "description": "Transform your supply chain with SAP IBP training. Master demand planning, inventory optimization, and S&OP cycles with hands-on labs and real-world projects.",
+    "features": [],
+    "curriculum": [],
+    "faqs": [],
+    "inFaqSection": false
+  },
+  {
+    "id": "sap-mdg",
+    "title": "SAP MDG",
+    "category": "Functional",
+    "description": "Master enterprise data governance with SAP MDG training. Learn to manage master data quality, implement governance frameworks, and ensure compliance across the organization.",
+    "features": [],
+    "curriculum": [],
+    "faqs": [],
+    "inFaqSection": false
+  },
+  {
+    "id": "sap-c4c-functional",
+    "title": "SAP C4C Functional",
+    "category": "Functional",
+    "description": "Master Cloud-Based Customer Relationship Management with the #1 SAP C4C Functional Online Training Program. Excel in cloud-based customer relationship management, sales operations, and customer service transformation.",
+    "features": [],
+    "curriculum": [],
+    "faqs": [],
+    "inFaqSection": false
+  },
+  {
+    "id": "sap-abap-on-hana",
+    "title": "SAP ABAP on HANA",
+    "category": "Technical",
+    "description": "Master Modern ABAP Development with the #1 SAP ABAP on HANA Online Training Program. Learn performance tuning, coding labs, real projects, and certification support.",
+    "features": [],
+    "curriculum": [],
+    "faqs": [],
+    "inFaqSection": false
   }
 ]

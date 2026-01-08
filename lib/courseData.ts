@@ -1,4 +1,5 @@
 import { abapContent } from './abapContent';
+import { abapHanaContent } from './abapHanaContent';
 import { c4cContent } from './c4cContent';
 import { cpiContent } from './cpiContent';
 import { ficoContent } from './ficoContent';
@@ -8,6 +9,11 @@ import { ppdsContent } from './ppdsContent';
 import { sdContent } from './sdContent';
 import { trmContent } from './trmContent';
 import { aribaContent } from './aribaContent';
+import { tmContent } from './tmContent';
+import { ewmContent } from './ewmContent';
+import { ibpContent } from './ibpContent';
+import { mdgContent } from './mdgContent';
+import { c4cFunctionalContent } from './c4cFunctionalContent';
 import coursesData from '@/courses.json';
 
 // Define Types
@@ -42,6 +48,10 @@ export interface Course {
     schema?: string;
     category?: string;
     badges?: string[];
+    heroStats?: { icon: string, label: string }[];
+    buttonLabels?: { primary: string, secondary: string };
+    heroLayout?: 'default' | 'centered';
+    themeColor?: 'default' | 'purple' | 'orange' | 'blue';
 }
 
 // Map of content files based on ID
@@ -50,9 +60,12 @@ const contentMap: Record<string, any> = {
     'abap': abapContent,
     'sap-abap-on-cloud': abapContent,
     'abap-cloud': abapContent,
+    'sap-abap-on-hana': abapHanaContent,
+    'abap-hana': abapHanaContent,
     'sap-ariba': aribaContent,
     'ariba': aribaContent,
     'c4c-technical': c4cContent,
+    'sap-c4c-functional': c4cFunctionalContent,
     'cpi': cpiContent,
     'fico': ficoContent,
     'sap-fieldglass': fieldglassContent,
@@ -63,7 +76,19 @@ const contentMap: Record<string, any> = {
     'sap-mm': mmContent,
     'mm': mmContent,
     'sd': sdContent,
-    'trm': trmContent
+    'trm': trmContent,
+    'sap-tm': tmContent,
+    'tm': tmContent,
+    'sap-transportation-management': tmContent,
+    'sap-ewm': ewmContent,
+    'ewm': ewmContent,
+    'sap-extended-warehouse-management': ewmContent,
+    'sap-ibp': ibpContent,
+    'ibp': ibpContent,
+    'sap-integrated-business-planning': ibpContent,
+    'sap-mdg': mdgContent,
+    'mdg': mdgContent,
+    'sap-master-data-governance': mdgContent
 };
 
 // Merge Content

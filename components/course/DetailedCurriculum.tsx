@@ -137,13 +137,13 @@ export default function DetailedCurriculum({ modules, title, courseName = "SAP A
                                         {labs && labs.length > 0 && (
                                             <div>
                                                 <h4 className="font-bold text-slate-800 mb-4 flex items-center gap-2 text-base">
-                                                    <span className="w-1.5 h-6 bg-green-500 rounded-full inline-block"></span>
+                                                    <span className="w-1.5 h-6 bg-orange-500 rounded-full inline-block"></span>
                                                     Hands On Activities:
                                                 </h4>
                                                 <ul className="space-y-3">
                                                     {labs.map((activity, k) => (
                                                         <li key={k} className="flex items-start gap-3 text-slate-600 text-[15px] leading-relaxed group/item">
-                                                            <CheckCircle2 className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" />
+                                                            <CheckCircle2 className="w-4 h-4 text-orange-500 mt-1 flex-shrink-0" />
                                                             <span>{activity}</span>
                                                         </li>
                                                     ))}

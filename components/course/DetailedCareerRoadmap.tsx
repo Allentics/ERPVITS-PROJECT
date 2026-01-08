@@ -88,23 +88,23 @@ export default function DetailedCareerRoadmap({ items }: { items?: any[] }) {
                 </div>
 
                 {/* 4. Alumni Network Banner */}
-                <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-8 md:p-12 text-center text-white shadow-xl relative overflow-hidden">
+                <div className="bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl p-8 md:p-12 text-center text-white shadow-xl relative overflow-hidden">
                     <div className="relative z-10">
                         <h3 className="text-2xl md:text-3xl font-bold mb-2">Join Our Successful Alumni Network</h3>
-                        <p className="text-blue-100 mb-8 max-w-2xl mx-auto text-sm">Our graduates are working at top companies worldwide. Fast-track your career with ERPVITS SAP Ariba training and join this elite network of professionals.</p>
+                        <p className="text-orange-100 mb-8 max-w-2xl mx-auto text-sm">Our graduates are working at top companies worldwide. Fast-track your career with ERPVITS SAP Ariba training and join this elite network of professionals.</p>
 
-                        <div className="grid grid-cols-3 gap-8 max-w-3xl mx-auto border-t border-blue-400/30 pt-8">
+                        <div className="grid grid-cols-3 gap-8 max-w-3xl mx-auto border-t border-orange-400/30 pt-8">
                             <div>
                                 <div className="text-3xl md:text-4xl font-bold mb-1">500+</div>
-                                <div className="text-xs md:text-sm text-blue-200">Alumni Placed</div>
+                                <div className="text-xs md:text-sm text-orange-100">Alumni Placed</div>
                             </div>
                             <div>
                                 <div className="text-3xl md:text-4xl font-bold mb-1">98%</div>
-                                <div className="text-xs md:text-sm text-blue-200">Success Rate</div>
+                                <div className="text-xs md:text-sm text-orange-100">Success Rate</div>
                             </div>
                             <div>
                                 <div className="text-3xl md:text-4xl font-bold mb-1">3 Months</div>
-                                <div className="text-xs md:text-sm text-blue-200">Average Job Time</div>
+                                <div className="text-xs md:text-sm text-orange-100">Average Job Time</div>
                             </div>
                         </div>
                     </div>

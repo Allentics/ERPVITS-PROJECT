@@ -68,8 +68,8 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
     const mappedCourse = {
         ...localCourse,
         ...course,
-        heroHeading: course?.hero_heading || localCourse?.heroHeading,
-        heroSubheading: course?.hero_subheading || localCourse?.heroSubheading,
+        heroHeading: (isAriba || isFieldglass || isMM || isFICO || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS) ? localCourse?.heroHeading : (course?.hero_heading || localCourse?.heroHeading),
+        heroSubheading: (isAriba || isFieldglass || isMM || isFICO || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS) ? localCourse?.heroSubheading : (course?.hero_subheading || localCourse?.heroSubheading),
         heroImage: (isAriba || isFICO || isFieldglass || isMM || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS) ? undefined : (localCourse?.heroImage || course?.hero_image),
         metaTitle: course?.meta_title || localCourse?.metaTitle,
         metaDescription: course?.meta_description || localCourse?.metaDescription,
@@ -95,13 +95,13 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
             {/* Hero Section */}
             <div className="bg-[#F2F6FD] text-slate-900 relative overflow-hidden py-24 lg:py-32">
                 <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-[0.03]"></div>
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[500px] bg-orange-100/40 blur-[100px] rounded-full opacity-50 pointer-events-none"></div>
+                <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[500px] blur-[100px] rounded-full opacity-50 pointer-events-none ${mappedCourse.themeColor === 'purple' ? 'bg-purple-100/40' : 'bg-orange-100/40'}`}></div>
 
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
 
                     {/* Premium Badge */}
                     <div className="flex justify-center mb-8">
-                        <div className="bg-gradient-to-r from-orange-500 to-red-600 text-white text-sm font-bold px-6 py-2 rounded-full shadow-xl shadow-orange-500/20 flex items-center gap-2">
+                        <div className={`text-white text-sm font-bold px-6 py-2 rounded-full shadow-xl flex items-center gap-2 ${mappedCourse.themeColor === 'purple' ? 'bg-gradient-to-r from-blue-600 to-purple-600 shadow-purple-500/20' : 'bg-gradient-to-r from-orange-500 to-red-600 shadow-orange-500/20'}`}>
                             <span className="text-yellow-200">★</span>
                             Rated #1 {mappedCourse.title} Training Program 2025
                             <span className="text-yellow-300">★</span>
@@ -109,16 +109,14 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                     </div>
 
                     {/* Heading */}
-                    {/* Heading */}
                     <h1 className="text-5xl lg:text-7xl font-extrabold mb-8 leading-tight tracking-tight text-slate-900">
                         {mappedCourse.heroHeading ? (
                             mappedCourse.heroHeading
                         ) : (
-                            <>Transform Your Career with <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">{mappedCourse.title}</span></>
+                            <>Transform Your Career with <span className={`text-transparent bg-clip-text bg-gradient-to-r ${mappedCourse.themeColor === 'purple' ? 'from-blue-700 to-purple-700' : 'from-orange-600 to-red-600'}`}>{mappedCourse.title}</span></>
                         )}
                     </h1>
 
-                    {/* Subheading */}
                     {/* Subheading */}
                     <p className="text-xl text-slate-600 mb-12 leading-relaxed max-w-3xl mx-auto">
                         {mappedCourse.heroSubheading || mappedCourse.description?.substring(0, 150) + "..."}
@@ -126,7 +124,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
 
                     {/* Buttons */}
                     <div className="flex flex-col sm:flex-row gap-5 justify-center mb-16">
-                        <a href={(isAriba || isFieldglass || isMM || isFICO || isTRM || isSD || isC4C || isABAP) ? "#detailed-demo-booking" : "#enroll"} className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white px-10 py-4 rounded-lg font-bold shadow-lg shadow-orange-500/25 transition-all flex items-center justify-center gap-2 text-lg">
+                        <a href={(isAriba || isFieldglass || isMM || isFICO || isTRM || isSD || isC4C || isABAP) ? "#detailed-demo-booking" : "#enroll"} className={`text-white px-10 py-4 rounded-lg font-bold shadow-lg transition-all flex items-center justify-center gap-2 text-lg ${mappedCourse.themeColor === 'purple' ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-purple-500/25' : 'bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 shadow-orange-500/25'}`}>
                             Book Free Demo Class
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </a>
@@ -142,11 +140,11 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                             SAP Certified Trainers
                         </div>
                         <div className="flex items-center gap-2">
-                            <svg className="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.956 11.956 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                            <svg className={`w-5 h-5 ${mappedCourse.themeColor === 'purple' ? 'text-blue-500' : 'text-orange-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.956 11.956 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                             100% Job Assistance
                         </div>
                         <div className="flex items-center gap-2">
-                            <svg className="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            <svg className={`w-5 h-5 ${mappedCourse.themeColor === 'purple' ? 'text-purple-500' : 'text-red-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                             Lifetime Access
                         </div>
                     </div>

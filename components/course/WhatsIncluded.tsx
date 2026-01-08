@@ -56,9 +56,9 @@ export default function WhatsIncluded({ features: customFeatures, stats: customS
     ];
 
     const defaultStats: Stat[] = [
-        { value: "45-50", label: "Hours of Live Training", color: "blue" },
-        { value: "50+", label: "Hands On Lab Exercises", color: "purple" },
-        { value: "24/7", label: "SAP Ariba Lab Access", color: "emerald" }
+        { value: "45-50", label: "Hours of Live Training", color: "orange" },
+        { value: "50+", label: "Hands On Lab Exercises", color: "orange" },
+        { value: "24/7", label: "SAP Ariba Lab Access", color: "orange" }
     ];
 
     const features = customFeatures || defaultFeatures;
@@ -69,7 +69,7 @@ export default function WhatsIncluded({ features: customFeatures, stats: customS
             <div className="max-w-7xl mx-auto px-4">
                 {/* Header */}
                 <div className="text-center mb-12">
-                    <span className="bg-emerald-50 text-emerald-600 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block border border-emerald-100">
+                    <span className="bg-orange-50 text-orange-600 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block border border-orange-100">
                         {badge || "Complete Learning Package"}
                     </span>
                     <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
@@ -83,9 +83,9 @@ export default function WhatsIncluded({ features: customFeatures, stats: customS
                 {/* Features Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
                     {features.map((feature, idx) => (
-                        <div key={idx} className="flex gap-4 p-6 bg-white rounded-2xl border border-emerald-100 hover:border-emerald-200 shadow-sm hover:shadow-md transition-all duration-300">
+                        <div key={idx} className="flex gap-4 p-6 bg-white rounded-2xl border border-orange-100 hover:border-orange-200 shadow-sm hover:shadow-md transition-all duration-300">
                             <div className="flex-shrink-0">
-                                <div className="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-500">
+                                <div className="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center text-orange-500">
                                     <CheckCircle2 className="w-6 h-6" />
                                 </div>
                             </div>
@@ -102,15 +102,9 @@ export default function WhatsIncluded({ features: customFeatures, stats: customS
                 {/* Stats Cards */}
                 <div className={`grid grid-cols-1 md:grid-cols-${Math.max(stats.length, 3)} gap-6`}>
                     {stats.map((stat, idx) => {
-                        const colorClass = stat.color === 'blue' ? 'bg-blue-50/50 border-blue-100 text-blue-600' :
-                            stat.color === 'purple' ? 'bg-purple-50/50 border-purple-100 text-purple-600' :
-                                stat.color === 'orange' ? 'bg-orange-50/50 border-orange-100 text-orange-600' :
-                                    'bg-emerald-50/50 border-emerald-100 text-emerald-600';
-
-                        const textClass = stat.color === 'blue' ? 'text-blue-800' :
-                            stat.color === 'purple' ? 'text-purple-800' :
-                                stat.color === 'orange' ? 'text-orange-800' :
-                                    'text-emerald-800';
+                        // Force orange styling regardless of stat.color for consistency as requested
+                        const colorClass = 'bg-orange-50/50 border-orange-100 text-orange-600';
+                        const textClass = 'text-orange-800';
 
                         return (
                             <div key={idx} className={`${colorClass} p-8 rounded-2xl border flex flex-col items-center justify-center text-center`}>

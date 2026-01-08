@@ -24,7 +24,7 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
         {
             name: "Batch 2: November 2024 (Weekend)",
             status: "Open",
-            statusColor: "bg-blue-100 text-blue-600",
+            statusColor: "bg-orange-100 text-orange-600",
             date: "November 16, 2024",
             schedule: "Sat & Sun | 09:00 AM - 12:00 PM IST",
             duration: "12 Weeks",
@@ -33,7 +33,7 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
         {
             name: "Batch 3: December 2024 (Flexible)",
             status: "New Batch",
-            statusColor: "bg-green-100 text-green-600",
+            statusColor: "bg-orange-100 text-orange-600",
             date: "December 2, 2024",
             schedule: "Flexible timings | Customized per batch",
             duration: "10 Weeks",
@@ -55,7 +55,7 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
         <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
             {/* Background Decorations */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-orange-600/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-600/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
 
             <div className="max-w-7xl mx-auto px-4 relative z-10">
 
@@ -98,14 +98,14 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-3">
-                                    <Clock className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                                    <Clock className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
                                     <div>
                                         <div className="text-xs font-bold text-slate-400 uppercase">Schedule</div>
                                         <div className="font-medium text-sm">{batch.schedule}</div>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-3">
-                                    <ShieldCheck className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                                    <ShieldCheck className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
                                     <div>
                                         <div className="text-xs font-bold text-slate-400 uppercase">Duration</div>
                                         <div className="font-medium text-sm">{batch.duration}</div>
@@ -116,13 +116,13 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
                             <div className="mb-6">
                                 <div className="flex justify-between text-xs font-medium text-slate-500 mb-2">
                                     <span>Seats Available</span>
-                                    <span className={batch.seatsFilled > 80 ? 'text-red-500' : 'text-green-500'}>
+                                    <span className={batch.seatsFilled > 80 ? 'text-red-500' : 'text-orange-500'}>
                                         {100 - batch.seatsFilled}% Left
                                     </span>
                                 </div>
                                 <div className="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
                                     <div
-                                        className={`h-full rounded-full ${batch.seatsFilled > 80 ? 'bg-red-500' : 'bg-green-500'}`}
+                                        className={`h-full rounded-full ${batch.seatsFilled > 80 ? 'bg-red-500' : 'bg-orange-500'}`}
                                         style={{ width: `${batch.seatsFilled}%` }}
                                     ></div>
                                 </div>
@@ -144,7 +144,7 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {features.map((feature, idx) => (
                             <div key={idx} className="flex items-start gap-3">
-                                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-green-400 flex-shrink-0">
+                                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-orange-400 flex-shrink-0">
                                     <feature.icon className="w-4 h-4" />
                                 </div>
                                 <span className="text-sm text-slate-300 font-medium">{feature.text}</span>

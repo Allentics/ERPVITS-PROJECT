@@ -5,8 +5,8 @@ import { Laptop, ShoppingCart, BarChart3, GraduationCap, Building2, CheckCircle2
 export const aribaTargetAudience = [
     {
         icon: "Laptop",
-        color: "text-blue-600",
-        bg: "bg-blue-50",
+        color: "text-orange-600",
+        bg: "bg-orange-50",
         title: "IT & ERP Professionals",
         description: [
             "SAP consultants, system administrators, technical architects, and solution consultants.",
@@ -17,8 +17,8 @@ export const aribaTargetAudience = [
     },
     {
         icon: "ShoppingCart",
-        color: "text-green-600",
-        bg: "bg-green-50",
+        color: "text-orange-600",
+        bg: "bg-orange-50",
         title: "Procurement & Supply Chain Specialists",
         description: [
             "Procurement managers, analysts, coordinators, and vendor managers.",
@@ -29,8 +29,8 @@ export const aribaTargetAudience = [
     },
     {
         icon: "BarChart3",
-        color: "text-purple-600",
-        bg: "bg-purple-50",
+        color: "text-orange-600",
+        bg: "bg-orange-50",
         title: "Finance & Operations Leaders",
         description: [
             "Financial managers, operations directors, and internal audit teams.",
@@ -53,8 +53,8 @@ export const aribaTargetAudience = [
     },
     {
         icon: "Building2",
-        color: "text-cyan-600",
-        bg: "bg-cyan-50",
+        color: "text-orange-600",
+        bg: "bg-orange-50",
         title: "SAP Ariba Customer Employees",
         description: [
             "Employees at organizations using or implementing SAP Ariba.",
@@ -130,8 +130,8 @@ export function getGenericTargetAudience(courseName: string) {
     return [
         {
             icon: "Laptop",
-            color: "text-blue-600",
-            bg: "bg-blue-50",
+            color: "text-orange-600",
+            bg: "bg-orange-50",
             title: "IT & Functional Consultants",
             description: [
                 `Professionals looking to specialize in ${courseName}.`,
@@ -142,8 +142,8 @@ export function getGenericTargetAudience(courseName: string) {
         },
         {
             icon: "ShoppingCart",
-            color: "text-green-600",
-            bg: "bg-green-50",
+            color: "text-orange-600",
+            bg: "bg-orange-50",
             title: "Domain Experts",
             description: [
                 "Professionals working in relevant business domains.",
@@ -223,8 +223,8 @@ export const aribaRealWorldScenarios = [
     {
         title: "Global Manufacturing Company's Procurement Transformation",
         icon: "Factory",
-        iconColor: "text-blue-600",
-        bg: "bg-blue-50",
+        iconColor: "text-orange-600",
+        bg: "bg-orange-50",
         scenario: "A multinational manufacturer with operations in 15 countries wants to centralize procurement across regional entities.",
         role: "Select Lead SAP Ariba Consultant",
         responsibilities: [
@@ -238,8 +238,8 @@ export const aribaRealWorldScenarios = [
     {
         title: "Retail Organization's Supplier Onboarding Automation",
         icon: "ShoppingBag",
-        iconColor: "text-green-600",
-        bg: "bg-green-50",
+        iconColor: "text-orange-600",
+        bg: "bg-orange-50",
         scenario: "A retail chain with 500+ suppliers wants to automate supplier onboarding and reduce manual data entry errors.",
         role: "SAP Ariba Implementation Consultant",
         responsibilities: [
@@ -253,8 +253,8 @@ export const aribaRealWorldScenarios = [
     {
         title: "Enterprise Guided Buying for Tech Company",
         icon: "Laptop2",
-        iconColor: "text-purple-600",
-        bg: "bg-purple-50",
+        iconColor: "text-orange-600",
+        bg: "bg-orange-50",
         scenario: "A 5,000-employee tech company wants to streamline IT, office supplies, and professional services procurement.",
         role: "Solution Architect / Functional Lead",
         responsibilities: [
@@ -270,8 +270,8 @@ export const aribaRealWorldScenarios = [
 export const ficoTargetAudience = [
     {
         icon: "Banknote", // Calculator or Banknote
-        color: "text-blue-600",
-        bg: "bg-blue-50",
+        color: "text-orange-600",
+        bg: "bg-orange-50",
         title: "Finance & Accounting Professionals",
         description: [
             "Accountants seeking SAP expertise and career advancement",
@@ -282,8 +282,8 @@ export const ficoTargetAudience = [
     },
     {
         icon: "Laptop",
-        color: "text-green-600",
-        bg: "bg-green-50",
+        color: "text-orange-600",
+        bg: "bg-orange-50",
         title: "SAP & ERP Professionals",
         description: [
             "SAP consultants shifting to FICO module",
@@ -294,8 +294,8 @@ export const ficoTargetAudience = [
     },
     {
         icon: "Building2",
-        color: "text-purple-600",
-        bg: "bg-purple-50",
+        color: "text-orange-600",
+        bg: "bg-orange-50",
         title: "Finance & CFO Office Leaders",
         description: [
             "Accounting modernized by finance directors",
@@ -318,8 +318,8 @@ export const ficoTargetAudience = [
     },
     {
         icon: "Users",
-        color: "text-cyan-600",
-        bg: "bg-cyan-50",
+        color: "text-orange-600",
+        bg: "bg-orange-50",
         title: "Existing Employees of SAP FICO Users",
         description: [
             "SAP FICO Employees",
@@ -392,8 +392,8 @@ export const ficoRealWorldScenarios = [
     {
         title: "Global Corporation's Financial System Transformation",
         icon: "Globe", // Globe for Global
-        bg: "bg-blue-50",
-        iconColor: "text-blue-600",
+        bg: "bg-orange-50",
+        iconColor: "text-orange-600",
         scenario: "A global manufacturer consolidates financial processes across 15 countries for visibility and compliance.",
         role: "Lead SAP FICO Consultant",
         responsibilities: [
@@ -422,8 +422,8 @@ export const ficoRealWorldScenarios = [
     {
         title: "Financial Services Close Process Automation",
         icon: "Clock", // Clock for time/close process
-        bg: "bg-purple-50",
-        iconColor: "text-purple-600",
+        bg: "bg-orange-50",
+        iconColor: "text-orange-600",
         scenario: "Financial services firm implementing FICO to automate month-end close and ensure compliance.",
         role: "FICO Consultant / Solution Architect",
         responsibilities: [
@@ -440,8 +440,8 @@ export const mmRealWorldScenarios = [
     {
         title: "Global Manufacturing Company's Supply Chain Optimization",
         icon: "Factory",
-        bg: "bg-blue-50",
-        iconColor: "text-blue-600",
+        bg: "bg-orange-50",
+        iconColor: "text-orange-600",
         scenario: "Multinational manufacturer needs to consolidate materials management across 15 countries.",
         role: "SAP MM Functional Consultant",
         responsibilities: [
@@ -455,8 +455,8 @@ export const mmRealWorldScenarios = [
     {
         title: "Retail Organization's Inventory Automation",
         icon: "ShoppingBag",
-        bg: "bg-green-50",
-        iconColor: "text-green-600",
+        bg: "bg-orange-50",
+        iconColor: "text-orange-600",
         scenario: "Retail chain with 500+ stores seeking automated inventory replenishment.",
         role: "Materials Management Lead",
         responsibilities: [
@@ -470,8 +470,8 @@ export const mmRealWorldScenarios = [
     {
         title: "Pharmaceutical Company's Materials Compliance",
         icon: "Database", // Using Database as placeholder for compliance/pharma
-        bg: "bg-purple-50",
-        iconColor: "text-purple-600",
+        bg: "bg-orange-50",
+        iconColor: "text-orange-600",
         scenario: "Pharma manufacturer implementing SAP MM with strict compliance (batch, dangerous goods).",
         role: "SAP MM/Compliance Solution Architect",
         responsibilities: [
@@ -489,8 +489,8 @@ export const mmRealWorldScenarios = [
 export const sdTargetAudience = [
     {
         icon: "ShoppingBag",
-        color: "text-blue-600",
-        bg: "bg-blue-50",
+        color: "text-orange-600",
+        bg: "bg-orange-50",
         title: "Sales & Marketing Professionals",
         description: [
             "Sales managers looking to understand ERP sales processes",
@@ -501,8 +501,8 @@ export const sdTargetAudience = [
     },
     {
         icon: "Laptop",
-        color: "text-green-600",
-        bg: "bg-green-50",
+        color: "text-orange-600",
+        bg: "bg-orange-50",
         title: "SAP & ERP Consultants",
         description: [
             "SAP MM/FICO consultants seeking cross-functional skills",
@@ -513,8 +513,8 @@ export const sdTargetAudience = [
     },
     {
         icon: "Truck",
-        color: "text-purple-600",
-        bg: "bg-purple-50",
+        color: "text-orange-600",
+        bg: "bg-orange-50",
         title: "Logistics & Supply Chain Experts",
         description: [
             "Logistics coordinators managing outbound shipping",
@@ -599,8 +599,8 @@ export const sdRealWorldScenarios = [
     {
         title: "Automotive Manufacturer's Global Sales Rollout",
         icon: "Globe",
-        bg: "bg-blue-50",
-        iconColor: "text-blue-600",
+        bg: "bg-orange-50",
+        iconColor: "text-orange-600",
         scenario: "A global automotive company needs to standardize sales processes across 20 countries with complex pricing.",
         role: "Lead SAP SD Consultant",
         responsibilities: [
@@ -614,8 +614,8 @@ export const sdRealWorldScenarios = [
     {
         title: "FMCG Company's Order Fulfillment Optimization",
         icon: "ShoppingCart",
-        bg: "bg-green-50",
-        iconColor: "text-green-600",
+        bg: "bg-orange-50",
+        iconColor: "text-orange-600",
         scenario: "Fast Moving Consumer Goods company faces stockouts and delivery delays due to inefficient order processing.",
         role: "SAP SD Functional Consultant",
         responsibilities: [
@@ -629,8 +629,8 @@ export const sdRealWorldScenarios = [
     {
         title: "Retail Chain's Omni-channel Integration",
         icon: "Laptop",
-        bg: "bg-purple-50",
-        iconColor: "text-purple-600",
+        bg: "bg-orange-50",
+        iconColor: "text-orange-600",
         scenario: "Retailer wants to integrate e-commerce orders with SAP SD for unified fulfillment.",
         role: "SAP SD/Integration Specialist",
         responsibilities: [
@@ -648,8 +648,8 @@ export const sdRealWorldScenarios = [
 export const c4cTargetAudience = [
     {
         icon: "Laptop",
-        color: "text-blue-600",
-        bg: "bg-blue-50",
+        color: "text-orange-600",
+        bg: "bg-orange-50",
         title: "Developers & Technical Consultants",
         description: [
             "ABAP developers moving to cloud",
@@ -660,8 +660,8 @@ export const c4cTargetAudience = [
     },
     {
         icon: "Cloud",
-        color: "text-cyan-600",
-        bg: "bg-cyan-50",
+        color: "text-orange-600",
+        bg: "bg-orange-50",
         title: "CRM Professionals",
         description: [
             "CRM technical consultants (Salesforce, Dynamics)",
@@ -672,8 +672,8 @@ export const c4cTargetAudience = [
     },
     {
         icon: "Settings",
-        color: "text-purple-600",
-        bg: "bg-purple-50",
+        color: "text-orange-600",
+        bg: "bg-orange-50",
         title: "System Administrators",
         description: [
             "Basis consultants managing cloud tenants",
@@ -746,8 +746,8 @@ export const c4cRealWorldScenarios = [
     {
         title: "Service Company's Field Service Mobile App",
         icon: "Smartphone",
-        bg: "bg-blue-50",
-        iconColor: "text-blue-600",
+        bg: "bg-orange-50",
+        iconColor: "text-orange-600",
         scenario: "Field service organization requires a custom mobile experience for technicians with offline capabilities.",
         role: "SAP C4C Technical Consultant",
         responsibilities: [
@@ -761,8 +761,8 @@ export const c4cRealWorldScenarios = [
     {
         title: "Manufacturing Firm's Dealer Portal Integration",
         icon: "Globe",
-        bg: "bg-green-50",
-        iconColor: "text-green-600",
+        bg: "bg-orange-50",
+        iconColor: "text-orange-600",
         scenario: "Manufacturer wants to expose C4C order status to an external dealer portal.",
         role: "C4C Integration Developer",
         responsibilities: [
@@ -776,8 +776,8 @@ export const c4cRealWorldScenarios = [
     {
         title: "Sales Org's Complex Pricing Logic",
         icon: "Calculator",
-        bg: "bg-purple-50",
-        iconColor: "text-purple-600",
+        bg: "bg-orange-50",
+        iconColor: "text-orange-600",
         scenario: "Sales team needs a custom pricing calculator within the C4C Opportunity screen.",
         role: "SAP C4C Developer",
         responsibilities: [
@@ -795,8 +795,8 @@ export const c4cRealWorldScenarios = [
 export const cpiTargetAudience = [
     {
         icon: "Cloud",
-        color: "text-blue-600",
-        bg: "bg-blue-50",
+        color: "text-orange-600",
+        bg: "bg-orange-50",
         title: "Integration Developers",
         description: [
             "Middleware specialists",
@@ -807,8 +807,8 @@ export const cpiTargetAudience = [
     },
     {
         icon: "Settings",
-        color: "text-green-600",
-        bg: "bg-green-50",
+        color: "text-orange-600",
+        bg: "bg-orange-50",
         title: "Technical Consultants",
         description: [
             "SAP technical consultants (ABAP/Basis)",
@@ -881,8 +881,8 @@ export const cpiRealWorldScenarios = [
     {
         title: "Hybrid HR Integration (SuccessFactors to On-Premise ERP)",
         icon: "Users",
-        bg: "bg-blue-50",
-        iconColor: "text-blue-600",
+        bg: "bg-orange-50",
+        iconColor: "text-orange-600",
         scenario: "Synchronize employee data from SuccessFactors (Cloud) to SAP ERP (On-Premise) for payroll processing.",
         role: "SAP CPI Integration Consultant",
         responsibilities: [
@@ -896,8 +896,8 @@ export const cpiRealWorldScenarios = [
     {
         title: "B2B E-Invoicing with Trading Partners",
         icon: "FileText",
-        bg: "bg-green-50",
-        iconColor: "text-green-600",
+        bg: "bg-orange-50",
+        iconColor: "text-orange-600",
         scenario: "Automate invoice transmission to trading partners using EDI standards (AS2).",
         role: "Integration Architect",
         responsibilities: [
@@ -911,8 +911,8 @@ export const cpiRealWorldScenarios = [
     {
         title: "Third-Party Logistics (3PL) Integration",
         icon: "Truck",
-        bg: "bg-purple-50",
-        iconColor: "text-purple-600",
+        bg: "bg-orange-50",
+        iconColor: "text-orange-600",
         scenario: "Send delivery requests to 3PL provider via SFTP and receive shipment status updates.",
         role: "CPI Developer",
         responsibilities: [
@@ -932,8 +932,8 @@ export const cpiRealWorldScenarios = [
 export const trmTargetAudience = [
     {
         icon: "Banknote",
-        color: "text-blue-600",
-        bg: "bg-blue-50",
+        color: "text-orange-600",
+        bg: "bg-orange-50",
         title: "Finance & Treasury Professionals",
         description: [
             "Treasury managers and analysts",
@@ -944,8 +944,8 @@ export const trmTargetAudience = [
     },
     {
         icon: "Laptop",
-        color: "text-green-600",
-        bg: "bg-green-50",
+        color: "text-orange-600",
+        bg: "bg-orange-50",
         title: "SAP FICO Consultants",
         description: [
             "FICO consultants specializing in Treasury",
@@ -956,8 +956,8 @@ export const trmTargetAudience = [
     },
     {
         icon: "Landmark",
-        color: "text-purple-600",
-        bg: "bg-purple-50",
+        color: "text-orange-600",
+        bg: "bg-orange-50",
         title: "Banking Professionals",
         description: [
             "Bankers moving to corporate treasury",
@@ -1030,8 +1030,8 @@ export const trmRealWorldScenarios = [
     {
         title: "Global Cash Consolidation & Transformation",
         icon: "Globe",
-        bg: "bg-blue-50",
-        iconColor: "text-blue-600",
+        bg: "bg-orange-50",
+        iconColor: "text-orange-600",
         scenario: "Multinational with 15 countries needs centralized cash management and visibility.",
         role: "Treasury Solution Architect",
         responsibilities: [
@@ -1045,8 +1045,8 @@ export const trmRealWorldScenarios = [
     {
         title: "Bank's Risk Management Upgrade",
         icon: "Landmark",
-        bg: "bg-green-50",
-        iconColor: "text-green-600",
+        bg: "bg-orange-50",
+        iconColor: "text-orange-600",
         scenario: "Financial institution replacing legacy systems with SAP TRM for derivatives and risk.",
         role: "TRM Risk Consultant",
         responsibilities: [
@@ -1060,8 +1060,8 @@ export const trmRealWorldScenarios = [
     {
         title: "Asset Manager's Portfolio System",
         icon: "TrendingUp",
-        bg: "bg-purple-50",
-        iconColor: "text-purple-600",
+        bg: "bg-orange-50",
+        iconColor: "text-orange-600",
         scenario: "Investment firm needs to streamline securities trading and portfolio analysis.",
         role: "TRM Functional Consultant",
         responsibilities: [
@@ -1080,8 +1080,8 @@ export const trmRealWorldScenarios = [
 export const fieldglassTargetAudience = [
     {
         icon: "Laptop",
-        color: "text-blue-600",
-        bg: "bg-blue-50",
+        color: "text-orange-600",
+        bg: "bg-orange-50",
         title: "HR & Recruitment Professionals",
         description: [
             "HR managers mastering VMS",
@@ -1092,8 +1092,8 @@ export const fieldglassTargetAudience = [
     },
     {
         icon: "ShoppingCart",
-        color: "text-green-600",
-        bg: "bg-green-50",
+        color: "text-orange-600",
+        bg: "bg-orange-50",
         title: "Procurement & Vendor Specialists",
         description: [
             "Procurement managers in service procurement",
@@ -1104,8 +1104,8 @@ export const fieldglassTargetAudience = [
     },
     {
         icon: "Database",
-        color: "text-purple-600",
-        bg: "bg-purple-50",
+        color: "text-orange-600",
+        bg: "bg-orange-50",
         title: "IT & ERP Professionals",
         description: [
             "SAP consultants shifting to contingent workforce",
@@ -1128,8 +1128,8 @@ export const fieldglassTargetAudience = [
     },
     {
         icon: "GraduationCap",
-        color: "text-cyan-600",
-        bg: "bg-cyan-50",
+        color: "text-orange-600",
+        bg: "bg-orange-50",
         title: "Fresh Graduates & Career Changers",
         description: [
             "MBA/HR graduates aspiring for SAP careers",
@@ -1202,8 +1202,8 @@ export const fieldglassRealWorldScenarios = [
     {
         title: "Global IT Services Contingent Platform",
         icon: "Globe",
-        bg: "bg-blue-50",
-        iconColor: "text-blue-600",
+        bg: "bg-orange-50",
+        iconColor: "text-orange-600",
         scenario: "MNC with 50,000 contingent workers needs centralized VMS for 12 countries.",
         role: "Lead SAP Fieldglass Consultant",
         responsibilities: [
@@ -1217,8 +1217,8 @@ export const fieldglassRealWorldScenarios = [
     {
         title: "Retail Vendor Management Automation",
         icon: "ShoppingBag",
-        bg: "bg-green-50",
-        iconColor: "text-green-600",
+        bg: "bg-orange-50",
+        iconColor: "text-orange-600",
         scenario: "Retail company with 500+ vendors needs to replace manual processes.",
         role: "Fieldglass Implementation Lead",
         responsibilities: [
@@ -1232,8 +1232,8 @@ export const fieldglassRealWorldScenarios = [
     {
         title: "Enterprise SOW Implementation",
         icon: "FileText",
-        bg: "bg-purple-50",
-        iconColor: "text-purple-600",
+        bg: "bg-orange-50",
+        iconColor: "text-orange-600",
         scenario: "Global services company adopting Fieldglass SOW for $500M annual spend projects.",
         role: "Solution Architect / SOW Specialist",
         responsibilities: [

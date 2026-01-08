@@ -145,7 +145,7 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
                                 <img
                                     src={imageSrc}
                                     alt="SAP Certification Professional"
-                                    className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                    className="absolute inset-0 w-full h-full object-contain"
                                 />
                             </div>
                         )}

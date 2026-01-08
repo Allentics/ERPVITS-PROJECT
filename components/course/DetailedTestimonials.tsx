@@ -203,7 +203,7 @@ export default function DetailedTestimonials({ items, courseName = "SAP Ariba" }
                     <p className="mt-4 text-sm text-slate-500">Join 5,000+ successful graduates</p>
                 </div>
 
-                {/* Lead Magnet / Interview Guide Section */}
+                {/* Lead Magnet / Interview Guide Section - Hidden Temporarily
                 <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100 max-w-6xl mx-auto">
                     <div className="grid md:grid-cols-2">
                         <div className="p-8 md:p-12 lg:p-16 bg-slate-50 flex flex-col justify-center">
@@ -356,6 +356,7 @@ export default function DetailedTestimonials({ items, courseName = "SAP Ariba" }
                         </div>
                     </div>
                 </div>
+                */}
 
             </div>
         </section>

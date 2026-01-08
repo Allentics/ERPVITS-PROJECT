@@ -3,6 +3,85 @@ import { Course } from '@/lib/courseData';
 import { Clock, Star, Users, CheckCircle } from 'lucide-react';
 
 const CourseHero = ({ course }: { course: Course }) => {
+    // Centered Layout (Light Theme)
+    if (course.heroLayout === 'centered') {
+        const isPurple = course.themeColor === 'purple';
+        const gradientText = isPurple ? "text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-purple-700" : "text-slate-900";
+        const badgeClass = isPurple
+            ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-purple-200"
+            : "bg-orange-100 text-orange-800";
+        const buttonClass = isPurple
+            ? "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg shadow-purple-500/30"
+            : "bg-blue-600 text-white hover:bg-blue-700";
+
+        return (
+            <div className="bg-white pt-16 pb-20 md:py-24 relative overflow-hidden text-center border-b border-slate-100">
+                {/* Subtle Background Glow */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-purple-50 rounded-full blur-3xl opacity-50 -z-10 pointer-events-none"></div>
+
+                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+                    {course.badges && course.badges.length > 0 && (
+                        <div className="flex justify-center mb-8">
+                            {course.badges.map((badge, idx) => (
+                                <span key={idx} className={`inline-flex items-center px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wide ${badgeClass}`}>
+                                    <Star className="w-4 h-4 mr-2 fill-current" />
+                                    {badge}
+                                    <Star className="w-4 h-4 ml-2 fill-current" />
+                                </span>
+                            ))}
+                        </div>
+                    )}
+
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-slate-900 mb-6">
+                        {course.heroHeading?.split("SAP Ariba").map((part, i, arr) => (
+                            <span key={i}>
+                                {part}
+                                {i < arr.length - 1 && <span className={isPurple ? "text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-purple-700" : ""}>SAP Ariba</span>}
+                            </span>
+                        )) || course.heroHeading}
+                    </h1>
+
+                    <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-10 leading-relaxed">
+                        {course.heroSubheading}
+                    </p>
+
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                        <Link
+                            href="#enroll"
+                            className={`inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl transition-all transform hover:-translate-y-1 ${buttonClass}`}
+                        >
+                            {course.buttonLabels?.primary || "Book Free Demo Class"}
+                        </Link>
+                        <Link
+                            href="#curriculum"
+                            className="inline-flex items-center justify-center px-8 py-4 bg-white border border-slate-200 text-slate-700 font-bold rounded-xl hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm"
+                        >
+                            {course.buttonLabels?.secondary || "View Curriculum"}
+                        </Link>
+                    </div>
+
+                    {/* Stats */}
+                    {course.heroStats && (
+                        <div className="flex flex-wrap justify-center gap-8 md:gap-12 text-sm font-medium text-slate-500 pt-8 border-t border-slate-100/50">
+                            {course.heroStats.map((stat, idx) => (
+                                <div key={idx} className="flex items-center gap-2">
+                                    <div className={`${isPurple ? "text-purple-600" : "text-green-600"}`}>
+                                        {stat.icon === 'award' ? <CheckCircle className="w-5 h-5" /> :
+                                            stat.icon === 'infinity' ? <Clock className="w-5 h-5" /> :
+                                                <Users className="w-5 h-5" />}
+                                    </div>
+                                    <span>{stat.label}</span>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div className="bg-slate-900 pt-10 pb-16 md:py-20 text-white relative overflow-hidden">
             {/* Abstract BG */}
@@ -36,23 +115,33 @@ const CourseHero = ({ course }: { course: Course }) => {
                         </h1>
 
                         <p className="text-lg text-slate-300 max-w-2xl">
-                            Detailed, hands-on training for {course.title}.
-                            Learn from industry experts, work on real projects, and launch your consulting career.
+                            {course.heroSubheading || `Detailed, hands-on training for ${course.title}. Learn from industry experts, work on real projects, and launch your consulting career.`}
                         </p>
 
                         <div className="flex flex-wrap gap-6 text-sm font-medium pt-4">
-                            <div className="flex items-center text-yellow-400">
-                                <Star className="h-4 w-4 mr-1 fill-current" />
-                                <span>4.8 (320+ Reviews)</span>
-                            </div>
-                            <div className="flex items-center text-slate-300">
-                                <Users className="h-4 w-4 mr-1" />
-                                <span>6000+ Enrolled</span>
-                            </div>
-                            <div className="flex items-center text-slate-300">
-                                <Clock className="h-4 w-4 mr-1" />
-                                <span>45 Hours Live</span>
-                            </div>
+                            {course.heroStats ? (
+                                course.heroStats.map((stat, idx) => (
+                                    <div key={idx} className="flex items-center text-slate-300">
+                                        <CheckCircle className="h-4 w-4 mr-1 text-green-400" />
+                                        <span>{stat.label}</span>
+                                    </div>
+                                ))
+                            ) : (
+                                <>
+                                    <div className="flex items-center text-yellow-400">
+                                        <Star className="h-4 w-4 mr-1 fill-current" />
+                                        <span>4.8 (320+ Reviews)</span>
+                                    </div>
+                                    <div className="flex items-center text-slate-300">
+                                        <Users className="h-4 w-4 mr-1" />
+                                        <span>6000+ Enrolled</span>
+                                    </div>
+                                    <div className="flex items-center text-slate-300">
+                                        <Clock className="h-4 w-4 mr-1" />
+                                        <span>45 Hours Live</span>
+                                    </div>
+                                </>
+                            )}
                         </div>
 
                         <div className="pt-6 flex flex-col sm:flex-row gap-4">
@@ -60,13 +149,13 @@ const CourseHero = ({ course }: { course: Course }) => {
                                 href="#enroll"
                                 className="inline-flex items-center justify-center px-8 py-3.5 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-lg transition-colors shadow-lg"
                             >
-                                Enroll Now
+                                {course.buttonLabels?.primary || "Enroll Now"}
                             </Link>
                             <Link
-                                href="/contact"
+                                href={course.buttonLabels?.secondary === "View Curriculum" ? "#curriculum" : "/contact"}
                                 className="inline-flex items-center justify-center px-8 py-3.5 bg-transparent border border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors"
                             >
-                                Download Syllabus
+                                {course.buttonLabels?.secondary || "Download Syllabus"}
                             </Link>
                         </div>
                     </div>

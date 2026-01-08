@@ -14,8 +14,8 @@ INSERT INTO courses (
 ) VALUES (
     'ariba',
     'SAP Ariba',
-    'Master SAP Ariba: The Future of Digital Procurement',
-    'Become a certified SAP Ariba Consultant with hands-on training from industry experts.',
+    'Transform Your Career with SAP Ariba',
+    'Master digital procurement & supply chain management with 100% hands-on, job-oriented training',
     NULL,
     'Our comprehensive SAP Ariba training program covers the entire source-to-pay lifecycle. You will learn how to manage suppliers, contracts, buying, and invoicing using the Ariba Network. This course is designed to make you job-ready with real-world scenarios and hands-on practice.',
     'SAP Ariba Training | Certification & Job Support',

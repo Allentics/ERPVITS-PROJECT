@@ -51,7 +51,7 @@ export default function RealWorldScenarios({ items }: { items?: any[] }) {
 
                                     <div>
                                         <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Your Role</h4>
-                                        <p className="text-sm font-semibold text-blue-600">{item.role}</p>
+                                        <p className="text-sm font-semibold text-orange-600">{item.role}</p>
                                     </div>
 
                                     <div>
@@ -69,7 +69,7 @@ export default function RealWorldScenarios({ items }: { items?: any[] }) {
 
                                 <div className="mt-8 pt-6 border-t border-slate-100">
                                     <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Outcome</h4>
-                                    <p className="text-sm text-emerald-700 font-medium bg-emerald-50 p-2 rounded-lg inline-block w-full">
+                                    <p className="text-sm text-orange-700 font-medium bg-orange-50 p-2 rounded-lg inline-block w-full">
                                         {item.outcome}
                                     </p>
                                 </div>
@@ -82,7 +82,7 @@ export default function RealWorldScenarios({ items }: { items?: any[] }) {
                 <div className="max-w-4xl mx-auto mt-12">
                     <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 text-center">
                         <p className="text-slate-600 text-[15px] leading-relaxed">
-                            <span className="font-bold text-blue-600">Portfolio-Ready Projects:</span> These capstone projects ensure you graduate with real-world problem-solving experience and portfolio pieces—invaluable for your first consulting engagement and job interviews.
+                            <span className="font-bold text-orange-600">Portfolio-Ready Projects:</span> These capstone projects ensure you graduate with real-world problem-solving experience and portfolio pieces—invaluable for your first consulting engagement and job interviews.
                         </p>
                     </div>
                 </div>

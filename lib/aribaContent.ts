@@ -1,12 +1,23 @@
 import { aribaTargetAudience, aribaPrerequisites, aribaLearningOutcomes, aribaRealWorldScenarios } from './contentHelpers';
 
 export const aribaContent = {
-    heroHeading: "Master SAP Ariba: The Future of Digital Procurement",
-    heroSubheading: "Become a certified SAP Ariba Consultant with hands-on training from industry experts.",
+    heroHeading: "Transform Your Career with SAP Ariba",
+    heroSubheading: "Master digital procurement & supply chain management with 100% hands-on, job-oriented training",
+    heroLayout: "centered",
+    themeColor: "purple",
 
     title: "SAP Ariba",
     description: "Our comprehensive SAP Ariba training program covers the entire source-to-pay lifecycle. You will learn how to manage suppliers, contracts, buying, and invoicing using the Ariba Network. This course is designed to make you job-ready with real-world scenarios and hands-on practice.",
-    badges: ["Best Seller", "Job Oriented"],
+    badges: ["Rated #1 SAP Ariba Training Program 2025"],
+    heroStats: [
+        { icon: "award", label: "SAP Certified Trainers" },
+        { icon: "briefcase", label: "100% Job Assistance" },
+        { icon: "infinity", label: "Lifetime Access" }
+    ],
+    buttonLabels: {
+        primary: "Book Free Demo Class →",
+        secondary: "View Curriculum"
+    },
     metaTitle: "SAP Ariba Training | Certification & Job Support",
     metaDescription: "Learn SAP Ariba from experts. comprehensive module covering Sourcing, Contracts, SLP, Buying & Invoicing. 100% Practical Training with Placement Assistance.",
 

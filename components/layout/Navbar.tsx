@@ -120,8 +120,8 @@ const Navbar = () => {
                                     <button className="px-3 py-2 text-white group-hover:text-orange-500 font-bold inline-flex items-center transition-colors rounded-lg hover:bg-white/10 focus:outline-none text-sm xl:text-base">
                                         SAP Functional <ChevronDown className="ml-1 h-4 w-4" />
                                     </button>
-                                    <div className="absolute left-0 top-full w-64 bg-white border-t-4 border-orange-500 rounded-b-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left translate-y-2 group-hover:translate-y-0 z-50">
-                                        <div className="py-2 max-h-[60vh] overflow-y-auto custom-scrollbar">
+                                    <div className="absolute left-0 top-full w-[600px] bg-white border-t-4 border-orange-500 rounded-b-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left translate-y-2 group-hover:translate-y-0 z-50">
+                                        <div className="py-2 max-h-[60vh] overflow-y-auto custom-scrollbar grid grid-cols-2 gap-x-2">
                                             {functionalCourses.map((course) => (
                                                 <Link key={course.id} href={`/courses/${course.id}`} className="block px-4 py-3 text-sm text-slate-900 hover:bg-orange-50 hover:text-orange-600 transition-colors border-l-4 border-transparent hover:border-orange-500">
                                                     {course.title}

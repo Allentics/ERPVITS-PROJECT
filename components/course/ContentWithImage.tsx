@@ -25,7 +25,7 @@ export default function ContentWithImage({ title, subtitle, description, items, 
                             <img
                                 src={imageSrc}
                                 alt={imageAlt || title}
-                                className="object-cover w-full h-auto max-h-[500px]"
+                                className="object-contain w-full h-auto max-h-[500px]"
                             />
 
                         </div>
