@@ -1,4 +1,5 @@
 export const ppdsContent = {
+    syllabusUrl: "/syllabus/sap-ppds-syllabus.pdf",
     heroHeading: "Transform Your Career with the #1 SAP PPDS Online Training Program",
     heroSubheading: "The SAP PPDS (Production Planning and Detailed Scheduling) Online Training Program from ERPVITS represents a transformative learning pathway for production planning professionals and SAP consultants eager to excel in advanced production scheduling, demand planning, and manufacturing optimization.",
 

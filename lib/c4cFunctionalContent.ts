@@ -203,6 +203,7 @@ export const c4cRealWorldScenarios = [
 ];
 
 export const c4cFunctionalContent = {
+    syllabusUrl: "/syllabus/sap-c4c-functional-syllabus.pdf",
     heroHeading: "Master Cloud-Based Customer Relationship Management with the #1 SAP C4C Functional Online Training Program",
     heroSubheading: "Excel in cloud-based customer relationship management, sales operations, and customer service transformation.",
 

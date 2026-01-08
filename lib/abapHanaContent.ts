@@ -1,5 +1,6 @@
 
 export const abapHanaContent = {
+    syllabusUrl: "/syllabus/sap-abap-on-hana-syllabus.pdf",
     heroHeading: "Master Modern ABAP Development with the #1 SAP ABAP on HANA Online Training Program",
     heroSubheading: "The SAP ABAP on HANA Online Training Program from ERPVITS represents a transformative learning pathway for professionals eager to excel in modern enterprise application development, cloud-native programming, and next-generation SAP technology.",
     badges: ["SAP Certified Trainers", "4.8 Learner Rating", "24/7 Team Support", "15+ Years ABAP Development Experience"],

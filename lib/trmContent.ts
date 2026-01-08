@@ -1,5 +1,6 @@
 
 export const trmContent = {
+    syllabusUrl: "/syllabus/sap-trm-syllabus.pdf",
     heroHeading: "Master the Future of Corporate Treasury with SAP TRM Online Training",
     heroSubheading: "Unlock premium treasury consulting careers with SAP TRM Online Training (Treasury and Risk Management), Cash Management, Foreign Exchange Operations, Trading of Securities, Derivative Hedging, Advanced Credit Risk Determination. Learn with hands-on training, work with real financial workflows and earn industry-recognized SAP TRM certification.",
     badges: ["SAP Certified Trainers", "4.8 Learner Rating", "24/7 Team Support"],

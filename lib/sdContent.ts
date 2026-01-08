@@ -1,5 +1,6 @@
 
 export const sdContent = {
+    syllabusUrl: "/syllabus/sap-sd-syllabus.pdf",
     heroHeading: "Transform Your Career with SAP SD",
     heroSubheading: "Master sales & distribution management with 100% hands-on, job-oriented training",
     badges: ["SAP Certified Trainers", "4.8 Learner Rating", "24/7 Team Support"],

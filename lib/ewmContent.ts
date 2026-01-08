@@ -214,6 +214,7 @@ export const ewmRealWorldScenarios = [
 ];
 
 export const ewmContent = {
+    syllabusUrl: "/syllabus/sap-ewm-syllabus.pdf",
     heroHeading: "Master Modern Warehouse Operations with the #1 SAP EWM Online Training Program",
     heroSubheading: "Transform your career with expert-led training in warehouse optimization, inventory management, and advanced logistics operations.",
 

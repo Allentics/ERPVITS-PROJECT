@@ -5,19 +5,19 @@ import { Clock, Star, Users, CheckCircle } from 'lucide-react';
 const CourseHero = ({ course }: { course: Course }) => {
     // Centered Layout (Light Theme)
     if (course.heroLayout === 'centered') {
-        const isPurple = course.themeColor === 'purple';
-        const gradientText = isPurple ? "text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-purple-700" : "text-slate-900";
-        const badgeClass = isPurple
-            ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-purple-200"
+        const isOrange = course.themeColor === 'orange' || course.themeColor === 'purple';
+        const gradientText = isOrange ? "text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-700" : "text-slate-900";
+        const badgeClass = isOrange
+            ? "bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg shadow-orange-200"
             : "bg-orange-100 text-orange-800";
-        const buttonClass = isPurple
-            ? "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg shadow-purple-500/30"
+        const buttonClass = isOrange
+            ? "bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white shadow-lg shadow-orange-500/30"
             : "bg-blue-600 text-white hover:bg-blue-700";
 
         return (
             <div className="bg-white pt-16 pb-20 md:py-24 relative overflow-hidden text-center border-b border-slate-100">
                 {/* Subtle Background Glow */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-purple-50 rounded-full blur-3xl opacity-50 -z-10 pointer-events-none"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-orange-50 rounded-full blur-3xl opacity-50 -z-10 pointer-events-none"></div>
 
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
@@ -37,7 +37,7 @@ const CourseHero = ({ course }: { course: Course }) => {
                         {course.heroHeading?.split("SAP Ariba").map((part, i, arr) => (
                             <span key={i}>
                                 {part}
-                                {i < arr.length - 1 && <span className={isPurple ? "text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-purple-700" : ""}>SAP Ariba</span>}
+                                {i < arr.length - 1 && <span className={isOrange ? "text-orange-600" : ""}>SAP Ariba</span>}
                             </span>
                         )) || course.heroHeading}
                     </h1>
@@ -54,7 +54,8 @@ const CourseHero = ({ course }: { course: Course }) => {
                             {course.buttonLabels?.primary || "Book Free Demo Class"}
                         </Link>
                         <Link
-                            href="#curriculum"
+                            href={course.syllabusUrl || "#curriculum"}
+                            target={course.syllabusUrl ? "_blank" : undefined}
                             className="inline-flex items-center justify-center px-8 py-4 bg-white border border-slate-200 text-slate-700 font-bold rounded-xl hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm"
                         >
                             {course.buttonLabels?.secondary || "View Curriculum"}
@@ -66,7 +67,7 @@ const CourseHero = ({ course }: { course: Course }) => {
                         <div className="flex flex-wrap justify-center gap-8 md:gap-12 text-sm font-medium text-slate-500 pt-8 border-t border-slate-100/50">
                             {course.heroStats.map((stat, idx) => (
                                 <div key={idx} className="flex items-center gap-2">
-                                    <div className={`${isPurple ? "text-purple-600" : "text-green-600"}`}>
+                                    <div className={`${isOrange ? "text-orange-600" : "text-green-600"}`}>
                                         {stat.icon === 'award' ? <CheckCircle className="w-5 h-5" /> :
                                             stat.icon === 'infinity' ? <Clock className="w-5 h-5" /> :
                                                 <Users className="w-5 h-5" />}

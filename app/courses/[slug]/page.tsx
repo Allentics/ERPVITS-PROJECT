@@ -47,7 +47,13 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
         (slug === 'sap-sd' || slug === 'sd' || slug === 'sap-sales-and-distribution-training' ? courses.find(c => c.id === 'sd') : undefined) ||
         (slug === 'sap-abap' || slug === 'abap' || slug === 'sap-abap-on-cloud' || slug === 'abap-cloud' || slug === 'sap-abap-training' ? courses.find(c => c.id === 'abap-cloud') : undefined) ||
         (slug === 'sap-cpi' || slug === 'cpi' || slug === 'sap-cpi-training' ? courses.find(c => c.id === 'cpi' || c.id === 'sap-cpi') : undefined) ||
-        (slug === 'sap-ppds' || slug === 'ppds' || slug === 'sap-ppds-training' ? courses.find(c => c.id === 'ppds') : undefined);
+        (slug === 'sap-ppds' || slug === 'ppds' || slug === 'sap-ppds-training' ? courses.find(c => c.id === 'ppds') : undefined) ||
+        (slug === 'sap-tm' || slug === 'tm' || slug === 'sap-transportation-management' ? courses.find(c => c.id === 'sap-tm') : undefined) ||
+        (slug === 'sap-ewm' || slug === 'ewm' || slug === 'sap-extended-warehouse-management' ? courses.find(c => c.id === 'sap-ewm') : undefined) ||
+        (slug === 'sap-ibp' || slug === 'ibp' || slug === 'sap-integrated-business-planning' ? courses.find(c => c.id === 'sap-ibp') : undefined) ||
+        (slug === 'sap-mdg' || slug === 'mdg' || slug === 'sap-master-data-governance' ? courses.find(c => c.id === 'sap-mdg') : undefined) ||
+        (slug === 'sap-c4c-functional' || slug === 'c4c-functional' ? courses.find(c => c.id === 'sap-c4c-functional') : undefined) ||
+        (slug === 'sap-abap-on-hana' || slug === 'abap-hana' || slug === 'abap-on-hana' ? courses.find(c => c.id === 'sap-abap-on-hana') : undefined);
     if (!course && !localCourse) {
         notFound();
     }
@@ -62,18 +68,24 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
     const isABAP = slug === 'sap-abap' || slug === 'abap' || slug === 'sap-abap-on-cloud' || slug === 'abap-cloud' || slug === 'sap-abap-training';
     const isCPI = slug === 'sap-cpi' || slug === 'cpi' || slug === 'sap-cpi-training';
     const isPPDS = slug === 'sap-ppds' || slug === 'ppds' || slug === 'sap-ppds-training';
+    const isTM = slug === 'sap-tm' || slug === 'tm' || slug === 'sap-transportation-management';
+    const isEWM = slug === 'sap-ewm' || slug === 'ewm' || slug === 'sap-extended-warehouse-management';
+    const isIBP = slug === 'sap-ibp' || slug === 'ibp' || slug === 'sap-integrated-business-planning';
+    const isMDG = slug === 'sap-mdg' || slug === 'mdg' || slug === 'sap-master-data-governance';
+    const isC4CFunc = slug === 'sap-c4c-functional' || slug === 'c4c-functional';
+    const isABAPHana = slug === 'sap-abap-on-hana' || slug === 'abap-hana' || slug === 'abap-on-hana';
 
     // Map DB fields to component expectations if they differ (using snake_case in DB, camelCase in components)
     // Priority: DB values > Local file values
     const mappedCourse = {
         ...localCourse,
         ...course,
-        heroHeading: (isAriba || isFieldglass || isMM || isFICO || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS) ? localCourse?.heroHeading : (course?.hero_heading || localCourse?.heroHeading),
-        heroSubheading: (isAriba || isFieldglass || isMM || isFICO || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS) ? localCourse?.heroSubheading : (course?.hero_subheading || localCourse?.heroSubheading),
-        heroImage: (isAriba || isFICO || isFieldglass || isMM || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS) ? undefined : (localCourse?.heroImage || course?.hero_image),
+        heroHeading: (isAriba || isFieldglass || isMM || isFICO || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS || isTM || isEWM || isIBP || isMDG || isC4CFunc || isABAPHana) ? localCourse?.heroHeading : (course?.hero_heading || localCourse?.heroHeading),
+        heroSubheading: (isAriba || isFieldglass || isMM || isFICO || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS || isTM || isEWM || isIBP || isMDG || isC4CFunc || isABAPHana) ? localCourse?.heroSubheading : (course?.hero_subheading || localCourse?.heroSubheading),
+        heroImage: (isAriba || isFICO || isFieldglass || isMM || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS || isTM || isEWM || isIBP || isMDG || isC4CFunc || isABAPHana) ? undefined : (localCourse?.heroImage || course?.hero_image),
         metaTitle: course?.meta_title || localCourse?.metaTitle,
         metaDescription: course?.meta_description || localCourse?.metaDescription,
-        sections: (isAriba || isFieldglass || isMM || isFICO || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS) ? localCourse?.sections : ((course?.sections && course.sections.length > 0) ? course.sections : localCourse?.sections),
+        sections: (isAriba || isFieldglass || isMM || isFICO || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS || isTM || isEWM || isIBP || isMDG || isC4CFunc || isABAPHana) ? localCourse?.sections : ((course?.sections && course.sections.length > 0) ? course.sections : localCourse?.sections),
         features: (course?.features && course.features.length > 0) ? course.features : localCourse?.features,
         curriculum: (course?.curriculum && course.curriculum.length > 0) ? course.curriculum : localCourse?.curriculum,
         faqs: (course?.faqs && course.faqs.length > 0) ? course.faqs : (localCourse?.faqs && localCourse.faqs.length > 0 ? localCourse.faqs : defaultFaqs),
@@ -124,11 +136,15 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
 
                     {/* Buttons */}
                     <div className="flex flex-col sm:flex-row gap-5 justify-center mb-16">
-                        <a href={(isAriba || isFieldglass || isMM || isFICO || isTRM || isSD || isC4C || isABAP) ? "#detailed-demo-booking" : "#enroll"} className={`text-white px-10 py-4 rounded-lg font-bold shadow-lg transition-all flex items-center justify-center gap-2 text-lg ${mappedCourse.themeColor === 'purple' ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-purple-500/25' : 'bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 shadow-orange-500/25'}`}>
+                        <a href={(isAriba || isFieldglass || isMM || isFICO || isTRM || isSD || isC4C || isABAP || isTM || isEWM || isIBP || isMDG || isC4CFunc || isABAPHana) ? "#detailed-demo-booking" : "#enroll"} className={`text-white px-10 py-4 rounded-lg font-bold shadow-lg transition-all flex items-center justify-center gap-2 text-lg ${mappedCourse.themeColor === 'purple' ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-purple-500/25' : 'bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 shadow-orange-500/25'}`}>
                             Book Free Demo Class
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </a>
-                        <a href="#curriculum" className="bg-white border text-slate-700 border-slate-200 hover:border-slate-300 hover:bg-slate-50 px-10 py-4 rounded-lg font-bold transition-all shadow-sm text-lg block text-center">
+                        <a
+                            href={mappedCourse.syllabusUrl || "#curriculum"}
+                            target={mappedCourse.syllabusUrl ? "_blank" : undefined}
+                            className="bg-white border text-slate-700 border-slate-200 hover:border-slate-300 hover:bg-slate-50 px-10 py-4 rounded-lg font-bold transition-all shadow-sm text-lg block text-center"
+                        >
                             View Curriculum
                         </a>
                     </div>
@@ -158,7 +174,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                 <div className="space-y-16">
 
                     {/* Main Content Area */}
-                    {((mappedCourse.sections as Section[])?.some((s: Section) => s.type === 'detailed_features') || isAriba || isMM || isFICO || isFieldglass || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS) ? (
+                    {((mappedCourse.sections as Section[])?.some((s: Section) => s.type === 'detailed_features') || isAriba || isMM || isFICO || isFieldglass || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS || isTM || isEWM || isIBP || isMDG || isC4CFunc || isABAPHana) ? (
                         <div id="overview" className="scroll-mt-32">
                             <SectionRenderer sections={mappedCourse.sections as Section[]} courseName={mappedCourse.title} />
                         </div>
@@ -190,7 +206,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                     )}
 
                     {/* Check if standard flow (ariba/detailed) implies prerequisites are inside sections. If not, add them. */}
-                    {((mappedCourse.sections as Section[])?.some((s: Section) => s.type === 'detailed_features') || isAriba || isMM || isFICO || isFieldglass || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS) && (
+                    {((mappedCourse.sections as Section[])?.some((s: Section) => s.type === 'detailed_features') || isAriba || isMM || isFICO || isFieldglass || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS || isTM || isEWM || isIBP || isMDG || isC4CFunc || isABAPHana) && (
                         <>
                             {!mappedCourse.sections?.some((s: any) => s.type === 'detailed_prerequisites' || s.type === 'prerequisites') && (
                                 <DetailedPrerequisites items={getGenericPrerequisites(mappedCourse.title)} />
@@ -202,7 +218,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                     )}
 
                     {/* Highlights Section (for local data courses that don't have it in sections) */}
-                    {(!(mappedCourse.sections as Section[]) || !(mappedCourse.sections as Section[]).some((s: Section) => s.type === 'features')) && (!isAriba && !isMM && !isFICO && !isFieldglass && !isTRM && !isSD && !isC4C && !isABAP && !isCPI && !isPPDS) && mappedCourse.features && mappedCourse.features.length > 0 && (
+                    {(!(mappedCourse.sections as Section[]) || !(mappedCourse.sections as Section[]).some((s: Section) => s.type === 'features')) && (!isAriba && !isMM && !isFICO && !isFieldglass && !isTRM && !isSD && !isC4C && !isABAP && !isCPI && !isPPDS && !isTM && !isEWM && !isIBP && !isMDG && !isC4CFunc && !isABAPHana) && mappedCourse.features && mappedCourse.features.length > 0 && (
                         <section id="why-us" className="bg-orange-50 rounded-2xl p-8 border border-orange-100 scroll-mt-32">
                             <h2 className="text-2xl font-bold text-gray-900 mb-2">Why Professionals Choose ERPVITS for {mappedCourse.title}</h2>
                             <p className="text-gray-600 mb-8">Trusted by 500+ successful SAP professionals worldwide.</p>

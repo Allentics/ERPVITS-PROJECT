@@ -203,6 +203,7 @@ export const mdgRealWorldScenarios = [
 ];
 
 export const mdgContent = {
+    syllabusUrl: "/syllabus/sap-mdg-syllabus.pdf",
     heroHeading: "Master Data Excellence with the #1 SAP MDG Online Training Program",
     heroSubheading: "Excel in data quality management, organizational data governance, and enterprise information management with expert-led training.",
 

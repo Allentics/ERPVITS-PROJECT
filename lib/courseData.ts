@@ -50,6 +50,7 @@ export interface Course {
     badges?: string[];
     heroStats?: { icon: string, label: string }[];
     buttonLabels?: { primary: string, secondary: string };
+    syllabusUrl?: string;
     heroLayout?: 'default' | 'centered';
     themeColor?: 'default' | 'purple' | 'orange' | 'blue';
 }

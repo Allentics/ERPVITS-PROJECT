@@ -203,6 +203,7 @@ export const ibpRealWorldScenarios = [
 ];
 
 export const ibpContent = {
+    syllabusUrl: "/syllabus/sap-ibp-syllabus.pdf",
     heroHeading: "Transform Your Supply Chain Strategy with the #1 SAP IBP Online Training Program",
     heroSubheading: "Excel in demand planning, supply chain optimization, and data-driven business strategy with expert-led training.",
 

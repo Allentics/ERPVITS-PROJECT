@@ -11,6 +11,70 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
     {
+        id: "sap-mm-course-complete-guide",
+        title: "SAP MM Course: Complete Guide to Materials Management Professional Excellence",
+        description: "Join the best SAP MM course at ERPVITS. Get certified with expert-led training in Materials Management, S/4HANA, and procurement. Enroll now!",
+        image: "/images/sap-mm-course.png",
+        date: "Jan 07, 2026",
+        category: "SAP MM",
+        author: "ERPVITS Expert"
+    },
+    {
+        id: "how-sap-ariba-is-powering-intelligent-spend-management",
+        title: "Revolutionizing Procurement: How SAP Ariba is Powering Intelligent Spend Management in 2025",
+        description: "Discover how SAP Ariba is transforming procurement with intelligent spend management in 2025. Boost your career with SAP Ariba training & certification.",
+        image: "/images/blog/sap-ariba-spend-management.webp",
+        date: "Jan 06, 2026",
+        category: "SAP Ariba",
+        author: "ERPVITS Expert"
+    },
+    {
+        id: "top-ten-tools-techniques-for-efficient-abap-on-cloud-programming",
+        title: "Mastering ABAP on Cloud: Essential Tools and Techniques Every Developer Should Know",
+        description: "Master SAP ABAP on Cloud with modern tools and methods. Build faster, smarter apps through SAP ABAP online training and real-time projects.",
+        image: "/images/blog/top-10-tools-abap-cloud.webp",
+        date: "Jan 05, 2026",
+        category: "SAP Technical",
+        author: "ERPVITS Expert"
+    },
+    {
+        id: "how-sap-fieldglass-transforming-global-contingent-workforce-market",
+        title: "How SAP Fieldglass is Transforming the Global Contingent Workforce Market",
+        description: "Learn SAP Fieldglass online and master global contingent workforce management. Boost your SAP career with ERPVITS training and real-time projects.",
+        image: "/images/blog/sap-fieldglass-transformation.webp",
+        date: "Jan 04, 2026",
+        category: "SAP Fieldglass",
+        author: "ERPVITS Expert"
+    },
+    {
+        id: "sap-trm-setup-essentials",
+        title: "Laying the Foundation: Essential SAP TRM Master Data for Treasury Success",
+        description: "Laying the Foundation with Essential SAP TRM Master Data Ensures Accurate, Compliant Treasury Operations. Explore Best Practices with ERPVITS.",
+        image: "/images/blog/sap-trm-master-data.webp",
+        date: "Jan 03, 2026",
+        category: "SAP TRM",
+        author: "ERPVITS Expert"
+    },
+    {
+        id: "mto-and-sto-process-in-sap",
+        title: "MTO & STO Process in SAP: Enhance Supply Chain Performance Through Integrated MM And SD Modules",
+        description: "Discover the difference between the MTO and STO processes in SAP and how SAP MM & SD integration boosts supply chain efficiency with ERPVITS expert training.",
+        image: "/images/blog/mto-sto-process.webp",
+        date: "Jan 02, 2026",
+        category: "SAP Functional",
+        author: "ERPVITS Expert"
+    },
+    {
+        id: "master-sap-ariba-with-industry-leading-online-training",
+        title: "Master SAP Ariba with Industry-Leading Online Training",
+        description: "Enhance your career with SAP Ariba training, focusing on procurement skills, hands-on projects, and job support for professionals.",
+        image: "/images/blog/master-sap-ariba.webp",
+        date: "Jan 01, 2026",
+        category: "SAP Ariba",
+        author: "ERPVITS Expert"
+    },
+
+    {
         id: "sap-ariba-sourcing-configuration",
         title: "SAP Ariba Sourcing Configuration Guide: Complete Setup & Best Practices",
         description: "Complete guide to configuring SAP Ariba Sourcing for optimal procurement. Learn setup steps, templates, workflows, integration, and best practices for strategic sourcing success.",
@@ -110,19 +174,10 @@ export const blogPosts: BlogPost[] = [
         author: "ERPVITS Expert"
     },
     {
-        id: "sap-mm-course-complete-guide",
-        title: "SAP MM Course: Complete Guide to Materials Management Professional Excellence",
-        description: "Join the best SAP MM course at ERPVITS. Get certified with expert-led training in Materials Management, S/4HANA, and procurement. Enroll now!",
-        image: "/images/sap-mm-course.png",
-        date: "Dec 20, 2025",
-        category: "SAP MM",
-        author: "ERPVITS Expert"
-    },
-    {
         id: "sap-trm-complementary-technologies",
         title: "SAP TRM Complementary Technologies for Modern Treasury and Risk Management",
         description: "Explore how SAP TRM integrates with analytics, automation, and compliance tools to enable real-time insights, risk control, and digital treasury transformation.",
-        image: "/images/sap-trm-complementary.png",
+        image: "/images/blog/sap-trm-complementary.webp",
         date: "Dec 18, 2025",
         category: "SAP TRM",
         author: "ERPVITS Expert"

@@ -1,6 +1,7 @@
 import { Section } from './courseData';
 
 export const cpiContent = {
+    syllabusUrl: "/syllabus/sap-cpi-syllabus.pdf",
     heroHeading: "Master Cloud Integration Skills with Our SAP CPI Training",
     heroSubheading: "Master Cloud Integration Skills with Our SAP CPI Training",
     badges: ["SAP Certified Trainers", "4.6 Learner Rating", "24/7 Team Support"],

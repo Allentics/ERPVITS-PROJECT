@@ -1,10 +1,11 @@
 import { aribaTargetAudience, aribaPrerequisites, aribaLearningOutcomes, aribaRealWorldScenarios } from './contentHelpers';
 
 export const aribaContent = {
-    heroHeading: "Transform Your Career with SAP Ariba",
+    // heroHeading: "Transform Your Career with SAP Ariba",
     heroSubheading: "Master digital procurement & supply chain management with 100% hands-on, job-oriented training",
     heroLayout: "centered",
-    themeColor: "purple",
+    themeColor: "orange",
+    syllabusUrl: "/syllabus/sap-ariba-syllabus.pdf",
 
     title: "SAP Ariba",
     description: "Our comprehensive SAP Ariba training program covers the entire source-to-pay lifecycle. You will learn how to manage suppliers, contracts, buying, and invoicing using the Ariba Network. This course is designed to make you job-ready with real-world scenarios and hands-on practice.",

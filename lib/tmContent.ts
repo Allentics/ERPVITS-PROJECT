@@ -213,6 +213,7 @@ export const tmRealWorldScenarios = [
 ];
 
 export const tmContent = {
+    syllabusUrl: "/syllabus/sap-tm-syllabus.pdf",
     heroHeading: "Transform Your Logistics Career with the #1 SAP TM Online Training Program",
     heroSubheading: "Master logistics optimization, supply chain coordination, and enterprise transportation planning with hands-on, job-oriented training.",
 

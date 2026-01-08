@@ -1,6 +1,7 @@
 import { ficoTargetAudience, ficoPrerequisites, ficoLearningOutcomes, ficoRealWorldScenarios } from './contentHelpers';
 
 export const ficoContent = {
+    syllabusUrl: "/syllabus/sap-fico-syllabus.pdf",
     heroHeading: "Transform Your Career with the #1 SAP FICO Online Training Program",
     heroSubheading: "Master financial accounting, controlling, and reporting with 100% hands-on, job-oriented training from certified SAP experts.",
     badges: ["New Batch Starting Soon", "100% Job Oriented"],

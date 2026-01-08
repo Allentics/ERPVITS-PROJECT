@@ -1,9 +1,23 @@
 'use client';
 import Link from 'next/link';
+import BlogCTA from './BlogCTA';
+import BlogCallout from './BlogCallout';
 
 export default function SapTCodesContent() {
     return (
-        <>
+        <div className="prose prose-lg prose-slate max-w-none 
+            prose-headings:text-slate-900 prose-headings:font-bold 
+            prose-a:text-orange-600 hover:prose-a:text-orange-700 
+            prose-img:rounded-2xl prose-img:shadow-lg prose-img:my-8
+            prose-p:leading-relaxed prose-p:text-slate-600
+            prose-li:text-slate-600 blog-content">
+
+            <p>
+                In the complex world of SAP ERP, transaction codes (TCodes) are the shortcuts that power professional efficiency.
+                Whether you're a functional consultant, a technical developer, or a business user, mastering these shortcuts
+                is essential for navigating the SAP landscape with speed and precision.
+            </p>
+
             <h2 className="text-2xl font-bold text-slate-900 mt-8 mb-4">Comprehensive SAP TCode Categories</h2>
 
             <h3 className="text-xl font-semibold text-slate-800 mt-6 mb-3">Master Data TCodes</h3>
@@ -30,103 +44,60 @@ export default function SapTCodesContent() {
                 <li><strong>Customer Reports:</strong> FD10N, FD10N</li>
             </ul>
 
-            <h3 className="text-xl font-semibold text-slate-800 mt-6 mb-3">System Administration TCodes</h3>
-            <ul className="list-disc pl-6 mb-4 space-y-1 text-slate-600">
-                <li><strong>User Administration:</strong> SU01, SU10</li>
-                <li><strong>Role Management:</strong> PFCG</li>
-                <li><strong>Transport Management:</strong> SE09, SE10</li>
-                <li><strong>System Monitoring:</strong> SM21, ST22</li>
-            </ul>
+            <BlogCallout title="Expert Tip">
+                Use <strong>/N</strong> followed by a TCode to open it in the same window, or <strong>/O</strong> to open it in a new window. This simple trick saves hours of navigation over time.
+            </BlogCallout>
 
             <h2 className="text-2xl font-bold text-slate-900 mt-10 mb-6">Complete SAP TCodes Module Overview</h2>
 
             <div className="overflow-x-auto my-6">
                 <table className="min-w-full border border-gray-300 rounded-lg overflow-hidden">
-                    <thead className="bg-orange-50">
+                    <thead className="bg-orange-50 font-bold">
                         <tr>
-                            <th className="border border-gray-200 px-6 py-3 text-left font-bold text-gray-900">Module</th>
-                            <th className="border border-gray-200 px-6 py-3 text-left font-bold text-gray-900">Transaction Codes</th>
-                            <th className="border border-gray-200 px-6 py-3 text-left font-bold text-gray-900">Key Areas</th>
+                            <th className="border border-gray-200 px-6 py-3 text-left text-gray-900">Module</th>
+                            <th className="border border-gray-200 px-6 py-3 text-left text-gray-900">Transaction Codes</th>
+                            <th className="border border-gray-200 px-6 py-3 text-left text-gray-900">Key Areas</th>
                         </tr>
                     </thead>
                     <tbody className="bg-white">
                         <tr>
-                            <td className="border border-gray-200 px-6 py-3 font-bold text-orange-600">Basis & Administration</td>
+                            <td className="border border-gray-200 px-6 py-3 font-bold text-orange-600">Basis & Admin</td>
                             <td className="border border-gray-200 px-6 py-3 text-gray-600">35</td>
-                            <td className="border border-gray-200 px-6 py-3 text-gray-600">User Management, System Monitoring, Transport</td>
+                            <td className="border border-gray-200 px-6 py-3 text-gray-600">User Mgmt, Monitoring</td>
                         </tr>
                         <tr className="bg-gray-50">
-                            <td className="border border-gray-200 px-6 py-3 font-bold text-orange-600">Materials Management (MM)</td>
+                            <td className="border border-gray-200 px-6 py-3 font-bold text-orange-600">Materials Mgmt (MM)</td>
                             <td className="border border-gray-200 px-6 py-3 text-gray-600">31</td>
-                            <td className="border border-gray-200 px-6 py-3 text-gray-600">Procurement, Inventory, Invoice Verification</td>
+                            <td className="border border-gray-200 px-6 py-3 text-gray-600">Procurement, Inventory</td>
                         </tr>
                         <tr>
-                            <td className="border border-gray-200 px-6 py-3 font-bold text-orange-600">Financial Accounting (FI)</td>
+                            <td className="border border-gray-200 px-6 py-3 font-bold text-orange-600">Finance (FI)</td>
                             <td className="border border-gray-200 px-6 py-3 text-gray-600">28</td>
-                            <td className="border border-gray-200 px-6 py-3 text-gray-600">GL, AP, AR, Asset Accounting</td>
-                        </tr>
-                        <tr className="bg-gray-50">
-                            <td className="border border-gray-200 px-6 py-3 font-bold text-orange-600">Sales & Distribution (SD)</td>
-                            <td className="border border-gray-200 px-6 py-3 text-gray-600">23</td>
-                            <td className="border border-gray-200 px-6 py-3 text-gray-600">Sales Orders, Delivery, Billing, Pricing</td>
-                        </tr>
-                        <tr>
-                            <td className="border border-gray-200 px-6 py-3 font-bold text-orange-600">ABAP Development</td>
-                            <td className="border border-gray-200 px-6 py-3 text-gray-600">18</td>
-                            <td className="border border-gray-200 px-6 py-3 text-gray-600">Programming, Debugging, Dictionary</td>
-                        </tr>
-                        <tr className="bg-gray-50">
-                            <td className="border border-gray-200 px-6 py-3 font-bold text-orange-600">Controlling (CO)</td>
-                            <td className="border border-gray-200 px-6 py-3 text-gray-600">18</td>
-                            <td className="border border-gray-200 px-6 py-3 text-gray-600">Cost Centers, Internal Orders, Profitability</td>
-                        </tr>
-                        <tr>
-                            <td className="border border-gray-200 px-6 py-3 font-bold text-orange-600">Production Planning (PP)</td>
-                            <td className="border border-gray-200 px-6 py-3 text-gray-600">16</td>
-                            <td className="border border-gray-200 px-6 py-3 text-gray-600">MRP, Production Orders, BOM</td>
-                        </tr>
-                        <tr className="bg-gray-50">
-                            <td className="border border-gray-200 px-6 py-3 font-bold text-orange-600">Human Resources (HR)</td>
-                            <td className="border border-gray-200 px-6 py-3 text-gray-600">15</td>
-                            <td className="border border-gray-200 px-6 py-3 text-gray-600">Personnel, Payroll, Organization</td>
-                        </tr>
-                        <tr>
-                            <td className="border border-gray-200 px-6 py-3 font-bold text-orange-600">Plant Maintenance (PM)</td>
-                            <td className="border border-gray-200 px-6 py-3 text-gray-600">14</td>
-                            <td className="border border-gray-200 px-6 py-3 text-gray-600">Work Orders, Maintenance, Notifications</td>
-                        </tr>
-                        <tr className="bg-gray-50">
-                            <td className="border border-gray-200 px-6 py-3 font-bold text-orange-600">Quality Management (QM)</td>
-                            <td className="border border-gray-200 px-6 py-3 text-gray-600">13</td>
-                            <td className="border border-gray-200 px-6 py-3 text-gray-600">Inspection, Quality Control, Batch</td>
+                            <td className="border border-gray-200 px-6 py-3 text-gray-600">GL, AP, AR, Assets</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            {/* PDF Download Section */}
-            <div className="my-10 p-8 bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl text-center">
+            {/* PDF Download Section - Keeping its unique style but refining */}
+            <div className="my-10 p-8 bg-slate-900 rounded-2xl text-center shadow-lg">
                 <div className="flex justify-center mb-4">
                     <svg className="w-12 h-12 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Download Complete SAP TCodes List</h3>
+                <h3 className="text-2xl font-bold text-white mb-2 !mt-0">Download Complete SAP TCodes List</h3>
                 <p className="text-slate-300 mb-6">Get instant access to 238+ SAP transaction codes in PDF format</p>
                 <a
                     href="/downloads/sap-tcodes-list.pdf"
                     download
-                    className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full transition-colors"
+                    className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full transition-colors no-underline"
                 >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                     </svg>
                     Download SAP TCodes PDF
                 </a>
-                <div className="flex justify-center gap-6 mt-4 text-slate-400 text-sm">
-                    <span>✓ No registration required</span>
-                    <span>✓ Instant download</span>
-                </div>
             </div>
 
             <h2 className="text-2xl font-bold text-slate-900 mt-10 mb-6">Top 10 Most Used SAP Transaction Codes</h2>
@@ -148,46 +119,15 @@ export default function SapTCodesContent() {
                 <li><strong>Increased Productivity:</strong> The efficiency gained by avoiding unnecessary menu searches</li>
                 <li><strong>Faster Navigation:</strong> Direct access to any function within seconds</li>
                 <li><strong>Standardization:</strong> TCodes work consistently across all SAP installations</li>
-                <li><strong>Power User Benefits:</strong> Expert users can perform tasks much faster</li>
-                <li><strong>Training Efficiency:</strong> Easier to teach specific functions using TCodes</li>
             </ul>
 
-            <h2 className="text-2xl font-bold text-slate-900 mt-10 mb-4">How to Find SAP Transaction Codes</h2>
-            <ul className="list-disc pl-6 mb-6 space-y-2 text-slate-600">
-                <li>Use <strong>SE16</strong> to browse table TSTC for all transaction codes</li>
-                <li>Use <strong>/N</strong> prefix to open a TCode in the same window</li>
-                <li>Use <strong>/O</strong> prefix to open a TCode in a new window</li>
-                <li>Press <strong>F1</strong> on any screen to see the current TCode</li>
-                <li>Use <strong>SE93</strong> to find TCode details and descriptions</li>
-            </ul>
-
-            <div className="mt-10 p-6 bg-blue-50 rounded-lg border border-blue-200">
-                <h3 className="text-xl font-bold text-blue-900 mb-4">Boost Your SAP Career with ERPVITS Training</h3>
-                <p className="text-gray-700 mb-4">
-                    Master SAP transaction codes and become an expert in your chosen SAP module.
-                    Our comprehensive training programs cover all essential TCodes with hands-on practice.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                    <Link href="/courses/sap-fico" className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                        SAP FICO Training
-                    </Link>
-                    <Link href="/courses/sap-mm" className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                        SAP MM Training
-                    </Link>
-                    <Link href="/courses/sap-sd" className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                        SAP SD Training
-                    </Link>
-                </div>
-            </div>
-
-            <div className="mt-8 p-6 bg-gray-50 rounded-lg border border-gray-200">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Contact ERPVITS</h3>
-                <div className="space-y-2 text-gray-700">
-                    <p><strong>Website:</strong> <a href="https://www.erpvits.com" className="text-blue-600 hover:underline">www.erpvits.com</a></p>
-                    <p><strong>Email:</strong> <a href="mailto:info@erpvits.com" className="text-blue-600 hover:underline">info@erpvits.com</a></p>
-                    <p><strong>Phone:</strong> <a href="tel:+918408878222" className="text-blue-600 hover:underline">+91 84088 78222</a></p>
-                </div>
-            </div>
-        </>
+            <BlogCTA
+                title="Master SAP Transaction Codes with Expert Training"
+                description="Our comprehensive training programs cover all essential TCodes with hands-on practice in live SAP environments."
+                buttonText="Explore SAP Courses"
+                buttonLink="/courses"
+            />
+        </div>
     );
 }
+

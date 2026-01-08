@@ -1,5 +1,6 @@
 
 export const fieldglassContent = {
+    syllabusUrl: "/syllabus/sap-fieldglass-syllabus.pdf",
     heroHeading: "Become a Leader in Managing a Contingent Workforce with SAP Fieldglass Training",
     heroSubheading: "Learn SAP Fieldglass from Certified Experts – 100% Hands-On, Job-Oriented Training. Master contingent workforce management with real-world scenarios.",
     badges: ["SAP Certified Trainers", "4.7 Learner Rating", "24/7 Team Support"],

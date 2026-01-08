@@ -1,6 +1,8 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { supabase } from '@/lib/supabase';
+import { blogPosts as localPosts } from '@/lib/blogData';
 import BlogContactForm from '@/components/blog/BlogContactForm';
 import SapTCodesContent from '@/components/blog/SapTCodesContent';
 import SapSdProcessFlowContent from '@/components/blog/SapSdProcessFlowContent';
@@ -13,6 +15,14 @@ import SapCpiInterviewQuestionsContent from '@/components/blog/SapCpiInterviewQu
 import SapC4cTechnicalScenariosContent from '@/components/blog/SapC4cTechnicalScenariosContent';
 import Top7SapTrainingInstitutesContent from '@/components/blog/Top7SapTrainingInstitutesContent';
 import SapAribaSourcingConfigContent from '@/components/blog/SapAribaSourcingConfigContent';
+import SapMmCourseCompleteContent from '@/components/blog/SapMmCourseCompleteContent';
+import HowSapAribaPoweringContent from '@/components/blog/HowSapAribaPoweringContent';
+import TopTenAbapCloudToolsContent from '@/components/blog/TopTenAbapCloudToolsContent';
+import HowSapFieldglassTransformingContent from '@/components/blog/HowSapFieldglassTransformingContent';
+import SapTrmSetupEssentialsContent from '@/components/blog/SapTrmSetupEssentialsContent';
+import MtoAndStoProcessContent from '@/components/blog/MtoAndStoProcessContent';
+import MasterSapAribaIndustryContent from '@/components/blog/MasterSapAribaIndustryContent';
+import SapTrmComplementaryContent from '@/components/blog/SapTrmComplementaryContent';
 import { Metadata } from 'next';
 
 export const dynamic = 'force-dynamic';
@@ -28,8 +38,15 @@ const blogHeroImages: Record<string, string> = {
     'sap-fieldglass-vs-traditional-vms': '/images/sap-fieldglass-vs-vms.webp',
     'sap-cpi-interview-questions': '/images/sap-cpi-interview.webp',
     'top-10-sap-c4c-technical-scenarios': '/images/sap-c4c-technical.webp',
-    'high-paying-sap-fico-jobs': '/images/sap-fico-jobs.webp',
-    'top-7-sap-training-institutes': '/images/sap-training-institutes.webp',
+    'sap-training-institutes': '/images/sap-training-institutes.webp',
+    'sap-mm-course-complete-guide': '/images/sap-mm-course.png',
+    'how-sap-ariba-is-powering-intelligent-spend-management': '/images/blog/sap-ariba-spend-management.webp',
+    'top-ten-tools-techniques-for-efficient-abap-on-cloud-programming': '/images/blog/top-10-tools-abap-cloud.webp',
+    'how-sap-fieldglass-transforming-global-contingent-workforce-market': '/images/blog/sap-fieldglass-transformation.webp',
+    'sap-trm-setup-essentials': '/images/blog/sap-trm-master-data.webp',
+    'mto-and-sto-process-in-sap': '/images/blog/mto-sto-process.webp',
+    'master-sap-ariba-with-industry-leading-online-training': '/images/blog/master-sap-ariba.webp',
+    'sap-trm-complementary-technologies': '/images/blog/sap-trm-complementary.webp',
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -61,117 +78,196 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         notFound();
     }
 
+    // Fetch all posts for sidebar (related and recent)
+    const { data: allPosts } = await supabase
+        .from('blog_posts')
+        .select('id, title, category, date, image')
+        .order('date', { ascending: false });
+
+    const mergedPosts = allPosts || localPosts;
+    const recentPosts = mergedPosts.filter(p => p.id !== slug).slice(0, 5);
+    const relatedPosts = mergedPosts.filter(p => p.id !== slug && p.category === post.category).slice(0, 3);
+
+    // Calculate category counts
+    const categoryCounts: Record<string, number> = {};
+    mergedPosts.forEach(p => {
+        categoryCounts[p.category] = (categoryCounts[p.category] || 0) + 1;
+    });
+    const categories = Object.entries(categoryCounts).map(([name, count]) => ({ name, count }));
+
     return (
-        <div className="bg-gray-50 min-h-screen">
-            {/* Compact Hero Section - Just Breadcrumb */}
-            <div className="bg-slate-900 relative overflow-hidden py-6">
-                <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <nav className="text-sm font-medium flex items-center gap-2 text-slate-400">
+        <div className="bg-white min-h-screen">
+            {/* Header / Breadcrumb Section */}
+            <div className="bg-slate-900 border-b border-slate-800 py-8">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <nav className="flex items-center text-sm font-medium text-slate-400 mb-4 overflow-x-auto whitespace-nowrap scrollbar-hide">
                         <Link href="/" className="hover:text-white transition-colors">Home</Link>
-                        <span className="text-slate-600">/</span>
-                        <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
-                        <span className="text-slate-600">/</span>
-                        <span className="text-slate-300 truncate max-w-[200px] sm:max-w-md">{post.title}</span>
+                        <span className="mx-2 text-slate-600">›</span>
+                        <Link href="/blog" className="hover:text-white transition-colors">Blogs</Link>
+                        <span className="mx-2 text-slate-600">›</span>
+                        <span className="text-orange-500 font-semibold">{post.title}</span>
                     </nav>
+                    <h1 className="text-3xl lg:text-4xl font-extrabold text-white leading-tight">
+                        {post.title}
+                    </h1>
                 </div>
             </div>
 
-            {/* Content Area */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                    {/* Main Content Card */}
-                    <div className="lg:col-span-2">
-                        <article className="bg-white rounded-2xl shadow-xl shadow-slate-200/50 p-8 lg:p-12">
-                            {/* Category Badge */}
-                            <span className="inline-block bg-orange-500 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
-                                {post.category}
-                            </span>
+            {/* Main Layout */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
 
-                            {/* Title */}
-                            <h1 className="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-6 leading-tight">
-                                {post.title}
-                            </h1>
-
-                            {/* Author/Meta */}
-                            <div className="flex items-center gap-6 text-slate-500 text-sm border-b border-slate-200 pb-6 mb-8">
-                                <div className="flex items-center gap-3">
-                                    <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 font-bold">
-                                        {post.author?.[0]}
+                    {/* Main Content (Left) */}
+                    <div className="lg:col-span-8">
+                        <article className="blog-container">
+                            {/* Meta Info */}
+                            <div className="flex flex-wrap items-center justify-between gap-6 pb-10 border-b border-gray-100 mb-10">
+                                <div className="flex items-center gap-4">
+                                    <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 font-bold text-xl shadow-inner">
+                                        {post.author?.[0] || 'E'}
                                     </div>
                                     <div>
-                                        <div className="font-semibold text-slate-900">{post.author}</div>
-                                        <div className="text-xs text-slate-400">Author</div>
+                                        <div className="text-gray-900 font-bold">{post.author || 'ERPVITS Expert'}</div>
+                                        <div className="text-xs text-gray-400 font-medium uppercase tracking-wider">Author</div>
                                     </div>
                                 </div>
-                                <div className="flex items-center gap-2">
-                                    <svg className="w-4 h-4 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                                    <span>{post.date}</span>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <svg className="w-4 h-4 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
-                                    <span>8 min read</span>
+                                <div className="flex items-center gap-8 text-gray-500 text-sm">
+                                    <div className="flex items-center gap-2">
+                                        <svg className="w-5 h-5 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                                        <span className="font-medium">{post.date}</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <svg className="w-5 h-5 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                        <span className="font-medium">8 min read</span>
+                                    </div>
                                 </div>
                             </div>
 
                             {/* Hero Image */}
-                            {blogHeroImages[slug] && (
-                                <div className="mb-8 rounded-xl overflow-hidden shadow-lg">
+                            {(blogHeroImages[slug] || post.image) && (
+                                <div className="mb-12 rounded-2xl overflow-hidden shadow-2xl shadow-slate-200/50 group">
                                     <img
-                                        src={blogHeroImages[slug]}
+                                        src={blogHeroImages[slug] || post.image}
                                         alt={post.title}
-                                        className="w-full object-cover"
+                                        className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700"
                                     />
                                 </div>
                             )}
 
-                            {/* Blog Content */}
-                            {slug === 'sap-tcodes-list-pdf' && <SapTCodesContent />}
-                            {slug === 'sap-sd-process-flow' && <SapSdProcessFlowContent />}
-                            {slug === 'sap-fico-cash-journal-configuration' && <SapFicoCashJournalContent />}
-                            {slug === 'sap-s4hana-mm-career-opportunities' && <SapS4HanaMmCareerContent />}
-                            {slug === 'high-paying-sap-fico-jobs' && <HighPayingSapFicoJobsContent />}
-                            {slug === 'sap-ariba-supplier-login-tutorial' && <SapAribaSupplierLoginContent />}
-                            {slug === 'sap-fieldglass-vs-traditional-vms' && <SapFieldglassVmsContent />}
-                            {slug === 'sap-cpi-interview-questions' && <SapCpiInterviewQuestionsContent />}
-                            {slug === 'top-10-sap-c4c-technical-scenarios' && <SapC4cTechnicalScenariosContent />}
-                            {slug === 'top-7-sap-training-institutes' && <Top7SapTrainingInstitutesContent />}
-                            {slug === 'sap-ariba-sourcing-configuration' && <SapAribaSourcingConfigContent />}
+                            {/* Content Component Mapping */}
+                            <div className="prose prose-lg prose-slate max-w-none 
+                                prose-headings:text-slate-900 prose-headings:font-bold 
+                                prose-a:text-orange-600 hover:prose-a:text-orange-700 
+                                prose-img:rounded-2xl prose-img:shadow-lg prose-img:my-10
+                                prose-p:leading-relaxed prose-p:text-slate-600
+                                prose-li:text-slate-600 prose-strong:text-slate-900 blog-content-area">
 
-                            {/* Fallback to database content for any other blogs */}
-                            {![
-                                'sap-tcodes-list-pdf',
-                                'sap-sd-process-flow',
-                                'sap-fico-cash-journal-configuration',
-                                'sap-s4hana-mm-career-opportunities',
-                                'high-paying-sap-fico-jobs',
-                                'sap-ariba-supplier-login-tutorial',
-                                'sap-fieldglass-vs-traditional-vms',
-                                'sap-cpi-interview-questions',
-                                'top-10-sap-c4c-technical-scenarios',
-                                'top-7-sap-training-institutes',
-                                'sap-ariba-sourcing-configuration'
-                            ].includes(slug) && (
-                                    <div className="prose prose-lg prose-slate max-w-none 
-                                    prose-headings:text-slate-900 prose-headings:font-bold 
-                                    prose-a:text-orange-600 hover:prose-a:text-orange-700 
-                                    prose-img:rounded-2xl prose-img:shadow-lg prose-img:my-8
-                                    prose-p:leading-relaxed prose-p:text-slate-600
-                                    prose-li:text-slate-600 blog-content"
-                                        dangerouslySetInnerHTML={{ __html: post.content }}
-                                    />
-                                )}
+                                {slug === 'sap-tcodes-list-pdf' && <SapTCodesContent />}
+                                {slug === 'sap-sd-process-flow' && <SapSdProcessFlowContent />}
+                                {slug === 'sap-fico-cash-journal-configuration' && <SapFicoCashJournalContent />}
+                                {slug === 'sap-s4hana-mm-career-opportunities' && <SapS4HanaMmCareerContent />}
+                                {slug === 'high-paying-sap-fico-jobs' && <HighPayingSapFicoJobsContent />}
+                                {slug === 'sap-ariba-supplier-login-tutorial' && <SapAribaSupplierLoginContent />}
+                                {slug === 'sap-fieldglass-vs-traditional-vms' && <SapFieldglassVmsContent />}
+                                {slug === 'sap-cpi-interview-questions' && <SapCpiInterviewQuestionsContent />}
+                                {slug === 'top-10-sap-c4c-technical-scenarios' && <SapC4cTechnicalScenariosContent />}
+                                {slug === 'top-7-sap-training-institutes' && <Top7SapTrainingInstitutesContent />}
+                                {slug === 'sap-ariba-sourcing-configuration' && <SapAribaSourcingConfigContent />}
+                                {slug === 'sap-mm-course-complete-guide' && <SapMmCourseCompleteContent />}
+                                {slug === 'how-sap-ariba-is-powering-intelligent-spend-management' && <HowSapAribaPoweringContent />}
+                                {slug === 'top-ten-tools-techniques-for-efficient-abap-on-cloud-programming' && <TopTenAbapCloudToolsContent />}
+                                {slug === 'how-sap-fieldglass-transforming-global-contingent-workforce-market' && <HowSapFieldglassTransformingContent />}
+                                {slug === 'sap-trm-setup-essentials' && <SapTrmSetupEssentialsContent />}
+                                {slug === 'mto-and-sto-process-in-sap' && <MtoAndStoProcessContent />}
+                                {slug === 'master-sap-ariba-with-industry-leading-online-training' && <MasterSapAribaIndustryContent />}
+                                {slug === 'sap-trm-complementary-technologies' && <SapTrmComplementaryContent />}
+
+                                {![
+                                    'sap-tcodes-list-pdf', 'sap-sd-process-flow', 'sap-fico-cash-journal-configuration',
+                                    'sap-s4hana-mm-career-opportunities', 'high-paying-sap-fico-jobs', 'sap-ariba-supplier-login-tutorial',
+                                    'sap-fieldglass-vs-traditional-vms', 'sap-cpi-interview-questions', 'top-10-sap-c4c-technical-scenarios',
+                                    'top-7-sap-training-institutes', 'sap-ariba-sourcing-configuration', 'sap-mm-course-complete-guide',
+                                    'how-sap-ariba-is-powering-intelligent-spend-management', 'top-ten-tools-techniques-for-efficient-abap-on-cloud-programming',
+                                    'how-sap-fieldglass-transforming-global-contingent-workforce-market', 'sap-trm-setup-essentials',
+                                    'mto-and-sto-process-in-sap', 'master-sap-ariba-with-industry-leading-online-training',
+                                    'sap-trm-complementary-technologies'
+                                ].includes(slug) && (
+                                        <div dangerouslySetInnerHTML={{ __html: post.content }} />
+                                    )}
+                            </div>
                         </article>
                     </div>
 
-                    {/* Sidebar */}
-                    <div className="lg:col-span-1 space-y-8">
-                        <div className="sticky top-24">
+                    {/* Sidebar (Right) */}
+                    <div className="lg:col-span-4 space-y-12">
+
+                        {/* Contact Form Card */}
+                        <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm sticky top-24">
+                            <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                                <span className="w-1 h-6 bg-orange-500 rounded-full"></span>
+                                Book a Free Demo
+                            </h3>
                             <BlogContactForm slug={slug} />
                         </div>
+
+                        {/* Recent Posts Section */}
+                        <div className="bg-white">
+                            <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                                <span className="w-1 h-6 bg-orange-500 rounded-full"></span>
+                                Recent Posts
+                            </h3>
+                            <div className="space-y-6">
+                                {recentPosts.map((p: any) => (
+                                    <Link key={p.id} href={`/blog/${p.id}`} className="flex gap-4 group">
+                                        <div className="w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden border border-gray-100 shadow-sm">
+                                            <img
+                                                src={blogHeroImages[p.id] || p.image || '/images/blog/default.webp'}
+                                                alt={p.title}
+                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                                            />
+                                        </div>
+                                        <div className="flex-grow">
+                                            <h4 className="text-sm font-bold text-gray-900 mb-1 group-hover:text-orange-600 transition-colors line-clamp-2 leading-snug">
+                                                {p.title}
+                                            </h4>
+                                            <div className="text-[10px] text-gray-400 uppercase font-semibold tracking-wider">
+                                                {p.date}
+                                            </div>
+                                        </div>
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Categories Section */}
+                        <div className="bg-slate-50 rounded-2xl p-8">
+                            <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                                <span className="w-1 h-6 bg-orange-500 rounded-full"></span>
+                                Category
+                            </h3>
+                            <ul className="space-y-3">
+                                {categories.map((cat) => (
+                                    <li key={cat.name}>
+                                        <Link
+                                            href={`/blog?category=${cat.name}`}
+                                            className="flex items-center justify-between group py-1"
+                                        >
+                                            <span className="text-gray-600 group-hover:text-orange-600 transition-colors font-medium">
+                                                {cat.name}
+                                            </span>
+                                            <span className="bg-white text-gray-400 group-hover:bg-orange-500 group-hover:text-white px-2 py-0.5 rounded text-xs font-bold transition-all shadow-sm">
+                                                {cat.count}
+                                            </span>
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
     );
 }
+
