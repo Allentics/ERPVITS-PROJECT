@@ -26,7 +26,7 @@ async function fixAribaDuplicates() {
         title: aribaContent.title,
         hero_heading: aribaContent.heroHeading,
         hero_subheading: aribaContent.heroSubheading,
-        hero_image: aribaContent.heroImage,
+
         description: aribaContent.description,
         meta_title: aribaContent.metaTitle,
         meta_description: aribaContent.metaDescription,
