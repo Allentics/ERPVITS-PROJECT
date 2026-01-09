@@ -8,34 +8,31 @@ import { supabase } from '@/lib/supabase';
 import ContactModal from '../ContactModal';
 
 export default function FeaturedCourses() {
-    const featuredIds = ['sap-ariba', 'fico', 'sap-mm', 'trm', 'sd', 'sap-fieldglass'];
-    const [featuredCourses, setFeaturedCourses] = useState<any[]>(
-        featuredIds.map(id => courses.find(c => c.id === id)).filter(Boolean)
-    );
+    const [featuredCourses, setFeaturedCourses] = useState<any[]>(courses);
+    const [visibleCount, setVisibleCount] = useState(3);
     const [isContactModalOpen, setIsContactModalOpen] = useState(false);
     const [modalTitle, setModalTitle] = useState("Get Started with SAP");
 
     useEffect(() => {
         async function fetchFeatured() {
             try {
+                // Fetch all courses to ensure we have the latest data/images if needed
                 const { data, error } = await supabase
                     .from('courses')
-                    .select('*')
-                    .in('id', featuredIds);
+                    .select('*');
 
                 if (data && !error) {
-                    const enriched = data.map((c: any) => {
-                        const local = courses.find(lc => lc.id === c.id);
+                    const enriched = courses.map((localCourse) => {
+                        const dbCourse = data.find((c: any) => c.id === localCourse.id);
                         return {
-                            ...c,
-                            // Always use local heroImage path to ensure we have the correct module-specific branded images
-                            heroImage: local?.heroImage || c.hero_image
+                            ...localCourse,
+                            ...dbCourse, // Merge DB data
+                            // Prioritize local heroImage if it exists, otherwise DB hero_image
+                            heroImage: localCourse.heroImage || dbCourse?.hero_image
                         };
                     });
-                    const ordered = featuredIds
-                        .map(id => enriched.find((c: any) => c.id === id))
-                        .filter(Boolean);
-                    setFeaturedCourses(ordered);
+                    // Sort or filter if necessary, for now we keep the order from courses.json/lib
+                    setFeaturedCourses(enriched);
                 }
             } catch (err) {
                 console.error('Error in FeaturedCourses:', err);
@@ -47,6 +44,10 @@ export default function FeaturedCourses() {
     const openModal = (title: string) => {
         setModalTitle(title);
         setIsContactModalOpen(true);
+    };
+
+    const showAllCourses = () => {
+        setVisibleCount(featuredCourses.length);
     };
 
     return (
@@ -65,30 +66,15 @@ export default function FeaturedCourses() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {featuredCourses.map((course: any) => (
+                    {featuredCourses.slice(0, visibleCount).map((course: any) => (
                         <div key={course.id} className="bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col group">
-                            {/* Card Header with Image */}
-                            <div className="h-56 relative overflow-hidden">
-                                {course.hero_image || course.heroImage ? (
-                                    <img
-                                        src={course.hero_image || course.heroImage}
-                                        alt={course.title}
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                    />
-                                ) : (
-                                    <div className="w-full h-full bg-slate-900 flex flex-col justify-center p-6">
-                                        <h3 className="text-xl font-bold text-white mb-2 relative z-10">{course.title} Training</h3>
-                                        <div className="w-12 h-1 bg-orange-500 rounded"></div>
-                                    </div>
-                                )}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                                <div className="absolute bottom-4 left-4 right-4 text-white">
-                                    <h3 className="text-xl font-bold">{course.title}</h3>
-                                    <div className="w-8 h-1 bg-orange-500 rounded mt-1"></div>
-                                </div>
-                            </div>
 
                             <div className="p-6 flex-1 flex flex-col">
+                                <div className="mb-4">
+                                    <h3 className="text-xl font-bold text-gray-900">{course.title}</h3>
+                                    <div className="w-12 h-1 bg-orange-500 rounded mt-2"></div>
+                                </div>
+
                                 {/* Metrics */}
                                 <div className="flex justify-between items-center mb-6 text-sm">
                                     <div className="flex items-center text-gray-600 bg-gray-50 px-3 py-1.5 rounded-full font-medium">
@@ -125,12 +111,14 @@ export default function FeaturedCourses() {
                 </div>
 
                 <div className="mt-16 flex flex-col md:flex-row justify-center gap-4">
-                    <Link
-                        href="/all-courses"
-                        className="px-8 py-3 bg-white border-2 border-slate-900 text-slate-900 font-bold rounded-lg hover:bg-slate-50 transition-colors shadow-sm text-center"
-                    >
-                        View All {courses.length} Courses
-                    </Link>
+                    {visibleCount < featuredCourses.length && (
+                        <button
+                            onClick={showAllCourses}
+                            className="px-8 py-3 bg-white border-2 border-slate-900 text-slate-900 font-bold rounded-lg hover:bg-slate-50 transition-colors shadow-sm text-center"
+                        >
+                            View All {featuredCourses.length} Courses
+                        </button>
+                    )}
                     <button
                         onClick={() => openModal("Course Consultation")}
                         className="px-8 py-3 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors shadow-md text-center"

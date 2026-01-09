@@ -203,7 +203,7 @@ export const ibpRealWorldScenarios = [
 ];
 
 export const ibpContent = {
-    syllabusUrl: "/syllabus/sap-ibp-syllabus.pdf",
+    syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-ibp.pdf",
     heroHeading: "Transform Your Supply Chain Strategy with the #1 SAP IBP Online Training Program",
     heroSubheading: "Excel in demand planning, supply chain optimization, and data-driven business strategy with expert-led training.",
 
@@ -505,6 +505,7 @@ export const ibpContent = {
         {
             type: 'detailed_certification',
             content: "We Provide Support for SAP Certified Associate – Integrated Business Planning (Exam Code: C_IBPP_2402).",
+            imageSrc: "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP IBP Infographic.webp",
             items: [
                 {
                     title: "SAP Certified Associate – Integrated Business Planning",

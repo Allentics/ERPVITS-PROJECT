@@ -1,6 +1,6 @@
 
 export const fieldglassContent = {
-    syllabusUrl: "/syllabus/sap-fieldglass-syllabus.pdf",
+    syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-fieldglass.pdf",
     heroHeading: "Become a Leader in Managing a Contingent Workforce with SAP Fieldglass Training",
     heroSubheading: "Learn SAP Fieldglass from Certified Experts – 100% Hands-On, Job-Oriented Training. Master contingent workforce management with real-world scenarios.",
     badges: ["SAP Certified Trainers", "4.7 Learner Rating", "24/7 Team Support"],
@@ -677,7 +677,7 @@ export const fieldglassContent = {
                     relevance: "Demonstrates expertise in end-to-end VMS implementation and external workforce management"
                 }
             ],
-            imageSrc: "/images/sap-fieldglass-tips.png"
+            imageSrc: "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP FG Infographic.webp"
         },
         {
             type: 'detailed_companies'

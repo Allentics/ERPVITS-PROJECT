@@ -1,6 +1,6 @@
 
 export const mmContent = {
-    syllabusUrl: "/syllabus/sap-mm-syllabus.pdf",
+    syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-s4-hana-mm.pdf",
 
     heroHeading: "Upskill Your Career with SAP S/4HANA MM Online Training",
     heroSubheading: "The ERPVITS SAP S/4HANA MM Online Training Program is a step toward a new career track for supply chain professionals and SAP consultants focusing on inventory management, procurement, and enterprise resource planning. Supply chain organizations today seek certified experts in the SAP S/4HANA MM module to help optimize the flow of materials, shrink costly inventory, streamline procurement, and improve overall supply chain management. This all-inclusive SAP MM course is aimed at supply chain professionals, inventory managers, procurement specialists, consultants in ERP, and highly motivated graduates looking for international careers in consulting and implementation. The SAP material management course is designed with interactive, live training, hands-on workshops, real-world supply chain exercises, and complete certification support.",
@@ -675,7 +675,7 @@ export const mmContent = {
                     relevance: "Demonstrates expertise in end-to-end SAP MM implementation"
                 }
             ],
-            imageSrc: "/images/sap-mm-tips.png"
+            imageSrc: "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP MM Infographic.webp"
         },
         {
             type: 'detailed_companies'

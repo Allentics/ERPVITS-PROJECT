@@ -214,7 +214,7 @@ export const ewmRealWorldScenarios = [
 ];
 
 export const ewmContent = {
-    syllabusUrl: "/syllabus/sap-ewm-syllabus.pdf",
+    syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-ewm.pdf",
     heroHeading: "Master Modern Warehouse Operations with the #1 SAP EWM Online Training Program",
     heroSubheading: "Transform your career with expert-led training in warehouse optimization, inventory management, and advanced logistics operations.",
 
@@ -510,6 +510,7 @@ export const ewmContent = {
         {
             type: 'detailed_certification',
             content: "We Provide Support for SAP Certified Application Associate – Warehouse Management in SAP S/4HANA (Exam Code: C_S4EWM_2023).",
+            imageSrc: "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP EWM Infographic.webp",
             items: [
                 {
                     title: "SAP Certified Application Associate - Warehouse Management in SAP S/4HANA",

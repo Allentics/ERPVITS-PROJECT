@@ -203,7 +203,7 @@ export const c4cRealWorldScenarios = [
 ];
 
 export const c4cFunctionalContent = {
-    syllabusUrl: "/syllabus/sap-c4c-functional-syllabus.pdf",
+    syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-c4c-functional.pdf",
     heroHeading: "Master Cloud-Based Customer Relationship Management with the #1 SAP C4C Functional Online Training Program",
     heroSubheading: "Excel in cloud-based customer relationship management, sales operations, and customer service transformation.",
 
@@ -507,7 +507,7 @@ export const c4cFunctionalContent = {
         {
             type: 'detailed_certification',
             content: "We Provide Support for SAP Certified Application Associate – SAP C4C (Exam Code: C_C4C14_2404).",
-            imageSrc: "/images/c4c-cert.png",
+            imageSrc: "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP C4C Infographic.webp",
             items: [
                 {
                     title: "SAP Certified Application Associate – SAP C4C",

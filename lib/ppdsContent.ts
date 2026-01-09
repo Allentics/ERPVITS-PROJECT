@@ -1,5 +1,5 @@
 export const ppdsContent = {
-    syllabusUrl: "/syllabus/sap-ppds-syllabus.pdf",
+    syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-ppds.pdf",
     heroHeading: "Transform Your Career with the #1 SAP PPDS Online Training Program",
     heroSubheading: "The SAP PPDS (Production Planning and Detailed Scheduling) Online Training Program from ERPVITS represents a transformative learning pathway for production planning professionals and SAP consultants eager to excel in advanced production scheduling, demand planning, and manufacturing optimization.",
 
@@ -400,7 +400,7 @@ export const ppdsContent = {
         },
         {
             type: 'detailed_certification',
-            imageSrc: "/images/sap-ppds-certification-tips.png",
+            imageSrc: "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP PPDS Infographic.webp",
             title: "SAP PPDS Certification – Your Global Career Credential",
             content: "We provide support for SAP Certified Associate – SAP S/4HANA Production Planning & Detailed Scheduling (Exam Code: C_SAPPS_2411 or equivalent). Focuses on demand planning, master scheduling, and detailed scheduling.",
             items: [

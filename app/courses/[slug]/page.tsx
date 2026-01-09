@@ -13,6 +13,7 @@ import ContactForm from '@/components/ContactForm';
 import { Metadata } from 'next';
 import { courses, defaultFaqs, getDefaultDetailedFeatures, Section } from '@/lib/courseData';
 import { getGenericPrerequisites, getGenericTargetAudience } from '@/lib/contentHelpers';
+import CourseHeroActionButtons from '@/components/course/CourseHeroActionButtons';
 
 // Dynamic rendering only to avoid build OOM
 export const dynamic = 'force-dynamic';
@@ -135,19 +136,12 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                     </p>
 
                     {/* Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-5 justify-center mb-16">
-                        <a href={(isAriba || isFieldglass || isMM || isFICO || isTRM || isSD || isC4C || isABAP || isTM || isEWM || isIBP || isMDG || isC4CFunc || isABAPHana) ? "#detailed-demo-booking" : "#enroll"} className={`text-white px-10 py-4 rounded-lg font-bold shadow-lg transition-all flex items-center justify-center gap-2 text-lg ${mappedCourse.themeColor === 'purple' ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-purple-500/25' : 'bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 shadow-orange-500/25'}`}>
-                            Book Free Demo Class
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        </a>
-                        <a
-                            href={mappedCourse.syllabusUrl || "#curriculum"}
-                            target={mappedCourse.syllabusUrl ? "_blank" : undefined}
-                            className="bg-white border text-slate-700 border-slate-200 hover:border-slate-300 hover:bg-slate-50 px-10 py-4 rounded-lg font-bold transition-all shadow-sm text-lg block text-center"
-                        >
-                            View Curriculum
-                        </a>
-                    </div>
+                    <CourseHeroActionButtons
+                        courseTitle={mappedCourse.title}
+                        syllabusUrl={mappedCourse.syllabusUrl || ''}
+                        themeColor={mappedCourse.themeColor}
+                        enrollHref={(isAriba || isFieldglass || isMM || isFICO || isTRM || isSD || isC4C || isABAP || isTM || isEWM || isIBP || isMDG || isC4CFunc || isABAPHana) ? "#detailed-demo-booking" : "#enroll"}
+                    />
 
                     {/* Features/Trust Indicators */}
                     <div className="flex flex-wrap justify-center gap-8 gap-y-4 text-sm font-semibold text-slate-600">

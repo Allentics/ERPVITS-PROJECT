@@ -1,6 +1,6 @@
 
 export const sdContent = {
-    syllabusUrl: "/syllabus/sap-sd-syllabus.pdf",
+    syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-sd.pdf",
     heroHeading: "Transform Your Career with SAP SD",
     heroSubheading: "Master sales & distribution management with 100% hands-on, job-oriented training",
     badges: ["SAP Certified Trainers", "4.8 Learner Rating", "24/7 Team Support"],
@@ -644,7 +644,7 @@ export const sdContent = {
                     relevance: "Demonstrates expertise in end-to-end SAP SD implementation"
                 }
             ],
-            imageSrc: "/images/sap-sd-tips.png"
+            imageSrc: "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP SD Infographic.webp"
         },
         {
             type: 'detailed_companies'

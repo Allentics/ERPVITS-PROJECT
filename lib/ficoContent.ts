@@ -1,7 +1,7 @@
 import { ficoTargetAudience, ficoPrerequisites, ficoLearningOutcomes, ficoRealWorldScenarios } from './contentHelpers';
 
 export const ficoContent = {
-    syllabusUrl: "/syllabus/sap-fico-syllabus.pdf",
+    syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-fico.pdf",
     heroHeading: "Transform Your Career with the #1 SAP FICO Online Training Program",
     heroSubheading: "Master financial accounting, controlling, and reporting with 100% hands-on, job-oriented training from certified SAP experts.",
     badges: ["New Batch Starting Soon", "100% Job Oriented"],
@@ -427,7 +427,7 @@ export const ficoContent = {
         {
             type: 'detailed_certification',
             title: "SAP FICO Certification – Your Global Career Credential",
-            imageSrc: "/images/sap-fico-tips.png",
+            imageSrc: "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP FICO Infographic.webp",
             items: [
                 {
                     title: "SAP Certified Associate – Financial Accounting",

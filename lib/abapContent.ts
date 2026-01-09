@@ -1,6 +1,6 @@
 
 export const abapContent = {
-    syllabusUrl: "/syllabus/sap-abap-syllabus.pdf",
+    syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Technical/sap-abap-on-cloud.pdf",
     heroHeading: "Gain Expertise in Cloud Development with SAP ABAP Training",
     heroSubheading: "The SAP ABAP Training offered by ERPVITS is a game changer for ABAP developers and SAP consultants interested in advancing their skills in cloud application development, contemporary programming, and enterprise software. In a cutting-edge business era, organizations demand certified SAP ABAB on cloud experts as proficient in cloud-native application development, ABAP Cloud runtime application, implementing clean architecture patterns, and digital transformation initiatives.",
     badges: ["SAP Certified Trainers", "4.7 Learner Rating", "24/7 Team Support"],
@@ -680,7 +680,8 @@ export const abapContent = {
                     who: "Cloud ABAP developer, architect, technical consultant roles",
                     relevance: "Validates cloud ABAP expertise for global roles"
                 }
-            ]
+            ],
+            imageSrc: "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP ABAP on Cloud Infographic.webp"
         },
         {
             type: 'detailed_companies'

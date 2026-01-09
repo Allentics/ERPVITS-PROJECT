@@ -203,7 +203,7 @@ export const mdgRealWorldScenarios = [
 ];
 
 export const mdgContent = {
-    syllabusUrl: "/syllabus/sap-mdg-syllabus.pdf",
+    syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-mdg.pdf",
     heroHeading: "Master Data Excellence with the #1 SAP MDG Online Training Program",
     heroSubheading: "Excel in data quality management, organizational data governance, and enterprise information management with expert-led training.",
 
@@ -499,6 +499,7 @@ export const mdgContent = {
         {
             type: 'detailed_certification',
             content: "We Provide Support for SAP Certified Application Associate – Master Data Governance (Exam Code: C_SGMDG_1911).",
+            imageSrc: "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP MDG Infographic.webp",
             items: [
                 {
                     title: "SAP Certified Application Associate – Master Data Governance",

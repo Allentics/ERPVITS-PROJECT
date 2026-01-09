@@ -213,7 +213,7 @@ export const tmRealWorldScenarios = [
 ];
 
 export const tmContent = {
-    syllabusUrl: "/syllabus/sap-tm-syllabus.pdf",
+    syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-tm.pdf",
     heroHeading: "Transform Your Logistics Career with the #1 SAP TM Online Training Program",
     heroSubheading: "Master logistics optimization, supply chain coordination, and enterprise transportation planning with hands-on, job-oriented training.",
 
@@ -508,7 +508,9 @@ export const tmContent = {
         },
         {
             type: 'detailed_certification',
+            title: "SAP TM Certification – Your Global Career Credential",
             content: "We Provide Support for SAP Certified Application Associate – Transportation Management in SAP S/4HANA (Exam Code: C_S4TM_2023).",
+            imageSrc: "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP TM Infographic.webp",
             items: [
                 {
                     title: "SAP Certified Application Associate - Transportation Management in SAP S/4HANA",

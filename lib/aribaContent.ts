@@ -5,7 +5,7 @@ export const aribaContent = {
     heroSubheading: "Master digital procurement & supply chain management with 100% hands-on, job-oriented training",
     heroLayout: "centered",
     themeColor: "orange",
-    syllabusUrl: "/syllabus/sap-ariba-syllabus.pdf",
+    syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-ariba.pdf",
 
     title: "SAP Ariba",
     description: "Our comprehensive SAP Ariba training program covers the entire source-to-pay lifecycle. You will learn how to manage suppliers, contracts, buying, and invoicing using the Ariba Network. This course is designed to make you job-ready with real-world scenarios and hands-on practice.",
@@ -244,7 +244,7 @@ export const aribaContent = {
         },
         {
             type: 'detailed_certification',
-            imageSrc: "/images/sap-ariba-certification-tips.png"
+            imageSrc: "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP Ariba Infographic.webp"
         },
         {
             type: 'detailed_companies'

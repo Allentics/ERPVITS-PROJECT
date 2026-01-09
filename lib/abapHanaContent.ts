@@ -1,6 +1,6 @@
 
 export const abapHanaContent = {
-    syllabusUrl: "/syllabus/sap-abap-on-hana-syllabus.pdf",
+    syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Technical/sap-abap-on-hana.pdf",
     heroHeading: "Master Modern ABAP Development with the #1 SAP ABAP on HANA Online Training Program",
     heroSubheading: "The SAP ABAP on HANA Online Training Program from ERPVITS represents a transformative learning pathway for professionals eager to excel in modern enterprise application development, cloud-native programming, and next-generation SAP technology.",
     badges: ["SAP Certified Trainers", "4.8 Learner Rating", "24/7 Team Support", "15+ Years ABAP Development Experience"],
@@ -85,8 +85,7 @@ export const abapHanaContent = {
                 "Mock technical interviews with coding challenges",
                 "Dedicated code review and architecture feedback sessions",
                 "Complete Support Ecosystem"
-            ],
-            imageSrc: "/images/abap-hana-cert.png" // Using the cert image here as a placeholder if generic is needed, or just leave it out if the component handles it. We'll use the one I moved.
+            ]
         },
         {
             type: 'detailed_curriculum',
@@ -560,7 +559,7 @@ export const abapHanaContent = {
         {
             type: 'detailed_certification',
             title: "SAP ABAP Certification – Your Global Career Credential",
-            imageSrc: "/images/abap-hana-cert.png",
+            imageSrc: "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP ABAP on HANA Infographic.webp",
             items: [
                 {
                     title: "SAP Certified Associate – ABAP Programming with SAP NetWeaver",
