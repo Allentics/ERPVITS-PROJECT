@@ -37,7 +37,7 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
 
     // Overwrite with DB posts if they exist
     if (dbPosts) {
-        dbPosts.forEach(post => {
+        dbPosts.forEach((post: any) => {
             mergedPostsMap.set(post.id, post);
         });
     }

@@ -85,12 +85,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         .order('date', { ascending: false });
 
     const mergedPosts = allPosts || localPosts;
-    const recentPosts = mergedPosts.filter(p => p.id !== slug).slice(0, 5);
-    const relatedPosts = mergedPosts.filter(p => p.id !== slug && p.category === post.category).slice(0, 3);
+    const recentPosts = mergedPosts.filter((p: any) => p.id !== slug).slice(0, 5);
+    const relatedPosts = mergedPosts.filter((p: any) => p.id !== slug && p.category === post.category).slice(0, 3);
 
     // Calculate category counts
     const categoryCounts: Record<string, number> = {};
-    mergedPosts.forEach(p => {
+    mergedPosts.forEach((p: any) => {
         categoryCounts[p.category] = (categoryCounts[p.category] || 0) + 1;
     });
     const categories = Object.entries(categoryCounts).map(([name, count]) => ({ name, count }));
