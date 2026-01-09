@@ -14,7 +14,7 @@ export const blogPosts: BlogPost[] = [
         id: "sap-mm-course-complete-guide",
         title: "SAP MM Course: Complete Guide to Materials Management Professional Excellence",
         description: "Join the best SAP MM course at ERPVITS. Get certified with expert-led training in Materials Management, S/4HANA, and procurement. Enroll now!",
-        image: "/images/sap-mm-course.png",
+        image: "/images/blog/master-sap-mm-materials-management.webp",
         date: "Jan 07, 2026",
         category: "SAP MM",
         author: "ERPVITS Expert"
@@ -46,15 +46,7 @@ export const blogPosts: BlogPost[] = [
         category: "SAP Fieldglass",
         author: "ERPVITS Expert"
     },
-    {
-        id: "sap-trm-setup-essentials",
-        title: "Laying the Foundation: Essential SAP TRM Master Data for Treasury Success",
-        description: "Laying the Foundation with Essential SAP TRM Master Data Ensures Accurate, Compliant Treasury Operations. Explore Best Practices with ERPVITS.",
-        image: "/images/blog/sap-trm-master-data.webp",
-        date: "Jan 03, 2026",
-        category: "SAP TRM",
-        author: "ERPVITS Expert"
-    },
+
     {
         id: "mto-and-sto-process-in-sap",
         title: "MTO & STO Process in SAP: Enhance Supply Chain Performance Through Integrated MM And SD Modules",
@@ -78,7 +70,9 @@ export const blogPosts: BlogPost[] = [
         id: "sap-ariba-sourcing-configuration",
         title: "SAP Ariba Sourcing Configuration Guide: Complete Setup & Best Practices",
         description: "Complete guide to configuring SAP Ariba Sourcing for optimal procurement. Learn setup steps, templates, workflows, integration, and best practices for strategic sourcing success.",
-        image: "images\sap-abap-cloud-tips.png",
+
+
+        image: "/images/sap-ariba-sourcing.webp",
         date: "Dec 27, 2025",
         category: "SAP Ariba",
         author: "ERPVITS Expert"

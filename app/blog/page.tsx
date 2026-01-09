@@ -38,13 +38,20 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
     // Overwrite with DB posts if they exist
     if (dbPosts) {
         dbPosts.forEach((post: any) => {
-            mergedPostsMap.set(post.id, post);
+            const localPost = mergedPostsMap.get(post.id);
+            // If local post exists, use DB data but prioritize local image
+            // This allows us to update images locally while keeping content dynamic
+            if (localPost && localPost.image) {
+                mergedPostsMap.set(post.id, { ...post, image: localPost.image });
+            } else {
+                mergedPostsMap.set(post.id, post);
+            }
         });
     }
 
     let allPosts = Array.from(mergedPostsMap.values()).sort((a, b) => {
         return new Date(b.date).getTime() - new Date(a.date).getTime();
-    });
+    }).filter(post => post.id !== 'sap-trm-setup-essentials');
 
     // Apply category filter if present
     if (filterCategory) {
@@ -112,7 +119,7 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
 
                                 {/* Content Section */}
                                 <div className="flex-grow flex flex-col md:flex-row gap-8 lg:gap-12">
-                                    <div className="flex-grow order-2 md:order-1">
+                                    <div className="flex-grow order-1 md:order-1">
                                         <div className="md:hidden flex items-center gap-3 mb-4">
                                             <span className="text-3xl font-bold text-[#F58220]">{day}</span>
                                             <span className="text-sm font-semibold text-gray-400 uppercase tracking-widest">{month}</span>
@@ -137,9 +144,9 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
                                         </Link>
                                     </div>
 
-                                    {/* Featured Image - Right side on desktop */}
+                                    {/* Featured Image - Right side on desktop, Bottom on mobile */}
                                     {(post.image || post.featured_image) && (
-                                        <div className="w-full md:w-64 lg:w-72 flex-shrink-0 order-1 md:order-2 overflow-hidden rounded-none shadow-sm group-hover:shadow-md transition-all duration-300">
+                                        <div className="w-full md:w-64 lg:w-72 flex-shrink-0 order-2 md:order-2 overflow-hidden rounded-none shadow-sm group-hover:shadow-md transition-all duration-300">
                                             <Link href={`/blog/${post.id}`}>
                                                 <div className="aspect-[1.6/1] relative">
                                                     <img

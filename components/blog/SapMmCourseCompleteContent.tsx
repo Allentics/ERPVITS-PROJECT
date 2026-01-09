@@ -120,19 +120,19 @@ const SapMmCourseCompleteContent = () => {
             </ul>
 
             <h2 className="text-2xl font-bold mt-8 mb-4">The System Landscape: Your Path to Production</h2>
-            <div className="bg-slate-900 text-slate-100 p-8 rounded-2xl my-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
+            <div className="bg-[#FFF7ED] border border-orange-100 p-8 rounded-2xl my-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div>
-                        <div className="text-orange-500 font-bold mb-2">Development (Dev)</div>
-                        <p className="text-xs opacity-80">Your testing ground for configuration and initial testing.</p>
+                        <div className="text-orange-600 font-bold mb-2">Development (Dev)</div>
+                        <p className="text-sm text-gray-600">Your testing ground for configuration and initial testing.</p>
                     </div>
                     <div>
-                        <div className="text-orange-500 font-bold mb-2">Quality Assurance (QA)</div>
-                        <p className="text-xs opacity-80">Where business users verify that systems meet operational requirements.</p>
+                        <div className="text-orange-600 font-bold mb-2">Quality Assurance (QA)</div>
+                        <p className="text-sm text-gray-600">Where business users verify that systems meet operational requirements.</p>
                     </div>
                     <div>
-                        <div className="text-orange-500 font-bold mb-2">Production (Prod)</div>
-                        <p className="text-xs opacity-80">The live environment where actual transactions occur.</p>
+                        <div className="text-orange-600 font-bold mb-2">Production (Prod)</div>
+                        <p className="text-sm text-gray-600">The live environment where actual transactions occur.</p>
                     </div>
                 </div>
             </div>

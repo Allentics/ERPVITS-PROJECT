@@ -19,7 +19,7 @@ import SapMmCourseCompleteContent from '@/components/blog/SapMmCourseCompleteCon
 import HowSapAribaPoweringContent from '@/components/blog/HowSapAribaPoweringContent';
 import TopTenAbapCloudToolsContent from '@/components/blog/TopTenAbapCloudToolsContent';
 import HowSapFieldglassTransformingContent from '@/components/blog/HowSapFieldglassTransformingContent';
-import SapTrmSetupEssentialsContent from '@/components/blog/SapTrmSetupEssentialsContent';
+
 import MtoAndStoProcessContent from '@/components/blog/MtoAndStoProcessContent';
 import MasterSapAribaIndustryContent from '@/components/blog/MasterSapAribaIndustryContent';
 import SapTrmComplementaryContent from '@/components/blog/SapTrmComplementaryContent';
@@ -29,7 +29,9 @@ export const dynamic = 'force-dynamic';
 
 // Blog hero images mapping
 const blogHeroImages: Record<string, string> = {
-    'sap-ariba-sourcing-configuration': '/images/sap-ariba-supplier-login-guide.png',
+    'sap-ariba-sourcing-configuration': '/images/sap-ariba-sourcing.webp',
+
+
     'sap-fico-cash-journal-configuration': '/images/step-by-step-cash-journal-sap-fico.webp',
     'sap-tcodes-list-pdf': '/images/sap-tcodes-list-hero.webp',
     'sap-sd-process-flow': '/images/sap-sd-workflow.webp',
@@ -39,11 +41,11 @@ const blogHeroImages: Record<string, string> = {
     'sap-cpi-interview-questions': '/images/sap-cpi-interview.webp',
     'top-10-sap-c4c-technical-scenarios': '/images/sap-c4c-technical.webp',
     'sap-training-institutes': '/images/sap-training-institutes.webp',
-    'sap-mm-course-complete-guide': '/images/sap-mm-course.png',
+    'sap-mm-course-complete-guide': '/images/blog/master-sap-mm-materials-management.webp',
     'how-sap-ariba-is-powering-intelligent-spend-management': '/images/blog/sap-ariba-spend-management.webp',
     'top-ten-tools-techniques-for-efficient-abap-on-cloud-programming': '/images/blog/top-10-tools-abap-cloud.webp',
     'how-sap-fieldglass-transforming-global-contingent-workforce-market': '/images/blog/sap-fieldglass-transformation.webp',
-    'sap-trm-setup-essentials': '/images/blog/sap-trm-master-data.webp',
+
     'mto-and-sto-process-in-sap': '/images/blog/mto-sto-process.webp',
     'master-sap-ariba-with-industry-leading-online-training': '/images/blog/master-sap-ariba.webp',
     'sap-trm-complementary-technologies': '/images/blog/sap-trm-complementary.webp',
@@ -98,16 +100,16 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     return (
         <div className="bg-white min-h-screen">
             {/* Header / Breadcrumb Section */}
-            <div className="bg-slate-900 border-b border-slate-800 py-8">
+            <div className="bg-white border-b border-gray-100 py-6">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <nav className="flex items-center text-sm font-medium text-slate-400 mb-4 overflow-x-auto whitespace-nowrap scrollbar-hide">
-                        <Link href="/" className="hover:text-white transition-colors">Home</Link>
-                        <span className="mx-2 text-slate-600">›</span>
-                        <Link href="/blog" className="hover:text-white transition-colors">Blogs</Link>
-                        <span className="mx-2 text-slate-600">›</span>
-                        <span className="text-orange-500 font-semibold">{post.title}</span>
+                    <nav className="flex items-center text-sm font-medium text-gray-500 mb-4 overflow-x-auto whitespace-nowrap scrollbar-hide">
+                        <Link href="/" className="hover:text-orange-500 transition-colors">Home</Link>
+                        <span className="mx-2 text-gray-400">›</span>
+                        <Link href="/blog" className="hover:text-orange-500 transition-colors">Blogs</Link>
+                        <span className="mx-2 text-gray-400">›</span>
+                        <span className="text-gray-900 truncate max-w-[200px] sm:max-w-md">{post.title}</span>
                     </nav>
-                    <h1 className="text-3xl lg:text-4xl font-extrabold text-white leading-tight">
+                    <h1 className="text-3xl lg:text-4xl font-extrabold text-gray-900 leading-tight mb-4">
                         {post.title}
                     </h1>
                 </div>
@@ -177,7 +179,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                                 {slug === 'how-sap-ariba-is-powering-intelligent-spend-management' && <HowSapAribaPoweringContent />}
                                 {slug === 'top-ten-tools-techniques-for-efficient-abap-on-cloud-programming' && <TopTenAbapCloudToolsContent />}
                                 {slug === 'how-sap-fieldglass-transforming-global-contingent-workforce-market' && <HowSapFieldglassTransformingContent />}
-                                {slug === 'sap-trm-setup-essentials' && <SapTrmSetupEssentialsContent />}
+
                                 {slug === 'mto-and-sto-process-in-sap' && <MtoAndStoProcessContent />}
                                 {slug === 'master-sap-ariba-with-industry-leading-online-training' && <MasterSapAribaIndustryContent />}
                                 {slug === 'sap-trm-complementary-technologies' && <SapTrmComplementaryContent />}
@@ -188,7 +190,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                                     'sap-fieldglass-vs-traditional-vms', 'sap-cpi-interview-questions', 'top-10-sap-c4c-technical-scenarios',
                                     'top-7-sap-training-institutes', 'sap-ariba-sourcing-configuration', 'sap-mm-course-complete-guide',
                                     'how-sap-ariba-is-powering-intelligent-spend-management', 'top-ten-tools-techniques-for-efficient-abap-on-cloud-programming',
-                                    'how-sap-fieldglass-transforming-global-contingent-workforce-market', 'sap-trm-setup-essentials',
+
+                                    'how-sap-fieldglass-transforming-global-contingent-workforce-market',
                                     'mto-and-sto-process-in-sap', 'master-sap-ariba-with-industry-leading-online-training',
                                     'sap-trm-complementary-technologies'
                                 ].includes(slug) && (
@@ -201,67 +204,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     {/* Sidebar (Right) */}
                     <div className="lg:col-span-4 space-y-12">
 
+
+
                         {/* Contact Form Card */}
-                        <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm sticky top-24">
-                            <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                                <span className="w-1 h-6 bg-orange-500 rounded-full"></span>
-                                Book a Free Demo
-                            </h3>
+                        <div className="sticky top-24">
                             <BlogContactForm slug={slug} />
-                        </div>
-
-                        {/* Recent Posts Section */}
-                        <div className="bg-white">
-                            <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                                <span className="w-1 h-6 bg-orange-500 rounded-full"></span>
-                                Recent Posts
-                            </h3>
-                            <div className="space-y-6">
-                                {recentPosts.map((p: any) => (
-                                    <Link key={p.id} href={`/blog/${p.id}`} className="flex gap-4 group">
-                                        <div className="w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden border border-gray-100 shadow-sm">
-                                            <img
-                                                src={blogHeroImages[p.id] || p.image || '/images/blog/default.webp'}
-                                                alt={p.title}
-                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                                            />
-                                        </div>
-                                        <div className="flex-grow">
-                                            <h4 className="text-sm font-bold text-gray-900 mb-1 group-hover:text-orange-600 transition-colors line-clamp-2 leading-snug">
-                                                {p.title}
-                                            </h4>
-                                            <div className="text-[10px] text-gray-400 uppercase font-semibold tracking-wider">
-                                                {p.date}
-                                            </div>
-                                        </div>
-                                    </Link>
-                                ))}
-                            </div>
-                        </div>
-
-                        {/* Categories Section */}
-                        <div className="bg-slate-50 rounded-2xl p-8">
-                            <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                                <span className="w-1 h-6 bg-orange-500 rounded-full"></span>
-                                Category
-                            </h3>
-                            <ul className="space-y-3">
-                                {categories.map((cat) => (
-                                    <li key={cat.name}>
-                                        <Link
-                                            href={`/blog?category=${cat.name}`}
-                                            className="flex items-center justify-between group py-1"
-                                        >
-                                            <span className="text-gray-600 group-hover:text-orange-600 transition-colors font-medium">
-                                                {cat.name}
-                                            </span>
-                                            <span className="bg-white text-gray-400 group-hover:bg-orange-500 group-hover:text-white px-2 py-0.5 rounded text-xs font-bold transition-all shadow-sm">
-                                                {cat.count}
-                                            </span>
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
                         </div>
 
                     </div>

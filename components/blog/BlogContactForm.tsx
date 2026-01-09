@@ -70,8 +70,8 @@ export default function BlogContactForm({ slug }: BlogContactFormProps) {
     };
 
     return (
-        <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 sticky top-24">
-            <h3 className="text-2xl font-bold text-slate-900 mb-2">Request More Info</h3>
+        <div className="bg-[#FFF7ED] rounded-2xl shadow-lg border border-orange-100 p-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">Request More Info</h3>
             <p className="text-gray-600 mb-8">Get expert guidance on your SAP career path.</p>
 
             {status === 'success' ? (
@@ -88,7 +88,7 @@ export default function BlogContactForm({ slug }: BlogContactFormProps) {
                             required
                             value={formData.name}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none"
+                            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none bg-white"
                         />
                     </div>
                     <div>
@@ -99,7 +99,7 @@ export default function BlogContactForm({ slug }: BlogContactFormProps) {
                             required
                             value={formData.email}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none"
+                            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none bg-white"
                         />
                     </div>
                     <div className="flex gap-2">
@@ -125,7 +125,7 @@ export default function BlogContactForm({ slug }: BlogContactFormProps) {
                             required
                             value={formData.phone}
                             onChange={handleChange}
-                            className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none"
+                            className="flex-1 min-w-0 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none bg-white"
                         />
                     </div>
                     <div>
@@ -148,7 +148,7 @@ export default function BlogContactForm({ slug }: BlogContactFormProps) {
                             placeholder="Tell us about your requirements..."
                             value={formData.message}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none resize-none"
+                            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none resize-none bg-white"
                         ></textarea>
                     </div>
 
@@ -163,7 +163,7 @@ export default function BlogContactForm({ slug }: BlogContactFormProps) {
                     >
                         {status === 'loading' ? 'Submitting...' : 'Schedule Free Counseling'}
                     </button>
-                    <p className="text-center text-xs text-gray-400">By submitting, you agree to our privacy policy.</p>
+                    <p className="text-center text-xs text-gray-500">By submitting, you agree to our privacy policy.</p>
                 </form>
             )}
         </div>
