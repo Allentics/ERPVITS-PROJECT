@@ -5,12 +5,12 @@ import BlogCallout from './BlogCallout';
 
 const SapAribaSourcingConfigContent = () => {
     return (
-        <div className="prose prose-lg prose-slate max-w-none 
-            prose-headings:text-slate-900 prose-headings:font-bold 
+        <div className="prose prose-lg prose-gray max-w-none 
+            prose-headings:text-gray-900 prose-headings:font-bold 
             prose-a:text-orange-600 hover:prose-a:text-orange-700 
             prose-img:rounded-2xl prose-img:shadow-lg prose-img:my-8
-            prose-p:leading-relaxed prose-p:text-slate-600
-            prose-li:text-slate-600 blog-content">
+            prose-p:leading-relaxed prose-p:text-gray-600
+            prose-li:text-gray-600 blog-content">
 
             <p>
                 Configuring <strong>SAP Ariba Sourcing</strong> is more than just a cost-cutting exercise—it's about <strong>Streamlining Procurement Processes</strong> to drive organizational efficiency.
@@ -23,28 +23,16 @@ const SapAribaSourcingConfigContent = () => {
             </p>
             <ul className="space-y-3 mt-4 mb-8 list-none pl-0">
                 <li className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 text-green-500 mt-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    </div>
-                    <span className="text-slate-700">Conduct competitive bidding events and eAuctions</span>
+                    <span className="text-gray-700 font-medium">Conduct competitive bidding events and eAuctions</span>
                 </li>
                 <li className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 text-green-500 mt-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    </div>
-                    <span className="text-slate-700">Manage supplier relationships effectively</span>
+                    <span className="text-gray-700 font-medium">Manage supplier relationships effectively</span>
                 </li>
                 <li className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 text-green-500 mt-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    </div>
-                    <span className="text-slate-700">Achieve cost savings through strategic negotiations</span>
+                    <span className="text-gray-700 font-medium">Achieve cost savings through strategic negotiations</span>
                 </li>
                 <li className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 text-green-500 mt-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    </div>
-                    <span className="text-slate-700">Maintain compliance and transparency throughout the sourcing process</span>
+                    <span className="text-gray-700 font-medium">Maintain compliance and transparency throughout the sourcing process</span>
                 </li>
             </ul>
 
@@ -87,21 +75,21 @@ const SapAribaSourcingConfigContent = () => {
             <h3 className="text-xl font-bold mt-6 mb-3">Project Templates</h3>
             <p>SAP Ariba guided sourcing relies heavily on well-configured templates that standardize your sourcing processes.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-                <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
-                    <h4 className="font-bold text-slate-900 !mt-0">RFI (Request for Information)</h4>
-                    <p className="text-sm text-slate-600 !my-1">Gather supplier capabilities.</p>
+                <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <h4 className="font-bold text-gray-900 !mt-0">RFI (Request for Information)</h4>
+                    <p className="text-sm text-gray-600 !my-1">Gather supplier capabilities.</p>
                 </div>
-                <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
-                    <h4 className="font-bold text-slate-900 !mt-0">RFP (Request for Proposal)</h4>
-                    <p className="text-sm text-slate-600 !my-1">Detailed proposal requests.</p>
+                <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <h4 className="font-bold text-gray-900 !mt-0">RFP (Request for Proposal)</h4>
+                    <p className="text-sm text-gray-600 !my-1">Detailed proposal requests.</p>
                 </div>
-                <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
-                    <h4 className="font-bold text-slate-900 !mt-0">RFQ (Request for Quote)</h4>
-                    <p className="text-sm text-slate-600 !my-1">Price-focused competitions.</p>
+                <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <h4 className="font-bold text-gray-900 !mt-0">RFQ (Request for Quote)</h4>
+                    <p className="text-sm text-gray-600 !my-1">Price-focused competitions.</p>
                 </div>
-                <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
-                    <h4 className="font-bold text-slate-900 !mt-0">Auction Events</h4>
-                    <p className="text-sm text-slate-600 !my-1">Real-time competitive bidding.</p>
+                <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <h4 className="font-bold text-gray-900 !mt-0">Auction Events</h4>
+                    <p className="text-sm text-gray-600 !my-1">Real-time competitive bidding.</p>
                 </div>
             </div>
 
@@ -147,30 +135,30 @@ const SapAribaSourcingConfigContent = () => {
             <p>Enable comprehensive audit logging for user access, configuration changes, and bid modifications. Implement robust security through RBAC, IP restrictions, MFA, and data encryption.</p>
 
             <h2 className="text-2xl font-bold mt-8 mb-4">Common Configuration Challenges and Solutions</h2>
-            <div className="overflow-x-auto my-6 rounded-xl border border-slate-200">
-                <table className="min-w-full divide-y divide-slate-200 text-sm md:text-base">
-                    <thead className="bg-slate-50">
+            <div className="overflow-x-auto my-6 rounded-xl border border-gray-200">
+                <table className="min-w-full divide-y divide-gray-200 text-sm md:text-base">
+                    <thead className="bg-gray-50">
                         <tr>
-                            <th className="px-4 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Challenge</th>
-                            <th className="px-4 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Solution</th>
+                            <th className="px-4 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">Challenge</th>
+                            <th className="px-4 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">Solution</th>
                         </tr>
                     </thead>
-                    <tbody className="bg-white divide-y divide-slate-200">
+                    <tbody className="bg-white divide-y divide-gray-200">
                         <tr>
-                            <td className="px-4 py-3 font-semibold text-slate-900">Overly Complex Workflows</td>
-                            <td className="px-4 py-3 text-slate-600">Start with streamlined approval paths and add layers only when necessary.</td>
+                            <td className="px-4 py-3 font-semibold text-gray-900">Overly Complex Workflows</td>
+                            <td className="px-4 py-3 text-gray-600">Start with streamlined approval paths and add layers only when necessary.</td>
                         </tr>
                         <tr>
-                            <td className="px-4 py-3 font-semibold text-slate-900">Poor Supplier Adoption</td>
-                            <td className="px-4 py-3 text-slate-600">Simplify supplier registration and provide comprehensive onboarding support.</td>
+                            <td className="px-4 py-3 font-semibold text-gray-900">Poor Supplier Adoption</td>
+                            <td className="px-4 py-3 text-gray-600">Simplify supplier registration and provide comprehensive onboarding support.</td>
                         </tr>
                         <tr>
-                            <td className="px-4 py-3 font-semibold text-slate-900">Integration Issues</td>
-                            <td className="px-4 py-3 text-slate-600">Use SAP Ariba's standard integration patterns and work closely with IT teams.</td>
+                            <td className="px-4 py-3 font-semibold text-gray-900">Integration Issues</td>
+                            <td className="px-4 py-3 text-gray-600">Use SAP Ariba's standard integration patterns and work closely with IT teams.</td>
                         </tr>
                         <tr>
-                            <td className="px-4 py-3 font-semibold text-slate-900">Inconsistent Event Creation</td>
-                            <td className="px-4 py-3 text-slate-600">Enforce template usage and limit custom modifications.</td>
+                            <td className="px-4 py-3 font-semibold text-gray-900">Inconsistent Event Creation</td>
+                            <td className="px-4 py-3 text-gray-600">Enforce template usage and limit custom modifications.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -190,21 +178,21 @@ const SapAribaSourcingConfigContent = () => {
 
             <h2 className="text-2xl font-bold mt-8 mb-4">Frequently Asked Questions</h2>
             <div className="space-y-4">
-                <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
-                    <h5 className="font-bold text-slate-900 mt-1 mb-2">What is SAP Ariba Sourcing?</h5>
-                    <p className="text-sm text-slate-600 m-0">SAP Ariba Sourcing is a cloud-based strategic sourcing solution for competitive bidding, supplier management, and cost savings.</p>
+                <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <h5 className="font-bold text-gray-900 mt-1 mb-2">What is SAP Ariba Sourcing?</h5>
+                    <p className="text-sm text-gray-600 m-0">SAP Ariba Sourcing is a cloud-based strategic sourcing solution for competitive bidding, supplier management, and cost savings.</p>
+                </div>
+                <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <h5 className="font-bold text-gray-900 mt-1 mb-2">What are the prerequisites for SAP Ariba Sourcing configuration?</h5>
+                    <p className="text-sm text-gray-600 m-0">Administrative access, sourcing objectives, supplier data, process documentation, and stakeholder alignment.</p>
+                </div>
+                <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <h5 className="font-bold text-gray-900 mt-1 mb-2">How long does it take to configure SAP Ariba Sourcing?</h5>
+                    <p className="text-sm text-gray-600 m-0">Typically 4-12 weeks for initial setup, depending on organizational complexity.</p>
                 </div>
                 <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
-                    <h5 className="font-bold text-slate-900 mt-1 mb-2">What are the prerequisites for SAP Ariba Sourcing configuration?</h5>
-                    <p className="text-sm text-slate-600 m-0">Administrative access, sourcing objectives, supplier data, process documentation, and stakeholder alignment.</p>
-                </div>
-                <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
-                    <h5 className="font-bold text-slate-900 mt-1 mb-2">How long does it take to configure SAP Ariba Sourcing?</h5>
-                    <p className="text-sm text-slate-600 m-0">Typically 4-12 weeks for initial setup, depending on organizational complexity.</p>
-                </div>
-                <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
-                    <h5 className="font-bold text-slate-900 mt-1 mb-2">What is SAP Ariba Guided Sourcing?</h5>
-                    <p className="text-sm text-slate-600 m-0">It automates sourcing for routine purchases using commodity-specific scenarios and smart questionnaires.</p>
+                    <h5 className="font-bold text-gray-900 mt-1 mb-2">What is SAP Ariba Guided Sourcing?</h5>
+                    <p className="text-sm text-gray-600 m-0">It automates sourcing for routine purchases using commodity-specific scenarios and smart questionnaires.</p>
                 </div>
             </div>
         </div>

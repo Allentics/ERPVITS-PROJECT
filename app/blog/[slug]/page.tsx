@@ -22,6 +22,7 @@ import HowSapFieldglassTransformingContent from '@/components/blog/HowSapFieldgl
 
 import MtoAndStoProcessContent from '@/components/blog/MtoAndStoProcessContent';
 import MasterSapAribaIndustryContent from '@/components/blog/MasterSapAribaIndustryContent';
+import SapTrmMasterDataContent from '@/components/blog/SapTrmMasterDataContent';
 import SapTrmComplementaryContent from '@/components/blog/SapTrmComplementaryContent';
 import { Metadata } from 'next';
 
@@ -32,7 +33,7 @@ const blogHeroImages: Record<string, string> = {
     'sap-ariba-sourcing-configuration': '/images/sap-ariba-sourcing.webp',
 
 
-    'sap-fico-cash-journal-configuration': '/images/step-by-step-cash-journal-sap-fico.webp',
+    'sap-fico-cash-journal-configuration': '/assets/blog/sap-fico-cash-journal-header.png',
     'sap-tcodes-list-pdf': '/images/sap-tcodes-list-hero.webp',
     'sap-sd-process-flow': '/images/sap-sd-workflow.webp',
     'sap-s4hana-mm-career-opportunities': '/images/sap-s4hana-mm.webp',
@@ -40,7 +41,9 @@ const blogHeroImages: Record<string, string> = {
     'sap-fieldglass-vs-traditional-vms': '/images/sap-fieldglass-vs-vms.webp',
     'sap-cpi-interview-questions': '/images/sap-cpi-interview.webp',
     'top-10-sap-c4c-technical-scenarios': '/images/sap-c4c-technical.webp',
-    'sap-training-institutes': '/images/sap-training-institutes.webp',
+    'top-7-sap-training-institutes': '/images/sap-training-institutes.webp',
+
+
     'sap-mm-course-complete-guide': '/images/blog/master-sap-mm-materials-management.webp',
     'how-sap-ariba-is-powering-intelligent-spend-management': '/images/blog/sap-ariba-spend-management.webp',
     'top-ten-tools-techniques-for-efficient-abap-on-cloud-programming': '/images/blog/top-10-tools-abap-cloud.webp',
@@ -48,6 +51,7 @@ const blogHeroImages: Record<string, string> = {
 
     'mto-and-sto-process-in-sap': '/images/blog/mto-sto-process.webp',
     'master-sap-ariba-with-industry-leading-online-training': '/images/blog/master-sap-ariba.webp',
+    'sap-trm-master-data-essentials': '/images/SAP TRM Blog Image ERPVITS.webp',
     'sap-trm-complementary-technologies': '/images/blog/sap-trm-complementary.webp',
 };
 
@@ -70,11 +74,21 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
 
-    const { data: post } = await supabase
+    let post = null;
+
+    // Try fetching from Supabase first
+    const { data: dbPost } = await supabase
         .from('blog_posts')
         .select('*')
         .eq('id', slug)
         .single();
+
+    if (dbPost) {
+        post = dbPost;
+    } else {
+        // Fallback to local posts
+        post = localPosts.find((p: any) => p.id === slug);
+    }
 
     if (!post) {
         notFound();
@@ -182,6 +196,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
                                 {slug === 'mto-and-sto-process-in-sap' && <MtoAndStoProcessContent />}
                                 {slug === 'master-sap-ariba-with-industry-leading-online-training' && <MasterSapAribaIndustryContent />}
+                                {slug === 'sap-trm-master-data-essentials' && <SapTrmMasterDataContent />}
                                 {slug === 'sap-trm-complementary-technologies' && <SapTrmComplementaryContent />}
 
                                 {![
@@ -193,7 +208,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
                                     'how-sap-fieldglass-transforming-global-contingent-workforce-market',
                                     'mto-and-sto-process-in-sap', 'master-sap-ariba-with-industry-leading-online-training',
-                                    'sap-trm-complementary-technologies'
+                                    'sap-trm-complementary-technologies', 'sap-trm-master-data-essentials'
                                 ].includes(slug) && (
                                         <div dangerouslySetInnerHTML={{ __html: post.content }} />
                                     )}

@@ -5,12 +5,12 @@ import BlogCallout from './BlogCallout';
 
 const MtoAndStoProcessContent = () => {
     return (
-        <div className="prose prose-lg prose-slate max-w-none 
-            prose-headings:text-slate-900 prose-headings:font-bold 
+        <div className="prose prose-lg prose-gray max-w-none 
+            prose-headings:text-gray-900 prose-headings:font-bold 
             prose-a:text-orange-600 hover:prose-a:text-orange-700 
             prose-img:rounded-2xl prose-img:shadow-lg prose-img:my-8
-            prose-p:leading-relaxed prose-p:text-slate-600
-            prose-li:text-slate-600 blog-content">
+            prose-p:leading-relaxed prose-p:text-gray-600
+            prose-li:text-gray-600 blog-content">
 
             <p>
                 To remain competitive within the modern marketplace, businesses need to adopt supply chain solutions that are holistic and modify within a rapidly shifting market landscape.
@@ -57,45 +57,45 @@ const MtoAndStoProcessContent = () => {
             </p>
 
             <h2 className="text-2xl font-bold mt-8 mb-4">Difference Between MTO and STO in SAP</h2>
-            <div className="overflow-x-auto my-6 rounded-xl border border-slate-200">
-                <table className="min-w-full divide-y divide-slate-200 text-sm md:text-base">
-                    <thead className="bg-slate-50">
+            <div className="overflow-x-auto my-6 rounded-xl border border-gray-200">
+                <table className="min-w-full divide-y divide-gray-200 text-sm md:text-base">
+                    <thead className="bg-gray-50">
                         <tr>
-                            <th className="px-4 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Feature</th>
-                            <th className="px-4 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">STO (Stock Transport Order)</th>
-                            <th className="px-4 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">MTO (Make-to-Order)</th>
+                            <th className="px-4 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">Feature</th>
+                            <th className="px-4 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">STO (Stock Transport Order)</th>
+                            <th className="px-4 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">MTO (Make-to-Order)</th>
                         </tr>
                     </thead>
-                    <tbody className="bg-white divide-y divide-slate-200">
+                    <tbody className="bg-white divide-y divide-gray-200">
                         <tr>
-                            <td className="px-4 py-3 font-semibold text-slate-900">Definition</td>
-                            <td className="px-4 py-3 text-slate-600">Internal procurement operations concerning the transfer of stock within a company’s plants or storage areas.</td>
-                            <td className="px-4 py-3 text-slate-600">MTO pertains to a production strategy whereby products are only manufactured after an order is placed by the customer.</td>
+                            <td className="px-4 py-3 font-semibold text-gray-900">Definition</td>
+                            <td className="px-4 py-3 text-gray-600">Internal procurement operations concerning the transfer of stock within a company’s plants or storage areas.</td>
+                            <td className="px-4 py-3 text-gray-600">MTO pertains to a production strategy whereby products are only manufactured after an order is placed by the customer.</td>
                         </tr>
                         <tr>
-                            <td className="px-4 py-3 font-semibold text-slate-900">Business Purpose</td>
-                            <td className="px-4 py-3 text-slate-600">Inventory adjustment across various sites of the same company.</td>
-                            <td className="px-4 py-3 text-slate-600">Custom-made products to fulfill specific requirements of customers.</td>
+                            <td className="px-4 py-3 font-semibold text-gray-900">Business Purpose</td>
+                            <td className="px-4 py-3 text-gray-600">Inventory adjustment across various sites of the same company.</td>
+                            <td className="px-4 py-3 text-gray-600">Custom-made products to fulfill specific requirements of customers.</td>
                         </tr>
                         <tr>
-                            <td className="px-4 py-3 font-semibold text-slate-900">Trigger Point</td>
-                            <td className="px-4 py-3 text-slate-600">Driven by internal schedules or by the need for stock in another location.</td>
-                            <td className="px-4 py-3 text-slate-600">Started off by a customer sales order.</td>
+                            <td className="px-4 py-3 font-semibold text-gray-900">Trigger Point</td>
+                            <td className="px-4 py-3 text-gray-600">Driven by internal schedules or by the need for stock in another location.</td>
+                            <td className="px-4 py-3 text-gray-600">Started off by a customer sales order.</td>
                         </tr>
                         <tr>
-                            <td className="px-4 py-3 font-semibold text-slate-900">Modules Involved</td>
-                            <td className="px-4 py-3 text-slate-600">Primarily SAP MM (Materials Management) and in some cases SAP SD for intercompany STO.</td>
-                            <td className="px-4 py-3 text-slate-600">SAP SD (Sales & Distribution) and SAP PP (Production Planning) pertain to these functions.</td>
+                            <td className="px-4 py-3 font-semibold text-gray-900">Modules Involved</td>
+                            <td className="px-4 py-3 text-gray-600">Primarily SAP MM (Materials Management) and in some cases SAP SD for intercompany STO.</td>
+                            <td className="px-4 py-3 text-gray-600">SAP SD (Sales & Distribution) and SAP PP (Production Planning) pertain to these functions.</td>
                         </tr>
                         <tr>
-                            <td className="px-4 py-3 font-semibold text-slate-900">Customization Level</td>
-                            <td className="px-4 py-3 text-slate-600">Low-value class materials and their movement.</td>
-                            <td className="px-4 py-3 text-slate-600">High – custom-made products.</td>
+                            <td className="px-4 py-3 font-semibold text-gray-900">Customization Level</td>
+                            <td className="px-4 py-3 text-gray-600">Low-value class materials and their movement.</td>
+                            <td className="px-4 py-3 text-gray-600">High – custom-made products.</td>
                         </tr>
                         <tr>
-                            <td className="px-4 py-3 font-semibold text-slate-900">Example</td>
-                            <td className="px-4 py-3 text-slate-600">Transporting 100 units from Plant A to Plant B for the fulfillment of demand.</td>
-                            <td className="px-4 py-3 text-slate-600">Production of the machine as per the customer’s requirements.</td>
+                            <td className="px-4 py-3 font-semibold text-gray-900">Example</td>
+                            <td className="px-4 py-3 text-gray-600">Transporting 100 units from Plant A to Plant B for the fulfillment of demand.</td>
+                            <td className="px-4 py-3 text-gray-600">Production of the machine as per the customer’s requirements.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -111,8 +111,8 @@ const MtoAndStoProcessContent = () => {
                 <div className="flex gap-4 items-start">
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 font-bold">1</div>
                     <div>
-                        <h4 className="text-lg font-bold text-slate-900 !mt-0 !mb-1">Creation of Stock Transport Order</h4>
-                        <p className="text-sm text-slate-600 !mt-0">
+                        <h4 className="text-lg font-bold text-gray-900 !mt-0 !mb-1">Creation of Stock Transport Order</h4>
+                        <p className="text-sm text-gray-600 !mt-0">
                             Start with T-code <strong>ME21N</strong>. Choose document type <strong>UB</strong> for intra-company, <strong>NB</strong> for inter-company.
                             Fill in the supplying and receiving plant details.
                         </p>
@@ -121,8 +121,8 @@ const MtoAndStoProcessContent = () => {
                 <div className="flex gap-4 items-start">
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 font-bold">2</div>
                     <div>
-                        <h4 className="text-lg font-bold text-slate-900 !mt-0 !mb-1">Delivery Processing</h4>
-                        <p className="text-sm text-slate-600 !mt-0">
+                        <h4 className="text-lg font-bold text-gray-900 !mt-0 !mb-1">Delivery Processing</h4>
+                        <p className="text-sm text-gray-600 !mt-0">
                             For STOs with delivery, create outbound delivery using <strong>VL10B, VL01N, or VL10D</strong>. The system performs an availability check.
                         </p>
                     </div>
@@ -130,8 +130,8 @@ const MtoAndStoProcessContent = () => {
                 <div className="flex gap-4 items-start">
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 font-bold">3</div>
                     <div>
-                        <h4 className="text-lg font-bold text-slate-900 !mt-0 !mb-1">Goods Issue Posting</h4>
-                        <p className="text-sm text-slate-600 !mt-0">
+                        <h4 className="text-lg font-bold text-gray-900 !mt-0 !mb-1">Goods Issue Posting</h4>
+                        <p className="text-sm text-gray-600 !mt-0">
                             Post goods issue using <strong>VL02N</strong> for delivery-based processes, or <strong>MIGO</strong> with the appropriate movement type.
                         </p>
                     </div>
@@ -139,8 +139,8 @@ const MtoAndStoProcessContent = () => {
                 <div className="flex gap-4 items-start">
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 font-bold">4</div>
                     <div>
-                        <h4 className="text-lg font-bold text-slate-900 !mt-0 !mb-1">Transportation and Tracking</h4>
-                        <p className="text-sm text-slate-600 !mt-0">
+                        <h4 className="text-lg font-bold text-gray-900 !mt-0 !mb-1">Transportation and Tracking</h4>
+                        <p className="text-sm text-gray-600 !mt-0">
                             Plan shipments using <strong>VT01N</strong> and load them using <strong>LM30</strong>. Monitor stock in transit with <strong>MB5T</strong>.
                         </p>
                     </div>
@@ -148,8 +148,8 @@ const MtoAndStoProcessContent = () => {
                 <div className="flex gap-4 items-start">
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 font-bold">5</div>
                     <div>
-                        <h4 className="text-lg font-bold text-slate-900 !mt-0 !mb-1">Processing Goods Receipt</h4>
-                        <p className="text-sm text-slate-600 !mt-0">
+                        <h4 className="text-lg font-bold text-gray-900 !mt-0 !mb-1">Processing Goods Receipt</h4>
+                        <p className="text-sm text-gray-600 !mt-0">
                             Post Customer Stock Reservation Order. For the receiving plant, orders can be generated automatically (EWM) or manually using <strong>VL31N</strong>.
                             Post goods receipt using <strong>MIGO</strong>.
                         </p>
@@ -158,8 +158,8 @@ const MtoAndStoProcessContent = () => {
                 <div className="flex gap-4 items-start">
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 font-bold">6</div>
                     <div>
-                        <h4 className="text-lg font-bold text-slate-900 !mt-0 !mb-1">Billing and Accounting (Inter-Company Only)</h4>
-                        <p className="text-sm text-slate-600 !mt-0">
+                        <h4 className="text-lg font-bold text-gray-900 !mt-0 !mb-1">Billing and Accounting (Inter-Company Only)</h4>
+                        <p className="text-sm text-gray-600 !mt-0">
                             Create a billing document using <strong>VF01</strong> in the supplying company. Execute invoice verification using <strong>MIRO</strong>.
                         </p>
                     </div>
@@ -179,25 +179,25 @@ const MtoAndStoProcessContent = () => {
 
             <h2 className="text-2xl font-bold mt-8 mb-4">SAP MTO Process: Make-to-Order Mastery</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-                <div className="bg-slate-50 p-5 rounded-lg border border-slate-100">
-                    <h4 className="font-bold text-slate-900 !mt-0">Customer Focus</h4>
-                    <p className="text-sm text-slate-600 !my-1">Production activities start only when orders are received from customers, eliminating the need for demand forecasting.</p>
+                <div className="bg-gray-50 p-5 rounded-lg border border-gray-100">
+                    <h4 className="font-bold text-gray-900 !mt-0">Customer Focus</h4>
+                    <p className="text-sm text-gray-600 !my-1">Production activities start only when orders are received from customers, eliminating the need for demand forecasting.</p>
                 </div>
-                <div className="bg-slate-50 p-5 rounded-lg border border-slate-100">
-                    <h4 className="font-bold text-slate-900 !mt-0">Order-Based MRP Execution</h4>
-                    <p className="text-sm text-slate-600 !my-1">A sales order serves as the basis for MRP, guaranteeing that all necessary parts will be acquired and manufactured for the order.</p>
+                <div className="bg-gray-50 p-5 rounded-lg border border-gray-100">
+                    <h4 className="font-bold text-gray-900 !mt-0">Order-Based MRP Execution</h4>
+                    <p className="text-sm text-gray-600 !my-1">A sales order serves as the basis for MRP, guaranteeing that all necessary parts will be acquired and manufactured for the order.</p>
                 </div>
-                <div className="bg-slate-50 p-5 rounded-lg border border-slate-100">
-                    <h4 className="font-bold text-slate-900 !mt-0">Reduced Costs</h4>
-                    <p className="text-sm text-slate-600 !my-1">Businesses do not incur costs associated with storage and excess production, as there are no manufactured products kept in inventory.</p>
+                <div className="bg-gray-50 p-5 rounded-lg border border-gray-100">
+                    <h4 className="font-bold text-gray-900 !mt-0">Reduced Costs</h4>
+                    <p className="text-sm text-gray-600 !my-1">Businesses do not incur costs associated with storage and excess production, as there are no manufactured products kept in inventory.</p>
                 </div>
-                <div className="bg-slate-50 p-5 rounded-lg border border-slate-100">
-                    <h4 className="font-bold text-slate-900 !mt-0">System Cross-Integration</h4>
-                    <p className="text-sm text-slate-600 !my-1">The MTO process connects SD, PP, and MM in SAP, facilitating the entire business process from order reception through production and delivery.</p>
+                <div className="bg-gray-50 p-5 rounded-lg border border-gray-100">
+                    <h4 className="font-bold text-gray-900 !mt-0">System Cross-Integration</h4>
+                    <p className="text-sm text-gray-600 !my-1">The MTO process connects SD, PP, and MM in SAP, facilitating the entire business process from order reception through production and delivery.</p>
                 </div>
-                <div className="bg-slate-50 p-5 rounded-lg border border-slate-100 md:col-span-2">
-                    <h4 className="font-bold text-slate-900 !mt-0">Extreme Order Personalization</h4>
-                    <p className="text-sm text-slate-600 !my-1">Ideal for the engineering, automotive, and electronics industries, where orders are bespoke and differ from one customer to another.</p>
+                <div className="bg-gray-50 p-5 rounded-lg border border-gray-100 md:col-span-2">
+                    <h4 className="font-bold text-gray-900 !mt-0">Extreme Order Personalization</h4>
+                    <p className="text-sm text-gray-600 !my-1">Ideal for the engineering, automotive, and electronics industries, where orders are bespoke and differ from one customer to another.</p>
                 </div>
             </div>
 
@@ -208,25 +208,25 @@ const MtoAndStoProcessContent = () => {
             </p>
 
             <h3 className="text-xl font-bold mt-6 mb-3">Understanding MM & SD Integration in STO/MTO</h3>
-            <div className="overflow-x-auto my-6 rounded-xl border border-slate-200">
-                <table className="min-w-full divide-y divide-slate-200 text-sm md:text-base">
-                    <thead className="bg-slate-50">
+            <div className="overflow-x-auto my-6 rounded-xl border border-gray-200">
+                <table className="min-w-full divide-y divide-gray-200 text-sm md:text-base">
+                    <thead className="bg-gray-50">
                         <tr>
-                            <th className="px-4 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Process</th>
-                            <th className="px-4 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">MM Role</th>
-                            <th className="px-4 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">SD Role</th>
+                            <th className="px-4 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">Process</th>
+                            <th className="px-4 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">MM Role</th>
+                            <th className="px-4 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">SD Role</th>
                         </tr>
                     </thead>
-                    <tbody className="bg-white divide-y divide-slate-200">
+                    <tbody className="bg-white divide-y divide-gray-200">
                         <tr>
-                            <td className="px-4 py-3 font-semibold text-slate-900">STO (Stock Transfer Order)</td>
-                            <td className="px-4 py-3 text-slate-600">Purchase Order (ME21N), Goods Movement (MIGO)</td>
-                            <td className="px-4 py-3 text-slate-600">Sales Order (VA01), Billing (VF01)</td>
+                            <td className="px-4 py-3 font-semibold text-gray-900">STO (Stock Transfer Order)</td>
+                            <td className="px-4 py-3 text-gray-600">Purchase Order (ME21N), Goods Movement (MIGO)</td>
+                            <td className="px-4 py-3 text-gray-600">Sales Order (VA01), Billing (VF01)</td>
                         </tr>
                         <tr>
-                            <td className="px-4 py-3 font-semibold text-slate-900">MTO (Make-to-Order)</td>
-                            <td className="px-4 py-3 text-slate-600">Procurement, Production Orders</td>
-                            <td className="px-4 py-3 text-slate-600">Sales Order (VA01), Delivery (VL01N)</td>
+                            <td className="px-4 py-3 font-semibold text-gray-900">MTO (Make-to-Order)</td>
+                            <td className="px-4 py-3 text-gray-600">Procurement, Production Orders</td>
+                            <td className="px-4 py-3 text-gray-600">Sales Order (VA01), Delivery (VL01N)</td>
                         </tr>
                     </tbody>
                 </table>
@@ -303,31 +303,13 @@ const MtoAndStoProcessContent = () => {
             <h3 className="text-xl font-bold mt-6 mb-3">Benefits and Automation</h3>
             <ul className="space-y-3 mt-4 mb-8 list-none pl-0">
                 <li className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 text-green-500 mt-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <circle cx="12" cy="12" r="10" />
-                            <path d="m9 12 2 2 4-4" />
-                        </svg>
-                    </div>
-                    <span className="text-slate-700">Invoice-free order fulfillment (no finished goods inventory)</span>
+                    <span className="text-gray-700 font-medium">Invoice-free order fulfillment (no finished goods inventory)</span>
                 </li>
                 <li className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 text-green-500 mt-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <circle cx="12" cy="12" r="10" />
-                            <path d="m9 12 2 2 4-4" />
-                        </svg>
-                    </div>
-                    <span className="text-slate-700">Real-time MM–SD coordination for delivery accuracy</span>
+                    <span className="text-gray-700 font-medium">Real-time MM–SD coordination for delivery accuracy</span>
                 </li>
                 <li className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 text-green-500 mt-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <circle cx="12" cy="12" r="10" />
-                            <path d="m9 12 2 2 4-4" />
-                        </svg>
-                    </div>
-                    <span className="text-slate-700">Exception management for enhanced customer commitment</span>
+                    <span className="text-gray-700 font-medium">Exception management for enhanced customer commitment</span>
                 </li>
             </ul>
 

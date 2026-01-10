@@ -4,12 +4,12 @@ import BlogCallout from './BlogCallout';
 
 const SapMmCourseCompleteContent = () => {
     return (
-        <div className="prose prose-lg prose-slate max-w-none 
-            prose-headings:text-slate-900 prose-headings:font-bold 
+        <div className="prose prose-lg prose-gray max-w-none 
+            prose-headings:text-gray-900 prose-headings:font-bold 
             prose-a:text-orange-600 hover:prose-a:text-orange-700 
             prose-img:rounded-2xl prose-img:shadow-lg prose-img:my-8
-            prose-p:leading-relaxed prose-p:text-slate-600
-            prose-li:text-slate-600 blog-content">
+            prose-p:leading-relaxed prose-p:text-gray-600
+            prose-li:text-gray-600 blog-content">
 
             <p>
                 In today's competitive industrial landscape, operational efficiency separates market leaders from the rest.
@@ -96,15 +96,15 @@ const SapMmCourseCompleteContent = () => {
 
             <h2 className="text-2xl font-bold mt-8 mb-4">Career Pathways in SAP: Functional vs. Technical Specializations</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
-                    <h4 className="text-lg font-bold text-slate-900 mb-2">Functional Consultants (MM, SD, FI, QM)</h4>
+                <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                    <h4 className="text-lg font-bold text-gray-900 mb-2">Functional Consultants (MM, SD, FI, QM)</h4>
                     <p className="text-sm">
                         These roles act as a glue between the business and tech worlds. As an MM consultant, you adapt the system to the needs of the procurement department,
                         which involves configuring the systems to match various business processes.
                     </p>
                 </div>
-                <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
-                    <h4 className="text-lg font-bold text-slate-900 mb-2">Technical Consultants</h4>
+                <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                    <h4 className="text-lg font-bold text-gray-900 mb-2">Technical Consultants</h4>
                     <p className="text-sm">
                         <strong>ABAP Developers:</strong> Customizers who code based on specific needs.
                         <strong>Basis Administrators:</strong> Infrastructure experts who look after server landscapes and system health.

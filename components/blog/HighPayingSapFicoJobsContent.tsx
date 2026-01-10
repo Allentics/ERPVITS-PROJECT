@@ -5,12 +5,12 @@ import BlogCallout from './BlogCallout';
 
 export default function HighPayingSapFicoJobsContent() {
     return (
-        <div className="prose prose-lg prose-slate max-w-none 
-            prose-headings:text-slate-900 prose-headings:font-bold 
+        <div className="prose prose-lg prose-gray max-w-none 
+            prose-headings:text-gray-900 prose-headings:font-bold 
             prose-a:text-orange-600 hover:prose-a:text-orange-700 
             prose-img:rounded-2xl prose-img:shadow-lg prose-img:my-8
-            prose-p:leading-relaxed prose-p:text-slate-600
-            prose-li:text-slate-600 blog-content">
+            prose-p:leading-relaxed prose-p:text-gray-600
+            prose-li:text-gray-600 blog-content">
 
             <p>
                 As digital transformation sweeps through enterprises, <strong>SAP FICO</strong> continues to be one of the most
@@ -23,21 +23,21 @@ export default function HighPayingSapFicoJobsContent() {
                 and business decision processes. There is a persistent shortage of skilled consultants, driving up salaries.
             </BlogCallout>
 
-            <h2 className="text-2xl font-bold text-slate-900 mt-10 mb-4">High-Paying SAP FICO Job Roles</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">High-Paying SAP FICO Job Roles</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-                <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
-                    <h3 className="font-bold text-slate-900 text-lg mb-2">SAP FICO Consultant</h3>
+                <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                    <h3 className="font-bold text-gray-900 text-lg mb-2">SAP FICO Consultant</h3>
                     <p className="text-sm mb-2 opacity-80">Focus on implementation and configuration.</p>
                     <p className="font-bold text-orange-600">₹8 - 25 LPA</p>
                 </div>
-                <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
-                    <h3 className="font-bold text-slate-900 text-lg mb-2">Finance Architect</h3>
+                <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                    <h3 className="font-bold text-gray-900 text-lg mb-2">Finance Architect</h3>
                     <p className="text-sm mb-2 opacity-80">Solution design and enterprise structure.</p>
                     <p className="font-bold text-orange-600">₹25 - 50 LPA</p>
                 </div>
             </div>
 
-            <h2 className="text-2xl font-bold text-slate-900 mt-10 mb-4">Salary by Experience</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Salary by Experience</h2>
             <div className="overflow-x-auto my-6">
                 <table className="min-w-full border border-gray-300 rounded-lg overflow-hidden">
                     <thead className="bg-orange-50 font-bold">
@@ -55,15 +55,15 @@ export default function HighPayingSapFicoJobsContent() {
                 </table>
             </div>
 
-            <h2 className="text-2xl font-bold text-slate-900 mt-10 mb-4">Essential Skills for Success</h2>
-            <ul className="list-disc pl-6 mb-6 space-y-2 text-slate-600">
+            <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Essential Skills for Success</h2>
+            <ul className="list-disc pl-6 mb-6 space-y-2 text-gray-600">
                 <li><strong>SAP S/4HANA Finance:</strong> Deep understanding of Central Finance and Fiori.</li>
                 <li><strong>G/L and AP/AR:</strong> Core accounting configuration skills.</li>
                 <li><strong>Profitability Analysis:</strong> Mastering CO-PA and Product Costing.</li>
                 <li><strong>Soft Skills:</strong> Strong analytical skills and client-facing communication.</li>
             </ul>
 
-            <h2 className="text-2xl font-bold text-slate-900 mt-10 mb-4">Conclusion</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Conclusion</h2>
             <p>
                 A career in SAP FICO is not just rewarding financially; it offers a path to becoming a key strategic advisor
                 for global businesses. Staying updated with S/4HANA advancements is the key to longevity in this field.

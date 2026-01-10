@@ -4,12 +4,12 @@ import BlogCallout from './BlogCallout';
 
 const HowSapAribaPoweringContent = () => {
     return (
-        <div className="prose prose-lg prose-slate max-w-none 
-            prose-headings:text-slate-900 prose-headings:font-bold 
+        <div className="prose prose-lg prose-gray max-w-none 
+            prose-headings:text-gray-900 prose-headings:font-bold 
             prose-a:text-orange-600 hover:prose-a:text-orange-700 
             prose-img:rounded-2xl prose-img:shadow-lg prose-img:my-8
-            prose-p:leading-relaxed prose-p:text-slate-600
-            prose-li:text-slate-600 blog-content">
+            prose-p:leading-relaxed prose-p:text-gray-600
+            prose-li:text-gray-600 blog-content">
 
             <p>
                 In the rapidly changing business environment of 2025, purchasing is now a key strategic role that directly impacts the organization's effectiveness and profitability.

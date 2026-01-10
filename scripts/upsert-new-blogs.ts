@@ -5,7 +5,7 @@ import * as path from 'path';
 dotenv.config({ path: path.join(process.cwd(), '.env.local') });
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 const blogPosts = [
@@ -83,7 +83,7 @@ const blogPosts = [
         id: "sap-fico-cash-journal-configuration",
         title: "Step-by-Step Cash Journal Configuration in SAP FICO",
         description: "Complete guide to Cash Journal Configuration in SAP FICO. Learn T-Codes, posting rules, and best practices for accurate cash management with hands-on configuration steps.",
-        image: "/images/sap-fico-cash-journal.png",
+        image: "/images/step-by-step-cash-journal-sap-fico.webp",
         date: "Dec 23, 2025",
         category: "SAP FICO",
         author: "ERPVITS Expert",
@@ -93,7 +93,7 @@ const blogPosts = [
         id: "sap-tcodes-list-pdf",
         title: "SAP Transaction Codes (TCodes): Download Complete SAP TCodes List PDF",
         description: "Complete guide to SAP Transaction Codes with downloadable PDF. Learn 238+ essential TCodes across 14 modules including FI, MM, SD, PP, HR and all SAP modules with quick reference guide.",
-        image: "/images/sap-tcodes-list.png",
+        image: "/images/sap-tcodes-list-hero.webp",
         date: "Dec 22, 2025",
         category: "SAP Technical",
         author: "ERPVITS Expert",
@@ -103,7 +103,7 @@ const blogPosts = [
         id: "sap-sd-process-flow",
         title: "SAP SD Process Flow: Complete Guide to Sales and Distribution Workflow",
         description: "Comprehensive guide to SAP SD process flow covering sales orders, delivery, billing, and payment. Master the complete order-to-cash cycle with transaction codes and best practices.",
-        image: "/images/sap-sd-process-flow.png",
+        image: "/images/sap-sd-workflow.webp",
         date: "Dec 17, 2025",
         category: "SAP SD",
         author: "ERPVITS Expert",
@@ -113,7 +113,7 @@ const blogPosts = [
         id: "sap-s4hana-mm-career-opportunities",
         title: "SAP S/4HANA MM Career Opportunities in India & Abroad",
         description: "Explore SAP S/4HANA MM career opportunities in India and abroad. Learn about roles, salaries, certification, and SAP online training benefits.",
-        image: "/images/sap-s4hana-mm-career.png",
+        image: "/images/sap-s4hana-mm.webp",
         date: "Dec 13, 2025",
         category: "SAP Career",
         author: "ERPVITS Expert",
@@ -123,7 +123,7 @@ const blogPosts = [
         id: "sap-ariba-supplier-login-tutorial",
         title: "SAP Ariba Supplier Login Tutorial: From Email Invitation to Portal Access",
         description: "Step-by-step guide for SAP Ariba supplier login, registration, and portal access. Learn how to navigate Ariba Network, manage buyer relationships, and optimize your supplier account.",
-        image: "/images/sap-ariba-supplier-login.png",
+        image: "/images/sap-ariba-supplier-login.webp",
         date: "Dec 12, 2025",
         category: "SAP Ariba",
         author: "ERPVITS Expert",
@@ -133,7 +133,7 @@ const blogPosts = [
         id: "sap-fieldglass-vs-traditional-vms",
         title: "SAP Fieldglass vs Traditional Vendor Management Systems (VMS): What Makes It Better?",
         description: "Discover why SAP Fieldglass is better than traditional VMS. Learn features, benefits & career scope. Enroll in SAP Fieldglass online training today.",
-        image: "/images/sap-fieldglass-vms.png",
+        image: "/images/sap-fieldglass-vs-vms.webp",
         date: "Dec 09, 2025",
         category: "SAP Fieldglass",
         author: "ERPVITS Expert",
@@ -143,7 +143,7 @@ const blogPosts = [
         id: "sap-cpi-interview-questions",
         title: "SAP CPI Interview Questions & Answers: Complete Guide",
         description: "Comprehensive SAP CPI interview questions covering basic to advanced topics. Prepare for SAP Cloud Platform Integration interviews with real scenarios, best practices, and technical deep-dives.",
-        image: "/images/sap-cpi-interview.png",
+        image: "/images/sap-cpi-interview.webp",
         date: "Dec 05, 2025",
         category: "SAP CPI",
         author: "ERPVITS Expert",
@@ -153,7 +153,7 @@ const blogPosts = [
         id: "top-10-sap-c4c-technical-scenarios",
         title: "Top 10 SAP C4C Technical Scenarios Every Consultant Should Know",
         description: "Explore key scenarios in SAP C4C Technical Training. Gain hands-on skills with ERPVITS SAP C4C online training & certification. Register now to advance your career.",
-        image: "/images/sap-c4c-scenarios.png",
+        image: "/images/Top 10 SAP C4C Technical Scenarios.webp",
         date: "Dec 03, 2025",
         category: "SAP C4C",
         author: "ERPVITS Expert",
@@ -163,7 +163,7 @@ const blogPosts = [
         id: "high-paying-sap-fico-jobs",
         title: "High Paying SAP FICO Jobs: Skills, Salary, and Career Path",
         description: "Explore high-paying SAP FICO jobs, career paths, salary trends for 2026, and in-demand skills. Complete guide to SAP FICO consultant opportunities with certification details.",
-        image: "/images/sap-fico-jobs.png",
+        image: "/images/sap-fico-jobs.webp",
         date: "Nov 28, 2025",
         category: "SAP Career",
         author: "ERPVITS Expert",
@@ -173,7 +173,7 @@ const blogPosts = [
         id: "top-7-sap-training-institutes",
         title: "Top 7 SAP Training Institutes in India: Comprehensive Review",
         description: "Looking for the best SAP training? Review of Top 7 SAP Training Institutes in India including Best Online Career, Henry Harvin, Udemy, ERPVITS, Visualpath, and more.",
-        image: "/images/sap-training-institutes.png",
+        image: "/images/sap-training-institutes.webp",
         date: "Nov 25, 2025",
         category: "SAP Career",
         author: "ERPVITS Expert",

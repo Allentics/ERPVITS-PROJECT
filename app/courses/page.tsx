@@ -57,52 +57,43 @@ export default function AllCoursesPage() {
                                 exit={{ opacity: 0, scale: 0.9 }}
                                 transition={{ duration: 0.2 }}
                                 key={course.id}
-                                className="bg-white rounded-xl shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100 overflow-hidden flex flex-col group"
+                                className="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group p-6"
                             >
-                                <div className="h-48 relative overflow-hidden">
-                                    {course.heroImage ? (
-                                        <img
-                                            src={course.heroImage}
-                                            alt={course.title}
-                                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                        />
-                                    ) : (
-                                        <div className="w-full h-full bg-slate-900 flex items-center justify-center p-6 text-center">
-                                            <h3 className="text-xl font-bold text-white relative z-10">{course.title}</h3>
-                                        </div>
-                                    )}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                                    <div className="absolute top-4 right-4 bg-orange-500 text-white px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider shadow-lg">
-                                        {course.category}
-                                    </div>
-                                    <h3 className="absolute bottom-4 left-4 text-xl font-bold text-white truncate right-4">{course.title}</h3>
+                                {/* Title Section */}
+                                <div className="mb-4">
+                                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#ff7a3d] transition-colors duration-300">
+                                        {course.title}
+                                    </h3>
+                                    <div className="h-1 w-12 bg-[#ff7a3d] mt-2 rounded-full"></div>
                                 </div>
 
-                                <div className="p-6 flex-1 flex flex-col">
-                                    <div className="flex items-center space-x-4 mb-4 text-sm text-gray-500">
-                                        <div className="flex items-center">
-                                            <Clock className="h-4 w-4 mr-1" />
-                                            <span>45 Hours</span>
-                                        </div>
-                                        <div className="flex items-center">
-                                            <BookOpen className="h-4 w-4 mr-1" />
-                                            <span>{course.curriculum?.length || 0} Modules</span>
-                                        </div>
+                                {/* Metadata Section (Duration & Price) */}
+                                <div className="flex items-center justify-between mb-6">
+                                    <div className="flex items-center text-sm text-gray-600 bg-orange-50 px-3 py-1.5 rounded-full border border-orange-100">
+                                        <Clock className="h-4 w-4 mr-2 text-[#ff7a3d]" />
+                                        <span>{course.duration || '40-45 hours'}</span>
                                     </div>
+                                    <div className="flex items-center text-sm font-bold text-gray-900 bg-green-50 px-3 py-1.5 rounded-full border border-green-100">
+                                        <span className="text-green-700">₹ {course.price || '45,000'}</span>
+                                    </div>
+                                </div>
 
-                                    <p className="text-gray-600 text-sm mb-6 flex-1 line-clamp-3">
+                                {/* Description */}
+                                <div className="flex-1 mb-6">
+                                    <p className="text-gray-600 text-sm line-clamp-3 leading-relaxed">
                                         {course.description || (course.heroHeading && !course.heroHeading.startsWith("H1:")
                                             ? course.heroHeading
-                                            : `Comprehensive training for ${course.title} with real-time projects.`)}
+                                            : `Comprehensive training for ${course.title} with real-time projects and certification support.`)}
                                     </p>
-
-                                    <Link
-                                        href={`/courses/${course.id}`}
-                                        className="w-full inline-flex items-center justify-center py-3 px-4 bg-gray-50 text-gray-900 font-semibold rounded-lg hover:bg-blue-600 hover:text-white transition-all group-hover:bg-blue-600 group-hover:text-white"
-                                    >
-                                        View Details <ArrowRight className="ml-2 h-4 w-4" />
-                                    </Link>
                                 </div>
+
+                                {/* Button */}
+                                <Link
+                                    href={`/courses/${course.id}`}
+                                    className="w-full inline-flex items-center justify-center py-3 px-4 bg-[#ff7a3d] text-white font-bold rounded-lg hover:bg-[#e06932] transition-colors duration-200"
+                                >
+                                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                                </Link>
                             </motion.div>
                         ))}
                     </AnimatePresence>
