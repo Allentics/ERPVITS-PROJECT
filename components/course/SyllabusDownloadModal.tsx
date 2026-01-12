@@ -78,6 +78,9 @@ export default function SyllabusDownloadModal({ isOpen, onClose, courseTitle, sy
 
             setStatus('success');
 
+            // Open thank you page in new tab
+            window.open('/thank-you', '_blank');
+
             // Close modal after a delay or let user close it
             setTimeout(() => {
                 onClose();

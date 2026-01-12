@@ -1,91 +1,156 @@
 'use server';
 
-import { google } from 'googleapis';
-
 export async function submitToGoogleSheets(formData: any) {
     try {
-        // Authenticate using environment variables
-        const auth = new google.auth.GoogleAuth({
-            credentials: {
-                client_email: process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
-                private_key: process.env.GOOGLE_SHEETS_PRIVATE_KEY?.replace(/\\n/g, '\n'),
-            },
-            scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+        const scriptUrlBase = process.env.GOOGLE_SCRIPT_URL || 'https://script.google.com/macros/s/AKfycbyb0yoRjzH6mJBu8PcyI-N3uwzBczE7BrciNVaTkFtsXUbPfZdgHB8T0tXNrlzftrGS1Q/exec';
+        const scriptUrl = `${scriptUrlBase}?sheet=erpvits&tab=erpvits`;
+
+        // Prepare the data
+        // Prepare the data with multiple key formats to ensure script compatibility
+        // The script might be looking for specific keys or matching headers dynamically
+        const timestamp = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
+        const name = `${formData.firstName || ''} ${formData.lastName || ''}`.trim();
+        const email = formData.email || '';
+        const phone = formData.phone || '';
+        const course = formData.course || '';
+        const countryCode = formData.countryCode || '91';
+
+        const data = {
+            // Meta properties for script configuration
+            sheet: 'Table1',
+            tab: 'Table1',
+            sheetName: 'Table1',
+            SheetName: 'Table1',
+            SHEET: 'Table1',
+
+            // Expected Header matches (Title Case)
+            Timestamp: timestamp,
+            Name: name,
+            Email: email,
+            Country_Code: countryCode,
+            Phone: phone,
+            Course: course,
+
+            // Lowercase fallbacks (Common script default)
+            timestamp: timestamp,
+            name: name,
+            email: email,
+            country_code: countryCode,
+            countryCode: countryCode,
+            phone: phone,
+            course: course
+        };
+
+        // Prepare data as URLSearchParams (standard Form Data)
+        // This is safer for Scripts that don't parse JSON body
+        const formBody = new URLSearchParams();
+
+        // Add all variations of keys to formBody
+        Object.entries(data).forEach(([key, value]) => {
+            formBody.append(key, value as string);
         });
 
-        const sheets = google.sheets({ version: 'v4', auth });
-        const spreadsheetId = process.env.GOOGLE_SHEETS_SPREADSHEET_ID || '1uxfO33A_dHJNGZDxMjq_K1ZpMKSN1xgi_pBb_vMUy88';
+        console.log('Submitting to Google Sheets (Form Data):', scriptUrl, Object.fromEntries(formBody));
 
-        // Prepare the data to match existing sheet structure
-        // Columns: Timestamp | Name | Email | Country_Code | Phone | Course
-        const row = [
-            new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }), // Timestamp
-            `${formData.firstName || ''} ${formData.lastName || ''}`.trim(), // Name
-            formData.email || '', // Email
-            formData.countryCode || '91', // Country_Code
-            formData.phone || '', // Phone
-            formData.course || '' // Course
-        ];
-
-        // Append to Table1 (the main sheet)
-        await sheets.spreadsheets.values.append({
-            spreadsheetId,
-            range: 'Table1!A:F',
-            valueInputOption: 'USER_ENTERED',
-            requestBody: {
-                values: [row],
+        // Send to Google Apps Script as Form Data
+        const response = await fetch(scriptUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
             },
+            body: formBody.toString(),
         });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error('Google Sheets response error:', response.status, errorText);
+            throw new Error(`Failed to submit to Google Sheets: ${response.status}`);
+        }
+
+        const resultText = await response.text();
+        console.log('Google Sheets submission success:', resultText);
 
         return { success: true };
     } catch (error: any) {
-        console.error('Google Sheets API Error:', error);
+        console.error('Google Sheets submission error:', error);
         return { success: false, error: error.message };
     }
 }
 
 // Function for curriculum downloads
+// Function for curriculum downloads
 export async function submitCurriculumDownload(formData: any) {
     try {
-        const auth = new google.auth.GoogleAuth({
-            credentials: {
-                client_email: process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
-                private_key: process.env.GOOGLE_SHEETS_PRIVATE_KEY?.replace(/\\n/g, '\n'),
-            },
-            scopes: ['https://www.googleapis.com/auth/spreadsheets'],
-        });
+        const scriptUrl = process.env.GOOGLE_SCRIPT_URL || 'https://script.google.com/macros/s/AKfycbyb0yoRjzH6mJBu8PcyI-N3uwzBczE7BrciNVaTkFtsXUbPfZdgHB8T0tXNrlzftrGS1Q/exec';
 
-        const sheets = google.sheets({ version: 'v4', auth });
-        const spreadsheetId = process.env.GOOGLE_SHEETS_SPREADSHEET_ID || '1uxfO33A_dHJNGZDxMjq_K1ZpMKSN1xgi_pBb_vMUy88';
-
-        // Prepare the data to match existing sheet structure
-        // Columns: Timestamp | Name | Email | Country_Code | Phone | Course
         const phoneWithCode = formData.phone || '';
         const countryCode = formData.countryCode || (phoneWithCode.includes('+') ? phoneWithCode.split(' ')[0].replace('+', '') : '91');
         const phoneNumber = phoneWithCode.includes('+') ? phoneWithCode.split(' ').slice(1).join(' ') : phoneWithCode;
 
-        const row = [
-            new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }), // Timestamp
-            formData.name || '', // Name
-            formData.email || '', // Email
-            countryCode, // Country_Code
-            phoneNumber, // Phone
-            formData.course || formData.courseName || '' // Course
-        ];
+        // Prepare the data with multiple key formats to ensure script compatibility
+        const timestamp = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
+        const name = formData.name || '';
+        const email = formData.email || '';
+        const course = formData.course || formData.courseName || '';
 
-        // Append to Table1 (same sheet as contact forms)
-        await sheets.spreadsheets.values.append({
-            spreadsheetId,
-            range: 'Table1!A:F',
-            valueInputOption: 'USER_ENTERED',
-            requestBody: {
-                values: [row],
-            },
+        const data = {
+            // Meta properties for script configuration
+            sheet: 'erpvits',
+            tab: 'erpvits',
+            sheetName: 'erpvits',
+            SheetName: 'erpvits',
+            SHEET: 'erpvits',
+
+            // Expected Header matches (Title Case)
+            Timestamp: timestamp,
+            Name: name,
+            Email: email,
+            Country_Code: countryCode,
+            Phone: phoneNumber,
+            Course: course,
+
+            // Lowercase fallbacks (Common script default)
+            timestamp: timestamp,
+            name: name,
+            email: email,
+            country_code: countryCode,
+            countryCode: countryCode,
+            phone: phoneNumber,
+            course: course
+        };
+
+        // Prepare data as URLSearchParams (standard Form Data)
+        const formBody = new URLSearchParams();
+
+        // Add all variations of keys to formBody
+        Object.entries(data).forEach(([key, value]) => {
+            formBody.append(key, value as string);
         });
+
+        console.log('Submitting curriculum download to Google Sheets (Form Data):', scriptUrl, Object.fromEntries(formBody));
+
+        // Send to Google Apps Script as Form Data
+        const response = await fetch(scriptUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: formBody.toString(),
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error('Google Sheets response error:', response.status, errorText);
+            throw new Error(`Failed to submit to Google Sheets: ${response.status}`);
+        }
+
+        const resultText = await response.text();
+        console.log('Google Sheets submission success:', resultText);
 
         return { success: true };
     } catch (error: any) {
-        console.error('Google Sheets API Error:', error);
+        console.error('Google Sheets submission error:', error);
         return { success: false, error: error.message };
     }
 }
+
