@@ -148,17 +148,21 @@ const Navbar = () => {
 
                             {/* Desktop Menu */}
                             <div className="hidden lg:flex space-x-1 items-center">
-                                <Link href="/" className="px-3 py-2 text-white hover:text-orange-500 font-bold transition-colors rounded-lg hover:bg-white/10 text-sm xl:text-base">
+                                <Link href="/" className="px-2 py-2 text-white hover:text-orange-500 font-bold transition-colors rounded-lg hover:bg-white/10 text-[13px] xl:text-sm whitespace-nowrap">
                                     Home
                                 </Link>
 
-                                <Link href="/about" className="px-3 py-2 text-white hover:text-orange-500 font-bold transition-colors rounded-lg hover:bg-white/10 text-sm xl:text-base">
+                                <Link href="/about" className="px-2 py-2 text-white hover:text-orange-500 font-bold transition-colors rounded-lg hover:bg-white/10 text-[13px] xl:text-sm whitespace-nowrap">
                                     About Us
+                                </Link>
+
+                                <Link href="/courses" className="px-2 py-2 text-white hover:text-orange-500 font-bold transition-colors rounded-lg hover:bg-white/10 text-[13px] xl:text-sm whitespace-nowrap">
+                                    Courses
                                 </Link>
 
                                 {/* Functional Dropdown */}
                                 <div className="relative group">
-                                    <button className="px-3 py-2 text-white group-hover:text-orange-500 font-bold inline-flex items-center transition-colors rounded-lg hover:bg-white/10 focus:outline-none text-sm xl:text-base">
+                                    <button className="px-2 py-2 text-white group-hover:text-orange-500 font-bold inline-flex items-center transition-colors rounded-lg hover:bg-white/10 focus:outline-none text-[13px] xl:text-sm whitespace-nowrap">
                                         SAP Functional <ChevronDown className="ml-1 h-4 w-4" />
                                     </button>
                                     <div className="absolute left-0 top-full w-[600px] bg-white border-t-4 border-orange-500 rounded-b-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left translate-y-2 group-hover:translate-y-0 z-50">
@@ -174,7 +178,7 @@ const Navbar = () => {
 
                                 {/* Technical Dropdown */}
                                 <div className="relative group">
-                                    <button className="px-3 py-2 text-white group-hover:text-orange-500 font-bold inline-flex items-center transition-colors rounded-lg hover:bg-white/10 focus:outline-none text-sm xl:text-base">
+                                    <button className="px-2 py-2 text-white group-hover:text-orange-500 font-bold inline-flex items-center transition-colors rounded-lg hover:bg-white/10 focus:outline-none text-[13px] xl:text-sm whitespace-nowrap">
                                         SAP Technical <ChevronDown className="ml-1 h-4 w-4" />
                                     </button>
                                     <div className="absolute left-0 top-full w-64 bg-white border-t-4 border-orange-500 rounded-b-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left translate-y-2 group-hover:translate-y-0 z-50">
@@ -190,7 +194,7 @@ const Navbar = () => {
 
                                 {/* Other Courses Dropdown */}
                                 <div className="relative group">
-                                    <button className="px-3 py-2 text-white group-hover:text-orange-500 font-bold inline-flex items-center transition-colors rounded-lg hover:bg-white/10 focus:outline-none text-sm xl:text-base">
+                                    <button className="px-2 py-2 text-white group-hover:text-orange-500 font-bold inline-flex items-center transition-colors rounded-lg hover:bg-white/10 focus:outline-none text-[13px] xl:text-sm whitespace-nowrap">
                                         Other Courses <ChevronDown className="ml-1 h-4 w-4" />
                                     </button>
                                     <div className="absolute left-0 top-full w-64 bg-white border-t-4 border-orange-500 rounded-b-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left translate-y-2 group-hover:translate-y-0 z-50">
@@ -205,17 +209,17 @@ const Navbar = () => {
                                 </div>
 
                                 {/* Blogs Dropdown */}
-                                <Link href="/blog" className="px-3 py-2 text-white hover:text-orange-500 font-bold transition-colors rounded-lg hover:bg-white/10 text-sm xl:text-base">
+                                <Link href="/blog" className="px-2 py-2 text-white hover:text-orange-500 font-bold transition-colors rounded-lg hover:bg-white/10 text-[13px] xl:text-sm whitespace-nowrap">
                                     Blogs
                                 </Link>
 
-                                <Link href="/contact" className="px-3 py-2 text-white hover:text-orange-500 font-bold transition-colors rounded-lg hover:bg-white/10 text-sm xl:text-base">
+                                <Link href="/contact" className="px-2 py-2 text-white hover:text-orange-500 font-bold transition-colors rounded-lg hover:bg-white/10 text-[13px] xl:text-sm whitespace-nowrap">
                                     Contact
                                 </Link>
 
                                 <button
                                     onClick={() => setIsContactModalOpen(true)}
-                                    className="ml-4 bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-md font-extrabold transition-all shadow-lg hover:shadow-orange-500/30 transform hover:-translate-y-0.5 text-sm xl:text-base whitespace-nowrap uppercase tracking-wide"
+                                    className="ml-2 bg-orange-500 hover:bg-orange-600 text-white px-4 py-2.5 rounded-md font-extrabold transition-all shadow-lg hover:shadow-orange-500/30 transform hover:-translate-y-0.5 text-[13px] xl:text-sm whitespace-nowrap uppercase tracking-wide"
                                 >
                                     Book Free Demo
                                 </button>
@@ -236,6 +240,7 @@ const Navbar = () => {
                     <div className="p-4 space-y-2 pb-20">
                         <Link href="/" className="block px-4 py-3 rounded-xl text-base font-semibold text-white hover:text-orange-500 hover:bg-white/5" onClick={() => setIsOpen(false)}>Home</Link>
                         <Link href="/about" className="block px-4 py-3 rounded-xl text-base font-semibold text-white hover:text-orange-500 hover:bg-white/5" onClick={() => setIsOpen(false)}>About Us</Link>
+                        <Link href="/courses" className="block px-4 py-3 rounded-xl text-base font-semibold text-white hover:text-orange-500 hover:bg-white/5" onClick={() => setIsOpen(false)}>Courses</Link>
 
                         <div>
                             <button onClick={() => toggleDropdown('func')} className="w-full flex justify-between items-center px-4 py-3 rounded-xl text-base font-semibold text-white hover:text-orange-500 hover:bg-white/5">

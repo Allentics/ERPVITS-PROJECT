@@ -86,7 +86,7 @@ export default function CorporateTrainingPage() {
                             Contact Us
                         </Link>
                         <Link
-                            href="/all-courses"
+                            href="/courses"
                             className="px-8 py-3 bg-white text-blue-600 font-bold border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors"
                         >
                             View Catalog

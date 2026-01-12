@@ -100,7 +100,7 @@ const Hero = () => {
                         {content.cta_primary}
                     </button>
                     <Link
-                        href="/all-courses"
+                        href="/courses"
                         className="bg-transparent border-2 border-slate-300 hover:bg-slate-100 text-slate-900 px-8 py-4 rounded-md font-bold text-lg transition-all"
                     >
                         {content.cta_secondary}

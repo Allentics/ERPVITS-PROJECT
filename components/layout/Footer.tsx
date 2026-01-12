@@ -80,7 +80,7 @@ const Footer = () => {
                                 </li>
                             ))}
                             <li>
-                                <Link href="/all-courses" className="text-orange-400 hover:text-orange-300 text-sm font-medium">
+                                <Link href="/courses" className="text-orange-400 hover:text-orange-300 text-sm font-medium">
                                     View All Courses &rarr;
                                 </Link>
                             </li>
