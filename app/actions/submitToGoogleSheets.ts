@@ -2,7 +2,7 @@
 
 export async function submitToGoogleSheets(formData: any) {
     try {
-        const scriptUrlBase = process.env.GOOGLE_SCRIPT_URL || 'https://script.google.com/macros/s/AKfycbyb0yoRjzH6mJBu8PcyI-N3uwzBczE7BrciNVaTkFtsXUbPfZdgHB8T0tXNrlzftrGS1Q/exec';
+        const scriptUrlBase = process.env.GOOGLE_SCRIPT_URL || 'https://script.google.com/macros/s/AKfycbxgG0blfi1o34OS6kuy4_byR5zOqW0b6BLb1N_Bx-g1FSeY12OZ-oZvhHpINdGC_23iTw/exec';
         const scriptUrl = `${scriptUrlBase}?sheet=erpvits&tab=erpvits`;
 
         // Prepare the data
@@ -17,11 +17,11 @@ export async function submitToGoogleSheets(formData: any) {
 
         const data = {
             // Meta properties for script configuration
-            sheet: 'Table1',
-            tab: 'Table1',
-            sheetName: 'Table1',
-            SheetName: 'Table1',
-            SHEET: 'Table1',
+            sheet: 'erpvits',
+            tab: 'erpvits',
+            sheetName: 'erpvits',
+            SheetName: 'erpvits',
+            SHEET: 'erpvits',
 
             // Expected Header matches (Title Case)
             Timestamp: timestamp,
@@ -81,7 +81,7 @@ export async function submitToGoogleSheets(formData: any) {
 // Function for curriculum downloads
 export async function submitCurriculumDownload(formData: any) {
     try {
-        const scriptUrl = process.env.GOOGLE_SCRIPT_URL || 'https://script.google.com/macros/s/AKfycbyb0yoRjzH6mJBu8PcyI-N3uwzBczE7BrciNVaTkFtsXUbPfZdgHB8T0tXNrlzftrGS1Q/exec';
+        const scriptUrl = process.env.GOOGLE_SCRIPT_URL || 'https://script.google.com/macros/s/AKfycbxgG0blfi1o34OS6kuy4_byR5zOqW0b6BLb1N_Bx-g1FSeY12OZ-oZvhHpINdGC_23iTw/exec';
 
         const phoneWithCode = formData.phone || '';
         const countryCode = formData.countryCode || (phoneWithCode.includes('+') ? phoneWithCode.split(' ')[0].replace('+', '') : '91');
