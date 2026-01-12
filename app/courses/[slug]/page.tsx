@@ -21,7 +21,17 @@ export const dynamic = 'force-dynamic';
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const { slug } = await params;
     const { data: course } = await supabase.from('courses').select('title, meta_title, meta_description').eq('id', slug).single();
-    const local = courses.find(c => c.id === slug);
+
+    // Fallback logic for local mapping
+    const local = courses.find(c => c.id === slug) ||
+        (slug === 'sap-abap-on-cloud' || slug === 'abap-cloud' ? courses.find(c => c.id === 'abap-cloud') : undefined) ||
+        (slug === 'sap-fico' || slug === 'fico' ? courses.find(c => c.id === 'fico') : undefined) ||
+        (slug === 'sap-ariba' || slug === 'ariba' ? courses.find(c => c.id === 'ariba') : undefined) ||
+        (slug === 'sap-mm' || slug === 'mm' || slug === 'sap-s4hana-mm' ? courses.find(c => c.id === 'mm') : undefined) ||
+        (slug === 'sap-tm' || slug === 'tm' || slug === 'sap-transportation-management' ? courses.find(c => c.id === 'sap-tm') : undefined) ||
+        (slug === 'sap-ewm' || slug === 'ewm' || slug === 'sap-extended-warehouse-management' ? courses.find(c => c.id === 'sap-ewm') : undefined) ||
+        (slug === 'sap-ibp' || slug === 'ibp' || slug === 'sap-integrated-business-planning' ? courses.find(c => c.id === 'sap-ibp') : undefined) ||
+        (slug === 'sap-mdg' || slug === 'mdg' || slug === 'sap-master-data-governance' ? courses.find(c => c.id === 'sap-mdg') : undefined);
 
     return {
         title: course?.meta_title || local?.metaTitle || `${course?.title || local?.title} Online Training | ERPVITS`,
