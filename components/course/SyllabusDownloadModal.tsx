@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { X, Loader2, Download, CheckCircle, AlertCircle } from 'lucide-react';
 import { sendSyllabusEmail } from '@/app/actions/sendSyllabus';
+import { submitCurriculumDownload } from '@/app/actions/submitToGoogleSheets';
+
 
 interface SyllabusDownloadModalProps {
     isOpen: boolean;
@@ -50,15 +52,28 @@ export default function SyllabusDownloadModal({ isOpen, onClose, courseTitle, sy
             }
 
             // Send Email
-            const result = await sendSyllabusEmail({
+            const emailResult = await sendSyllabusEmail({
                 email: formData.email,
                 name: formData.name,
                 courseTitle: courseTitle,
                 pdfUrl: syllabusUrl
             });
 
-            if (!result.success) {
-                throw new Error(result.error || 'Failed to send syllabus.');
+            if (!emailResult.success) {
+                throw new Error(emailResult.error || 'Failed to send syllabus.');
+            }
+
+            // Save to Google Sheets
+            try {
+                await submitCurriculumDownload({
+                    name: formData.name,
+                    email: formData.email,
+                    phone: `${formData.countryCode} ${formData.phone}`,
+                    course: courseTitle
+                });
+            } catch (sheetsError) {
+                // Log but don't fail the whole process if sheets fails
+                console.error('Failed to save to Google Sheets:', sheetsError);
             }
 
             setStatus('success');
