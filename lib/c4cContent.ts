@@ -139,6 +139,8 @@ export const c4cTechnicalRealWorldScenarios = [
 ];
 
 export const c4cContent = {
+    price: "Competitive",
+    duration: "45-50 Hours",
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Technical/sap-c4c-technical.pdf",
     heroHeading: "Master SAP C4C Technical Development (SDK) with the #1 Online Training Program",
     heroSubheading: "Become an expert in SAP Cloud Applications Studio, ABSL Scripting, UI Designer, and Integration.",

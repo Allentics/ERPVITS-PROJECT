@@ -1,5 +1,8 @@
 
 export const abapContent = {
+    title: "SAP ABAP on Cloud",
+    price: "Competitive",
+    duration: "30-35 Hours",
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Technical/sap-abap-on-cloud.pdf",
     heroHeading: "Gain Expertise in Cloud Development with SAP ABAP Training",
     heroSubheading: "The SAP ABAP Training offered by ERPVITS is a game changer for ABAP developers and SAP consultants interested in advancing their skills in cloud application development, contemporary programming, and enterprise software. In a cutting-edge business era, organizations demand certified SAP ABAB on cloud experts as proficient in cloud-native application development, ABAP Cloud runtime application, implementing clean architecture patterns, and digital transformation initiatives.",

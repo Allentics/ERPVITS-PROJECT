@@ -74,7 +74,7 @@ export default function NewCoursePage() {
                                 value={formData.id}
                                 onChange={handleChange}
                                 placeholder="sap-ariba"
-                                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500/20 outline-none"
+                                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 outline-none"
                             />
                         </div>
                         <div className="space-y-1">
@@ -85,7 +85,7 @@ export default function NewCoursePage() {
                                 value={formData.title}
                                 onChange={handleChange}
                                 placeholder="SAP Ariba Training"
-                                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500/20 outline-none"
+                                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 outline-none"
                             />
                         </div>
                         <div className="space-y-1">
@@ -94,7 +94,7 @@ export default function NewCoursePage() {
                                 name="category"
                                 value={formData.category}
                                 onChange={handleChange}
-                                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500/20 outline-none bg-white"
+                                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 outline-none bg-white"
                             >
                                 <option value="Functional">Functional</option>
                                 <option value="Technical">Technical</option>
@@ -106,7 +106,7 @@ export default function NewCoursePage() {
                                 name="price"
                                 value={formData.price}
                                 onChange={handleChange}
-                                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500/20 outline-none"
+                                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 outline-none"
                             />
                         </div>
                         <div className="space-y-1">
@@ -115,7 +115,7 @@ export default function NewCoursePage() {
                                 name="duration"
                                 value={formData.duration}
                                 onChange={handleChange}
-                                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500/20 outline-none"
+                                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 outline-none"
                             />
                         </div>
                     </div>
@@ -131,7 +131,7 @@ export default function NewCoursePage() {
                                 name="hero_heading"
                                 value={formData.hero_heading}
                                 onChange={handleChange}
-                                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500/20 outline-none"
+                                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 outline-none"
                             />
                         </div>
                         <div className="space-y-1">
@@ -141,7 +141,7 @@ export default function NewCoursePage() {
                                 rows={2}
                                 value={formData.hero_subheading}
                                 onChange={handleChange}
-                                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500/20 outline-none resize-none"
+                                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 outline-none resize-none"
                             />
                         </div>
                         <div className="space-y-1">
@@ -150,7 +150,7 @@ export default function NewCoursePage() {
                                 name="hero_image"
                                 value={formData.hero_image}
                                 onChange={handleChange}
-                                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500/20 outline-none"
+                                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 outline-none"
                             />
                         </div>
                     </div>
@@ -166,7 +166,7 @@ export default function NewCoursePage() {
                                 name="meta_title"
                                 value={formData.meta_title}
                                 onChange={handleChange}
-                                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500/20 outline-none"
+                                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 outline-none"
                             />
                         </div>
                         <div className="space-y-1">
@@ -176,7 +176,7 @@ export default function NewCoursePage() {
                                 rows={2}
                                 value={formData.meta_description}
                                 onChange={handleChange}
-                                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500/20 outline-none resize-none"
+                                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 outline-none resize-none"
                             />
                         </div>
                     </div>
@@ -196,7 +196,7 @@ export default function NewCoursePage() {
                                         handleJsonChange('curriculum', JSON.parse(e.target.value));
                                     } catch (err) { }
                                 }}
-                                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500/20 outline-none font-mono text-xs"
+                                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 outline-none font-mono text-xs"
                             />
                         </div>
                         <div className="space-y-1">
@@ -209,7 +209,7 @@ export default function NewCoursePage() {
                                         handleJsonChange('faqs', JSON.parse(e.target.value));
                                     } catch (err) { }
                                 }}
-                                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500/20 outline-none font-mono text-xs"
+                                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 outline-none font-mono text-xs"
                             />
                         </div>
                         <div className="space-y-1">
@@ -222,7 +222,7 @@ export default function NewCoursePage() {
                                         handleJsonChange('sections', JSON.parse(e.target.value));
                                     } catch (err) { }
                                 }}
-                                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500/20 outline-none font-mono text-xs"
+                                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 outline-none font-mono text-xs"
                             />
                         </div>
                     </div>
@@ -239,7 +239,7 @@ export default function NewCoursePage() {
                     <button
                         type="submit"
                         disabled={loading}
-                        className="flex items-center gap-2 px-6 py-2 bg-blue-600 text-white rounded-lg font-bold hover:bg-blue-700 transition-colors shadow-lg disabled:opacity-50"
+                        className="flex items-center gap-2 px-6 py-2 bg-black text-white rounded-lg font-bold hover:bg-zinc-800 transition-colors shadow-lg disabled:opacity-50 ring-2 ring-orange-500/50"
                     >
                         {loading ? <Loader2 className="animate-spin" size={20} /> : <Save size={20} />}
                         Save Course

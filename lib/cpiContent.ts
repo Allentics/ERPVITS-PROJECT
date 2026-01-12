@@ -1,6 +1,9 @@
 import { Section } from './courseData';
 
 export const cpiContent = {
+    title: "SAP CPI",
+    price: "45,000",
+    duration: "60-70 Hours",
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Technical/sap-cpi.pdf",
     heroHeading: "Master Cloud Integration Skills with Our SAP CPI Training",
     heroSubheading: "Master Cloud Integration Skills with Our SAP CPI Training",

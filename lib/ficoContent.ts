@@ -2,6 +2,8 @@ import { ficoTargetAudience, ficoPrerequisites, ficoLearningOutcomes, ficoRealWo
 
 export const ficoContent = {
     title: "SAP FICO",
+    price: "Competitive",
+    duration: "45 Hours",
     heroHeading: "Transform Your Career with the #1 SAP FICO Online Training Program",
     heroSubheading: "Master financial accounting, controlling, and reporting with 100% hands-on, job-oriented training from certified SAP experts.",
     heroLayout: "centered",

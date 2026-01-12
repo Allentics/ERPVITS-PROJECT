@@ -1,5 +1,8 @@
 
 export const sdContent = {
+    title: "SAP SD",
+    price: "45,000",
+    duration: "30-35 Hours",
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-sd.pdf",
     heroHeading: "Transform Your Career with SAP SD",
     heroSubheading: "Master sales & distribution management with 100% hands-on, job-oriented training",

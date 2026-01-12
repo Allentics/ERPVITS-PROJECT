@@ -1,5 +1,8 @@
 
 export const mmContent = {
+    title: "SAP MM",
+    price: "45,000",
+    duration: "45-50 Hours",
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-s4-hana-mm.pdf",
 
     heroHeading: "Upskill Your Career with SAP S/4HANA MM Online Training",

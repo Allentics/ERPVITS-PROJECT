@@ -1,6 +1,8 @@
 import { aribaTargetAudience, aribaPrerequisites, aribaLearningOutcomes, aribaRealWorldScenarios } from './contentHelpers';
 
 export const aribaContent = {
+    price: "45,000",
+    duration: "45-50 Hours",
     // heroHeading: "Transform Your Career with SAP Ariba",
     heroSubheading: "Master digital procurement & supply chain management with 100% hands-on, job-oriented training",
     heroLayout: "centered",

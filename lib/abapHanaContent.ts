@@ -1,5 +1,8 @@
 
 export const abapHanaContent = {
+    title: "SAP ABAP on HANA",
+    price: "45,000",
+    duration: "60-70 Hours",
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Technical/sap-abap-on-hana.pdf",
     heroHeading: "Master Modern ABAP Development with the #1 SAP ABAP on HANA Online Training Program",
     heroSubheading: "The SAP ABAP on HANA Online Training Program from ERPVITS represents a transformative learning pathway for professionals eager to excel in modern enterprise application development, cloud-native programming, and next-generation SAP technology.",
