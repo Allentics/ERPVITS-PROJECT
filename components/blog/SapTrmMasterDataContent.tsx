@@ -241,8 +241,7 @@ const SapTrmMasterDataContent = () => {
                 The process of setting up master records in SAP TRM requires the configuration of essential objects like business partners' products, types of products, account symbols and flows. Each component must be precisely specified to allow for the financial transaction, as well as risk assessment, as well as integration into modules such as FI and the Market Risk Analyzer. Correct sequencing, validation rules and alignment with treasury guidelines ensure data integrity and operational readiness from the beginning.
             </p>
 
-            {/* SAP TCodes Download Section */}
-            {/* SAP TCodes Download Section */}
+            {/* SAP TCodes Download Section - Removed */}
 
 
             <BlogCTA
