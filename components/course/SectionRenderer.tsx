@@ -20,6 +20,9 @@ import DetailedUpcomingBatches from './DetailedUpcomingBatches';
 import DetailedFAQ from './DetailedFAQ';
 import DetailedDemoBooking from './DetailedDemoBooking';
 import DetailedCompanies from './DetailedCompanies';
+import CourseOverview from './CourseOverview';
+import JobRolesTable from './JobRolesTable';
+import CurriculumTable from './CurriculumTable';
 import {
     Quote, CheckCircle2, UserCheck, Laptop, Briefcase, Clock,
     Award, Globe, BookOpen, Video, TrendingUp, Headphones,
@@ -179,6 +182,12 @@ export default function SectionRenderer({ sections, courseName }: { sections: an
                         return <DetailedLearningOutcomes key={idx} items={section.items} />;
                     case 'real_world_scenarios':
                         return <RealWorldScenarios key={idx} items={section.items} />;
+                    case 'course_overview':
+                        return <CourseOverview key={idx} items={section.items} />;
+                    case 'job_roles_table':
+                        return <JobRolesTable key={idx} items={section.items} title={section.title} description={section.description || section.content} />;
+                    case 'table_curriculum':
+                        return <CurriculumTable key={idx} items={section.items} title={section.title} />;
                     case 'detailed_certification':
                         return <DetailedCertification key={idx} items={section.items} title={section.title} subtitle={section.subtitle} badge={section.badge} stats={section.stats} courseName={courseName || section.courseName} description={section.description || section.content} imageSrc={section.imageSrc} />;
                     case 'detailed_career_opportunities':

@@ -177,10 +177,10 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant" }: {
                         <h3 className="text-2xl font-bold text-slate-900 mb-6">Book Your <span className="text-orange-600">Free Demo</span></h3>
 
                         {status === 'success' ? (
-                            <div className="bg-green-50 border border-green-200 rounded-xl p-8 text-center animate-in fade-in zoom-in duration-300">
-                                <CheckCircle2 className="h-12 w-12 text-green-500 mx-auto mb-4" />
-                                <h3 className="text-xl font-bold text-green-900 mb-2">Registration Confirmed!</h3>
-                                <p className="text-green-700 mb-6">
+                            <div className="bg-orange-50 border border-orange-200 rounded-xl p-8 text-center animate-in fade-in zoom-in duration-300">
+                                <CheckCircle2 className="h-12 w-12 text-orange-500 mx-auto mb-4" />
+                                <h3 className="text-xl font-bold text-orange-900 mb-2">Registration Confirmed!</h3>
+                                <p className="text-orange-700 mb-6">
                                     Thank you for your interest. Our training coordinator will contact you shortly to schedule your demo.
                                 </p>
                                 <button

@@ -159,8 +159,8 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
                             <ul className="space-y-5">
                                 {supportFeatures.map((feature, idx) => (
                                     <li key={idx} className="flex gap-4 text-sm items-start group">
-                                        <div className="mt-0.5 bg-white p-1 rounded-full border border-green-200 shadow-sm group-hover:bg-green-50 transition-colors">
-                                            <CheckCircle2 className="w-4 h-4 text-green-600" />
+                                        <div className="mt-0.5 bg-white p-1 rounded-full border border-orange-200 shadow-sm group-hover:bg-orange-50 transition-colors">
+                                            <CheckCircle2 className="w-4 h-4 text-orange-600" />
                                         </div>
                                         <div>
                                             {feature.includes('Study guides') || feature.includes('real exam') || feature.includes('tips') || feature.includes('Assistance') || feature.includes('Additional support') ? (

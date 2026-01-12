@@ -147,8 +147,8 @@ export default function SyllabusModal({ isOpen, onClose, courseTitle, pdfUrl }: 
                 <div className="p-6">
                     {isSuccess ? (
                         <div className="text-center py-8">
-                            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <CheckCircle className="w-8 h-8 text-green-600" />
+                            <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <CheckCircle className="w-8 h-8 text-orange-600" />
                             </div>
                             <h4 className="text-xl font-bold text-gray-900 mb-2">Success!</h4>
                             <p className="text-gray-600">
@@ -167,7 +167,7 @@ export default function SyllabusModal({ isOpen, onClose, courseTitle, pdfUrl }: 
                                     <input
                                         type="text"
                                         required
-                                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all"
                                         placeholder="John Doe"
                                         value={formData.name}
                                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -179,7 +179,7 @@ export default function SyllabusModal({ isOpen, onClose, courseTitle, pdfUrl }: 
                                     <input
                                         type="email"
                                         required
-                                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all"
                                         placeholder="john@example.com"
                                         value={formData.email}
                                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -190,7 +190,7 @@ export default function SyllabusModal({ isOpen, onClose, courseTitle, pdfUrl }: 
                                     <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
                                     <div className="flex gap-2">
                                         <select
-                                            className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none bg-gray-50"
+                                            className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 outline-none bg-gray-50"
                                             value={formData.countryCode}
                                             onChange={(e) => setFormData({ ...formData, countryCode: e.target.value })}
                                         >
@@ -202,7 +202,7 @@ export default function SyllabusModal({ isOpen, onClose, courseTitle, pdfUrl }: 
                                         <input
                                             type="tel"
                                             required
-                                            className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                                            className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all"
                                             placeholder="9876543210"
                                             value={formData.phone}
                                             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -219,7 +219,7 @@ export default function SyllabusModal({ isOpen, onClose, courseTitle, pdfUrl }: 
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="w-full flex items-center justify-center py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all disabled:opacity-70 disabled:cursor-not-allowed mt-2"
+                                    className="w-full flex items-center justify-center py-3 px-4 bg-orange-600 hover:bg-orange-700 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all disabled:opacity-70 disabled:cursor-not-allowed mt-2"
                                 >
                                     {isSubmitting ? (
                                         <>

@@ -67,7 +67,7 @@ const CourseHero = ({ course }: { course: Course }) => {
                         <div className="flex flex-wrap justify-center gap-8 md:gap-12 text-sm font-medium text-slate-500 pt-8 border-t border-slate-100/50">
                             {course.heroStats.map((stat, idx) => (
                                 <div key={idx} className="flex items-center gap-2">
-                                    <div className={`${isOrange ? "text-orange-600" : "text-green-600"}`}>
+                                    <div className={`${isOrange ? "text-orange-600" : "text-orange-600"}`}>
                                         {stat.icon === 'award' ? <CheckCircle className="w-5 h-5" /> :
                                             stat.icon === 'infinity' ? <Clock className="w-5 h-5" /> :
                                                 <Users className="w-5 h-5" />}
@@ -123,7 +123,7 @@ const CourseHero = ({ course }: { course: Course }) => {
                             {course.heroStats ? (
                                 course.heroStats.map((stat, idx) => (
                                     <div key={idx} className="flex items-center text-slate-300">
-                                        <CheckCircle className="h-4 w-4 mr-1 text-green-400" />
+                                        <CheckCircle className="h-4 w-4 mr-1 text-orange-400" />
                                         <span>{stat.label}</span>
                                     </div>
                                 ))
@@ -167,23 +167,23 @@ const CourseHero = ({ course }: { course: Course }) => {
                             <h3 className="text-xl font-bold mb-4">Course Highlights</h3>
                             <ul className="space-y-4 text-sm font-medium">
                                 <li className="flex items-start">
-                                    <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
+                                    <CheckCircle className="h-5 w-5 text-orange-500 mr-3 flex-shrink-0" />
                                     <span>100% Hands-on Practical Training</span>
                                 </li>
                                 <li className="flex items-start">
-                                    <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
+                                    <CheckCircle className="h-5 w-5 text-orange-500 mr-3 flex-shrink-0" />
                                     <span>Real-time Project Scenarios</span>
                                 </li>
                                 <li className="flex items-start">
-                                    <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
+                                    <CheckCircle className="h-5 w-5 text-orange-500 mr-3 flex-shrink-0" />
                                     <span>Certification Guidance Included</span>
                                 </li>
                                 <li className="flex items-start">
-                                    <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
+                                    <CheckCircle className="h-5 w-5 text-orange-500 mr-3 flex-shrink-0" />
                                     <span>Placement Support & Resumes</span>
                                 </li>
                                 <li className="flex items-start">
-                                    <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
+                                    <CheckCircle className="h-5 w-5 text-orange-500 mr-3 flex-shrink-0" />
                                     <span>Lifetime Video Access</span>
                                 </li>
                             </ul>

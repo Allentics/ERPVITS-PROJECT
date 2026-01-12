@@ -21,7 +21,7 @@ export default function DetailedLearningOutcomes({ items }: { items?: any }) {
             <div className="max-w-7xl mx-auto px-4">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <span className="bg-emerald-100 text-emerald-600 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block">
+                    <span className="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block">
                         Learning Outcomes
                     </span>
                     <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
@@ -39,7 +39,7 @@ export default function DetailedLearningOutcomes({ items }: { items?: any }) {
                         return (
                             <div key={idx} className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
                                 <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                                    <div className="p-2 bg-emerald-50 rounded-lg text-emerald-600">
+                                    <div className="p-2 bg-orange-50 rounded-lg text-orange-600">
                                         <Icon className="w-6 h-6" />
                                     </div>
                                     {outcome.title}
@@ -47,7 +47,7 @@ export default function DetailedLearningOutcomes({ items }: { items?: any }) {
                                 <ul className="space-y-4">
                                     {outcome.points.map((point: string, pIdx: number) => (
                                         <li key={pIdx} className="flex items-start gap-3">
-                                            <CheckCircle2 className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
+                                            <CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
                                             <span className="text-slate-600 text-[15px]">{point}</span>
                                         </li>
                                     ))}

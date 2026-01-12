@@ -10,7 +10,7 @@ export default function Prerequisites({ title, subtitle, items }: { title: strin
             <div className="space-y-4">
                 {items?.map((item, idx) => (
                     <div key={idx} className="flex gap-4 items-start">
-                        <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="w-5 h-5 text-orange-500 mt-0.5 flex-shrink-0" />
                         <p className="text-slate-700">{item}</p>
                     </div>
                 ))}

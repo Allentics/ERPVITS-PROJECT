@@ -14,6 +14,8 @@ import { ewmContent } from './ewmContent';
 import { ibpContent } from './ibpContent';
 import { mdgContent } from './mdgContent';
 import { c4cFunctionalContent } from './c4cFunctionalContent';
+import { pythonAimlContent } from './pythonAimlContent';
+import { analyticsCloudContent } from './analyticsCloudContent';
 import coursesData from '@/courses.json';
 
 // Define Types
@@ -89,7 +91,12 @@ const contentMap: Record<string, any> = {
     'sap-integrated-business-planning': ibpContent,
     'sap-mdg': mdgContent,
     'mdg': mdgContent,
-    'sap-master-data-governance': mdgContent
+    'sap-master-data-governance': mdgContent,
+    'analytics-cloud': analyticsCloudContent,
+    'sap-analytics-cloud': analyticsCloudContent,
+    'python-aiml': pythonAimlContent,
+    'sap-python-aiml': pythonAimlContent,
+    'python-ai-ml': pythonAimlContent
 };
 
 // Merge Content

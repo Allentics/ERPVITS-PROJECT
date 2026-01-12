@@ -46,7 +46,7 @@ export default function DetailedCareerRoadmap({ items }: { items?: any[] }) {
                     {/* Stats Row */}
                     <div className="grid grid-cols-3 gap-6 max-w-4xl mx-auto">
                         <div className="bg-gray-50 p-6 rounded-xl text-center">
-                            <div className="text-2xl font-bold text-green-600 mb-1">200%+</div>
+                            <div className="text-2xl font-bold text-orange-600 mb-1">200%+</div>
                             <div className="text-xs text-slate-500 font-medium">Increase in Job Earnings</div>
                         </div>
                         <div className="bg-gray-50 p-6 rounded-xl text-center">
@@ -72,8 +72,8 @@ export default function DetailedCareerRoadmap({ items }: { items?: any[] }) {
                             <div className="text-xl font-bold text-blue-600 mb-1">200%+</div>
                             <div className="text-xs text-slate-600">Increase in Consultant Earnings</div>
                         </div>
-                        <div className="bg-green-50 p-6 rounded-xl text-center border border-green-100">
-                            <div className="text-xl font-bold text-green-600 mb-1">High</div>
+                        <div className="bg-orange-50 p-6 rounded-xl text-center border border-orange-100">
+                            <div className="text-xl font-bold text-orange-600 mb-1">High</div>
                             <div className="text-xs text-slate-600">Demand for S-Market Innovation</div>
                         </div>
                         <div className="bg-purple-50 p-6 rounded-xl text-center border border-purple-100">

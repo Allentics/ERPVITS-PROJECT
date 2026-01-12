@@ -10,8 +10,8 @@ const companiesData: CompaniesData = {
     tier2: {
         title: "Tier 2 - Enterprise SAP Implementation Partners",
         companies: ["Infosys", "Wipro", "Capgemini", "TCS", "HCL Tech", "Tech Mahindra"],
-        color: "bg-green-600",
-        lightColor: "bg-green-50"
+        color: "bg-orange-600",
+        lightColor: "bg-orange-50"
     },
     tier3: {
         title: "Tier 3 - Fortune 500 Enterprises",
@@ -134,14 +134,14 @@ export default function DetailedCompanies({ courseName = "SAP Ariba", customData
                             {data.hiringTrends.stats.map((stat, idx) => {
                                 const colorClasses =
                                     stat.color === 'blue' ? 'bg-blue-50 border-blue-100 text-blue-600' :
-                                        stat.color === 'green' ? 'bg-emerald-50 border-emerald-100 text-emerald-600' :
+                                        stat.color === 'green' ? 'bg-orange-50 border-orange-100 text-orange-600' :
                                             stat.color === 'purple' ? 'bg-purple-50 border-purple-100 text-purple-600' :
                                                 'bg-orange-50 border-orange-100 text-orange-600';
 
                                 return (
                                     <div key={idx} className={`${colorClasses} border p-6 rounded-2xl text-center hover:shadow-md transition-all`}>
                                         <div className={`text-3xl font-bold mb-2 ${stat.color === 'blue' ? 'text-blue-600' :
-                                            stat.color === 'green' ? 'text-emerald-600' :
+                                            stat.color === 'green' ? 'text-orange-600' :
                                                 stat.color === 'purple' ? 'text-purple-600' :
                                                     'text-orange-600'
                                             }`}>

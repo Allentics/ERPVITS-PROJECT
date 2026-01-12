@@ -1,13 +1,25 @@
 import { ficoTargetAudience, ficoPrerequisites, ficoLearningOutcomes, ficoRealWorldScenarios } from './contentHelpers';
 
 export const ficoContent = {
-    syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-fico.pdf",
+    title: "SAP FICO",
     heroHeading: "Transform Your Career with the #1 SAP FICO Online Training Program",
     heroSubheading: "Master financial accounting, controlling, and reporting with 100% hands-on, job-oriented training from certified SAP experts.",
-    badges: ["New Batch Starting Soon", "100% Job Oriented"],
-    description: "The SAP FICO Online Training Program offered by ERPVITS is a transformative training opportunity for accountants and SAP consultants looking to strengthen their skills in financial and cost accounting, as well as enterprise resource planning. The current business environment is fast-paced and organizations are looking for certified SAP FICO professionals as a priority. Such professionals have the skills to refine and optimize financial processes, streamline accounting for efficiency, maintain compliance with regulations, and improve overall financial performance. This extensive SAP FICO training program has been designed with the help of finance and SAP FICO professionals, and comprises of live, interactive instructor-led training, practical lab activities, applicable financial case studies, and complete certification support, targeting financial professionals, accounting professionals, CFO teams, ERP consultants, and aspiring graduates who are looking for opportunities for global consulting and implementation.",
-    metaTitle: "SAP FICO Online Training | Finance & Controlling",
-    metaDescription: "SAP FICO Online Training with ERPVITS through live instructor-led sessions, real-time projects, and certification support to boost your finance career.",
+    heroLayout: "centered",
+    themeColor: "orange",
+    syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-fico.pdf",
+    description: "The SAP FICO Online Training Program offered by ERPVITS is a transformative training opportunity for accountants and SAP consultants looking to strengthen their skills in financial and cost accounting, as well as enterprise resource planning. Organizations are looking for certified SAP FICO professionals as a priority to refine and optimize financial processes, maintain compliance, and improve financial performance. Our program includes live sessions, practical labs, and certification support.",
+    badges: ["Rated #1 SAP FICO Training Program 2025"],
+    heroStats: [
+        { icon: "award", label: "SAP Certified Trainers" },
+        { icon: "briefcase", label: "100% Job Assistance" },
+        { icon: "infinity", label: "Lifetime Access" }
+    ],
+    buttonLabels: {
+        primary: "Book Free Demo Class →",
+        secondary: "View Curriculum"
+    },
+    metaTitle: "SAP FICO Online Training | Finance & Controlling Certification",
+    metaDescription: "Master SAP FICO with ERPVITS — the best SAP FICO Online Training covering G/L, A/P, A/R, Assets & Controlling. 45+ hrs of live sessions, real projects, and global placement support.",
 
     schema: JSON.stringify({
         "@context": "https://schema.org/",
@@ -207,78 +219,93 @@ export const ficoContent = {
             }
         ]
     }),
-
+    features: [],
     sections: [
         {
             type: 'detailed_features',
             title: "Learn SAP FICO from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            subtitle: "Our SAP FICO Online Training is delivered exclusively by certified SAP professionals, designed to provide you with realistic solutions and proven methodologies.",
+            subtitle: "Expert-led learning with real-world experience and proven methodologies from actual enterprise implementations",
+            badge: "Why Choose Us",
             items: [
                 {
                     title: "Certified Instructor Expertise",
-                    description: "Each trainer holds official SAP FICO certifications and has successfully led multiple enterprise-scale SAP FICO implementations combining theory with war stories."
+                    description: "Our trainers are certified SAP professionals with 12+ years of direct implementation experience in financial accounting and controlling."
                 },
                 {
-                    title: "100% Hands-On Learning Methodology",
+                    title: "100% Hands-On Learning",
                     description: "Every session integrates live demonstrations on SAP systems accompanied by guided lab exercises where you replicate what you have learned."
                 },
                 {
-                    title: "Job-Oriented Curriculum Design",
+                    title: "Job-Oriented Curriculum",
                     description: "The course curriculum is built around the skills, responsibilities, and problem-solving frameworks you will encounter as an SAP FICO consultant."
                 },
                 {
-                    title: "Interactive Q&A Sessions",
-                    description: "Dedicated Q&A forums and live office hours where instructors provide instruction so you can eliminate your doubts and clarify complex topics."
+                    title: "Flexible Batch Timings",
+                    description: "Weekday evening classes and weekend classes to accommodate working professionals, with recordings available for continuous learning."
                 },
                 {
-                    title: "Flexible Batch Timings",
-                    description: "Weekday evening classes and weekend classes to accommodate working professionals, with recordings available if you miss a session."
+                    title: "SAP Certification Support",
+                    description: "Complete exam preparation with practice tests, study guides, and strategies for SAP FICO certifications."
+                },
+                {
+                    title: "24/7 Lab Environment Access",
+                    description: "Dedicated cloud server access to practice freely from any place, any time, reinforcing your classroom learning."
+                },
+                {
+                    title: "Comprehensive Study Material",
+                    description: "Downloadable PDF presentations, configuration checklists, and interview question banks, updated quarterly."
+                },
+                {
+                    title: "Lifetime Recording Access",
+                    description: "All live sessions are recorded in HD and available in our LMS for your revision and lifetime reference."
                 },
                 {
                     title: "Placement & Career Support",
-                    description: "Prepare through mock interviews, refine your SAP-focused resume, and practice with real interview questions aligned with current hiring trends."
+                    description: "Prepare through mock interviews, refine your SAP-focused resume, and study recent hiring trends in finance."
+                },
+                {
+                    title: "6 Months Post Training Support",
+                    description: "Continued access to instructors for questions, clarifications, and real-world project guidance after your course."
+                },
+                {
+                    title: "Small Batch Sizes",
+                    description: "Limited to 10-12 participants to ensure personalized attention and interactive Q&A sessions."
+                },
+                {
+                    title: "Live Projects & Case Studies",
+                    description: "Work on case studies inspired by Fortune 500 companies, covering G/L, A/P, A/R, Assets, and Controlling."
                 }
             ]
         },
         {
-            type: 'features',
-            title: "Why Professionals Choose ERPVITS for SAP FICO Online Training",
+            type: 'content_with_image',
+            title: "Why Professionals Choose ERPVITS for SAP FICO Training",
+            subtitle: "Success Guarantee & Credibility",
+            description: "ERPVITS has established itself as a trusted training partner for SAP modules, with hundreds of successful learners working at top consulting firms like Accenture, Deloitte, and Infosys. Our comprehensive support ecosystem and alumni network testimonials speak to the quality of instruction and career acceleration our program delivers.",
             items: [
                 "Trusted by 500+ successful SAP FICO professionals",
-                "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro",
-                "Personalized pre-evaluation and accounting learning path",
-                "Active alumni network and finance community forum",
-                "45+ guided lab exercises from basic to advanced financial scenarios",
-                "Quarterly updated materials aligned with latest SAP releases",
-                "Mock interviews simulating real FICO consultant scenarios",
+                "Personalized accounting learning paths",
+                "45+ guided lab exercises from basic to advanced",
+                "Active alumni network and finance community",
+                "Mock interviews simulating real consulting scenarios",
                 "Dedicated certification prep week before exams"
             ]
         },
         {
-            type: 'list_checker',
-            title: "What's Included in the SAP FICO Training – Complete Learning Package",
-            items: [
-                "Live Interactive Classes: 35-40 hours of live sessions taught by a mentor",
-                "Real-World Projects: Work on case studies inspired by Fortune 500 companies",
-                "Hands-On Lab Environment: Full-time access to SAP FICO systems",
-                "Certification Exam Prep: Acquire study guides, practice exams, and bootcam sessions",
-                "Resume & Interview Coaching: Tailored resume enhancement and mock interviews",
-                "Complete Study Materials: PDFs, presentations, checklists, and SAP documents",
-                "Lifetime Recording Access: All live sessions are recorded and indexed",
-                "Expert Q&A Sessions: Monthly conversations for clarifying accounting concepts"
-            ]
+            type: 'whats_included'
         },
         {
             type: 'detailed_curriculum',
-            title: "Comprehensive SAP FICO Course Curriculum",
+            title: "SAP FICO Course Curriculum",
             modules: [
                 {
-                    title: "Module 1: Financial Accounting Foundation (5 Hours)",
+                    title: "Module 1: Financial Accounting Foundation",
+                    duration: "5 hours",
                     learning_points: [
-                        "The architecture of SAP FICO and its organizational structure",
-                        "Setup of a company code, a chart of accounts and a fiscal year",
-                        "Setup of document types, posting periods, and field status variants",
-                        "Basics of financial accounting master data and customization",
+                        "Architecture of SAP FICO and its organizational structure",
+                        "Setup of company code, chart of accounts, and fiscal year",
+                        "Document types, posting periods, and field status variants",
+                        "Basics of financial accounting master data",
                         "Integration with other SAP modules (MM, SD, and HR)"
                     ],
                     hands_on: [
@@ -289,31 +316,33 @@ export const ficoContent = {
                     ]
                 },
                 {
-                    title: "Module 2: General Ledger (G/L) Accounting (5 Hours)",
+                    title: "Module 2: General Ledger (G/L) Accounting",
+                    duration: "5 hours",
                     learning_points: [
-                        "Creation and maintenance of G/L master record",
-                        "Posting of normal transactions and usage of document references",
+                        "Creation and maintenance of G/L master records",
+                        "Posting normal transactions and document references",
                         "Accounting for and management of foreign currency",
                         "Recurring and sample document management",
-                        "Configuration of G/L account line items and display reports",
-                        "Document reversal and clearing of documents"
+                        "Configuration of G/L line items and display reports",
+                        "Document reversal and clearing procedures"
                     ],
                     hands_on: [
                         "Create and maintain G/L accounts",
                         "Post normal and reference documents",
-                        "Execute transactions involving foreign currency",
-                        "Setup documents for recurring entries"
+                        "Execute foreign currency transactions",
+                        "Setup recurring entry documents"
                     ]
                 },
                 {
-                    title: "Module 3: Accounts Payable (A/P) (4 Hours)",
+                    title: "Module 3: Accounts Payable (A/P)",
+                    duration: "6 hours",
                     learning_points: [
-                        "Setup and maintenance of the vendor master record",
-                        "Groups for vendor accounts and associated number ranges",
-                        "Workflows for posting invoices and making payments",
+                        "Setup and maintenance of vendor master records",
+                        "Account groups and associated number ranges",
+                        "Workflows for posting invoices and payments",
                         "Down payments and special G/L transactions",
-                        "Configuration of the Automatic Payment Program (APP)",
-                        "Payment terms and dunning"
+                        "Automatic Payment Program (APP) configuration",
+                        "Payment terms and dunning processes"
                     ],
                     hands_on: [
                         "Create vendor masters and account groups",
@@ -323,42 +352,45 @@ export const ficoContent = {
                     ]
                 },
                 {
-                    title: "Module 4: Accounts Receivable (A/R) (4 Hours)",
+                    title: "Module 4: Accounts Receivable (A/R)",
+                    duration: "6 hours",
                     learning_points: [
                         "Set up and maintain customer master records",
                         "Account groups and number ranges for customers",
-                        "Sales invoice posting and receiving payments from customers",
-                        "Down payments and customer advance payments",
+                        "Sales invoice posting and payment receipts",
+                        "Customer advance payments and accounting",
                         "Configuration for dunning on overdue accounts",
-                        "Meeting credit obligations and customer correspondence"
+                        "Credit management and customer correspondence"
                     ],
                     hands_on: [
                         "Create customer masters and account groups",
                         "Post customer invoices and payments",
-                        "Set up dunning and generate customer correspondence"
+                        "Set up dunning and generate correspondence"
                     ]
                 },
                 {
-                    title: "Module 5: Fixed Assets Accounting (4 Hours)",
+                    title: "Module 5: Fixed Assets Accounting",
+                    duration: "6 hours",
                     learning_points: [
-                        "Create and maintain records for fixed assets",
-                        "Define and apply various methods for calculating depreciation and depreciation keys",
-                        "Acquire, sell, and junk fixed assets",
-                        "Apply depreciation for a given period and execute month-end procedures",
-                        "Methods for retiring and transferring fixed assets",
-                        "Focus on fixed assets for reporting and management"
+                        "Create and maintain fixed asset records",
+                        "Define depreciation methods and keys",
+                        "Acquire, sell, and retire fixed assets",
+                        "Execute depreciation runs and month-end procedures",
+                        "Asset retirement and transfer methods",
+                        "Fixed asset reporting and management"
                     ],
                     hands_on: [
                         "Create asset master records",
                         "Post asset acquisitions and disposals",
-                        "Manage assets during depreciation cycles",
-                        "Control retired assets"
+                        "Execute depreciation cycles",
+                        "Manage retired assets"
                     ]
                 },
                 {
-                    title: "Module 6: Cost Accounting & Controlling (5 Hours)",
+                    title: "Module 6: Cost Accounting & Controlling",
+                    duration: "8 hours",
                     learning_points: [
-                        "Set up a controlling area and create cost elements",
+                        "Set up controlling area and cost elements",
                         "Cost center accounting and hierarchies",
                         "Internal order management and profitability analysis",
                         "Profit center accounting and segment reporting",
@@ -366,44 +398,28 @@ export const ficoContent = {
                         "Overhead calculation and variance analysis"
                     ],
                     hands_on: [
-                        "Set up a controlling area and cost centers",
+                        "Set up controlling area and cost centers",
                         "Create cost elements and internal orders",
                         "Execute cost allocation cycles",
                         "Generate profitability reports"
                     ]
                 },
                 {
-                    title: "Module 7: Financial Close & Reporting (4 Hours)",
+                    title: "Module 7: Financial Close & Integration",
+                    duration: "6 hours",
                     learning_points: [
                         "Month-end and year-end closing procedures",
                         "Accrual and deferral posting",
                         "Reconciliation procedures and error correction",
                         "Financial statement generation and reporting",
-                        "Intercompany reconciliation",
-                        "Balance sheet and P&L consolidation basics"
+                        "FICO integration with MM, SD, and HR modules",
+                        "S/4HANA Fiori apps for financial accounting"
                     ],
                     hands_on: [
                         "Execute month-end closing procedures",
-                        "Post accruals and deferrals",
-                        "Reconcile accounts",
-                        "Generate financial statements"
-                    ]
-                },
-                {
-                    title: "Module 8: Advanced Integration & Optimization (4 Hours)",
-                    learning_points: [
-                        "FICO integration with Materials Management (MM)",
-                        "FICO integration with Sales & Distribution (SD)",
-                        "FICO integration with Human Resources (HR/Payroll)",
-                        "Real-time financial reporting and analytics",
-                        "S/4HANA Fiori apps for financial accounting",
-                        "Performance optimization and troubleshooting"
-                    ],
-                    hands_on: [
-                        "Configure MM-to-FI integration",
-                        "Configure SD-to-FI integration",
+                        "Configure MM-to-FI and SD-to-FI integration",
                         "Explore Fiori apps for accounting",
-                        "Build financial analytics dashboards"
+                        "Generate financial statements"
                     ]
                 }
             ]
@@ -431,7 +447,7 @@ export const ficoContent = {
             items: [
                 {
                     title: "SAP Certified Associate – Financial Accounting",
-                    code: "(C_TFI50_DEC or equivalent)",
+                    code: "(C_TS4FI_2021 or equivalent)",
                     focus: "Financial accounting, controlling, assets, A/P, A/R, reporting",
                     who: "Entry to mid-level consultant positions in finance",
                     relevance: "Demonstrates expertise in end-to-end SAP FICO implementation"
@@ -477,41 +493,8 @@ export const ficoContent = {
                     responsibilities: "Design enterprise financial solutions, lead implementations, advise on strategy",
                     employers: "Consulting, Banking, Large Enterprises",
                     path: "Architect -> Principal Consultant",
-                    icon: "TrendingUp", // Using TrendingUp or Award
+                    icon: "TrendingUp",
                     color: "orange"
-                }
-            ]
-        },
-        {
-            type: 'detailed_upcoming_batches',
-            courseName: "SAP FICO",
-            items: [
-                {
-                    name: "Batch 1: November 2025 (Weekdays)",
-                    status: "Filling Fast",
-                    statusColor: "bg-red-100 text-red-600",
-                    date: "November 15, 2025",
-                    schedule: "Mon-Fri | 07:00 AM – 07:00 PM IST (Flex)",
-                    duration: "40 - 45 Hours",
-                    seatsFilled: 60 // 6/10 available
-                },
-                {
-                    name: "Batch 2: November 2025 (Weekends)",
-                    status: "Limited",
-                    statusColor: "bg-orange-100 text-orange-600",
-                    date: "November 16, 2025",
-                    schedule: "Sat & Sun | 10:00 AM – 07:00 PM IST",
-                    duration: "40 - 45 Hours",
-                    seatsFilled: 80 // 2/10 available
-                },
-                {
-                    name: "Batch 3: December 2025 (Flexible)",
-                    status: "New Batch",
-                    statusColor: "bg-green-100 text-green-600",
-                    date: "December 1, 2025",
-                    schedule: "Flexible timings | Customized per batch",
-                    duration: "40 - 45 Hours",
-                    seatsFilled: 50 // 5/10 available
                 }
             ]
         },
@@ -530,8 +513,7 @@ export const ficoContent = {
                         "Join alumni network and accounting community forum",
                         "Begin resume updates highlighting SAP FICO expertise",
                         "Apply for SAP FICO Certification exam",
-                        "Start job search with career services support",
-                        "Participate in alumni networking events"
+                        "Start job search with career services support"
                     ]
                 },
                 {
@@ -572,6 +554,30 @@ export const ficoContent = {
             ]
         },
         {
+            type: 'detailed_upcoming_batches',
+            courseName: "SAP FICO",
+            items: [
+                {
+                    name: "Batch 1: Weekday Evening",
+                    status: "Filling Fast",
+                    statusColor: "bg-red-100 text-red-600",
+                    date: "Starting Soon",
+                    schedule: "Mon-Fri | 07:00 PM – 09:00 PM IST",
+                    duration: "45 Hours",
+                    seatsFilled: 60
+                },
+                {
+                    name: "Batch 2: Weekend Morning",
+                    status: "Limited",
+                    statusColor: "bg-orange-100 text-orange-600",
+                    date: "Next Weekend",
+                    schedule: "Sat & Sun | 10:00 AM – 01:00 PM IST",
+                    duration: "45 Hours",
+                    seatsFilled: 80
+                }
+            ]
+        },
+        {
             type: 'detailed_testimonials',
             items: [
                 {
@@ -594,22 +600,11 @@ export const ficoContent = {
                     role: "FICO Consultant",
                     initial: "R",
                     color: "bg-purple-500"
-                },
-                {
-                    text: "Superb certification preparation. I passed the SAP FICO exam on my first attempt. The mock exams and study materials were excellent.",
-                    name: "Ananya Singh",
-                    role: "Certified SAP FICO Professional",
-                    initial: "A",
-                    color: "bg-orange-500"
-                },
-                {
-                    text: "From accounting clerk to leading FICO projects in 5 months! Patient instructors who care about success. Lifetime recording access is invaluable.",
-                    name: "Sneha Reddy",
-                    role: "FICO Analyst at Infosys",
-                    initial: "S",
-                    color: "bg-pink-500"
                 }
             ]
+        },
+        {
+            type: 'detailed_demo_booking'
         },
         {
             type: 'detailed_faq',
@@ -621,22 +616,8 @@ export const ficoContent = {
                 { q: "How does SAP FICO support modern accounting operations?", a: "In FICO, SAP provides all modules of modern accounting including General Ledger, accounts payable, accounts receivable, and integrated asset management and reporting. ERPVITS has practical exposure for real-world implementations of FICO workflows." },
                 { q: "Why should I join SAP FICO Training at ERPVITS?", a: "ERPVITS provides live online training sessions to the participants and covers training in SAP FICO. ERPVITS has industry aligned finance projects and provides job placement. You will train for FICO certification and will receive complete guidance for resume building and interviews." },
                 { q: "Who can enroll in the SAP FICO Course?", a: "Anyone can enroll in the SAP FICO Course, if you have interest in finance, accounting, or SAP technologies. ERPVITS SAP FICO Course will prepare you for the job leading accounting." },
-                { q: "What is SAP FICO Certification and how is it important?", a: "SAP FICO Certification confirms one owns validation for expertise in financial accounting, and ERPVITS is one of the pathways to prepare one for official certification and become a certified SAP FICO professional." },
-                { q: "What is the cost of SAP FICO course in ERPVITS?", a: "SAP FICO course fees are dependent on the program and training mode. We try to provide the strongest value on the market for the hands on learning, learning support, job assistance, and certification assistance which is why our prices are structured the way they are." },
-                { q: "What is the price of SAP FICO Certification?", a: "The cost of SAP FICO Certification is determined by SAP Education, while ERPVITS gives complete exam guidance, enables one to practice mock tests, and mentors one to ensure SAP FICO Certification exam is passed in one attempt." },
-                { q: "How can I become an SAP FICO Consultant through ERPVITS?", a: "One needs to join the structured SAP FICO training program where one needs to complete financial project assignments and prepare for certification. ERPVITS provides counseling on jobs and about one’s career." },
-                { q: "What job opportunities are there after the FICO course?", a: "Job opportunities available after SAP FICO training are FICO Consultant, Accounting Manager, Finance Analyst, Controlling Specialist and SAP Finance Architect." },
-                { q: "How SAP FICO integrates with other modules?", a: "ERPVITS provides in-depth training on FICO integration with Materials Management, and also Sales and Distribution, as well as Human Resource modules." },
-                { q: "What are the main FICO functional areas covered?", a: "We teach and provide hands-on training for General Ledger, Accounts Payable, Accounts Receivable, Asset Management, Cost Accounting, and Controlling." },
-                { q: "What is SAP FICO pricing for companies?", a: "SAP FICO pricing is usually per user or an enterprise agreement. ERPVITS is functional and insightful at talking about these licensing structures and implementing pricing." },
-                { q: "Does ERPVITS provide SAP FICO Training with Placement Support?", a: "Absolutely! ERPVITS provides SAP FICO training with placement support. We allow training by building profiles, guiding interviews, and working with recruiters." },
-                { q: "Can I take SAP FICO Online Training from anywhere?", a: "Of course! ERPVITS offers SAP FICO online training, and is covered from the location of any learner. Training is with live instructors, along with recorded sessions, and remote practice sessions." },
-                { q: "Is SAP FICO Training available near me?", a: "Of course. With flexible weekend and weekday batches, ERPVITS provides training online and in-person to working professionals." },
-                { q: "How does ERPVITS help in SAP FICO Careers?", a: "ERPVITS supports your SAP FICO career by aiding with resume building, interview prep, and job referrals to top SAP consulting firms and financial institutions." }
+                { q: "What is SAP FICO Certification and how is it important?", a: "SAP FICO Certification confirms one owns validation for expertise in financial accounting, and ERPVITS is one of the pathways to prepare one for official certification and become a certified SAP FICO professional." }
             ]
-        },
-        {
-            type: 'detailed_demo_booking'
         }
     ]
 };

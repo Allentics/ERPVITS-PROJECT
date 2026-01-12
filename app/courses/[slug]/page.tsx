@@ -54,7 +54,8 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
         (slug === 'sap-ibp' || slug === 'ibp' || slug === 'sap-integrated-business-planning' ? courses.find(c => c.id === 'sap-ibp') : undefined) ||
         (slug === 'sap-mdg' || slug === 'mdg' || slug === 'sap-master-data-governance' ? courses.find(c => c.id === 'sap-mdg') : undefined) ||
         (slug === 'sap-c4c-functional' || slug === 'c4c-functional' ? courses.find(c => c.id === 'sap-c4c-functional') : undefined) ||
-        (slug === 'sap-abap-on-hana' || slug === 'abap-hana' || slug === 'abap-on-hana' ? courses.find(c => c.id === 'sap-abap-on-hana') : undefined);
+        (slug === 'sap-abap-on-hana' || slug === 'abap-hana' || slug === 'abap-on-hana' ? courses.find(c => c.id === 'sap-abap-on-hana') : undefined) ||
+        (slug === 'python-aiml' || slug === 'sap-python-aiml' || slug === 'python-ai-ml' ? courses.find(c => c.id === 'python-aiml') : undefined);
     if (!course && !localCourse) {
         notFound();
     }
@@ -75,18 +76,19 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
     const isMDG = slug === 'sap-mdg' || slug === 'mdg' || slug === 'sap-master-data-governance';
     const isC4CFunc = slug === 'sap-c4c-functional' || slug === 'c4c-functional';
     const isABAPHana = slug === 'sap-abap-on-hana' || slug === 'abap-hana' || slug === 'abap-on-hana';
+    const isPython = slug === 'python-aiml' || slug === 'sap-python-aiml' || slug === 'python-ai-ml';
 
     // Map DB fields to component expectations if they differ (using snake_case in DB, camelCase in components)
     // Priority: DB values > Local file values
     const mappedCourse = {
         ...localCourse,
         ...course,
-        heroHeading: (isAriba || isFieldglass || isMM || isFICO || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS || isTM || isEWM || isIBP || isMDG || isC4CFunc || isABAPHana) ? localCourse?.heroHeading : (course?.hero_heading || localCourse?.heroHeading),
-        heroSubheading: (isAriba || isFieldglass || isMM || isFICO || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS || isTM || isEWM || isIBP || isMDG || isC4CFunc || isABAPHana) ? localCourse?.heroSubheading : (course?.hero_subheading || localCourse?.heroSubheading),
-        heroImage: (isAriba || isFICO || isFieldglass || isMM || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS || isTM || isEWM || isIBP || isMDG || isC4CFunc || isABAPHana) ? undefined : (localCourse?.heroImage || course?.hero_image),
+        heroHeading: (isAriba || isFieldglass || isMM || isFICO || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS || isTM || isEWM || isIBP || isMDG || isC4CFunc || isABAPHana || isPython) ? localCourse?.heroHeading : (course?.hero_heading || localCourse?.heroHeading),
+        heroSubheading: (isAriba || isFieldglass || isMM || isFICO || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS || isTM || isEWM || isIBP || isMDG || isC4CFunc || isABAPHana || isPython) ? localCourse?.heroSubheading : (course?.hero_subheading || localCourse?.heroSubheading),
+        heroImage: (isAriba || isFICO || isFieldglass || isMM || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS || isTM || isEWM || isIBP || isMDG || isC4CFunc || isABAPHana || isPython) ? undefined : (localCourse?.heroImage || course?.hero_image),
         metaTitle: course?.meta_title || localCourse?.metaTitle,
         metaDescription: course?.meta_description || localCourse?.metaDescription,
-        sections: (isAriba || isFieldglass || isMM || isFICO || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS || isTM || isEWM || isIBP || isMDG || isC4CFunc || isABAPHana) ? localCourse?.sections : ((course?.sections && course.sections.length > 0) ? course.sections : localCourse?.sections),
+        sections: (isAriba || isFieldglass || isMM || isFICO || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS || isTM || isEWM || isIBP || isMDG || isC4CFunc || isABAPHana || isPython) ? localCourse?.sections : ((course?.sections && course.sections.length > 0) ? course.sections : localCourse?.sections),
         features: (course?.features && course.features.length > 0) ? course.features : localCourse?.features,
         curriculum: (course?.curriculum && course.curriculum.length > 0) ? course.curriculum : localCourse?.curriculum,
         faqs: (course?.faqs && course.faqs.length > 0) ? course.faqs : (localCourse?.faqs && localCourse.faqs.length > 0 ? localCourse.faqs : defaultFaqs),
@@ -146,7 +148,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                     {/* Features/Trust Indicators */}
                     <div className="flex flex-wrap justify-center gap-8 gap-y-4 text-sm font-semibold text-slate-600">
                         <div className="flex items-center gap-2">
-                            <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <svg className="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                             SAP Certified Trainers
                         </div>
                         <div className="flex items-center gap-2">
@@ -220,7 +222,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 {mappedCourse.features.map((feature: string, i: number) => (
                                     <div key={i} className="flex items-start">
-                                        <div className="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                                        <div className="w-5 h-5 rounded-full bg-orange-500 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
                                             <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
                                         </div>
                                         <span className="text-gray-700 font-medium">{feature}</span>

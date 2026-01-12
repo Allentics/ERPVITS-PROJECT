@@ -35,14 +35,50 @@ const Navbar = () => {
                 }
 
                 // Fetch Courses for Dropdowns
-                const { data: coursesData } = await supabase
+                const { data: dbCourses } = await supabase
                     .from('courses')
                     .select('id, title, category');
 
-                if (coursesData && coursesData.length > 0) {
-                    const dbIds = new Set(coursesData.map((c: any) => c.id));
-                    const missingLocal = localCourses.filter(c => !dbIds.has(c.id));
-                    setDynCourses([...coursesData, ...missingLocal]);
+                if (dbCourses && dbCourses.length > 0) {
+                    // Merge DB courses with local data to ensure categories are present
+                    const merged = dbCourses.map((dbCourse: any) => {
+                        // Resilient matching for IDs (handles 'sap-' prefix mismatches)
+                        const local = localCourses.find(lc =>
+                            lc.id === dbCourse.id ||
+                            lc.id === dbCourse.id.replace(/^sap-/, '') ||
+                            `sap-${lc.id}` === dbCourse.id
+                        );
+
+                        let category = dbCourse.category || local?.category;
+
+                        // Force overrides for specific courses
+                        const isFunctional = ['sap-fico', 'fico', 'sap-fieldglass', 'fieldglass', 'sap-mm', 'mm', 'sap-sd', 'sd', 'sap-trm', 'trm'].includes(dbCourse.id);
+                        const isOther = ['python-aiml', 'sap-python-aiml', 'python-ai-ml', 'python'].includes(dbCourse.id);
+
+                        if (isFunctional) category = 'Functional';
+                        if (isOther) category = 'Other';
+
+                        return {
+                            ...dbCourse,
+                            category
+                        };
+                    });
+
+                    const dbIds = new Set(dbCourses.map((c: any) => c.id));
+                    // Also check for 'sap-' prefixed IDs in the comparison
+                    const missingLocal = localCourses.filter(lc =>
+                        !dbIds.has(lc.id) &&
+                        !dbIds.has(`sap-${lc.id}`) &&
+                        !dbIds.has(lc.id.replace(/^sap-/, ''))
+                    ).map(lc => {
+                        // Apply same category logic to local-only courses
+                        let category = lc.category;
+                        const isOther = ['python-aiml', 'sap-python-aiml', 'python-ai-ml', 'python'].includes(lc.id);
+                        if (isOther) category = 'Other';
+                        return { ...lc, category };
+                    });
+
+                    setDynCourses([...merged, ...missingLocal]);
                 }
             } catch (err) {
                 console.error('Error in Navbar fetchData:', err);
@@ -52,12 +88,17 @@ const Navbar = () => {
     }, []);
 
     const functionalCourses = dynCourses
-        .filter(c => c.category === 'Functional')
+        .filter(c => c.category?.toLowerCase() === 'functional')
         .filter((c, index, self) => index === self.findIndex((t) => t.title === c.title))
         .sort((a, b) => a.title.localeCompare(b.title));
 
     const technicalCourses = dynCourses
-        .filter(c => c.category === 'Technical')
+        .filter(c => c.category?.toLowerCase() === 'technical')
+        .filter((c, index, self) => index === self.findIndex((t) => t.title === c.title))
+        .sort((a, b) => a.title.localeCompare(b.title));
+
+    const otherCourses = dynCourses
+        .filter(c => c.category?.toLowerCase() === 'other')
         .filter((c, index, self) => index === self.findIndex((t) => t.title === c.title))
         .sort((a, b) => a.title.localeCompare(b.title));
 
@@ -147,6 +188,22 @@ const Navbar = () => {
                                     </div>
                                 </div>
 
+                                {/* Other Courses Dropdown */}
+                                <div className="relative group">
+                                    <button className="px-3 py-2 text-white group-hover:text-orange-500 font-bold inline-flex items-center transition-colors rounded-lg hover:bg-white/10 focus:outline-none text-sm xl:text-base">
+                                        Other Courses <ChevronDown className="ml-1 h-4 w-4" />
+                                    </button>
+                                    <div className="absolute left-0 top-full w-64 bg-white border-t-4 border-orange-500 rounded-b-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left translate-y-2 group-hover:translate-y-0 z-50">
+                                        <div className="py-2 max-h-[60vh] overflow-y-auto custom-scrollbar">
+                                            {otherCourses.map((course) => (
+                                                <Link key={course.id} href={`/courses/${course.id}`} className="block px-4 py-3 text-sm text-slate-900 hover:bg-orange-50 hover:text-orange-600 transition-colors border-l-4 border-transparent hover:border-orange-500">
+                                                    {course.title}
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+
                                 {/* Blogs Dropdown */}
                                 <Link href="/blog" className="px-3 py-2 text-white hover:text-orange-500 font-bold transition-colors rounded-lg hover:bg-white/10 text-sm xl:text-base">
                                     Blogs
@@ -199,6 +256,19 @@ const Navbar = () => {
                             </button>
                             <div className={cn("pl-4 space-y-1 overflow-hidden transition-all duration-300", activeDropdown === 'tech' ? "max-h-[500px]" : "max-h-0")}>
                                 {technicalCourses.map(course => (
+                                    <Link key={course.id} href={`/courses/${course.id}`} className="block px-4 py-2 rounded-lg text-sm text-slate-300 hover:text-orange-500 hover:bg-white/5" onClick={() => setIsOpen(false)}>
+                                        {course.title}
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div>
+                            <button onClick={() => toggleDropdown('other')} className="w-full flex justify-between items-center px-4 py-3 rounded-xl text-base font-semibold text-white hover:text-orange-500 hover:bg-white/5">
+                                Other Courses <ChevronDown className={cn("h-5 w-5 transition-transform", activeDropdown === 'other' && "rotate-180")} />
+                            </button>
+                            <div className={cn("pl-4 space-y-1 overflow-hidden transition-all duration-300", activeDropdown === 'other' ? "max-h-[500px]" : "max-h-0")}>
+                                {otherCourses.map(course => (
                                     <Link key={course.id} href={`/courses/${course.id}`} className="block px-4 py-2 rounded-lg text-sm text-slate-300 hover:text-orange-500 hover:bg-white/5" onClick={() => setIsOpen(false)}>
                                         {course.title}
                                     </Link>

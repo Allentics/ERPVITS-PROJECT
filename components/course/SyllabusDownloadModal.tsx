@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { X, Loader2, Download, CheckCircle, AlertCircle } from 'lucide-react';
 import { sendSyllabusEmail } from '@/app/actions/sendSyllabus';
 
@@ -20,8 +21,13 @@ export default function SyllabusDownloadModal({ isOpen, onClose, courseTitle, sy
     });
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const [errorMessage, setErrorMessage] = useState('');
+    const [mounted, setMounted] = useState(false);
 
-    if (!isOpen) return null;
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    if (!isOpen || !mounted) return null;
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
@@ -57,11 +63,6 @@ export default function SyllabusDownloadModal({ isOpen, onClose, courseTitle, sy
 
             setStatus('success');
 
-            setStatus('success');
-
-            // We removed window.open(syllabusUrl, '_blank') to prevent the blank tab issue.
-            // The user receives the PDF via email.
-
             // Close modal after a delay or let user close it
             setTimeout(() => {
                 onClose();
@@ -76,8 +77,8 @@ export default function SyllabusDownloadModal({ isOpen, onClose, courseTitle, sy
         }
     };
 
-    return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
+    return createPortal(
+        <div className="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
             <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden animate-in zoom-in-95 duration-200" onClick={(e) => e.stopPropagation()}>
 
                 {/* Header */}
@@ -91,8 +92,8 @@ export default function SyllabusDownloadModal({ isOpen, onClose, courseTitle, sy
                 <div className="p-6">
                     {status === 'success' ? (
                         <div className="text-center py-8">
-                            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <CheckCircle className="w-8 h-8 text-green-600" />
+                            <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <CheckCircle className="w-8 h-8 text-orange-600" />
                             </div>
                             <h4 className="text-xl font-bold text-gray-900 mb-2">Success!</h4>
                             <p className="text-gray-600 mb-4">
@@ -191,6 +192,7 @@ export default function SyllabusDownloadModal({ isOpen, onClose, courseTitle, sy
                     )}
                 </div>
             </div>
-        </div>
+        </div>,
+        document.body
     );
 }

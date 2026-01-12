@@ -95,7 +95,7 @@ export default function DetailedTestimonials({ items, courseName = "SAP Ariba" }
             author: "Rajesh S.",
             role: "Senior SAP Consultant",
             initial: "R",
-            color: "bg-green-500"
+            color: "bg-orange-500"
         },
         {
             text: "Superb certification preparation. I passed all three SAP Ariba exams on my first attempt. The study material and mock tests were spot on. Highly recommended!",
@@ -124,7 +124,7 @@ export default function DetailedTestimonials({ items, courseName = "SAP Ariba" }
 
     // Normalize reviews to ensure they have color/initial
     const reviews = rawReviews.map((r, i) => {
-        const colors = ["bg-orange-500", "bg-blue-500", "bg-green-500", "bg-purple-500", "bg-red-500", "bg-indigo-500"];
+        const colors = ["bg-orange-500", "bg-blue-500", "bg-orange-500", "bg-purple-500", "bg-red-500", "bg-indigo-500"];
         return {
             text: r.quote || r.text, // Handle mismatch (mmContent uses quote)
             author: r.name || r.author, // Handle mismatch

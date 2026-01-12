@@ -243,45 +243,7 @@ const SapTrmMasterDataContent = () => {
 
             {/* SAP TCodes Download Section */}
             {/* SAP TCodes Download Section */}
-            <div className="my-10 p-8 w-full bg-[#ff7a3d] border-2 border-black rounded-xl text-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] relative overflow-hidden group !block !visible !opacity-100">
-                <div className="relative z-10 !block !visible !opacity-100">
-                    <h3 className="text-3xl font-bold !text-white mb-3 !mt-0 flex items-center justify-center gap-3 drop-shadow-sm">
-                        {/* Retro Joystick Icon SVG */}
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-md !block !visible !opacity-100 !w-10 !h-10 !fill-none">
-                            <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" fill="#3B82F6" stroke="black" strokeWidth="2" />
-                            <path d="M12 13V17" stroke="black" strokeWidth="2" strokeLinecap="round" />
-                            <path d="M6 17H18C19.1046 17 20 17.8954 20 19V20H4V19C4 17.8954 4.89543 17 6 17Z" fill="#EF4444" stroke="black" strokeWidth="2" />
-                        </svg>
-                        <span className="!text-white">Download Complete SAP TCodes List</span>
-                    </h3>
-                    <p className="!text-white mb-8 text-lg font-medium max-w-2xl mx-auto drop-shadow-sm">
-                        Get instant access to 238+ SAP transaction codes in PDF format
-                    </p>
-                    <div className="flex justify-center mb-6 !flex !visible !opacity-100">
-                        <a
-                            href="/tcodes.pdf"
-                            download="tcodes.pdf"
-                            className="inline-flex items-center gap-3 bg-white text-[#ff7a3d] border-2 border-black font-bold py-3 px-8 rounded-lg transition-transform duration-200 no-underline shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-1 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-y-2 active:shadow-none !inline-flex !visible !opacity-100"
-                        >
-                            <svg className="w-5 h-5 !block !visible !opacity-100 !text-[#ff7a3d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                            </svg>
-                            <span className="text-lg text-[#ff7a3d]">Download SAP TCodes PDF</span>
-                        </a>
-                    </div>
-                    <p className="text-sm !text-white font-medium tracking-wide flex flex-wrap items-center justify-center gap-x-4 gap-y-2 !flex !visible !opacity-100">
-                        <span className="flex items-center gap-1 drop-shadow-sm !text-white">
-                            <svg className="w-4 h-4 !block !visible !opacity-100 !text-white" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
-                            <span className="!text-white">No registration required</span>
-                        </span>
-                        <span className="hidden sm:inline opacity-80 !text-white">|</span>
-                        <span className="flex items-center gap-1 drop-shadow-sm !text-white">
-                            <svg className="w-4 h-4 !block !visible !opacity-100 !text-white" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
-                            <span className="!text-white">Instant download</span>
-                        </span>
-                    </p>
-                </div>
-            </div>
+
 
             <BlogCTA
                 title="Master SAP Treasury and Risk Management"
