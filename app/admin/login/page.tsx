@@ -49,13 +49,13 @@ export default function LoginPage() {
             <div className="sm:mx-auto sm:w-full sm:max-w-md">
                 <Link
                     href="/"
-                    className="flex items-center gap-2 text-sm text-gray-500 hover:text-blue-600 transition-colors mb-8 justify-center"
+                    className="flex items-center gap-2 text-sm text-gray-500 hover:text-orange-500 transition-colors mb-8 justify-center"
                 >
                     <ArrowLeft size={16} />
                     Back to website
                 </Link>
                 <div className="flex justify-center">
-                    <div className="bg-blue-900 p-4 rounded-xl shadow-lg">
+                    <div className="bg-black p-4 rounded-xl shadow-xl border border-white/10">
                         <img src="/images/logo.webp" alt="ERPVITS" className="h-10 w-auto" />
                     </div>
                 </div>
@@ -91,7 +91,7 @@ export default function LoginPage() {
                                     type="email"
                                     autoComplete="email"
                                     required
-                                    className="appearance-none block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                                    className="appearance-none block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
                                     placeholder="admin@erpvits.com"
                                     value={email}
                                     onChange={(e: any) => setEmail(e.target.value)}
@@ -113,7 +113,7 @@ export default function LoginPage() {
                                     type={showPassword ? "text" : "password"}
                                     autoComplete="current-password"
                                     required
-                                    className="appearance-none block w-full pl-10 pr-10 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                                    className="appearance-none block w-full pl-10 pr-10 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
                                     placeholder="••••••••"
                                     value={password}
                                     onChange={(e: any) => setPassword(e.target.value)}
@@ -138,7 +138,7 @@ export default function LoginPage() {
                                     id="remember-me"
                                     name="remember-me"
                                     type="checkbox"
-                                    className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                                    className="h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 rounded cursor-pointer"
                                 />
                                 <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
                                     Remember me
@@ -150,7 +150,7 @@ export default function LoginPage() {
                             <button
                                 type="submit"
                                 disabled={loading}
-                                className="w-full flex justify-center py-2.5 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-blue-900 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                                className="w-full flex justify-center py-2.5 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-black hover:bg-zinc-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                             >
                                 {loading ? (
                                     <div className="flex items-center gap-2">
@@ -172,8 +172,8 @@ export default function LoginPage() {
                             </div>
                         </div>
 
-                        <div className="mt-6 bg-blue-50 p-4 rounded-lg">
-                            <p className="text-xs text-blue-800 leading-relaxed text-center">
+                        <div className="mt-6 bg-orange-50 p-4 rounded-lg">
+                            <p className="text-xs text-orange-800 leading-relaxed text-center font-medium">
                                 Access is restricted to ERPVITS authorized administrators. Unauthorized access attempts are logged and monitored.
                             </p>
                         </div>

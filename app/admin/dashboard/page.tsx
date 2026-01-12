@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 
 const stats = [
-    { name: 'Total Courses', value: '12', icon: BookOpen, color: 'bg-blue-500', href: '/admin/courses' },
+    { name: 'Total Courses', value: '12', icon: BookOpen, color: 'bg-orange-500', href: '/admin/courses' },
     { name: 'Blog Posts', value: '18', icon: FileText, color: 'bg-green-500', href: '/admin/blogs' },
     { name: 'New Inquiries', value: '45', icon: MessageSquare, color: 'bg-yellow-500', href: '/admin/forms' },
     { name: 'Active Users', value: '1.2k', icon: Users, color: 'bg-purple-500', href: '#' },
@@ -38,7 +38,7 @@ export default function DashboardPage() {
                 <div className="flex gap-2">
                     <Link
                         href="/admin/courses/new"
-                        className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors"
+                        className="px-4 py-2 bg-black text-white rounded-lg text-sm font-bold hover:bg-zinc-900 transition-colors shadow-sm"
                     >
                         Add New Course
                     </Link>
@@ -67,7 +67,7 @@ export default function DashboardPage() {
                         </div>
                         <Link
                             href={stat.href}
-                            className="mt-4 flex items-center text-xs text-blue-600 font-medium hover:underline group-hover:gap-1 transition-all"
+                            className="mt-4 flex items-center text-xs text-orange-600 font-bold hover:underline group-hover:gap-1 transition-all"
                         >
                             View More <ArrowUpRight size={12} />
                         </Link>
@@ -80,15 +80,15 @@ export default function DashboardPage() {
                 <div className="lg:col-span-2 bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
                     <div className="p-4 border-b border-gray-100 flex items-center justify-between">
                         <h3 className="font-bold text-gray-900">Recent Activity</h3>
-                        <button className="text-xs text-blue-600 font-medium hover:underline">View All</button>
+                        <button className="text-xs text-orange-600 font-bold hover:underline">View All</button>
                     </div>
                     <div className="divide-y divide-gray-100">
                         {recentActivities.map((activity) => (
                             <div key={activity.id} className="p-4 flex items-start gap-4 hover:bg-gray-50 transition-colors">
                                 <div className="mt-1">
-                                    {activity.type === 'course' && <BookOpen size={16} className="text-blue-500" />}
-                                    {activity.type === 'blog' && <FileText size={16} className="text-green-500" />}
-                                    {activity.type === 'form' && <MessageSquare size={16} className="text-yellow-500" />}
+                                    {activity.type === 'course' && <BookOpen size={16} className="text-orange-500" />}
+                                    {activity.type === 'blog' && <FileText size={16} className="text-zinc-700" />}
+                                    {activity.type === 'form' && <MessageSquare size={16} className="text-orange-400" />}
                                 </div>
                                 <div className="flex-1 min-w-0">
                                     <p className="text-sm text-gray-800 line-clamp-1">{activity.message}</p>
@@ -103,17 +103,17 @@ export default function DashboardPage() {
                 </div>
 
                 {/* Quick Tips / Info */}
-                <div className="bg-gradient-to-br from-blue-900 to-blue-800 rounded-xl shadow-sm p-6 text-white relative overflow-hidden">
+                <div className="bg-gradient-to-br from-black to-zinc-800 rounded-xl shadow-lg p-6 text-white relative overflow-hidden border border-white/10">
                     <div className="relative z-10">
-                        <h3 className="font-bold text-lg mb-2">Pro Tip</h3>
-                        <p className="text-blue-100 text-sm leading-relaxed">
+                        <h3 className="font-bold text-lg mb-2 text-orange-400">Pro Tip</h3>
+                        <p className="text-gray-300 text-sm leading-relaxed">
                             Always add meta titles and descriptions to your courses and blogs to improve SEO and ranking on search engines.
                         </p>
-                        <button className="mt-6 px-4 py-2 bg-yellow-400 text-blue-900 rounded-lg text-sm font-bold hover:bg-yellow-300 transition-colors">
+                        <button className="mt-6 px-4 py-2 bg-orange-500 text-white rounded-lg text-sm font-bold hover:bg-orange-600 transition-colors">
                             Read SEO Guide
                         </button>
                     </div>
-                    <TrendingUp className="absolute -right-6 -bottom-6 text-blue-700 opacity-20 w-48 h-48" />
+                    <TrendingUp className="absolute -right-6 -bottom-6 text-white opacity-5 w-48 h-48" />
                 </div>
             </div>
         </div>

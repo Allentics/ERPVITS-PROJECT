@@ -59,21 +59,21 @@ export default function AdminLayout({
             {/* Sidebar */}
             <aside
                 className={cn(
-                    "bg-blue-900 text-white w-64 fixed inset-y-0 left-0 z-50 transition-transform duration-300 ease-in-out md:relative md:translate-x-0",
+                    "bg-black text-white w-64 fixed inset-y-0 left-0 z-50 transition-transform duration-300 ease-in-out md:relative md:translate-x-0 border-r border-white/5",
                     !isSidebarOpen && "-translate-x-full md:w-20"
                 )}
             >
                 <div className="h-full flex flex-col">
-                    <div className="p-4 flex items-center justify-between border-b border-blue-800">
+                    <div className="p-4 flex items-center justify-between border-b border-white/10">
                         <div className="flex items-center gap-3">
                             <img src="/images/logo.webp" alt="Logo" className="h-8 w-auto" />
-                            <span className={cn("font-bold text-lg truncate transition-opacity", !isSidebarOpen && "md:hidden")}>
+                            <span className={cn("font-bold text-lg truncate transition-opacity uppercase tracking-wider", !isSidebarOpen && "md:hidden")}>
                                 Admin
                             </span>
                         </div>
                         <button
                             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-                            className="p-1 hover:bg-blue-800 rounded-md transition-colors"
+                            className="p-1 hover:bg-white/10 rounded-md transition-colors"
                         >
                             {isSidebarOpen ? <X size={20} className="md:hidden" /> : <Menu size={20} />}
                         </button>
@@ -87,8 +87,8 @@ export default function AdminLayout({
                                     key={item.name}
                                     href={item.href}
                                     className={cn(
-                                        "flex items-center px-4 py-3 transition-colors hover:bg-blue-800",
-                                        isActive && "bg-blue-800 border-r-4 border-yellow-400"
+                                        "flex items-center px-4 py-3 transition-colors hover:bg-white/10",
+                                        isActive && "bg-white/10 border-r-4 border-orange-500 text-orange-400 font-bold"
                                     )}
                                 >
                                     <item.icon size={20} className="shrink-0" />
@@ -103,10 +103,10 @@ export default function AdminLayout({
                         })}
                     </nav>
 
-                    <div className="p-4 border-t border-blue-800">
+                    <div className="p-4 border-t border-white/10">
                         <button
                             onClick={handleSignOut}
-                            className="flex items-center w-full px-4 py-2 text-sm text-blue-200 hover:text-white transition-colors"
+                            className="flex items-center w-full px-4 py-2 text-sm text-gray-400 hover:text-white transition-colors"
                         >
                             <LogOut size={18} />
                             <span className={cn("ml-3", !isSidebarOpen && "md:hidden")}>Sign Out</span>
@@ -133,7 +133,7 @@ export default function AdminLayout({
 
                     <div className="flex items-center space-x-4">
                         <div className="flex items-center space-x-2">
-                            <div className="w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center text-blue-900 font-bold text-xs">
+                            <div className="w-8 h-8 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold text-xs">
                                 AD
                             </div>
                             <span className="text-sm font-medium text-gray-700 hidden sm:inline-block">Admin User</span>

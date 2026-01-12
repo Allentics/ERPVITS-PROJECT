@@ -73,7 +73,7 @@ export default function CoursesPage() {
                 </div>
                 <Link
                     href="/admin/courses/new"
-                    className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors shadow-sm"
+                    className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-lg text-sm font-bold hover:bg-zinc-900 transition-colors shadow-sm"
                 >
                     <Plus size={18} />
                     Add Course
@@ -87,7 +87,7 @@ export default function CoursesPage() {
                     <input
                         type="text"
                         placeholder="Search courses..."
-                        className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-sm"
+                        className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all text-sm"
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                     />
@@ -104,7 +104,7 @@ export default function CoursesPage() {
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
                 {loading ? (
                     <div className="flex flex-col items-center justify-center py-20">
-                        <Loader2 className="animate-spin text-blue-600 mb-2" size={32} />
+                        <Loader2 className="animate-spin text-orange-500 mb-2" size={32} />
                         <p className="text-gray-500 text-sm">Loading courses...</p>
                     </div>
                 ) : error ? (
@@ -116,7 +116,7 @@ export default function CoursesPage() {
                         <p className="text-gray-500 text-sm mt-1 max-w-xs">{error}</p>
                         <button
                             onClick={fetchCourses}
-                            className="mt-6 text-blue-600 font-medium hover:underline text-sm"
+                            className="mt-6 text-orange-600 font-bold hover:underline text-sm"
                         >
                             Try Again
                         </button>
@@ -133,7 +133,7 @@ export default function CoursesPage() {
                         {searchTerm && (
                             <button
                                 onClick={() => setSearchTerm('')}
-                                className="mt-6 text-blue-600 font-medium hover:underline text-sm"
+                                className="mt-6 text-orange-600 font-bold hover:underline text-sm"
                             >
                                 Clear Search
                             </button>
@@ -155,7 +155,7 @@ export default function CoursesPage() {
                                     <tr key={course.id} className="hover:bg-gray-50 transition-colors group">
                                         <td className="px-6 py-4">
                                             <div className="flex items-center gap-3">
-                                                <div className="w-10 h-10 rounded bg-blue-100 flex items-center justify-center text-blue-600 font-bold shrink-0">
+                                                <div className="w-10 h-10 rounded bg-orange-100 flex items-center justify-center text-orange-600 font-bold shrink-0 shadow-sm border border-orange-200">
                                                     {course.title?.charAt(0)}
                                                 </div>
                                                 <div className="min-w-0">
@@ -166,8 +166,8 @@ export default function CoursesPage() {
                                         </td>
                                         <td className="px-6 py-4">
                                             <span className={cn(
-                                                "inline-flex items-center px-2 py-1 rounded-full text-xs font-medium",
-                                                course.category === 'Technical' ? "bg-purple-100 text-purple-700" : "bg-blue-100 text-blue-700"
+                                                "inline-flex items-center px-2 py-1 rounded-full text-xs font-bold",
+                                                course.category === 'Technical' ? "bg-orange-100 text-orange-700 border border-orange-200" : "bg-gray-100 text-gray-700 border border-gray-200"
                                             )}>
                                                 {course.category}
                                             </span>
@@ -180,7 +180,7 @@ export default function CoursesPage() {
                                             <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                                                 <Link
                                                     href={`/admin/courses/edit/${course.id}`}
-                                                    className="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"
+                                                    className="p-2 text-gray-400 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-all"
                                                     title="Edit"
                                                 >
                                                     <Edit size={18} />
