@@ -53,9 +53,11 @@ const Navbar = () => {
 
                         // Force overrides for specific courses
                         const isFunctional = ['sap-fico', 'fico', 'sap-fieldglass', 'fieldglass', 'sap-mm', 'mm', 'sap-sd', 'sd', 'sap-trm', 'trm'].includes(dbCourse.id);
+                        const isTechnical = ['sap-abap-on-cloud', 'abap-cloud', 'sap-abap-on-hana', 'abap-hana', 'c4c-technical', 'cpi'].includes(dbCourse.id);
                         const isOther = ['python-aiml', 'sap-python-aiml', 'python-ai-ml', 'python'].includes(dbCourse.id);
 
                         if (isFunctional) category = 'Functional';
+                        if (isTechnical) category = 'Technical';
                         if (isOther) category = 'Other';
 
                         return {
@@ -73,7 +75,10 @@ const Navbar = () => {
                     ).map(lc => {
                         // Apply same category logic to local-only courses
                         let category = lc.category;
+                        const isTechnical = ['sap-abap-on-cloud', 'abap-cloud', 'sap-abap-on-hana', 'abap-hana', 'c4c-technical', 'cpi'].includes(lc.id);
                         const isOther = ['python-aiml', 'sap-python-aiml', 'python-ai-ml', 'python'].includes(lc.id);
+
+                        if (isTechnical) category = 'Technical';
                         if (isOther) category = 'Other';
                         return { ...lc, category };
                     });
