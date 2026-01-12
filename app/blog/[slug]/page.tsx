@@ -208,7 +208,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
                                     'how-sap-fieldglass-transforming-global-contingent-workforce-market',
                                     'mto-and-sto-process-in-sap', 'master-sap-ariba-with-industry-leading-online-training',
-                                    'sap-trm-complementary-technologies', 'sap-trm-master-data-essentials'
+                                    'sap-trm-complementary-technologies', 'sap-trm-master-data-essentials' // Explicitly using component for this slug
                                 ].includes(slug) && (
                                         <div dangerouslySetInnerHTML={{ __html: post.content }} />
                                     )}
