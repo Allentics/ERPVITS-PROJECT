@@ -47,9 +47,7 @@ export default function PlacementSection() {
                                     }}
                                 />
                             </div>
-                            <span className="font-semibold text-xs md:text-sm text-center">
-                                {company.name}
-                            </span>
+
                         </div>
                     ))}
                 </div>
