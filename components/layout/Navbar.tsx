@@ -93,7 +93,7 @@ const Navbar = () => {
     }, []);
 
     // IDs to exclude from dropdown
-    const excludedIds = ['sap-analytics-cloud', 'analytics-cloud'];
+    const excludedIds = ['sap-analytics-cloud', 'analytics-cloud', 'sap-abap', 'abap'];
 
     const functionalCourses = dynCourses
         .filter(c => c.category?.toLowerCase() === 'functional')
