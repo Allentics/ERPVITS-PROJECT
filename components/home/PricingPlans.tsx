@@ -19,9 +19,7 @@ const DEFAULT_CONTENT = {
                 "Learning materials included",
                 "Self-study assistance",
                 "Flexible learning timeline",
-                "Certification guidance provided",
-                "24/7 Portal Access",
-                "Resume preparation tips"
+                "24/7 Team Support"
             ],
             cta: "Start Learning Now",
             color: "blue",
@@ -36,11 +34,26 @@ const DEFAULT_CONTENT = {
                 "Access to study materials & recordings",
                 "Job support included",
                 "Real SAP system access",
-                "Project-based learning"
+                "Project-based learning",
+                "Resume Prep & Certification Guidance"
             ],
             cta: "Join Upcoming Batch",
             color: "orange",
             popular: true
+        },
+        {
+            name: "One-to-One Training",
+            desc: "Daily customized session schedule",
+            price: "Personalized",
+            features: [
+                "Live Q&A with experts",
+                "Full project lab access",
+                "1-on-1 mentoring support",
+                "Resume Preparation"
+            ],
+            cta: "Get Custom Plan",
+            color: "purple",
+            popular: false
         },
         {
             name: "Corporate Training",
@@ -65,25 +78,25 @@ export default function PricingPlans() {
     const [modalTitle, setModalTitle] = useState("Get Started with SAP");
     const [content, setContent] = useState(DEFAULT_CONTENT);
 
-    useEffect(() => {
-        async function fetchPricing() {
-            try {
-                const { data, error } = await supabase
-                    .from('site_content')
-                    .select('content')
-                    .eq('page_path', '/')
-                    .eq('section_key', 'pricing')
-                    .single();
+    // useEffect(() => {
+    //     async function fetchPricing() {
+    //         try {
+    //             const { data, error } = await supabase
+    //                 .from('site_content')
+    //                 .select('content')
+    //                 .eq('page_path', '/')
+    //                 .eq('section_key', 'pricing')
+    //                 .single();
 
-                if (data && !error) {
-                    setContent(data.content);
-                }
-            } catch (err) {
-                console.error('Error fetching Pricing content:', err);
-            }
-        }
-        fetchPricing();
-    }, []);
+    //             if (data && !error) {
+    //                 setContent(data.content);
+    //             }
+    //         } catch (err) {
+    //             console.error('Error fetching Pricing content:', err);
+    //         }
+    //     }
+    //     fetchPricing();
+    // }, []);
 
     const openModal = (planName: string) => {
         setModalTitle(`Inquire about ${planName}`);
@@ -103,21 +116,21 @@ export default function PricingPlans() {
                     <p className="text-lg text-gray-600">{content.subtitle}</p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
                     {content.plans.map((plan, i) => (
-                        <div key={i} className={`bg-white rounded-2xl p-8 shadow-sm border transition-all duration-300 relative hover:-translate-y-2 hover:shadow-xl ${plan.popular ? 'border-orange-500 ring-2 ring-orange-200' : 'border-gray-200'}`}>
+                        <div key={i} className={`bg-white rounded-2xl p-6 shadow-sm border transition-all duration-300 relative hover:-translate-y-2 hover:shadow-xl ${plan.popular ? 'border-orange-500 ring-2 ring-orange-200' : 'border-gray-200'}`}>
                             {plan.popular && (
                                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-orange-500 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide">
                                     Most Popular
                                 </div>
                             )}
 
-                            <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                            <p className="text-gray-500 text-sm mb-6">{plan.desc}</p>
+                            <h3 className="text-xl font-bold text-gray-900 mb-2">{plan.name}</h3>
+                            <p className="text-gray-500 text-sm mb-6 h-10">{plan.desc}</p>
 
-                            <div className="text-3xl font-extrabold text-blue-900 mb-8">{plan.price}</div>
+                            <div className="text-2xl font-extrabold text-blue-900 mb-8">{plan.price}</div>
 
-                            <ul className="space-y-4 mb-8">
+                            <ul className="space-y-4 mb-8 min-h-[200px]">
                                 {plan.features.map((f, idx) => (
                                     <li key={idx} className="flex items-start text-sm text-gray-700">
                                         <Check className={`w-5 h-5 mr-3 flex-shrink-0 ${plan.popular ? 'text-orange-500' : 'text-blue-500'}`} />
