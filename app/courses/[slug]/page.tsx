@@ -98,6 +98,8 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
         heroImage: (isAriba || isFICO || isFieldglass || isMM || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS || isTM || isEWM || isIBP || isMDG || isC4CFunc || isABAPHana || isPython) ? undefined : (localCourse?.heroImage || course?.hero_image),
         metaTitle: course?.meta_title || localCourse?.metaTitle,
         metaDescription: course?.meta_description || localCourse?.metaDescription,
+        price: (course?.price && course.price.trim() !== '') ? course.price : localCourse?.price,
+        duration: (course?.duration && course.duration.trim() !== '') ? course.duration : localCourse?.duration,
         sections: (isAriba || isFieldglass || isMM || isFICO || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS || isTM || isEWM || isIBP || isMDG || isC4CFunc || isABAPHana || isPython) ? localCourse?.sections : ((course?.sections && course.sections.length > 0) ? course.sections : localCourse?.sections),
         features: (course?.features && course.features.length > 0) ? course.features : localCourse?.features,
         curriculum: (course?.curriculum && course.curriculum.length > 0) ? course.curriculum : localCourse?.curriculum,
@@ -169,6 +171,22 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                             <svg className={`w-5 h-5 ${mappedCourse.themeColor === 'purple' ? 'text-purple-500' : 'text-red-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                             Lifetime Access
                         </div>
+                        {(mappedCourse.price || mappedCourse.duration) && (
+                            <div className="flex items-center gap-4 ml-4 pl-4 border-l border-slate-200">
+                                {mappedCourse.duration && (
+                                    <div className="flex items-center gap-2 bg-white/80 px-3 py-1.5 rounded-full border border-slate-100 shadow-sm">
+                                        <svg className="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                        <span className="font-bold text-slate-900">{mappedCourse.duration}</span>
+                                    </div>
+                                )}
+                                {mappedCourse.price && (
+                                    <div className="flex items-center gap-2 bg-green-50 px-3 py-1.5 rounded-full border border-green-100 shadow-sm">
+                                        <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 8h6m-3-3v3m-3 3h6m-3-3v3m-3 3h6m-3-3v3M5 12a7 7 0 1014 0 7 7 0 00-14 0z"></path></svg>
+                                        <span className="font-bold text-green-700">{mappedCourse.price}</span>
+                                    </div>
+                                )}
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

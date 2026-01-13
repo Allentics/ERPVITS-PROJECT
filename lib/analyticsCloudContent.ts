@@ -1,7 +1,9 @@
 
 import { Section } from './courseData';
 
-export const analyticsCloudContent: { features: string[]; sections: Section[] } = {
+export const analyticsCloudContent: { price: string; duration: string; features: string[]; sections: Section[] } = {
+    price: "45,000",
+    duration: "40-45 Hours",
     features: [
         "40 Hours of Live Training",
         "Hands-on BI, Planning & Predictive",

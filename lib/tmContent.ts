@@ -213,6 +213,8 @@ export const tmRealWorldScenarios = [
 ];
 
 export const tmContent = {
+    price: "Competitive",
+    duration: "40-45 Hours",
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-tm.pdf",
     heroHeading: "Transform Your Logistics Career with the #1 SAP TM Online Training Program",
     heroSubheading: "Master logistics optimization, supply chain coordination, and enterprise transportation planning with hands-on, job-oriented training.",

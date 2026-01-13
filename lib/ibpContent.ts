@@ -203,6 +203,8 @@ export const ibpRealWorldScenarios = [
 ];
 
 export const ibpContent = {
+    price: "Competitive",
+    duration: "45 Hours",
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-ibp.pdf",
     heroHeading: "Transform Your Supply Chain Strategy with the #1 SAP IBP Online Training Program",
     heroSubheading: "Excel in demand planning, supply chain optimization, and data-driven business strategy with expert-led training.",

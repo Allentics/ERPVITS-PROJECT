@@ -203,6 +203,8 @@ export const c4cRealWorldScenarios = [
 ];
 
 export const c4cFunctionalContent = {
+    price: "Competitive",
+    duration: "45-50 Hours",
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-c4c-functional.pdf",
     heroHeading: "Master Cloud-Based Customer Relationship Management with the #1 SAP C4C Functional Online Training Program",
     heroSubheading: "Excel in cloud-based customer relationship management, sales operations, and customer service transformation.",

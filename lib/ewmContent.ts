@@ -214,6 +214,8 @@ export const ewmRealWorldScenarios = [
 ];
 
 export const ewmContent = {
+    price: "Competitive",
+    duration: "35-40 Hours",
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-ewm.pdf",
     heroHeading: "Master Modern Warehouse Operations with the #1 SAP EWM Online Training Program",
     heroSubheading: "Transform your career with expert-led training in warehouse optimization, inventory management, and advanced logistics operations.",

@@ -203,6 +203,8 @@ export const mdgRealWorldScenarios = [
 ];
 
 export const mdgContent = {
+    price: "Competitive",
+    duration: "45-50 Hours",
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-mdg.pdf",
     heroHeading: "Master Data Excellence with the #1 SAP MDG Online Training Program",
     heroSubheading: "Excel in data quality management, organizational data governance, and enterprise information management with expert-led training.",

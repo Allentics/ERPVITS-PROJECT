@@ -28,7 +28,9 @@ export default function FeaturedCourses() {
                             ...localCourse,
                             ...dbCourse, // Merge DB data
                             // Prioritize local heroImage if it exists, otherwise DB hero_image
-                            heroImage: localCourse.heroImage || dbCourse?.hero_image
+                            heroImage: localCourse.heroImage || dbCourse?.hero_image,
+                            price: (dbCourse?.price && dbCourse.price.trim() !== '') ? dbCourse.price : localCourse.price,
+                            duration: (dbCourse?.duration && dbCourse.duration.trim() !== '') ? dbCourse.duration : localCourse.duration
                         };
                     });
                     // Sort or filter if necessary, for now we keep the order from courses.json/lib

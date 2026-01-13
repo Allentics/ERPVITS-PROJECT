@@ -1,4 +1,6 @@
 export const ppdsContent = {
+    price: "45,000",
+    duration: "45-50 Hours",
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-ppds.pdf",
     heroHeading: "Transform Your Career with the #1 SAP PPDS Online Training Program",
     heroSubheading: "The SAP PPDS (Production Planning and Detailed Scheduling) Online Training Program from ERPVITS represents a transformative learning pathway for production planning professionals and SAP consultants eager to excel in advanced production scheduling, demand planning, and manufacturing optimization.",
