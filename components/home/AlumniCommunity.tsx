@@ -10,7 +10,7 @@ export default function AlumniCommunity() {
     const stats = [
         {
             icon: Users,
-            value: "5,000+",
+            value: "8,000+",
             label: "Alumni Members Worldwide"
         },
         {
@@ -39,7 +39,7 @@ export default function AlumniCommunity() {
                         Join Our Thriving Alumni Community
                     </h2>
                     <p className="text-slate-400 max-w-2xl mx-auto">
-                        Connect with 5000+ SAP professionals worldwide for networking, mentorship, and career opportunities
+                        Connect with 8000+ SAP professionals worldwide for networking, mentorship, and career opportunities
                     </p>
                 </div>
 

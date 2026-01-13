@@ -31,13 +31,13 @@ export default function ProvenResults() {
         {
             icon: BookOpen,
             value: "25+",
-            label: "25+ SAP Certifications",
+            label: "Expert Guidance on 25+ SAP Certifications",
             color: "text-green-600"
         },
         {
             icon: Clock,
-            value: "2M+",
-            label: "2-4 Months to Placement",
+            value: "2 Weeks",
+            label: "2-4 Weeks to Placement",
             color: "text-slate-500"
         }
     ];
