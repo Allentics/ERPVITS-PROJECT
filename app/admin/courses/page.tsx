@@ -175,8 +175,8 @@ export default function CoursesPage() {
                                             </span>
                                         </td>
                                         <td className="px-6 py-4 whitespace-nowrap">
-                                            <p className="text-sm text-gray-900 font-medium">{course.price || 'Contact for Pricing'}</p>
-                                            <p className="text-xs text-gray-500">{course.duration || '40-50 Hours'}</p>
+                                            <p className="text-sm text-gray-900 font-medium">{course.price}</p>
+                                            <p className="text-sm text-gray-500">{course.duration}</p>
                                         </td>
                                         <td className="px-6 py-4 text-right">
                                             <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
