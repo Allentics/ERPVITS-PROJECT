@@ -1,37 +1,62 @@
 "use client";
 
-import { BookOpen, Briefcase, Rocket, BadgeDollarSign, Clock, Eye } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { Clock, BookOpen } from 'lucide-react';
 import Link from 'next/link';
+import { supabase } from '@/lib/supabase';
+import { blogPosts as localPosts } from '@/lib/blogData';
 
 export default function LatestInsights() {
-    const insights = [
-        {
-            icon: Briefcase,
-            tag: "Career Guide",
-            title: "Top 10 SAP Modules to Learn in 2025 for High-Paying Jobs",
-            description: "Discover which SAP modules are most in-demand and can command salaries of $100K+ in the current job market.",
-            readTime: "8 min read",
-            views: "2.5K views",
-            tagColor: "text-orange-600 bg-orange-50"
-        },
-        {
-            icon: Rocket,
-            tag: "Industry News",
-            title: "SAP S/4HANA Migration: What It Means for Your Career in 2025",
-            description: "Companies are accelerating S/4HANA migrations. Learn how to position yourself for these high-value opportunities.",
-            readTime: "6 min read",
-            views: "1.8K views",
-            tagColor: "text-blue-600 bg-blue-50"
-        },
-        {
-            icon: BadgeDollarSign,
-            tag: "Salary Insights",
-            title: "SAP Consultant Salary Guide 2025: What You Can Expect to Earn",
-            description: "Comprehensive salary breakdown by role, location, and experience level. Plus negotiation tips to maximize your earnings.",
-            readTime: "10 min read",
-            views: "3.2K views",
-            tagColor: "text-green-600 bg-green-50"
+    const [posts, setPosts] = useState<any[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        async function fetchPosts() {
+            try {
+                // Fetch latest posts from DB
+                const { data: dbPosts } = await supabase
+                    .from('blog_posts')
+                    .select('*')
+                    .order('date', { ascending: false })
+                    .limit(5); // Fetch slightly more to ensure we have enough even after filtering/merging
+
+                // Merge with local posts
+                let combined = [...localPosts];
+
+                if (dbPosts && dbPosts.length > 0) {
+                    // Create a map of DB posts for easy lookup
+                    const dbPostMap = new Map(dbPosts.map(p => [p.id, p]));
+
+                    // Update local posts with DB data if ID matches, or add new ones
+                    // This simple merge strategy prioritizes DB existence but keeps local structure if needed
+                    // For homepage, we just want the latest content. 
+
+                    // Actually, let's just combine distinct lists
+                    const dbIds = new Set(dbPosts.map(p => p.id));
+                    const uniqueLocal = localPosts.filter(p => !dbIds.has(p.id));
+                    combined = [...dbPosts, ...uniqueLocal];
+                }
+
+                // Sort by date descending
+                combined.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+                // Take top 3
+                setPosts(combined.slice(0, 3));
+            } catch (error) {
+                console.error("Failed to fetch posts", error);
+                // Fallback to local
+                setPosts(localPosts.slice(0, 3));
+            } finally {
+                setLoading(false);
+            }
         }
+        fetchPosts();
+    }, []);
+
+    const tagColors = [
+        "text-orange-600 bg-orange-50",
+        "text-blue-600 bg-blue-50",
+        "text-green-600 bg-green-50"
     ];
 
     return (
@@ -48,34 +73,60 @@ export default function LatestInsights() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                    {insights.map((item, index) => (
-                        <div key={index} className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow group">
-                            <div className="h-48 bg-[#0056D2] flex items-center justify-center">
-                                <item.icon className="w-16 h-16 text-white transform group-hover:scale-110 transition-transform duration-300" strokeWidth={1.5} />
+                    {loading ? (
+                        // Skeleton Loading State
+                        [1, 2, 3].map((i) => (
+                            <div key={i} className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden h-[400px] animate-pulse">
+                                <div className="h-48 bg-slate-200"></div>
+                                <div className="p-6 space-y-4">
+                                    <div className="h-4 bg-slate-200 w-1/3 rounded"></div>
+                                    <div className="h-6 bg-slate-200 w-full rounded"></div>
+                                    <div className="h-4 bg-slate-200 w-full rounded"></div>
+                                </div>
                             </div>
-                            <div className="p-6">
-                                <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold mb-4 ${item.tagColor}`}>
-                                    {item.tag}
-                                </span>
-                                <h3 className="text-lg font-bold text-slate-900 mb-3 line-clamp-2 min-h-[3.5rem]">
-                                    {item.title}
-                                </h3>
-                                <p className="text-slate-500 text-sm leading-relaxed mb-6 line-clamp-3">
-                                    {item.description}
-                                </p>
-                                <div className="flex items-center justify-between text-xs text-slate-400 border-t border-slate-100 pt-4">
-                                    <div className="flex items-center gap-1">
-                                        <Clock className="w-3 h-3" />
-                                        <span>{item.readTime}</span>
+                        ))
+                    ) : (
+                        posts.map((post, index) => (
+                            <div key={post.id} className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow group flex flex-col h-full">
+                                <Link href={`/blog/${post.id}`} className="block h-48 overflow-hidden relative">
+                                    {post.image ? (
+                                        <img
+                                            src={post.image}
+                                            alt={post.title}
+                                            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                                        />
+                                    ) : (
+                                        <div className="w-full h-full bg-slate-100 flex items-center justify-center text-slate-300">
+                                            <BookOpen className="w-12 h-12" />
+                                        </div>
+                                    )}
+                                </Link>
+                                <div className="p-6 flex flex-col flex-grow">
+                                    <div>
+                                        <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold mb-4 ${tagColors[index % tagColors.length]}`}>
+                                            {post.category || "SAP Insights"}
+                                        </span>
+                                        <Link href={`/blog/${post.id}`}>
+                                            <h3 className="text-lg font-bold text-slate-900 mb-3 line-clamp-2 hover:text-orange-600 transition-colors">
+                                                {post.title}
+                                            </h3>
+                                        </Link>
+                                        <p className="text-slate-500 text-sm leading-relaxed mb-6 line-clamp-3">
+                                            {post.description}
+                                        </p>
                                     </div>
-                                    <div className="flex items-center gap-1">
-                                        <Eye className="w-3 h-3" />
-                                        <span>{item.views}</span>
+
+                                    <div className="mt-auto flex items-center justify-between text-xs text-slate-400 border-t border-slate-100 pt-4">
+                                        <div className="flex items-center gap-1">
+                                            <Clock className="w-3 h-3" />
+                                            <span>{Math.ceil(post.description.split(' ').length / 200) + 2} min read</span>
+                                        </div>
+                                        {/* Views removed as requested */}
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        ))
+                    )}
                 </div>
 
                 <div className="text-center">
