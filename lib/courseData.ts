@@ -106,6 +106,9 @@ export const courses: Course[] = coursesData.map((c: any) => {
         return {
             ...c,
             ...extraContent,
+            // Preserve price and duration from courses.json if they exist
+            price: c.price || extraContent.price,
+            duration: c.duration || extraContent.duration,
             // Merge generic fields if they differ or exist in extraContent
             sections: extraContent.sections || c.sections,
             curriculum: extraContent.curriculum || (extraContent.sections?.find((s: any) => s.type === 'curriculum')?.modules) || c.curriculum,

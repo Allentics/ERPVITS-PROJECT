@@ -52,7 +52,7 @@ const Navbar = () => {
                         let category = dbCourse.category || local?.category;
 
                         // Force overrides for specific courses
-                        const isFunctional = ['sap-fico', 'fico', 'sap-fieldglass', 'fieldglass', 'sap-mm', 'mm', 'sap-sd', 'sd', 'sap-trm', 'trm'].includes(dbCourse.id);
+                        const isFunctional = ['sap-fico', 'fico', 'sap-fieldglass', 'fieldglass', 'sap-mm', 'mm', 'sap-sd', 'sd', 'sap-trm', 'trm', 'ariba', 'sap-ariba'].includes(dbCourse.id);
                         const isTechnical = ['sap-abap-on-cloud', 'abap-cloud', 'sap-abap-on-hana', 'abap-hana', 'c4c-technical', 'cpi'].includes(dbCourse.id);
                         const isOther = ['python-aiml', 'sap-python-aiml', 'python-ai-ml', 'python'].includes(dbCourse.id);
 
