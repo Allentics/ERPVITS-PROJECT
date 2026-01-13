@@ -1,4 +1,8 @@
--- Insert SAP Ariba course into the database
+-- SAFE Insert for SAP Ariba
+-- This will create the course if it doesn't exist.
+-- If it DOES exist, it will ONLY ensure it is in the "Functional" category and has a price.
+-- It will NOT overwrite your title, description, or images if they are already there.
+
 INSERT INTO public.courses (
     id, 
     title, 
@@ -23,15 +27,10 @@ INSERT INTO public.courses (
     'Learn SAP Ariba from experts. Comprehensive module covering Sourcing, Contracts, SLP, Buying & Invoicing. 100% Practical Training with Placement Assistance.'
 )
 ON CONFLICT (id) DO UPDATE SET
-    title = EXCLUDED.title,
-    category = EXCLUDED.category,
-    duration = EXCLUDED.duration,
-    price = EXCLUDED.price,
-    hero_heading = EXCLUDED.hero_heading,
-    hero_image = EXCLUDED.hero_image,
-    description = EXCLUDED.description,
-    meta_title = EXCLUDED.meta_title,
-    meta_description = EXCLUDED.meta_description;
+    -- ONLY update these fields to ensure it appears in the menu and has a price
+    category = 'Functional',
+    price = CASE WHEN courses.price IS NULL OR courses.price = '' OR courses.price ILIKE '%Competitive%' THEN '45,000' ELSE courses.price END,
+    duration = CASE WHEN courses.duration IS NULL OR courses.duration = '' THEN '50 Hours' ELSE courses.duration END;
 
--- Verify the insert
-SELECT id, title, category, price, duration FROM courses WHERE id = 'ariba';
+-- Verify
+SELECT * FROM courses WHERE id = 'ariba';

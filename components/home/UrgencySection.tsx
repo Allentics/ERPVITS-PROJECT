@@ -7,8 +7,10 @@ import ContactModal from '../ContactModal';
 export default function UrgencySection() {
     const [timeLeft, setTimeLeft] = useState({ days: 2, hours: 14, minutes: 22, seconds: 0 });
     const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+    const [nextBatchDate, setNextBatchDate] = useState("");
 
     useEffect(() => {
+        // Timer logic
         const timer = setInterval(() => {
             setTimeLeft(prev => {
                 if (prev.seconds > 0) return { ...prev, seconds: prev.seconds - 1 };
@@ -18,6 +20,31 @@ export default function UrgencySection() {
                 return prev;
             });
         }, 1000);
+
+        // Date logic: Get next Monday
+        const getNextMonday = () => {
+            const d = new Date();
+            d.setDate(d.getDate() + (1 + 7 - d.getDay()) % 7 || 7);
+            // If today is Sunday (0) -> 1+7-0 = 8 % 7 = 1 (Monday) | If today is Monday(1) -> 1+7-1 = 7 % 7 = 0 || 7 (Next Monday)
+            // Correction for "Next Monday":
+            const today = new Date();
+            const dayOfWeek = today.getDay();
+            const daysUntilNextMonday = (8 - dayOfWeek) % 7 || 7; // If today is Monday (1), 7 days later. 
+            // Note: If today is Monday, do we show today or next week? User said "19th Jan" which is next Monday (today is 13th).
+            // 13 + (8-2)%7 = 13 + 6 = 19. Correct.
+
+            const nextDate = new Date(today);
+            nextDate.setDate(today.getDate() + daysUntilNextMonday);
+
+            return nextDate.toLocaleDateString('en-GB', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            });
+        };
+
+        setNextBatchDate(getNextMonday());
+
         return () => clearInterval(timer);
     }, []);
 
@@ -30,7 +57,7 @@ export default function UrgencySection() {
             />
             <div className="max-w-5xl mx-auto px-6 py-10 text-center border-2 border-orange-500 rounded-2xl shadow-xl bg-white relative overflow-hidden">
                 <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-8 flex items-center justify-center gap-2">
-                    <span>🔥</span> Next Live Batch Starting Soon!
+                    Next Live Batch Starting Soon!
                 </h2>
 
                 <div className="flex justify-center gap-4 mb-10">
@@ -51,21 +78,14 @@ export default function UrgencySection() {
 
                 <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-600 mb-8 font-medium">
                     <div className="flex items-center gap-2">
-                        <span>📅</span> Start Date: November 4, 2025
+                        <span>📅</span> Date: {nextBatchDate}
                     </div>
                     <div className="flex items-center gap-2">
-                        <span>👨‍🏫</span> Format: Instructor-Led (Live)
+                        <span>⏰</span> Time: 7:00 AM
                     </div>
                     <div className="flex items-center gap-2">
-                        <span>🗓️</span> Schedule: Tuesday-Thursday & Saturday
+                        <span>👨‍🏫</span> Format: Instructor-Led (Online)
                     </div>
-                    <div className="flex items-center gap-2">
-                        <span>⭐</span> Rating: 4.9/5.0
-                    </div>
-                </div>
-
-                <div className="text-red-600 font-bold mb-8 animate-pulse flex items-center justify-center gap-2">
-                    <span>🎯</span> Seats Left: Only 5 of 15 Remaining!
                 </div>
 
                 <div className="flex flex-col md:flex-row justify-center gap-4 max-w-3xl mx-auto">
@@ -79,16 +99,8 @@ export default function UrgencySection() {
                         onClick={() => setIsContactModalOpen(true)}
                         className="bg-white hover:bg-gray-50 text-slate-900 border-2 border-slate-900 px-8 py-4 rounded-lg font-bold shadow-lg text-lg flex-1 uppercase tracking-wide transition-transform hover:-translate-y-0.5"
                     >
-                        SECURE SPOT WITH $99 - PAY REST LATER
+                        SECURE SPOT WITH 60% Fees Now - PAY REST LATER
                     </button>
-                </div>
-
-                {/* Social Proof - Optional based on screenshot, keeping subtle */}
-                <div className="mt-8 text-xs text-gray-400">
-                    <div className="flex items-center justify-center gap-1">
-                        <CheckCircle className="w-3 h-3 text-green-500" />
-                        <span>Recent enrollment: Satish Kumar (5 mins ago)</span>
-                    </div>
                 </div>
             </div>
         </section>
