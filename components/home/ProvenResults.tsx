@@ -12,8 +12,8 @@ export default function ProvenResults() {
         },
         {
             icon: TrendingUp,
-            value: "30%+",
-            label: "30-50% Average Salary Increase",
+            value: "40%+",
+            label: "30-80% Average Salary Increase",
             color: "text-yellow-500"
         },
         {
