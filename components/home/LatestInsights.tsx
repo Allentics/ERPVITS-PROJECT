@@ -18,27 +18,26 @@ export default function LatestInsights() {
                     .from('blog_posts')
                     .select('*')
                     .order('date', { ascending: false })
-                    .limit(5); // Fetch slightly more to ensure we have enough even after filtering/merging
+                    .limit(5);
 
-                // Merge with local posts
+                // Merge with local posts logic
                 let combined = [...localPosts];
 
                 if (dbPosts && dbPosts.length > 0) {
-                    // Create a map of DB posts for easy lookup
-                    const dbPostMap = new Map(dbPosts.map(p => [p.id, p]));
-
-                    // Update local posts with DB data if ID matches, or add new ones
-                    // This simple merge strategy prioritizes DB existence but keeps local structure if needed
-                    // For homepage, we just want the latest content. 
-
-                    // Actually, let's just combine distinct lists
-                    const dbIds = new Set(dbPosts.map(p => p.id));
+                    const dbIds = new Set(dbPosts.map((p: any) => p.id));
                     const uniqueLocal = localPosts.filter(p => !dbIds.has(p.id));
                     combined = [...dbPosts, ...uniqueLocal];
                 }
 
-                // Sort by date descending
-                combined.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+                // Sort by date descending (safeguard date parsing)
+                combined.sort((a, b) => {
+                    const dateA = a.date ? new Date(a.date).getTime() : 0;
+                    const dateB = b.date ? new Date(b.date).getTime() : 0;
+                    // Handle invalid dates (NaN results in false for comparisons, keep original order or push down)
+                    if (isNaN(dateA)) return 1;
+                    if (isNaN(dateB)) return -1;
+                    return dateB - dateA;
+                });
 
                 // Take top 3
                 setPosts(combined.slice(0, 3));
@@ -86,46 +85,53 @@ export default function LatestInsights() {
                             </div>
                         ))
                     ) : (
-                        posts.map((post, index) => (
-                            <div key={post.id} className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow group flex flex-col h-full">
-                                <Link href={`/blog/${post.id}`} className="block h-48 overflow-hidden relative">
-                                    {post.image ? (
-                                        <img
-                                            src={post.image}
-                                            alt={post.title}
-                                            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                                        />
-                                    ) : (
-                                        <div className="w-full h-full bg-slate-100 flex items-center justify-center text-slate-300">
-                                            <BookOpen className="w-12 h-12" />
-                                        </div>
-                                    )}
-                                </Link>
-                                <div className="p-6 flex flex-col flex-grow">
-                                    <div>
-                                        <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold mb-4 ${tagColors[index % tagColors.length]}`}>
-                                            {post.category || "SAP Insights"}
-                                        </span>
-                                        <Link href={`/blog/${post.id}`}>
-                                            <h3 className="text-lg font-bold text-slate-900 mb-3 line-clamp-2 hover:text-orange-600 transition-colors">
-                                                {post.title}
-                                            </h3>
-                                        </Link>
-                                        <p className="text-slate-500 text-sm leading-relaxed mb-6 line-clamp-3">
-                                            {post.description}
-                                        </p>
-                                    </div>
+                        posts.map((post, index) => {
+                            const description = post.description || "";
+                            const wordCount = description.split(/\s+/).length; // Split by whitespace safe
+                            const readTime = Math.ceil(wordCount / 200) + 2;
 
-                                    <div className="mt-auto flex items-center justify-between text-xs text-slate-400 border-t border-slate-100 pt-4">
-                                        <div className="flex items-center gap-1">
-                                            <Clock className="w-3 h-3" />
-                                            <span>{Math.ceil(post.description.split(' ').length / 200) + 2} min read</span>
+                            return (
+                                <div key={post.id} className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow group flex flex-col h-full">
+                                    <Link href={`/blog/${post.id}`} className="block h-48 overflow-hidden relative">
+                                        {post.image ? (
+                                            /* eslint-disable-next-line @next/next/no-img-element */
+                                            <img
+                                                src={post.image}
+                                                alt={post.title || "Blog Post"}
+                                                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                                            />
+                                        ) : (
+                                            <div className="w-full h-full bg-slate-100 flex items-center justify-center text-slate-300">
+                                                <BookOpen className="w-12 h-12" />
+                                            </div>
+                                        )}
+                                    </Link>
+                                    <div className="p-6 flex flex-col flex-grow">
+                                        <div>
+                                            <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold mb-4 ${tagColors[index % tagColors.length]}`}>
+                                                {post.category || "SAP Insights"}
+                                            </span>
+                                            <Link href={`/blog/${post.id}`}>
+                                                <h3 className="text-lg font-bold text-slate-900 mb-3 line-clamp-2 hover:text-orange-600 transition-colors">
+                                                    {post.title}
+                                                </h3>
+                                            </Link>
+                                            <p className="text-slate-500 text-sm leading-relaxed mb-6 line-clamp-3">
+                                                {description}
+                                            </p>
                                         </div>
-                                        {/* Views removed as requested */}
+
+                                        <div className="mt-auto flex items-center justify-between text-xs text-slate-400 border-t border-slate-100 pt-4">
+                                            <div className="flex items-center gap-1">
+                                                <Clock className="w-3 h-3" />
+                                                <span>{readTime} min read</span>
+                                            </div>
+                                            {/* Views removed as requested */}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))
+                            );
+                        })
                     )}
                 </div>
 
