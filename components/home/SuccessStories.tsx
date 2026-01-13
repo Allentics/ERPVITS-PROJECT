@@ -25,10 +25,10 @@ const stories = [
     },
     {
         name: "Renuka Mittal",
-        role: "SAP Analytics Cloud Developer",
+        role: "SAP ABAP on Cloud Developer",
         company: "Google Cloud",
         hike: "+63.64%",
-        course: "SAP Analytics Cloud",
+        course: "SAP ABAP on Cloud Developer",
         time: "78 days",
         quote: "Initially skeptical about online SAP training, but ERPVITS proved me wrong. It wasn’t easy—the concepts were challenging—but the mentors guided me throughout. Within 2.5 months, I landed a role at Google Cloud with a 63% salary hike.",
         image: "https://randomuser.me/api/portraits/women/32.jpg"
@@ -72,7 +72,7 @@ export default function SuccessStories() {
                 <div className="text-center mb-16">
                     <h2 className="text-3xl font-bold text-gray-900 mb-4">🎉 Meet Our Success Stories</h2>
                     <p className="text-lg text-gray-600">
-                        Real People Who Transformed Their Careers with ERPVITS Training
+                        People Who Transformed Their Careers with ERPVITS Training
                     </p>
                 </div>
 
@@ -80,11 +80,16 @@ export default function SuccessStories() {
                     {stories.map((story, i) => (
                         <div key={i} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-all relative">
                             <div className="absolute top-6 right-6 flex text-yellow-400">
-                                {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
+                                {[...Array(5)].map((_, s) => (
+                                    <Star
+                                        key={s}
+                                        className={`w-4 h-4 ${s < ((i === 1 || i === 5) ? 4 : 5) ? "fill-current" : "text-gray-200"}`}
+                                    />
+                                ))}
                             </div>
 
                             <div className="flex items-center mb-6">
-                                <img src={story.image} alt={story.name} className="w-16 h-16 rounded-full border-2 border-orange-100 mr-4" />
+                                {/* Image removed as requested */}
                                 <div>
                                     <h3 className="font-bold text-gray-900">{story.name}</h3>
                                     <p className="text-xs text-gray-500 font-medium uppercase tracking-wide">{story.role}</p>
@@ -109,11 +114,6 @@ export default function SuccessStories() {
 
                             <div className="border-t border-gray-100 pt-4 flex justify-between items-center">
                                 <span className="text-xs text-gray-400 font-medium">{story.course}</span>
-                                {i === 0 && (
-                                    <button className="text-orange-600 text-xs font-bold flex items-center hover:underline">
-                                        <PlayCircle className="w-4 h-4 mr-1" /> Watch Video
-                                    </button>
-                                )}
                             </div>
                         </div>
                     ))}
