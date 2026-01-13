@@ -4,17 +4,17 @@ import WhyChooseUs from '@/components/home/WhyChooseUs';
 import CustomTrainingPlan from '@/components/home/CustomTrainingPlan';
 import FeaturedCourses from '@/components/home/FeaturedCourses';
 import PlacementSection from '@/components/home/PlacementSection';
-import TrainingFormats from '@/components/home/TrainingFormats';
+
 import ProvenResults from '@/components/home/ProvenResults';
 import CareerAdvisors from '@/components/home/CareerAdvisors';
 import ROICalculator from '@/components/home/ROICalculator';
-import RiskFreeGuarantee from '@/components/home/RiskFreeGuarantee';
+
 import CompetitiveAdvantage from '@/components/home/CompetitiveAdvantage';
 import LatestInsights from '@/components/home/LatestInsights';
 import UpcomingWebinars from '@/components/home/UpcomingWebinars';
 import AlumniCommunity from '@/components/home/AlumniCommunity';
 import SuccessStories from '@/components/home/SuccessStories';
-import TrainerExpertise from '@/components/home/TrainerExpertise';
+
 import PricingPlans from '@/components/home/PricingPlans';
 import HomeFAQ from '@/components/home/HomeFAQ';
 
@@ -43,7 +43,7 @@ export default function Home() {
       <PlacementSection />
 
       {/* New Section: Flexible Training Formats */}
-      <TrainingFormats />
+
 
       {/* New Section: Proven Results */}
       <ProvenResults />
@@ -55,13 +55,13 @@ export default function Home() {
       <SuccessStories />
 
       {/* 9 & 10. Trainer Expertise + 1-on-1 */}
-      <TrainerExpertise />
+
 
       {/* New Section: ROI Calculator */}
       <ROICalculator />
 
       {/* New Section: Risk Free Guarantee */}
-      <RiskFreeGuarantee />
+
 
       {/* New Section: Competitive Advantage */}
       <CompetitiveAdvantage />
