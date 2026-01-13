@@ -73,9 +73,7 @@ export default function AllCoursesPage() {
                                         <Clock className="h-4 w-4 mr-2 text-[#ff7a3d]" />
                                         <span>{course.duration || '40-45 hours'}</span>
                                     </div>
-                                    <div className="flex items-center text-sm font-bold text-gray-900 bg-green-50 px-3 py-1.5 rounded-full border border-green-100">
-                                        <span className="text-green-700">₹ {course.price || '45,000'}</span>
-                                    </div>
+                                    {/* Price Removed */}
                                 </div>
 
                                 {/* Description */}

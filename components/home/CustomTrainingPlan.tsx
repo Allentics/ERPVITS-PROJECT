@@ -22,7 +22,7 @@ export default function CustomTrainingPlan() {
 
     // Get unique course titles for dropdown
     const uniqueCourses = Array.from(new Set(courses.map(c => c.title)))
-        .filter(Boolean)
+        .filter(t => t !== 'Other' && Boolean(t))
         .sort((a, b) => a.localeCompare(b));
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -205,7 +205,6 @@ export default function CustomTrainingPlan() {
                                                     {course}
                                                 </option>
                                             ))}
-                                            <option value="Other">Other</option>
                                         </select>
                                     </div>
                                     <div>

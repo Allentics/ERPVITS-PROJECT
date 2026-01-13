@@ -104,62 +104,62 @@ export default function ContactForm({ className = "", showLabels = true, success
     }
 
     return (
-        <form className={`space-y-6 ${className}`} onSubmit={handleSubmit}>
+        <form className={`space-y-4 ${className}`} onSubmit={handleSubmit}>
             {status === 'error' && (
-                <div className="bg-red-50 border border-red-200 rounded-lg p-4 flex items-center text-red-800">
-                    <AlertCircle className="h-5 w-5 mr-3 flex-shrink-0" />
-                    <p className="text-sm">{errorMessage}</p>
+                <div className="bg-red-50 border border-red-200 rounded-lg p-3 flex items-center text-red-800 text-sm">
+                    <AlertCircle className="h-4 w-4 mr-2 flex-shrink-0" />
+                    <p>{errorMessage}</p>
                 </div>
             )}
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                    {showLabels && <label className="block text-sm font-medium text-gray-700 mb-1">First Name</label>}
+                    {showLabels && <label className="block text-xs font-semibold text-gray-700 mb-0.5">First Name</label>}
                     <input
                         type="text"
                         name="firstName"
                         value={formData.firstName}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
+                        className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors text-sm"
                         placeholder="First Name"
                     />
                 </div>
                 <div>
-                    {showLabels && <label className="block text-sm font-medium text-gray-700 mb-1">Last Name</label>}
+                    {showLabels && <label className="block text-xs font-semibold text-gray-700 mb-0.5">Last Name</label>}
                     <input
                         type="text"
                         name="lastName"
                         value={formData.lastName}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
+                        className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors text-sm"
                         placeholder="Last Name"
                     />
                 </div>
             </div>
 
             <div>
-                {showLabels && <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>}
+                {showLabels && <label className="block text-xs font-semibold text-gray-700 mb-0.5">Email Address</label>}
                 <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
+                    className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors text-sm"
                     placeholder="Email Address"
                 />
             </div>
 
             <div>
-                {showLabels && <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>}
-                <div className="flex gap-3">
+                {showLabels && <label className="block text-xs font-semibold text-gray-700 mb-0.5">Phone Number</label>}
+                <div className="flex gap-2">
                     <select
                         name="countryCode"
                         value={formData.countryCode}
                         onChange={handleChange}
-                        className="w-[140px] px-3 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors bg-white text-gray-700"
+                        className="w-[120px] px-2 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors bg-white text-gray-700 text-sm"
                     >
                         {countryCodes.map((country) => (
                             <option key={country.name} value={country.code}>
@@ -173,37 +173,37 @@ export default function ContactForm({ className = "", showLabels = true, success
                         value={formData.phone}
                         onChange={handleChange}
                         required
-                        className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
+                        className="flex-1 px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors text-sm"
                         placeholder="Phone Number"
                     />
                 </div>
             </div>
 
             <div>
-                {showLabels && <label className="block text-sm font-medium text-gray-700 mb-1">Interested Course</label>}
+                {showLabels && <label className="block text-xs font-semibold text-gray-700 mb-0.5">Interested Course</label>}
                 <select
                     name="course"
                     value={formData.course}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors bg-white text-gray-900"
+                    className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors bg-white text-gray-900 text-sm"
                 >
                     <option value="">Select a course...</option>
-                    {courses.map((course) => (
+                    {courses.filter(c => c.title !== 'Other' && c.id !== 'other').map((course) => (
                         <option key={course.id} value={course.title}>{course.title}</option>
                     ))}
                 </select>
             </div>
 
             <div>
-                {showLabels && <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>}
+                {showLabels && <label className="block text-xs font-semibold text-gray-700 mb-0.5">Message</label>}
                 <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    rows={4}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
+                    rows={2}
+                    className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors text-sm"
                     placeholder="Tell us about your requirements..."
                 ></textarea>
             </div>
@@ -211,7 +211,7 @@ export default function ContactForm({ className = "", showLabels = true, success
             <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="w-full flex items-center justify-center px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors shadow-lg disabled:bg-orange-300 disabled:cursor-not-allowed"
+                className="w-full flex items-center justify-center px-6 py-3 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors shadow-lg disabled:bg-orange-300 disabled:cursor-not-allowed text-sm"
             >
                 {status === 'loading' ? (
                     <>

@@ -12,6 +12,7 @@ export default function FeaturedCourses() {
     const [visibleCount, setVisibleCount] = useState(3);
     const [isContactModalOpen, setIsContactModalOpen] = useState(false);
     const [modalTitle, setModalTitle] = useState("Get Started with SAP");
+    const [modalSubtitle, setModalSubtitle] = useState("Fill out the form below and our experts will get back to you shortly.");
 
     useEffect(() => {
         async function fetchFeatured() {
@@ -30,7 +31,7 @@ export default function FeaturedCourses() {
                             // Prioritize local heroImage if it exists, otherwise DB hero_image
                             heroImage: localCourse.heroImage || dbCourse?.hero_image,
                             price: (dbCourse?.price && dbCourse.price.trim() !== '') ? dbCourse.price : localCourse.price,
-                            duration: (dbCourse?.duration && dbCourse.duration.trim() !== '') ? dbCourse.duration : localCourse.duration
+                            duration: localCourse.duration || dbCourse?.duration
                         };
                     });
                     // Sort or filter if necessary, for now we keep the order from courses.json/lib
@@ -43,8 +44,10 @@ export default function FeaturedCourses() {
         fetchFeatured();
     }, []);
 
-    const openModal = (title: string) => {
+    const openModal = (title: string, subtitle?: string) => {
         setModalTitle(title);
+        if (subtitle) setModalSubtitle(subtitle);
+        else setModalSubtitle("Fill out the form below and our experts will get back to you shortly.");
         setIsContactModalOpen(true);
     };
 
@@ -58,6 +61,7 @@ export default function FeaturedCourses() {
                 isOpen={isContactModalOpen}
                 onClose={() => setIsContactModalOpen(false)}
                 title={modalTitle}
+                subtitle={modalSubtitle}
             />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
@@ -83,10 +87,7 @@ export default function FeaturedCourses() {
                                         <Clock className="w-4 h-4 mr-2 text-orange-500" />
                                         <span>{course.duration || '40-45 hours'}</span>
                                     </div>
-                                    <div className="flex items-center font-bold text-gray-900 bg-green-50 px-3 py-1.5 rounded-full">
-                                        <IndianRupee className="w-4 h-4 mr-1 text-green-600" />
-                                        <span>{course.price ? course.price.replace('/- INR', '') : '45,000'}</span>
-                                    </div>
+                                    {/* Price Removed */}
                                 </div>
 
                                 <p className="text-gray-600 text-sm mb-8 flex-1 line-clamp-3 leading-relaxed">
@@ -101,7 +102,7 @@ export default function FeaturedCourses() {
                                         Learn More <ArrowRight className="ml-2 h-5 w-5" />
                                     </Link>
                                     <button
-                                        onClick={() => openModal(`Fee Offers for ${course.title}`)}
+                                        onClick={() => openModal(`Fee Offers for ${course.title}`, "Fill out the form below and our experts will get back to you shortly. Enroll Today & Get 10% Instant Early Bird Discount")}
                                         className="w-full px-4 py-3 bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 hover:text-orange-600 font-bold rounded-xl transition-colors text-sm"
                                     >
                                         View Current Fee Offers
