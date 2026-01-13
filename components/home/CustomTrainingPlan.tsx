@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { supabase } from '@/lib/supabase';
 
 import { courses } from '@/lib/courseData';
+import { countryCodes } from '@/lib/countryCodes';
 
 export default function CustomTrainingPlan() {
     const [countryCode, setCountryCode] = useState('+91');
@@ -158,16 +159,11 @@ export default function CustomTrainingPlan() {
                                                 onChange={(e) => setCountryCode(e.target.value)}
                                                 className="w-[140px] px-3 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none bg-white text-gray-700"
                                             >
-                                                <option value="+91">🇮🇳 +91</option>
-                                                <option value="+1">🇺🇸 +1</option>
-                                                <option value="+44">🇬🇧 +44</option>
-                                                <option value="+971">🇦🇪 +971</option>
-                                                <option value="+65">🇸🇬 +65</option>
-                                                <option value="+61">🇦🇺 +61</option>
-                                                <option value="+49">🇩🇪 +49</option>
-                                                <option value="+33">🇫🇷 +33</option>
-                                                <option value="+1">🇨🇦 +1</option>
-                                                <option value="">Other</option>
+                                                {countryCodes.map((country) => (
+                                                    <option key={country.name} value={country.code}>
+                                                        {country.name} ({country.code})
+                                                    </option>
+                                                ))}
                                             </select>
                                             <input
                                                 type="tel"

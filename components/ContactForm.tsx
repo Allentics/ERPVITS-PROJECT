@@ -5,6 +5,7 @@ import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle, Loader2 } from 'lu
 import { supabase } from '@/lib/supabase';
 import { courses } from '@/lib/courseData';
 import { submitToGoogleSheets } from '@/app/actions/submitToGoogleSheets';
+import { countryCodes } from '@/lib/countryCodes';
 
 interface ContactFormProps {
     className?: string;
@@ -160,16 +161,11 @@ export default function ContactForm({ className = "", showLabels = true, success
                         onChange={handleChange}
                         className="w-[140px] px-3 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors bg-white text-gray-700"
                     >
-                        <option value="+91">🇮🇳 +91</option>
-                        <option value="+1">🇺🇸 +1</option>
-                        <option value="+44">🇬🇧 +44</option>
-                        <option value="+971">🇦🇪 +971</option>
-                        <option value="+65">🇸🇬 +65</option>
-                        <option value="+61">🇦🇺 +61</option>
-                        <option value="+49">🇩🇪 +49</option>
-                        <option value="+33">🇫🇷 +33</option>
-                        <option value="+1">🇨🇦 +1</option>
-                        <option value="">Other</option>
+                        {countryCodes.map((country) => (
+                            <option key={country.name} value={country.code}>
+                                {country.name} ({country.code})
+                            </option>
+                        ))}
                     </select>
                     <input
                         type="tel"
@@ -220,11 +216,11 @@ export default function ContactForm({ className = "", showLabels = true, success
                 {status === 'loading' ? (
                     <>
                         <Loader2 className="animate-spin mr-2 h-5 w-5" />
-                        Sending...
+                        Submitting...
                     </>
                 ) : (
                     <>
-                        Send Message
+                        Submit
                         <Send className="ml-2 h-5 w-5" />
                     </>
                 )}
