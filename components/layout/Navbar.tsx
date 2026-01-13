@@ -92,18 +92,24 @@ const Navbar = () => {
         fetchData();
     }, []);
 
+    // IDs to exclude from dropdown
+    const excludedIds = ['sap-analytics-cloud', 'analytics-cloud'];
+
     const functionalCourses = dynCourses
         .filter(c => c.category?.toLowerCase() === 'functional')
+        .filter(c => !excludedIds.includes(c.id))
         .filter((c, index, self) => index === self.findIndex((t) => t.title === c.title))
         .sort((a, b) => a.title.localeCompare(b.title));
 
     const technicalCourses = dynCourses
         .filter(c => c.category?.toLowerCase() === 'technical')
+        .filter(c => !excludedIds.includes(c.id))
         .filter((c, index, self) => index === self.findIndex((t) => t.title === c.title))
         .sort((a, b) => a.title.localeCompare(b.title));
 
     const otherCourses = dynCourses
         .filter(c => c.category?.toLowerCase() === 'other')
+        .filter(c => !excludedIds.includes(c.id))
         .filter((c, index, self) => index === self.findIndex((t) => t.title === c.title))
         .sort((a, b) => a.title.localeCompare(b.title));
 

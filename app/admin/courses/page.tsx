@@ -167,14 +167,16 @@ export default function CoursesPage() {
                                         <td className="px-6 py-4">
                                             <span className={cn(
                                                 "inline-flex items-center px-2 py-1 rounded-full text-xs font-bold",
-                                                course.category === 'Technical' ? "bg-orange-100 text-orange-700 border border-orange-200" : "bg-gray-100 text-gray-700 border border-gray-200"
+                                                course.category === 'Technical' ? "bg-orange-100 text-orange-700 border border-orange-200" :
+                                                    course.category === 'Functional' ? "bg-blue-100 text-blue-700 border border-blue-200" :
+                                                        "bg-gray-100 text-gray-700 border border-gray-200"
                                             )}>
-                                                {course.category}
+                                                {course.category || 'Uncategorized'}
                                             </span>
                                         </td>
                                         <td className="px-6 py-4 whitespace-nowrap">
-                                            <p className="text-sm text-gray-900 font-medium">{course.price}</p>
-                                            <p className="text-xs text-gray-500">{course.duration}</p>
+                                            <p className="text-sm text-gray-900 font-medium">{course.price || 'Contact for Pricing'}</p>
+                                            <p className="text-xs text-gray-500">{course.duration || '40-50 Hours'}</p>
                                         </td>
                                         <td className="px-6 py-4 text-right">
                                             <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
