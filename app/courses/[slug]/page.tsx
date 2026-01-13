@@ -145,9 +145,15 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                     </h1>
 
                     {/* Subheading */}
-                    <p className="text-xl text-slate-600 mb-12 leading-relaxed max-w-3xl mx-auto">
-                        {mappedCourse.heroSubheading || mappedCourse.description?.substring(0, 150) + "..."}
-                    </p>
+                    {/* Subheading */}
+                    <div className="text-xl text-slate-600 mb-12 leading-relaxed max-w-3xl mx-auto">
+                        {(mappedCourse.heroSubheading || (mappedCourse.description ? mappedCourse.description.substring(0, 150) + "..." : ""))?.split(/(\*\*.*?\*\*)/g).map((part: string, j: number) => {
+                            if (part.startsWith('**') && part.endsWith('**')) {
+                                return <strong key={j} className="text-slate-900 font-bold">{part.slice(2, -2)}</strong>;
+                            }
+                            return <span key={j}>{part}</span>;
+                        })}
+                    </div>
 
                     {/* Buttons */}
                     <CourseHeroActionButtons
