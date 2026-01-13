@@ -10,32 +10,36 @@ export default function CareerAdvisors() {
 
     const advisors = [
         {
-            name: "Ramesh Sharma",
-            role: "Functional Consultant Path Specialist",
-            experience: "18 Years Experience",
-            expertise: ["Career Planning", "Salary Negotiation", "Placement Strategy"],
-            image: "👨‍💼"
-        },
-        {
-            name: "Lisa Martinez",
-            role: "Cloud & Development Specialist",
-            experience: "16 Years Experience",
-            expertise: ["Cloud Roles", "Technical Roles", "Architect Track"],
-            image: "👩‍💻"
-        },
-        {
-            name: "Priya Singh",
-            role: "Finance & Analytics Expert",
+            name: "Gaurav Deshpande",
+            role: "SAP Finance & Treasury Specialist",
             experience: "15 Years Experience",
-            expertise: ["Finance Careers", "Analytics Path", "CFO Track"],
-            image: "👩‍💼"
+            expertise: ["Financial Transformation", "Treasury Operations", "Risk Management"],
+            image: "👨‍💼",
+            availability: "Available 10AM - 4PM"
         },
         {
-            name: "David Walker",
-            role: "Corporate Training Specialist",
-            experience: "20 Years Experience",
-            expertise: ["Team Training", "ROI Programs", "B2B Planning"],
-            image: "👨‍💻"
+            name: "Nitin Patil",
+            role: "SAP Procurement & Vendor Management Specialist",
+            experience: "12 Years Experience",
+            expertise: ["Digital Sourcing", "Procurement Automation", "Supplier Collaboration"],
+            image: "👨‍💻",
+            availability: "Available 10AM - 6PM"
+        },
+        {
+            name: "Anasuya Joshi",
+            role: "SAP Supply Chain & Logistics Specialist",
+            experience: "14 Years Experience",
+            expertise: ["Supply Chain Planning", "Manufacturing", "Master Data Governance"],
+            image: "👩‍💼",
+            availability: "Available 4PM - 9PM"
+        },
+        {
+            name: "Santosh Kumar",
+            role: "SAP Customer Experience & Cloud Technology Specialist",
+            experience: "13 Years Experience",
+            expertise: ["CX Solutions", "Cloud Integrations", "SAP BTP Extensions"],
+            image: "👨‍💻",
+            availability: "Available 6PM - 10PM"
         }
     ];
 
@@ -95,7 +99,7 @@ export default function CareerAdvisors() {
 
                                 <div className="flex items-center text-green-600 text-xs font-bold mb-4">
                                     <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
-                                    Available Now
+                                    {advisor.availability}
                                 </div>
 
                                 <button
