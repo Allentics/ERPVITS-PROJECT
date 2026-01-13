@@ -4,16 +4,25 @@ import { ClipboardList, Target, Award, Calendar } from 'lucide-react';
 import { useState } from 'react';
 import { supabase } from '@/lib/supabase';
 
+import { courses } from '@/lib/courseData';
+
 export default function CustomTrainingPlan() {
     const [countryCode, setCountryCode] = useState('+91');
     const [formData, setFormData] = useState({
         fullName: '',
         email: '',
         phone: '',
-        background: ''
+        background: '',
+        interestedCourse: '',
+        message: ''
     });
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const [errorMessage, setErrorMessage] = useState('');
+
+    // Get unique course titles for dropdown
+    const uniqueCourses = Array.from(new Set(courses.map(c => c.title)))
+        .filter(Boolean)
+        .sort((a, b) => a.localeCompare(b));
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -30,14 +39,14 @@ export default function CustomTrainingPlan() {
                         name: formData.fullName,
                         email: formData.email,
                         phone: `${countryCode} ${formData.phone}`,
-                        course: 'Custom Training Plan Request',
-                        message: `Background: ${formData.background}`,
+                        course: formData.interestedCourse || 'Custom Training Plan Request',
+                        message: `Background: ${formData.background}\nMessage: ${formData.message}`,
                     }
                 ]);
 
             if (error) throw error;
             setStatus('success');
-            setFormData({ fullName: '', email: '', phone: '', background: '' });
+            setFormData({ fullName: '', email: '', phone: '', background: '', interestedCourse: '', message: '' });
         } catch (error: any) {
             console.error('Error submitting form:', error);
             setStatus('error');
@@ -117,7 +126,7 @@ export default function CustomTrainingPlan() {
                             </div>
                         ) : (
                             <>
-                                <h3 className="text-2xl font-bold mb-6 text-center text-slate-900">Request Your Custom Plan</h3>
+                                <h3 className="text-2xl font-bold mb-6 text-center text-slate-900">Get Free Career Guidance</h3>
                                 <form className="space-y-4" onSubmit={handleSubmit}>
                                     <div>
                                         <label className="block text-sm font-semibold mb-1">Full Name</label>
@@ -186,6 +195,32 @@ export default function CustomTrainingPlan() {
                                             <option value="IT / Developer">IT / Developer</option>
                                             <option value="Other">Other</option>
                                         </select>
+                                    </div>
+                                    <div>
+                                        <label className="block text-sm font-semibold mb-1">Interested Course</label>
+                                        <select
+                                            value={formData.interestedCourse}
+                                            onChange={(e) => setFormData({ ...formData, interestedCourse: e.target.value })}
+                                            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                                        >
+                                            <option value="">Select a course...</option>
+                                            {uniqueCourses.map((course, index) => (
+                                                <option key={index} value={course}>
+                                                    {course}
+                                                </option>
+                                            ))}
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label className="block text-sm font-semibold mb-1">Your Message</label>
+                                        <textarea
+                                            value={formData.message}
+                                            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                                            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                                            placeholder="Tell us about your goals or questions..."
+                                            rows={3}
+                                        />
                                     </div>
                                     <button
                                         type="submit"
