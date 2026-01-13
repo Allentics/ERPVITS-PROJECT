@@ -18,8 +18,8 @@ export default function ProvenResults() {
         },
         {
             icon: Users,
-            value: "5000+",
-            label: "5000+ Professionals Trained",
+            value: "8000+",
+            label: "8000+ Professionals Trained",
             color: "text-slate-700"
         },
         {

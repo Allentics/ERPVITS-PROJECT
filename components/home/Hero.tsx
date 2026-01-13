@@ -16,7 +16,7 @@ const DEFAULT_CONTENT = {
     cta_secondary: "Explore SAP Courses",
     stats: [
         { val: "12+ Years", label: "In SAP Industry" },
-        { val: "6000+", label: "Professionals Trained" },
+        { val: "8000+", label: "Professionals Trained" },
         { val: "24/7", label: "Team Support" },
         { val: "8+", label: "SAP Solution Architects" }
     ]
@@ -37,7 +37,10 @@ const Hero = () => {
                     .single();
 
                 if (data && !error) {
-                    setContent(data.content);
+                    setContent({
+                        ...data.content,
+                        stats: DEFAULT_CONTENT.stats
+                    });
                 }
             } catch (err) {
                 console.error('Error fetching Hero content:', err);
