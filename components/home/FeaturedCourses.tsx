@@ -9,7 +9,7 @@ import ContactModal from '../ContactModal';
 
 export default function FeaturedCourses() {
     const [featuredCourses, setFeaturedCourses] = useState<any[]>(courses);
-    const [visibleCount, setVisibleCount] = useState(3);
+
     const [isContactModalOpen, setIsContactModalOpen] = useState(false);
     const [modalTitle, setModalTitle] = useState("Get Started with SAP");
     const [modalSubtitle, setModalSubtitle] = useState("Fill out the form below and our experts will get back to you shortly.");
@@ -51,9 +51,7 @@ export default function FeaturedCourses() {
         setIsContactModalOpen(true);
     };
 
-    const showAllCourses = () => {
-        setVisibleCount(featuredCourses.length);
-    };
+
 
     return (
         <section className="py-20 bg-gray-50">
@@ -72,7 +70,7 @@ export default function FeaturedCourses() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {featuredCourses.slice(0, visibleCount).map((course: any) => (
+                    {featuredCourses.slice(0, 6).map((course: any) => (
                         <div key={course.id} className="bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col group">
 
                             <div className="p-6 flex-1 flex flex-col">
@@ -114,14 +112,12 @@ export default function FeaturedCourses() {
                 </div>
 
                 <div className="mt-16 flex flex-col md:flex-row justify-center gap-4">
-                    {visibleCount < featuredCourses.length && (
-                        <button
-                            onClick={showAllCourses}
-                            className="px-8 py-3 bg-white border-2 border-slate-900 text-slate-900 font-bold rounded-lg hover:bg-slate-50 transition-colors shadow-sm text-center"
-                        >
-                            View All {featuredCourses.length} Courses
-                        </button>
-                    )}
+                    <Link
+                        href="/courses"
+                        className="px-8 py-3 bg-white border-2 border-slate-900 text-slate-900 font-bold rounded-lg hover:bg-slate-50 transition-colors shadow-sm text-center"
+                    >
+                        View All {featuredCourses.length} Courses
+                    </Link>
                     <button
                         onClick={() => openModal("Course Consultation")}
                         className="px-8 py-3 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors shadow-md text-center"
