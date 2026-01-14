@@ -47,6 +47,40 @@ const getIconForTitle = (title: string) => {
     return CheckCircle2;
 };
 
+// Helper to render text with **bold** and [links](url) support
+export const renderRichText = (text: string) => {
+    if (!text) return null;
+
+    // Split by markdown link pattern: [text](url)
+    const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+
+    return parts.map((part, index) => {
+        // Check if it's a link
+        const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+        if (linkMatch) {
+            return (
+                <a
+                    key={index}
+                    href={linkMatch[2]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-orange-600 hover:text-orange-700 underline underline-offset-4 decoration-orange-300"
+                >
+                    {linkMatch[1]}
+                </a>
+            );
+        }
+
+        // Processing for bold text within non-link parts
+        return part.split(/(\*\*.*?\*\*)/g).map((subPart, subIndex) => {
+            if (subPart.startsWith('**') && subPart.endsWith('**')) {
+                return <strong key={`${index}-${subIndex}`} className="font-bold text-slate-900">{subPart.slice(2, -2)}</strong>;
+            }
+            return <span key={`${index}-${subIndex}`}>{subPart}</span>;
+        });
+    });
+};
+
 // Defined locally to avoid circular dependency
 export function DetailedFeatures({ badge, title, subtitle, items, textAlign = 'center' }: any) {
     const renderTitle = (t: any) => {
@@ -63,16 +97,6 @@ export function DetailedFeatures({ badge, title, subtitle, items, textAlign = 'c
         return t;
     };
 
-    const renderWithBold = (text: string) => {
-        if (!text) return null;
-        return text.split(/(\*\*.*?\*\*)/g).map((part: string, index: number) => {
-            if (part.startsWith('**') && part.endsWith('**')) {
-                return <strong key={index} className="font-bold text-slate-900">{part.slice(2, -2)}</strong>;
-            }
-            return <span key={index}>{part}</span>;
-        });
-    };
-
     return (
         <div className="py-16 detailed-features-section bg-white">
             <div className={`mb-12 max-w-7xl mx-auto px-4 ${textAlign === 'left' ? 'text-left' : 'text-center'}`}>
@@ -80,7 +104,7 @@ export function DetailedFeatures({ badge, title, subtitle, items, textAlign = 'c
                 <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6 leading-tight">{renderTitle(title)}</h2>
                 {subtitle && (
                     <div className={`text-gray-600 text-lg leading-relaxed ${textAlign === 'center' ? 'max-w-3xl mx-auto' : 'max-w-5xl'}`}>
-                        {renderWithBold(subtitle)}
+                        {renderRichText(subtitle)}
                     </div>
                 )}
             </div>
@@ -98,10 +122,10 @@ export function DetailedFeatures({ badge, title, subtitle, items, textAlign = 'c
                                 {isObject ? (
                                     <>
                                         <h3 className="font-bold text-slate-900 text-xl mb-3">{item.title}</h3>
-                                        <p className="text-slate-600 leading-relaxed text-[15px]">{renderWithBold(item.description)}</p>
+                                        <p className="text-slate-600 leading-relaxed text-[15px]">{renderRichText(item.description)}</p>
                                     </>
                                 ) : (
-                                    <p className="text-slate-700 font-medium text-lg">{renderWithBold(item)}</p>
+                                    <p className="text-slate-700 font-medium text-lg">{renderRichText(item)}</p>
                                 )}
                             </div>
                         </div>
@@ -118,20 +142,11 @@ export function RichTextSection({ title, content }: any) {
             {title && <h2 className="text-2xl font-bold text-slate-900 mb-6">{title}</h2>}
             <div className="prose prose-slate max-w-none prose-headings:text-slate-800 prose-p:text-slate-600 prose-li:text-slate-600 bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
                 <div className="whitespace-pre-line leading-relaxed text-gray-700">
-                    {content && content.split('\n').map((line: string, i: number) => {
-                        // Simple bold parsing for **text**
-                        const parts = line.split(/(\*\*.*?\*\*)/g);
-                        return (
-                            <p key={i} className="mb-2">
-                                {parts.map((part, j) => {
-                                    if (part.startsWith('**') && part.endsWith('**')) {
-                                        return <strong key={j} className="text-slate-900">{part.slice(2, -2)}</strong>;
-                                    }
-                                    return part;
-                                })}
-                            </p>
-                        );
-                    })}
+                    {content && content.split('\n').map((line: string, i: number) => (
+                        <p key={i} className="mb-2">
+                            {renderRichText(line)}
+                        </p>
+                    ))}
                 </div>
             </div>
         </div>
