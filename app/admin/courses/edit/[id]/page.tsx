@@ -185,6 +185,26 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                 <label className="text-sm font-semibold text-gray-700">Duration</label>
                 <input name="duration" value={formData.duration || ''} onChange={handleChange} className="w-full p-2 border rounded" />
             </div>
+            <div className="md:col-span-2 space-y-2">
+                <label className="text-sm font-semibold text-gray-700">Schema Markup (JSON-LD)</label>
+                <textarea
+                    name="schema"
+                    rows={6}
+                    value={typeof formData.schema === 'object' ? JSON.stringify(formData.schema, null, 2) : (formData.schema || '')}
+                    onChange={(e) => {
+                        // Try to parse if it looks like JSON to store as object, otherwise string
+                        try {
+                            JSON.parse(e.target.value);
+                            handleChange(e); // Let it save as string or whatever the backend expects
+                        } catch (err) {
+                            handleChange(e);
+                        }
+                    }}
+                    className="w-full p-2 border rounded font-mono text-xs bg-slate-50"
+                    placeholder='{"@context": "https://schema.org", "@type": "Course", ...}'
+                />
+                <p className="text-xs text-gray-500">Auto-generated if left blank. Override here to provide custom structured data.</p>
+            </div>
         </div>
     );
 
@@ -236,12 +256,18 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                 </div>
                 <div className="space-y-2">
                     <label className="text-sm font-semibold text-gray-700">Section Subtitle</label>
-                    <textarea
-                        value={section.subtitle || ''}
-                        onChange={(e) => updateSection('detailed_features', { ...section, subtitle: e.target.value })}
-                        className="w-full p-2 border rounded"
-                        rows={2}
-                    />
+                    <div className="relative">
+                        <textarea
+                            id="overview_subtitle"
+                            value={section.subtitle || ''}
+                            onChange={(e) => updateSection('detailed_features', { ...section, subtitle: e.target.value })}
+                            className="w-full p-2 border rounded pr-10"
+                            rows={2}
+                        />
+                        <button type="button" onClick={() => insertHyperlink('overview_subtitle')} className="absolute top-2 right-2 text-gray-400 hover:text-orange-500" title="Copy Markdown Link">
+                            <LinkIcon size={16} />
+                        </button>
+                    </div>
                 </div>
 
                 <div className="space-y-4">
@@ -271,17 +297,23 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                                     className="w-full p-2 border rounded text-sm font-bold"
                                     placeholder="Feature Title"
                                 />
-                                <textarea
-                                    value={item.description || ''}
-                                    onChange={(e) => {
-                                        const newItems = [...items];
-                                        newItems[idx].description = e.target.value;
-                                        updateOverview(newItems);
-                                    }}
-                                    className="w-full p-2 border rounded text-sm"
-                                    placeholder="Feature Description"
-                                    rows={2}
-                                />
+                                <div className="relative">
+                                    <textarea
+                                        id={`feature_desc_${idx}`}
+                                        value={item.description || ''}
+                                        onChange={(e) => {
+                                            const newItems = [...items];
+                                            newItems[idx].description = e.target.value;
+                                            updateOverview(newItems);
+                                        }}
+                                        className="w-full p-2 border rounded text-sm pr-8"
+                                        placeholder="Feature Description"
+                                        rows={2}
+                                    />
+                                    <button type="button" onClick={() => insertHyperlink(`feature_desc_${idx}`)} className="absolute top-2 right-2 text-gray-400 hover:text-orange-500" title="Copy Markdown Link">
+                                        <LinkIcon size={14} />
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     ))}
@@ -400,7 +432,18 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                 </div>
                 <div className="space-y-2">
                     <label className="text-sm font-semibold text-gray-700">Description</label>
-                    <textarea value={section.description || ''} onChange={(e) => updateSection('content_with_image', { ...section, description: e.target.value })} className="w-full p-2 border rounded" rows={3} />
+                    <div className="relative">
+                        <textarea
+                            id="why_choose_desc"
+                            value={section.description || ''}
+                            onChange={(e) => updateSection('content_with_image', { ...section, description: e.target.value })}
+                            className="w-full p-2 border rounded pr-10"
+                            rows={3}
+                        />
+                        <button type="button" onClick={() => insertHyperlink('why_choose_desc')} className="absolute top-2 right-2 text-gray-400 hover:text-orange-500" title="Copy Markdown Link">
+                            <LinkIcon size={16} />
+                        </button>
+                    </div>
                 </div>
                 <div className="space-y-2">
                     <label className="text-sm font-semibold text-gray-700">Video Embed URL</label>
