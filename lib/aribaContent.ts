@@ -69,17 +69,22 @@ export const aribaContent = {
         },
         {
             type: 'content_with_image',
-            title: "Why Professionals Choose ERPVITS for SAP Ariba Training",
+            title: "Why Professionals Choose ERPVITS for SAP Ariba Online Training",
             subtitle: "Success Guarantee & Credibility",
-            description: "ERPVITS has established itself as a trusted training partner for SAP modules, with hundreds of successful learners working at top consulting firms. Our comprehensive support ecosystem and alumni network testimonials speak to the quality of instruction and career acceleration our program delivers.",
+            videoSrc: "https://www.youtube.com/embed/LZO_UPw5nqM",
+            description: "ERPVITS has been a trusted training partner for SAP Modules, having trained hundreds of successful learners, many of whom are employed in prominent consulting companies, such as Accenture, Capgemini, Deloitte, Infosys, and Wipro. The quality of **SAP Ariba Training and Placement** achieved by our program, as outlined in our alumni network testimonials, reinforces our standing as a reputable training partner.",
             items: [
-                "Trained by 500+ successful SAP professionals",
-                "Personalized peer evaluations and learning paths",
-                "30+ guided lab sessions from basic to advanced",
-                "Active alumni networking and cloud/VMS ecosystem",
-                "Mock interviews simulating real client/tech scenarios",
-                "Guaranteed certification prep with buffer weeks"
-            ]
+                "Trusted by 500+ successful SAP professionals",
+                "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro",
+                "Personalized pre-evaluation and learning path",
+                "Active alumni network and community forum",
+                "50+ guided lab exercises from basic to advanced",
+                "Quarterly updated materials aligned with latest releases",
+                "Mock interviews simulating real consultant scenarios",
+                "Dedicated **SAP Ariba Certification** prep week before exams"
+            ],
+            supportTitle: "Complete Support Ecosystem",
+            supportText: "From pre-evaluation to post-training support, we guide you through every step of your SAP learning journey and career transition."
         },
         {
             type: 'whats_included'
