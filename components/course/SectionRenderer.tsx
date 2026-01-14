@@ -186,7 +186,7 @@ export default function SectionRenderer({ sections, courseName }: { sections: an
                         </section>;
                     case 'detailed_curriculum':
                         return <section key={idx} id="curriculum" className="scroll-mt-32">
-                            <DetailedCurriculum modules={section.modules} title={section.title} courseName={courseName || section.courseName} />
+                            <DetailedCurriculum modules={section.modules} title={section.title} courseName={courseName || section.courseName} syllabusUrl={section.syllabusUrl} />
                         </section>;
                     case 'detailed_prerequisites':
                         return <DetailedPrerequisites key={idx} items={section.items} />;

@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { ChevronDown, Clock, BookOpen, CheckCircle2, ChevronRight } from 'lucide-react';
+import { ChevronDown, Clock, BookOpen, CheckCircle2, ChevronRight, Download } from 'lucide-react';
 import * as Accordion from '@radix-ui/react-accordion';
 
 export interface DetailedModule {
@@ -16,9 +16,10 @@ interface DetailedCurriculumProps {
     modules: DetailedModule[];
     title?: string;
     courseName?: string;
+    syllabusUrl?: string;
 }
 
-export default function DetailedCurriculum({ modules, title, courseName = "SAP Ariba" }: DetailedCurriculumProps) {
+export default function DetailedCurriculum({ modules, title, courseName = "SAP Ariba", syllabusUrl }: DetailedCurriculumProps) {
     if (!modules || modules.length === 0) return null;
 
     return (
@@ -48,15 +49,32 @@ export default function DetailedCurriculum({ modules, title, courseName = "SAP A
                     </div>
                 </div>
 
-                <div className="flex-1 bg-slate-900 rounded-2xl p-5 border border-slate-800 flex items-center gap-4 shadow-sm hover:shadow-md transition-shadow">
-                    <div className="w-12 h-12 rounded-xl bg-orange-500 flex items-center justify-center text-white shadow-sm flex-shrink-0">
-                        <BookOpen className="w-6 h-6" />
+                {syllabusUrl ? (
+                    <a
+                        href={syllabusUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 bg-slate-900 rounded-2xl p-5 border border-slate-800 flex items-center gap-4 shadow-sm hover:shadow-md hover:bg-slate-800 transition-all cursor-pointer group"
+                    >
+                        <div className="w-12 h-12 rounded-xl bg-orange-500 flex items-center justify-center text-white shadow-sm flex-shrink-0 group-hover:scale-110 transition-transform">
+                            <Download className="w-6 h-6" />
+                        </div>
+                        <div>
+                            <div className="text-2xl font-bold text-white">Download</div>
+                            <div className="text-sm font-medium text-slate-400">Curriculum PDF</div>
+                        </div>
+                    </a>
+                ) : (
+                    <div className="flex-1 bg-slate-900 rounded-2xl p-5 border border-slate-800 flex items-center gap-4 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="w-12 h-12 rounded-xl bg-orange-500 flex items-center justify-center text-white shadow-sm flex-shrink-0">
+                            <BookOpen className="w-6 h-6" />
+                        </div>
+                        <div>
+                            <div className="text-2xl font-bold text-white">{modules.length} Modules</div>
+                            <div className="text-sm font-medium text-slate-400">Comprehensive Coverage</div>
+                        </div>
                     </div>
-                    <div>
-                        <div className="text-2xl font-bold text-white">7 Modules</div>
-                        <div className="text-sm font-medium text-slate-400">Comprehensive Coverage</div>
-                    </div>
-                </div>
+                )}
             </div>
 
             {/* Accordion Modules */}
@@ -157,6 +175,20 @@ export default function DetailedCurriculum({ modules, title, courseName = "SAP A
                     );
                 })}
             </Accordion.Root>
+
+            {syllabusUrl && (
+                <div className="mt-12 text-center">
+                    <a
+                        href={syllabusUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-3 bg-orange-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-orange-600 transition-colors shadow-lg hover:shadow-orange-200"
+                    >
+                        <Download className="w-6 h-6" />
+                        Download Full {courseName} Curriculum
+                    </a>
+                </div>
+            )}
         </div>
     );
 }

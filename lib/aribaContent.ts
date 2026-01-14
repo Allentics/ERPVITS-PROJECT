@@ -92,6 +92,7 @@ export const aribaContent = {
         {
             type: 'detailed_curriculum',
             title: "SAP Ariba Course Curriculum",
+            syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-ariba.pdf",
             modules: [
                 {
                     title: "Introduction to SAP Ariba Buying",
