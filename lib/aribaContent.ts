@@ -220,12 +220,25 @@ export const aribaContent = {
             ]
         },
         {
-            type: 'detailed_prerequisites',
-            items: aribaPrerequisites
-        },
-        {
             type: 'detailed_target_audience',
             items: aribaTargetAudience
+        },
+        {
+            type: 'detailed_prerequisites',
+            items: {
+                minimum: [
+                    "Basic understanding of procurement processes",
+                    "Familiarity with supply chain concepts",
+                    "Comfortable with web applications",
+                    "Ability to learn complex tools"
+                ],
+                nicetohave: [
+                    "Prior SAP experience (MM, SD, SRM, FICO)",
+                    "Procurement or finance work experience",
+                    "Exposure to ERP systems",
+                    "Intermediate Excel skills"
+                ]
+            }
         },
         {
             type: 'detailed_learning_outcomes',
