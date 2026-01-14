@@ -34,6 +34,10 @@ export default function ContactForm({ className = "", showLabels = true, success
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        // 1. Open the thank you page immediately to ensure it opens and avoid blank page
+        const newTab = window.open('/thank-you', '_blank');
+
         setStatus('loading');
         setErrorMessage('');
 
@@ -56,10 +60,14 @@ export default function ContactForm({ className = "", showLabels = true, success
 
             if (error) throw error;
 
-            // Send to Google Sheets
-            await submitToGoogleSheets(formData);
+            // Send to Google Sheets (Fire and forget to speed up UI)
+            submitToGoogleSheets(formData).catch((err: any) => console.error('Google Sheet Error:', err));
 
             setStatus('success');
+
+            // Redirect the pre-opened tab (already directed)
+            // if (newTab) newTab.location.href = '/thank-you';
+
             setFormData({
                 firstName: '',
                 lastName: '',
@@ -70,6 +78,9 @@ export default function ContactForm({ className = "", showLabels = true, success
                 message: ''
             });
         } catch (error: any) {
+            // Close the pre-opened tab if there's an error
+            if (newTab) newTab.close();
+
             console.error('Submission payload:', {
                 first_name: formData.firstName,
                 last_name: formData.lastName,
@@ -93,12 +104,17 @@ export default function ContactForm({ className = "", showLabels = true, success
                 <CheckCircle className="h-12 w-12 text-green-500 mx-auto mb-4" />
                 <h3 className="text-xl font-bold text-green-900 mb-2">Message Sent!</h3>
                 <p className="text-green-700">{successMessage}</p>
-                <button
-                    onClick={() => setStatus('idle')}
-                    className="mt-6 text-green-700 font-semibold hover:underline"
-                >
-                    Send another message
-                </button>
+                <div className="flex flex-col gap-3 mt-6">
+                    <button
+                        onClick={() => setStatus('idle')}
+                        className="text-green-700 font-semibold hover:underline"
+                    >
+                        Send another message
+                    </button>
+                    <a href="/" className="inline-block px-6 py-2 bg-slate-900 text-white font-semibold rounded-lg hover:bg-slate-800 transition-colors w-fit mx-auto">
+                        Back to Home
+                    </a>
+                </div>
             </div>
         );
     }

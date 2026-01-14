@@ -43,81 +43,67 @@ export default function SyllabusModal({ isOpen, onClose, courseTitle, pdfUrl }: 
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        setIsSubmitting(true);
         setError('');
 
+        // 1. Sync Validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(formData.email)) {
             setError('Please enter a valid email address.');
-            setIsSubmitting(false);
-            return;
+            return; // Stop here
         }
 
-        try {
-            // 1. Send Email with PDF
-            const emailResult = await sendSyllabusEmail({
-                email: formData.email,
-                name: formData.name,
-                courseTitle,
-                pdfUrl
-            });
+        // 2. Open thank you page immediately
+        window.open('/thank-you', '_blank');
 
-            if (!emailResult.success) {
-                // We'll log the error but still proceed to open the PDF if possible, 
-                // or show an error. For now, let's show error.
-                throw new Error(emailResult.error || 'Failed to send email');
+        // 3. UI Success
+        setIsSuccess(true);
+        setIsSubmitting(true); // Keep submitting true to show spinner/success state
+
+        // 4. Background Processing
+        const performBackgroundWork = async () => {
+            try {
+                // Send Email
+                await sendSyllabusEmail({
+                    email: formData.email,
+                    name: formData.name,
+                    courseTitle,
+                    pdfUrl
+                });
+
+                // Supabase
+                const { supabase } = await import('@/lib/supabase');
+                await supabase.from('contacts').insert([{
+                    first_name: formData.name,
+                    name: formData.name,
+                    email: formData.email,
+                    phone: `${formData.countryCode} ${formData.phone}`,
+                    course: courseTitle,
+                    message: 'Downloaded Syllabus via Modal'
+                }]);
+
+                // Google Sheets
+                await submitToGoogleSheets({
+                    firstName: formData.name,
+                    lastName: '',
+                    email: formData.email,
+                    phone: formData.phone,
+                    countryCode: formData.countryCode,
+                    course: courseTitle,
+                    message: 'Downloaded Syllabus'
+                });
+            } catch (err) {
+                console.error('Background task error:', err);
+            } finally {
+                setIsSubmitting(false);
             }
+        };
 
-            // 2. Save Lead to Supabase
-            // Note: We're using the 'contacts' table as a general lead capture, similar to ContactForm
-            const { supabase } = await import('@/lib/supabase');
-            const { error: supabaseError } = await supabase
-                .from('contacts')
-                .insert([
-                    {
-                        first_name: formData.name, // Storing full name in first_name for now, or split it if you prefer
-                        name: formData.name,
-                        email: formData.email,
-                        phone: `${formData.countryCode} ${formData.phone}`,
-                        course: courseTitle,
-                        message: 'Downloaded Syllabus via Modal'
-                    }
-                ]);
+        performBackgroundWork();
 
-            if (supabaseError) {
-                console.error('Supabase Error:', supabaseError);
-                // We don't block the UI flow for this, but log it
-            }
-
-            // 3. Save Lead to Google Sheets (Fire and forget, or await)
-            await submitToGoogleSheets({
-                firstName: formData.name,
-                lastName: '',
-                email: formData.email,
-                phone: formData.phone,
-                countryCode: formData.countryCode,
-                course: courseTitle,
-                message: 'Downloaded Syllabus'
-            });
-
-            // 3. Open PDF in new tab
-            window.open(pdfUrl, '_blank');
-
-            setIsSuccess(true);
-
-            // Close after a brief delay
-            setTimeout(() => {
-                onClose();
-                setIsSuccess(false);
-                setFormData({ name: '', email: '', phone: '', countryCode: '+91' });
-            }, 3000);
-
-        } catch (err: any) {
-            console.error(err);
-            setError(err.message || 'Something went wrong. Please try again.');
-        } finally {
-            setIsSubmitting(false);
-        }
+        // 5. Cleanup
+        setTimeout(() => {
+            setFormData({ name: '', email: '', phone: '', countryCode: '+91' });
+        }, 3000);
     };
 
     if (!isOpen) return null;
@@ -151,9 +137,12 @@ export default function SyllabusModal({ isOpen, onClose, courseTitle, pdfUrl }: 
                                 <CheckCircle className="w-8 h-8 text-orange-600" />
                             </div>
                             <h4 className="text-xl font-bold text-gray-900 mb-2">Success!</h4>
-                            <p className="text-gray-600">
-                                The syllabus has been sent to your email and opened in a new tab.
+                            <p className="text-gray-600 mb-6">
+                                The syllabus has been sent to your email.
                             </p>
+                            <a href="/" className="inline-block px-6 py-2 bg-slate-900 text-white font-bold rounded-lg hover:bg-slate-800 transition-colors">
+                                Back to Home
+                            </a>
                         </div>
                     ) : (
                         <>

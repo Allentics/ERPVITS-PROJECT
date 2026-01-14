@@ -48,7 +48,7 @@ const getIconForTitle = (title: string) => {
 };
 
 // Defined locally to avoid circular dependency
-export function DetailedFeatures({ badge, title, subtitle, items }: any) {
+export function DetailedFeatures({ badge, title, subtitle, items, textAlign = 'center' }: any) {
     const renderTitle = (t: any) => {
         if (typeof t === 'string' && t.includes("100% Hands-On")) {
             const parts = t.split("100% Hands-On");
@@ -63,12 +63,26 @@ export function DetailedFeatures({ badge, title, subtitle, items }: any) {
         return t;
     };
 
+    const renderWithBold = (text: string) => {
+        if (!text) return null;
+        return text.split(/(\*\*.*?\*\*)/g).map((part: string, index: number) => {
+            if (part.startsWith('**') && part.endsWith('**')) {
+                return <strong key={index} className="font-bold text-slate-900">{part.slice(2, -2)}</strong>;
+            }
+            return <span key={index}>{part}</span>;
+        });
+    };
+
     return (
-        <div className="py-12 detailed-features-section">
-            <div className="text-center mb-12">
+        <div className="py-16 detailed-features-section bg-white">
+            <div className={`mb-12 max-w-7xl mx-auto px-4 ${textAlign === 'left' ? 'text-left' : 'text-center'}`}>
                 {badge && <span className="bg-orange-500 text-white px-4 py-1.5 rounded-full text-sm font-medium mb-5 inline-block shadow-sm">{badge}</span>}
-                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">{renderTitle(title)}</h2>
-                {subtitle && <p className="text-gray-600 max-w-2xl mx-auto text-lg">{subtitle}</p>}
+                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6 leading-tight">{renderTitle(title)}</h2>
+                {subtitle && (
+                    <div className={`text-gray-600 text-lg leading-relaxed ${textAlign === 'center' ? 'max-w-3xl mx-auto' : 'max-w-5xl'}`}>
+                        {renderWithBold(subtitle)}
+                    </div>
+                )}
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 max-w-7xl mx-auto px-4">
                 {items?.map((item: any, i: number) => {
@@ -84,10 +98,10 @@ export function DetailedFeatures({ badge, title, subtitle, items }: any) {
                                 {isObject ? (
                                     <>
                                         <h3 className="font-bold text-slate-900 text-xl mb-3">{item.title}</h3>
-                                        <p className="text-slate-600 leading-relaxed text-[15px]">{item.description}</p>
+                                        <p className="text-slate-600 leading-relaxed text-[15px]">{renderWithBold(item.description)}</p>
                                     </>
                                 ) : (
-                                    <p className="text-slate-700 font-medium text-lg">{item}</p>
+                                    <p className="text-slate-700 font-medium text-lg">{renderWithBold(item)}</p>
                                 )}
                             </div>
                         </div>

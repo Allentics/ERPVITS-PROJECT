@@ -29,56 +29,41 @@ export const aribaContent = {
         {
             type: 'detailed_features',
             title: "Learn SAP Ariba from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            subtitle: "Expert-led learning with real-world experience and proven methodologies from actual enterprise implementations",
+            subtitle: "We provide industry **SAP Ariba Training** which includes interactive teaching, industry projects, and preparation for certification. The training is provided by experts and specialized instructors which ensure having industry knowledge and are certified by SAP with minimum industry experience of 12 years. We emphasize on real time knowledge and training to professionals. Thus, we do not provide SAP **Ariba Training** in the format of recorded training. Instruction is provided in real time by professionals with industry knowledge and tools to have step by step.",
+            textAlign: 'left',
             badge: "Why Choose Us",
             items: [
                 {
-                    title: "Certified Instructor Expertise",
-                    description: "Our trainers are certified SAP professionals with real enterprise project insights."
+                    title: "Certified Instructor Experience",
+                    description: "Our sessions are led by **SAP Ariba certified instructors** with extensive industry and practical experience. They not only teach the concepts but also share real-world scenarios, tips, and best practices to ensure you gain both theoretical knowledge and practical expertise."
                 },
                 {
-                    title: "100% Hands-On Learning",
-                    description: "Live demonstrations, guided lab exercises, and real system configurations - not just theory."
+                    title: "100% Hands-On Learning Methodology",
+                    description: "**SAP Ariba Course** traditionally uses slides and presentation tools to explain concepts. But our program goes further. In every session, you will see live demonstrations on **Ariba Software** systems, and then you will participate in guided lab exercises that allow you to practice what you learned to reinforce it. By the end of your course, you will have configured requisition workflows, set up supplier master data, managed approval cycles, and executed sourcing events on real systems."
                 },
                 {
-                    title: "Job Oriented Curriculum",
-                    description: "Designed around actual consulting scenarios and tasks/activities you'll face in real SAP Ariba projects."
+                    title: "Interactive Q&A Sessions",
+                    description: "Outside of the primary instruction in the classroom, you have additional dedicated Q&A forums and live office hours, where instructors further answer your questions and elaborate on complicated subjects as well as provide personalized instruction based on your pace and your professional objectives."
                 },
                 {
                     title: "Flexible Batch Timings",
-                    description: "Weekday evenings and weekend batches with recorded sessions for maximum flexibility."
+                    description: "Seeing as multiple civilians and overseas professionals have to manage multiple competing priorities; work, family, and education, we run weekday evening batches (6 PM – 9 PM IST) and also offer weekend (Saturday and Sunday) batches. All sessions are recorded, so you can catch up on a missed live session asynchronously to maintain your continuity."
                 },
                 {
-                    title: "SAP Certification Support",
-                    description: "Complete exam preparation with practice tests, study guides, and strategies for all three SAP Ariba certifications."
+                    title: "Minimal Batch Size for Personal Attention",
+                    description: "Different from massive online courses for which instructors cater to thousands of anonymous learners, we limit our batches to 8-10 attendees. This enables instructors to provide individualized support and understand what you need to help you improve."
                 },
                 {
-                    title: "24/7 Lab Environment Access",
-                    description: "Dedicated cloud server access to practice freely from any place, any time."
+                    title: "Career Support",
+                    description: "Learning SAP Ariba is only part of the equation—getting placed is the other part. Our dedicated career support staff helps you craft an SAP-focused resume, prepares you with mock interviews, and walks you through real interview questions from current hiring trends for **SAP Ariba Consultant jobs**. You'll be coached on how to effectively present project experience to help you shine in **Ariba Careers** interviews."
                 },
                 {
-                    title: "Comprehensive Study Material",
-                    description: "Downloadable PDF presentations, checklists, and interview reference materials, updated quarterly."
+                    title: "Alumni Network & Community Forum",
+                    description: "Become a part of a flourishing network of SAP Ariba practitioners. Provide and receive advice, job leads, and frameworks, ask for and provide help, and establish professional networks that can result in referrals and partnerships."
                 },
                 {
-                    title: "Lifetime Recording Access",
-                    description: "Access session recordings easily recorded in HD in our LMS for revision and continuous learning."
-                },
-                {
-                    title: "Career Services",
-                    description: "Resume building, interview preparation, mock interviews, and ongoing career guidance."
-                },
-                {
-                    title: "3 Months Post Training Support",
-                    description: "Continued access to instructors for questions, clarifications, and real-world guidance after placement."
-                },
-                {
-                    title: "Small Batch Sizes",
-                    description: "Limited to 10-12 participants ensuring personalized attention and interactive sessions."
-                },
-                {
-                    title: "Live Projects & Case Studies",
-                    description: "Work on real-world business scenarios from Fortune 500 implementations and virtual client projects."
+                    title: "Post-Training Support",
+                    description: "Your learning experience does not end with the completion of **SAP Ariba Course**. For the six months after training, you will receive instructor support whether to help you troubleshoot a real project, clarify tough concepts or prepare for your initial consulting engagements."
                 }
             ]
         },

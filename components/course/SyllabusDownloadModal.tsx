@@ -38,61 +38,58 @@ export default function SyllabusDownloadModal({ isOpen, onClose, courseTitle, sy
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        setStatus('loading');
         setErrorMessage('');
 
-        try {
-            // Basic validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(formData.email)) {
-                throw new Error('Please enter a valid email address.');
-            }
-            if (formData.phone.length < 10) {
-                throw new Error('Please enter a valid phone number.');
-            }
+        // 1. Sync Validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(formData.email)) {
+            setErrorMessage('Please enter a valid email address.');
+            return; // Stop here, don't open tab
+        }
+        if (formData.phone.length < 10) {
+            setErrorMessage('Please enter a valid phone number.');
+            return; // Stop here, don't open tab
+        }
 
-            // Send Email
-            const emailResult = await sendSyllabusEmail({
-                email: formData.email,
-                name: formData.name,
-                courseTitle: courseTitle,
-                pdfUrl: syllabusUrl
-            });
+        // 2. Open thank you page immediately (Sync)
+        // This ensures the browser treats it as a direct user action
+        window.open('/thank-you', '_blank');
 
-            if (!emailResult.success) {
-                throw new Error(emailResult.error || 'Failed to send syllabus.');
-            }
+        // 3. Update UI to Success immediately
+        setStatus('success');
 
-            // Save to Google Sheets
+        // 4. Background Processing (Fire & Forget)
+        // We explicitly do NOT await this in the main interaction flow
+        const performBackgroundWork = async () => {
             try {
+                // Send Email
+                await sendSyllabusEmail({
+                    email: formData.email,
+                    name: formData.name,
+                    courseTitle: courseTitle,
+                    pdfUrl: syllabusUrl
+                });
+
+                // Save to Google Sheets
                 await submitCurriculumDownload({
                     name: formData.name,
                     email: formData.email,
                     phone: `${formData.countryCode} ${formData.phone}`,
                     course: courseTitle
                 });
-            } catch (sheetsError) {
-                // Log but don't fail the whole process if sheets fails
-                console.error('Failed to save to Google Sheets:', sheetsError);
+            } catch (err) {
+                // Log error silently, user is already seeing success
+                console.error('Background task failed:', err);
             }
+        };
 
-            setStatus('success');
+        // Trigger background work
+        performBackgroundWork();
 
-            // Open thank you page in new tab
-            window.open('/thank-you', '_blank');
-
-            // Close modal after a delay or let user close it
-            setTimeout(() => {
-                onClose();
-                setStatus('idle');
-                setFormData({ name: '', email: '', countryCode: '+91', phone: '' });
-            }, 3000);
-
-        } catch (error: any) {
-            console.error('Syllabus download error:', error);
-            setStatus('error');
-            setErrorMessage(error.message || 'Something went wrong. Please try again.');
-        }
+        // 5. Cleanup Form
+        setTimeout(() => {
+            setFormData({ name: '', email: '', countryCode: '+91', phone: '' });
+        }, 5000);
     };
 
     return createPortal(
@@ -117,7 +114,11 @@ export default function SyllabusDownloadModal({ isOpen, onClose, courseTitle, sy
                             <p className="text-gray-600 mb-4">
                                 The syllabus has been sent to <strong>{formData.email}</strong>
                             </p>
-                            <p className="text-sm text-gray-500">Please check your inbox.</p>
+                            <p className="text-sm text-gray-500 mb-6">Please check your inbox.</p>
+
+                            <a href="/" className="inline-block px-6 py-2 bg-slate-100 text-slate-700 font-semibold rounded-lg hover:bg-slate-200 transition-colors">
+                                Back to Home
+                            </a>
                         </div>
                     ) : (
                         <>

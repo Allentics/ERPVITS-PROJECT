@@ -23,6 +23,10 @@ export default function BlogContactForm({ slug }: BlogContactFormProps) {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        // 1. Open the thank you page immediately to ensure it opens and avoid blank page
+        const newTab = window.open('/thank-you', '_blank');
+
         setStatus('loading');
         setErrorMessage('');
 
@@ -44,6 +48,9 @@ export default function BlogContactForm({ slug }: BlogContactFormProps) {
             if (error) throw error;
 
             setStatus('success');
+
+            // Note: newTab is already at /thank-you, no need to redirect.
+
             setFormData({
                 name: '',
                 email: '',
@@ -56,6 +63,9 @@ export default function BlogContactForm({ slug }: BlogContactFormProps) {
             setTimeout(() => setStatus('idle'), 5000);
 
         } catch (error: any) {
+            // Close the pre-opened tab if there's an error
+            if (newTab) newTab.close();
+
             console.error('Error submitting form:', error);
             setStatus('error');
             setErrorMessage(error.message || 'Something went wrong. Please try again.');
@@ -75,8 +85,12 @@ export default function BlogContactForm({ slug }: BlogContactFormProps) {
             <p className="text-gray-600 mb-8">Get expert guidance on your SAP career path.</p>
 
             {status === 'success' ? (
-                <div className="bg-green-50 border border-green-200 text-green-700 p-4 rounded-lg mb-6">
-                    Thank you! Our expert will contact you shortly.
+                <div className="bg-green-50 border border-green-200 text-green-700 p-6 rounded-lg mb-6 text-center">
+                    <h4 className="font-bold text-lg mb-2">Thank you!</h4>
+                    <p className="mb-4">Our expert will contact you shortly.</p>
+                    <a href="/" className="inline-block px-6 py-2 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors shadow-sm">
+                        Back to Home
+                    </a>
                 </div>
             ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">

@@ -3,6 +3,7 @@
 import { ClipboardList, Target, Award, Calendar } from 'lucide-react';
 import { useState } from 'react';
 import { supabase } from '@/lib/supabase';
+import { submitToGoogleSheets } from '@/app/actions/submitToGoogleSheets';
 
 import { courses } from '@/lib/courseData';
 import { countryCodes } from '@/lib/countryCodes';
@@ -27,6 +28,10 @@ export default function CustomTrainingPlan() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        // 1. Open the thank you page immediately to ensure it opens and avoid blank page
+        const newTab = window.open('/thank-you', '_blank');
+
         setStatus('loading');
         setErrorMessage('');
 
@@ -46,9 +51,15 @@ export default function CustomTrainingPlan() {
                 ]);
 
             if (error) throw error;
+            // Send to Google Sheets (Fire and forget)
+            submitToGoogleSheets(formData).catch((err: any) => console.error('Google Sheet Error:', err));
+
             setStatus('success');
+            // newTab is already at /thank-you
+
             setFormData({ fullName: '', email: '', phone: '', background: '', interestedCourse: '', message: '' });
         } catch (error: any) {
+            if (newTab) newTab.close();
             console.error('Error submitting form:', error);
             setStatus('error');
             setErrorMessage(error?.message || error?.error_description || JSON.stringify(error) || 'Unknown error occurred');
@@ -118,12 +129,17 @@ export default function CustomTrainingPlan() {
                                 </div>
                                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Request Received!</h3>
                                 <p className="text-gray-600">Our team will analyze your profile and send your custom roadmap shortly.</p>
-                                <button
-                                    onClick={() => setStatus('idle')}
-                                    className="mt-6 text-orange-500 font-bold hover:underline"
-                                >
-                                    Submit another request
-                                </button>
+                                <div className="flex flex-col gap-3 mt-6 items-center">
+                                    <button
+                                        onClick={() => setStatus('idle')}
+                                        className="text-orange-500 font-bold hover:underline"
+                                    >
+                                        Submit another request
+                                    </button>
+                                    <a href="/" className="px-6 py-2 bg-slate-900 text-white font-bold rounded-lg hover:bg-slate-800 transition-colors">
+                                        Back to Home
+                                    </a>
+                                </div>
                             </div>
                         ) : (
                             <>

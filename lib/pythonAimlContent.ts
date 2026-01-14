@@ -4,7 +4,7 @@ import { Section } from './courseData';
 export const pythonAimlContent: { price: string; duration: string; syllabusUrl: string; features: string[]; sections: Section[] } = {
     price: "45,000",
     duration: "45-50 Hours",
-    syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/Python/python-aiml.pdf",
+    syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/python-aiml-course-content.pdf",
     features: [
         "45 Hours of Instructor-led Training",
         "Hands-on Python, AI & ML Projects",

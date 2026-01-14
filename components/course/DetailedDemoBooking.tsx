@@ -24,6 +24,10 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant" }: {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        // 1. Open the thank you page immediately to ensure it opens and avoid blank page
+        const newTab = window.open('/thank-you', '_blank');
+
         setStatus('loading');
         setErrorMessage('');
 
@@ -53,19 +57,20 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant" }: {
 
             if (error) throw error;
 
-            // 2. Send to Google Sheets
-            // Adapted to match the ContactForm structure expected by the server action
-            await submitToGoogleSheets({
+            // 2. Send to Google Sheets (Fire and forget)
+            submitToGoogleSheets({
                 firstName,
                 lastName,
                 email: formData.email,
-                countryCode: '', // Form input includes full number usually
+                countryCode: '',
                 phone: formData.phone,
                 course: courseName,
                 message: fullMessage
-            });
+            }).catch((err: any) => console.error('Google Sheet Error:', err));
 
             setStatus('success');
+            // newTab is already at /thank-you
+
             setFormData({
                 fullName: '',
                 email: '',
@@ -75,6 +80,7 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant" }: {
             });
 
         } catch (error: any) {
+            if (newTab) newTab.close();
             console.error('Submission error:', error);
             setStatus('error');
             setErrorMessage(error.message || 'Something went wrong. Please try again.');
@@ -183,12 +189,17 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant" }: {
                                 <p className="text-orange-700 mb-6">
                                     Thank you for your interest. Our training coordinator will contact you shortly to schedule your demo.
                                 </p>
-                                <button
-                                    onClick={() => setStatus('idle')}
-                                    className="text-orange-600 font-semibold hover:underline"
-                                >
-                                    Book another demo
-                                </button>
+                                <div className="flex flex-col gap-3 items-center">
+                                    <button
+                                        onClick={() => setStatus('idle')}
+                                        className="text-orange-600 font-semibold hover:underline"
+                                    >
+                                        Book another demo
+                                    </button>
+                                    <a href="/" className="px-6 py-2 bg-slate-900 text-white font-bold rounded-lg hover:bg-slate-800 transition-colors shadow-lg">
+                                        Back to Home
+                                    </a>
+                                </div>
                             </div>
                         ) : (
                             <form onSubmit={handleSubmit} className="space-y-4">
