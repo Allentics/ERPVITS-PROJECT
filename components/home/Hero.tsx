@@ -50,82 +50,93 @@ const Hero = () => {
     }, []);
 
     return (
-        <div className="bg-slate-50 text-slate-900 relative overflow-hidden">
+        <div className="bg-white text-slate-900 relative overflow-hidden h-[90vh] min-h-[600px] flex items-center">
             <ContactModal
                 isOpen={isContactModalOpen}
                 onClose={() => setIsContactModalOpen(false)}
                 title="Start Your SAP Journey"
             />
 
-            {/* Background Elements */}
-            <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5"></div>
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-orange-100/50 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2"></div>
+            {/* Background Image & Gradient Mask */}
+            <div className="absolute inset-0 z-0">
+                {/* Responsive background positioning: Center to cover all spaces as requested */}
+                <div className="absolute inset-0 bg-[url('/images/erpvitsBG.webp')] bg-cover bg-center bg-no-repeat"></div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 relative z-10 text-center">
-                <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="text-4xl lg:text-6xl font-extrabold tracking-tight mb-6"
-                >
-                    {content.heading.split(content.highlight_text)[0]}
-                    <span className="text-orange-600">{content.highlight_text}</span>
-                    {content.heading.split(content.highlight_text)[1]}
-                </motion.h1>
+                {/* Gradient: Lighter overlay to make the image look 'darker' (more visible) while keeping text readable */}
+                <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent lg:via-white/40"></div>
 
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 }}
-                    className="text-xl text-slate-800 font-medium mb-8"
-                >
-                    {content.subheading}
-                </motion.p>
+                {/* Additional white blur at the bottom for smooth transition to stats/next section */}
+                <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white to-transparent"></div>
+            </div>
 
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 }}
-                    className="max-w-3xl mx-auto text-lg text-slate-600 mb-10 leading-relaxed"
-                >
-                    {content.description}
-                </motion.p>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+                <div className="max-w-2xl lg:max-w-3xl text-left">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="inline-block bg-orange-600 text-white px-6 py-2 rounded-full text-xs font-bold tracking-widest uppercase mb-6 shadow-md"
+                    >
+                        ★ Rated #1 SAP Training Program 2025 ★
+                    </motion.div>
 
+                    <motion.h1
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.1 }}
+                        className="text-4xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1]"
+                    >
+                        {content.heading.split(content.highlight_text)[0]}
+                        <br className="hidden lg:block" />
+                        <span className="text-orange-600 inline-block">{content.highlight_text}</span>
+                    </motion.h1>
+
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 }}
+                        className="text-lg md:text-xl text-slate-800 font-medium mb-8 leading-relaxed max-w-xl"
+                    >
+                        {content.subheading}
+                    </motion.p>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3 }}
+                        className="flex flex-col sm:flex-row gap-4 mb-12"
+                    >
+                        <button
+                            onClick={() => setIsContactModalOpen(true)}
+                            className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-orange-500/30 transition-all transform hover:-translate-y-1"
+                        >
+                            {content.cta_primary}
+                        </button>
+                        <Link
+                            href="/courses"
+                            className="bg-white/80 backdrop-blur-sm border-2 border-slate-200 hover:border-orange-200 hover:bg-white text-slate-900 px-8 py-4 rounded-xl font-bold text-lg transition-all flex items-center justify-center"
+                        >
+                            {content.cta_secondary}
+                        </Link>
+                    </motion.div>
+                </div>
+
+                {/* Stats Section - Floating at bottom */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3 }}
-                    className="flex flex-col sm:flex-row justify-center gap-4 mb-16"
-                >
-                    <button
-                        onClick={() => setIsContactModalOpen(true)}
-                        className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-md font-bold text-lg shadow-lg hover:shadow-orange-500/30 transition-all transform hover:-translate-y-1"
-                    >
-                        {content.cta_primary}
-                    </button>
-                    <Link
-                        href="/courses"
-                        className="bg-transparent border-2 border-slate-300 hover:bg-slate-100 text-slate-900 px-8 py-4 rounded-md font-bold text-lg transition-all"
-                    >
-                        {content.cta_secondary}
-                    </Link>
-                </motion.div>
-
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
                     transition={{ delay: 0.5 }}
-                    className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-slate-200 pt-10"
+                    className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-8 max-w-4xl"
                 >
                     {content.stats.map((stat, i) => {
                         const icons = [Trophy, Users, Headset, Briefcase];
                         const Icon = icons[i] || Trophy;
                         return (
-                            <div key={i} className="text-center border border-slate-200 bg-white rounded-lg p-6 hover:shadow-md transition-all cursor-default shadow-sm group">
-                                <div className="flex items-center justify-center text-orange-600 font-bold mb-2 text-xl">
-                                    <Icon className="w-6 h-6 mr-2 stroke-[2.5]" />
-                                    <span>{stat.val}</span>
+                            <div key={i} className="flex items-center gap-3 bg-white/60 backdrop-blur-md rounded-lg p-4 border border-slate-100 shadow-sm">
+                                <Icon className="w-8 h-8 text-orange-600 flex-shrink-0" />
+                                <div>
+                                    <div className="font-bold text-slate-900 text-lg leading-none mb-1">{stat.val}</div>
+                                    <div className="text-slate-600 text-xs font-medium uppercase tracking-wide">{stat.label}</div>
                                 </div>
-                                <div className="text-slate-700 font-medium">{stat.label}</div>
                             </div>
                         );
                     })}
