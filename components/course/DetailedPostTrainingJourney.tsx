@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { CheckCircle2, Award, Rocket, Target, BookOpen, Clock, Users, ShieldCheck, TrendingUp, Briefcase, Headphones } from 'lucide-react';
+import { renderRichText } from './SectionRenderer';
 
 export default function DetailedPostTrainingJourney({ title, steps: propSteps, courseName = "this course" }: { title?: string, steps?: any[], courseName?: string }) {
     const scrollToBooking = () => {
@@ -130,7 +131,7 @@ export default function DetailedPostTrainingJourney({ title, steps: propSteps, c
                                         {step.points.map((point: string, pIdx: number) => (
                                             <li key={pIdx} className="flex items-start gap-3">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-orange-400 mt-2 flex-shrink-0" />
-                                                <span className="text-slate-600 text-[15px] leading-relaxed">{point}</span>
+                                                <span className="text-slate-600 text-[15px] leading-relaxed">{renderRichText(point)}</span>
                                             </li>
                                         ))}
                                     </ul>

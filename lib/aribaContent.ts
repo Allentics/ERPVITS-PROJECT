@@ -376,7 +376,67 @@ Client and employer trust is even more robust with the SAP badge, which spellbou
             type: 'detailed_career_roadmap'
         },
         {
-            type: 'detailed_post_training_journey'
+            type: 'detailed_post_training_journey',
+            title: "What to Expect After Completing SAP Ariba Training – Your Growth Roadmap",
+            items: [
+                {
+                    title: "Immediate Post-Training",
+                    timeline: "Week 1-2",
+                    color: "orange",
+                    icon: "CheckCircle2",
+                    points: [
+                        "The course completion certificate is at hand.",
+                        "All recorded and structured materials for the coursework are available and can be accessed at any time.",
+                        "The alumni network and community forum can be joined.",
+                        "Resume updates can begin, focusing on SAP Ariba expertise."
+                    ]
+                },
+                {
+                    title: "Certification & Job Search",
+                    timeline: "Week 3-6",
+                    color: "slate",
+                    icon: "Rocket",
+                    points: [
+                        "SAP Ariba Certification exams can be applied to.",
+                        "The job search can begin with the support of the career services.",
+                        "Alumni networking events can be attended.",
+                        "Interview coaching can be received, which is accompanied with constructive feedback on mock interviews for Ariba Consultant roles."
+                    ]
+                },
+                {
+                    title: "First Role & Project Support",
+                    timeline: "Month 2-3",
+                    color: "orange",
+                    icon: "Briefcase",
+                    points: [
+                        "The 1st SAP Ariba consulting opportunity can be secured.",
+                        "Experience the project that is designed to lend you practice for your new position.",
+                        "Instruction support that is designed for the time after training concludes."
+                    ]
+                },
+                {
+                    title: "First Year in Role",
+                    timeline: "Month 1-12",
+                    color: "slate",
+                    icon: "TrendingUp",
+                    points: [
+                        "**Month 1-3:** your primary objective should be learning the client's business and understanding the current procurement processes, after which you will be engaged with the implementations.",
+                        "**Month 4-6:** you will take the lead on minor configuration tasks, supervise some of the junior consultants, and establish credibility for the dependability and standard of your output.",
+                        "**Month 7-12:** you will be expected to take the lead on the implementation projects and the drive for the enhancement of the processes, exhibiting a blend of your business and technical expertise."
+                    ]
+                },
+                {
+                    title: "Long-Term Growth",
+                    timeline: "1-5 Years",
+                    color: "orange",
+                    icon: "Award",
+                    points: [
+                        "For your sustained growth in the long term, you will have to acquire the SAP Ariba Procurement Certification in procurement, SAP Ariba Sourcing, and contracts for you to fully develop your certification.",
+                        "You will also have to develop your expertise in certain fields as well as your leading and project management skills to make the shift to advanced consulting or account management.",
+                        "You can also pursue a specialization in other areas of your choice such as SAP Ariba integration, analytics, and risk management."
+                    ]
+                }
+            ]
         },
         {
             type: 'detailed_upcoming_batches'
