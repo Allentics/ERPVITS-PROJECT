@@ -1,6 +1,7 @@
 import React from 'react';
 import { CheckCircle2 } from 'lucide-react';
 import Image from 'next/image';
+import ContactForm from '@/components/ContactForm';
 
 interface ContentWithImageProps {
     title: string;
@@ -28,9 +29,9 @@ export default function ContentWithImage({ title, subtitle, description, items, 
 
     return (
         <div className="py-12 bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-sm my-16">
-            <div className={`flex flex-col ${layout === 'right' ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 p-8 lg:p-12`}>
+            <div className={`flex flex-col ${layout === 'right' ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-start gap-12 p-8 lg:p-12`}>
                 {(imageSrc || videoSrc) && (
-                    <div className="w-full lg:w-1/2 flex justify-center">
+                    <div className="w-full lg:w-1/2 flex flex-col gap-8">
                         <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white w-full aspect-video">
                             {videoSrc ? (
                                 <iframe
@@ -47,6 +48,12 @@ export default function ContentWithImage({ title, subtitle, description, items, 
                                     className="object-cover w-full h-full"
                                 />
                             )}
+                        </div>
+
+                        {/* Embedded Contact Form */}
+                        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6">
+                            <h3 className="text-xl font-bold text-slate-900 mb-4 text-center">Book Your Free Demo</h3>
+                            <ContactForm />
                         </div>
                     </div>
                 )}
@@ -67,17 +74,7 @@ export default function ContentWithImage({ title, subtitle, description, items, 
                         </div>
                     )}
 
-                    <div className="pt-6">
-                        <div className={`bg-blue-50 border border-blue-100 p-4 rounded-xl flex gap-4 items-center ${!imageSrc && !videoSrc ? 'max-w-3xl mx-auto text-left' : ''}`}>
-                            <div className="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white shrink-0">
-                                <span className="font-bold text-lg">i</span>
-                            </div>
-                            <div>
-                                <h4 className="font-bold text-blue-900">{supportTitle || "Complete Support Ecosystem"}</h4>
-                                <p className="text-sm text-blue-700 mt-1">{supportText || "Join our extensive alumni/learning support ecosystem to guide you through every step of your SAP Ariba learning journey and career transition."}</p>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
