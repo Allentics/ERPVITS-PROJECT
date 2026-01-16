@@ -88,21 +88,21 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant" }: {
     };
 
     return (
-        <section id="detailed-demo-booking" className="py-8 bg-[#0B1120] relative overflow-hidden">
+        <section id="detailed-demo-booking" className="py-8 bg-orange-600 relative overflow-hidden">
             {/* Background Effects */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-600/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
-            <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-600/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2"></div>
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
+            <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-slate-900/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2"></div>
 
             <div className="max-w-6xl mx-auto px-4 relative z-10">
                 {/* Header */}
                 <div className="text-center mb-6">
-                    <span className="bg-orange-600 text-white px-3 py-0.5 rounded-full text-[10px] font-bold tracking-widest uppercase mb-2 inline-block">
+                    <span className="bg-slate-900 text-white px-3 py-0.5 rounded-full text-[10px] font-bold tracking-widest uppercase mb-2 inline-block">
                         Get Started
                     </span>
                     <h2 className="text-2xl font-bold text-white mb-2">
-                        Ready to Become an <span className="text-orange-500">{courseName} Consultant?</span>
+                        Ready to Become an <span className="text-slate-900">{courseName} Consultant?</span>
                     </h2>
-                    <p className="text-gray-400 max-w-xl mx-auto text-xs">
+                    <p className="text-orange-50 max-w-xl mx-auto text-xs">
                         Book your free demo today and take the first step towards a lucrative {courseName} career
                     </p>
                 </div>
@@ -113,47 +113,47 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant" }: {
                         <div>
                             <h3 className="text-base font-bold text-white mb-3">What You'll Get With Your Free Demo</h3>
                             <div className="space-y-2">
-                                <div className="bg-slate-800/50 border border-slate-700/50 p-2.5 rounded-lg flex items-start gap-3">
-                                    <div className="w-6 h-6 rounded bg-orange-500/10 flex items-center justify-center text-orange-500 shrink-0">
+                                <div className="bg-white/10 border border-white/20 p-2.5 rounded-lg flex items-start gap-3">
+                                    <div className="w-6 h-6 rounded bg-slate-900 flex items-center justify-center text-white shrink-0">
                                         <Video className="w-3.5 h-3.5" />
                                     </div>
                                     <div>
                                         <h4 className="font-bold text-white mb-0 text-xs">Insightful Live Ariba Session</h4>
-                                        <p className="text-[10px] text-gray-400">Observe real training and instructor methodology</p>
+                                        <p className="text-[10px] text-orange-50">Observe real training and instructor methodology</p>
                                     </div>
                                 </div>
-                                <div className="bg-slate-800/50 border border-slate-700/50 p-2.5 rounded-lg flex items-start gap-3">
-                                    <div className="w-6 h-6 rounded bg-orange-500/10 flex items-center justify-center text-orange-500 shrink-0">
+                                <div className="bg-white/10 border border-white/20 p-2.5 rounded-lg flex items-start gap-3">
+                                    <div className="w-6 h-6 rounded bg-slate-900 flex items-center justify-center text-white shrink-0">
                                         <Calendar className="w-3.5 h-3.5" />
                                     </div>
                                     <div>
                                         <h4 className="font-bold text-white mb-0 text-xs">30 Min Career Consultation</h4>
-                                        <p className="text-[10px] text-gray-400">Personalized guidance based on your background</p>
+                                        <p className="text-[10px] text-orange-50">Personalized guidance based on your background</p>
                                     </div>
                                 </div>
-                                <div className="bg-slate-800/50 border border-slate-700/50 p-2.5 rounded-lg flex items-start gap-3">
-                                    <div className="w-6 h-6 rounded bg-orange-500/10 flex items-center justify-center text-orange-500 shrink-0">
+                                <div className="bg-white/10 border border-white/20 p-2.5 rounded-lg flex items-start gap-3">
+                                    <div className="w-6 h-6 rounded bg-slate-900 flex items-center justify-center text-white shrink-0">
                                         <HelpCircle className="w-3.5 h-3.5" />
                                     </div>
                                     <div>
                                         <h4 className="font-bold text-white mb-0 text-xs">Q&A with Instructor</h4>
-                                        <p className="text-[10px] text-gray-400">Ask questions about course, certification, and career</p>
+                                        <p className="text-[10px] text-orange-50">Ask questions about course, certification, and career</p>
                                     </div>
                                 </div>
-                                <div className="bg-slate-800/50 border border-slate-700/50 p-2.5 rounded-lg flex items-start gap-3">
-                                    <div className="w-6 h-6 rounded bg-orange-500/10 flex items-center justify-center text-orange-500 shrink-0">
+                                <div className="bg-white/10 border border-white/20 p-2.5 rounded-lg flex items-start gap-3">
+                                    <div className="w-6 h-6 rounded bg-slate-900 flex items-center justify-center text-white shrink-0">
                                         <Gift className="w-3.5 h-3.5" />
                                     </div>
                                     <div>
                                         <h4 className="font-bold text-white mb-0 text-xs">Special Discount Offer</h4>
-                                        <p className="text-[10px] text-gray-400">Exclusive discount pass for demo attendees</p>
+                                        <p className="text-[10px] text-orange-50">Exclusive discount pass for demo attendees</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         {/* Contact Box */}
-                        <div className="bg-orange-600 rounded-xl p-4 text-white relative overflow-hidden">
+                        <div className="bg-slate-900 rounded-xl p-4 text-white relative overflow-hidden">
                             <div className="relative z-10">
                                 <h3 className="font-bold text-sm mb-2">Contact Information</h3>
                                 <div className="space-y-1.5 text-xs">
@@ -179,20 +179,20 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant" }: {
 
                     {/* Right Column: Form */}
                     <div className="bg-white rounded-xl p-4 lg:p-5 shadow-2xl relative">
-                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-orange-600 rounded-t-xl"></div>
-                        <h3 className="text-lg font-bold text-slate-900 mb-3">Book Your <span className="text-orange-600">Free Demo</span></h3>
+                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-slate-700 to-slate-900 rounded-t-xl"></div>
+                        <h3 className="text-lg font-bold text-slate-900 mb-3">Book Your <span className="text-slate-900 underline decoration-orange-500 decoration-2 underline-offset-2">Free Demo</span></h3>
 
                         {status === 'success' ? (
-                            <div className="bg-orange-50 border border-orange-200 rounded-xl p-6 text-center animate-in fade-in zoom-in duration-300">
-                                <CheckCircle2 className="h-10 w-10 text-orange-500 mx-auto mb-3" />
-                                <h3 className="text-lg font-bold text-orange-900 mb-1">Registration Confirmed!</h3>
-                                <p className="text-orange-700 text-sm mb-4">
+                            <div className="bg-green-50 border border-green-200 rounded-xl p-6 text-center animate-in fade-in zoom-in duration-300">
+                                <CheckCircle2 className="h-10 w-10 text-green-600 mx-auto mb-3" />
+                                <h3 className="text-lg font-bold text-green-900 mb-1">Registration Confirmed!</h3>
+                                <p className="text-green-700 text-sm mb-4">
                                     Our training coordinator will contact you shortly.
                                 </p>
                                 <div className="flex flex-col gap-2 items-center">
                                     <button
                                         onClick={() => setStatus('idle')}
-                                        className="text-orange-600 text-sm font-semibold hover:underline"
+                                        className="text-slate-900 text-sm font-semibold hover:underline"
                                     >
                                         Book another demo
                                     </button>
@@ -219,7 +219,7 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant" }: {
                                                 onChange={handleChange}
                                                 required
                                                 placeholder="Name"
-                                                className="w-full pl-7 pr-2 py-1.5 bg-slate-50 border border-slate-200 rounded-md text-xs focus:outline-none focus:border-orange-500 transition-colors"
+                                                className="w-full pl-7 pr-2 py-1.5 bg-slate-50 border border-slate-200 rounded-md text-xs focus:outline-none focus:border-slate-900 transition-colors"
                                             />
                                         </div>
                                     </div>
@@ -234,7 +234,7 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant" }: {
                                                 onChange={handleChange}
                                                 required
                                                 placeholder="+91..."
-                                                className="w-full pl-7 pr-2 py-1.5 bg-slate-50 border border-slate-200 rounded-md text-xs focus:outline-none focus:border-orange-500 transition-colors"
+                                                className="w-full pl-7 pr-2 py-1.5 bg-slate-50 border border-slate-200 rounded-md text-xs focus:outline-none focus:border-slate-900 transition-colors"
                                             />
                                         </div>
                                     </div>
@@ -251,7 +251,7 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant" }: {
                                             onChange={handleChange}
                                             required
                                             placeholder="Email"
-                                            className="w-full pl-7 pr-2 py-1.5 bg-slate-50 border border-slate-200 rounded-md text-xs focus:outline-none focus:border-orange-500 transition-colors"
+                                            className="w-full pl-7 pr-2 py-1.5 bg-slate-50 border border-slate-200 rounded-md text-xs focus:outline-none focus:border-slate-900 transition-colors"
                                         />
                                     </div>
                                 </div>
@@ -264,7 +264,7 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant" }: {
                                             name="experience"
                                             value={formData.experience}
                                             onChange={handleChange}
-                                            className="w-full pl-7 pr-2 py-1.5 bg-slate-50 border border-slate-200 rounded-md text-xs focus:outline-none focus:border-orange-500 transition-colors appearance-none text-slate-700"
+                                            className="w-full pl-7 pr-2 py-1.5 bg-slate-50 border border-slate-200 rounded-md text-xs focus:outline-none focus:border-slate-900 transition-colors appearance-none text-slate-700"
                                         >
                                             <option value="">Select Level</option>
                                             <option value="Student / Fresher">Student / Fresher</option>
@@ -285,7 +285,7 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant" }: {
                                             onChange={handleChange}
                                             placeholder="Optional..."
                                             rows={2}
-                                            className="w-full pl-7 pr-2 py-1.5 bg-slate-50 border border-slate-200 rounded-md text-xs focus:outline-none focus:border-orange-500 transition-colors resize-none"
+                                            className="w-full pl-7 pr-2 py-1.5 bg-slate-50 border border-slate-200 rounded-md text-xs focus:outline-none focus:border-slate-900 transition-colors resize-none"
                                         ></textarea>
                                     </div>
                                 </div>
@@ -293,7 +293,7 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant" }: {
                                 <button
                                     type="submit"
                                     disabled={status === 'loading'}
-                                    className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 mt-1 disabled:bg-orange-400 text-sm"
+                                    className="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 mt-1 disabled:bg-slate-400 text-sm"
                                 >
                                     {status === 'loading' ? (
                                         <>
