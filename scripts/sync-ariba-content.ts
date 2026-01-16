@@ -24,7 +24,7 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 async function syncAriba() {
     console.log('Syncing Ariba content to database...');
 
-    const courseId = 'sap-ariba'; // Primary ID
+    const courseId = 'ariba'; // Primary ID
 
     const updateData = {
         title: aribaContent.title,

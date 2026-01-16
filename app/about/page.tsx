@@ -1,7 +1,13 @@
 import { CheckCircle, Globe, Users, Award } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
+import { fetchPageMetadata, fetchPageSchema } from '@/lib/metadata';
+import { Metadata } from 'next';
 
 export const dynamic = 'force-dynamic';
+
+export async function generateMetadata(): Promise<Metadata> {
+    return fetchPageMetadata('/about');
+}
 
 const DEFAULT_HERO = {
     title: "About ERPVITS",
@@ -21,6 +27,7 @@ const DEFAULT_MISSION = {
 };
 
 export default async function AboutPage() {
+    const schemaMarkup = await fetchPageSchema('/about');
     let hero = DEFAULT_HERO;
     let mission = DEFAULT_MISSION;
 
@@ -46,6 +53,12 @@ export default async function AboutPage() {
 
     return (
         <div className="bg-white min-h-screen">
+            {schemaMarkup && (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: schemaMarkup }}
+                />
+            )}
             {/* Hero */}
             {/* Hero */}
             <div className="bg-slate-50 text-slate-900 py-20 lg:py-28 relative overflow-hidden border-b border-slate-200">

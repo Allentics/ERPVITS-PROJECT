@@ -27,7 +27,7 @@ const sidebarItems = [
     { name: 'Dashboard', href: '/admin/dashboard', icon: LayoutDashboard },
     { name: 'Courses', href: '/admin/courses', icon: BookOpen },
     { name: 'Blog Posts', href: '/admin/blogs', icon: FileText },
-    { name: 'About Page', href: '/admin/content?page=/about', icon: Globe },
+    { name: 'Pages & SEO', href: '/admin/pages', icon: Globe },
     { name: 'Site Content', href: '/admin/content', icon: Layers },
 ];
 

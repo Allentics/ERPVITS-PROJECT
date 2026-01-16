@@ -71,7 +71,7 @@ export const aribaContent = {
             type: 'content_with_image',
             title: "Why Professionals Choose ERPVITS for SAP Ariba Online Training",
             subtitle: "Success Guarantee & Credibility",
-            videoSrc: "https://www.youtube.com/embed/LZO_UPw5nqM",
+            videoSrc: "https://www.youtube.com/embed/LZO_UPw5nqM?si=N_tBzFgnPc6Iv3y3",
             description: "ERPVITS has been a trusted training partner for SAP Modules, having trained hundreds of successful learners, many of whom are employed in prominent consulting companies, such as Accenture, Capgemini, Deloitte, Infosys, and Wipro. The quality of **SAP Ariba Training and Placement** achieved by our program, as outlined in our alumni network testimonials, reinforces our standing as a reputable training partner.",
             items: [
                 "Trusted by 500+ successful SAP professionals",

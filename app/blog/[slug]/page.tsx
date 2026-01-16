@@ -59,15 +59,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const { slug } = await params;
     const { data: post } = await supabase
         .from('blog_posts')
-        .select('title, description')
+        .select('title, description, meta_title, meta_description')
         .eq('id', slug)
         .single();
 
     if (!post) return { title: 'Post Not Found' };
 
     return {
-        title: `${post.title} | ERPVITS Blog`,
-        description: post.description,
+        title: post.meta_title || `${post.title} | ERPVITS Blog`,
+        description: post.meta_description || post.description,
     };
 }
 
@@ -111,8 +111,48 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     });
     const categories = Object.entries(categoryCounts).map(([name, count]) => ({ name, count }));
 
+    // Decide whether to use DB content or Component
+    // If DB content is substantial (>50 chars), prefer it. Otherwise check legacy components.
+    const useDbContent = post.content && post.content.length > 50;
+
+    // Check if it's one of the legacy component paths
+    const LegacyComponent = (() => {
+        if (useDbContent) return null; // If we have DB content, ignore legacy component
+
+        switch (slug) {
+            case 'sap-tcodes-list-pdf': return SapTCodesContent;
+            case 'sap-sd-process-flow': return SapSdProcessFlowContent;
+            case 'sap-fico-cash-journal-configuration': return SapFicoCashJournalContent;
+            case 'sap-s4hana-mm-career-opportunities': return SapS4HanaMmCareerContent;
+            case 'high-paying-sap-fico-jobs': return HighPayingSapFicoJobsContent;
+            case 'sap-ariba-supplier-login-tutorial': return SapAribaSupplierLoginContent;
+            case 'sap-fieldglass-vs-traditional-vms': return SapFieldglassVmsContent;
+            case 'sap-cpi-interview-questions': return SapCpiInterviewQuestionsContent;
+            case 'top-10-sap-c4c-technical-scenarios': return SapC4cTechnicalScenariosContent;
+            case 'top-7-sap-training-institutes': return Top7SapTrainingInstitutesContent;
+            case 'sap-ariba-sourcing-configuration': return SapAribaSourcingConfigContent;
+            case 'sap-mm-course-complete-guide': return SapMmCourseCompleteContent;
+            case 'how-sap-ariba-is-powering-intelligent-spend-management': return HowSapAribaPoweringContent;
+            case 'top-ten-tools-techniques-for-efficient-abap-on-cloud-programming': return TopTenAbapCloudToolsContent;
+            case 'how-sap-fieldglass-transforming-global-contingent-workforce-market': return HowSapFieldglassTransformingContent;
+            case 'mto-and-sto-process-in-sap': return MtoAndStoProcessContent;
+            case 'master-sap-ariba-with-industry-leading-online-training': return MasterSapAribaIndustryContent;
+            case 'sap-trm-master-data-essentials': return SapTrmMasterDataContent;
+            case 'sap-trm-complementary-technologies': return SapTrmComplementaryContent;
+            default: return null;
+        }
+    })();
+
     return (
         <div className="bg-white min-h-screen">
+            {/* Inject Schema Markup */}
+            {post.schema_markup && (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: post.schema_markup }}
+                />
+            )}
+
             {/* Header / Breadcrumb Section */}
             <div className="bg-white border-b border-gray-100 py-6">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -170,66 +210,33 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                                 </div>
                             )}
 
-                            {/* Content Component Mapping */}
+                            {/* Content Rendering */}
                             <div className="prose prose-lg prose-slate max-w-none 
                                 prose-headings:text-slate-900 prose-headings:font-bold 
                                 prose-a:text-orange-600 hover:prose-a:text-orange-700 
                                 prose-img:rounded-2xl prose-img:shadow-lg prose-img:my-10
                                 prose-p:leading-relaxed prose-p:text-slate-600
-                                prose-li:text-slate-600 prose-strong:text-slate-900 blog-content-area">
+                                prose-li:text-slate-600 prose-strong:text-slate-900 blog-content-area
+                                [&_iframe]:w-full [&_iframe]:aspect-video [&_iframe]:rounded-xl">
 
-                                {slug === 'sap-tcodes-list-pdf' && <SapTCodesContent />}
-                                {slug === 'sap-sd-process-flow' && <SapSdProcessFlowContent />}
-                                {slug === 'sap-fico-cash-journal-configuration' && <SapFicoCashJournalContent />}
-                                {slug === 'sap-s4hana-mm-career-opportunities' && <SapS4HanaMmCareerContent />}
-                                {slug === 'high-paying-sap-fico-jobs' && <HighPayingSapFicoJobsContent />}
-                                {slug === 'sap-ariba-supplier-login-tutorial' && <SapAribaSupplierLoginContent />}
-                                {slug === 'sap-fieldglass-vs-traditional-vms' && <SapFieldglassVmsContent />}
-                                {slug === 'sap-cpi-interview-questions' && <SapCpiInterviewQuestionsContent />}
-                                {slug === 'top-10-sap-c4c-technical-scenarios' && <SapC4cTechnicalScenariosContent />}
-                                {slug === 'top-7-sap-training-institutes' && <Top7SapTrainingInstitutesContent />}
-                                {slug === 'sap-ariba-sourcing-configuration' && <SapAribaSourcingConfigContent />}
-                                {slug === 'sap-mm-course-complete-guide' && <SapMmCourseCompleteContent />}
-                                {slug === 'how-sap-ariba-is-powering-intelligent-spend-management' && <HowSapAribaPoweringContent />}
-                                {slug === 'top-ten-tools-techniques-for-efficient-abap-on-cloud-programming' && <TopTenAbapCloudToolsContent />}
-                                {slug === 'how-sap-fieldglass-transforming-global-contingent-workforce-market' && <HowSapFieldglassTransformingContent />}
-
-                                {slug === 'mto-and-sto-process-in-sap' && <MtoAndStoProcessContent />}
-                                {slug === 'master-sap-ariba-with-industry-leading-online-training' && <MasterSapAribaIndustryContent />}
-                                {slug === 'sap-trm-master-data-essentials' && <SapTrmMasterDataContent />}
-                                {slug === 'sap-trm-complementary-technologies' && <SapTrmComplementaryContent />}
-
-                                {![
-                                    'sap-tcodes-list-pdf', 'sap-sd-process-flow', 'sap-fico-cash-journal-configuration',
-                                    'sap-s4hana-mm-career-opportunities', 'high-paying-sap-fico-jobs', 'sap-ariba-supplier-login-tutorial',
-                                    'sap-fieldglass-vs-traditional-vms', 'sap-cpi-interview-questions', 'top-10-sap-c4c-technical-scenarios',
-                                    'top-7-sap-training-institutes', 'sap-ariba-sourcing-configuration', 'sap-mm-course-complete-guide',
-                                    'how-sap-ariba-is-powering-intelligent-spend-management', 'top-ten-tools-techniques-for-efficient-abap-on-cloud-programming',
-
-                                    'how-sap-fieldglass-transforming-global-contingent-workforce-market',
-                                    'mto-and-sto-process-in-sap', 'master-sap-ariba-with-industry-leading-online-training',
-                                    'sap-trm-complementary-technologies', 'sap-trm-master-data-essentials' // Explicitly using component for this slug
-                                ].includes(slug) && (
-                                        <div dangerouslySetInnerHTML={{ __html: post.content }} />
-                                    )}
+                                {LegacyComponent ? (
+                                    <LegacyComponent />
+                                ) : (
+                                    <div dangerouslySetInnerHTML={{ __html: post.content }} />
+                                )}
                             </div>
                         </article>
                     </div>
 
                     {/* Sidebar (Right) */}
                     <div className="lg:col-span-4 space-y-12">
-
-
-
                         {/* Contact Form Card */}
                         <div className="sticky top-24">
                             <BlogContactForm slug={slug} />
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     );
 }
-

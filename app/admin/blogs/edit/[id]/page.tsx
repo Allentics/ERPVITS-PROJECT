@@ -3,11 +3,9 @@
 import React, { useEffect, useState, use } from 'react';
 import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
-import { ArrowLeft, Save, Loader2 } from 'lucide-react';
+import { ArrowLeft, Save, Loader2 as LoaderIcon } from 'lucide-react';
 import Link from 'next/link';
-
-// Helper for Lucide imports if used via string (but we import directly)
-import { Edit, Trash2, Calendar, FileText, ArrowLeft as ArrowIcon, Save as SaveIcon, Loader2 as LoaderIcon } from 'lucide-react';
+import RichTextEditor from '@/components/admin/RichTextEditor';
 
 export default function EditBlogPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = use(params);
@@ -44,6 +42,10 @@ export default function EditBlogPage({ params }: { params: Promise<{ id: string 
         setFormData((prev: any) => ({ ...prev, [name]: value }));
     };
 
+    const handleContentChange = (value: string) => {
+        setFormData((prev: any) => ({ ...prev, content: value }));
+    };
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setSaving(true);
@@ -55,6 +57,7 @@ export default function EditBlogPage({ params }: { params: Promise<{ id: string 
                 .eq('id', id);
 
             if (error) throw error;
+            alert('Updated successfully!');
             router.push('/admin/blogs');
         } catch (err: any) {
             alert('Error updating blog post: ' + err.message);
@@ -75,16 +78,20 @@ export default function EditBlogPage({ params }: { params: Promise<{ id: string 
     if (!formData) return null;
 
     return (
-        <div className="max-w-4xl mx-auto space-y-6">
+        <div className="max-w-5xl mx-auto space-y-6 pb-20">
             <div className="flex items-center gap-4">
                 <Link href="/admin/blogs" className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-                    <ArrowIcon size={20} />
+                    <ArrowLeft size={20} />
                 </Link>
-                <h2 className="text-2xl font-bold text-gray-900 truncate">Edit Post: {formData.title}</h2>
+                <div className="min-w-0">
+                    <h2 className="text-2xl font-bold text-gray-900 truncate">Edit Post</h2>
+                    <p className="text-sm text-gray-500 truncate">{formData.title}</p>
+                </div>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 space-y-6">
+                    <h3 className="text-lg font-bold text-gray-900 border-b pb-2">Core Content</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-1">
                             <label className="text-sm font-medium text-gray-700">Post ID (Slug)</label>
@@ -166,19 +173,60 @@ export default function EditBlogPage({ params }: { params: Promise<{ id: string 
                     </div>
 
                     <div className="space-y-1">
-                        <label className="text-sm font-medium text-gray-700">Post Content (HTML)</label>
-                        <textarea
-                            name="content"
-                            required
-                            rows={15}
+                        <RichTextEditor
+                            label="Post Content"
                             value={formData.content || ''}
-                            onChange={handleChange}
-                            className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500/20 outline-none font-mono text-sm shadow-inner bg-gray-50"
+                            onChange={handleContentChange}
                         />
                     </div>
                 </div>
 
-                <div className="flex justify-end gap-4 pb-10">
+                {/* SEO & Metadata Section */}
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 space-y-6">
+                    <h3 className="text-lg font-bold text-gray-900 border-b pb-2">SEO & Schema Metadata</h3>
+
+                    <div className="grid grid-cols-1 gap-6">
+                        <div className="space-y-1">
+                            <label className="text-sm font-medium text-gray-700">Meta Title</label>
+                            <p className="text-xs text-gray-400">Leave blank to use the post title.</p>
+                            <input
+                                name="meta_title"
+                                value={formData.meta_title || ''}
+                                onChange={handleChange}
+                                placeholder={formData.title}
+                                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500/20 outline-none"
+                            />
+                        </div>
+
+                        <div className="space-y-1">
+                            <label className="text-sm font-medium text-gray-700">Meta Description</label>
+                            <p className="text-xs text-gray-400">Leave blank to use the short excerpt.</p>
+                            <textarea
+                                name="meta_description"
+                                rows={2}
+                                value={formData.meta_description || ''}
+                                onChange={handleChange}
+                                placeholder={formData.description}
+                                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500/20 outline-none resize-none"
+                            />
+                        </div>
+
+                        <div className="space-y-1">
+                            <label className="text-sm font-medium text-gray-700">Schema Markup (JSON-LD)</label>
+                            <p className="text-xs text-gray-400">Paste valid JSON-LD code here. It will be injected into the &lt;head&gt;.</p>
+                            <textarea
+                                name="schema_markup"
+                                rows={5}
+                                value={formData.schema_markup || ''}
+                                onChange={handleChange}
+                                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500/20 outline-none font-mono text-xs bg-gray-50"
+                                placeholder='{ "@context": "https://schema.org", "@type": "Article", ... }'
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div className="flex justify-end gap-4">
                     <button
                         type="button"
                         onClick={() => router.back()}
@@ -191,7 +239,7 @@ export default function EditBlogPage({ params }: { params: Promise<{ id: string 
                         disabled={saving}
                         className="flex items-center gap-2 px-6 py-2 bg-blue-600 text-white rounded-lg font-bold hover:bg-blue-700 transition-colors shadow-lg disabled:opacity-50"
                     >
-                        {saving ? <LoaderIcon className="animate-spin" size={20} /> : <SaveIcon size={20} />}
+                        {saving ? <LoaderIcon className="animate-spin" size={20} /> : <Save size={20} />}
                         Update Post
                     </button>
                 </div>

@@ -1,12 +1,25 @@
-'use client';
-
 import { Phone, Mail, MapPin } from 'lucide-react';
 import ContactForm from '@/components/ContactForm';
+import { fetchPageMetadata, fetchPageSchema } from '@/lib/metadata';
+import { Metadata } from 'next';
 
-export default function ContactPage() {
+export const dynamic = 'force-dynamic';
+
+export async function generateMetadata(): Promise<Metadata> {
+    return fetchPageMetadata('/contact');
+}
+
+export default async function ContactPage() {
+    const schemaMarkup = await fetchPageSchema('/contact');
 
     return (
         <div className="bg-white min-h-screen">
+            {schemaMarkup && (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: schemaMarkup }}
+                />
+            )}
             {/* Header */}
             <div className="bg-slate-50 text-slate-900 py-20 text-center border-b border-slate-200">
                 <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
@@ -76,4 +89,3 @@ export default function ContactPage() {
         </div>
     );
 }
-

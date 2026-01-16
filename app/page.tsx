@@ -4,85 +4,54 @@ import WhyChooseUs from '@/components/home/WhyChooseUs';
 import CustomTrainingPlan from '@/components/home/CustomTrainingPlan';
 import FeaturedCourses from '@/components/home/FeaturedCourses';
 import PlacementSection from '@/components/home/PlacementSection';
-
 import ProvenResults from '@/components/home/ProvenResults';
 import CareerAdvisors from '@/components/home/CareerAdvisors';
 import ROICalculator from '@/components/home/ROICalculator';
-
 import CompetitiveAdvantage from '@/components/home/CompetitiveAdvantage';
 import LatestInsights from '@/components/home/LatestInsights';
 import UpcomingWebinars from '@/components/home/UpcomingWebinars';
 import AlumniCommunity from '@/components/home/AlumniCommunity';
 import SuccessStories from '@/components/home/SuccessStories';
-
 import PricingPlans from '@/components/home/PricingPlans';
 import HomeFAQ from '@/components/home/HomeFAQ';
+import { fetchPageMetadata, fetchPageSchema } from '@/lib/metadata';
+import { Metadata } from 'next';
 
-export default function Home() {
+export async function generateMetadata(): Promise<Metadata> {
+  const meta = await fetchPageMetadata('/');
+  return {
+    ...meta,
+    title: meta.title || 'ERPVITS - Best SAP Training Institute',
+    description: meta.description || 'Master SAP with ERPVITS. Expert-led training, hands-on projects, and certification guidance.'
+  };
+}
+
+export default async function Home() {
+  const schemaMarkup = await fetchPageSchema('/');
+
   return (
     <main>
-      {/* 1. Announcement Bar is in Layout */}
-      {/* 2. Sticky Header is in Layout */}
-
-      {/* 3. Hero Section */}
+      {schemaMarkup && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: schemaMarkup }}
+        />
+      )}
       <Hero />
-
-      {/* 4. Urgency/Scarcity */}
       <UrgencySection />
-
-      {/* 5. Why Choose Us */}
       <WhyChooseUs />
-
-      {/* 6. Custom Training Plan (Lead Magnet) */}
       <CustomTrainingPlan />
-
-      {/* 7. Featured Courses */}
       <FeaturedCourses />
-
-      {/* 7b & 12. Placement Section (Combined Companies, Stats, ROI) */}
       <PlacementSection />
-
-      {/* New Section: Flexible Training Formats */}
-
-
-      {/* New Section: Proven Results */}
       <ProvenResults />
-
-      {/* New Section: Career Advisors */}
       <CareerAdvisors />
-
-      {/* 8. Success Stories */}
       <SuccessStories />
-
-      {/* 9 & 10. Trainer Expertise + 1-on-1 */}
-
-
-      {/* New Section: ROI Calculator */}
       <ROICalculator />
-
-      {/* New Section: Risk Free Guarantee */}
-
-
-      {/* New Section: Competitive Advantage */}
       <CompetitiveAdvantage />
-
-      {/* New Section: Latest Insights */}
       <LatestInsights />
-
-      {/* New Section: Upcoming Webinars */}
       <UpcomingWebinars />
-
-      {/* New Section: Alumni Community */}
       <AlumniCommunity />
-
-      {/* 14. Free Demos Link (Included in Hero/Nav mostly, but we can add a section if needed. Keeping concise) */}
-
-      {/* 15. Pricing Plans */}
       <PricingPlans />
-
-      {/* 13. Insights/Trends (Skipping for now to prioritize core content, can add blog feed later) */}
-
-      {/* 16. FAQ */}
       <HomeFAQ />
     </main>
   );
