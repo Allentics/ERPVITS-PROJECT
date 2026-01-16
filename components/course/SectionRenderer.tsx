@@ -209,7 +209,7 @@ export default function SectionRenderer({ sections, courseName }: { sections: an
                     case 'detailed_target_audience':
                         return <DetailedTargetAudience key={idx} items={section.items} title={section.title} subtitle={section.subtitle} />;
                     case 'detailed_learning_outcomes':
-                        return <DetailedLearningOutcomes key={idx} items={section.items} />;
+                        return <DetailedLearningOutcomes key={idx} items={section.items} title={section.title} subtitle={section.subtitle} />;
                     case 'real_world_scenarios':
                         return <RealWorldScenarios key={idx} items={section.items} />;
                     case 'course_overview':

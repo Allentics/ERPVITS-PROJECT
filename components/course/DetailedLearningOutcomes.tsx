@@ -44,14 +44,14 @@ export default function DetailedLearningOutcomes({ items, title, subtitle }: { i
 
                 {/* Tabs */}
                 {isTabbed && (
-                    <div className="flex justify-center mb-12">
-                        <div className="bg-gray-100 p-1 rounded-full inline-flex">
+                    <div className="flex justify-center mb-8">
+                        <div className="bg-gray-100 p-1 rounded-full flex w-full max-w-4xl mx-auto">
                             {tabs.map((tab: any, idx: number) => (
                                 <button
                                     key={idx}
                                     onClick={() => setActiveTab(idx)}
-                                    className={`px-8 py-3 rounded-full text-sm font-bold transition-all duration-300 ${activeTab === idx
-                                        ? 'bg-white text-orange-600 shadow-md transform scale-105'
+                                    className={`flex-1 py-3 rounded-full text-sm font-bold transition-all duration-300 ${activeTab === idx
+                                        ? 'bg-white text-orange-600 shadow-md'
                                         : 'text-gray-500 hover:text-gray-700'
                                         }`}
                                 >
