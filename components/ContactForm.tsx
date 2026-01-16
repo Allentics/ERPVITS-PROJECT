@@ -120,7 +120,7 @@ export default function ContactForm({ className = "", showLabels = true, success
     }
 
     return (
-        <form className={`space-y-2 ${className}`} onSubmit={handleSubmit}>
+        <form className={`space-y-2 text-left ${className}`} onSubmit={handleSubmit}>
             {status === 'error' && (
                 <div className="bg-red-50 border border-red-200 rounded-lg p-2 flex items-center text-red-800 text-xs">
                     <AlertCircle className="h-3 w-3 mr-2 flex-shrink-0" />
