@@ -99,8 +99,8 @@ export function DetailedFeatures({ badge, title, subtitle, items, textAlign = 'c
     };
 
     return (
-        <div className="py-16 detailed-features-section bg-white">
-            <div className={`mb-12 max-w-7xl mx-auto px-4 ${textAlign === 'left' ? 'text-left' : 'text-center'}`}>
+        <div className="py-8 detailed-features-section bg-white">
+            <div className={`mb-6 max-w-7xl mx-auto px-4 ${textAlign === 'left' ? 'text-left' : 'text-center'}`}>
                 {badge && <span className="bg-orange-500 text-white px-4 py-1.5 rounded-full text-sm font-medium mb-5 inline-block shadow-sm">{badge}</span>}
                 <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6 leading-tight">{renderTitle(title)}</h2>
                 {subtitle && (
@@ -185,7 +185,7 @@ export default function SectionRenderer({ sections, courseName }: { sections: an
     if (!sections) return null;
 
     return (
-        <div className="space-y-24">
+        <div className="space-y-8">
             {sections.map((section, idx) => {
                 switch (section.type) {
                     case 'detailed_features':

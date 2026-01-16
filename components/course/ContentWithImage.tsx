@@ -28,7 +28,7 @@ export default function ContentWithImage({ title, subtitle, description, items, 
     };
 
     return (
-        <div className="py-12 bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-sm my-16">
+        <div className="py-12 bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-sm">
             <div className={`flex flex-col ${layout === 'right' ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-start gap-12 p-8 lg:p-12`}>
                 {(imageSrc || videoSrc) && (
                     <div className="w-full lg:w-1/2 flex flex-col gap-8">

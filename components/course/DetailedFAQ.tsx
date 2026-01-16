@@ -100,11 +100,11 @@ export default function DetailedFAQ({ items }: { items?: any[] }) {
     }));
 
     return (
-        <section className="py-20 bg-white">
+        <section className="py-8 bg-white">
             <div className="max-w-4xl mx-auto px-4">
 
                 {/* Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-6">
                     <span className="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block">
                         FAQ
                     </span>

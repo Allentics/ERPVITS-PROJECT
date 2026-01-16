@@ -13,10 +13,10 @@ export default function DetailedPrerequisites({ items }: { items?: any }) {
     const data = items || aribaPrerequisites;
 
     return (
-        <section className="py-16 bg-white">
+        <section className="py-8 bg-white">
             <div className="max-w-7xl mx-auto px-4">
                 {/* Header */}
-                <div className="text-center mb-12">
+                <div className="text-center mb-6">
                     <span className="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block">
                         Prerequisites
                     </span>

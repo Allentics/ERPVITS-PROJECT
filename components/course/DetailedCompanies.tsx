@@ -54,9 +54,9 @@ export default function DetailedCompanies({ courseName = "SAP Ariba", customData
     const data = customData || companiesData;
 
     return (
-        <section className="py-16 bg-white">
+        <section className="py-8 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12">
+                <div className="text-center mb-6">
                     <span className="text-blue-600 font-bold tracking-wider uppercase text-sm mb-2 block">TOP EMPLOYERS</span>
                     <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
                         Top Companies Hiring {courseName} Professionals

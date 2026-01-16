@@ -71,10 +71,10 @@ export default function DetailedCareerOpportunities({ items, courseName = "SAP A
     };
 
     return (
-        <section className="py-20 bg-slate-50">
+        <section className="py-8 bg-slate-50">
             <div className="max-w-7xl mx-auto px-4">
                 {/* Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-6">
                     <span className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block">
                         Career Paths
                     </span>
