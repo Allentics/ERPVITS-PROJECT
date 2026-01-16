@@ -4,8 +4,8 @@ const companiesData: CompaniesData = {
     tier1: {
         title: "Tier 1 - Global Consulting Firms",
         companies: ["Accenture", "Deloitte", "Solution Consulting", "PWC", "EY", "IBM Consulting"],
-        color: "bg-blue-600",
-        lightColor: "bg-blue-50"
+        color: "bg-slate-600",
+        lightColor: "bg-slate-50"
     },
     tier2: {
         title: "Tier 2 - Enterprise SAP Implementation Partners",
@@ -16,8 +16,8 @@ const companiesData: CompaniesData = {
     tier3: {
         title: "Tier 3 - Fortune 500 Enterprises",
         companies: ["Amazon", "Microsoft", "Apple", "Google", "P&G", "Unilever", "Volkswagen", "Pfizer", "J&J"],
-        color: "bg-purple-600",
-        lightColor: "bg-purple-50"
+        color: "bg-slate-600",
+        lightColor: "bg-slate-50"
     },
     tier4: {
         title: "Tier 4 - Mid-Market & Regional Leaders",
