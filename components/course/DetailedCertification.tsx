@@ -38,11 +38,26 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
     const certs = items || defaultCerts;
 
     const supportFeatures = [
-        "Targeted exam preparation aligned to official blueprints",
-        "Timed practice tests mirroring real exam conditions",
-        "Time management and question-solving strategies",
-        "Exam registration and scheduling guidance",
-        "Re-take support if needed"
+        {
+            title: "Targeted Exam Preparation",
+            subtitle: "Study guides aligned to official exam blueprints"
+        },
+        {
+            title: "Practice Exams",
+            subtitle: "Timed practice tests mirroring real exam conditions"
+        },
+        {
+            title: "Exam Strategies",
+            subtitle: "Time management tips and common pitfalls to avoid"
+        },
+        {
+            title: "Registration Guidance",
+            subtitle: "Assistance with exam registration and scheduling"
+        },
+        {
+            title: "Retake Support",
+            subtitle: "Additional support if you don't pass on first attempt"
+        }
     ];
 
     const benefits = [
@@ -78,7 +93,7 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
                     {/* Left Column - Certifications & Benefits */}
-                    <div className="lg:col-span-7 space-y-6">
+                    <div className="lg:col-span-7 flex flex-col gap-6 h-full">
 
                         {/* Cert Cards */}
                         {certs.map((cert, idx) => (
@@ -115,16 +130,16 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
                         ))}
 
                         {/* Why Matters Card - Orange Theme */}
-                        <div className="bg-gradient-to-br from-orange-500 to-red-600 rounded-xl p-8 text-white shadow-xl shadow-orange-500/20 mt-8">
+                        <div className="bg-gradient-to-br from-orange-500 to-red-600 rounded-xl p-6 text-white shadow-xl shadow-orange-500/20 mt-auto">
                             <div className="flex items-center gap-3 mb-6 border-b border-white/20 pb-4">
-                                <Trophy className="w-7 h-7 text-white" />
-                                <h3 className="font-bold text-xl text-white">Why SAP Certification Matters</h3>
+                                <Trophy className="w-6 h-6 text-white" />
+                                <h3 className="font-bold text-lg text-white">Why SAP Certification Matters</h3>
                             </div>
                             <ul className="space-y-4">
                                 {benefits.map((benefit, idx) => (
                                     <li key={idx} className="flex gap-3 items-start">
                                         <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-white flex-shrink-0" />
-                                        <span>
+                                        <span className="text-sm">
                                             <strong className="text-white font-bold block sm:inline">{benefit.title}</strong>
                                             <span className="mx-1 hidden sm:inline">–</span>
                                             <span className="text-orange-50 block sm:inline leading-relaxed">{benefit.desc}</span>
@@ -136,43 +151,38 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
                     </div>
 
                     {/* Right Column - Image & Support */}
-                    <div className="lg:col-span-5 flex flex-col gap-6">
+                    <div className="lg:col-span-5 flex flex-col gap-6 h-full">
 
                         {/* Image - Increased Size */}
                         {imageSrc && (
-                            <div className="rounded-2xl overflow-hidden shadow-2xl h-80 lg:h-[500px] relative bg-slate-50 border border-slate-100 group">
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10" />
+                            <div className="rounded-2xl overflow-hidden shadow-2xl bg-white border border-slate-100 group">
                                 <img
                                     src={imageSrc}
                                     alt="SAP Certification Professional"
-                                    className="absolute inset-0 w-full h-full object-contain"
+                                    className="w-full h-auto object-cover"
                                 />
                             </div>
                         )}
 
                         {/* Support Card (White) */}
-                        <div className="bg-slate-50 text-slate-900 rounded-2xl p-8 shadow-inner border border-slate-200 flex-1">
-                            <h3 className="text-xl font-bold mb-6 text-slate-900 border-b border-slate-200 pb-4 flex items-center gap-2">
+                        <div className="bg-white text-slate-900 rounded-2xl p-6 shadow-lg border border-slate-100">
+                            <h3 className="text-xl font-bold mb-6 text-slate-900 border-b border-slate-100 pb-4 flex items-center gap-2">
                                 <FileCheck className="w-5 h-5 text-orange-600" />
                                 Our Certification Support Includes:
                             </h3>
-                            <ul className="space-y-5">
-                                {supportFeatures.map((feature, idx) => (
+                            <ul className="space-y-4">
+                                {supportFeatures.map((feature: any, idx) => (
                                     <li key={idx} className="flex gap-4 text-sm items-start group">
                                         <div className="mt-0.5 bg-white p-1 rounded-full border border-orange-200 shadow-sm group-hover:bg-orange-50 transition-colors">
                                             <CheckCircle2 className="w-4 h-4 text-orange-600" />
                                         </div>
                                         <div>
-                                            {feature.includes('Study guides') || feature.includes('real exam') || feature.includes('tips') || feature.includes('Assistance') || feature.includes('Additional support') ? (
-                                                <>
-                                                    <span className="font-bold text-slate-900 block text-base mb-0.5">
-                                                        {feature.split(/(?=[A-Z])/).slice(0, 3).join('')} {feature.includes('Targeted') ? 'Preparation' : feature.includes('Practice') ? 'Exams' : feature.includes('Strategies') ? '' : ''}
-                                                    </span>
-                                                    <span className="text-slate-600 text-xs block leading-relaxed">{feature}</span>
-                                                </>
-                                            ) : (
-                                                <span className="font-bold text-slate-800 block text-base mb-0.5">{feature}</span>
-                                            )}
+                                            <span className="font-bold text-slate-900 block text-base mb-0.5">
+                                                {feature.title}
+                                            </span>
+                                            <span className="text-slate-600 text-xs block leading-relaxed">
+                                                {feature.subtitle}
+                                            </span>
                                         </div>
                                     </li>
                                 ))}

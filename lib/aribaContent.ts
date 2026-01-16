@@ -325,6 +325,45 @@ export const aribaContent = {
         },
         {
             type: 'detailed_certification',
+            title: "SAP Ariba Certification – Your Global Career Credential",
+            subtitle: "We Provide Support for Below SAP Certification List",
+            stats: [
+                { label: "Exam Code", value: "C_ARP2P_2404 / C_ARS_SAP2P_2404" },
+                { label: "Certification Value", value: "Global Recognition" },
+                { label: "Job Relevance", value: "High Demand" }
+            ],
+            description: `
+**SAP Certified Application Associate – SAP Ariba Procurement**
+**Exam Code:** C_ARP2P_2404
+**Focus:** SAP Ariba Procurement processes, master data, approval workflows, integration
+**Value:** Demonstrates expertise in end-to-end procurement using SAP Ariba
+**Job Relevance:** Entry to mid-level consultant positions
+
+**SAP Certified Application Associate – SAP Ariba Sourcing**
+**Exam Code:** C_ARS_SAP2P_2404
+**Focus:** Strategic SAP Ariba sourcing, supplier evaluation, event management, negotiations
+**Value:** Proves advanced sourcing strategy and supplier management skills
+**Job Relevance:** Sourcing consultant and strategic procurement roles
+
+**SAP Certified Application Associate – SAP Ariba Contracts**
+**Exam Code:** C_ARC_SAP2P_2404
+**Focus:** Contract lifecycle management, compliance, risk management
+**Value:** Validates contract management expertise and compliance knowledge
+**Job Relevance:** Contract management and risk/compliance roles
+
+**Our Certification Support**
+Our study materials are designed to aid candidates in their exam preparations. Our system of study materials adopts a structure that seeks to follow the official blueprint of the exam.
+Guided exercises are provided in the form of practice exams that are timed in a manner that sufficiently imitates the actual exam experience.
+Exam preparation support consists of time management strategies, common time traps, techniques for effective question reading, and pointers on frequent exam pitfalls.
+Assistance related to planning and organizing your exam registration and scheduling is available.
+We understand that the first attempt may be unsuccessful and so we provide guidance on the support available and the steps needed to assist in the retake.
+
+**Why SAP Certification Matters**
+Credential recognition does not come any better than SAP Ariba Certification, which is a powerful tool for aiding job prospects, clients, and job recruiters.
+For SAP certified professionals, which we know as award winners in practice, the benefit of recognition comes at a 15 to 30 percent pay differential for certified professionals.
+The scope of practice and certifications ensures that the recipient keeps climbing the excellence ladder.
+Client and employer trust is even more robust with the SAP badge, which spellbound the recipient the badge of practice excellence.
+`,
             imageSrc: "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP Ariba Infographic.webp"
         },
         {
