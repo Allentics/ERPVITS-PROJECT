@@ -88,187 +88,185 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant" }: {
     };
 
     return (
-        <section id="detailed-demo-booking" className="py-20 bg-[#0B1120] relative overflow-hidden">
+        <section id="detailed-demo-booking" className="py-8 bg-[#0B1120] relative overflow-hidden">
             {/* Background Effects */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-600/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
             <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-600/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2"></div>
 
-            <div className="max-w-7xl mx-auto px-4 relative z-10">
+            <div className="max-w-6xl mx-auto px-4 relative z-10">
                 {/* Header */}
-                <div className="text-center mb-16">
-                    <span className="bg-orange-600 text-white px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block">
+                <div className="text-center mb-6">
+                    <span className="bg-orange-600 text-white px-3 py-0.5 rounded-full text-[10px] font-bold tracking-widest uppercase mb-2 inline-block">
                         Get Started
                     </span>
-                    <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+                    <h2 className="text-2xl font-bold text-white mb-2">
                         Ready to Become an <span className="text-orange-500">{courseName} Consultant?</span>
                     </h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto">
+                    <p className="text-gray-400 max-w-xl mx-auto text-xs">
                         Book your free demo today and take the first step towards a lucrative {courseName} career
                     </p>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+                <div className="grid lg:grid-cols-2 gap-6 items-start">
                     {/* Left Column: Benefits & Contact */}
-                    <div className="space-y-8">
+                    <div className="space-y-4">
                         <div>
-                            <h3 className="text-xl font-bold text-white mb-6">What You'll Get With Your Free Demo</h3>
-                            <div className="space-y-4">
-                                <div className="bg-slate-800/50 border border-slate-700/50 p-4 rounded-xl flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-500 shrink-0">
-                                        <Video className="w-5 h-5" />
+                            <h3 className="text-base font-bold text-white mb-3">What You'll Get With Your Free Demo</h3>
+                            <div className="space-y-2">
+                                <div className="bg-slate-800/50 border border-slate-700/50 p-2.5 rounded-lg flex items-start gap-3">
+                                    <div className="w-6 h-6 rounded bg-orange-500/10 flex items-center justify-center text-orange-500 shrink-0">
+                                        <Video className="w-3.5 h-3.5" />
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-white mb-1">Insightful Live Ariba Session</h4>
-                                        <p className="text-sm text-gray-400">Observe real training and instructor methodology</p>
+                                        <h4 className="font-bold text-white mb-0 text-xs">Insightful Live Ariba Session</h4>
+                                        <p className="text-[10px] text-gray-400">Observe real training and instructor methodology</p>
                                     </div>
                                 </div>
-                                <div className="bg-slate-800/50 border border-slate-700/50 p-4 rounded-xl flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-500 shrink-0">
-                                        <Calendar className="w-5 h-5" />
+                                <div className="bg-slate-800/50 border border-slate-700/50 p-2.5 rounded-lg flex items-start gap-3">
+                                    <div className="w-6 h-6 rounded bg-orange-500/10 flex items-center justify-center text-orange-500 shrink-0">
+                                        <Calendar className="w-3.5 h-3.5" />
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-white mb-1">30 Min Career Consultation</h4>
-                                        <p className="text-sm text-gray-400">Personalized guidance based on your background</p>
+                                        <h4 className="font-bold text-white mb-0 text-xs">30 Min Career Consultation</h4>
+                                        <p className="text-[10px] text-gray-400">Personalized guidance based on your background</p>
                                     </div>
                                 </div>
-                                <div className="bg-slate-800/50 border border-slate-700/50 p-4 rounded-xl flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-500 shrink-0">
-                                        <HelpCircle className="w-5 h-5" />
+                                <div className="bg-slate-800/50 border border-slate-700/50 p-2.5 rounded-lg flex items-start gap-3">
+                                    <div className="w-6 h-6 rounded bg-orange-500/10 flex items-center justify-center text-orange-500 shrink-0">
+                                        <HelpCircle className="w-3.5 h-3.5" />
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-white mb-1">Q&A with Instructor</h4>
-                                        <p className="text-sm text-gray-400">Ask questions about course, certification, and career</p>
+                                        <h4 className="font-bold text-white mb-0 text-xs">Q&A with Instructor</h4>
+                                        <p className="text-[10px] text-gray-400">Ask questions about course, certification, and career</p>
                                     </div>
                                 </div>
-                                <div className="bg-slate-800/50 border border-slate-700/50 p-4 rounded-xl flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-500 shrink-0">
-                                        <Gift className="w-5 h-5" />
+                                <div className="bg-slate-800/50 border border-slate-700/50 p-2.5 rounded-lg flex items-start gap-3">
+                                    <div className="w-6 h-6 rounded bg-orange-500/10 flex items-center justify-center text-orange-500 shrink-0">
+                                        <Gift className="w-3.5 h-3.5" />
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-white mb-1">Special Discount Offer</h4>
-                                        <p className="text-sm text-gray-400">Exclusive discount pass for demo attendees</p>
+                                        <h4 className="font-bold text-white mb-0 text-xs">Special Discount Offer</h4>
+                                        <p className="text-[10px] text-gray-400">Exclusive discount pass for demo attendees</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         {/* Contact Box */}
-                        <div className="bg-orange-600 rounded-2xl p-6 lg:p-8 text-white relative overflow-hidden">
+                        <div className="bg-orange-600 rounded-xl p-4 text-white relative overflow-hidden">
                             <div className="relative z-10">
-                                <h3 className="font-bold text-lg mb-4">Contact Information</h3>
-                                <div className="space-y-3 text-sm">
-                                    <div className="flex items-center gap-3">
-                                        <Phone className="w-4 h-4" />
+                                <h3 className="font-bold text-sm mb-2">Contact Information</h3>
+                                <div className="space-y-1.5 text-xs">
+                                    <div className="flex items-center gap-2">
+                                        <Phone className="w-3.5 h-3.5" />
                                         <span>+91 84088 78222</span>
                                     </div>
-                                    <div className="flex items-center gap-3">
-                                        <Mail className="w-4 h-4" />
+                                    <div className="flex items-center gap-2">
+                                        <Mail className="w-3.5 h-3.5" />
                                         <span>info@erpvits.com</span>
                                     </div>
-                                    <div className="flex items-start gap-3">
-                                        <MapPin className="w-4 h-4 mt-0.5" />
-                                        <span>ERPVITS Training Center<br />Pune, Maharashtra, India</span>
+                                    <div className="flex items-start gap-2">
+                                        <MapPin className="w-3.5 h-3.5 mt-0.5" />
+                                        <span>ERPVITS Training Center, Pune, India</span>
                                     </div>
                                 </div>
                             </div>
                             {/* Decorative circles */}
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full translate-x-1/2 -translate-y-1/2"></div>
-                            <div className="absolute bottom-0 right-10 w-24 h-24 bg-white/10 rounded-full translate-y-1/2"></div>
+                            <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full translate-x-1/2 -translate-y-1/2"></div>
+                            <div className="absolute bottom-0 right-8 w-16 h-16 bg-white/10 rounded-full translate-y-1/2"></div>
                         </div>
                     </div>
 
                     {/* Right Column: Form */}
-                    <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-2xl relative">
-                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-orange-600 rounded-t-2xl"></div>
-                        <h3 className="text-2xl font-bold text-slate-900 mb-6">Book Your <span className="text-orange-600">Free Demo</span></h3>
+                    <div className="bg-white rounded-xl p-4 lg:p-5 shadow-2xl relative">
+                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-orange-600 rounded-t-xl"></div>
+                        <h3 className="text-lg font-bold text-slate-900 mb-3">Book Your <span className="text-orange-600">Free Demo</span></h3>
 
                         {status === 'success' ? (
-                            <div className="bg-orange-50 border border-orange-200 rounded-xl p-8 text-center animate-in fade-in zoom-in duration-300">
-                                <CheckCircle2 className="h-12 w-12 text-orange-500 mx-auto mb-4" />
-                                <h3 className="text-xl font-bold text-orange-900 mb-2">Registration Confirmed!</h3>
-                                <p className="text-orange-700 mb-6">
-                                    Thank you for your interest. Our training coordinator will contact you shortly to schedule your demo.
+                            <div className="bg-orange-50 border border-orange-200 rounded-xl p-6 text-center animate-in fade-in zoom-in duration-300">
+                                <CheckCircle2 className="h-10 w-10 text-orange-500 mx-auto mb-3" />
+                                <h3 className="text-lg font-bold text-orange-900 mb-1">Registration Confirmed!</h3>
+                                <p className="text-orange-700 text-sm mb-4">
+                                    Our training coordinator will contact you shortly.
                                 </p>
-                                <div className="flex flex-col gap-3 items-center">
+                                <div className="flex flex-col gap-2 items-center">
                                     <button
                                         onClick={() => setStatus('idle')}
-                                        className="text-orange-600 font-semibold hover:underline"
+                                        className="text-orange-600 text-sm font-semibold hover:underline"
                                     >
                                         Book another demo
                                     </button>
-                                    <a href="/" className="px-6 py-2 bg-slate-900 text-white font-bold rounded-lg hover:bg-slate-800 transition-colors shadow-lg">
-                                        Back to Home
-                                    </a>
                                 </div>
                             </div>
                         ) : (
-                            <form onSubmit={handleSubmit} className="space-y-4">
+                            <form onSubmit={handleSubmit} className="space-y-2">
                                 {status === 'error' && (
-                                    <div className="bg-red-50 border border-red-200 rounded-lg p-3 flex items-center text-red-800 text-sm">
-                                        <AlertCircle className="h-4 w-4 mr-2 flex-shrink-0" />
+                                    <div className="bg-red-50 border border-red-200 rounded p-1.5 flex items-center text-red-800 text-[10px]">
+                                        <AlertCircle className="h-3 w-3 mr-1.5 flex-shrink-0" />
                                         {errorMessage}
                                     </div>
                                 )}
 
-                                <div>
-                                    <label className="block text-xs font-bold text-slate-700 mb-1.5 ml-1">Full Name *</label>
-                                    <div className="relative">
-                                        <User className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
-                                        <input
-                                            type="text"
-                                            name="fullName"
-                                            value={formData.fullName}
-                                            onChange={handleChange}
-                                            required
-                                            placeholder="Enter your full name"
-                                            className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-orange-500 transition-colors"
-                                        />
+                                <div className="grid grid-cols-2 gap-2">
+                                    <div>
+                                        <label className="block text-[10px] font-bold text-slate-700 mb-0.5 ml-1">Full Name *</label>
+                                        <div className="relative">
+                                            <User className="w-3 h-3 text-slate-400 absolute left-2.5 top-2" />
+                                            <input
+                                                type="text"
+                                                name="fullName"
+                                                value={formData.fullName}
+                                                onChange={handleChange}
+                                                required
+                                                placeholder="Name"
+                                                className="w-full pl-7 pr-2 py-1.5 bg-slate-50 border border-slate-200 rounded-md text-xs focus:outline-none focus:border-orange-500 transition-colors"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label className="block text-[10px] font-bold text-slate-700 mb-0.5 ml-1">Phone *</label>
+                                        <div className="relative">
+                                            <Phone className="w-3 h-3 text-slate-400 absolute left-2.5 top-2" />
+                                            <input
+                                                type="tel"
+                                                name="phone"
+                                                value={formData.phone}
+                                                onChange={handleChange}
+                                                required
+                                                placeholder="+91..."
+                                                className="w-full pl-7 pr-2 py-1.5 bg-slate-50 border border-slate-200 rounded-md text-xs focus:outline-none focus:border-orange-500 transition-colors"
+                                            />
+                                        </div>
                                     </div>
                                 </div>
 
                                 <div>
-                                    <label className="block text-xs font-bold text-slate-700 mb-1.5 ml-1">Email Address *</label>
+                                    <label className="block text-[10px] font-bold text-slate-700 mb-0.5 ml-1">Email *</label>
                                     <div className="relative">
-                                        <Mail className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
+                                        <Mail className="w-3 h-3 text-slate-400 absolute left-2.5 top-2" />
                                         <input
                                             type="email"
                                             name="email"
                                             value={formData.email}
                                             onChange={handleChange}
                                             required
-                                            placeholder="your.email@example.com"
-                                            className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-orange-500 transition-colors"
+                                            placeholder="Email"
+                                            className="w-full pl-7 pr-2 py-1.5 bg-slate-50 border border-slate-200 rounded-md text-xs focus:outline-none focus:border-orange-500 transition-colors"
                                         />
                                     </div>
                                 </div>
 
                                 <div>
-                                    <label className="block text-xs font-bold text-slate-700 mb-1.5 ml-1">Phone Number *</label>
+                                    <label className="block text-[10px] font-bold text-slate-700 mb-0.5 ml-1">Experience</label>
                                     <div className="relative">
-                                        <Phone className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
-                                        <input
-                                            type="tel"
-                                            name="phone"
-                                            value={formData.phone}
-                                            onChange={handleChange}
-                                            required
-                                            placeholder="+91 9999999999"
-                                            className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-orange-500 transition-colors"
-                                        />
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <label className="block text-xs font-bold text-slate-700 mb-1.5 ml-1">Current Experience Level</label>
-                                    <div className="relative">
-                                        <Briefcase className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
+                                        <Briefcase className="w-3 h-3 text-slate-400 absolute left-2.5 top-2" />
                                         <select
                                             name="experience"
                                             value={formData.experience}
                                             onChange={handleChange}
-                                            className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-orange-500 transition-colors appearance-none text-slate-700"
+                                            className="w-full pl-7 pr-2 py-1.5 bg-slate-50 border border-slate-200 rounded-md text-xs focus:outline-none focus:border-orange-500 transition-colors appearance-none text-slate-700"
                                         >
-                                            <option value="">Select your experience level</option>
+                                            <option value="">Select Level</option>
                                             <option value="Student / Fresher">Student / Fresher</option>
                                             <option value="1-3 Years">1-3 Years</option>
                                             <option value="3-5 Years">3-5 Years</option>
@@ -278,16 +276,16 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant" }: {
                                 </div>
 
                                 <div>
-                                    <label className="block text-xs font-bold text-slate-700 mb-1.5 ml-1">Message (Optional)</label>
+                                    <label className="block text-[10px] font-bold text-slate-700 mb-0.5 ml-1">Message</label>
                                     <div className="relative">
-                                        <MessageSquare className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
+                                        <MessageSquare className="w-3 h-3 text-slate-400 absolute left-2.5 top-2.5" />
                                         <textarea
                                             name="message"
                                             value={formData.message}
                                             onChange={handleChange}
-                                            placeholder="Tell us about your career goals..."
-                                            rows={3}
-                                            className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-orange-500 transition-colors resize-none"
+                                            placeholder="Optional..."
+                                            rows={2}
+                                            className="w-full pl-7 pr-2 py-1.5 bg-slate-50 border border-slate-200 rounded-md text-xs focus:outline-none focus:border-orange-500 transition-colors resize-none"
                                         ></textarea>
                                     </div>
                                 </div>
@@ -295,22 +293,22 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant" }: {
                                 <button
                                     type="submit"
                                     disabled={status === 'loading'}
-                                    className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 flex items-center justify-center gap-2 mt-2 disabled:bg-orange-400 disabled:cursor-not-allowed disabled:transform-none"
+                                    className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 mt-1 disabled:bg-orange-400 text-sm"
                                 >
                                     {status === 'loading' ? (
                                         <>
-                                            <Loader2 className="w-4 h-4 animate-spin" />
+                                            <Loader2 className="w-3 h-3 animate-spin" />
                                             Processing...
                                         </>
                                     ) : (
                                         <>
-                                            Book Free Demo Now <ArrowRight className="w-4 h-4" />
+                                            Book Demo Now <ArrowRight className="w-3 h-3" />
                                         </>
                                     )}
                                 </button>
 
-                                <p className="text-[10px] text-center text-slate-400 mt-4 leading-tight">
-                                    By submitting, you agree to our privacy policy and consent to receive updates about our training programs via email/phone.
+                                <p className="text-[9px] text-center text-slate-400 mt-1 leading-tight">
+                                    By submitting, you agree to our privacy policy.
                                 </p>
                             </form>
                         )}

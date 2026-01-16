@@ -33,7 +33,7 @@ export default function ContactModal({ isOpen, onClose, title = "Get Started wit
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
             <div
                 className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
                 onClick={onClose}
@@ -52,10 +52,10 @@ export default function ContactModal({ isOpen, onClose, title = "Get Started wit
                     </button>
                 </div>
 
-                <div className="px-6 pb-6 pt-0">
-                    <div className="text-center mb-4">
+                <div className="px-5 pb-5 pt-0">
+                    <div className="text-center mb-2">
                         <h2 className="text-xl font-bold text-gray-900">{title}</h2>
-                        <p className="text-gray-600 mt-1 text-sm">{subtitle}</p>
+                        <p className="text-gray-600 mt-0.5 text-xs">{subtitle}</p>
                     </div>
 
                     <ContactForm />
