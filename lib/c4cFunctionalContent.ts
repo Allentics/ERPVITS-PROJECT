@@ -275,6 +275,7 @@ export const c4cFunctionalContent = {
             type: 'content_with_image',
             title: "Why Professionals Choose ERPVITS for SAP C4C Functional Online Training",
             subtitle: "Success Guarantee & Credibility",
+            videoSrc: "https://www.youtube.com/embed/X8NW74XjShI",
             description: "ERPVITS is a trusted training partner with successful learners at top firms like Accenture, Capgemini, and Deloitte. Our program delivers career acceleration in the cloud CRM space.",
             items: [
                 "Trusted by 500+ successful SAP professionals",
@@ -509,7 +510,7 @@ export const c4cFunctionalContent = {
         {
             type: 'detailed_certification',
             content: "We Provide Support for SAP Certified Application Associate – SAP C4C (Exam Code: C_C4C14_2404).",
-            imageSrc: "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP C4C Infographic.webp",
+            imageSrc: "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP C4C Func Infographic.webp",
             items: [
                 {
                     title: "SAP Certified Application Associate – SAP C4C",

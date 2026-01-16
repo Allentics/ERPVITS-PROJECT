@@ -275,6 +275,7 @@ export const ibpContent = {
             type: 'content_with_image',
             title: "Why Professionals Choose ERPVITS for SAP IBP Online Training",
             subtitle: "Success Guarantee & Credibility",
+            videoSrc: "https://www.youtube.com/embed/ERzLONcYo94",
             description: "ERPVITS has established itself as a trusted training partner, with hundreds of successful learners working at top consulting firms like Accenture, Capgemini, and Deloitte. Our alumni network testimonials speak to the quality of instruction and career acceleration.",
             items: [
                 "Trusted by 500+ successful SAP professionals",

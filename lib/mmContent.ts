@@ -288,6 +288,7 @@ export const mmContent = {
             type: 'content_with_image',
             title: "Why Professionals Choose ERPVITS for SAP S/4HANA MM Online Training",
             description: "Based on ERPVITS' quality training and instruction, we have established numerous training partnerships and have hundreds of successful alumni at top consulting firms, such as Accenture, Capgemini, Deloitte, Infosys, and Wipro. Valuable testimonials from our alumni network showcase the pace of career growth that our program offers.",
+            videoSrc: "https://www.youtube.com/embed/IGc_ICHK5W0",
             items: [
                 "Trusted by 500+ SAP MM Professionals",
                 "Accenture, Capgemini, Deloitte, Infosys, and Wipro alumni",

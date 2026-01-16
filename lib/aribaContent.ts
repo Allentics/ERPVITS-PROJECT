@@ -242,7 +242,82 @@ export const aribaContent = {
         },
         {
             type: 'detailed_learning_outcomes',
-            items: aribaLearningOutcomes
+            title: "What You'll Master in This SAP Ariba Course",
+            subtitle: "Comprehensive competencies you'll acquire to excel as an SAP Ariba professional",
+            items: {
+                tabs: [
+                    {
+                        name: "Functional Mastery",
+                        items: [
+                            {
+                                title: "Complete Procurement Lifecycle Management",
+                                titleKeywords: "Procurement",
+                                points: [
+                                    "Design and configure end-to-end procurement workflows",
+                                    "Handle requisitions, POs, receipts, and invoices",
+                                    "Implement budget controls and cost tracking",
+                                    "Optimize procure-to-pay (P2P) cycle"
+                                ]
+                            },
+                            {
+                                title: "Master Data Configuration",
+                                titleKeywords: "Master Data",
+                                points: [
+                                    "Create and maintain user profiles with role-based access",
+                                    "Onboard and manage suppliers with qualification tracking",
+                                    "Configure accounting structures and cost centers",
+                                    "Ensure data accuracy across systems"
+                                ]
+                            },
+                            {
+                                title: "Strategic Sourcing & Supplier Management",
+                                titleKeywords: "Sourcing",
+                                points: [
+                                    "Conduct sourcing events (RFI, RFP, auctions)",
+                                    "Evaluate supplier proposals using criteria",
+                                    "Negotiate contracts and manage terms",
+                                    "Monitor supplier performance with scorecards"
+                                ]
+                            },
+                            {
+                                title: "Contract Management & Compliance",
+                                titleKeywords: "Contract",
+                                points: [
+                                    "Manage contract lifecycle from creation to renewal",
+                                    "Implement compliance checks in procurement",
+                                    "Track contract utilization",
+                                    "Ensure regulatory compliance"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        name: "Technical Skills",
+                        items: [
+                            {
+                                title: "Integration & Extensibility",
+                                titleKeywords: "Integration",
+                                points: [
+                                    "Configure CIG (Cloud Integration Gateway) for ERP",
+                                    "Manage API integrations and data flows",
+                                    "Customize approval workflows with JS",
+                                    "Implement cXML for B2B transactions"
+                                ]
+                            },
+                            {
+                                title: "Reporting & Analytics",
+                                titleKeywords: "Reports",
+                                points: [
+                                    "Build custom reports and dashboards",
+                                    "Analyze spend data for insights",
+                                    "Configure data export tasks",
+                                    "Monitor system performance metrics"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         {
             type: 'real_world_scenarios',

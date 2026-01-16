@@ -277,8 +277,9 @@ export const trmContent = {
             ]
         },
         {
-            type: 'features',
+            type: 'content_with_image',
             title: "Why Professionals Choose ERPVITS for SAP TRM Online Training",
+            videoSrc: "https://www.youtube.com/embed/u6GCE8eAOAc",
             items: [
                 "Trusted by 300+ successful SAP TRM professionals",
                 "Alumni at Accenture, Capgemini, Deloitte, EY, KPMG, major banks",

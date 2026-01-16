@@ -211,6 +211,7 @@ export const c4cContent = {
             type: 'content_with_image',
             title: "Why Professionals Choose ERPVITS for SAP C4C Technical Training",
             subtitle: "Technical Excellence & Career Growth",
+            videoSrc: "https://www.youtube.com/embed/EtlUBjNMsbM",
             description: "ERPVITS provides the most in-depth technical training for SAP Sales & Service Cloud. Our alumni are successfully building complex custom solutions for global enterprises.",
             items: [
                 "Training on latest SAP Cloud Applications Studio version",

@@ -1,5 +1,6 @@
 import React from 'react';
 import Curriculum from './Curriculum';
+import VideoSection from './VideoSection';
 import TargetAudience from './TargetAudience';
 import Prerequisites from './Prerequisites';
 import LearningOutcomes from './LearningOutcomes';
@@ -250,6 +251,8 @@ export default function SectionRenderer({ sections, courseName }: { sections: an
                         return <WhatsIncluded key={idx} {...section} />;
                     case 'faq':
                         return <DetailedFAQ key={idx} items={section.items} />;
+                    case 'video':
+                        return <VideoSection key={idx} videoUrl={section.videoUrl} title={section.title} description={section.description} />;
                     default:
                         return null;
                 }

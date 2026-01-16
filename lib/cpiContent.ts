@@ -61,6 +61,7 @@ export const cpiContent = {
             type: 'content_with_image',
             title: "Why Professionals Choose ERPVITS for SAP CPI Online Training",
             subtitle: "Success Guarantee & Credibility",
+            videoSrc: "https://www.youtube.com/embed/vVzReJQ0xkg",
             description: "ERPVITS has built a reputation as a trusted training partner for SAP integration technologies, with hundreds of successful learners working at top consulting firms.",
             items: [
                 "Trusted by over 450 SAP CPI certified integration specialists",

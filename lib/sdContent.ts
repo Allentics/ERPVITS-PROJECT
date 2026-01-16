@@ -269,6 +269,7 @@ export const sdContent = {
             type: 'content_with_image',
             title: "Why Professionals Choose ERPVITS for SAP SD Online Training",
             description: "Over the years, ERPVITS has become a reliable training partner for SAP modules. Hundreds of our successful learners work at prominent consulting firms—like Accenture, Capgemini, Deloitte, Infosys, and Wipro.",
+            videoSrc: "https://www.youtube.com/embed/NWsGtCBaX5Q",
             items: [
                 "Trusted by 500+ successful SAP SD professionals",
                 "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro",

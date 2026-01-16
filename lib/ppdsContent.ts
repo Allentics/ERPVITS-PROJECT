@@ -71,6 +71,7 @@ export const ppdsContent = {
             type: 'content_with_image',
             title: "Why Professionals Choose ERPVITS for SAP PPDS Online Training",
             subtitle: "Complete Support Ecosystem",
+            videoSrc: "https://www.youtube.com/embed/Ec3ClABT7NA",
             description: "ERPVITS has established itself as a trusted training partner for SAP planning technologies, with hundreds of successful learners working at top consulting firms like Accenture, Capgemini, Deloitte, Infosys, and Wipro. Our alumni network testimonials speak to the quality of instruction and the career acceleration our program delivers. From pre-evaluation to post-training support, we guide you through every step of your SAP PPDS learning journey and production planning career transition.",
             items: [
                 "Trusted by 420+ successful SAP PPDS professionals",

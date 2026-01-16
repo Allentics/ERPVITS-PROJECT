@@ -30,6 +30,8 @@ export interface Section {
     courseName?: string;
     description?: string;
     stats?: { value: string, label: string }[];
+    videoUrl?: string; // used for standalone video section
+    videoSrc?: string; // used for content_with_image
 }
 
 export interface Course {
