@@ -154,7 +154,7 @@ export default function DetailedFAQ({ items }: { items?: any[] }) {
                         onClick={scrollToBooking}
                         className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-xl shadow-md hover:shadow-lg transition-all flex items-center gap-2 mx-auto"
                     >
-                        <HelpCircle className="w-5 h-5" /> Contact Admission Team
+                        <HelpCircle className="w-5 h-5" /> Get Free SAP Career Guidance
                     </button>
                 </div>
 
