@@ -12,6 +12,7 @@ const DEFAULT_CONTENT = {
     highlight_text: "SAP Online Training",
     subheading: "Industry-Leading SAP Online Training Institute with 95%+ Placement Success",
     description: "Transform your career with ERPVITS, your trusted online SAP training partner. Learn from industry experts with over 15 years of experience in SAP. Get your certification, achieve your dream job and boost your earnings with instructor SAP courses with hands-on projects and placement assistance.",
+    badge: "★ RATED #1 SAP TRAINING PROGRAM 2025 ★",
     cta_primary: "Start Your SAP Training Journey Today",
     cta_secondary: "Explore SAP Courses",
     stats: [
@@ -27,6 +28,7 @@ const Hero = () => {
     const [content, setContent] = useState(DEFAULT_CONTENT);
 
     useEffect(() => {
+        // Optional: Fetch dynamic content if needed, but defaulting to screenshot matching for now.
         async function fetchHero() {
             try {
                 const { data, error } = await supabase
@@ -37,10 +39,7 @@ const Hero = () => {
                     .single();
 
                 if (data && !error) {
-                    setContent({
-                        ...data.content,
-                        stats: DEFAULT_CONTENT.stats
-                    });
+                    setContent({ ...DEFAULT_CONTENT, ...data.content });
                 }
             } catch (err) {
                 console.error('Error fetching Hero content:', err);
@@ -49,94 +48,98 @@ const Hero = () => {
         fetchHero();
     }, []);
 
+    const headingParts = content.heading.split(content.highlight_text);
+
     return (
-        <div className="bg-white text-slate-900 relative overflow-hidden h-[90vh] min-h-[600px] flex items-center">
+        <div className="bg-white text-slate-900 relative overflow-hidden">
             <ContactModal
                 isOpen={isContactModalOpen}
                 onClose={() => setIsContactModalOpen(false)}
                 title="Start Your SAP Journey"
             />
 
-            {/* Background Image & Gradient Mask */}
-            <div className="absolute inset-0 z-0">
-                {/* Responsive background positioning: Center to cover all spaces as requested */}
-                <div className="absolute inset-0 bg-[url('/images/erpvitsBG.webp')] bg-cover bg-center bg-no-repeat"></div>
+            {/* Main Content Grid */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 lg:pt-20 pb-16 relative z-10">
+                <div className="max-w-4xl mx-auto text-center">
 
-                {/* Gradient: Lighter overlay to make the image look 'darker' (more visible) while keeping text readable */}
-                <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent lg:via-white/40"></div>
-
-                {/* Additional white blur at the bottom for smooth transition to stats/next section */}
-                <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white to-transparent"></div>
-            </div>
-
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-                <div className="max-w-2xl lg:max-w-3xl text-left">
+                    {/* Interactive Badge */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="inline-block bg-orange-600 text-white px-6 py-2 rounded-full text-xs font-bold tracking-widest uppercase mb-6 shadow-md"
+                        className="inline-block bg-[#FF5722] text-white px-6 py-2 rounded-full text-xs font-bold tracking-widest uppercase mb-6 shadow-md"
                     >
-                        ★ Rated #1 SAP Training Program 2025 ★
+                        {content.badge || DEFAULT_CONTENT.badge}
                     </motion.div>
 
+                    {/* Heading */}
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="text-4xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1]"
+                        className="text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1] text-[#0F172A]"
                     >
-                        {content.heading.split(content.highlight_text)[0]}
-                        <br className="hidden lg:block" />
-                        <span className="text-orange-600 inline-block">{content.highlight_text}</span>
+                        {headingParts[0]}
+                        <span className="text-[#FF5722]">{content.highlight_text}</span>
+                        {headingParts[1]}
                     </motion.h1>
 
-                    <motion.p
+                    {/* Subheading */}
+                    <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
-                        className="text-lg md:text-xl text-slate-800 font-medium mb-8 leading-relaxed max-w-xl"
+                        className="text-xl lg:text-2xl text-slate-800 font-semibold mb-6 max-w-3xl mx-auto"
                     >
                         {content.subheading}
+                    </motion.h2>
+
+                    {/* Description */}
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.25 }}
+                        className="text-lg lg:text-xl text-slate-600 font-medium mb-10 leading-relaxed max-w-3xl mx-auto"
+                    >
+                        {content.description}
                     </motion.p>
 
+                    {/* Buttons */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3 }}
-                        className="flex flex-col sm:flex-row gap-4 mb-12"
+                        className="flex flex-col sm:flex-row gap-4 justify-center"
                     >
                         <button
                             onClick={() => setIsContactModalOpen(true)}
-                            className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-orange-500/30 transition-all transform hover:-translate-y-1"
+                            className="bg-[#FF5722] hover:bg-[#F4511E] text-white px-8 py-4 rounded-md font-bold text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                         >
                             {content.cta_primary}
                         </button>
                         <Link
                             href="/courses"
-                            className="bg-white/80 backdrop-blur-sm border-2 border-slate-200 hover:border-orange-200 hover:bg-white text-slate-900 px-8 py-4 rounded-xl font-bold text-lg transition-all flex items-center justify-center"
+                            className="bg-white text-slate-900 border-2 border-slate-200 hover:border-[#FF5722] hover:text-[#FF5722] px-8 py-4 rounded-md font-bold text-lg transition-all"
                         >
                             {content.cta_secondary}
                         </Link>
                     </motion.div>
                 </div>
 
-                {/* Stats Section - Floating at bottom */}
+                {/* Stats Section - Cards at Bottom */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 }}
-                    className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-8 max-w-4xl"
+                    className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 md:mt-24"
                 >
                     {content.stats.map((stat, i) => {
                         const icons = [Trophy, Users, Headset, Briefcase];
                         const Icon = icons[i] || Trophy;
                         return (
-                            <div key={i} className="flex items-center gap-3 bg-white/60 backdrop-blur-md rounded-lg p-4 border border-slate-100 shadow-sm">
-                                <Icon className="w-8 h-8 text-orange-600 flex-shrink-0" />
-                                <div>
-                                    <div className="font-bold text-slate-900 text-lg leading-none mb-1">{stat.val}</div>
-                                    <div className="text-slate-600 text-xs font-medium uppercase tracking-wide">{stat.label}</div>
-                                </div>
+                            <div key={i} className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm flex flex-col items-center text-center hover:shadow-md transition-shadow">
+                                <Icon className="w-8 h-8 text-[#FF5722] mb-3" strokeWidth={1.5} />
+                                <div className="font-bold text-slate-900 text-xl md:text-2xl mb-1">{stat.val}</div>
+                                <div className="text-slate-500 text-xs font-bold uppercase tracking-wider">{stat.label}</div>
                             </div>
                         );
                     })}
