@@ -1058,37 +1058,186 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
 
     const MethodologyTab = () => {
         const section = getSection('detailed_learning_outcomes', { items: [] });
-        const items = Array.isArray(section.items) ? section.items : [];
-        const updateItems = (newItems: any[]) => updateSection('detailed_learning_outcomes', { ...section, items: newItems });
+        const isTabbed = section.items && typeof section.items === 'object' && !Array.isArray(section.items) && section.items.tabs;
+
+        const handleConvertToTabs = () => {
+            const currentItems = Array.isArray(section.items) ? section.items : [];
+            updateSection('detailed_learning_outcomes', {
+                ...section,
+                items: {
+                    tabs: [
+                        { name: "Functional Mastery", items: currentItems },
+                        { name: "Technical Skills", items: [] }
+                    ]
+                }
+            });
+        };
+
+        const updateTabItems = (tabIdx: number, newItems: any[]) => {
+            const newTabs = [...section.items.tabs];
+            newTabs[tabIdx].items = newItems;
+            updateSection('detailed_learning_outcomes', {
+                ...section,
+                items: { ...section.items, tabs: newTabs }
+            });
+        };
+
+        const updateTabName = (tabIdx: number, name: string) => {
+            const newTabs = [...section.items.tabs];
+            newTabs[tabIdx].name = name;
+            updateSection('detailed_learning_outcomes', {
+                ...section,
+                items: { ...section.items, tabs: newTabs }
+            });
+        };
+
+        const addTab = () => {
+            updateSection('detailed_learning_outcomes', {
+                ...section,
+                items: {
+                    ...section.items,
+                    tabs: [...(section.items.tabs || []), { name: "New Category", items: [] }]
+                }
+            });
+        };
+
+        const removeTab = (idx: number) => {
+            const newTabs = section.items.tabs.filter((_: any, i: number) => i !== idx);
+            updateSection('detailed_learning_outcomes', {
+                ...section,
+                items: { ...section.items, tabs: newTabs }
+            });
+        };
+
+        const renderSkillList = (list: any[], onUpdate: (newList: any[]) => void) => (
+            <div className="space-y-4 mt-4">
+                <div className="flex justify-between items-center">
+                    <h5 className="text-sm font-bold text-gray-700">Skills / Modules</h5>
+                    <button type="button" onClick={() => onUpdate([...list, { title: 'New Topic', points: [] }])} className="text-xs bg-orange-50 text-orange-600 px-2 py-1 rounded hover:bg-orange-100 flex items-center gap-1">
+                        <Plus size={14} /> Add Topic
+                    </button>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {list.map((item: any, idx: number) => (
+                        <div key={idx} className="bg-gray-50 p-4 rounded-lg border border-gray-100 relative group">
+                            <button
+                                type="button"
+                                onClick={() => onUpdate(list.filter((_: any, i: number) => i !== idx))}
+                                className="absolute top-2 right-2 text-red-400 opacity-0 group-hover:opacity-100 hover:text-red-600 transition-opacity"
+                            >
+                                <Trash2 size={16} />
+                            </button>
+                            <div className="space-y-2">
+                                <label className="text-[10px] font-bold text-gray-400 uppercase">Skill Title</label>
+                                <input
+                                    value={item.title || ''}
+                                    onChange={(e) => {
+                                        const newList = [...list];
+                                        newList[idx].title = e.target.value;
+                                        onUpdate(newList);
+                                    }}
+                                    className="w-full p-2 border rounded text-sm font-bold"
+                                    placeholder="e.g. Procurement Lifecycle"
+                                />
+                                <label className="text-[10px] font-bold text-gray-400 uppercase">Points (One per line)</label>
+                                <textarea
+                                    value={Array.isArray(item.points) ? item.points.join('\n') : (item.points || '')}
+                                    onChange={(e) => {
+                                        const newList = [...list];
+                                        newList[idx].points = e.target.value.split('\n');
+                                        onUpdate(newList);
+                                    }}
+                                    className="w-full p-2 border rounded text-sm h-24 font-mono"
+                                    placeholder="Enter points..."
+                                />
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        );
 
         return (
             <div className="space-y-6">
                 <div className="space-y-2 border-b pb-4">
                     <label className="text-sm font-semibold text-gray-700">Section Title</label>
-                    <input value={section.title || ''} onChange={(e) => updateSection('detailed_learning_outcomes', { ...section, title: e.target.value })} className="w-full p-2 border rounded" placeholder="What You'll Master..." />
+                    <input
+                        value={section.title || ''}
+                        onChange={(e) => updateSection('detailed_learning_outcomes', { ...section, title: e.target.value })}
+                        className="w-full p-2 border rounded"
+                        placeholder="What You'll Master..."
+                    />
                     <label className="text-sm font-semibold text-gray-700">Subtitle</label>
-                    <textarea value={section.subtitle || ''} onChange={(e) => updateSection('detailed_learning_outcomes', { ...section, subtitle: e.target.value })} className="w-full p-2 border rounded" />
+                    <textarea
+                        value={section.subtitle || ''}
+                        onChange={(e) => updateSection('detailed_learning_outcomes', { ...section, subtitle: e.target.value })}
+                        className="w-full p-2 border rounded"
+                        rows={2}
+                    />
                 </div>
 
-                <div className="flex justify-between items-center bg-gray-100 p-4 rounded-lg">
-                    <h4 className="font-bold text-gray-900">Outcomes ({items.length})</h4>
-                    <button type="button" onClick={() => updateItems([...items, { title: 'New Skill', points: [] }])} className="text-sm bg-black text-white px-3 py-1.5 rounded flex items-center gap-2">
-                        <Plus size={16} /> Add Skill
-                    </button>
-                </div>
-                <div className="grid md:grid-cols-2 gap-4">
-                    {items.map((item: any, idx: number) => (
-                        <div key={idx} className="bg-white p-4 border rounded-lg shadow-sm group relative">
-                            <button type="button" onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))} className="absolute top-2 right-2 text-red-400 opacity-0 group-hover:opacity-100"><Trash2 size={16} /></button>
-                            <div className="space-y-2">
-                                <label className="text-xs font-bold text-gray-500">Title</label>
-                                <input value={item.title || ''} onChange={(e) => { const n = [...items]; n[idx].title = e.target.value; updateItems(n); }} className="w-full p-2 border rounded font-bold" />
-                                <label className="text-xs font-bold text-gray-500">Points (One per line)</label>
-                                <textarea value={item.points?.join('\n') || ''} onChange={(e) => { const n = [...items]; n[idx].points = e.target.value.split('\n'); updateItems(n); }} className="w-full p-2 border rounded font-mono text-sm h-32" />
+                {!isTabbed ? (
+                    <div className="space-y-4">
+                        <div className="flex justify-between items-center">
+                            <h4 className="font-bold text-gray-900">Simple Skills List ({Array.isArray(section.items) ? section.items.length : 0})</h4>
+                            <button
+                                type="button"
+                                onClick={handleConvertToTabs}
+                                className="text-xs bg-blue-50 text-blue-600 px-3 py-1.5 rounded-lg border border-blue-100 hover:bg-blue-100 transition-colors flex items-center gap-2"
+                            >
+                                <Users size={14} /> Use Tabbed Mode (Functional/Technical)
+                            </button>
+                        </div>
+                        {renderSkillList(Array.isArray(section.items) ? section.items : [], (newList) => updateSection('detailed_learning_outcomes', { ...section, items: newList }))}
+                    </div>
+                ) : (
+                    <div className="space-y-8">
+                        <div className="flex justify-between items-center bg-blue-50 p-4 rounded-xl border border-blue-100">
+                            <div>
+                                <h4 className="font-bold text-blue-900">Advanced Tabbed Mode</h4>
+                                <p className="text-xs text-blue-700">Ideal for Functional & Technical separation</p>
+                            </div>
+                            <div className="flex gap-2">
+                                <button
+                                    type="button"
+                                    onClick={addTab}
+                                    className="bg-white text-blue-700 px-3 py-1.5 rounded-lg text-xs font-bold shadow-sm flex items-center gap-2 hover:bg-blue-50"
+                                >
+                                    <Plus size={14} /> Add Category
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => updateSection('detailed_learning_outcomes', { ...section, items: [] })}
+                                    className="bg-red-50 text-red-600 px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-red-100"
+                                >
+                                    Reset to Simple
+                                </button>
                             </div>
                         </div>
-                    ))}
-                </div>
+
+                        {section.items.tabs.map((tab: any, tIdx: number) => (
+                            <div key={tIdx} className="border border-gray-200 rounded-2xl p-6 bg-white shadow-sm relative group/tab">
+                                <button
+                                    type="button"
+                                    onClick={() => removeTab(tIdx)}
+                                    className="absolute top-4 right-4 text-gray-300 hover:text-red-500 opacity-0 group-hover/tab:opacity-100 transition-opacity"
+                                >
+                                    <Trash2 size={18} />
+                                </button>
+                                <div className="max-w-md">
+                                    <label className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Category Name</label>
+                                    <input
+                                        value={tab.name || ''}
+                                        onChange={(e) => updateTabName(tIdx, e.target.value)}
+                                        className="w-full text-xl font-bold border-none focus:ring-0 p-0 text-slate-800"
+                                        placeholder="e.g. Functional Mastery"
+                                    />
+                                </div>
+                                {renderSkillList(tab.items || [], (newList) => updateTabItems(tIdx, newList))}
+                            </div>
+                        ))}
+                    </div>
+                )}
             </div>
         );
     };
