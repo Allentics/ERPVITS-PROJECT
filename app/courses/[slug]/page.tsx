@@ -229,7 +229,8 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                 <div className="space-y-16">
 
                     {/* Main Content Area */}
-                    {((mappedCourse.sections as Section[])?.some((s: Section) => s.type === 'detailed_features') || isAriba || isMM || isFICO || isFieldglass || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS || isTM || isEWM || isIBP || isMDG || isC4CFunc || isABAPHana) ? (
+                    {/* Main Content Area */}
+                    {mappedCourse.sections && mappedCourse.sections.length > 0 ? (
                         <div id="overview" className="scroll-mt-32">
                             <SectionRenderer sections={mappedCourse.sections as Section[]} courseName={mappedCourse.title} />
                         </div>
@@ -254,9 +255,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                                 <DetailedTargetAudience items={getGenericTargetAudience(mappedCourse.title)} />
                             )}
 
-                            {mappedCourse.sections && mappedCourse.sections.length > 0 && (
-                                <SectionRenderer sections={mappedCourse.sections as Section[]} courseName={mappedCourse.title} />
-                            )}
+                            {/* No need to call SectionRenderer here again as we are in the fallback block */}
                         </div>
                     )}
 
