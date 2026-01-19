@@ -93,14 +93,19 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
     const mappedCourse = {
         ...localCourse,
         ...course,
-        heroHeading: (isAriba || isFieldglass || isMM || isFICO || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS || isTM || isEWM || isIBP || isMDG || isC4CFunc || isABAPHana || isPython) ? localCourse?.heroHeading : (course?.hero_heading || localCourse?.heroHeading),
-        heroSubheading: (isAriba || isFieldglass || isMM || isFICO || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS || isTM || isEWM || isIBP || isMDG || isC4CFunc || isABAPHana || isPython) ? localCourse?.heroSubheading : (course?.hero_subheading || localCourse?.heroSubheading),
-        heroImage: (isAriba || isFICO || isFieldglass || isMM || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS || isTM || isEWM || isIBP || isMDG || isC4CFunc || isABAPHana || isPython) ? undefined : (localCourse?.heroImage || course?.hero_image),
+        // Basic Info
+        title: course?.title || localCourse?.title,
+        heroHeading: course?.hero_heading || localCourse?.heroHeading,
+        heroSubheading: course?.hero_subheading || localCourse?.heroSubheading,
+        heroImage: course?.hero_image || localCourse?.heroImage,
         metaTitle: course?.meta_title || localCourse?.metaTitle,
         metaDescription: course?.meta_description || localCourse?.metaDescription,
-        price: (localCourse?.price && localCourse.price.trim() !== '') ? localCourse.price : course?.price,
-        duration: (localCourse?.duration && localCourse.duration.trim() !== '') ? localCourse.duration : course?.duration,
-        sections: (isAriba || isFieldglass || isMM || isFICO || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS || isTM || isEWM || isIBP || isMDG || isC4CFunc || isABAPHana || isPython) ? localCourse?.sections : ((course?.sections && course.sections.length > 0) ? course.sections : localCourse?.sections),
+        price: course?.price || localCourse?.price,
+        duration: course?.duration || localCourse?.duration,
+        syllabusUrl: course?.sections?.find((s: any) => s.type === 'detailed_curriculum')?.syllabusUrl || localCourse?.syllabusUrl,
+
+        // Content Sections
+        sections: (course?.sections && course.sections.length > 0) ? course.sections : localCourse?.sections,
         features: (course?.features && course.features.length > 0) ? course.features : localCourse?.features,
         curriculum: (course?.curriculum && course.curriculum.length > 0) ? course.curriculum : localCourse?.curriculum,
         faqs: (course?.faqs && course.faqs.length > 0) ? course.faqs : (localCourse?.faqs && localCourse.faqs.length > 0 ? localCourse.faqs : defaultFaqs),

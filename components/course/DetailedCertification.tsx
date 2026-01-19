@@ -92,16 +92,16 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
     const benefitsToDisplay = benefits || defaultBenefits;
 
     return (
-        <section className="py-16 bg-white text-slate-900">
+        <section className="pt-8 pb-16 bg-white text-slate-900">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                <h2 className="text-3xl lg:text-4xl font-bold mb-10 text-slate-900 leading-tight">
+                <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-slate-900 leading-tight">
                     {title || `SAP ${courseName} Certification – Your Global Career Credential`}
                 </h2>
 
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
                     {/* Left Column - Certifications & Benefits */}
-                    <div className="lg:col-span-7 flex flex-col gap-6 h-full">
+                    <div className="lg:col-span-7 flex flex-col gap-6">
 
                         {/* Cert Cards */}
                         {certs.map((cert, idx) => (
@@ -138,19 +138,18 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
                         ))}
 
                         {/* Why Matters Card - Orange Theme */}
-                        <div className="bg-gradient-to-br from-orange-500 to-red-600 rounded-xl p-6 text-white shadow-xl shadow-orange-500/20 mt-auto">
-                            <div className="flex items-center gap-3 mb-6 border-b border-white/20 pb-4">
-                                <Trophy className="w-6 h-6 text-white" />
+                        <div className="bg-gradient-to-br from-orange-500 to-red-600 rounded-xl p-5 text-white shadow-xl shadow-orange-500/20 mt-2">
+                            <div className="flex items-center gap-3 mb-4 border-b border-white/20 pb-3">
+                                <Trophy className="w-5 h-5 text-white" />
                                 <h3 className="font-bold text-lg text-white">Why SAP Certification Matters</h3>
                             </div>
-                            <ul className="space-y-4">
+                            <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
                                 {benefitsToDisplay.map((benefit, idx) => (
-                                    <li key={idx} className="flex gap-3 items-start">
+                                    <li key={idx} className="flex gap-2 items-start">
                                         <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-white flex-shrink-0" />
                                         <span className="text-sm">
-                                            <strong className="text-white font-bold block sm:inline">{benefit.title}</strong>
-                                            <span className="mx-1 hidden sm:inline">–</span>
-                                            <span className="text-orange-50 block sm:inline leading-relaxed">{benefit.desc}</span>
+                                            <strong className="text-white font-bold block">{benefit.title}</strong>
+                                            <span className="text-orange-50 block leading-relaxed text-xs">{benefit.desc}</span>
                                         </span>
                                     </li>
                                 ))}
@@ -159,36 +158,36 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
                     </div>
 
                     {/* Right Column - Image & Support */}
-                    <div className="lg:col-span-5 flex flex-col gap-6 h-full">
+                    <div className="lg:col-span-5 flex flex-col gap-6">
 
-                        {/* Image - Increased Size */}
+                        {/* Image - Improved fitting for Infographics */}
                         {imageSrc && (
-                            <div className="rounded-2xl overflow-hidden shadow-2xl bg-white border border-slate-100 group">
+                            <div className="rounded-2xl overflow-hidden shadow-xl bg-white border border-slate-100 group p-4">
                                 <img
                                     src={imageSrc}
                                     alt="SAP Certification Professional"
-                                    className="w-full h-auto object-cover"
+                                    className="w-full h-auto object-contain"
                                 />
                             </div>
                         )}
 
                         {/* Support Card (White) */}
-                        <div className="bg-white text-slate-900 rounded-2xl p-6 shadow-lg border border-slate-100">
-                            <h3 className="text-xl font-bold mb-6 text-slate-900 border-b border-slate-100 pb-4 flex items-center gap-2">
+                        <div className="bg-white text-slate-900 rounded-2xl p-5 shadow-lg border border-slate-100">
+                            <h3 className="text-lg font-bold mb-4 text-slate-900 border-b border-slate-100 pb-3 flex items-center gap-2">
                                 <FileCheck className="w-5 h-5 text-orange-600" />
-                                Our Certification Support Includes:
+                                Our Certification Support:
                             </h3>
-                            <ul className="space-y-4">
+                            <ul className="grid grid-cols-1 gap-3">
                                 {featuresToDisplay.map((feature: any, idx) => (
-                                    <li key={idx} className="flex gap-4 text-sm items-start group">
+                                    <li key={idx} className="flex gap-3 text-sm items-start group">
                                         <div className="mt-0.5 bg-white p-1 rounded-full border border-orange-200 shadow-sm group-hover:bg-orange-50 transition-colors">
-                                            <CheckCircle2 className="w-4 h-4 text-orange-600" />
+                                            <CheckCircle2 className="w-3.5 h-3.5 text-orange-600" />
                                         </div>
                                         <div>
-                                            <span className="font-bold text-slate-900 block text-base mb-0.5">
+                                            <span className="font-bold text-slate-900 block text-sm mb-0.5">
                                                 {feature.title}
                                             </span>
-                                            <span className="text-slate-600 text-xs block leading-relaxed">
+                                            <span className="text-slate-600 text-[11px] block leading-snug">
                                                 {feature.subtitle}
                                             </span>
                                         </div>

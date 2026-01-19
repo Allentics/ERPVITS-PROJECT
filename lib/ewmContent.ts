@@ -631,15 +631,59 @@ export const ewmContent = {
         },
         {
             type: 'detailed_certification',
-            content: "We Provide Support for SAP Certified Application Associate – Warehouse Management in SAP S/4HANA (Exam Code: C_S4EWM_2023).",
+            title: "SAP EWM Certification – Your Global Career Credential",
             imageSrc: "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP EWM Infographic.webp",
             items: [
                 {
-                    title: "SAP Certified Application Associate - Warehouse Management in SAP S/4HANA",
-                    code: "(C_S4EWM_2023)",
-                    focus: "Warehouse Management Overview, Inbound/Outbound Processing, Picking, Inventory Management.",
-                    who: "Functional consultants, warehouse coordinators, logistics managers.",
-                    relevance: "Entry to mid-level consultant positions, warehouse coordinator roles."
+                    title: "SAP Certified Application Associate – Warehouse Management in SAP S/4HANA",
+                    code: "C_S4EWM_2023",
+                    focus: "Warehouse Management Overview (20-30%), Inbound/Outbound Processing (20-30%), Picking (20-30%), Inventory Management (10-20%), Labor Management (≤10%), S/4HANA Integration (≤10%), Advanced Warehouse Operations (≤10%).",
+                    who: "Exam Details: 180 Mins | 80 Questions | 61% Passing Score. Value: Demonstrates expertise in SAP EWM configuration, warehouse operations, and S/4HANA integration.",
+                    relevance: "Entry to mid-level consultant positions, warehouse coordinator roles, logistics management opportunities"
+                }
+            ],
+            supportFeatures: [
+                {
+                    title: "Targeted Exam Preparation",
+                    subtitle: "Study guides aligned to official exam blueprints with focus on real-world warehouse scenarios"
+                },
+                {
+                    title: "Practice Exams",
+                    subtitle: "Timed practice tests mirroring real exam conditions with detailed explanations"
+                },
+                {
+                    title: "Exam Strategies",
+                    subtitle: "Tips for time management, question-reading techniques, and common pitfalls"
+                },
+                {
+                    title: "Exam Registration Guidance",
+                    subtitle: "We assist with exam registration, scheduling, and technical setup"
+                },
+                {
+                    title: "Retake Support",
+                    subtitle: "If you don't pass on your first attempt, we provide additional support and targeted study recommendations"
+                }
+            ],
+            benefits: [
+                {
+                    title: "Global Credential Recognition",
+                    desc: "SAP certifications are recognized worldwide by employers, clients, and consulting firms"
+                },
+                {
+                    title: "Career Acceleration",
+                    desc: "Certified professionals command 15-30% higher salaries over non-certified peers"
+                },
+                {
+                    title: "Competitive Advantage",
+                    desc: "Stand out in job applications, consulting proposals, and warehouse management roles"
+                },
+                {
+                    title: "Continuous Learning",
+                    desc: "Certification pushes you to master the platform thoroughly, ensuring job-ready expertise"
+                },
+                {
+                    title: "Professional Credibility",
+                    desc: "Signals to clients and employers that you've met rigorous standards set by SAP"
                 }
             ]
         },

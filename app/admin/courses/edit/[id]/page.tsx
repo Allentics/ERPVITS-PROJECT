@@ -101,29 +101,33 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
 
     const insertHyperlink = (inputId: string) => {
         const textarea = document.getElementById(inputId) as HTMLTextAreaElement;
-        if (!textarea) return;
+        if (!textarea) {
+            alert("Markdown link template copied to clipboard! Paste it where needed.");
+            navigator.clipboard.writeText("[link text](url)");
+            return;
+        }
 
         const start = textarea.selectionStart;
         const end = textarea.selectionEnd;
         const text = textarea.value;
-        const before = text.substring(0, start);
-        const after = text.substring(end, text.length);
         const selection = text.substring(start, end);
-
         const linkText = selection || 'link text';
-        const newText = before + `[${linkText}](url)` + after;
+        const markdown = `[${linkText}](url)`;
+        const newText = text.substring(0, start) + markdown + text.substring(end);
 
-        // This is a simplified way to update the state, assuming the textarea has a name matching a state key
-        // For distinct handlers, we'd need to pass the setter. 
-        // For now, we'll try to trigger a change event or just update the value
+        // Update value using the native setter to ensure React picks it up
+        const setter = Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype, 'value')?.set;
+        if (setter) {
+            setter.call(textarea, newText);
+            textarea.dispatchEvent(new Event('input', { bubbles: true }));
+        }
 
-        // React synthetic event trigger is tricky programmatically. 
-        // We will just alert the user to use Markdown for now or rely on them typing it.
-        // Or better: update the specific field if we know the path.
-
-        // Let's copy to clipboard instead for reliability
-        navigator.clipboard.writeText(`[${linkText}](url)`);
-        alert("Markdown link template copied to clipboard! Paste it where needed.");
+        // Focus and select 'url' for easy replacement
+        const urlStart = start + linkText.length + 3;
+        textarea.focus();
+        setTimeout(() => {
+            textarea.setSelectionRange(urlStart, urlStart + 3);
+        }, 10);
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -436,10 +440,10 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                                 <div>
                                     <label className="text-xs font-bold text-gray-500 uppercase mb-2 block">Learning Points (One per line)</label>
                                     <textarea
-                                        value={Array.isArray(module.learning_points) ? module.learning_points.join('\\n') : (module.learning_points || '')}
+                                        value={Array.isArray(module.learning_points) ? module.learning_points.join('\n') : (module.learning_points || '')}
                                         onChange={(e) => {
                                             const newMods = [...modules];
-                                            newMods[idx].learning_points = e.target.value.split('\\n');
+                                            newMods[idx].learning_points = e.target.value.split('\n');
                                             updateModules(newMods);
                                         }}
                                         className="w-full p-2 border rounded text-sm h-32 font-mono"
@@ -449,10 +453,10 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                                 <div>
                                     <label className="text-xs font-bold text-gray-500 uppercase mb-2 block">Hands-On Activities (One per line)</label>
                                     <textarea
-                                        value={Array.isArray(module.hands_on) ? module.hands_on.join('\\n') : (module.hands_on || '')}
+                                        value={Array.isArray(module.hands_on) ? module.hands_on.join('\n') : (module.hands_on || '')}
                                         onChange={(e) => {
                                             const newMods = [...modules];
-                                            newMods[idx].hands_on = e.target.value.split('\\n');
+                                            newMods[idx].hands_on = e.target.value.split('\n');
                                             updateModules(newMods);
                                         }}
                                         className="w-full p-2 border rounded text-sm h-32 font-mono"
@@ -1343,27 +1347,27 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
 
             {/* Tab Content */}
             <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 min-h-[500px]">
-                {activeTab === 'basic' && <BasicInfoTab />}
-                {activeTab === 'hero' && <HeroTab />}
-                {activeTab === 'overview' && <CourseOverviewTab />}
-                {activeTab === 'curriculum' && <CurriculumTab />}
-                {activeTab === 'hands_on' && <RealWorldProjectsTab />}
-                {activeTab === 'why_choose_us' && <WhyChooseUsTab />}
-                {activeTab === 'career' && <CareerGrowthTab />}
-                {activeTab === 'audience' && <TargetAudienceTab />}
-                {activeTab === 'prerequisites' && <PrerequisitesTab />}
-                {activeTab === 'certification' && <CertificationTab />}
-                {activeTab === 'integrations' && <GenericJsonTab type="detailed_sap_integrations" title="SAP Integrations (Generic Features Editor)" />}
-                {activeTab === 'methodology' && <MethodologyTab />}
-                {activeTab === 'whats_included' && <WhatsIncludedTab />}
-                {activeTab === 'roadmap' && <RoadmapTab />}
-                {activeTab === 'journey' && <JourneyTab />}
-                {activeTab === 'companies' && <HiringCompaniesTab />}
-                {activeTab === 'batches' && <BatchesTab />}
-                {activeTab === 'demo' && <GenericJsonTab type="detailed_demo_booking" title="Demo Booking" />}
-                {activeTab === 'faq' && <FAQTab />}
-                {activeTab === 'testimonials' && <TestimonialsTab />}
-                {activeTab === 'resources' && <ResourcesTab />}
+                {activeTab === 'basic' && BasicInfoTab()}
+                {activeTab === 'hero' && HeroTab()}
+                {activeTab === 'overview' && CourseOverviewTab()}
+                {activeTab === 'curriculum' && CurriculumTab()}
+                {activeTab === 'hands_on' && RealWorldProjectsTab()}
+                {activeTab === 'why_choose_us' && WhyChooseUsTab()}
+                {activeTab === 'career' && CareerGrowthTab()}
+                {activeTab === 'audience' && TargetAudienceTab()}
+                {activeTab === 'prerequisites' && PrerequisitesTab()}
+                {activeTab === 'certification' && CertificationTab()}
+                {activeTab === 'integrations' && GenericJsonTab({ type: "detailed_sap_integrations", title: "SAP Integrations" })}
+                {activeTab === 'methodology' && MethodologyTab()}
+                {activeTab === 'whats_included' && WhatsIncludedTab()}
+                {activeTab === 'roadmap' && RoadmapTab()}
+                {activeTab === 'journey' && JourneyTab()}
+                {activeTab === 'companies' && HiringCompaniesTab()}
+                {activeTab === 'batches' && BatchesTab()}
+                {activeTab === 'demo' && GenericJsonTab({ type: "detailed_demo_booking", title: "Demo Booking" })}
+                {activeTab === 'faq' && FAQTab()}
+                {activeTab === 'testimonials' && TestimonialsTab()}
+                {activeTab === 'resources' && ResourcesTab()}
             </div>
         </div>
     );

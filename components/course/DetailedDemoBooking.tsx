@@ -68,11 +68,11 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant", tit
 
             <div className="max-w-6xl mx-auto px-4 relative z-10">
                 <div className="text-center mb-6">
-                    <span className="bg-slate-900 text-white px-3 py-0.5 rounded-full text-[10px] font-bold tracking-widest uppercase mb-2 inline-block">
+                    <span className="bg-white text-slate-900 px-3 py-0.5 rounded-full text-[10px] font-bold tracking-widest uppercase mb-2 inline-block">
                         Get Started
                     </span>
                     <h2 className="text-2xl font-bold text-white mb-2">
-                        {title || <>Ready to Become an <span className="text-slate-900">{courseName} Consultant?</span></>}
+                        {title || <>Ready to Become an <span className="text-white underline decoration-white/30">{courseName} Consultant?</span></>}
                     </h2>
                     <p className="text-orange-50 max-w-xl mx-auto text-xs">
                         {subtitle || `Book your free demo today and take the first step towards a lucrative ${courseName} career`}
@@ -90,7 +90,7 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant", tit
                                     // simpler: support title/desc only for dynamic items, use fixed icon.
                                     return (
                                         <div key={i} className="bg-white/10 border border-white/20 p-2.5 rounded-lg flex items-start gap-3">
-                                            <div className="w-6 h-6 rounded bg-slate-900 flex items-center justify-center text-white shrink-0">
+                                            <div className="w-6 h-6 rounded bg-white flex items-center justify-center text-slate-900 shrink-0">
                                                 <Icon className="w-3.5 h-3.5" />
                                             </div>
                                             <div>
@@ -104,27 +104,27 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant", tit
                         </div>
 
                         {/* Contact Box */}
-                        <div className="bg-slate-900 rounded-xl p-4 text-white relative overflow-hidden">
+                        <div className="bg-white rounded-xl p-4 text-slate-900 relative overflow-hidden shadow-lg">
                             <div className="relative z-10">
                                 <h3 className="font-bold text-sm mb-2">Contact Information</h3>
                                 <div className="space-y-1.5 text-xs">
                                     <div className="flex items-center gap-2">
-                                        <Phone className="w-3.5 h-3.5" />
+                                        <Phone className="w-3.5 h-3.5 text-orange-600" />
                                         <span>+91 84088 78222</span>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                        <Mail className="w-3.5 h-3.5" />
+                                        <Mail className="w-3.5 h-3.5 text-orange-600" />
                                         <span>info@erpvits.com</span>
                                     </div>
                                     <div className="flex items-start gap-2">
-                                        <MapPin className="w-3.5 h-3.5 mt-0.5" />
+                                        <MapPin className="w-3.5 h-3.5 mt-0.5 text-orange-600" />
                                         <span>ERPVITS Training Center, Pune, India</span>
                                     </div>
                                 </div>
                             </div>
                             {/* Decorative circles */}
-                            <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full translate-x-1/2 -translate-y-1/2"></div>
-                            <div className="absolute bottom-0 right-8 w-16 h-16 bg-white/10 rounded-full translate-y-1/2"></div>
+                            <div className="absolute top-0 right-0 w-24 h-24 bg-orange-50 rounded-full translate-x-1/2 -translate-y-1/2"></div>
+                            <div className="absolute bottom-0 right-8 w-16 h-16 bg-orange-50 rounded-full translate-y-1/2"></div>
                         </div>
                     </div>
 
@@ -244,7 +244,7 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant", tit
                                 <button
                                     type="submit"
                                     disabled={status === 'loading'}
-                                    className="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 mt-1 disabled:bg-slate-400 text-sm"
+                                    className="w-full bg-white hover:bg-slate-50 text-slate-900 border-2 border-slate-900/10 font-bold py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 mt-1 disabled:bg-slate-100 disabled:text-slate-400 text-sm"
                                 >
                                     {status === 'loading' ? (
                                         <>
@@ -253,7 +253,7 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant", tit
                                         </>
                                     ) : (
                                         <>
-                                            Book Demo Now <ArrowRight className="w-3 h-3" />
+                                            Book Demo Now <ArrowRight className="w-3 h-3 text-orange-600" />
                                         </>
                                     )}
                                 </button>
