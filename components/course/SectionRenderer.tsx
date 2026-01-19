@@ -48,37 +48,66 @@ const getIconForTitle = (title: string) => {
     return CheckCircle2;
 };
 
-// Helper to render text with **bold** and [links](url) support
+// Helper to render text with **bold**, _italic_, [links](url), and common HTML tags (a, b, i, strong, em)
 export const renderRichText = (text: string) => {
     if (!text) return null;
 
-    // Split by markdown link pattern: [text](url)
-    const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+    // Regex for: 1. HTML links, 2. Markdown links, 3. Bold/Italic (Markdown & HTML)
+    // Using [\s\S]*? to handle multi-line content correctly
+    const pattern = /(<a\s+[\s\S]*?href=["'][\s\S]*?["'][\s\S]*?>[\s\S]*?<\/a>|\[[^\]]+\]\([^)]+\)|\*\*[\s\S]*?\*\*|__[\s\S]*?__|<b>[\s\S]*?<\/b>|<strong>[\s\S]*?<\/strong>|<i>[\s\S]*?<\/i>|<em>[\s\S]*?<\/em>)/g;
+    const parts = text.split(pattern);
 
     return parts.map((part, index) => {
-        // Check if it's a link
-        const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
-        if (linkMatch) {
+        if (!part) return null;
+
+        // Check if it's an HTML link
+        const htmlLinkMatch = part.match(/^<a\s+[\s\S]*?href=["']([\s\S]*?)["'][\s\S]*?>([\s\S]*?)<\/a>$/i);
+        if (htmlLinkMatch) {
             return (
                 <a
                     key={index}
-                    href={linkMatch[2]}
+                    href={htmlLinkMatch[1]}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-orange-600 hover:text-orange-700 underline underline-offset-4 decoration-orange-300"
+                    className="text-orange-600 hover:text-orange-700 underline underline-offset-4 decoration-orange-300 transition-colors"
                 >
-                    {linkMatch[1]}
+                    {htmlLinkMatch[2]}
                 </a>
             );
         }
 
-        // Processing for bold text within non-link parts
-        return part.split(/(\*\*.*?\*\*)/g).map((subPart, subIndex) => {
-            if (subPart.startsWith('**') && subPart.endsWith('**')) {
-                return <strong key={`${index}-${subIndex}`} className="font-bold text-slate-900">{subPart.slice(2, -2)}</strong>;
-            }
-            return <span key={`${index}-${subIndex}`}>{subPart}</span>;
-        });
+        // Check if it's a markdown link
+        const mdLinkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+        if (mdLinkMatch) {
+            return (
+                <a
+                    key={index}
+                    href={mdLinkMatch[2]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-orange-600 hover:text-orange-700 underline underline-offset-4 decoration-orange-300 transition-colors"
+                >
+                    {mdLinkMatch[1]}
+                </a>
+            );
+        }
+
+        // Bold (Markdown: ** or __, HTML: <b> or <strong>)
+        if ((part.startsWith('**') && part.endsWith('**')) || (part.startsWith('__') && part.endsWith('__'))) {
+            return <strong key={index} className="font-bold text-slate-900">{part.slice(2, -2)}</strong>;
+        }
+        if (part.toLowerCase().startsWith('<b>') || part.toLowerCase().startsWith('<strong>')) {
+            const content = part.replace(/^<[^>]+>|<\/[^>]+>$/gi, '');
+            return <strong key={index} className="font-bold text-slate-900">{content}</strong>;
+        }
+
+        // Italic (HTML: <i> or <em>) - Markdown italic (_) not explicitly handled to avoid conflict with links/snake_case
+        if (part.toLowerCase().startsWith('<i>') || part.toLowerCase().startsWith('<em>')) {
+            const content = part.replace(/^<[^>]+>|<\/[^>]+>$/gi, '');
+            return <em key={index} className="italic text-slate-800">{content}</em>;
+        }
+
+        return <span key={index}>{part}</span>;
     });
 };
 
@@ -122,7 +151,7 @@ export function DetailedFeatures({ badge, title, subtitle, items, textAlign = 'c
                             <div className="flex-1">
                                 {isObject ? (
                                     <>
-                                        <h3 className="font-bold text-slate-900 text-xl mb-3">{item.title}</h3>
+                                        <h3 className="font-bold text-slate-900 text-xl mb-3">{renderRichText(item.title)}</h3>
                                         <p className="text-slate-600 leading-relaxed text-[15px]">{renderRichText(item.description)}</p>
                                     </>
                                 ) : (

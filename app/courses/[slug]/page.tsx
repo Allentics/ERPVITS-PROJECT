@@ -18,9 +18,24 @@ import CourseHeroActionButtons from '@/components/course/CourseHeroActionButtons
 // Dynamic rendering only to avoid build OOM
 export const dynamic = 'force-dynamic';
 
+// Helper to map URL slugs to Database IDs
+const getDbId = (slug: string) => {
+    if (slug === 'sap-ariba' || slug === 'ariba') return 'ariba';
+    if (slug === 'sap-abap-on-cloud' || slug === 'abap-cloud') return 'abap-cloud';
+    if (slug === 'sap-fico' || slug === 'fico' || slug === 'fico-training') return 'fico';
+    if (slug === 'sap-mm' || slug === 'mm' || slug === 'sap-s4hana-mm') return 'mm';
+    if (slug === 'sap-tm' || slug === 'tm' || slug === 'sap-transportation-management') return 'sap-tm';
+    if (slug === 'sap-ewm' || slug === 'ewm' || slug === 'sap-extended-warehouse-management') return 'sap-ewm';
+    if (slug === 'sap-ibp' || slug === 'ibp' || slug === 'sap-integrated-business-planning') return 'sap-ibp';
+    if (slug === 'sap-mdg' || slug === 'mdg' || slug === 'sap-master-data-governance') return 'sap-mdg';
+    if (slug === 'sap-c4c' || slug === 'c4c' || slug === 'sap-c4c-technical-training' || slug === 'sap-c4c-technical-online-training' || slug === 'c4c-technical') return 'c4c-technical';
+    return slug;
+};
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const { slug } = await params;
-    const { data: course } = await supabase.from('courses').select('title, meta_title, meta_description').eq('id', slug).single();
+    const dbId = getDbId(slug);
+    const { data: course } = await supabase.from('courses').select('title, meta_title, meta_description').eq('id', dbId).single();
 
     // Fallback logic for local mapping
     const local = courses.find(c => c.id === slug) ||
@@ -42,10 +57,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function CoursePage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
 
+    // Map slugs to their correct database IDs
+    const dbId = getDbId(slug);
+
     const { data: course } = await supabase
         .from('courses')
         .select('*')
-        .eq('id', slug)
+        .eq('id', dbId)
         .single();
 
     const localCourse = courses.find(c => c.id === slug) ||
@@ -105,10 +123,12 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
         syllabusUrl: course?.sections?.find((s: any) => s.type === 'detailed_curriculum')?.syllabusUrl || localCourse?.syllabusUrl,
 
         // Content Sections
-        sections: (course?.sections && course.sections.length > 0) ? course.sections : localCourse?.sections,
-        features: (course?.features && course.features.length > 0) ? course.features : localCourse?.features,
-        curriculum: (course?.curriculum && course.curriculum.length > 0) ? course.curriculum : localCourse?.curriculum,
-        faqs: (course?.faqs && course.faqs.length > 0) ? course.faqs : (localCourse?.faqs && localCourse.faqs.length > 0 ? localCourse.faqs : defaultFaqs),
+        // Only fallback to localCourse if the DB field is strictly null/undefined
+        // This allows users to "remove" content by setting it to an empty array
+        sections: (course?.sections) ? course.sections : localCourse?.sections,
+        features: (course?.features) ? course.features : localCourse?.features,
+        curriculum: (course?.curriculum) ? course.curriculum : localCourse?.curriculum,
+        faqs: (course?.faqs) ? course.faqs : (localCourse?.faqs && localCourse.faqs.length > 0 ? localCourse.faqs : defaultFaqs),
     };
 
 
@@ -223,13 +243,13 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                                 />
                             </section>
 
-                            {/* Inject Prerequisites if missing */}
-                            {!mappedCourse.sections?.some((s: any) => s.type === 'detailed_prerequisites' || s.type === 'prerequisites') && (
+                            {/* Inject Prerequisites if missing from both DB and local */}
+                            {!mappedCourse.sections?.some((s: any) => s.type === 'detailed_prerequisites' || s.type === 'prerequisites') && !course && (
                                 <DetailedPrerequisites items={getGenericPrerequisites(mappedCourse.title)} />
                             )}
 
-                            {/* Inject Target Audience if missing */}
-                            {!mappedCourse.sections?.some((s: any) => s.type === 'detailed_target_audience' || s.type === 'target_audience') && (
+                            {/* Inject Target Audience if missing from both DB and local */}
+                            {!mappedCourse.sections?.some((s: any) => s.type === 'detailed_target_audience' || s.type === 'target_audience') && !course && (
                                 <DetailedTargetAudience items={getGenericTargetAudience(mappedCourse.title)} />
                             )}
 
@@ -242,10 +262,10 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                     {/* Check if standard flow (ariba/detailed) implies prerequisites are inside sections. If not, add them. */}
                     {((mappedCourse.sections as Section[])?.some((s: Section) => s.type === 'detailed_features') || isAriba || isMM || isFICO || isFieldglass || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS || isTM || isEWM || isIBP || isMDG || isC4CFunc || isABAPHana) && (
                         <>
-                            {!mappedCourse.sections?.some((s: any) => s.type === 'detailed_prerequisites' || s.type === 'prerequisites') && (
+                            {!mappedCourse.sections?.some((s: any) => s.type === 'detailed_prerequisites' || s.type === 'prerequisites') && !course && (
                                 <DetailedPrerequisites items={getGenericPrerequisites(mappedCourse.title)} />
                             )}
-                            {!mappedCourse.sections?.some((s: any) => s.type === 'detailed_target_audience' || s.type === 'target_audience') && (
+                            {!mappedCourse.sections?.some((s: any) => s.type === 'detailed_target_audience' || s.type === 'target_audience') && !course && (
                                 <DetailedTargetAudience items={getGenericTargetAudience(mappedCourse.title)} />
                             )}
                         </>

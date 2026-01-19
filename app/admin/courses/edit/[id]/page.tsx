@@ -3,7 +3,7 @@
 import React, { useEffect, useState, use } from 'react';
 import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
-import { ArrowLeft, Save, Loader2, Link as LinkIcon, Plus, Trash2, ClipboardList, Target, BookOpen, Library, Laptop, Star, TrendingUp, Users, Trophy, Link as Link2, NotebookPen, AlarmClock, HelpCircle, MessageSquareQuote, FileText, Calendar, MessageSquare } from 'lucide-react';
+import { ArrowLeft, Save, Loader2, Link as LinkIcon, Plus, Trash2, ClipboardList, Target, BookOpen, Library, Laptop, Star, TrendingUp, Users, Trophy, Link as Link2, NotebookPen, AlarmClock, HelpCircle, MessageSquareQuote, FileText, Calendar, MessageSquare, Briefcase, Layers } from 'lucide-react';
 import Link from 'next/link';
 
 // Tab Definitions
@@ -11,9 +11,12 @@ const TABS = [
     { id: 'basic', label: 'Basic Info', icon: ClipboardList },
     { id: 'hero', label: 'Hero Section', icon: Target },
     { id: 'overview', label: 'Why Choose Us', icon: BookOpen },
+    { id: 'course_overview', label: 'Course Overview (Python)', icon: BookOpen },
     { id: 'why_choose_us', label: 'Success Guarantee & Credibility', icon: Star },
     { id: 'whats_included', label: 'What\'s Included', icon: AlarmClock },
     { id: 'curriculum', label: 'Comprehensive Curriculum', icon: Library },
+    { id: 'table_curriculum', label: 'Alternative Curriculum (Table)', icon: Library },
+    { id: 'tools', label: 'Tools & Modules Covered', icon: Laptop },
     { id: 'audience', label: 'Who Should Enroll', icon: Users },
     { id: 'prerequisites', label: 'Prerequisites', icon: ClipboardList },
     { id: 'methodology', label: 'Training Methodology', icon: NotebookPen },
@@ -21,6 +24,7 @@ const TABS = [
     { id: 'certification', label: 'Certification', icon: Trophy },
     { id: 'companies', label: 'Hiring Companies', icon: Users },
     { id: 'career', label: 'Career Growth', icon: TrendingUp },
+    { id: 'jobs', label: 'Job Roles & Salaries', icon: Briefcase },
     { id: 'roadmap', label: 'Career Roadmap', icon: TrendingUp },
     { id: 'journey', label: 'Post-Training Journey', icon: Target },
     { id: 'batches', label: 'Upcoming Batches', icon: Calendar },
@@ -1111,10 +1115,10 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
 
         const renderSkillList = (list: any[], onUpdate: (newList: any[]) => void) => (
             <div className="space-y-4 mt-4">
-                <div className="flex justify-between items-center">
-                    <h5 className="text-sm font-bold text-gray-700">Skills / Modules</h5>
-                    <button type="button" onClick={() => onUpdate([...list, { title: 'New Topic', points: [] }])} className="text-xs bg-orange-50 text-orange-600 px-2 py-1 rounded hover:bg-orange-100 flex items-center gap-1">
-                        <Plus size={14} /> Add Topic
+                <div className="flex justify-between items-center bg-gray-50 p-3 rounded-lg border border-gray-100 mb-2">
+                    <h5 className="text-sm font-bold text-gray-700">Outcomes ({list.length})</h5>
+                    <button type="button" onClick={() => onUpdate([...list, { title: 'New Outcome', points: [] }])} className="flex items-center gap-2 px-3 py-1.5 bg-black text-white rounded-lg text-xs font-bold hover:bg-zinc-800 transition-all shadow-sm">
+                        <Plus size={14} /> Add Skill
                     </button>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -1178,15 +1182,20 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
 
                 {!isTabbed ? (
                     <div className="space-y-4">
-                        <div className="flex justify-between items-center">
-                            <h4 className="font-bold text-gray-900">Simple Skills List ({Array.isArray(section.items) ? section.items.length : 0})</h4>
-                            <button
-                                type="button"
-                                onClick={handleConvertToTabs}
-                                className="text-xs bg-blue-50 text-blue-600 px-3 py-1.5 rounded-lg border border-blue-100 hover:bg-blue-100 transition-colors flex items-center gap-2"
-                            >
-                                <Users size={14} /> Use Tabbed Mode (Functional/Technical)
-                            </button>
+                        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-blue-50/50 p-4 rounded-xl border border-blue-100">
+                            <div>
+                                <h4 className="font-bold text-blue-900">Standard Outcomes List</h4>
+                                <p className="text-xs text-blue-700">Simple list of masteries</p>
+                            </div>
+                            <div className="flex gap-2">
+                                <button
+                                    type="button"
+                                    onClick={handleConvertToTabs}
+                                    className="text-xs bg-blue-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-700 transition-colors shadow-sm flex items-center gap-2"
+                                >
+                                    <Layers size={14} /> Setup Functional & Technical Tabs
+                                </button>
+                            </div>
                         </div>
                         {renderSkillList(Array.isArray(section.items) ? section.items : [], (newList) => updateSection('detailed_learning_outcomes', { ...section, items: newList }))}
                     </div>
@@ -1429,6 +1438,187 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
         );
     };
 
+    const PythonOverviewTab = () => {
+        const section = getSection('course_overview', { items: [] });
+        const items = section.items || [];
+        const updateItems = (newItems: any[]) => updateSection('course_overview', { ...section, items: newItems });
+
+        return (
+            <div className="space-y-8">
+                <div className="flex justify-between items-center bg-purple-50 p-4 rounded-xl border border-purple-100">
+                    <div>
+                        <h4 className="font-bold text-purple-900 text-lg">Python Overview Blocks</h4>
+                        <p className="text-sm text-purple-700">Flexible content blocks with text or lists</p>
+                    </div>
+                    <button type="button" onClick={() => updateItems([...items, { title: 'New Block', content: '', list: [] }])} className="bg-white text-purple-700 px-4 py-2 rounded-lg text-sm font-bold shadow-sm flex items-center gap-2 hover:bg-purple-100 transition-colors">
+                        <Plus size={18} /> Add Block
+                    </button>
+                </div>
+
+                {items.map((item: any, idx: number) => (
+                    <div key={idx} className="bg-white p-6 border border-gray-100 rounded-2xl shadow-sm relative group space-y-4">
+                        <button type="button" onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))} className="absolute top-4 right-4 text-gray-300 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity"><Trash2 size={20} /></button>
+
+                        <div className="max-w-xl">
+                            <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest block mb-1">Block Title</label>
+                            <input value={item.title || ''} onChange={(e) => { const n = [...items]; n[idx].title = e.target.value; updateItems(n); }} className="w-full text-xl font-bold bg-transparent border-none focus:ring-0 p-0 text-slate-800" placeholder="Block Title..." />
+                        </div>
+
+                        <div className="grid md:grid-cols-2 gap-6 pt-2">
+                            <div className="space-y-2">
+                                <label className="text-xs font-bold text-gray-500 uppercase">Text Content</label>
+                                <textarea value={item.content || ''} onChange={(e) => { const n = [...items]; n[idx].content = e.target.value; updateItems(n); }} className="w-full p-3 border rounded-xl text-sm h-40 leading-relaxed" placeholder="Detailed content..." />
+                            </div>
+                            <div className="space-y-2">
+                                <label className="text-xs font-bold text-gray-500 uppercase">List Points (Optional, one per line)</label>
+                                <textarea value={Array.isArray(item.list) ? item.list.join('\n') : (item.list || '')} onChange={(e) => { const n = [...items]; n[idx].list = e.target.value.split('\n'); updateItems(n); }} className="w-full p-3 border rounded-xl font-mono text-sm h-40 leading-relaxed" placeholder="**Bold Title:** Point description..." />
+                            </div>
+                        </div>
+
+                        <div>
+                            <label className="text-xs font-bold text-gray-500 uppercase">Footer Text (Optional)</label>
+                            <input value={item.footer || ''} onChange={(e) => { const n = [...items]; n[idx].footer = e.target.value; updateItems(n); }} className="w-full p-2 border rounded-lg text-sm italic" placeholder="Closing sentence..." />
+                        </div>
+                    </div>
+                ))}
+            </div>
+        );
+    };
+
+    const TableCurriculumTab = () => {
+        const section = getSection('table_curriculum', { items: [] });
+        const items = section.items || [];
+        const updateItems = (newItems: any[]) => updateSection('table_curriculum', { ...section, items: newItems });
+
+        return (
+            <div className="space-y-6">
+                <div className="bg-slate-900 text-white p-6 rounded-2xl flex justify-between items-center">
+                    <div>
+                        <h4 className="text-xl font-bold">Curriculum Table</h4>
+                        <p className="text-slate-400 text-sm">Session-by-session breakdown</p>
+                    </div>
+                    <button type="button" onClick={() => updateItems([...items, { session: (items.length + 1).toString(), topic: '', hours: '2', description: '' }])} className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-bold transition-colors flex items-center gap-2">
+                        <Plus size={18} /> Add Session
+                    </button>
+                </div>
+
+                <div className="overflow-x-auto">
+                    <table className="w-full border-collapse">
+                        <thead>
+                            <tr className="bg-slate-50 border-b">
+                                <th className="p-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider w-20">No.</th>
+                                <th className="p-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Topic / Session Name</th>
+                                <th className="p-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider w-24">Hours</th>
+                                <th className="p-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Description</th>
+                                <th className="p-3 w-10"></th>
+                            </tr>
+                        </thead>
+                        <tbody className="divide-y divide-slate-100 bg-white">
+                            {items.map((item: any, idx: number) => (
+                                <tr key={idx} className="group hover:bg-slate-50/50 transition-colors">
+                                    <td className="p-3">
+                                        <input value={item.session || ''} onChange={(e) => { const n = [...items]; n[idx].session = e.target.value; updateItems(n); }} className="w-full bg-transparent border-none p-0 font-mono text-sm" />
+                                    </td>
+                                    <td className="p-3">
+                                        <input value={item.topic || ''} onChange={(e) => { const n = [...items]; n[idx].topic = e.target.value; updateItems(n); }} className="w-full bg-transparent border-none p-0 font-bold text-sm text-slate-800" placeholder="Session topic..." />
+                                    </td>
+                                    <td className="p-3">
+                                        <input value={item.hours || ''} onChange={(e) => { const n = [...items]; n[idx].hours = e.target.value; updateItems(n); }} className="w-full bg-transparent border-none p-0 text-sm" />
+                                    </td>
+                                    <td className="p-3">
+                                        <input value={item.description || ''} onChange={(e) => { const n = [...items]; n[idx].description = e.target.value; updateItems(n); }} className="w-full bg-transparent border-none p-0 text-sm text-slate-600" placeholder="Brief description..." />
+                                    </td>
+                                    <td className="p-3">
+                                        <button type="button" onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))} className="text-slate-300 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-all"><Trash2 size={16} /></button>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        );
+    };
+
+    const JobRolesTab = () => {
+        const section = getSection('job_roles_table', { items: [] });
+        const items = section.items || [];
+        const updateItems = (newItems: any[]) => updateSection('job_roles_table', { ...section, items: newItems });
+
+        return (
+            <div className="space-y-6">
+                <div className="bg-emerald-600 text-white p-6 rounded-2xl flex justify-between items-center">
+                    <div>
+                        <h4 className="text-xl font-bold">Jobs & Career Opportunities</h4>
+                        <p className="text-emerald-100 text-sm italic">Define roles, required skills, and salary expectations</p>
+                    </div>
+                    <button type="button" onClick={() => updateItems([...items, { role: 'Job Role', skills: '', companies: '', salary: '' }])} className="bg-white text-emerald-700 px-4 py-2 rounded-lg text-sm font-bold shadow-lg hover:bg-emerald-50 transition-colors flex items-center gap-2">
+                        <Plus size={18} /> Add Role
+                    </button>
+                </div>
+
+                <div className="space-y-4">
+                    {items.map((item: any, idx: number) => (
+                        <div key={idx} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm relative group grid md:grid-cols-4 gap-6">
+                            <button type="button" onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))} className="absolute top-2 right-2 text-slate-300 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity"><Trash2 size={18} /></button>
+
+                            <div className="space-y-1">
+                                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Role Name</label>
+                                <input value={item.role || ''} onChange={(e) => { const n = [...items]; n[idx].role = e.target.value; updateItems(n); }} className="w-full p-0 bg-transparent border-none font-bold text-lg text-slate-900 focus:ring-0" placeholder="Data Scientist..." />
+                            </div>
+                            <div className="space-y-1">
+                                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Key Skills</label>
+                                <textarea value={item.skills || ''} onChange={(e) => { const n = [...items]; n[idx].skills = e.target.value; updateItems(n); }} className="w-full p-2 border rounded-lg text-sm h-20" placeholder="Python, TensorFlow..." />
+                            </div>
+                            <div className="space-y-1">
+                                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Top Companies</label>
+                                <textarea value={item.companies || ''} onChange={(e) => { const n = [...items]; n[idx].companies = e.target.value; updateItems(n); }} className="w-full p-2 border rounded-lg text-sm h-20" placeholder="Google, Meta..." />
+                            </div>
+                            <div className="space-y-1">
+                                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Est. Salary</label>
+                                <input value={item.salary || ''} onChange={(e) => { const n = [...items]; n[idx].salary = e.target.value; updateItems(n); }} className="w-full p-2 border rounded-lg text-sm font-bold text-emerald-600" placeholder="₹8L - ₹12L" />
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        );
+    };
+
+    const ListCheckerTab = () => {
+        const section = getSection('list_checker', { items: [] });
+        const items = section.items || [];
+        const updateItems = (newItems: any[]) => updateSection('list_checker', { ...section, items: newItems });
+
+        return (
+            <div className="space-y-6">
+                <div className="flex justify-between items-center mb-4">
+                    <div>
+                        <h4 className="text-xl font-bold text-slate-900">List of Tools / Modules</h4>
+                        <p className="text-sm text-slate-500">Simple checkbox list of tools covered in the course</p>
+                    </div>
+                    <button type="button" onClick={() => updateItems([...items, ''])} className="bg-slate-900 text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2">
+                        <Plus size={18} /> Add Item
+                    </button>
+                </div>
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+                    {items.map((item: any, idx: number) => (
+                        <div key={idx} className="flex gap-2 items-center bg-gray-50 p-3 rounded-lg border group">
+                            <input
+                                value={item}
+                                onChange={(e) => { const n = [...items]; n[idx] = e.target.value; updateItems(n); }}
+                                className="flex-1 bg-transparent border-none p-0 text-sm font-medium focus:ring-0"
+                                placeholder="Tool name..."
+                            />
+                            <button type="button" onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))} className="text-slate-300 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity"><Trash2 size={16} /></button>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        );
+    };
+
     // Generic fallback for tabs not heavily customized yet
     const GenericJsonTab = ({ type, title }: { type: string, title?: string }) => {
         const section = getSection(type);
@@ -1499,10 +1689,14 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                 {activeTab === 'basic' && BasicInfoTab()}
                 {activeTab === 'hero' && HeroTab()}
                 {activeTab === 'overview' && CourseOverviewTab()}
+                {activeTab === 'course_overview' && PythonOverviewTab()}
                 {activeTab === 'curriculum' && CurriculumTab()}
+                {activeTab === 'table_curriculum' && TableCurriculumTab()}
+                {activeTab === 'tools' && ListCheckerTab()}
                 {activeTab === 'hands_on' && RealWorldProjectsTab()}
                 {activeTab === 'why_choose_us' && WhyChooseUsTab()}
                 {activeTab === 'career' && CareerGrowthTab()}
+                {activeTab === 'jobs' && JobRolesTab()}
                 {activeTab === 'audience' && TargetAudienceTab()}
                 {activeTab === 'prerequisites' && PrerequisitesTab()}
                 {activeTab === 'certification' && CertificationTab()}
