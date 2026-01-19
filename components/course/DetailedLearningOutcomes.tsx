@@ -24,9 +24,21 @@ const iconMap: Record<string, any> = {
 
 export default function DetailedLearningOutcomes({ items, title, subtitle }: { items?: any, title?: string, subtitle?: string }) {
     const isTabbed = items && !Array.isArray(items) && items.tabs;
-    const [activeTab, setActiveTab] = useState(isTabbed ? 0 : -1);
+    const [activeTab, setActiveTab] = useState(0);
 
-    const outcomes = isTabbed ? items.tabs[activeTab].items : (Array.isArray(items) ? items : aribaLearningOutcomes);
+    // If tabbed, get items from active tab. If items is array, use it. 
+    // If items is object but not passing isTabbed check (unlikely given logic), or undefined, handle gracefully.
+    // If items is undefined, fallback to empty array (removed unsafe legacy fallback).
+    let outcomes = [];
+    if (isTabbed) {
+        outcomes = items.tabs[activeTab]?.items || [];
+    } else if (Array.isArray(items)) {
+        outcomes = items;
+    } else if (items && items.tabs) {
+        // Fallback if isTabbed check failed but looks like tabs (e.g. strict boolean mismatch?? unlikely)
+        outcomes = items.tabs[0]?.items || [];
+    }
+    // Note: Removed outdated aribaLearningOutcomes fallback which caused crashes if structure changed.
     const tabs = isTabbed ? items.tabs : [];
 
     return (

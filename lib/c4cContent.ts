@@ -70,74 +70,60 @@ export const c4cTechnicalPrerequisites = {
     ]
 };
 
-export const c4cTechnicalLearningOutcomes = [
-    {
-        title: "Custom Business Object Development",
-        description: "Master the foundation of C4C development using BODL and ABSL.",
-        icon: "Database",
-        points: [
-            "Create and extend business objects using BODL",
-            "Implement complex business logic with ABSL",
-            "Design object relationships and hierarchies",
-            "Handle data validation and error scenarios"
-        ]
-    },
-    {
-        title: "Cloud Application Development",
-        description: "Build robust and interactive user interfaces.",
-        icon: "Layout",
-        points: [
-            "Design applications with UI Designer",
-            "Implement responsive and interactive UIs",
-            "Create forms, tables, and dashboards",
-            "Manage complex user interactions and workflows"
-        ]
-    },
-    {
-        title: "Service Integration & Web Services",
-        description: "Connect C4C with the global digital ecosystem.",
-        icon: "Zap",
-        points: [
-            "Develop and consume web services",
-            "Integrate external systems and APIs",
-            "Implement asynchronous messaging patterns",
-            "Handle integration errors and retries"
-        ]
-    },
-    {
-        title: "Extensibility & Customization",
-        description: "Tailor standard SAP C4C to meet specific business needs.",
-        icon: "Settings",
-        points: [
-            "Extend standard SAP C4C objects",
-            "Add custom fields and embedded components",
-            "Implement custom business logic on standard objects",
-            "Follow best practices for cloud extensions"
-        ]
-    },
-    {
-        title: "Analytics & Reporting",
-        description: "Unlock business insights with powerful reporting tools.",
-        icon: "MonitorSmartphone",
-        points: [
-            "Design analytical data sources and cubes",
-            "Develop interactive reports and dashboards",
-            "Implement performance optimization for analytics",
-            "Configure advanced analytics and visualizations"
-        ]
-    },
-    {
-        title: "Business Configuration & Workflows",
-        description: "Automate and streamline business processes.",
-        icon: "Users",
-        points: [
-            "Configure business settings and rules",
-            "Create configurations for end-users",
-            "Implement complex approval workflows",
-            "Set up multi-channel notifications and escalations"
-        ]
-    }
-];
+export const c4cTechnicalLearningOutcomes = {
+    tabs: [
+        {
+            name: "Functional Configuration",
+            items: [
+                {
+                    title: "Sales & Service Cloud Processes",
+                    icon: "Cloud",
+                    points: [
+                        "Configure Lead-to-Opportunity workflows",
+                        "Manage Service Tickets and SLAs",
+                        "Set up Territory Management and Routing Rules",
+                        "Configure Activity Management and Visits"
+                    ]
+                },
+                {
+                    title: "Org Structure & Master Data",
+                    icon: "Database",
+                    points: [
+                        "Define Organizational Hierarchy",
+                        "Manage Business Partners (Accounts, Contacts)",
+                        "Configure Product Lists and Price Lists",
+                        "Manage Employee and User setup"
+                    ]
+                }
+            ]
+        },
+        {
+            name: "Technical Development",
+            items: [
+                {
+                    title: "Cloud Application Studio (SDK)",
+                    icon: "Laptop",
+                    points: [
+                        "Develop custom Business Objects (BOs)",
+                        "Write ABSL and BODL scripts",
+                        "Manage Lifecycle Management and patches",
+                        "Debug and traceability of custom logic"
+                    ]
+                },
+                {
+                    title: "UI & Integration",
+                    icon: "Layout",
+                    points: [
+                        "Design Screens using UI Designer",
+                        "Create Embedded Components and Mashups",
+                        "Configure OData Services and Web Services",
+                        "Manage CPI Integration scenarios"
+                    ]
+                }
+            ]
+        }
+    ]
+};
 
 export const c4cTechnicalRealWorldScenarios = [
     {

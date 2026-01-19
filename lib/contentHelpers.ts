@@ -80,48 +80,192 @@ export const aribaPrerequisites = {
     ]
 };
 
-export const aribaLearningOutcomes = [
-    {
-        title: "Complete Procurement Lifecycle Management",
-        icon: "ShoppingCart",
-        points: [
-            "Integration strategies for P2P and S2P workflows",
-            "Vendor requisitions, POs, receipts, and invoices",
-            "Understand budget controls and check tracking",
-            "Optimize procure-to-pay (P2P) cycle"
-        ]
-    },
-    {
-        title: "Master Data Configuration",
-        icon: "Database",
-        points: [
-            "Create user profiles with role-based access",
-            "Onboard and manage suppliers with qualification tracking",
-            "Configure accounting strictures and cost centers",
-            "Ensure data accuracy across systems"
-        ]
-    },
-    {
-        title: "Strategic Sourcing & Supplier Management",
-        icon: "ShieldCheck",
-        points: [
-            "Execute sourcing events (RFI, RFP, Auctions)",
-            "Evaluate supplier proposals and criteria",
-            "Negotiate contracts and manage terms",
-            "Monitor supplier performance with scorecards"
-        ]
-    },
-    {
-        title: "Contract Management & Compliance",
-        icon: "FileText",
-        points: [
-            "Manage contract lifecycle from creation to renewal",
-            "Implement compliance checks in procurement",
-            "Track contract utilization",
-            "Ensure regulatory compliance"
-        ]
-    }
-];
+export const aribaLearningOutcomes = {
+    tabs: [
+        {
+            name: "Functional Mastery",
+            items: [
+                {
+                    title: "Complete Procurement Lifecycle Management",
+                    icon: "ShoppingCart",
+                    points: [
+                        "Integration strategies for P2P and S2P workflows",
+                        "Vendor requisitions, POs, receipts, and invoices",
+                        "Understand budget controls and check tracking",
+                        "Optimize procure-to-pay (P2P) cycle"
+                    ]
+                },
+                {
+                    title: "Strategic Sourcing & Supplier Management",
+                    icon: "ShieldCheck",
+                    points: [
+                        "Execute sourcing events (RFI, RFP, Auctions)",
+                        "Evaluate supplier proposals and criteria",
+                        "Negotiate contracts and manage terms",
+                        "Monitor supplier performance with scorecards"
+                    ]
+                },
+                {
+                    title: "Contract Management & Compliance",
+                    icon: "FileText",
+                    points: [
+                        "Manage contract lifecycle from creation to renewal",
+                        "Implement compliance checks in procurement",
+                        "Track contract utilization",
+                        "Ensure regulatory compliance"
+                    ]
+                }
+            ]
+        },
+        {
+            name: "Technical Skills",
+            items: [
+                {
+                    title: "Master Data & Configuration",
+                    icon: "Database",
+                    points: [
+                        "Create user profiles with role-based access",
+                        "Onboard and manage suppliers with qualification tracking",
+                        "Configure accounting structures and cost centers",
+                        "Ensure data accuracy across systems"
+                    ]
+                },
+                {
+                    title: "Integration & Extensibility",
+                    icon: "Settings",
+                    points: [
+                        "Configure CIG (Cloud Integration Gateway)",
+                        "Manage Master Data integration with SAP ERP/S/4HANA",
+                        "Customize approval workflows and rules",
+                        "Implement API-based external connections"
+                    ]
+                }
+            ]
+        }
+    ]
+};
+
+// ... (skipping generic constructors to match target location properly if they are in between) ...
+
+export const sdLearningOutcomes = {
+    tabs: [
+        {
+            name: "Functional Mastery",
+            items: [
+                {
+                    title: "Order-to-Cash (O2C) Mastery",
+                    icon: "ShoppingCart",
+                    points: [
+                        "Manage the complete sales lifecycle from inquiry to payment",
+                        "Handle availability checks and delivery scheduling",
+                        "Process sales orders and contracts efficiently",
+                        "Manage credit checks and risk management"
+                    ]
+                },
+                {
+                    title: "Pricing & Billing",
+                    icon: "CreditCard",
+                    points: [
+                        "Define pricing procedures and condition types",
+                        "Manage discounts, surcharges, and taxes",
+                        "Execute billing runs and invoice generation",
+                        "Handle rebate processing and settlement"
+                    ]
+                },
+                {
+                    title: "Shipping & Logistics",
+                    icon: "Truck",
+                    points: [
+                        "Manage outbound deliveries and picking",
+                        "Handle packing and goods issue",
+                        "Integrate with Warehouse Management (WM/EWM)",
+                        "Manage transportation planning"
+                    ]
+                }
+            ]
+        },
+        {
+            name: "Technical Skills",
+            items: [
+                {
+                    title: "Configuration & Customization",
+                    icon: "Settings",
+                    points: [
+                        "Configure Sales Document Types and Item Categories",
+                        "Define Copy Controls and Text Determination",
+                        "Set up Output Management (NACE/BRF+)",
+                        "Configure Pricing Schemes and Access Sequences"
+                    ]
+                },
+                {
+                    title: "Data & Integration",
+                    icon: "Database",
+                    points: [
+                        "Manage Customer and Material Master Data",
+                        "Configure Customer-Material Info Records",
+                        "Implement SD Integration with FI, MM, and PP",
+                        "Manage IDOCs for EDI communication"
+                    ]
+                }
+            ]
+        }
+    ]
+};
+
+export const c4cLearningOutcomes = {
+    tabs: [
+        {
+            name: "Functional Configuration",
+            items: [
+                {
+                    title: "Sales & Service Cloud Processes",
+                    icon: "Cloud",
+                    points: [
+                        "Configure Lead-to-Opportunity workflows",
+                        "Manage Service Tickets and SLAs",
+                        "Set up Territory Management and Routing Rules",
+                        "Configure Activity Management and Visits"
+                    ]
+                },
+                {
+                    title: "Org Structure & Master Data",
+                    icon: "Database",
+                    points: [
+                        "Define Organizational Hierarchy",
+                        "Manage Business Partners (Accounts, Contacts)",
+                        "Configure Product Lists and Price Lists",
+                        "Manage Employee and User setup"
+                    ]
+                }
+            ]
+        },
+        {
+            name: "Technical Development",
+            items: [
+                {
+                    title: "Cloud Application Studio (SDK)",
+                    icon: "Laptop",
+                    points: [
+                        "Develop custom Business Objects (BOs)",
+                        "Write ABSL and BODL scripts",
+                        "Manage Lifecycle Management and patches",
+                        "Debug and traceability of custom logic"
+                    ]
+                },
+                {
+                    title: "UI & Integration",
+                    icon: "Layout",
+                    points: [
+                        "Design Screens using UI Designer",
+                        "Create Embedded Components and Mashups",
+                        "Configure OData Services and Web Services",
+                        "Manage CPI Integration scenarios"
+                    ]
+                }
+            ]
+        }
+    ]
+};
 
 
 // --- Generic Constructors ---
@@ -345,48 +489,90 @@ export const ficoPrerequisites = {
     ]
 };
 
-export const ficoLearningOutcomes = [
-    {
-        title: "Complete Financial Accounting Cycle",
-        icon: "BookOpen", // Using BookOpen for cycle/journal
-        points: [
-            "Set up and oversee comprehensive accounting workflows",
-            "Perform journal entries and handle transactions",
-            "Establish financial control pillars and governance",
-            "Manage compliance with audits and regulations"
-        ]
-    },
-    {
-        title: "Accounts Payables & Receivables",
-        icon: "CreditCard",
-        points: [
-            "Administer vendor/customer portals and workflows",
-            "Set up payment automation and dunning",
-            "Establish A/P and A/R control systems",
-            "Perform reconciliation of accounts"
-        ]
-    },
-    {
-        title: "Asset Management & Accounting",
-        icon: "Building", // Building or specialized asset icon
-        points: [
-            "Set up records and manage fixed assets",
-            "Administer acquisition, sale, and retirement",
-            "Manage depreciation and asset reporting",
-            "Reconcile assets with the general ledger"
-        ]
-    },
-    {
-        title: "Cost Accounting & Profit Analysis",
-        icon: "BarChart3",
-        points: [
-            "Set up and manage costing and profit centers",
-            "Administer project costing and overheads",
-            "Manage internal orders and cost distribution",
-            "Track and report on profitability"
-        ]
-    }
-];
+export const ficoLearningOutcomes = {
+    tabs: [
+        {
+            name: "Functional Mastery",
+            items: [
+                {
+                    title: "Complete Financial Accounting Cycle",
+                    icon: "BookOpen", // Using BookOpen for cycle/journal
+                    points: [
+                        "Set up and oversee comprehensive accounting workflows",
+                        "Perform journal entries and handle transactions",
+                        "Establish financial control pillars and governance",
+                        "Manage compliance with audits and regulations"
+                    ]
+                },
+                {
+                    title: "Accounts Payables & Receivables",
+                    icon: "CreditCard",
+                    points: [
+                        "Administer vendor/customer portals and workflows",
+                        "Set up payment automation and dunning",
+                        "Establish A/P and A/R control systems",
+                        "Perform reconciliation of accounts"
+                    ]
+                },
+                {
+                    title: "Asset Management & Accounting",
+                    icon: "Building", // Building or specialized asset icon
+                    points: [
+                        "Set up records and manage fixed assets",
+                        "Administer acquisition, sale, and retirement",
+                        "Manage depreciation and asset reporting",
+                        "Confirm asset balances with the general ledger"
+                    ]
+                },
+                {
+                    title: "Cost Accounting & Profit Analysis",
+                    icon: "BarChart3",
+                    points: [
+                        "Set up and manage costing and profit centers",
+                        "Administer project costing and overheads",
+                        "Manage internal orders and cost distribution",
+                        "Track and report on profitability"
+                    ]
+                }
+            ]
+        },
+        {
+            name: "Technical Skills",
+            items: [
+                {
+                    title: "Configuration & Implementation",
+                    icon: "Settings",
+                    points: [
+                        "Configure Enterprise Structure (Company Code, Plants)",
+                        "Define Chart of Accounts and Fiscal Year Variants",
+                        "Set up Document Types and Number Ranges",
+                        "Implement Validations and Substitutions"
+                    ]
+                },
+                {
+                    title: "Data Migration & Integration",
+                    icon: "Database",
+                    points: [
+                        "Perform Data Migration using LSMW and LTMC",
+                        "Configure MM-FI and SD-FI Integration points",
+                        "Manage IDOCs for external data exchange",
+                        "Execute Cutover activities for Go-Live"
+                    ]
+                },
+                {
+                    title: "Reporting & Month-End Closing",
+                    icon: "FileText",
+                    points: [
+                        "Generate Financial Statements (Balance Sheet, P&L)",
+                        "Configure Electronic Bank Reconciliation (EBS)",
+                        "Execute Month-End and Year-End Closing procedures",
+                        "Utilize SAP Fiori Apps for Financial Reporting"
+                    ]
+                }
+            ]
+        }
+    ]
+};
 
 export const ficoRealWorldScenarios = [
     {
@@ -552,48 +738,7 @@ export const sdPrerequisites = {
     ]
 };
 
-export const sdLearningOutcomes = [
-    {
-        title: "Order-to-Cash (O2C) Mastery",
-        icon: "ShoppingCart",
-        points: [
-            "Manage the complete sales lifecycle from inquiry to payment",
-            "Configure sales document types and item categories",
-            "Handle availability checks and delivery scheduling",
-            "Process sales orders and contracts efficiently"
-        ]
-    },
-    {
-        title: "Pricing & Billing Configuration",
-        icon: "CreditCard",
-        points: [
-            "Configure complex pricing procedures and conditions",
-            "Manage discounts, surcharges, and taxes",
-            "Execute billing runs and invoice generation",
-            "Handle rebate processing and settlement"
-        ]
-    },
-    {
-        title: "Shipping & Logistics Execution",
-        icon: "Truck",
-        points: [
-            "Manage outbound deliveries and picking",
-            "Configure shipping points and routes",
-            "Handle packing and goods issue",
-            "Integrate with Warehouse Management (WM)"
-        ]
-    },
-    {
-        title: "Master Data & Org Structure",
-        icon: "Database",
-        points: [
-            "Define enterprise structure for sales",
-            "Manage customer and material master data",
-            "Configure customer-material info records",
-            "Maintain output and text determination"
-        ]
-    }
-];
+
 
 export const sdRealWorldScenarios = [
     {
@@ -699,48 +844,7 @@ export const c4cPrerequisites = {
     ]
 };
 
-export const c4cLearningOutcomes = [
-    {
-        title: "Cloud Application Studio Mastery",
-        icon: "Laptop",
-        points: [
-            "Navigate the Cloud Applications Studio (SDK)",
-            "Create custom business objects (BOs)",
-            "Develop using BODL and ABSL scripting",
-            "Manage solution lifecycle and deployment"
-        ]
-    },
-    {
-        title: "UI Configuration & Extensibility",
-        icon: "Layout",
-        points: [
-            "Design and modify UI screens with UI Designer",
-            "Create embedded components and mashups",
-            "Extend standard screens with custom fields",
-            "Implement dynamic UI behavior"
-        ]
-    },
-    {
-        title: "Integration & Web Services",
-        icon: "Globe",
-        points: [
-            "Create and consume Web Services (SOAP/REST)",
-            "Configure communication scenarios",
-            "Integrate with external systems (ERP, Marketing)",
-            "Monitor and troubleshoot integration flows"
-        ]
-    },
-    {
-        title: "Lifecycle Management",
-        icon: "Settings",
-        points: [
-            "Manage patches and solution versions",
-            "Backup and restore procedures",
-            "Handle tenant management",
-            "Perform rigorous testing and debugging"
-        ]
-    }
-];
+
 
 export const c4cRealWorldScenarios = [
     {

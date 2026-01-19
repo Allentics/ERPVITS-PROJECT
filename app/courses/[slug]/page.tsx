@@ -67,6 +67,19 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
         .eq('id', dbId)
         .single();
 
+    // Defensive parsing for fields that might be strings due to incorrect updates
+    if (course) {
+        try {
+            if (typeof course.sections === 'string') course.sections = JSON.parse(course.sections);
+            if (typeof course.features === 'string') course.features = JSON.parse(course.features);
+            if (typeof course.curriculum === 'string') course.curriculum = JSON.parse(course.curriculum);
+            if (typeof course.faqs === 'string') course.faqs = JSON.parse(course.faqs);
+        } catch (e) {
+            console.error("Error parsing JSON fields for course:", course.id, e);
+        }
+    }
+
+
     const localCourse = courses.find(c => c.id === slug) ||
         (slug === 'sap-ariba' || slug === 'ariba' ? courses.find(c => c.id === 'ariba' || c.id === 'sap-ariba') : undefined) ||
         (slug === 'c4c-technical' || slug === 'sap-c4c' || slug === 'c4c' || slug === 'sap-c4c-technical-training' || slug === 'sap-c4c-technical-online-training' ? courses.find(c => c.id === 'c4c-technical') : undefined) ||

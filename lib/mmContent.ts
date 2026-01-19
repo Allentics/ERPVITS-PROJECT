@@ -530,88 +530,80 @@ export const mmContent = {
         {
             type: 'detailed_learning_outcomes',
             title: "What You'll Master in This SAP S/4HANA MM Online Course – Core Competencies",
-            items: [
-                {
-                    title: "End-to-End Materials Management Lifecycle",
-                    points: [
-                        "Configure and manage complete material flow from procurement to usage",
-                        "Execute purchase orders, goods receipts, and inventory transactions",
-                        "Implement material planning and demand forecasting",
-                        "Ensure cost control and inventory optimization"
-                    ],
-                    icon: "RotateCcw"
-                },
-                {
-                    title: "Material Master & Organizational Setup",
-                    points: [
-                        "Create and maintain material master records across organizational units",
-                        "Configure material types, categories, and hierarchies",
-                        "Set up purchasing organizations and vendor masters",
-                        "Maintain data consistency and quality across systems"
-                    ],
-                    icon: "Database"
-                },
-                {
-                    title: "Procurement Process Optimization",
-                    points: [
-                        "Manage complete purchase order lifecycle",
-                        "Configure approval workflows and release strategies",
-                        "Implement vendor evaluation and performance tracking",
-                        "Ensure optimal procurement efficiency"
-                    ],
-                    icon: "ShoppingCart"
-                },
-                {
-                    title: "Inventory Management & Valuation",
-                    points: [
-                        "Manage inventory transactions and movements",
-                        "Execute physical inventory procedures",
-                        "Configure material valuation strategies",
-                        "Reconcile inventory to general ledger accounting"
-                    ],
-                    icon: "BarChart"
-                },
-                {
-                    title: "Warehouse & Logistics Integration",
-                    points: [
-                        "Design warehouse structures and storage locations",
-                        "Configure bin strategies and picking procedures",
-                        "Integrate MM with Warehouse Management module",
-                        "Optimize warehouse operations and efficiency"
-                    ],
-                    icon: "Factory"
-                },
-                {
-                    title: "S/4HANA Fiori Apps & Analytics",
-                    points: [
-                        "Configure MM fiori applications for end-users",
-                        "Build inventory dashboards and KPI reporting",
-                        "Create analytical reports for materials management",
-                        "Leverage analytics for data-driven decisions"
-                    ],
-                    icon: "LayoutDashboard"
-                },
-                {
-                    title: "Advanced Configuration & Customization",
-                    points: [
-                        "Configure batch and serial number management",
-                        "Implement dangerous goods handling procedures",
-                        "Set up quality management integration",
-                        "Troubleshoot and optimize system performance"
-                    ],
-                    icon: "Settings"
-                },
-                {
-                    title: "Integration & System Architecture",
-                    points: [
-                        "Integrate SAP MM with FI, SD, PP, and other modules",
-                        "Manage master data synchronization",
-                        "Configure data flows and process automation",
-                        "Ensure system consistency and data integrity"
-                    ],
-                    icon: "Link"
-                }
-            ]
+            items: {
+                tabs: [
+                    {
+                        name: "Functional Mastery",
+                        items: [
+                            {
+                                title: "End-to-End Procurement Lifecycle",
+                                points: [
+                                    "Configure and manage complete material flow from procurement to usage",
+                                    "Execute purchase orders, goods receipts, and inventory transactions",
+                                    "Implement material planning and demand forecasting",
+                                    "Ensure cost control and inventory optimization"
+                                ],
+                                icon: "RotateCcw"
+                            },
+                            {
+                                title: "Inventory Management & Valuation",
+                                points: [
+                                    "Manage inventory transactions and movements",
+                                    "Execute physical inventory procedures",
+                                    "Configure material valuation strategies (Standard/Moving Avg)",
+                                    "Reconcile inventory to general ledger accounting"
+                                ],
+                                icon: "BarChart"
+                            },
+                            {
+                                title: "Warehouse & Logistics Integration",
+                                points: [
+                                    "Design warehouse structures and storage locations",
+                                    "Configure bin strategies and picking procedures",
+                                    "Integrate MM with Warehouse Management module",
+                                    "Optimize warehouse operations and efficiency"
+                                ],
+                                icon: "Factory"
+                            }
+                        ]
+                    },
+                    {
+                        name: "Technical Skills",
+                        items: [
+                            {
+                                title: "Global Configuration",
+                                points: [
+                                    "Define Enterprise Structure (Plants, Storage Locs)",
+                                    "Configure Release Strategies for POs",
+                                    "Set up Document Types and Number Ranges",
+                                    "Configure Pricing Procedures for Purchasing"
+                                ],
+                                icon: "Settings"
+                            },
+                            {
+                                title: "Data & Integration",
+                                points: [
+                                    "Perform LSMW/LTMC for Material Master migration",
+                                    "Configure Automatic Account Determination (OBYC)",
+                                    "Manage Integration with FI, SD, and PP",
+                                    "Set up IDOCs for Vendor interactions"
+                                ],
+                                icon: "Link"
+                            },
+                            {
+                                title: "Fiori & Analytics",
+                                points: [
+                                    "Configure MM Fiori Tiles",
+                                    "Build Inventory Analysis Reports",
+                                    "Customize Purchasing Analytics",
+                                    "Manage User Roles for MMPur"
+                                ],
+                                icon: "LayoutDashboard"
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         {
             type: 'real_world_scenarios',

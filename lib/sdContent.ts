@@ -509,78 +509,70 @@ export const sdContent = {
         {
             type: 'detailed_learning_outcomes',
             title: "What You'll Master in This SAP SD Online Course – Core Competencies",
-            items: [
-                {
-                    title: "End-to-End Order-to-Cash Lifecycle",
-                    points: [
-                        "Configure and manage complete sales order processing workflows",
-                        "Execute quotations, sales orders, deliveries, and billing",
-                        "Implement sales process optimization and controls",
-                        "Ensure customer satisfaction and order accuracy"
-                    ],
-                    icon: "RotateCcw"
-                },
-                {
-                    title: "Master Data & Customer Management",
-                    points: [
-                        "Create and maintain customer masters across sales organizations",
-                        "Configure material sales data and pricing",
-                        "Set up customer-material information records",
-                        "Maintain data consistency across sales areas"
-                    ],
-                    icon: "Database"
-                },
-                {
-                    title: "Sales Order & Delivery Processing",
-                    points: [
-                        "Manage complete sales order lifecycle",
-                        "Configure item categories and scheduling",
-                        "Process outbound deliveries and shipping",
-                        "Handle special sales scenarios and exceptions"
-                    ],
-                    icon: "ShoppingCart"
-                },
-                {
-                    title: "Billing & Financial Integration",
-                    points: [
-                        "Configure and manage billing workflows",
-                        "Execute different billing scenarios",
-                        "Integrate SD billing with financial accounting (FI)",
-                        "Reconcile billing and revenue recognition"
-                    ],
-                    icon: "CreditCard"
-                },
-                {
-                    title: "Pricing & Condition Configuration",
-                    points: [
-                        "Design pricing strategies and condition techniques",
-                        "Configure pricing procedures and access sequences",
-                        "Manage customer-specific and material-specific pricing",
-                        "Implement discount and surcharge rules"
-                    ],
-                    icon: "Tag"
-                },
-                {
-                    title: "Cross-Module Integration",
-                    points: [
-                        "Integrate SD with Materials Management (MM) workflows",
-                        "Integrate SD with Financial Accounting (FI) operations",
-                        "Configure SD impact on warehouse management",
-                        "Manage inventory and revenue recognition"
-                    ],
-                    icon: "Link"
-                },
-                {
-                    title: "Reporting & Analytics",
-                    points: [
-                        "Create sales order and delivery reports",
-                        "Build customer and product analytics",
-                        "Generate revenue and order fulfillment dashboards",
-                        "Monitor sales performance and KPIs"
-                    ],
-                    icon: "BarChart"
-                }
-            ]
+            items: {
+                tabs: [
+                    {
+                        name: "Functional Mastery",
+                        items: [
+                            {
+                                title: "Order-to-Cash (O2C) Mastery",
+                                icon: "ShoppingCart",
+                                points: [
+                                    "Manage the complete sales lifecycle from inquiry to payment",
+                                    "Handle availability checks and delivery scheduling",
+                                    "Process sales orders and contracts efficiently",
+                                    "Manage credit checks and risk management"
+                                ]
+                            },
+                            {
+                                title: "Pricing & Billing",
+                                icon: "CreditCard",
+                                points: [
+                                    "Define pricing procedures and condition types",
+                                    "Manage discounts, surcharges, and taxes",
+                                    "Execute billing runs and invoice generation",
+                                    "Handle rebate processing and settlement"
+                                ]
+                            },
+                            {
+                                title: "Shipping & Logistics",
+                                icon: "Truck",
+                                points: [
+                                    "Manage outbound deliveries and picking",
+                                    "Handle packing and goods issue",
+                                    "Integrate with Warehouse Management (WM/EWM)",
+                                    "Manage transportation planning"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        name: "Technical Skills",
+                        items: [
+                            {
+                                title: "Configuration & Customization",
+                                icon: "Settings",
+                                points: [
+                                    "Configure Sales Document Types and Item Categories",
+                                    "Define Copy Controls and Text Determination",
+                                    "Set up Output Management (NACE/BRF+)",
+                                    "Configure Pricing Schemes and Access Sequences"
+                                ]
+                            },
+                            {
+                                title: "Data & Integration",
+                                icon: "Database",
+                                points: [
+                                    "Manage Customer and Material Master Data",
+                                    "Configure Customer-Material Info Records",
+                                    "Implement SD Integration with FI, MM, and PP",
+                                    "Manage IDOCs for EDI communication"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         {
             type: 'real_world_scenarios',

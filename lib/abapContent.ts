@@ -535,88 +535,100 @@ export const abapContent = {
         {
             type: 'detailed_learning_outcomes',
             title: "What You'll Master in This SAP ABAP on Cloud Online Course – Core Competencies",
-            items: [
-                {
-                    title: "Cloud-Native ABAP Application Development",
-                    points: [
-                        "Build cloud-native ABAP applications using RAP",
-                        "Execute clean architecture implementation",
-                        "Microservices-based solution designing",
-                        "Deploy and manage cloud applications"
-                    ],
-                    icon: "Cloud"
-                },
-                {
-                    title: "RESTful API & OData Development",
-                    points: [
-                        "Develop RESTful APIs with ABAP Cloud",
-                        "Create OData services from business objects",
-                        "Implement complex query operations",
-                        "Optimize API performance"
-                    ],
-                    icon: "Link"
-                },
-                {
-                    title: "User Interface Development",
-                    points: [
-                        "Build Fiori applications",
-                        "Design annotation-driven UIs",
-                        "Implement responsive designs",
-                        "Create adaptive user experiences"
-                    ],
-                    icon: "Layout"
-                },
-                {
-                    title: "Business Object & Data Modeling",
-                    points: [
-                        "Design cloud business objects",
-                        "Implement data models",
-                        "Configure validation and authorization",
-                        "Handle draft and active entity logic"
-                    ],
-                    icon: "Database"
-                },
-                {
-                    title: "Integration & Event Architecture",
-                    points: [
-                        "Integrate with external systems",
-                        "Implement event-driven patterns",
-                        "Configure microservices communication",
-                        "Handle asynchronous processing"
-                    ],
-                    icon: "Server"
-                },
-                {
-                    title: "Security & Authentication",
-                    points: [
-                        "Implement cloud security measures",
-                        "Configure identity and access management",
-                        "Apply encryption and data protection",
-                        "Ensure compliance and audit trails"
-                    ],
-                    icon: "Lock"
-                },
-                {
-                    title: "CI/CD & DevOps",
-                    points: [
-                        "Set up CI/CD pipelines",
-                        "Automate deployments",
-                        "Monitor applications",
-                        "Implement scaling and resilience"
-                    ],
-                    icon: "Settings"
-                },
-                {
-                    title: "Migration & Modernization",
-                    points: [
-                        "Migrate legacy ABAP code",
-                        "Refactor applications",
-                        "Apply semantic adapters",
-                        "Execute modernization strategies"
-                    ],
-                    icon: "RefreshCw"
-                }
-            ]
+            items: {
+                tabs: [
+                    {
+                        name: "Development Mastery",
+                        items: [
+                            {
+                                title: "Cloud-Native Application Development",
+                                points: [
+                                    "Build cloud-native ABAP applications using RAP",
+                                    "Execute clean architecture implementation",
+                                    "Microservices-based solution designing",
+                                    "Deploy and manage cloud applications"
+                                ],
+                                icon: "Cloud"
+                            },
+                            {
+                                title: "RESTful API & OData Development",
+                                points: [
+                                    "Develop RESTful APIs with ABAP Cloud",
+                                    "Create OData services from business objects",
+                                    "Implement complex query operations",
+                                    "Optimize API performance"
+                                ],
+                                icon: "Link"
+                            },
+                            {
+                                title: "User Interface Development",
+                                points: [
+                                    "Build Fiori applications",
+                                    "Design annotation-driven UIs",
+                                    "Implement responsive designs",
+                                    "Create adaptive user experiences"
+                                ],
+                                icon: "Layout"
+                            },
+                            {
+                                title: "Business Object & Data Modeling",
+                                points: [
+                                    "Design cloud business objects",
+                                    "Implement data models",
+                                    "Configure validation and authorization",
+                                    "Handle draft and active entity logic"
+                                ],
+                                icon: "Database"
+                            }
+                        ]
+                    },
+                    {
+                        name: "Architecture & Integration",
+                        items: [
+                            {
+                                title: "Integration & Event Architecture",
+                                points: [
+                                    "Integrate with external systems",
+                                    "Implement event-driven patterns",
+                                    "Configure microservices communication",
+                                    "Handle asynchronous processing"
+                                ],
+                                icon: "Server"
+                            },
+                            {
+                                title: "Security & Authentication",
+                                points: [
+                                    "Implement cloud security measures",
+                                    "Configure identity and access management",
+                                    "Apply encryption and data protection",
+                                    "Ensure compliance and audit trails"
+                                ],
+                                icon: "Lock"
+                            },
+                            {
+                                title: "CI/CD & DevOps",
+                                points: [
+                                    "Set up CI/CD pipelines",
+                                    "Automate deployments",
+                                    "Monitor applications",
+                                    "Implement scaling and resilience"
+                                ],
+                                icon: "Settings"
+                            },
+                            {
+                                title: "Migration & Modernization",
+                                points: [
+                                    "Migrate legacy ABAP code",
+                                    "Refactor applications",
+                                    "Apply semantic adapters",
+                                    "Execute modernization strategies"
+                                ],
+                                icon: "RefreshCw"
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         {
             type: 'real_world_scenarios',

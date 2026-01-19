@@ -368,88 +368,80 @@ export const cpiContent = {
         {
             type: 'detailed_learning_outcomes',
             title: "What You'll Master in This SAP CPI Online Course – Core Competencies",
-            items: [
-                {
-                    title: "Integration Development Mastery",
-                    icon: "Database",
-                    points: [
-                        "Design and build comprehensive integration scenarios",
-                        "Set up sender and receiver communication",
-                        "Execute message orchestration and routing",
-                        "Manage synchronous and asynchronous communications"
-                    ]
-                },
-                {
-                    title: "Message Transformation & Mapping",
-                    icon: "FileText",
-                    points: [
-                        "Transform message content and formats: XML, JSON, and CSV",
-                        "Manage message mapping and conversions",
-                        "Configure content enrichment and modification",
-                        "Value mapping and look up modified tables"
-                    ]
-                },
-                {
-                    title: "Adapter Configuration & Connectivity",
-                    icon: "Building",
-                    points: [
-                        "Understand SAP CPI adapters",
-                        "Connect SAP and non-SAP systems",
-                        "Implement file integration and APIs",
-                        "Build secured communication infrastructures"
-                    ]
-                },
-                {
-                    title: "Error Handling & Exception Management",
-                    icon: "ShieldCheck",
-                    points: [
-                        "Develop exceptional workflow patterns",
-                        "Configure retries and alert mechanisms",
-                        "Enable error logging systems and notifications",
-                        "Design fault-tolerant integrations"
-                    ]
-                },
-                {
-                    title: "Security & Authentication",
-                    icon: "ShieldCheck",
-                    points: [
-                        "Design transport and message security layers",
-                        "Set up OAuth and certified authentication",
-                        "Control active credentials and security documents",
-                        "Manage compliance & enforce data protection"
-                    ]
-                },
-                {
-                    title: "Groovy Scripting & Custom Logic",
-                    icon: "FileText",
-                    points: [
-                        "Develop Groovy scripts for transformations",
-                        "Implement and manage complex custom logics",
-                        "Perform advanced data manipulation",
-                        "Debugging and performance optimization"
-                    ]
-                },
-                {
-                    title: "Monitoring & Operations (2 Hours)",
-                    icon: "BarChart3",
-                    points: [
-                        "Ensure execution of integration flows",
-                        "Resolve issues with failed messages",
-                        "Oversee content deployment and content versioning",
-                        "Enhance performance and throughput"
-                    ]
-                },
-                {
-                    title: "Integration Best Practices",
-                    icon: "BookOpen",
-                    points: [
-                        "Architect for scale design",
-                        "Implement reusable integration components",
-                        "Adopt and apply SAP CPI development guidelines",
-                        "Document integration flows and configurations"
-                    ]
-                }
-            ]
+            items: {
+                tabs: [
+                    {
+                        name: "Development Mastery",
+                        items: [
+                            {
+                                title: "Integration Flow Design",
+                                points: [
+                                    "Build robust integration flows (iFlows)",
+                                    "Implement routing and orchestration logic",
+                                    "Handle synchronous & asynchronous patterns",
+                                    "Manage message persistence and transactions"
+                                ],
+                                icon: "Layers"
+                            },
+                            {
+                                title: "Mapping & Transformation",
+                                points: [
+                                    "Perform XML, JSON, and CSV conversions",
+                                    "Create complex Message Mappings",
+                                    "Implement Content Modifiers and Enrichers",
+                                    "Execute value lookups and cross-referencing"
+                                ],
+                                icon: "FileText"
+                            },
+                            {
+                                title: "Groovy Scripting & Logic",
+                                points: [
+                                    "Develop Groovy scripts for custom processing",
+                                    "Implement advanced data manipulation logic",
+                                    "Debug and trace script execution",
+                                    "Optimize script performance"
+                                ],
+                                icon: "Code"
+                            }
+                        ]
+                    },
+                    {
+                        name: "Architecture & Operations",
+                        items: [
+                            {
+                                title: "Connectivity & Adapters",
+                                points: [
+                                    "Configure SOAP, OData, and HTTP adapters",
+                                    "Implement SFTP, IDoc, and Mail adapters",
+                                    "Set up Cloud Connector for on-premise access",
+                                    "Manage Open Connectors for non-SAP systems"
+                                ],
+                                icon: "Link"
+                            },
+                            {
+                                title: "Security & Governance",
+                                points: [
+                                    "Configure OAuth and Certificate authentication",
+                                    "Manage security artifacts and keystores",
+                                    "Implement PGP encryption and signing",
+                                    "Enforce access policies and roles"
+                                ],
+                                icon: "ShieldCheck"
+                            },
+                            {
+                                title: "Monitoring & Reliability",
+                                points: [
+                                    "Monitor message processing and logs",
+                                    "Implement exception sub-processes",
+                                    "Configure alerts for failed messages",
+                                    "Manage transport and lifecycle (CTS+)"
+                                ],
+                                icon: "Activity"
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         {
             type: 'real_world_scenarios',

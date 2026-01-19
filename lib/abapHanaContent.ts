@@ -406,88 +406,100 @@ export const abapHanaContent = {
         {
             type: 'detailed_learning_outcomes',
             title: "What You'll Master in This SAP ABAP on HANA Online Course – Core Competencies",
-            items: [
-                {
-                    title: "ABAP Programming & Syntax",
-                    points: [
-                        "Write production-grade ABAP code",
-                        "Implement object-oriented design patterns",
-                        "Create robust error handling",
-                        "Develop scalable applications"
-                    ],
-                    icon: "Code"
-                },
-                {
-                    title: "Database & HANA Optimization",
-                    points: [
-                        "Design and optimize DB queries",
-                        "Implement efficient data structures",
-                        "Leverage HANA in-memory capabilities",
-                        "Execute performance tuning"
-                    ],
-                    icon: "Database"
-                },
-                {
-                    title: "Web Services & API Development",
-                    points: [
-                        "Develop REST and SOAP services",
-                        "Create OData services for integration",
-                        "Implement API security",
-                        "Build microservices architecture"
-                    ],
-                    icon: "Globe"
-                },
-                {
-                    title: "User Interface & FIORI",
-                    points: [
-                        "Create FIORI applications",
-                        "Develop dialog programs and screens",
-                        "Build ALV reports and lists",
-                        "Design user-friendly interfaces"
-                    ],
-                    icon: "Layout"
-                },
-                {
-                    title: "Enterprise App Development",
-                    points: [
-                        "Develop complex business applications",
-                        "Implement enterprise design patterns",
-                        "Build scalable multi-user apps",
-                        "Execute integration with legacy systems"
-                    ],
-                    icon: "Briefcase"
-                },
-                {
-                    title: "Performance Analysis",
-                    points: [
-                        "Profile ABAP applications",
-                        "Analyze execution plans",
-                        "Implement caching and optimization",
-                        "Monitor system performance"
-                    ],
-                    icon: "TrendingUp"
-                },
-                {
-                    title: "Cloud & Modern Architecture",
-                    points: [
-                        "Develop cloud-native ABAP apps",
-                        "Implement microservices",
-                        "Use containerization and DevOps",
-                        "Integrate with cloud platforms"
-                    ],
-                    icon: "Cloud"
-                },
-                {
-                    title: "Code Quality & Best Practices",
-                    points: [
-                        "Follow enterprise coding standards",
-                        "Implement design patterns",
-                        "Execute code reviews",
-                        "Maintain code quality metrics"
-                    ],
-                    icon: "CheckCircle"
-                }
-            ]
+            items: {
+                tabs: [
+                    {
+                        name: "Development Mastery",
+                        items: [
+                            {
+                                title: "ABAP Programming & Syntax",
+                                points: [
+                                    "Write production-grade ABAP code",
+                                    "Implement object-oriented design patterns",
+                                    "Create robust error handling",
+                                    "Develop scalable applications"
+                                ],
+                                icon: "Code"
+                            },
+                            {
+                                title: "Web Services & API Development",
+                                points: [
+                                    "Develop REST and SOAP services",
+                                    "Create OData services for integration",
+                                    "Implement API security",
+                                    "Build microservices architecture"
+                                ],
+                                icon: "Globe"
+                            },
+                            {
+                                title: "Enterprise App Development",
+                                points: [
+                                    "Develop complex business applications",
+                                    "Implement enterprise design patterns",
+                                    "Build scalable multi-user apps",
+                                    "Execute integration with legacy systems"
+                                ],
+                                icon: "Briefcase"
+                            },
+                            {
+                                title: "Code Quality & Best Practices",
+                                points: [
+                                    "Follow enterprise coding standards",
+                                    "Implement design patterns",
+                                    "Execute code reviews",
+                                    "Maintain code quality metrics"
+                                ],
+                                icon: "CheckCircle"
+                            }
+                        ]
+                    },
+                    {
+                        name: "HANA Power & Architecture",
+                        items: [
+                            {
+                                title: "Database & HANA Optimization",
+                                points: [
+                                    "Design and optimize DB queries",
+                                    "Implement efficient data structures",
+                                    "Leverage HANA in-memory capabilities",
+                                    "Execute performance tuning"
+                                ],
+                                icon: "Database"
+                            },
+                            {
+                                title: "User Interface & FIORI",
+                                points: [
+                                    "Create FIORI applications",
+                                    "Develop dialog programs and screens",
+                                    "Build ALV reports and lists",
+                                    "Design user-friendly interfaces"
+                                ],
+                                icon: "Layout"
+                            },
+                            {
+                                title: "Performance Analysis",
+                                points: [
+                                    "Profile ABAP applications",
+                                    "Analyze execution plans",
+                                    "Implement caching and optimization",
+                                    "Monitor system performance"
+                                ],
+                                icon: "TrendingUp"
+                            },
+                            {
+                                title: "Cloud & Modern Architecture",
+                                points: [
+                                    "Develop cloud-native ABAP apps",
+                                    "Implement microservices",
+                                    "Use containerization and DevOps",
+                                    "Integrate with cloud platforms"
+                                ],
+                                icon: "Cloud"
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         {
             type: 'real_world_scenarios',
