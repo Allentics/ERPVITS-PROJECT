@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { supabase } from '@/lib/supabase';
 import ContactModal from '../ContactModal';
@@ -50,8 +51,22 @@ const Hero = () => {
 
     const headingParts = content.heading.split(content.highlight_text);
 
+    // ... imports
     return (
         <div className="bg-white text-slate-900 relative overflow-hidden">
+            {/* Background Image & Overlay */}
+            <div className="absolute inset-0 w-full h-full z-0">
+                <Image
+                    src="/images/home_hero_bg.png"
+                    alt="Office Background"
+                    fill
+                    className="object-cover object-center brightness-110 contrast-125"
+                    priority
+                    quality={90}
+                />
+                <div className="absolute inset-0 bg-white/65" />
+            </div>
+
             <ContactModal
                 isOpen={isContactModalOpen}
                 onClose={() => setIsContactModalOpen(false)}
