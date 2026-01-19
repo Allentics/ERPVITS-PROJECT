@@ -134,8 +134,8 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
         }, 10);
     };
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
+    const handleSubmit = async (e?: any) => {
+        e?.preventDefault?.();
         setSaving(true);
         try {
             const { error } = await supabase
