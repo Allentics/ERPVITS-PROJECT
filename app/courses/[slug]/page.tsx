@@ -17,6 +17,7 @@ import CourseHeroActionButtons from '@/components/course/CourseHeroActionButtons
 
 // Dynamic rendering only to avoid build OOM
 export const dynamic = 'force-dynamic';
+export const revalidate = 0; // Disable caching - always fetch fresh data
 
 // Helper to map URL slugs to Database IDs
 const getDbId = (slug: string) => {
