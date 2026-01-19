@@ -1,14 +1,15 @@
+
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { supabase } from '@/lib/supabase';
 import { User, CheckCircle, Clock } from 'lucide-react';
 import ContactModal from '../ContactModal';
 
-export default function CareerAdvisors() {
-    const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-    const [selectedAdvisor, setSelectedAdvisor] = useState("");
-
-    const advisors = [
+const DEFAULT_CONTENT = {
+    title: "Speak With SAP Career Advisors - Free 30-Minute Consultation",
+    subtitle: "Get Expert Guidance on Your SAP Career Path from Industry Veterans",
+    advisors: [
         {
             name: "Gaurav Deshpande",
             role: "SAP Finance & Treasury Specialist",
@@ -41,7 +42,34 @@ export default function CareerAdvisors() {
             image: "👨‍💻",
             availability: "Available 6PM - 10PM"
         }
-    ];
+    ],
+    cta: "SPEAK WITH AN ADVISOR - BOOK NOW"
+};
+
+export default function CareerAdvisors() {
+    const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+    const [selectedAdvisor, setSelectedAdvisor] = useState("");
+    const [content, setContent] = useState(DEFAULT_CONTENT);
+
+    useEffect(() => {
+        async function fetchContent() {
+            try {
+                const { data, error } = await supabase
+                    .from('site_content')
+                    .select('content')
+                    .eq('page_path', '/')
+                    .eq('section_key', 'career_advisors')
+                    .single();
+
+                if (data && !error) {
+                    setContent({ ...DEFAULT_CONTENT, ...data.content });
+                }
+            } catch (err) {
+                console.error('Error fetching CareerAdvisors content:', err);
+            }
+        }
+        fetchContent();
+    }, []);
 
     const handleBookConsultation = (advisorName?: string) => {
         setSelectedAdvisor(advisorName ? `Consultation with ${advisorName}` : "Free Career Consultation");
@@ -59,15 +87,15 @@ export default function CareerAdvisors() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
                     <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
-                        Speak With SAP Career Advisors - Free 30-Minute Consultation
+                        {content.title}
                     </h2>
                     <p className="text-slate-500">
-                        Get Expert Guidance on Your SAP Career Path from Industry Veterans
+                        {content.subtitle}
                     </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-                    {advisors.map((advisor, index) => (
+                    {content.advisors?.map((advisor: any, index: number) => (
                         <div key={index} className="bg-white rounded-xl p-6 shadow-md border border-slate-100 flex flex-col md:flex-row gap-6 items-start hover:shadow-lg transition-shadow">
                             <div className="flex-shrink-0">
                                 <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center text-3xl shadow-inner border border-slate-200">
@@ -89,7 +117,7 @@ export default function CareerAdvisors() {
                                 <div className="mb-4">
                                     <p className="text-xs text-slate-400 mb-2 font-semibold uppercase tracking-wider">Expertise Areas:</p>
                                     <div className="flex flex-wrap gap-2">
-                                        {advisor.expertise.map((skill, i) => (
+                                        {advisor.expertise?.map((skill: string, i: number) => (
                                             <span key={i} className="px-2 py-1 bg-slate-50 text-slate-600 text-[10px] font-medium border border-slate-200 rounded">
                                                 {skill}
                                             </span>
@@ -118,7 +146,7 @@ export default function CareerAdvisors() {
                         onClick={() => handleBookConsultation()}
                         className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-lg shadow-lg text-sm uppercase tracking-wider transition-transform hover:-translate-y-0.5"
                     >
-                        SPEAK WITH AN ADVISOR - BOOK NOW
+                        {content.cta}
                     </button>
                 </div>
             </div>

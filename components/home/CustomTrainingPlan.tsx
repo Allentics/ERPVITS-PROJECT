@@ -1,12 +1,38 @@
+
 "use client";
 
 import { ClipboardList, Target, Award, Calendar } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase';
 import { submitToGoogleSheets } from '@/app/actions/submitToGoogleSheets';
 
 import { courses } from '@/lib/courseData';
 import { countryCodes } from '@/lib/countryCodes';
+
+const ICON_MAP: any = {
+    ClipboardList, Target, Award, Calendar
+};
+
+const DEFAULT_CONTENT = {
+    title: "Get Your Personalized SAP Training Plan – It's FREE!",
+    highlight_word: "SAP Training Plan",
+    description: "Every professional's journey to proficiency in SAP is unique. We will design a personalized training program just for you based on your background, career objectives, and timeline.",
+    benefits: [
+        { icon: "ClipboardList", text: "Customized curriculum based on your background" },
+        { icon: "Target", text: "Career roadmap with salary projections" },
+        { icon: "Award", text: "Recommended certifications for your target role" },
+        { icon: "Calendar", text: "Flexible scheduling options to fit your life" }
+    ],
+    career_paths_title: "Popular Career Paths:",
+    career_paths: [
+        { role: "SAP Consultant", salary: "$85K → $150K" },
+        { role: "Technical Architect", salary: "$110K → $180K" },
+        { role: "Analytics Specialist", salary: "$75K → $135K" },
+        { role: "Project Manager", salary: "$95K → $160K" }
+    ],
+    form_title: "Get Free Career Guidance",
+    cta_text: "Get My Free Career Roadmap"
+};
 
 export default function CustomTrainingPlan() {
     const [countryCode, setCountryCode] = useState('+91');
@@ -20,6 +46,27 @@ export default function CustomTrainingPlan() {
     });
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const [errorMessage, setErrorMessage] = useState('');
+    const [content, setContent] = useState(DEFAULT_CONTENT);
+
+    useEffect(() => {
+        async function fetchContent() {
+            try {
+                const { data, error } = await supabase
+                    .from('site_content')
+                    .select('content')
+                    .eq('page_path', '/')
+                    .eq('section_key', 'custom_plan')
+                    .single();
+
+                if (data && !error) {
+                    setContent({ ...DEFAULT_CONTENT, ...data.content });
+                }
+            } catch (err) {
+                console.error('Error fetching CustomPlan content:', err);
+            }
+        }
+        fetchContent();
+    }, []);
 
     // Get unique course titles for dropdown
     const uniqueCourses = Array.from(new Set(courses.map(c => c.title)))
@@ -66,6 +113,8 @@ export default function CustomTrainingPlan() {
         }
     };
 
+    const titleParts = content.title.split(content.highlight_word);
+
     return (
         <section className="bg-sky-50 text-slate-900 py-20 relative overflow-hidden">
             {/* Decorative */}
@@ -75,48 +124,36 @@ export default function CustomTrainingPlan() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div>
                         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-900">
-                            Get Your Personalized <span className="text-orange-600">SAP Training Plan</span> – It's FREE!
+                            {titleParts[0]}<span className="text-orange-600">{content.highlight_word}</span>{titleParts[1]}
                         </h2>
                         <p className="text-slate-600 text-lg mb-8 leading-relaxed">
-                            Every professional's journey to proficiency in SAP is unique. We will design a personalized training program just for you based on your background, career objectives, and timeline.
+                            {content.description}
                         </p>
 
                         <div className="space-y-6">
-                            {[
-                                { icon: ClipboardList, text: "Customized curriculum based on your background" },
-                                { icon: Target, text: "Career roadmap with salary projections" },
-                                { icon: Award, text: "Recommended certifications for your target role" },
-                                { icon: Calendar, text: "Flexible scheduling options to fit your life" }
-                            ].map((item, i) => (
-                                <div key={i} className="flex items-center">
-                                    <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center mr-4">
-                                        <item.icon className="h-5 w-5 text-orange-400" />
+                            {(content.benefits || DEFAULT_CONTENT.benefits).map((item: any, i: number) => {
+                                const Icon = ICON_MAP[item.icon] || ClipboardList;
+                                return (
+                                    <div key={i} className="flex items-center">
+                                        <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center mr-4">
+                                            <Icon className="h-5 w-5 text-orange-400" />
+                                        </div>
+                                        <span className="font-medium text-lg">{item.text || item}</span>
                                     </div>
-                                    <span className="font-medium text-lg">{item.text}</span>
-                                </div>
-                            ))}
+                                );
+                            })}
                         </div>
 
                         {/* Popular Career Paths Section */}
                         <div className="bg-white text-slate-900 rounded-xl p-6 mt-10 shadow-lg border border-slate-200">
-                            <h3 className="text-lg font-bold text-slate-900 mb-5">Popular Career Paths:</h3>
+                            <h3 className="text-lg font-bold text-slate-900 mb-5">{content.career_paths_title}</h3>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div className="bg-slate-50 p-4 rounded-lg border border-slate-100">
-                                    <div className="font-bold text-slate-900 text-sm">SAP Consultant</div>
-                                    <div className="text-xs text-slate-500 font-medium mt-1">$85K → $150K</div>
-                                </div>
-                                <div className="bg-slate-50 p-4 rounded-lg border border-slate-100">
-                                    <div className="font-bold text-slate-900 text-sm">Technical Architect</div>
-                                    <div className="text-xs text-slate-500 font-medium mt-1">$110K → $180K</div>
-                                </div>
-                                <div className="bg-slate-50 p-4 rounded-lg border border-slate-100">
-                                    <div className="font-bold text-slate-900 text-sm">Analytics Specialist</div>
-                                    <div className="text-xs text-slate-500 font-medium mt-1">$75K → $135K</div>
-                                </div>
-                                <div className="bg-slate-50 p-4 rounded-lg border border-slate-100">
-                                    <div className="font-bold text-slate-900 text-sm">Project Manager</div>
-                                    <div className="text-xs text-slate-500 font-medium mt-1">$95K → $160K</div>
-                                </div>
+                                {content.career_paths?.map((path: any, i: number) => (
+                                    <div key={i} className="bg-slate-50 p-4 rounded-lg border border-slate-100">
+                                        <div className="font-bold text-slate-900 text-sm">{path.role}</div>
+                                        <div className="text-xs text-slate-500 font-medium mt-1">{path.salary}</div>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -143,7 +180,7 @@ export default function CustomTrainingPlan() {
                             </div>
                         ) : (
                             <>
-                                <h3 className="text-2xl font-bold mb-6 text-center text-slate-900">Get Free Career Guidance</h3>
+                                <h3 className="text-2xl font-bold mb-6 text-center text-slate-900">{content.form_title}</h3>
                                 <form className="space-y-4" onSubmit={handleSubmit}>
                                     <div>
                                         <label className="block text-sm font-semibold mb-1">Full Name</label>
@@ -238,7 +275,7 @@ export default function CustomTrainingPlan() {
                                         disabled={status === 'loading'}
                                         className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-lg shadow-lg hover:shadow-xl transition-all mt-4 disabled:bg-orange-300"
                                     >
-                                        {status === 'loading' ? 'Submitting...' : 'Get My Free Career Roadmap'}
+                                        {status === 'loading' ? 'Submitting...' : content.cta_text}
                                     </button>
                                     {status === 'error' && (
                                         <div className="bg-red-50 border border-red-200 rounded p-4 mt-4">

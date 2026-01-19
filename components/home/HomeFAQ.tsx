@@ -1,8 +1,10 @@
+
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { supabase } from '@/lib/supabase';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
-const faqs = [
+const DEFAULT_FAQS = [
     { q: "What is SAP training?", a: "An SAP training course is professional training to understand the SAP integrated software used in enterprise resource planning (ERP). It includes training in modules such as SAP FICO, MM, SD, HCM, and Ariba, etc." },
     { q: "How to learn SAP online?", a: "Learning SAP online is possible through self-paced and instructor-led AU classes and project work as well as certification prep through training institutes like ERPVITS." },
     { q: "What is the price of SAP training?", a: "SAP training price ranges based on the training module and methodology. In general, self-paced training is priced around ₹15,000–₹25,000 and instructor-led training is priced around ₹40,000–₹50,000." },
@@ -23,23 +25,44 @@ const faqs = [
 export default function HomeFAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
     const [showAll, setShowAll] = useState(false);
+    const [content, setContent] = useState({ title: "Frequently Asked Questions", subtitle: "Common questions about SAP Training & Certification", faqs: DEFAULT_FAQS });
+
+    useEffect(() => {
+        async function fetchContent() {
+            try {
+                const { data, error } = await supabase
+                    .from('site_content')
+                    .select('content')
+                    .eq('page_path', '/')
+                    .eq('section_key', 'faq')
+                    .single();
+
+                if (data && !error) {
+                    setContent({ ...content, ...data.content });
+                }
+            } catch (err) {
+                console.error('Error fetching FAQ content:', err);
+            }
+        }
+        fetchContent();
+    }, []);
 
     const toggle = (i: number) => {
         setOpenIndex(openIndex === i ? null : i);
     };
 
-    const displayedFaqs = showAll ? faqs : faqs.slice(0, 6);
+    const displayedFaqs = showAll ? content.faqs : content.faqs.slice(0, 6);
 
     return (
         <section className="py-20 bg-white">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-                    <p className="text-gray-600">Common questions about SAP Training & Certification</p>
+                    <h2 className="text-3xl font-bold text-gray-900 mb-4">{content.title}</h2>
+                    <p className="text-gray-600">{content.subtitle}</p>
                 </div>
 
                 <div className="space-y-4 mb-8">
-                    {displayedFaqs.map((faq, i) => (
+                    {displayedFaqs.map((faq: any, i: number) => (
                         <div key={i} className="border border-gray-200 rounded-lg overflow-hidden">
                             <button
                                 onClick={() => toggle(i)}
@@ -57,7 +80,7 @@ export default function HomeFAQ() {
                     ))}
                 </div>
 
-                {faqs.length > 6 && (
+                {content.faqs.length > 6 && (
                     <div className="text-center">
                         <button
                             onClick={() => setShowAll(!showAll)}

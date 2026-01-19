@@ -1,13 +1,52 @@
+
 "use client";
 
 import { useState, useEffect } from 'react';
-import { CheckCircle } from 'lucide-react';
+import { supabase } from '@/lib/supabase';
 import ContactModal from '../ContactModal';
+
+const DEFAULT_CONTENT = {
+    title: "Next Live Batch Starting Soon!",
+    days: 2,
+    hours: 14,
+    minutes: 22,
+    batch_details: [
+        { icon: "📅", label: "Date", value: "" }, // Date will be calculated
+        { icon: "⏰", label: "Time", value: "7:00 AM" },
+        { icon: "👨‍🏫", label: "Format", value: "Instructor-Led (Online)" }
+    ],
+    cta_primary: "RESERVE YOUR SEAT NOW - LIMITED SPOTS!",
+    cta_secondary: "SECURE SPOT WITH 30% Fees Now - PAY REST LATER"
+};
 
 export default function UrgencySection() {
     const [timeLeft, setTimeLeft] = useState({ days: 2, hours: 14, minutes: 22, seconds: 0 });
     const [isContactModalOpen, setIsContactModalOpen] = useState(false);
     const [nextBatchDate, setNextBatchDate] = useState("");
+    const [content, setContent] = useState(DEFAULT_CONTENT);
+
+    useEffect(() => {
+        async function fetchContent() {
+            try {
+                const { data, error } = await supabase
+                    .from('site_content')
+                    .select('content')
+                    .eq('page_path', '/')
+                    .eq('section_key', 'urgency')
+                    .single();
+
+                if (data && !error) {
+                    setContent({ ...DEFAULT_CONTENT, ...data.content });
+                    if (data.content.days !== undefined) {
+                        setTimeLeft(prev => ({ ...prev, days: data.content.days, hours: data.content.hours || 0, minutes: data.content.minutes || 0 }));
+                    }
+                }
+            } catch (err) {
+                console.error('Error fetching Urgency content:', err);
+            }
+        }
+        fetchContent();
+    }, []);
 
     useEffect(() => {
         // Timer logic
@@ -23,15 +62,9 @@ export default function UrgencySection() {
 
         // Date logic: Get next Monday
         const getNextMonday = () => {
-            const d = new Date();
-            d.setDate(d.getDate() + (1 + 7 - d.getDay()) % 7 || 7);
-            // If today is Sunday (0) -> 1+7-0 = 8 % 7 = 1 (Monday) | If today is Monday(1) -> 1+7-1 = 7 % 7 = 0 || 7 (Next Monday)
-            // Correction for "Next Monday":
             const today = new Date();
             const dayOfWeek = today.getDay();
-            const daysUntilNextMonday = (8 - dayOfWeek) % 7 || 7; // If today is Monday (1), 7 days later. 
-            // Note: If today is Monday, do we show today or next week? User said "19th Jan" which is next Monday (today is 13th).
-            // 13 + (8-2)%7 = 13 + 6 = 19. Correct.
+            const daysUntilNextMonday = (8 - dayOfWeek) % 7 || 7;
 
             const nextDate = new Date(today);
             nextDate.setDate(today.getDate() + daysUntilNextMonday);
@@ -57,7 +90,7 @@ export default function UrgencySection() {
             />
             <div className="max-w-5xl mx-auto px-6 py-10 text-center border-2 border-orange-500 rounded-2xl shadow-xl bg-white relative overflow-hidden">
                 <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-8 flex items-center justify-center gap-2">
-                    Next Live Batch Starting Soon!
+                    {content.title}
                 </h2>
 
                 <div className="flex justify-center gap-4 mb-10">
@@ -77,15 +110,11 @@ export default function UrgencySection() {
                 </div>
 
                 <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-600 mb-8 font-medium">
-                    <div className="flex items-center gap-2">
-                        <span>📅</span> Date: {nextBatchDate}
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <span>⏰</span> Time: 7:00 AM
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <span>👨‍🏫</span> Format: Instructor-Led (Online)
-                    </div>
+                    {content.batch_details?.map((detail: any, i: number) => (
+                        <div key={i} className="flex items-center gap-2">
+                            <span>{detail.icon}</span> {detail.label}: {detail.label === 'Date' && detail.value === 'Next Monday' ? nextBatchDate : detail.value}
+                        </div>
+                    ))}
                 </div>
 
                 <div className="flex flex-col md:flex-row justify-center gap-4 max-w-3xl mx-auto">
@@ -93,13 +122,13 @@ export default function UrgencySection() {
                         onClick={() => setIsContactModalOpen(true)}
                         className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold shadow-lg text-lg flex-1 uppercase tracking-wide transition-transform hover:-translate-y-0.5"
                     >
-                        RESERVE YOUR SEAT NOW - LIMITED SPOTS!
+                        {content.cta_primary}
                     </button>
                     <button
                         onClick={() => setIsContactModalOpen(true)}
                         className="bg-white hover:bg-gray-50 text-slate-900 border-2 border-slate-900 px-8 py-4 rounded-lg font-bold shadow-lg text-lg flex-1 uppercase tracking-wide transition-transform hover:-translate-y-0.5"
                     >
-                        SECURE SPOT WITH 60% Fees Now - PAY REST LATER
+                        {content.cta_secondary}
                     </button>
                 </div>
             </div>
