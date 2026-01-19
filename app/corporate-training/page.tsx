@@ -69,13 +69,13 @@ export default async function CorporateTrainingPage() {
             .eq('page_path', '/corporate-training');
 
         if (contentData) {
-            const heroSection = contentData.find(s => s.section_key === 'hero');
+            const heroSection = contentData.find((s: any) => s.section_key === 'hero');
             if (heroSection) hero = heroSection.content;
 
-            const offeringsSection = contentData.find(s => s.section_key === 'offerings');
+            const offeringsSection = contentData.find((s: any) => s.section_key === 'offerings');
             if (offeringsSection) offerings = offeringsSection.content;
 
-            const ctaSec = contentData.find(s => s.section_key === 'cta');
+            const ctaSec = contentData.find((s: any) => s.section_key === 'cta');
             if (ctaSec) ctaSection = ctaSec.content;
         }
     } catch (err) {

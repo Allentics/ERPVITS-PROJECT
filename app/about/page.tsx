@@ -58,13 +58,13 @@ export default async function AboutPage() {
             .eq('page_path', '/about');
 
         if (contentData) {
-            const heroSection = contentData.find(s => s.section_key === 'hero');
+            const heroSection = contentData.find((s: any) => s.section_key === 'hero');
             if (heroSection) hero = heroSection.content;
 
-            const missionSection = contentData.find(s => s.section_key === 'mission');
+            const missionSection = contentData.find((s: any) => s.section_key === 'mission');
             if (missionSection) mission = missionSection.content;
 
-            const valuesSection = contentData.find(s => s.section_key === 'values');
+            const valuesSection = contentData.find((s: any) => s.section_key === 'values');
             if (valuesSection) values = valuesSection.content;
         }
     } catch (err) {
