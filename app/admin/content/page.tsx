@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, Suspense } from 'react';
 import { supabase } from '@/lib/supabase';
-import { Save, Loader2, Layout, FileText, ChevronRight } from 'lucide-react';
+import { Save, Loader2, Layout, FileText, ChevronRight, Plus } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
 
 function ContentManagerContent() {
@@ -13,6 +13,11 @@ function ContentManagerContent() {
     const [saving, setSaving] = useState(false);
     const [contents, setContents] = useState<any[]>([]);
     const [selectedId, setSelectedId] = useState<string | null>(null);
+
+    // Add New Section State
+    const [showAddForm, setShowAddForm] = useState(false);
+    const [newSectionPage, setNewSectionPage] = useState('/');
+    const [newSectionKey, setNewSectionKey] = useState('');
 
     useEffect(() => {
         fetchContents();
@@ -69,6 +74,29 @@ function ContentManagerContent() {
         }
     };
 
+    const handleAdd = async (e: React.FormEvent) => {
+        e.preventDefault();
+        try {
+            const { data, error } = await supabase
+                .from('site_content')
+                .insert([{
+                    page_path: newSectionPage,
+                    section_key: newSectionKey.toLowerCase().replace(/\s+/g, '_'),
+                    content: {}
+                }])
+                .select();
+
+            if (error) throw error;
+
+            await fetchContents();
+            if (data && data[0]) setSelectedId(data[0].id);
+            setShowAddForm(false);
+            setNewSectionKey('');
+        } catch (err: any) {
+            alert('Error adding section: ' + err.message);
+        }
+    };
+
     if (loading) {
         return (
             <div className="flex flex-col items-center justify-center py-20">
@@ -82,10 +110,50 @@ function ContentManagerContent() {
 
     return (
         <div className="max-w-6xl mx-auto space-y-6">
-            <div className="mb-8">
-                <h1 className="text-2xl font-bold text-gray-900">Site Content Manager</h1>
-                <p className="text-gray-500 text-sm">Manage modular sections across different pages of the website.</p>
+            <div className="mb-8 flex justify-between items-center">
+                <div>
+                    <h1 className="text-2xl font-bold text-gray-900">Site Content Manager</h1>
+                    <p className="text-gray-500 text-sm">Manage modular sections across different pages of the website.</p>
+                </div>
+                <button
+                    onClick={() => setShowAddForm(!showAddForm)}
+                    className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-lg text-sm font-bold hover:bg-zinc-900 transition-colors"
+                >
+                    <Plus size={16} />
+                    Add Section
+                </button>
             </div>
+
+            {/* Add Section Form */}
+            {showAddForm && (
+                <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 animate-in fade-in slide-in-from-top-2 mb-6">
+                    <form onSubmit={handleAdd} className="flex gap-4 items-end">
+                        <div className="flex-1 space-y-1">
+                            <label className="text-xs font-bold text-gray-500">Page Path</label>
+                            <input
+                                required
+                                value={newSectionPage}
+                                onChange={e => setNewSectionPage(e.target.value)}
+                                placeholder="/ or /about"
+                                className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm"
+                            />
+                        </div>
+                        <div className="flex-1 space-y-1">
+                            <label className="text-xs font-bold text-gray-500">Section Key</label>
+                            <input
+                                required
+                                value={newSectionKey}
+                                onChange={e => setNewSectionKey(e.target.value)}
+                                placeholder="hero, features, etc."
+                                className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm"
+                            />
+                        </div>
+                        <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-bold hover:bg-blue-700">
+                            Create
+                        </button>
+                    </form>
+                </div>
+            )}
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {/* List of Sections */}

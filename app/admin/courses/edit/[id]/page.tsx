@@ -488,6 +488,20 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
 
     const WhyChooseUsTab = () => {
         const section = getSection('content_with_image', { items: [] });
+
+        const handleVideoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+            let val = e.target.value;
+            // Auto-convert standard YouTube watch URLs to embed URLs to prevent white/empty box issues
+            if (val.includes('youtube.com/watch?v=')) {
+                val = val.replace('youtube.com/watch?v=', 'youtube.com/embed/');
+                if (val.includes('&')) val = val.split('&')[0];
+            } else if (val.includes('youtu.be/')) {
+                val = val.replace('youtu.be/', 'youtube.com/embed/');
+                if (val.includes('?')) val = val.split('?')[0];
+            }
+            updateSection('content_with_image', { ...section, videoSrc: val });
+        };
+
         return (
             <div className="space-y-6">
                 <h4 className="font-bold text-gray-900 border-b pb-2">Success Guarantee & Credibility</h4>
@@ -512,13 +526,19 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                 </div>
                 <div className="space-y-2">
                     <label className="text-sm font-semibold text-gray-700">Video Embed URL</label>
-                    <input value={section.videoSrc || ''} onChange={(e) => updateSection('content_with_image', { ...section, videoSrc: e.target.value })} className="w-full p-2 border rounded" placeholder="https://www.youtube.com/embed/..." />
+                    <input
+                        value={section.videoSrc || ''}
+                        onChange={handleVideoChange}
+                        className="w-full p-2 border rounded"
+                        placeholder="https://www.youtube.com/embed/..."
+                    />
+                    <p className="text-xs text-gray-500">Paste a YouTube link here. We'll automatically convert standard links to embed format.</p>
                 </div>
                 <div className="space-y-2">
                     <label className="text-sm font-semibold text-gray-700">List Items (One per line)</label>
                     <textarea
-                        value={Array.isArray(section.items) ? section.items.join('\\n') : (section.items || '')}
-                        onChange={(e) => updateSection('content_with_image', { ...section, items: e.target.value.split('\\n') })}
+                        value={Array.isArray(section.items) ? section.items.join('\n') : (section.items || '')}
+                        onChange={(e) => updateSection('content_with_image', { ...section, items: e.target.value.split('\n') })}
                         className="w-full p-2 border rounded font-mono h-32"
                     />
                 </div>
@@ -528,37 +548,252 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
 
     const TargetAudienceTab = () => {
         const section = getSection('detailed_target_audience', { items: [] });
+        const items = section.items || [];
+
+        const defaultAudience = [
+            {
+                icon: "Laptop",
+                title: "IT & ERP Professionals",
+                description: ["SAP consultants", "System administrators", "Technical architects"],
+                bg: "bg-blue-50", color: "text-blue-600"
+            }
+        ];
+
+        const displayItems = items.length > 0 ? items : defaultAudience;
+
+        const updateItems = (newItems: any[]) => {
+            updateSection('detailed_target_audience', { ...section, items: newItems });
+        };
+
         return (
             <div className="space-y-6">
-                <h4 className="font-bold">Who Should Enroll</h4>
                 <div className="space-y-2">
-                    <label className="text-sm font-semibold text-gray-700">Items (One per line)</label>
-                    <textarea
-                        value={Array.isArray(section.items) ? section.items.join('\n') : (section.items || '')}
-                        onChange={(e) => updateSection('detailed_target_audience', { ...section, items: e.target.value.split('\n') })}
-                        className="w-full p-2 border rounded font-mono h-64"
+                    <label className="text-sm font-semibold text-gray-700">Section Title</label>
+                    <input
+                        value={section.title || ''}
+                        onChange={(e) => updateSection('detailed_target_audience', { ...section, title: e.target.value })}
+                        className="w-full p-2 border rounded"
+                        placeholder="Who Can Learn This Course?"
                     />
+                </div>
+                <div className="space-y-2">
+                    <label className="text-sm font-semibold text-gray-700">Subtitle</label>
+                    <input
+                        value={section.subtitle || ''}
+                        onChange={(e) => updateSection('detailed_target_audience', { ...section, subtitle: e.target.value })}
+                        className="w-full p-2 border rounded"
+                        placeholder="Our training is designed..."
+                    />
+                </div>
+
+                <div className="space-y-4">
+                    <div className="flex justify-between items-center bg-gray-100 p-4 rounded-lg">
+                        <h4 className="font-bold text-gray-900">Audience Cards ({displayItems.length})</h4>
+                        <button type="button" onClick={() => updateItems([...displayItems, { title: 'New Audience', description: [], icon: 'Users' }])} className="text-sm bg-black text-white px-3 py-1.5 rounded flex items-center gap-2">
+                            <Plus size={16} /> Add Card
+                        </button>
+                    </div>
+
+                    {displayItems.map((item: any, idx: number) => (
+                        <div key={idx} className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm relative group">
+                            <button
+                                type="button"
+                                onClick={() => updateItems(displayItems.filter((_: any, i: number) => i !== idx))}
+                                className="absolute top-2 right-2 text-red-400 opacity-0 group-hover:opacity-100 hover:text-red-600 transition-opacity"
+                            >
+                                <Trash2 size={16} />
+                            </button>
+
+                            <div className="grid md:grid-cols-2 gap-4">
+                                <div className="space-y-2">
+                                    <label className="text-xs font-bold text-gray-500">Title</label>
+                                    <input
+                                        value={item.title || ''}
+                                        onChange={(e) => {
+                                            const newItems = [...displayItems];
+                                            newItems[idx].title = e.target.value;
+                                            updateItems(newItems);
+                                        }}
+                                        className="w-full p-2 border rounded font-bold"
+                                        placeholder="Target Audience Title"
+                                    />
+                                </div>
+                                <div className="space-y-2">
+                                    <label className="text-xs font-bold text-gray-500">Icon Key (Lucide)</label>
+                                    <select
+                                        value={item.icon || 'Laptop'}
+                                        onChange={(e) => {
+                                            const newItems = [...displayItems];
+                                            newItems[idx].icon = e.target.value;
+                                            updateItems(newItems);
+                                        }}
+                                        className="w-full p-2 border rounded"
+                                    >
+                                        <option value="Laptop">Laptop</option>
+                                        <option value="ShoppingCart">ShoppingCart (Procurement)</option>
+                                        <option value="BarChart3">BarChart3 (Analytics)</option>
+                                        <option value="GraduationCap">GraduationCap (Students)</option>
+                                        <option value="Building2">Building2 (Corporate)</option>
+                                        <option value="HelpCircle">HelpCircle</option>
+                                        <option value="Wallet">Wallet (Finance)</option>
+                                        <option value="Users">Users (HR/General)</option>
+                                        <option value="Banknote">Banknote</option>
+                                    </select>
+                                </div>
+                                <div className="md:col-span-2 space-y-2">
+                                    <label className="text-xs font-bold text-gray-500">Points (One per line)</label>
+                                    <textarea
+                                        value={Array.isArray(item.description) ? item.description.join('\n') : (item.description || '')}
+                                        onChange={(e) => {
+                                            const newItems = [...displayItems];
+                                            newItems[idx].description = e.target.value.split('\n');
+                                            updateItems(newItems);
+                                        }}
+                                        className="w-full p-2 border rounded font-mono text-sm h-24"
+                                        placeholder="- Point 1..."
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         );
     };
 
     const PrerequisitesTab = () => {
-        const section = getSection('detailed_prerequisites', { items: [] });
+        // Retrieve the simplified "items" object which contains "minimum" and "nicetohave" arrays
+        // If it's undefined, initialize with empty structure
+        const section = getSection('detailed_prerequisites', { items: { minimum: [], nicetohave: [] } });
+
+        // Ensure items is an object, not an array or string
+        const data = (section.items && typeof section.items === 'object' && !Array.isArray(section.items))
+            ? section.items
+            : { minimum: [], nicetohave: [] };
+
+        const updateData = (newData: any) => {
+            updateSection('detailed_prerequisites', { ...section, items: newData });
+        };
+
         return (
             <div className="space-y-6">
-                <h4 className="font-bold">Prerequisites</h4>
-                <div className="space-y-2">
-                    <label className="text-sm font-semibold text-gray-700">Items (One per line)</label>
+                <h4 className="font-bold text-gray-900 border-b pb-2">Course Prerequisites</h4>
+
+                <div className="bg-orange-50 p-4 rounded-lg border border-orange-100">
+                    <h5 className="font-bold text-orange-800 mb-2 flex items-center gap-2"><Target size={18} /> Minimum Requirements</h5>
                     <textarea
-                        value={Array.isArray(section.items) ? section.items.join('\n') : (section.items || '')}
-                        onChange={(e) => updateSection('detailed_prerequisites', { ...section, items: e.target.value.split('\n') })}
-                        className="w-full p-2 border rounded font-mono h-64"
+                        value={data.minimum?.join('\n') || ''}
+                        onChange={(e) => updateData({ ...data, minimum: e.target.value.split('\n') })}
+                        className="w-full p-3 border rounded-lg h-40 font-mono text-sm bg-white"
+                        placeholder="One requirement per line..."
+                    />
+                </div>
+
+                <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                    <h5 className="font-bold text-blue-800 mb-2 flex items-center gap-2"><Star size={18} /> Nice to Have (Optional)</h5>
+                    <textarea
+                        value={data.nicetohave?.join('\n') || ''}
+                        onChange={(e) => updateData({ ...data, nicetohave: e.target.value.split('\n') })}
+                        className="w-full p-3 border rounded-lg h-40 font-mono text-sm bg-white"
+                        placeholder="One item per line..."
                     />
                 </div>
             </div>
         );
     };
+
+    const WhatsIncludedTab = () => {
+        const section = getSection('whats_included', { features: [], stats: [] });
+        const features = section.features || [];
+        const stats = section.stats || [];
+
+        const updateFeatures = (newFeatures: any[]) => updateSection('whats_included', { ...section, features: newFeatures });
+        const updateStats = (newStats: any[]) => updateSection('whats_included', { ...section, stats: newStats });
+
+        return (
+            <div className="space-y-6">
+                <div className="space-y-2">
+                    <label className="text-sm font-semibold text-gray-700">Section Title</label>
+                    <input
+                        value={section.title || ''}
+                        onChange={(e) => updateSection('whats_included', { ...section, title: e.target.value })}
+                        className="w-full p-2 border rounded"
+                        placeholder="What's Included..."
+                    />
+                </div>
+                <div className="space-y-2">
+                    <label className="text-sm font-semibold text-gray-700">Badge</label>
+                    <input
+                        value={section.badge || ''}
+                        onChange={(e) => updateSection('whats_included', { ...section, badge: e.target.value })}
+                        className="w-full p-2 border rounded"
+                        placeholder="Complete Learning Package"
+                    />
+                </div>
+                <div className="space-y-2">
+                    <label className="text-sm font-semibold text-gray-700">Description</label>
+                    <textarea
+                        value={section.description || ''}
+                        onChange={(e) => updateSection('whats_included', { ...section, description: e.target.value })}
+                        className="w-full p-2 border rounded"
+                        placeholder="Subtitle description..."
+                    />
+                </div>
+
+                <div className="space-y-4 pt-4 border-t">
+                    <div className="flex justify-between items-center bg-gray-100 p-4 rounded-lg">
+                        <h4 className="font-bold text-gray-900">Features List</h4>
+                        <button type="button" onClick={() => updateFeatures([...features, { title: 'New Feature', description: '' }])} className="text-sm bg-black text-white px-3 py-1.5 rounded flex items-center gap-2">
+                            <Plus size={16} /> Add Feature
+                        </button>
+                    </div>
+                    <div className="grid gap-4">
+                        {features.map((item: any, idx: number) => (
+                            <div key={idx} className="bg-white p-4 border rounded-lg shadow-sm group relative">
+                                <button type="button" onClick={() => updateFeatures(features.filter((_: any, i: number) => i !== idx))} className="absolute top-2 right-2 text-red-400 opacity-0 group-hover:opacity-100"><Trash2 size={16} /></button>
+                                <div className="space-y-2">
+                                    <input
+                                        value={item.title || ''}
+                                        onChange={(e) => {
+                                            const newF = [...features];
+                                            newF[idx].title = e.target.value;
+                                            updateFeatures(newF);
+                                        }}
+                                        className="w-full p-2 border rounded font-bold text-sm"
+                                        placeholder="Feature Title"
+                                    />
+                                    <textarea
+                                        value={item.description || ''}
+                                        onChange={(e) => {
+                                            const newF = [...features];
+                                            newF[idx].description = e.target.value;
+                                            updateFeatures(newF);
+                                        }}
+                                        className="w-full p-2 border rounded text-xs"
+                                        placeholder="Description"
+                                        rows={2}
+                                    />
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="space-y-4 pt-4 border-t">
+                    <h4 className="font-bold text-gray-900">Stats Cards</h4>
+                    <textarea
+                        value={JSON.stringify(stats, null, 2)}
+                        onChange={(e) => {
+                            try { updateStats(JSON.parse(e.target.value)) } catch { }
+                        }}
+                        className="w-full p-3 border rounded font-mono text-xs h-32 bg-gray-50"
+                        placeholder='[{"value": "50+", "label": "Hours"}, ...]'
+                    />
+                    <p className="text-xs text-gray-500">Enter JSON for stats: val, label, color</p>
+                </div>
+            </div>
+        )
+    }
 
     const FAQTab = () => {
         // Handle FAQs which might be in sections OR top level
@@ -624,6 +859,52 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
 
     const CertificationTab = () => {
         const section = getSection('detailed_certification', { items: [] });
+
+        // Default certs from DetailedCertification.tsx (hardcoded fallback)
+        const defaultCerts = [
+            {
+                "title": "SAP Certified Application Associate - SAP Ariba Procurement",
+                "code": "(C_ARP2P_2408)",
+                "focus": "Procurement processes, master data, approval workflows, integration",
+                "who": "End-to-end procurement expertise using SAP Ariba",
+                "relevance": "Entry to mid-level consultant positions"
+            },
+            {
+                "title": "SAP Certified Application Associate - SAP Ariba Sourcing",
+                "code": "(C_ARSOR_2408)",
+                "focus": "Strategic sourcing, supplier evaluation, event management, negotiation",
+                "who": "Advanced sourcing strategy and supplier management skills",
+                "relevance": "Sourcing consultant and strategic procurement roles"
+            },
+            {
+                "title": "SAP Certified Application Associate - SAP Ariba Contracts",
+                "code": "(C_ARCON_2408)",
+                "focus": "Contract lifecycle management, compliance, risk management",
+                "who": "Contract management expertise and compliance knowledge",
+                "relevance": "Contract management and legal compliance roles"
+            }
+        ];
+
+        const defaultSupportFeatures = [
+            { "title": "Targeted Exam Preparation", "subtitle": "Study guides aligned to official exam blueprints" },
+            { "title": "Practice Exams", "subtitle": "Timed practice tests mirroring real exam conditions" },
+            { "title": "Exam Strategies", "subtitle": "Time management tips and common pitfalls to avoid" },
+            { "title": "Registration Guidance", "subtitle": "Assistance with exam registration and scheduling" },
+            { "title": "Retake Support", "subtitle": "Additional support if you don't pass on first attempt" }
+        ];
+
+        const defaultBenefits = [
+            { "title": "Global Recognition", "desc": "SAP certifications recognized worldwide by employers and clients" },
+            { "title": "Career Acceleration", "desc": "15-20% higher salaries for certified professionals" },
+            { "title": "Competitive Edge", "desc": "Stand out in job applications and consulting proposals" },
+            { "title": "Professional Credibility", "desc": "Validation of expertise with clients and employers" }
+        ];
+
+        // Use existing items or defaults if empty
+        const itemsToDisplay = (section.items && section.items.length > 0) ? section.items : defaultCerts;
+        const supportFeaturesDisplay = (section.supportFeatures && section.supportFeatures.length > 0) ? section.supportFeatures : defaultSupportFeatures;
+        const benefitsDisplay = (section.benefits && section.benefits.length > 0) ? section.benefits : defaultBenefits;
+
         return (
             <div className="space-y-6">
                 <div className="p-4 bg-blue-50 border border-blue-200 rounded text-sm text-blue-800 mb-4">
@@ -655,7 +936,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                     <label className="text-sm font-semibold text-gray-700">Certifications List (JSON)</label>
                     <textarea
                         rows={10}
-                        value={JSON.stringify(section.items || [], null, 2)}
+                        value={JSON.stringify(itemsToDisplay, null, 2)}
                         onChange={(e) => {
                             try {
                                 updateSection('detailed_certification', { ...section, items: JSON.parse(e.target.value) });
@@ -663,8 +944,334 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                         }}
                         className="w-full p-4 border rounded font-mono text-xs bg-slate-50"
                     />
-                    <p className="text-xs text-gray-500">List of certification cards.</p>
+                    <p className="text-xs text-gray-500">List of certification cards. Defaults shown if empty.</p>
                 </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                        <label className="text-sm font-semibold text-gray-700">Certification Support Features (JSON)</label>
+                        <textarea
+                            rows={8}
+                            value={JSON.stringify(supportFeaturesDisplay, null, 2)}
+                            onChange={(e) => {
+                                try {
+                                    updateSection('detailed_certification', { ...section, supportFeatures: JSON.parse(e.target.value) });
+                                } catch (err) { }
+                            }}
+                            className="w-full p-4 border rounded font-mono text-xs bg-slate-50"
+                        />
+                        <p className="text-xs text-gray-500">Features included in support (e.g., Practice Exams).</p>
+                    </div>
+
+                    <div className="space-y-2">
+                        <label className="text-sm font-semibold text-gray-700">Benefits / Why It Matters (JSON)</label>
+                        <textarea
+                            rows={8}
+                            value={JSON.stringify(benefitsDisplay, null, 2)}
+                            onChange={(e) => {
+                                try {
+                                    updateSection('detailed_certification', { ...section, benefits: JSON.parse(e.target.value) });
+                                } catch (err) { }
+                            }}
+                            className="w-full p-4 border rounded font-mono text-xs bg-slate-50"
+                        />
+                        <p className="text-xs text-gray-500">Benefits list (e.g., Global Recognition).</p>
+                    </div>
+                </div>
+
+            </div>
+        );
+    };
+
+    const HiringCompaniesTab = () => {
+        const section = getSection('detailed_companies', { customData: undefined });
+
+        // Initialize customData if it doesn't exist, using defaults structure
+        const customData = section.customData || {
+            tier1: { title: "Tier 1 - Global Consulting Firms", companies: [] },
+            tier2: { title: "Tier 2 - Enterprise SAP Partners", companies: [] },
+            tier3: { title: "Tier 3 - Fortune 500 Enterprises", companies: [] },
+            tier4: { title: "Tier 4 - Mid-Market Leaders", companies: [] },
+            hiringTrends: { title: "Hiring Trends", stats: [] }
+        };
+
+        const updateCompanySection = (key: string, field: string, value: any) => {
+            const newCustomData = { ...customData };
+            if (!newCustomData[key]) newCustomData[key] = {};
+            newCustomData[key][field] = value;
+            updateSection('detailed_companies', { ...section, customData: newCustomData });
+        };
+
+        const renderTierEditor = (tierKey: string, label: string) => (
+            <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                <h5 className="font-bold text-gray-800 mb-2">{label}</h5>
+                <div className="space-y-2">
+                    <label className="text-xs font-bold text-gray-500">Tier Title</label>
+                    <input
+                        value={customData[tierKey]?.title || ''}
+                        onChange={(e) => updateCompanySection(tierKey, 'title', e.target.value)}
+                        className="w-full p-2 border rounded"
+                    />
+                </div>
+                <div className="space-y-2 mt-2">
+                    <label className="text-xs font-bold text-gray-500">Companies (Comma separated)</label>
+                    <textarea
+                        value={customData[tierKey]?.companies?.join(', ') || ''}
+                        onChange={(e) => updateCompanySection(tierKey, 'companies', e.target.value.split(',').map((s: string) => s.trim()).filter(Boolean))}
+                        className="w-full p-2 border rounded h-20 bg-white"
+                        placeholder="Company A, Company B..."
+                    />
+                </div>
+            </div>
+        );
+
+        return (
+            <div className="space-y-6">
+                <h4 className="font-bold text-gray-900 border-b pb-2">Hiring Companies</h4>
+                <div className="grid md:grid-cols-2 gap-4">
+                    {renderTierEditor('tier1', 'Tier 1 Companies')}
+                    {renderTierEditor('tier2', 'Tier 2 Companies')}
+                    {renderTierEditor('tier3', 'Tier 3 Companies')}
+                    {renderTierEditor('tier4', 'Tier 4 Companies')}
+                </div>
+
+                <div className="bg-blue-50 p-4 rounded-lg border border-blue-100 mt-4">
+                    <h5 className="font-bold text-blue-800 mb-2">Hiring Trends Stats (JSON)</h5>
+                    <textarea
+                        value={JSON.stringify(customData.hiringTrends || {}, null, 2)}
+                        onChange={(e) => {
+                            try {
+                                updateSection('detailed_companies', { ...section, customData: { ...customData, hiringTrends: JSON.parse(e.target.value) } });
+                            } catch { }
+                        }}
+                        className="w-full p-3 border rounded font-mono text-sm h-32 bg-white"
+                        placeholder='{"title": "Trends", "stats": [{"value": "200%", "label": "Growth"}]}'
+                    />
+                </div>
+            </div>
+        );
+    };
+
+    const MethodologyTab = () => {
+        const section = getSection('detailed_learning_outcomes', { items: [] });
+        const items = Array.isArray(section.items) ? section.items : [];
+        const updateItems = (newItems: any[]) => updateSection('detailed_learning_outcomes', { ...section, items: newItems });
+
+        return (
+            <div className="space-y-6">
+                <div className="space-y-2 border-b pb-4">
+                    <label className="text-sm font-semibold text-gray-700">Section Title</label>
+                    <input value={section.title || ''} onChange={(e) => updateSection('detailed_learning_outcomes', { ...section, title: e.target.value })} className="w-full p-2 border rounded" placeholder="What You'll Master..." />
+                    <label className="text-sm font-semibold text-gray-700">Subtitle</label>
+                    <textarea value={section.subtitle || ''} onChange={(e) => updateSection('detailed_learning_outcomes', { ...section, subtitle: e.target.value })} className="w-full p-2 border rounded" />
+                </div>
+
+                <div className="flex justify-between items-center bg-gray-100 p-4 rounded-lg">
+                    <h4 className="font-bold text-gray-900">Outcomes ({items.length})</h4>
+                    <button type="button" onClick={() => updateItems([...items, { title: 'New Skill', points: [] }])} className="text-sm bg-black text-white px-3 py-1.5 rounded flex items-center gap-2">
+                        <Plus size={16} /> Add Skill
+                    </button>
+                </div>
+                <div className="grid md:grid-cols-2 gap-4">
+                    {items.map((item: any, idx: number) => (
+                        <div key={idx} className="bg-white p-4 border rounded-lg shadow-sm group relative">
+                            <button type="button" onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))} className="absolute top-2 right-2 text-red-400 opacity-0 group-hover:opacity-100"><Trash2 size={16} /></button>
+                            <div className="space-y-2">
+                                <label className="text-xs font-bold text-gray-500">Title</label>
+                                <input value={item.title || ''} onChange={(e) => { const n = [...items]; n[idx].title = e.target.value; updateItems(n); }} className="w-full p-2 border rounded font-bold" />
+                                <label className="text-xs font-bold text-gray-500">Points (One per line)</label>
+                                <textarea value={item.points?.join('\n') || ''} onChange={(e) => { const n = [...items]; n[idx].points = e.target.value.split('\n'); updateItems(n); }} className="w-full p-2 border rounded font-mono text-sm h-32" />
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        );
+    };
+
+    const RoadmapTab = () => {
+        const section = getSection('detailed_career_roadmap', { items: [] });
+        const items = section.items || [];
+        const updateItems = (newItems: any[]) => updateSection('detailed_career_roadmap', { ...section, items: newItems });
+
+        return (
+            <div className="space-y-6">
+                <div className="flex justify-between items-center bg-gray-100 p-4 rounded-lg">
+                    <h4 className="font-bold text-gray-900">Roadmap Steps ({items.length})</h4>
+                    <button type="button" onClick={() => updateItems([...items, { stage: 'Phase X', title: 'Title', description: '' }])} className="text-sm bg-black text-white px-3 py-1.5 rounded flex items-center gap-2">
+                        <Plus size={16} /> Add Step
+                    </button>
+                </div>
+                <div className="space-y-4">
+                    {items.map((item: any, idx: number) => (
+                        <div key={idx} className="bg-white p-4 border rounded-lg shadow-sm group relative grid md:grid-cols-3 gap-4">
+                            <button type="button" onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))} className="absolute top-2 right-2 text-red-400 opacity-0 group-hover:opacity-100"><Trash2 size={16} /></button>
+                            <div><label className="text-xs font-bold text-gray-500">Stage / Year</label><input value={item.stage || ''} onChange={(e) => { const n = [...items]; n[idx].stage = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" placeholder="e.g. Year 1-2" /></div>
+                            <div><label className="text-xs font-bold text-gray-500">Role Title</label><input value={item.title || ''} onChange={(e) => { const n = [...items]; n[idx].title = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" /></div>
+                            <div className="md:col-span-3"><label className="text-xs font-bold text-gray-500">Description</label><textarea value={item.description || ''} onChange={(e) => { const n = [...items]; n[idx].description = e.target.value; updateItems(n); }} className="w-full p-2 border rounded h-16" /></div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        );
+    };
+
+    const JourneyTab = () => {
+        const section = getSection('detailed_post_training_journey', { items: [] });
+        const items = section.items || [];
+        const updateItems = (newItems: any[]) => updateSection('detailed_post_training_journey', { ...section, items: newItems });
+
+        return (
+            <div className="space-y-6">
+                <div className="space-y-2 border-b pb-4">
+                    <label className="text-sm font-semibold text-gray-700">Section Title</label>
+                    <input value={section.title || ''} onChange={(e) => updateSection('detailed_post_training_journey', { ...section, title: e.target.value })} className="w-full p-2 border rounded" />
+                </div>
+                <div className="flex justify-between items-center bg-gray-100 p-4 rounded-lg">
+                    <h4 className="font-bold text-gray-900">Journey Steps ({items.length})</h4>
+                    <button type="button" onClick={() => updateItems([...items, { title: 'Step Name', timeline: '', points: [] }])} className="text-sm bg-black text-white px-3 py-1.5 rounded flex items-center gap-2">
+                        <Plus size={16} /> Add Step
+                    </button>
+                </div>
+                <div className="space-y-4">
+                    {items.map((item: any, idx: number) => (
+                        <div key={idx} className="bg-white p-4 border rounded-lg shadow-sm group relative space-y-3">
+                            <button type="button" onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))} className="absolute top-2 right-2 text-red-400 opacity-0 group-hover:opacity-100"><Trash2 size={16} /></button>
+                            <div className="grid md:grid-cols-2 gap-4">
+                                <div><label className="text-xs font-bold text-gray-500">Step Title</label><input value={item.title || ''} onChange={(e) => { const n = [...items]; n[idx].title = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" /></div>
+                                <div><label className="text-xs font-bold text-gray-500">Timeline</label><input value={item.timeline || ''} onChange={(e) => { const n = [...items]; n[idx].timeline = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" /></div>
+                            </div>
+                            <div>
+                                <label className="text-xs font-bold text-gray-500">Points (One per line)</label>
+                                <textarea value={item.points?.join('\n') || ''} onChange={(e) => { const n = [...items]; n[idx].points = e.target.value.split('\n'); updateItems(n); }} className="w-full p-2 border rounded font-mono text-sm h-24" />
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        );
+    };
+
+    const CareerGrowthTab = () => {
+        const section = getSection('detailed_career_opportunities', { items: [] });
+        const items = section.items || [];
+        const updateItems = (newItems: any[]) => updateSection('detailed_career_opportunities', { ...section, items: newItems });
+
+        return (
+            <div className="space-y-6">
+                <div className="flex justify-between items-center bg-gray-100 p-4 rounded-lg">
+                    <h4 className="font-bold text-gray-900">Career Roles ({items.length})</h4>
+                    <button type="button" onClick={() => updateItems([...items, { title: 'New Role', salary: '', responsibilities: '' }])} className="text-sm bg-black text-white px-3 py-1.5 rounded flex items-center gap-2">
+                        <Plus size={16} /> Add Role
+                    </button>
+                </div>
+                {items.map((item: any, idx: number) => (
+                    <div key={idx} className="bg-white p-6 border rounded-xl shadow-sm group relative space-y-4">
+                        <button type="button" onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))} className="absolute top-4 right-4 text-red-400 opacity-0 group-hover:opacity-100"><Trash2 size={16} /></button>
+                        <div className="grid md:grid-cols-2 gap-4">
+                            <div><label className="text-xs font-bold text-gray-500">Role Title</label><input value={item.title || ''} onChange={(e) => { const n = [...items]; n[idx].title = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" /></div>
+                            <div><label className="text-xs font-bold text-gray-500">Salary Range</label><input value={item.salary || ''} onChange={(e) => { const n = [...items]; n[idx].salary = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" /></div>
+                            <div className="md:col-span-2"><label className="text-xs font-bold text-gray-500">Responsibilities</label><textarea value={item.responsibilities || ''} onChange={(e) => { const n = [...items]; n[idx].responsibilities = e.target.value; updateItems(n); }} className="w-full p-2 border rounded h-16" /></div>
+                            <div><label className="text-xs font-bold text-gray-500">Employers</label><input value={item.employers || ''} onChange={(e) => { const n = [...items]; n[idx].employers = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" /></div>
+                            <div><label className="text-xs font-bold text-gray-500">Career Path</label><input value={item.path || ''} onChange={(e) => { const n = [...items]; n[idx].path = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" /></div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        );
+    };
+
+    const TestimonialsTab = () => {
+        const section = getSection('detailed_testimonials', { items: [] });
+        const items = section.items || [];
+        const updateItems = (newItems: any[]) => updateSection('detailed_testimonials', { ...section, items: newItems });
+
+        return (
+            <div className="space-y-6">
+                <div className="flex justify-between items-center bg-gray-100 p-4 rounded-lg">
+                    <h4 className="font-bold text-gray-900">Student Testimonials ({items.length})</h4>
+                    <button type="button" onClick={() => updateItems([...items, { text: '', author: '', role: '' }])} className="text-sm bg-black text-white px-3 py-1.5 rounded flex items-center gap-2">
+                        <Plus size={16} /> Add Review
+                    </button>
+                </div>
+                <div className="grid gap-4">
+                    {items.map((item: any, idx: number) => (
+                        <div key={idx} className="bg-white p-4 border rounded-lg shadow-sm group relative">
+                            <button type="button" onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))} className="absolute top-2 right-2 text-red-400 opacity-0 group-hover:opacity-100"><Trash2 size={16} /></button>
+                            <div className="grid md:grid-cols-2 gap-4">
+                                <div className="md:col-span-2">
+                                    <label className="text-xs font-bold text-gray-500">Review Text</label>
+                                    <textarea value={item.text || ''} onChange={(e) => { const n = [...items]; n[idx].text = e.target.value; updateItems(n); }} className="w-full p-2 border rounded text-sm h-20" />
+                                </div>
+                                <div>
+                                    <label className="text-xs font-bold text-gray-500">Author Name</label>
+                                    <input value={item.author || item.name || ''} onChange={(e) => { const n = [...items]; n[idx].author = e.target.value; updateItems(n); }} className="w-full p-2 border rounded text-sm" />
+                                </div>
+                                <div>
+                                    <label className="text-xs font-bold text-gray-500">Role / Job Title</label>
+                                    <input value={item.role || ''} onChange={(e) => { const n = [...items]; n[idx].role = e.target.value; updateItems(n); }} className="w-full p-2 border rounded text-sm" />
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        )
+    };
+
+    const BatchesTab = () => {
+        const section = getSection('detailed_upcoming_batches', { items: [] });
+        const items = section.items || [];
+        const updateItems = (newItems: any[]) => updateSection('detailed_upcoming_batches', { ...section, items: newItems });
+
+        return (
+            <div className="space-y-6">
+                <div className="flex justify-between items-center bg-gray-100 p-4 rounded-lg">
+                    <h4 className="font-bold text-gray-900">Upcoming Batches ({items.length})</h4>
+                    <button type="button" onClick={() => updateItems([...items, { name: 'New Batch', date: '', schedule: '', duration: '10 Weeks' }])} className="text-sm bg-black text-white px-3 py-1.5 rounded flex items-center gap-2">
+                        <Plus size={16} /> Add Batch
+                    </button>
+                </div>
+                {items.map((item: any, idx: number) => (
+                    <div key={idx} className="bg-white p-4 border rounded-lg shadow-sm group relative">
+                        <button type="button" onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))} className="absolute top-2 right-2 text-red-400 opacity-0 group-hover:opacity-100"><Trash2 size={16} /></button>
+                        <div className="grid md:grid-cols-2 gap-4">
+                            <div className="md:col-span-2"><label className="text-xs font-bold text-gray-500">Batch Name</label><input value={item.name || ''} onChange={(e) => { const n = [...items]; n[idx].name = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" /></div>
+                            <div><label className="text-xs font-bold text-gray-500">Start Date</label><input value={item.date || ''} onChange={(e) => { const n = [...items]; n[idx].date = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" /></div>
+                            <div><label className="text-xs font-bold text-gray-500">Schedule</label><input value={item.schedule || ''} onChange={(e) => { const n = [...items]; n[idx].schedule = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" /></div>
+                            <div><label className="text-xs font-bold text-gray-500">Status</label><select value={item.status || 'Open'} onChange={(e) => { const n = [...items]; n[idx].status = e.target.value; updateItems(n); }} className="w-full p-2 border rounded"><option>Open</option><option>Filling Fast</option><option>Sold Out</option></select></div>
+                            <div><label className="text-xs font-bold text-gray-500">Filled %</label><input type="number" value={item.seatsFilled || 0} onChange={(e) => { const n = [...items]; n[idx].seatsFilled = parseInt(e.target.value); updateItems(n); }} className="w-full p-2 border rounded" /></div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        );
+    };
+
+    const RealWorldProjectsTab = () => {
+        const section = getSection('real_world_scenarios', { items: [] });
+        const items = section.items || [];
+        const updateItems = (newItems: any[]) => updateSection('real_world_scenarios', { ...section, items: newItems });
+
+        return (
+            <div className="space-y-6">
+                <div className="flex justify-between items-center bg-gray-100 p-4 rounded-lg">
+                    <h4 className="font-bold text-gray-900">Projects / Casestudies ({items.length})</h4>
+                    <button type="button" onClick={() => updateItems([...items, { title: 'New Project', scenario: '', role: '', outcome: '' }])} className="text-sm bg-black text-white px-3 py-1.5 rounded flex items-center gap-2">
+                        <Plus size={16} /> Add Project
+                    </button>
+                </div>
+                {items.map((item: any, idx: number) => (
+                    <div key={idx} className="bg-white p-6 border rounded-xl shadow-sm group relative space-y-3">
+                        <button type="button" onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))} className="absolute top-2 right-2 text-red-400 opacity-0 group-hover:opacity-100"><Trash2 size={16} /></button>
+                        <div><label className="text-xs font-bold text-gray-500">Project Title</label><input value={item.title || ''} onChange={(e) => { const n = [...items]; n[idx].title = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" /></div>
+                        <div><label className="text-xs font-bold text-gray-500">Scenario Description</label><textarea value={item.scenario || ''} onChange={(e) => { const n = [...items]; n[idx].scenario = e.target.value; updateItems(n); }} className="w-full p-2 border rounded h-20" /></div>
+                        <div className="grid md:grid-cols-2 gap-4">
+                            <div><label className="text-xs font-bold text-gray-500">Your Role</label><input value={item.role || ''} onChange={(e) => { const n = [...items]; n[idx].role = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" /></div>
+                            <div><label className="text-xs font-bold text-gray-500">Outcome</label><input value={item.outcome || ''} onChange={(e) => { const n = [...items]; n[idx].outcome = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" /></div>
+                        </div>
+                    </div>
+                ))}
             </div>
         );
     };
@@ -740,22 +1347,22 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                 {activeTab === 'hero' && <HeroTab />}
                 {activeTab === 'overview' && <CourseOverviewTab />}
                 {activeTab === 'curriculum' && <CurriculumTab />}
-                {activeTab === 'hands_on' && <GenericJsonTab type="real_world_scenarios" title="Hands-On" />}
+                {activeTab === 'hands_on' && <RealWorldProjectsTab />}
                 {activeTab === 'why_choose_us' && <WhyChooseUsTab />}
-                {activeTab === 'career' && <GenericJsonTab type="detailed_career_opportunities" title="Career Growth" />}
+                {activeTab === 'career' && <CareerGrowthTab />}
                 {activeTab === 'audience' && <TargetAudienceTab />}
                 {activeTab === 'prerequisites' && <PrerequisitesTab />}
                 {activeTab === 'certification' && <CertificationTab />}
-                {activeTab === 'integrations' && <GenericJsonTab type="detailed_sap_integrations" title="SAP Integrations" />}
-                {activeTab === 'methodology' && <GenericJsonTab type="detailed_learning_outcomes" title="Training Methodology / What You'll Master" />}
-                {activeTab === 'whats_included' && <GenericJsonTab type="whats_included" title="What's Included" />}
-                {activeTab === 'roadmap' && <GenericJsonTab type="detailed_career_roadmap" title="Career Roadmap" />}
-                {activeTab === 'journey' && <GenericJsonTab type="detailed_post_training_journey" title="Post-Training Journey" />}
-                {activeTab === 'companies' && <GenericJsonTab type="detailed_companies" title="Hiring Companies" />}
-                {activeTab === 'batches' && <GenericJsonTab type="detailed_upcoming_batches" title="Upcoming Batches" />}
+                {activeTab === 'integrations' && <GenericJsonTab type="detailed_sap_integrations" title="SAP Integrations (Generic Features Editor)" />}
+                {activeTab === 'methodology' && <MethodologyTab />}
+                {activeTab === 'whats_included' && <WhatsIncludedTab />}
+                {activeTab === 'roadmap' && <RoadmapTab />}
+                {activeTab === 'journey' && <JourneyTab />}
+                {activeTab === 'companies' && <HiringCompaniesTab />}
+                {activeTab === 'batches' && <BatchesTab />}
                 {activeTab === 'demo' && <GenericJsonTab type="detailed_demo_booking" title="Demo Booking" />}
                 {activeTab === 'faq' && <FAQTab />}
-                {activeTab === 'testimonials' && <GenericJsonTab type="detailed_testimonials" title="Testimonials" />}
+                {activeTab === 'testimonials' && <TestimonialsTab />}
                 {activeTab === 'resources' && <ResourcesTab />}
             </div>
         </div>

@@ -15,16 +15,16 @@ const CourseHero = ({ course }: { course: Course }) => {
             : "bg-blue-600 text-white hover:bg-blue-700";
 
         return (
-            <div className="bg-white pt-16 pb-20 md:py-24 relative overflow-hidden text-center border-b border-slate-100">
+            <div className="bg-slate-50 pt-16 pb-20 md:py-24 relative overflow-hidden text-center border-b border-slate-100">
                 {/* Subtle Background Glow */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-orange-50 rounded-full blur-3xl opacity-50 -z-10 pointer-events-none"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-orange-100/40 rounded-full blur-3xl opacity-50 -z-10 pointer-events-none"></div>
 
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
                     {course.badges && course.badges.length > 0 && (
                         <div className="flex justify-center mb-8">
                             {course.badges.map((badge, idx) => (
-                                <span key={idx} className={`inline-flex items-center px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wide ${badgeClass}`}>
+                                <span key={idx} className="inline-flex items-center px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wide bg-[#FF5722] text-white shadow-lg shadow-orange-200">
                                     <Star className="w-4 h-4 mr-2 fill-current" />
                                     {badge}
                                     <Star className="w-4 h-4 ml-2 fill-current" />
@@ -33,11 +33,11 @@ const CourseHero = ({ course }: { course: Course }) => {
                         </div>
                     )}
 
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-slate-900 mb-6">
-                        {course.heroHeading?.split("SAP Ariba").map((part, i, arr) => (
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-[#0F172A] mb-6">
+                        {course.heroHeading?.split(course.title).map((part, i, arr) => (
                             <span key={i}>
                                 {part}
-                                {i < arr.length - 1 && <span className={isOrange ? "text-orange-600" : ""}>SAP Ariba</span>}
+                                {i < arr.length - 1 && <span className="text-[#FF5722]">{course.title}</span>}
                             </span>
                         )) || course.heroHeading}
                     </h1>
@@ -49,7 +49,7 @@ const CourseHero = ({ course }: { course: Course }) => {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                         <Link
                             href="#enroll"
-                            className={`inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl transition-all transform hover:-translate-y-1 ${buttonClass}`}
+                            className="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl transition-all transform hover:-translate-y-1 bg-[#FF5722] hover:bg-[#F4511E] text-white shadow-lg shadow-orange-500/30"
                         >
                             {course.buttonLabels?.primary || "Book Free Demo Class"}
                         </Link>
@@ -64,15 +64,15 @@ const CourseHero = ({ course }: { course: Course }) => {
 
                     {/* Stats */}
                     {course.heroStats && (
-                        <div className="flex flex-wrap justify-center gap-8 md:gap-12 text-sm font-medium text-slate-500 pt-8 border-t border-slate-100/50">
+                        <div className="flex flex-wrap justify-center gap-8 md:gap-12 text-sm font-medium text-slate-500 pt-8 border-t border-slate-200/60">
                             {course.heroStats.map((stat, idx) => (
                                 <div key={idx} className="flex items-center gap-2">
-                                    <div className={`${isOrange ? "text-orange-600" : "text-orange-600"}`}>
+                                    <div className="text-[#FF5722]">
                                         {stat.icon === 'award' ? <CheckCircle className="w-5 h-5" /> :
                                             stat.icon === 'infinity' ? <Clock className="w-5 h-5" /> :
                                                 <Users className="w-5 h-5" />}
                                     </div>
-                                    <span>{stat.label}</span>
+                                    <span className="font-semibold text-slate-700">{stat.label}</span>
                                 </div>
                             ))}
                         </div>

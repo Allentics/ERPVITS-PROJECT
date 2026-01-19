@@ -17,9 +17,10 @@ interface WhatsIncludedProps {
     stats?: Stat[];
     title?: string;
     badge?: string;
+    description?: string;
 }
 
-export default function WhatsIncluded({ features: customFeatures, stats: customStats, title, badge }: WhatsIncludedProps) {
+export default function WhatsIncluded({ features: customFeatures, stats: customStats, title, badge, description }: WhatsIncludedProps) {
     const defaultFeatures = [
         {
             title: "Live Interactive Classes",
@@ -76,7 +77,7 @@ export default function WhatsIncluded({ features: customFeatures, stats: customS
                         {title || "What's Included in the SAP Ariba Training"}
                     </h2>
                     <p className="text-gray-600 max-w-3xl mx-auto text-lg">
-                        Everything you need to become a certified SAP Ariba professional—from live training to career support
+                        {description || "Everything you need to become a certified SAP Ariba professional—from live training to career support"}
                     </p>
                 </div>
 

@@ -218,7 +218,7 @@ export const ewmContent = {
     duration: "35-40 Hours",
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-ewm.pdf",
     heroHeading: "Master Modern Warehouse Operations with the #1 SAP EWM Online Training Program",
-    heroSubheading: "Transform your career with expert-led training in warehouse optimization, inventory management, and advanced logistics operations.",
+    heroSubheading: "The SAP Extended Warehouse Management Online Training Program from ERPVITS represents a transformative learning pathway for professionals eager to excel in warehouse optimization, inventory management, and advanced logistics operations. In today's hyper-competitive business landscape, organizations urgently need certified SAP EWM experts who can streamline warehouse processes, reduce operational costs, enhance order fulfillment accuracy, and drive supply chain efficiency through intelligent automation. This comprehensive SAP EWM training course combines interactive, instructor-led sessions, hands-on lab exercises, real-time industry projects, warehouse automation simulations, and end-to-end certification support—designed specifically for warehouse managers, logistics professionals, SAP consultants, supply chain specialists, ERP implementers, and ambitious graduates targeting global consulting and implementation roles.",
 
     title: "SAP EWM",
     description: "The SAP Extended Warehouse Management Online Training Program from ERPVITS offers a transformative learning pathway for professionals to excel in warehouse optimization, inventory management, and logistics.",
@@ -241,70 +241,105 @@ export const ewmContent = {
         {
             type: 'detailed_features',
             title: "Learn SAP EWM from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            subtitle: "Delivered exclusively by certified SAP professionals with 12+ years of direct implementation experience in warehouse operations and logistics.",
+            subtitle: "Our SAP Extended Warehouse Management Online Training is delivered exclusively by certified SAP professionals with 12+ years of direct implementation experience in warehouse operations, logistics networks, and advanced inventory management. Unlike passive video courses or self-paced modules, you receive interactive, real-time instruction where instructors share proven methodologies, address your specific questions, and guide you through complex warehouse scenarios step-by-step.",
             badge: "Why Choose Us",
             items: [
                 {
                     title: "Certified Instructor Expertise",
-                    description: "Trainers hold official SAP certifications and have led multiple enterprise-scale SAP EWM implementations."
+                    description: "Each trainer holds official SAP certifications and has successfully led multiple enterprise-scale SAP EWM implementations across manufacturing, retail, e-commerce, pharmaceutical, and third-party logistics provider industries. They don't just teach theory; they share real-world war stories, common pitfalls encountered during warehouse go-lives, and industry best practices from actual client deployments managing millions of pallets annually. This real-world perspective is invaluable when you enter your first SAP EWM consulting engagement optimizing warehouse networks."
                 },
                 {
                     title: "100% Hands-On Learning Methodology",
-                    description: "Every session includes live demonstrations and guided lab exercises to configure warehouse structures and execute processes."
+                    description: "Traditional training teaches SAP EWM concepts through slides and presentations. Our program goes further. Every session includes live demonstrations directly on SAP EWM systems, followed by guided lab exercises where you replicate what you've learned. By the end of the course, you've configured warehouse structures, managed inbound and outbound processes, executed picking and packing operations, handled goods movements, integrated with other modules, and executed supply chain collaboration workflows—all on real systems."
                 },
                 {
                     title: "Job-Oriented Curriculum Design",
-                    description: "Designed around the exact skills, responsibilities, and problem-solving scenarios faced by SAP EWM consultants."
+                    description: "The course curriculum is not academic—it's designed around the exact skills, responsibilities, and problem-solving scenarios you'll face as an SAP EWM consultant. Whether you're implementing warehouse automation strategies, configuring advanced picking strategies, or troubleshooting S/4HANA integration issues, the training ensures you're equipped with practical answers."
                 },
                 {
                     title: "Interactive Q&A Sessions",
-                    description: "Dedicated forums and live office hours for addressing doubts and clarifying complex topics like wave management."
+                    description: "Beyond the main classroom instruction, you have dedicated Q&A forums and live office hours where instructors address your doubts, clarify complex topics like RF/Putaway strategy optimization and wave management processes, and provide personalized guidance tailored to your learning pace and career goals."
                 },
                 {
                     title: "Flexible Batch Timings",
-                    description: "Weekday evening batches (6 PM – 9 PM IST) and weekend batches (Saturday & Sunday). Sessions are recorded."
+                    description: "Recognizing that many professionals juggle jobs, families, and learning, we offer both weekday evening batches (6 PM – 9 PM IST) and weekend batches (Saturday & Sunday). Sessions are recorded, so if you miss a live class, you can catch up asynchronously without losing continuity."
                 },
                 {
-                    title: "Small Batch Sizes",
-                    description: "Capped at 8-10 participants to ensure personalized attention and targeted feedback."
+                    title: "Small Batch Sizes for Personalized Attention",
+                    description: "Unlike massive online courses with thousands of anonymous learners, our batches are capped at 8-10 participants. This ensures instructors can provide individualized attention, get to know your strengths and challenges, and offer targeted feedback on your configuration work."
                 },
                 {
                     title: "Placement & Career Support",
-                    description: "Resume building, mock interviews, and practice with real-world interview questions from logistics hiring trends."
+                    description: "Learning SAP EWM is only half the journey—getting placed is the goal. Our dedicated career support team helps you build an impactful SAP EWM-focused resume, prepare through mock interviews, and practice with real-world interview questions from recent hiring trends in warehouse and logistics sectors. You'll also receive guidance on how to present project experience effectively to stand out in SAP EWM job interviews."
                 },
                 {
-                    title: "Active Alumni Network",
-                    description: "Join a thriving community of SAP EWM professionals to exchange tips and build relationships."
+                    title: "Active Alumni Network & Community Forum",
+                    description: "Join a thriving community of SAP EWM professionals. Exchange tips, share warehouse optimization strategies, discuss wave planning scenarios, ask questions, and build professional relationships that can lead to referrals and collaborations."
                 },
                 {
                     title: "Ongoing Support Post-Training",
-                    description: "Six months of instructor guidance after training for clarification and project challenges."
+                    description: "Your learning journey doesn't end with SAP EWM course completion. For six months after training, you'll continue to receive instructor guidance—whether you need help clarifying concepts, troubleshooting real-world project challenges, or seeking advice during your first consulting engagements managing warehouse operations."
                 }
             ]
         },
         {
             type: 'content_with_image',
             title: "Why Professionals Choose ERPVITS for SAP EWM Online Training",
-            subtitle: "Success Guarantee & Credibility",
-            description: "ERPVITS has established itself as a trusted training partner, with hundreds of successful learners working at top consulting firms like Accenture, Capgemini, and Deloitte. Our alumni network testimonials speak to the quality of instruction and career acceleration.",
+            subtitle: "Complete Support Ecosystem",
+            description: "ERPVITS has established itself as a trusted training partner for SAP Modules, with hundreds of successful learners working at top consulting firms like Accenture, Capgemini, Deloitte, Infosys, and Wipro, as well as leading logistics and e-commerce companies like Amazon, Flipkart, DHL, and Blue Yonder. Our alumni network testimonials speak to the quality of instruction and the career acceleration our program delivers.\n\nFrom pre-evaluation to post-training support, we guide you through every step of your SAP EWM learning journey and career transition.",
             items: [
                 "Trusted by 500+ successful SAP professionals",
-                "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro",
+                "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro, and leading logistics organizations",
                 "Personalized pre-evaluation and learning path customization",
-                "Active alumni network and community forum",
-                "70+ guided lab exercises from basic to advanced scenarios",
-                "Quarterly updated materials aligned with latest SAP EWM releases",
-                "Mock interviews simulating real consultant scenarios",
+                "Active alumni network and community forum for warehouse professionals",
+                "70+ guided lab exercises from basic to advanced warehouse management scenarios",
+                "Quarterly updated materials aligned with latest SAP EWM releases and S/4HANA updates",
+                "Mock interviews simulating real consultant scenarios in warehouse operations",
                 "Dedicated certification prep week before exams"
             ]
         },
         {
             type: 'whats_included',
-            content: "A complete, career-focused SAP Extended Warehouse Management training program combining live expert sessions, real-world projects, hands-on labs, certification preparation, and ongoing career support.",
+            title: "What's Included in the SAP EWM Training – Complete Learning Package",
+            description: "A complete, career-focused SAP Extended Warehouse Management training program combining live expert sessions, real-world projects, hands-on labs, certification preparation, and ongoing career support to help you become a job-ready SAP EWM consultant.",
+            features: [
+                {
+                    title: "Live Interactive Classes",
+                    description: "50–60 hours of instructor-led sessions over 10–14 weeks via live video conferencing with real-time Q&A and interactive discussions on warehouse planning, optimization, and execution scenarios."
+                },
+                {
+                    title: "Real-World Projects",
+                    description: "Work on Fortune 500-inspired case studies covering warehouse network design, inbound and outbound processing, wave management, picking strategy optimization, and S/4HANA integration."
+                },
+                {
+                    title: "Hands-On Lab Environment",
+                    description: "Get full-time access to SAP EWM systems to practice warehouse master data setup, goods receipt, goods issue, picking and packing operations, bin management, and goods movement workflows."
+                },
+                {
+                    title: "Certification Exam Prep",
+                    description: "Prepare for SAP Certified Application Associate – Warehouse Management in SAP S/4HANA (C_S4EWM_2023) certification with study guides, practice exams, and focused bootcamp sessions."
+                },
+                {
+                    title: "Resume & Interview Coaching",
+                    description: "Receive personalized resume optimization, mock consulting interviews, and guidance for SAP EWM technical interviews focusing on warehouse operations and logistics topics."
+                },
+                {
+                    title: "Complete Study Materials",
+                    description: "Access PDFs, presentations, configuration checklists, interview question banks, warehouse management templates, and official SAP documentation links."
+                },
+                {
+                    title: "Lifetime Recording Access",
+                    description: "All live sessions are recorded, transcribed, and indexed for lifetime access and easy topic revision on warehouse operations and management."
+                },
+                {
+                    title: "Expert Q&A Sessions",
+                    description: "Join weekly 60-minute live Q&A discussions for concept clarification, warehouse project guidance, and career mentoring from experienced EWM consultants."
+                }
+            ],
             stats: [
-                { value: "50-60", label: "Hours of Live Training" },
-                { value: "70+", label: "Hands-On Lab Exercises" },
-                { value: "100%", label: "Placement Support" }
+                { value: "50-60", label: "Hours of Live Training", color: "orange" },
+                { value: "70+", label: "Hands-On Lab Exercises", color: "orange" },
+                { value: "24/7", label: "SAP EWM Lab Access", color: "orange" }
             ]
         },
         {
@@ -503,7 +538,92 @@ export const ewmContent = {
         },
         {
             type: 'detailed_learning_outcomes',
-            items: ewmLearningOutcomes
+            title: "What You'll Master in This Course",
+            subtitle: "Comprehensive competencies you'll acquire to excel as a professional",
+            items: {
+                tabs: [
+                    {
+                        name: "Functional Mastery",
+                        items: [
+                            {
+                                title: "End-to-End Warehouse Operations Management",
+                                icon: "Building",
+                                points: [
+                                    "Execute goods receipt, goods issue, and inventory movement workflows",
+                                    "Implement warehouse strategies across different operational models (1PL, 3PL, 4PL)",
+                                    "Manage cost control and process optimization for warehouse operations",
+                                    "Ensure compliance with warehouse safety and regulatory requirements"
+                                ]
+                            },
+                            {
+                                title: "Inbound and Outbound Process Excellence",
+                                icon: "Layout",
+                                points: [
+                                    "Configure quality inspection and alternate placement workflows",
+                                    "Execute outbound picking, packing, and shipping operations",
+                                    "Implement advanced picking strategies (batch, cluster, zone, serial)",
+                                    "Manage returns and defective goods handling"
+                                ]
+                            },
+                            {
+                                title: "Wave Planning and Work Center Optimization",
+                                icon: "Activity",
+                                points: [
+                                    "Configure and optimize work centers for different warehouse tasks",
+                                    "Implement labor-efficient picking and packing strategies",
+                                    "Monitor and improve warehouse productivity metrics",
+                                    "Manage RF operations and task routing"
+                                ]
+                            },
+                            {
+                                title: "Inventory Management and Accuracy",
+                                icon: "ClipboardCheck",
+                                points: [
+                                    "Perform cycle counting and inventory adjustments",
+                                    "Configure bin allocation and putaway strategies",
+                                    "Manage goods movements between storage locations",
+                                    "Ensure inventory accuracy and reconciliation"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        name: "Technical Skills",
+                        items: [
+                            {
+                                title: "Technical Master Data and S/4HANA Integration",
+                                icon: "Database",
+                                points: [
+                                    "Configure storage locations, zones, aisles, and bins",
+                                    "Maintain material warehouse data and attributes",
+                                    "Integrate SAP EWM with SAP S/4HANA core modules (SD, MM, PP)",
+                                    "Manage real-time data flow between systems"
+                                ]
+                            },
+                            {
+                                title: "RF Operations and Mobile Warehouse Management",
+                                icon: "Smartphone",
+                                points: [
+                                    "Set up RF transactions for goods receipt, picking, and packing",
+                                    "Implement RF routing and work queues",
+                                    "Manage mobile warehouse applications",
+                                    "Optimize RF performance and user adoption"
+                                ]
+                            },
+                            {
+                                title: "Analytics, Reporting and Continuous Improvement",
+                                icon: "BarChart3",
+                                points: [
+                                    "Build KPI reports and scorecards for management",
+                                    "Analyze warehouse productivity and efficiency trends",
+                                    "Identify cost optimization opportunities",
+                                    "Implement continuous improvement initiatives"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         {
             type: 'real_world_scenarios',

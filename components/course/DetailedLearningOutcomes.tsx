@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { CheckCircle2, ShieldCheck, Database, FileText, ShoppingCart, BookOpen, CreditCard, Building, BarChart3, Cloud, Layout, Lock, Search } from 'lucide-react';
+import { CheckCircle2, ShieldCheck, Database, FileText, ShoppingCart, BookOpen, CreditCard, Building, BarChart3, Cloud, Layout, Lock, Search, Activity, ClipboardCheck, Smartphone } from 'lucide-react';
 import { aribaLearningOutcomes } from '@/lib/contentHelpers';
 
 const iconMap: Record<string, any> = {
@@ -16,7 +16,10 @@ const iconMap: Record<string, any> = {
     "Cloud": Cloud,
     "Layout": Layout,
     "Lock": Lock,
-    "Search": Search
+    "Search": Search,
+    "Activity": Activity,
+    "ClipboardCheck": ClipboardCheck,
+    "Smartphone": Smartphone
 };
 
 export default function DetailedLearningOutcomes({ items, title, subtitle }: { items?: any, title?: string, subtitle?: string }) {

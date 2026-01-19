@@ -219,7 +219,7 @@ export default function SectionRenderer({ sections, courseName }: { sections: an
                     case 'table_curriculum':
                         return <CurriculumTable key={idx} items={section.items} title={section.title} />;
                     case 'detailed_certification':
-                        return <DetailedCertification key={idx} items={section.items} title={section.title} subtitle={section.subtitle} badge={section.badge} stats={section.stats} courseName={courseName || section.courseName} description={section.description || section.content} imageSrc={section.imageSrc} />;
+                        return <DetailedCertification key={idx} items={section.items} title={section.title} subtitle={section.subtitle} badge={section.badge} stats={section.stats} courseName={courseName || section.courseName} description={section.description || section.content} imageSrc={section.imageSrc} supportFeatures={section.supportFeatures} benefits={section.benefits} />;
                     case 'detailed_career_opportunities':
                         return <DetailedCareerOpportunities key={idx} items={section.items} courseName={courseName || section.courseName} />;
                     case 'detailed_companies':
@@ -235,7 +235,7 @@ export default function SectionRenderer({ sections, courseName }: { sections: an
                     case 'detailed_faq':
                         return <DetailedFAQ key={idx} items={section.items} />;
                     case 'detailed_demo_booking':
-                        return <DetailedDemoBooking key={idx} courseName={courseName} />;
+                        return <DetailedDemoBooking key={idx} courseName={courseName} {...section} />;
                     case 'features':
                         // Fallback replacement for features
                         return <DetailedFeatures key={idx} items={section.items} title={section.title || "Course Highlights"} />;
@@ -245,6 +245,8 @@ export default function SectionRenderer({ sections, courseName }: { sections: an
                         return <RichTextSection key={idx} title={section.title} content={section.content} />;
                     case 'testimonials':
                         return <TestimonialsSection key={idx} title={section.title} items={section.items} />;
+                    case 'detailed_sap_integrations':
+                        return <DetailedFeatures key={idx} items={section.items} title={section.title || "SAP Integrations"} />;
                     case 'content_with_image':
                         return <ContentWithImage key={idx} {...section} />;
                     case 'whats_included':

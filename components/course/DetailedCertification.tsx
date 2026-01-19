@@ -1,7 +1,7 @@
 import React from 'react';
 import { Award, CheckCircle2, BookOpen, Trophy, TrendingUp, FileCheck } from 'lucide-react';
 
-export default function DetailedCertification({ items, title, subtitle, badge, stats, courseName = "SAP Ariba", description, imageSrc }: {
+export default function DetailedCertification({ items, title, subtitle, badge, stats, courseName = "SAP Ariba", description, imageSrc, supportFeatures, benefits }: {
     items?: any[],
     title?: string,
     subtitle?: string,
@@ -9,7 +9,9 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
     stats?: { value: string, label: string }[],
     courseName?: string,
     description?: string,
-    imageSrc?: string
+    imageSrc?: string,
+    supportFeatures?: any[],
+    benefits?: any[]
 }) {
     const defaultCerts = [
         {
@@ -37,7 +39,7 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
 
     const certs = items || defaultCerts;
 
-    const supportFeatures = [
+    const defaultSupportFeatures = [
         {
             title: "Targeted Exam Preparation",
             subtitle: "Study guides aligned to official exam blueprints"
@@ -60,7 +62,10 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
         }
     ];
 
-    const benefits = [
+    // Use prop or default
+    const featuresToDisplay = supportFeatures || defaultSupportFeatures;
+
+    const defaultBenefits = [
         {
             title: "Global Recognition",
             desc: "SAP certifications recognized worldwide by employers and clients",
@@ -82,6 +87,9 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
             icon: Award
         }
     ];
+
+    // Use prop or default
+    const benefitsToDisplay = benefits || defaultBenefits;
 
     return (
         <section className="py-16 bg-white text-slate-900">
@@ -136,7 +144,7 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
                                 <h3 className="font-bold text-lg text-white">Why SAP Certification Matters</h3>
                             </div>
                             <ul className="space-y-4">
-                                {benefits.map((benefit, idx) => (
+                                {benefitsToDisplay.map((benefit, idx) => (
                                     <li key={idx} className="flex gap-3 items-start">
                                         <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-white flex-shrink-0" />
                                         <span className="text-sm">
@@ -171,7 +179,7 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
                                 Our Certification Support Includes:
                             </h3>
                             <ul className="space-y-4">
-                                {supportFeatures.map((feature: any, idx) => (
+                                {featuresToDisplay.map((feature: any, idx) => (
                                     <li key={idx} className="flex gap-4 text-sm items-start group">
                                         <div className="mt-0.5 bg-white p-1 rounded-full border border-orange-200 shadow-sm group-hover:bg-orange-50 transition-colors">
                                             <CheckCircle2 className="w-4 h-4 text-orange-600" />

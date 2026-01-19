@@ -193,15 +193,7 @@ export default function DetailedTestimonials({ items, courseName = "SAP Ariba" }
                     ))}
                 </div>
 
-                <div className="text-center mb-24">
-                    <button
-                        onClick={scrollToBooking}
-                        className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
-                    >
-                        Start Your Success Story Today
-                    </button>
-                    <p className="mt-4 text-sm text-slate-500">Join 5,000+ successful graduates</p>
-                </div>
+
 
                 {/* Lead Magnet / Interview Guide Section - Hidden Temporarily
                 <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100 max-w-6xl mx-auto">

@@ -16,6 +16,7 @@ const DEFAULT_CONTENT = {
     badge: "★ RATED #1 SAP TRAINING PROGRAM 2025 ★",
     cta_primary: "Start Your SAP Training Journey Today",
     cta_secondary: "Explore SAP Courses",
+    bg_image: "/images/home_hero_bg.png",
     stats: [
         { val: "12+ Years", label: "In SAP Industry" },
         { val: "8000+", label: "Professionals Trained" },
@@ -51,13 +52,12 @@ const Hero = () => {
 
     const headingParts = content.heading.split(content.highlight_text);
 
-    // ... imports
     return (
         <div className="bg-white text-slate-900 relative overflow-hidden">
             {/* Background Image & Overlay */}
             <div className="absolute inset-0 w-full h-full z-0">
                 <Image
-                    src="/images/home_hero_bg.png"
+                    src={content.bg_image || "/images/home_hero_bg.png"}
                     alt="Office Background"
                     fill
                     className="object-cover object-center brightness-110 contrast-125"

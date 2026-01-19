@@ -5,7 +5,7 @@ import { User, Mail, Phone, Briefcase, MessageSquare, ArrowRight, CheckCircle2, 
 import { supabase } from '@/lib/supabase';
 import { submitToGoogleSheets } from '@/app/actions/submitToGoogleSheets';
 
-export default function DetailedDemoBooking({ courseName = "SAP Consultant" }: { courseName?: string }) {
+export default function DetailedDemoBooking({ courseName = "SAP Consultant", title, subtitle, benefits }: { courseName?: string, title?: string, subtitle?: string, benefits?: any[] }) {
     const [formData, setFormData] = useState({
         fullName: '',
         email: '',
@@ -24,61 +24,26 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant" }: {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-
-        // 1. Open the thank you page immediately to ensure it opens and avoid blank page
         const newTab = window.open('/thank-you', '_blank');
-
         setStatus('loading');
         setErrorMessage('');
 
         try {
-            // Parse Name
             const names = formData.fullName.trim().split(' ');
             const firstName = names[0] || '';
             const lastName = names.slice(1).join(' ') || '';
-
-            // 1. Insert into Supabase
-            // Note: Storing experience in the message body for now as 'experience_level' column status is unverified
             const fullMessage = `Experience: ${formData.experience}\n\n${formData.message}`;
 
-            const { error } = await supabase
-                .from('contacts')
-                .insert([
-                    {
-                        name: formData.fullName,
-                        first_name: firstName,
-                        last_name: lastName,
-                        email: formData.email,
-                        phone: formData.phone,
-                        course: courseName,
-                        message: fullMessage,
-                    }
-                ]);
+            const { error } = await supabase.from('contacts').insert([{
+                name: formData.fullName, first_name: firstName, last_name: lastName,
+                email: formData.email, phone: formData.phone, course: courseName, message: fullMessage
+            }]);
 
             if (error) throw error;
-
-            // 2. Send to Google Sheets (Fire and forget)
-            submitToGoogleSheets({
-                firstName,
-                lastName,
-                email: formData.email,
-                countryCode: '',
-                phone: formData.phone,
-                course: courseName,
-                message: fullMessage
-            }).catch((err: any) => console.error('Google Sheet Error:', err));
+            submitToGoogleSheets({ firstName, lastName, email: formData.email, countryCode: '', phone: formData.phone, course: courseName, message: fullMessage }).catch(console.error);
 
             setStatus('success');
-            // newTab is already at /thank-you
-
-            setFormData({
-                fullName: '',
-                email: '',
-                phone: '',
-                experience: '',
-                message: ''
-            });
-
+            setFormData({ fullName: '', email: '', phone: '', experience: '', message: '' });
         } catch (error: any) {
             if (newTab) newTab.close();
             console.error('Submission error:', error);
@@ -87,68 +52,54 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant" }: {
         }
     };
 
+    const defaultBenefits = [
+        { icon: Video, title: "Insightful Live Ariba Session", desc: "Observe real training and instructor methodology" },
+        { icon: Calendar, title: "30 Min Career Consultation", desc: "Personalized guidance based on your background" },
+        { icon: HelpCircle, title: "Q&A with Instructor", desc: "Ask questions about course, certification, and career" },
+        { icon: Gift, title: "Special Discount Offer", desc: "Exclusive discount pass for demo attendees" }
+    ];
+
+    const displayBenefits = benefits && benefits.length > 0 ? benefits : defaultBenefits;
+
     return (
         <section id="detailed-demo-booking" className="py-8 bg-orange-600 relative overflow-hidden">
-            {/* Background Effects */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
             <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-slate-900/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2"></div>
 
             <div className="max-w-6xl mx-auto px-4 relative z-10">
-                {/* Header */}
                 <div className="text-center mb-6">
                     <span className="bg-slate-900 text-white px-3 py-0.5 rounded-full text-[10px] font-bold tracking-widest uppercase mb-2 inline-block">
                         Get Started
                     </span>
                     <h2 className="text-2xl font-bold text-white mb-2">
-                        Ready to Become an <span className="text-slate-900">{courseName} Consultant?</span>
+                        {title || <>Ready to Become an <span className="text-slate-900">{courseName} Consultant?</span></>}
                     </h2>
                     <p className="text-orange-50 max-w-xl mx-auto text-xs">
-                        Book your free demo today and take the first step towards a lucrative {courseName} career
+                        {subtitle || `Book your free demo today and take the first step towards a lucrative ${courseName} career`}
                     </p>
                 </div>
 
                 <div className="grid lg:grid-cols-2 gap-6 items-start">
-                    {/* Left Column: Benefits & Contact */}
                     <div className="space-y-4">
                         <div>
                             <h3 className="text-base font-bold text-white mb-3">What You'll Get With Your Free Demo</h3>
                             <div className="space-y-2">
-                                <div className="bg-white/10 border border-white/20 p-2.5 rounded-lg flex items-start gap-3">
-                                    <div className="w-6 h-6 rounded bg-slate-900 flex items-center justify-center text-white shrink-0">
-                                        <Video className="w-3.5 h-3.5" />
-                                    </div>
-                                    <div>
-                                        <h4 className="font-bold text-white mb-0 text-xs">Insightful Live Ariba Session</h4>
-                                        <p className="text-[10px] text-orange-50">Observe real training and instructor methodology</p>
-                                    </div>
-                                </div>
-                                <div className="bg-white/10 border border-white/20 p-2.5 rounded-lg flex items-start gap-3">
-                                    <div className="w-6 h-6 rounded bg-slate-900 flex items-center justify-center text-white shrink-0">
-                                        <Calendar className="w-3.5 h-3.5" />
-                                    </div>
-                                    <div>
-                                        <h4 className="font-bold text-white mb-0 text-xs">30 Min Career Consultation</h4>
-                                        <p className="text-[10px] text-orange-50">Personalized guidance based on your background</p>
-                                    </div>
-                                </div>
-                                <div className="bg-white/10 border border-white/20 p-2.5 rounded-lg flex items-start gap-3">
-                                    <div className="w-6 h-6 rounded bg-slate-900 flex items-center justify-center text-white shrink-0">
-                                        <HelpCircle className="w-3.5 h-3.5" />
-                                    </div>
-                                    <div>
-                                        <h4 className="font-bold text-white mb-0 text-xs">Q&A with Instructor</h4>
-                                        <p className="text-[10px] text-orange-50">Ask questions about course, certification, and career</p>
-                                    </div>
-                                </div>
-                                <div className="bg-white/10 border border-white/20 p-2.5 rounded-lg flex items-start gap-3">
-                                    <div className="w-6 h-6 rounded bg-slate-900 flex items-center justify-center text-white shrink-0">
-                                        <Gift className="w-3.5 h-3.5" />
-                                    </div>
-                                    <div>
-                                        <h4 className="font-bold text-white mb-0 text-xs">Special Discount Offer</h4>
-                                        <p className="text-[10px] text-orange-50">Exclusive discount pass for demo attendees</p>
-                                    </div>
-                                </div>
+                                {displayBenefits.map((item: any, i: number) => {
+                                    const Icon = item.icon || CheckCircle2; // Fallback icon
+                                    // if benefit comes from admin (JSON), icon might be string name, hard to map dynamically here without map logic. 
+                                    // simpler: support title/desc only for dynamic items, use fixed icon.
+                                    return (
+                                        <div key={i} className="bg-white/10 border border-white/20 p-2.5 rounded-lg flex items-start gap-3">
+                                            <div className="w-6 h-6 rounded bg-slate-900 flex items-center justify-center text-white shrink-0">
+                                                <Icon className="w-3.5 h-3.5" />
+                                            </div>
+                                            <div>
+                                                <h4 className="font-bold text-white mb-0 text-xs">{item.title}</h4>
+                                                <p className="text-[10px] text-orange-50">{item.desc || item.description}</p>
+                                            </div>
+                                        </div>
+                                    )
+                                })}
                             </div>
                         </div>
 
