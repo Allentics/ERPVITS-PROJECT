@@ -1,41 +1,42 @@
 export const ppdsContent = {
     price: "45,000",
     duration: "45-50 Hours",
-    syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-ppds.pdf",
     heroHeading: "Transform Your Career with the #1 SAP PPDS Online Training Program",
-    heroSubheading: "The SAP PPDS (Production Planning and Detailed Scheduling) Online Training Program from ERPVITS represents a transformative learning pathway for production planning professionals and SAP consultants eager to excel in advanced production scheduling, demand planning, and manufacturing optimization.",
+    heroSubheading: "The SAP PPDS (Production Planning and Detailed Scheduling) Online Training Program from ERPVITS represents a transformative learning pathway for production planning professionals and SAP consultants eager to excel in advanced production scheduling, demand planning, and manufacturing optimization. In today's hyper-competitive manufacturing landscape, organizations urgently need certified SAP PPDS experts who can optimize production schedules, reduce lead times, minimize inventory costs, and drive operational excellence. This comprehensive SAP PPDS training course combines interactive, instructor-led sessions, hands-on lab exercises, real-world production planning projects, and end-to-end certification support—designed specifically for production planners, scheduling specialists, supply chain professionals, ERP consultants, and ambitious graduates targeting global consulting and implementation roles.",
+    heroLayout: "centered",
+    themeColor: "orange",
+    syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-ppds.pdf",
 
     title: "SAP PPDS",
-    description: "The SAP PPDS (Production Planning and Detailed Scheduling) Online Training Program from ERPVITS represents a transformative learning pathway for production planning professionals and SAP consultants eager to excel in advanced production scheduling, demand planning, and manufacturing optimization. In today's hyper-competitive manufacturing landscape, organizations urgently need certified SAP PPDS experts who can optimize production schedules, reduce lead times, minimize inventory costs, and drive operational excellence. This comprehensive SAP PPDS training course combines interactive, instructor-led sessions, hands-on lab exercises, real-world production planning projects, and end-to-end certification support—designed specifically for production planners, scheduling specialists, supply chain professionals, ERP consultants, and ambitious graduates targeting global consulting and implementation roles.",
+    description: "The SAP PPDS (Production Planning and Detailed Scheduling) Online Training Program from ERPVITS represents a transformative learning pathway for production planning professionals and SAP consultants eager to excel in advanced production scheduling, demand planning, and manufacturing optimization.",
     badges: ["Best Seller", "Job Oriented"],
+    heroStats: [
+        { icon: "Award", label: "SAP Certified Trainers" },
+        { icon: "Star", label: "4.8 Learner Rating" },
+        { icon: "Headphones", label: "24/7 Team Support" }
+    ],
+    buttonLabels: {
+        primary: "Book Your Free Demo Class",
+        secondary: "View Curriculum"
+    },
     metaTitle: "SAP PPDS Training Online | Production Planning Course",
     metaDescription: "Master advanced production planning with SAP PPDS training. Learn scheduling, optimization, hands-on labs, real projects & certification support. Enroll Now",
 
-    features: [
-        "Trusted by 420+ successful SAP PPDS professionals",
-        "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro",
-        "Personalized pre-evaluation and production planning learning path",
-        "Active alumni network and production scheduling community forum",
-        "40+ guided lab exercises from basic to advanced planning scenarios",
-        "Quarterly updated materials aligned with latest S/4HANA releases",
-        "Mock interviews simulating real PPDS consultant scenarios",
-        "Dedicated certification prep and planning bootcamp sessions"
-    ],
-
+    features: [],
     sections: [
         {
             type: 'detailed_features',
             title: "Learn SAP PPDS from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            subtitle: "Expert-led learning with real-world experience and proven methodologies from actual enterprise implementations",
+            subtitle: "Our SAP PPDS Online Training is delivered exclusively by certified SAP professionals with 12+ years of direct implementation experience in production planning, demand forecasting, and manufacturing scheduling. Unlike passive video courses or self-paced modules, you receive interactive, real-time instruction where instructors share proven methodologies, address your specific questions, and guide you through complex production scheduling scenarios step-by-step.",
             badge: "Why Choose Us",
             items: [
                 {
                     title: "Certified Instructor Expertise",
-                    description: "Each trainer holds official SAP PPDS certifications and has successfully led multiple enterprise-scale PPDS implementations across automotive, pharmaceutical, consumer goods, and manufacturing sectors. They don't just teach theory; they share war stories, common pitfalls, and industry best practices from actual production optimization deployments."
+                    description: "Each trainer holds official SAP PPDS certifications and has successfully led multiple enterprise-scale PPDS implementations across automotive, pharmaceutical, consumer goods, and manufacturing sectors. They don't just teach theory; they share war stories, common pitfalls, and industry best practices from actual production optimization deployments. This real-world perspective is invaluable when you enter your first SAP PPDS consulting engagement."
                 },
                 {
                     title: "100% Hands-On Learning Methodology",
-                    description: "Every session includes live demonstrations directly on SAP S/4HANA systems, followed by guided lab exercises where you replicate what you've learned. By the end of the course, you've created demand forecasts, developed production schedules, optimized resource allocation, executed what-if scenarios, and configured planning parameters—all on real production systems."
+                    description: "Traditional training teaches SAP PPDS concepts through slides and presentations. Our program goes further. Every session includes live demonstrations directly on SAP S/4HANA systems, followed by guided lab exercises where you replicate what you've learned. By the end of the course, you've created demand forecasts, developed production schedules, optimized resource allocation, executed what-if scenarios, and configured planning parameters—all on real production systems."
                 },
                 {
                     title: "Job-Oriented Curriculum Design",
@@ -72,7 +73,7 @@ export const ppdsContent = {
             title: "Why Professionals Choose ERPVITS for SAP PPDS Online Training",
             subtitle: "Complete Support Ecosystem",
             videoSrc: "https://www.youtube.com/embed/Ec3ClABT7NA",
-            description: "ERPVITS has established itself as a trusted training partner for SAP planning technologies, with hundreds of successful learners working at top consulting firms like Accenture, Capgemini, Deloitte, Infosys, and Wipro. Our alumni network testimonials speak to the quality of instruction and the career acceleration our program delivers. From pre-evaluation to post-training support, we guide you through every step of your SAP PPDS learning journey and production planning career transition.",
+            description: "ERPVITS has established itself as a trusted training partner for SAP planning technologies, with hundreds of successful learners working at top consulting firms like Accenture, Capgemini, Deloitte, Infosys, and Wipro. Our alumni network testimonials speak to the quality of instruction and the career acceleration our program delivers.",
             items: [
                 "Trusted by 420+ successful SAP PPDS professionals",
                 "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro",
@@ -82,7 +83,9 @@ export const ppdsContent = {
                 "Quarterly updated materials aligned with latest S/4HANA releases",
                 "Mock interviews simulating real PPDS consultant scenarios",
                 "Dedicated certification prep and planning bootcamp sessions"
-            ]
+            ],
+            supportTitle: "Complete Support Ecosystem",
+            supportText: "From pre-evaluation to post-training support, we guide you through every step of your SAP PPDS learning journey and production planning career transition."
         },
         {
             type: 'whats_included',
@@ -245,26 +248,9 @@ export const ppdsContent = {
             ]
         },
         {
-            type: 'detailed_prerequisites',
-            items: {
-                minimum: [
-                    "Basic understanding of production planning and supply chain concepts",
-                    "Familiarity with manufacturing or supply chain operations",
-                    "Comfortable with Excel and business software",
-                    "Analytical and problem-solving mindset",
-                    "Understanding of demand forecasting basics"
-                ],
-                nicetohave: [
-                    "Prior SAP experience (any module)",
-                    "Production planning work experience",
-                    "Demand forecasting background",
-                    "Exposure to ERP systems",
-                    "Intermediate SQL or analytics skills"
-                ]
-            }
-        },
-        {
             type: 'detailed_target_audience',
+            title: "Who Can Learn SAP PPDS? – Perfect for Diverse Career Paths",
+            subtitle: "Perfect for professionals from diverse backgrounds targeting global consulting and implementation roles in production planning",
             items: [
                 {
                     title: "Production Planning & Scheduling Professionals",
@@ -329,30 +315,134 @@ export const ppdsContent = {
             ]
         },
         {
+            type: 'detailed_prerequisites',
+            items: {
+                minimum: [
+                    "Basic understanding of production planning and supply chain concepts",
+                    "Familiarity with manufacturing or supply chain operations",
+                    "Comfortable with Excel and business software",
+                    "Analytical and problem-solving mindset",
+                    "Understanding of demand forecasting basics"
+                ],
+                nicetohave: [
+                    "Prior SAP experience (any module)",
+                    "Production planning work experience",
+                    "Demand forecasting background",
+                    "Exposure to ERP systems",
+                    "Intermediate SQL or analytics skills"
+                ]
+            }
+        },
+        {
             type: 'detailed_learning_outcomes',
-            items: [
-                {
-                    title: "Planning Mastery",
-                    points: [
-                        "End-to-End Production Planning & Scheduling: Develop complete production plans from demand forecasting to detailed scheduling, configure master production schedules, and execute detailed scheduling.",
-                        "Demand Planning & Forecasting: Create and manage demand forecasts using statistical methods, monitor forecast accuracy, and adjust based on business drivers.",
-                        "Capacity Planning: Design capacity planning systems, identify bottlenecks, balance loads, and optimize resource utilization.",
-                        "Supply Chain Optimization: Implement demand-driven planning, manage complex multi-site chains, and optimize inventory levels."
-                    ]
-                },
-                {
-                    title: "Technical Skills",
-                    points: [
-                        "Master Data Management: Configure material masters, work centers, resources, and planning hierarchy structures.",
-                        "System Configuration: Configure PPDS parameters, scheduling strategies, planning time fences, and system settings.",
-                        "Analytics & Performance: Monitor planning KPIs, analyze exception reports, perform variance analysis, and optimize planning runs.",
-                        "Advanced Techniques: Implement supply and demand matching, predictive planning, and manage complex scenarios."
-                    ]
-                }
-            ]
+            title: "What You'll Master in This SAP PPDS Online Course – Core Competencies",
+            subtitle: "Comprehensive competencies you'll acquire to excel as a professional",
+            items: {
+                tabs: [
+                    {
+                        name: "Planning Mastery",
+                        items: [
+                            {
+                                title: "End-to-End Production Planning & Scheduling",
+                                titleKeywords: "Production Planning",
+                                icon: "Layout",
+                                points: [
+                                    "Develop complete production plans from demand forecasting to detailed scheduling",
+                                    "Configure master production schedules and planned order generation",
+                                    "Execute detailed scheduling with constraint management",
+                                    "Optimize production and supply chain efficiency"
+                                ]
+                            },
+                            {
+                                title: "Demand Planning & Forecasting",
+                                titleKeywords: "Demand Planning",
+                                icon: "BarChart3",
+                                points: [
+                                    "Create and manage demand forecasts using statistical methods",
+                                    "Implement collaborative demand planning processes",
+                                    "Monitor forecast accuracy and performance",
+                                    "Adjust forecasts based on business drivers"
+                                ]
+                            },
+                            {
+                                title: "Capacity Planning & Resource Management",
+                                titleKeywords: "Capacity Planning",
+                                icon: "Building",
+                                points: [
+                                    "Design and configure capacity planning systems",
+                                    "Identify and resolve capacity bottlenecks",
+                                    "Balance production loads across resources",
+                                    "Optimize resource utilization"
+                                ]
+                            },
+                            {
+                                title: "Supply Chain Optimization",
+                                titleKeywords: "Supply Chain",
+                                icon: "Activity",
+                                points: [
+                                    "Implement demand-driven material planning",
+                                    "Manage complex multi-site supply chains",
+                                    "Optimize inventory levels and safety stock",
+                                    "Drive supply chain efficiency"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        name: "Technical Skills",
+                        items: [
+                            {
+                                title: "Master Data Management for Planning",
+                                titleKeywords: "Master Data",
+                                icon: "Database",
+                                points: [
+                                    "Configure material masters for planning",
+                                    "Set up work centers and resources",
+                                    "Define planning parameters and policies",
+                                    "Maintain planning hierarchy structures"
+                                ]
+                            },
+                            {
+                                title: "System Configuration & Parameter Setup",
+                                titleKeywords: "Configuration",
+                                icon: "ShieldCheck",
+                                points: [
+                                    "Configure PPDS parameters and settings",
+                                    "Set up scheduling strategies",
+                                    "Configure planning time fences",
+                                    "Optimize system performance"
+                                ]
+                            },
+                            {
+                                title: "Analytics & Performance Monitoring",
+                                titleKeywords: "Analytics",
+                                icon: "ClipboardCheck",
+                                points: [
+                                    "Monitor planning KPIs and performance metrics",
+                                    "Analyze planning exception reports",
+                                    "Perform planning variance analysis",
+                                    "Optimize planning run execution"
+                                ]
+                            },
+                            {
+                                title: "Advanced Planning Techniques",
+                                titleKeywords: "Advanced Techniques",
+                                icon: "Cloud",
+                                points: [
+                                    "Implement demand-driven planning strategies",
+                                    "Configure supply and demand matching",
+                                    "Leverage predictive planning capabilities",
+                                    "Manage multi-site and complex scenarios"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         {
             type: 'real_world_scenarios',
+            title: "Experience Real-World SAP PPDS Scenarios & Business Case Studies",
             items: [
                 {
                     title: "Case Study 1: Automotive Supplier's Production Optimization",
@@ -405,14 +495,20 @@ export const ppdsContent = {
             type: 'detailed_certification',
             imageSrc: "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP PPDS Infographic.webp",
             title: "SAP PPDS Certification – Your Global Career Credential",
-            content: "We provide support for SAP Certified Associate – SAP S/4HANA Production Planning & Detailed Scheduling (Exam Code: C_SAPPS_2411 or equivalent). Focuses on demand planning, master scheduling, and detailed scheduling.",
+            subtitle: "We Provide Support for Below SAP Certification List",
+            content: "We provide support for SAP Certified Associate – SAP S/4HANA Production Planning & Detailed Scheduling (Exam Code: C_SAPPS_2411 or equivalent).",
+            stats: [
+                { label: "Exam Code", value: "C_SAPPS_2411" },
+                { label: "Certification Value", value: "Global Recognition" },
+                { label: "Job Relevance", value: "High Demand" }
+            ],
             items: [
                 {
-                    title: "SAP Certified Associate – SAP PPDS Production Planning & Detailed Scheduling",
-                    code: "C_SAPPS_2025",
-                    focus: "Production Planning, Detailed Scheduling, Demand Management, Capacity Planning",
-                    who: "Application Consultants, Business Analysts, Production Planners",
-                    relevance: "Global consulting roles and advanced planning positions"
+                    title: "SAP Certified Associate – SAP S/4HANA Production Planning & Detailed Scheduling",
+                    code: "C_SAPPS_2411",
+                    focus: "Demand planning, master scheduling, detailed scheduling, capacity planning",
+                    who: "Production planners, scheduling specialists, supply chain consultants",
+                    relevance: "Demonstrates expertise in end-to-end production planning implementation"
                 }
             ]
         },
@@ -424,8 +520,8 @@ export const ppdsContent = {
                 {
                     title: "SAP PPDS Consultant",
                     salary: "$105,000–$135,000 (USA) | ₹8,00,000–₹10,50,000 (India)",
-                    responsibilities: "Configure PPDS scenarios, manage master data, optimize planning runs, support end-users.",
-                    employers: "Accenture, Capgemini, Deloitte, Infosys, Wipro, IBM",
+                    responsibilities: "Configure PPDS modules, manage planning projects, support implementations.",
+                    employers: "Accenture, Capgemini, Deloitte, Infosys, Wipro",
                     path: "2–3 years → Senior PPDS Consultant",
                     icon: "User",
                     color: "blue"
@@ -433,17 +529,17 @@ export const ppdsContent = {
                 {
                     title: "Production Planning Specialist / Demand Planner",
                     salary: "$95,000–$135,000 (USA) | ₹7,00,000–₹10,00,000 (India)",
-                    responsibilities: "Manage daily production schedules, forecast demand, minimize stockouts, improve delivery performance.",
-                    employers: "Volkswagen, Siemens, Nestle, Unilever, General Motors",
-                    path: "3–4 years → Planning Manager",
+                    responsibilities: "Manage production schedules, optimize demand forecasts, drive planning efficiency.",
+                    employers: "Manufacturing, Automotive, Pharmaceutical, Retail",
+                    path: "3–5 years → Senior Planning Manager",
                     icon: "Factory",
                     color: "green"
                 },
                 {
-                    title: "Supply Chain Analyst",
+                    title: "Supply Chain Analyst / Planning Specialist",
                     salary: "$90,000–$130,000 (USA) | ₹7,00,000–₹9,50,000 (India)",
-                    responsibilities: "Analyze supply chain KPIs, identify bottlenecks, optimize inventory levels, generate planning reports.",
-                    employers: "Amazon, DHL, Maersk, Retail & Manufacturing Giants",
+                    responsibilities: "Analyze supply chain, optimize planning strategies, reduce inventory.",
+                    employers: "Manufacturing, Logistics, Retail, Consumer Goods",
                     path: "3–5 years → Supply Chain Manager",
                     icon: "TrendingUp",
                     color: "purple"
@@ -451,18 +547,18 @@ export const ppdsContent = {
                 {
                     title: "SAP PPDS Integration Consultant",
                     salary: "$120,000–$160,000 (USA) | ₹9,00,000–₹12,50,000 (India)",
-                    responsibilities: "Integrate PPDS with S/4HANA PP, MM, SD, and external systems. Manage CIF integration models.",
-                    employers: "Tech Consultancies, SAP Partners, Large Enterprises",
-                    path: "4–6 years → Solution Architect",
+                    responsibilities: "Integrate PPDS with other modules, manage data flows, optimize systems.",
+                    employers: "Consulting, Technology, Manufacturing",
+                    path: "4–6 years → Senior Integration Consultant",
                     icon: "Link",
                     color: "orange"
                 },
                 {
                     title: "Solutions Architect – Supply Chain Planning",
                     salary: "$150,000–$210,000 (USA) | ₹12,00,000–₹16,50,000 (India)",
-                    responsibilities: "Design end-to-end supply chain planning solutions, define architecture, lead transformation projects.",
-                    employers: "Global Consulting Firms, Major IT Services",
-                    path: "7+ years → Practice Head / Director",
+                    responsibilities: "Design supply chain solutions, lead implementations, advise on strategy.",
+                    employers: "Consulting, Manufacturing, Enterprise",
+                    path: "7+ years → Principal Consultant",
                     icon: "DraftingCompass",
                     color: "indigo"
                 }
@@ -472,25 +568,30 @@ export const ppdsContent = {
             type: 'detailed_career_roadmap',
             items: [
                 {
-                    year: "Years 1-2",
-                    role: "SAP PPDS Consultant",
+                    stage: "Start (1-2)",
+                    title: "SAP PPDS Consultant",
                     description: "Support planning implementations, gain project experience"
                 },
                 {
-                    year: "Years 3-4",
-                    role: "Senior Consultant",
+                    stage: "Mid-Level (3-4)",
+                    title: "Senior Consultant",
                     description: "Lead planning projects, mentor juniors, design solutions"
                 },
                 {
-                    year: "Years 5-7",
-                    role: "Supply Chain Architect",
+                    stage: "Senior (5-7)",
+                    title: "Supply Chain Architect/Lead",
                     description: "Design supply chain strategies, manage technical teams"
                 },
                 {
-                    year: "Years 7+",
-                    role: "Principal Architect/Director",
+                    stage: "Principal (7+)",
+                    title: "Principal Architect/Director",
                     description: "Lead strategic initiatives, thought leadership, organizational leadership"
                 }
+            ],
+            stats: [
+                { value: "175%+", label: "Increase in Job Openings" },
+                { value: "510+", label: "Companies Hiring" },
+                { value: "$105K, ₹8 LPA", label: "Average Starting Salary" }
             ]
         },
         {
@@ -525,6 +626,7 @@ export const ppdsContent = {
         },
         {
             type: 'detailed_post_training_journey',
+            title: "What to Expect After Completing SAP PPDS Training – Your Growth Roadmap",
             items: [
                 {
                     title: "Immediate Post-Training",
@@ -534,31 +636,43 @@ export const ppdsContent = {
                     points: [
                         "Receive course completion certificate",
                         "Access lifetime course materials and PPDS recordings",
-                        "Apply for SAP PPDS certification exam",
-                        "Start job search with career services support"
+                        "Join alumni network and production planning community forum",
+                        "Begin resume updates highlighting SAP PPDS expertise"
                     ]
                 },
                 {
-                    title: "First Role",
-                    timeline: "Month 2-12",
+                    title: "Job Search & First Role",
+                    timeline: "Month 2-3",
                     color: "slate",
                     icon: "Rocket",
                     points: [
+                        "Apply for SAP PPDS certification exam",
+                        "Start job search with career services support",
                         "Secure first SAP PPDS opportunity",
-                        "Learn planning processes and demand patterns",
-                        "Lead planning tasks and optimize parameters"
+                        "Begin real-world planning project experience"
+                    ]
+                },
+                {
+                    title: "First Year in Role",
+                    timeline: "Year 1",
+                    color: "orange",
+                    icon: "TrendingUp",
+                    points: [
+                        "Learn planning processes, understand demand patterns",
+                        "Lead planning tasks, optimize scheduling parameters",
+                        "Lead planning initiatives, design solutions"
                     ]
                 },
                 {
                     title: "Long-Term Growth",
                     timeline: "1-5 Years",
-                    color: "orange",
-                    icon: "TrendingUp",
+                    color: "slate",
+                    icon: "Award",
                     points: [
-                        "Earn SAP PPDS certification",
-                        "Build domain expertise",
+                        "Earn SAP PPDS certification and related supply chain certifications",
+                        "Build domain expertise in specific industries",
                         "Develop leadership and project management capabilities",
-                        "Transition to supply chain leadership"
+                        "Transition to supply chain leadership or architecture roles"
                     ]
                 }
             ]
@@ -593,7 +707,7 @@ export const ppdsContent = {
                     date: "November 16, 2025",
                     schedule: "Sat & Sun | 10:00 AM – 1:00 PM IST",
                     duration: "35–40 Hours",
-                    seatsFilled: 40
+                    seatsFilled: 60
                 },
                 {
                     name: "Batch 3: December 2025 (Flexible)",
@@ -602,7 +716,7 @@ export const ppdsContent = {
                     date: "December 1, 2025",
                     schedule: "Flexible timings | Customized per batch",
                     duration: "35–40 Hours",
-                    seatsFilled: 30
+                    seatsFilled: 70
                 }
             ]
         },
@@ -621,10 +735,21 @@ export const ppdsContent = {
                 { q: "What is demand planning in SAP PPDS?", a: "Demand planning involves forecasting future product demand using statistical methods. ERPVITS teaches demand forecasting models, forecast accuracy monitoring, and collaborative demand planning processes." },
                 { q: "What is master production scheduling?", a: "The Master Production Schedule (MPS) plans production quantities and timing. ERPVITS covers MPS creation, lot sizing strategies, safety stock configuration, and planned order generation." },
                 { q: "How do I handle capacity constraints in PPDS?", a: "ERPVITS covers capacity planning, bottleneck identification, load leveling, and resource management strategies for optimizing production within capacity limitations." },
+                { q: "How does SAP PPDS support modern supply chain operations?", a: "PPDS provides demand-driven planning, multi-site coordination, and optimization capabilities. ERPVITS provides practical exposure to PPDS workflows for real-world implementations." },
+                { q: "Why should I join SAP PPDS Training at ERPVITS?", a: "ERPVITS offers SAP PPDS training with live sessions, industry-aligned projects, and placement support. You'll receive guidance on PPDS certification, resume preparation, and interview success strategies." },
                 { q: "Who can enroll in the SAP PPDS Course?", a: "Production planners, supply chain professionals, or anyone interested in manufacturing planning can join. ERPVITS builds job-ready PPDS skills for diverse backgrounds." },
+                { q: "What is the SAP PPDS Certification and why is it valuable?", a: "SAP PPDS Certification validates expertise in production planning. ERPVITS prepares you for official certification exams helping you become a certified PPDS professional." },
+                { q: "What are the SAP PPDS course fees at ERPVITS?", a: "PPDS course fees are competitive and depend on the program and training mode. Our pricing ensures maximum value with hands-on learning, placement, and certification support." },
                 { q: "How much does SAP PPDS Certification cost?", a: "Certification cost is determined by SAP Education. ERPVITS provides complete exam guidance, practice tests, and mentoring to help you pass on first attempt." },
-                { q: "What career options are available after completing PPDS training?", a: "After PPDS training, you can pursue roles like PPDS Consultant, Production Planner, Demand Planning Specialist, or Supply Chain Architect." },
-                { q: "Does ERPVITS provide SAP PPDS Training with Placement Support?", a: "Yes! ERPVITS offers PPDS training with placement assistance helping build impressive planning profiles and connect with recruiters." }
+                { q: "How can I become an SAP PPDS Consultant through ERPVITS?", a: "Join our structured PPDS training program, complete planning projects, and prepare for certification. ERPVITS offers career counseling and job assistance." },
+                { q: "What career options are available after completing PPDS training?", a: "After PPDS training, you can pursue roles like PPDS Consultant, Production Planner, Demand Planning Specialist, or Supply Chain Architect at consulting firms and enterprises." },
+                { q: "What is the difference between MPS and detailed scheduling?", a: "Master Production Schedule (MPS) plans what to produce, while detailed scheduling determines when and how to produce it. ERPVITS covers both aspects comprehensively." },
+                { q: "How does PPDS integrate with other SAP modules?", a: "ERPVITS covers integration with Materials Management (MM), Sales & Distribution (SD), and Financial Accounting (FI) modules, demonstrating end-to-end planning." },
+                { q: "What are the main PPDS areas covered?", a: "Our course covers demand planning, master scheduling, detailed scheduling, capacity planning, supply chain optimization, and advanced planning techniques with hands-on practice." },
+                { q: "Does ERPVITS provide SAP PPDS Training with Placement Support?", a: "Yes! ERPVITS offers PPDS training with placement assistance helping build impressive planning profiles and connect with recruiters." },
+                { q: "Can I take SAP PPDS Online Training from anywhere?", a: "Absolutely. ERPVITS provides online PPDS training accessible from any location with live instructors and recorded sessions." },
+                { q: "Is SAP PPDS Training available near me?", a: "Yes, ERPVITS offers online and classroom options with flexible weekend and weekday batches for working professionals." },
+                { q: "How does ERPVITS help in SAP PPDS Careers?", a: "ERPVITS guides your PPDS career with resume building, interview preparation, and job referrals across leading consulting companies and manufacturing enterprises." }
             ]
         }
     ]

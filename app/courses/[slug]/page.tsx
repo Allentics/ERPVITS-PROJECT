@@ -47,7 +47,16 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         (slug === 'sap-tm' || slug === 'tm' || slug === 'sap-transportation-management' ? courses.find(c => c.id === 'sap-tm') : undefined) ||
         (slug === 'sap-ewm' || slug === 'ewm' || slug === 'sap-extended-warehouse-management' ? courses.find(c => c.id === 'sap-ewm') : undefined) ||
         (slug === 'sap-ibp' || slug === 'ibp' || slug === 'sap-integrated-business-planning' ? courses.find(c => c.id === 'sap-ibp') : undefined) ||
-        (slug === 'sap-mdg' || slug === 'mdg' || slug === 'sap-master-data-governance' ? courses.find(c => c.id === 'sap-mdg') : undefined);
+        (slug === 'sap-mdg' || slug === 'mdg' || slug === 'sap-master-data-governance' ? courses.find(c => c.id === 'sap-mdg') : undefined) ||
+        (slug === 'sap-ppds' || slug === 'ppds' || slug === 'sap-ppds-training' ? courses.find(c => c.id === 'ppds') : undefined) ||
+        (slug === 'sap-fieldglass' || slug === 'fieldglass' ? courses.find(c => c.id === 'fieldglass' || c.id === 'sap-fieldglass') : undefined) ||
+        (slug === 'sap-sd' || slug === 'sd' || slug === 'sap-sales-and-distribution-training' ? courses.find(c => c.id === 'sd') : undefined) ||
+        (slug === 'sap-trm' || slug === 'trm' || slug === 'sap-treasury-and-risk-management-online-training' ? courses.find(c => c.id === 'trm') : undefined) ||
+        (slug === 'sap-c4c' || slug === 'c4c' || slug === 'sap-c4c-technical-training' || slug === 'c4c-technical' ? courses.find(c => c.id === 'c4c-technical') : undefined) ||
+        (slug === 'sap-cpi' || slug === 'cpi' || slug === 'sap-cpi-training' ? courses.find(c => c.id === 'cpi' || c.id === 'sap-cpi') : undefined) ||
+        (slug === 'sap-c4c-functional' || slug === 'c4c-functional' ? courses.find(c => c.id === 'sap-c4c-functional') : undefined) ||
+        (slug === 'sap-abap-on-hana' || slug === 'abap-hana' || slug === 'abap-on-hana' ? courses.find(c => c.id === 'sap-abap-on-hana') : undefined) ||
+        (slug === 'python-aiml' || slug === 'sap-python-aiml' || slug === 'python-ai-ml' ? courses.find(c => c.id === 'python-aiml') : undefined);
 
     return {
         title: course?.meta_title || local?.metaTitle || `${course?.title || local?.title} Online Training | ERPVITS`,
@@ -137,12 +146,12 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
         syllabusUrl: course?.sections?.find((s: any) => s.type === 'detailed_curriculum')?.syllabusUrl || localCourse?.syllabusUrl,
 
         // Content Sections
-        // Only fallback to localCourse if the DB field is strictly null/undefined
-        // This allows users to "remove" content by setting it to an empty array
-        sections: (course?.sections) ? course.sections : localCourse?.sections,
-        features: (course?.features) ? course.features : localCourse?.features,
-        curriculum: (course?.curriculum) ? course.curriculum : localCourse?.curriculum,
-        faqs: (course?.faqs) ? course.faqs : (localCourse?.faqs && localCourse.faqs.length > 0 ? localCourse.faqs : defaultFaqs),
+        // Priority: Local (Code) > DB (CMS)
+        // This ensures code updates are always reflected immediately
+        sections: (localCourse?.sections) ? localCourse.sections : course?.sections,
+        features: (localCourse?.features) ? localCourse.features : course?.features,
+        curriculum: (localCourse?.curriculum) ? localCourse.curriculum : course?.curriculum,
+        faqs: (localCourse?.faqs) ? localCourse.faqs : (course?.faqs || defaultFaqs),
     };
 
 
@@ -245,7 +254,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                     {/* Main Content Area */}
                     {mappedCourse.sections && mappedCourse.sections.length > 0 ? (
                         <div id="overview" className="scroll-mt-32">
-                            <SectionRenderer sections={mappedCourse.sections as Section[]} courseName={mappedCourse.title} />
+                            <SectionRenderer sections={mappedCourse.sections as Section[]} courseName={mappedCourse.title} syllabusUrl={mappedCourse.syllabusUrl} />
                         </div>
                     ) : (
                         <div className="space-y-16">
