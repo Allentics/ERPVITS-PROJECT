@@ -312,10 +312,12 @@ export const mmContent = {
             type: 'detailed_curriculum',
             title: "Comprehensive SAP S/4HANA MM Course Curriculum",
             subtitle: "40-45 hours of expert-led training covering every aspect from basics to advanced materials management implementation",
+            syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-s4-hana-mm.pdf",
             modules: [
                 {
-                    title: "Module 1: Introduction to SAP S/4HANA MM (4 Hours)",
-                    topics: [
+                    title: "Module 1: Introduction to SAP S/4HANA MM",
+                    duration: "4 Hours",
+                    learning_points: [
                         "Overview of SAP S/4HANA Materials Management and its role in supply chain",
                         "Key features and benefits: cost reduction, process automation, real-time visibility",
                         "User interface navigation and SAP MM module architecture in S/4HANA",
@@ -329,8 +331,9 @@ export const mmContent = {
                     ]
                 },
                 {
-                    title: "Module 2: Material Master Data Management (MDM) (8 Hours)",
-                    topics: [
+                    title: "Module 2: Material Master Data Management (MDM)",
+                    duration: "8 Hours",
+                    learning_points: [
                         "Role of material masters in inventory management",
                         "Material master record creation and maintenance",
                         "Material types and classifications (FERT, HAWA, ROH, HALB)",
@@ -346,8 +349,9 @@ export const mmContent = {
                     ]
                 },
                 {
-                    title: "Module 3: Purchasing & Purchase Order Processing (7 Hours)",
-                    topics: [
+                    title: "Module 3: Purchasing & Purchase Order Processing",
+                    duration: "7 Hours",
+                    learning_points: [
                         "Purchasing organization structure and buyer setup",
                         "Vendor/supplier master data creation and management",
                         "Purchase requisition creation and management",
@@ -363,8 +367,9 @@ export const mmContent = {
                     ]
                 },
                 {
-                    title: "Module 4: Goods Receipt & Inventory Management (7 Hours)",
-                    topics: [
+                    title: "Module 4: Goods Receipt & Inventory Management",
+                    duration: "7 Hours",
+                    learning_points: [
                         "Goods receipt process and documentation",
                         "Material receipt posting and quality inspection",
                         "Inventory management transactions",
@@ -380,8 +385,9 @@ export const mmContent = {
                     ]
                 },
                 {
-                    title: "Module 5: Goods Issue & Materials Planning (6 Hours)",
-                    topics: [
+                    title: "Module 5: Goods Issue & Materials Planning",
+                    duration: "6 Hours",
+                    learning_points: [
                         "Goods issue process for sales orders and production",
                         "Material requirement planning (MRP) overview",
                         "Reorder point and economic order quantity calculations",
@@ -397,8 +403,9 @@ export const mmContent = {
                     ]
                 },
                 {
-                    title: "Module 6: Valuation & Inventory Accounting (6 Hours)",
-                    topics: [
+                    title: "Module 6: Valuation & Inventory Accounting",
+                    duration: "6 Hours",
+                    learning_points: [
                         "Valuation methods: Standard Price, Moving Average Price, Actual Cost",
                         "Material valuation strategy in S/4HANA",
                         "Inventory accounting and general ledger integration",
@@ -414,8 +421,9 @@ export const mmContent = {
                     ]
                 },
                 {
-                    title: "Module 7: Warehouse Management Integration (6 Hours)",
-                    topics: [
+                    title: "Module 7: Warehouse Management Integration",
+                    duration: "6 Hours",
+                    learning_points: [
                         "Warehouse structure and storage location setup",
                         "Warehouse management system (WM) principles",
                         "Storage bins and location management",
@@ -431,8 +439,9 @@ export const mmContent = {
                     ]
                 },
                 {
-                    title: "Module 8: Advanced MM Topics & Best Practices (6 Hours)",
-                    topics: [
+                    title: "Module 8: Advanced MM Topics & Best Practices",
+                    duration: "6 Hours",
+                    learning_points: [
                         "S/4HANA fiori apps for materials management",
                         "Advanced analytics and reporting dashboards",
                         "Batch management and serialization",
