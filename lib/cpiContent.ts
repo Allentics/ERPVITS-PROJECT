@@ -729,7 +729,14 @@ export const cpiContent = {
         },
         {
             type: 'detailed_demo_booking',
-            courseName: 'SAP CPI'
+            title: "Ready to Master SAP Cloud Integration?",
+            subtitle: "Book your free demo today and take the first step towards a lucrative SAP CPI integration career",
+            benefits: [
+                { title: "Live Session Insight", desc: "Observe real SAP CPI training and integration methodology" },
+                { title: "Career Consultation", desc: "Personalized guidance based on your background" },
+                { title: "Instructor Q&A", desc: "Ask questions about SAP CPI course, certification, and career" },
+                { title: "Special Offer", desc: "Exclusive discount for demo attendees" }
+            ]
         },
         {
             type: 'detailed_faq',

@@ -1,11 +1,14 @@
-import { Briefcase, Building2, TrendingUp, Users, Settings } from 'lucide-react';
+import { Briefcase, Building2, TrendingUp, Users, Settings, Award, Link, Cpu } from 'lucide-react';
 
 const iconMap: Record<string, any> = {
     "Briefcase": Briefcase,
     "Building2": Building2,
     "TrendingUp": TrendingUp,
     "Users": Users,
-    "Settings": Settings
+    "Settings": Settings,
+    "Award": Award,
+    "Link": Link,
+    "Cpu": Cpu
 };
 
 export default function DetailedCareerOpportunities({ items, courseName = "SAP Ariba" }: { items?: any[], courseName?: string }) {

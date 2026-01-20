@@ -606,7 +606,15 @@ export const ficoContent = {
             ]
         },
         {
-            type: 'detailed_demo_booking'
+            type: 'detailed_demo_booking',
+            title: "Ready to Become an SAP FICO Consultant?",
+            subtitle: "Book your free demo today and take the first step towards a lucrative SAP FICO finance career",
+            benefits: [
+                { title: "Live Session Insight", desc: "Observe real SAP FICO training and instructor methodology" },
+                { title: "Career Consultation", desc: "Personalized guidance based on your accounting background" },
+                { title: "Instructor Q&A", desc: "Ask questions about SAP FICO course, certification, and career" },
+                { title: "Special Offer", desc: "Exclusive discount for demo attendees" }
+            ]
         },
         {
             type: 'detailed_faq',

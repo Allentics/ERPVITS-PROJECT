@@ -15,7 +15,6 @@ import { ibpContent } from './ibpContent';
 import { mdgContent } from './mdgContent';
 import { c4cFunctionalContent } from './c4cFunctionalContent';
 import { pythonAimlContent } from './pythonAimlContent';
-import { analyticsCloudContent } from './analyticsCloudContent';
 import coursesData from '@/courses.json';
 
 // Define Types
@@ -32,6 +31,7 @@ export interface Section {
     stats?: { value: string, label: string }[];
     videoUrl?: string; // used for standalone video section
     videoSrc?: string; // used for content_with_image
+    benefits?: any[];
 }
 
 export interface Course {
@@ -94,8 +94,6 @@ const contentMap: Record<string, any> = {
     'sap-mdg': mdgContent,
     'mdg': mdgContent,
     'sap-master-data-governance': mdgContent,
-    'analytics-cloud': analyticsCloudContent,
-    'sap-analytics-cloud': analyticsCloudContent,
     'python-aiml': pythonAimlContent,
     'sap-python-aiml': pythonAimlContent,
     'python-ai-ml': pythonAimlContent

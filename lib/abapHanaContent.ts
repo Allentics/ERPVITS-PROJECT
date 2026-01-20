@@ -746,6 +746,17 @@ export const abapHanaContent = {
             ]
         },
         {
+            type: 'detailed_demo_booking',
+            title: "Ready to Master modern ABAP on HANA?",
+            subtitle: "Book your free demo today and take the first step towards a lucrative SAP developer career",
+            benefits: [
+                { title: "Live Session Insight", desc: "Observe real SAP ABAP on HANA training and coding methodology" },
+                { title: "Career Consultation", desc: "Personalized guidance based on your development background" },
+                { title: "Instructor Q&A", desc: "Ask questions about SAP ABAP course, certification, and career" },
+                { title: "Special Offer", desc: "Exclusive discount for demo attendees" }
+            ]
+        },
+        {
             type: 'detailed_faq',
             title: "Frequently Asked Questions (FAQs)",
             items: [

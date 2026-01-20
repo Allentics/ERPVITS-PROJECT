@@ -721,7 +721,15 @@ export const ppdsContent = {
             ]
         },
         {
-            type: 'detailed_demo_booking'
+            type: 'detailed_demo_booking',
+            title: "Ready to Become an SAP PPDS Consultant?",
+            subtitle: "Book your free demo today and take the first step towards a lucrative SAP PPDS production planning career",
+            benefits: [
+                { title: "Live Session Insight", desc: "Observe real SAP PPDS training and instructor methodology" },
+                { title: "Career Consultation", desc: "Personalized guidance based on your manufacturing background" },
+                { title: "Instructor Q&A", desc: "Ask questions about SAP PPDS course, certification, and planning careers" },
+                { title: "Special Offer", desc: "Exclusive discount for demo attendees" }
+            ]
         },
         {
             type: 'rich_text',

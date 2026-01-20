@@ -638,7 +638,15 @@ export const c4cFunctionalContent = {
             ]
         },
         {
-            type: 'detailed_demo_booking'
+            type: 'detailed_demo_booking',
+            title: "Ready to Become an SAP C4C Functional Consultant?",
+            subtitle: "Book your free demo today and take the first step towards a lucrative SAP cloud CRM career",
+            benefits: [
+                { title: "Live Session Insight", desc: "Observe real SAP C4C training and instructor methodology" },
+                { title: "Career Consultation", desc: "Personalized guidance based on your background" },
+                { title: "Instructor Q&A", desc: "Ask questions about SAP C4C course, certification, and career" },
+                { title: "Special Offer", desc: "Exclusive discount for demo attendees" }
+            ]
         },
         {
             type: 'detailed_faq',

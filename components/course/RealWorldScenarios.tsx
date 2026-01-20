@@ -1,14 +1,17 @@
 import React from 'react';
-import { Factory, ShoppingBag, Laptop2, Globe, Clock, Database } from 'lucide-react';
+import { Factory, ShoppingBag, Laptop2, Globe, Clock, Database, Laptop, Landmark, TrendingUp } from 'lucide-react';
 import { aribaRealWorldScenarios } from '@/lib/contentHelpers';
 
 const iconMap: Record<string, any> = {
     "Factory": Factory,
     "ShoppingBag": ShoppingBag,
     "Laptop2": Laptop2,
+    "Laptop": Laptop,
     "Globe": Globe,
     "Clock": Clock,
-    "Database": Database
+    "Database": Database,
+    "Landmark": Landmark,
+    "TrendingUp": TrendingUp
 };
 
 export default function RealWorldScenarios({ items }: { items?: any[] }) {

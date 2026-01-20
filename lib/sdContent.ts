@@ -796,7 +796,15 @@ export const sdContent = {
             ]
         },
         {
-            type: 'detailed_demo_booking'
+            type: 'detailed_demo_booking',
+            title: "Ready to Become an SAP SD Consultant?",
+            subtitle: "Book your free demo today and take the first step towards a lucrative SAP SD sales career",
+            benefits: [
+                { title: "Live Session Insight", desc: "Observe real SAP SD training and instructor methodology" },
+                { title: "Career Consultation", desc: "Personalized guidance based on your sales background" },
+                { title: "Instructor Q&A", desc: "Ask questions about SAP SD course, certification, and career" },
+                { title: "Special Offer", desc: "Exclusive discount for demo attendees" }
+            ]
         },
         {
             type: 'detailed_faq',

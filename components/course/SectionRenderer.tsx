@@ -210,7 +210,7 @@ export function TestimonialsSection({ title, items }: any) {
     );
 }
 
-export default function SectionRenderer({ sections, courseName }: { sections: any[]; courseName?: string }) {
+export default function SectionRenderer({ sections, courseName, syllabusUrl }: { sections: any[]; courseName?: string; syllabusUrl?: string }) {
     if (!sections) return null;
 
     return (
@@ -231,7 +231,7 @@ export default function SectionRenderer({ sections, courseName }: { sections: an
                         </section>;
                     case 'detailed_curriculum':
                         return <section key={idx} id="curriculum" className="scroll-mt-32">
-                            <DetailedCurriculum modules={section.modules} title={section.title} courseName={courseName || section.courseName} syllabusUrl={section.syllabusUrl} />
+                            <DetailedCurriculum modules={section.modules} title={section.title} courseName={courseName || section.courseName} syllabusUrl={section.syllabusUrl || syllabusUrl} />
                         </section>;
                     case 'detailed_prerequisites':
                         return <DetailedPrerequisites key={idx} items={section.items} />;
@@ -254,7 +254,7 @@ export default function SectionRenderer({ sections, courseName }: { sections: an
                     case 'detailed_companies':
                         return <DetailedCompanies key={idx} courseName={courseName || section.courseName} customData={section.customData} />;
                     case 'detailed_career_roadmap':
-                        return <DetailedCareerRoadmap key={idx} items={section.items} />;
+                        return <DetailedCareerRoadmap key={idx} items={section.items} stats={section.stats} />;
                     case 'detailed_post_training_journey':
                         return <DetailedPostTrainingJourney key={idx} steps={section.items} title={section.title} courseName={section.courseName || courseName} />;
                     case 'detailed_testimonials':

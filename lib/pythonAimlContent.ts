@@ -394,6 +394,17 @@ export const pythonAimlContent: { price: string; duration: string; syllabusUrl: 
             ]
         },
         {
+            type: 'detailed_demo_booking',
+            title: "Ready to Master AI & Machine Learning with Python?",
+            subtitle: "Book your free demo today and take the first step towards a lucrative data science career",
+            benefits: [
+                { title: "Live Session Insight", desc: "Observe real AI & ML training and coding methodology" },
+                { title: "Career Consultation", desc: "Personalized guidance based on your background" },
+                { title: "Instructor Q&A", desc: "Ask questions about Python AIML course, certification, and career" },
+                { title: "Special Offer", desc: "Exclusive discount for demo attendees" }
+            ]
+        },
+        {
             type: 'detailed_faq',
             title: 'Frequently Asked Questions',
             items: [

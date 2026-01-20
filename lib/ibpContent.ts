@@ -636,7 +636,15 @@ export const ibpContent = {
             ]
         },
         {
-            type: 'detailed_demo_booking'
+            type: 'detailed_demo_booking',
+            title: "Ready to Become an SAP IBP Consultant?",
+            subtitle: "Book your free demo today and take the first step towards a lucrative SAP IBP supply chain planning career",
+            benefits: [
+                { title: "Live Session Insight", desc: "Observe real SAP IBP training and instructor methodology" },
+                { title: "Career Consultation", desc: "Personalized guidance based on your planning background" },
+                { title: "Instructor Q&A", desc: "Ask questions about SAP IBP course, certification, and career" },
+                { title: "Special Offer", desc: "Exclusive discount for demo attendees" }
+            ]
         },
         {
             type: 'detailed_faq',

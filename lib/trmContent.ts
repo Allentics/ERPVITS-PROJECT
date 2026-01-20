@@ -1023,10 +1023,10 @@ export const trmContent = {
             title: "Ready to Become an SAP TRM Consultant?",
             subtitle: "Book your free demo today and take the first step towards a lucrative SAP TRM treasury career",
             benefits: [
-                "Observe real SAP TRM training and instructor methodology",
-                "Personalized guidance based on your finance background",
-                "Ask questions about SAP TRM course, certification, and treasury career",
-                "Exclusive discount for demo attendees"
+                { title: "Live Session Insight", desc: "Observe real SAP TRM training and instructor methodology" },
+                { title: "Career Consultation", desc: "Personalized guidance based on your finance background" },
+                { title: "Instructor Q&A", desc: "Ask questions about SAP TRM course, certification, and treasury career" },
+                { title: "Special Offer", desc: "Exclusive discount for demo attendees" }
             ]
         }
     ]

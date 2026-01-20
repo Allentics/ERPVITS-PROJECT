@@ -841,7 +841,15 @@ Governance Portals and Reporting (≤10%)
             ]
         },
         {
-            type: 'detailed_demo_booking'
+            type: 'detailed_demo_booking',
+            title: "Ready to Become an SAP MDG Consultant?",
+            subtitle: "Book your free demo today and take the first step towards a lucrative SAP MDG data governance career",
+            benefits: [
+                { title: "Live Session Insight", desc: "Observe real SAP MDG training and instructor methodology" },
+                { title: "Career Consultation", desc: "Personalized guidance based on your data governance background" },
+                { title: "Instructor Q&A", desc: "Ask questions about SAP MDG course, certification, and data careers" },
+                { title: "Special Offer", desc: "Exclusive discount for demo attendees" }
+            ]
         },
         {
             type: 'detailed_faq',

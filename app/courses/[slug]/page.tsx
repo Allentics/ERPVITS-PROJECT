@@ -158,10 +158,16 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
     return (
         <main className="bg-white">
             {/* Schema Injection */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: mappedCourse.schema || JSON.stringify({
+            {(() => {
+                let schemaMarkup = "";
+                if (mappedCourse.schema) {
+                    if (typeof mappedCourse.schema === 'string') {
+                        schemaMarkup = mappedCourse.schema;
+                    } else {
+                        schemaMarkup = JSON.stringify(mappedCourse.schema);
+                    }
+                } else {
+                    schemaMarkup = JSON.stringify({
                         "@context": "https://schema.org",
                         "@type": "Course",
                         "name": mappedCourse.title,
@@ -171,9 +177,19 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                             "name": "ERPVITS",
                             "sameAs": "https://erpvits.com"
                         }
-                    })
-                }}
-            />
+                    });
+                }
+
+                // Clean schema: strip script tags if present (case-insensitive)
+                const cleanSchema = schemaMarkup.replace(/<script[^>]*>|<\/script>/gi, '').trim();
+
+                return (
+                    <script
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{ __html: cleanSchema }}
+                    />
+                );
+            })()}
 
             {/* Hero Section */}
             {/* Hero Section */}

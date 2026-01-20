@@ -16,7 +16,8 @@ export default function DetailedPostTrainingJourney({ title, steps: propSteps, c
         "CheckCircle2": CheckCircle2,
         "Rocket": Rocket,
         "TrendingUp": TrendingUp,
-        "Award": Award
+        "Award": Award,
+        "Briefcase": Briefcase
     };
 
     const defaultSteps = [

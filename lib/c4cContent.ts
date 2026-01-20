@@ -677,26 +677,22 @@ export const c4cContent = {
             type: 'detailed_demo_booking',
             title: "Ready to Become an SAP C4C Developer?",
             subtitle: "Book your free demo today and take the first step towards a lucrative cloud development career",
-            items: [
+            benefits: [
                 {
                     title: "Sample Live Class Session",
-                    description: "Observe real C4C development training and coding methodology",
-                    icon: "Video"
+                    desc: "Observe real C4C development training and coding methodology",
                 },
                 {
                     title: "30-Min Career Consultation",
-                    description: "Personalized guidance based on your development background",
-                    icon: "UserCheck"
+                    desc: "Personalized guidance based on your development background",
                 },
                 {
                     title: "Q&A with Instructor",
-                    description: "Ask questions about C4C course, certification, and developer career",
-                    icon: "Users"
+                    desc: "Ask questions about C4C course, certification, and developer career",
                 },
                 {
-                    title: "Special Discount Offer",
-                    description: "Exclusive discount for demo attendees",
-                    icon: "Award"
+                    title: "Special Offer",
+                    desc: "Exclusive discount for demo attendees",
                 }
             ]
         },

@@ -49,32 +49,27 @@ export default function DetailedCurriculum({ modules, title, courseName = "SAP A
                     </div>
                 </div>
 
-                {syllabusUrl ? (
-                    <a
-                        href={syllabusUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 bg-slate-900 rounded-2xl p-5 border border-slate-800 flex items-center gap-4 shadow-sm hover:shadow-md hover:bg-slate-800 transition-all cursor-pointer group"
-                    >
-                        <div className="w-12 h-12 rounded-xl bg-orange-500 flex items-center justify-center text-white shadow-sm flex-shrink-0 group-hover:scale-110 transition-transform">
-                            <Download className="w-6 h-6" />
-                        </div>
-                        <div>
-                            <div className="text-2xl font-bold text-white">Download</div>
-                            <div className="text-sm font-medium text-slate-400">Curriculum PDF</div>
-                        </div>
-                    </a>
-                ) : (
-                    <div className="flex-1 bg-slate-900 rounded-2xl p-5 border border-slate-800 flex items-center gap-4 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="w-12 h-12 rounded-xl bg-orange-500 flex items-center justify-center text-white shadow-sm flex-shrink-0">
-                            <BookOpen className="w-6 h-6" />
-                        </div>
-                        <div>
-                            <div className="text-2xl font-bold text-white">{modules.length} Modules</div>
-                            <div className="text-sm font-medium text-slate-400">Comprehensive Coverage</div>
-                        </div>
+                <a
+                    href={syllabusUrl || '#'}
+                    target={syllabusUrl ? "_blank" : undefined}
+                    rel="noopener noreferrer"
+                    className="flex-1 bg-slate-900 rounded-2xl p-5 border border-slate-800 flex items-center gap-4 shadow-sm hover:shadow-md hover:bg-slate-800 transition-all cursor-pointer group"
+                    onClick={(e) => {
+                        if (!syllabusUrl) {
+                            e.preventDefault();
+                            // Optional: Alert user or scroll to contact form?
+                            // alert("Syllabus download coming soon!");
+                        }
+                    }}
+                >
+                    <div className="w-12 h-12 rounded-xl bg-orange-500 flex items-center justify-center text-white shadow-sm flex-shrink-0 group-hover:scale-110 transition-transform">
+                        <Download className="w-6 h-6" />
                     </div>
-                )}
+                    <div>
+                        <div className="text-2xl font-bold text-white">Download</div>
+                        <div className="text-sm font-medium text-slate-400">Curriculum PDF</div>
+                    </div>
+                </a>
             </div>
 
             {/* Accordion Modules */}

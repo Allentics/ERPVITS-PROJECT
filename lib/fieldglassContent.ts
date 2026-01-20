@@ -1,10 +1,12 @@
 
+// Icons are now referenced by string names to avoid serialization issues with Client Components
+
 export const fieldglassContent = {
-    price: "Competitive",
-    duration: "45 Hours",
+    price: "45,000",
+    duration: "35+ Hours",
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-fieldglass.pdf",
     heroHeading: "Become a Leader in Managing a Contingent Workforce with SAP Fieldglass Training",
-    heroSubheading: "Learn SAP Fieldglass from Certified Experts – 100% Hands-On, Job-Oriented Training. Master contingent workforce management with real-world scenarios.",
+    heroSubheading: "This SAP Fieldglass training course is specifically tailored for HR professionals, procurement professionals, IT consultants, work program managers, and other professionals who aspire to work in global contingent workforce and services procurement consulting. This SAP Fieldglass course combines hands-on system training, expert instruction with real-world application, and a curriculum designed to a certification.",
     badges: ["SAP Certified Trainers", "4.7 Learner Rating", "24/7 Team Support"],
     description: "This SAP Fieldglass training course is specifically tailored for HR professionals, procurement professionals, IT consultants, work program managers, and other professionals who aspire to work in global contingent workforce and services procurement consulting. This SAP Fieldglass course combines hands-on system training, expert instruction with real-world application, and a curriculum designed to a certification.",
     metaTitle: "SAP Fieldglass Online Training | ERPVITS Certification",
@@ -13,276 +15,107 @@ export const fieldglassContent = {
 
     schema: JSON.stringify({
         "@context": "https://schema.org",
-        "@graph": [
-            {
-                "@type": "Course",
-                "name": "SAP Fieldglass Online Training",
-                "description": "Master SAP Fieldglass with ERPVITS — a complete hands-on online training program for Vendor Management, Contingent Workforce, and SOW projects. Learn real-time Fieldglass workflows, integration with SAP S/4HANA, and get ready for global certification and placement support.",
-                "provider": {
-                    "@type": "Organization",
-                    "name": "ERPVITS",
-                    "url": "https://www.erpvits.com/",
-                    "logo": "https://www.erpvits.com/images/erpvits-logo.webp",
-                    "sameAs": [
-                        "https://www.instagram.com/erp_vits/",
-                        "https://www.linkedin.com/company/erpvits/",
-                        "https://www.youtube.com/@ERPVITS"
-                    ]
-                },
-                "hasCourseInstance": {
-                    "@type": "CourseInstance",
-                    "courseMode": "Online",
-                    "inLanguage": "English",
-                    "courseWorkload": "35 Hours",
-                    "location": {
-                        "@type": "VirtualLocation",
-                        "url": "https://www.erpvits.com/sap-fieldglass-training/"
-                    },
-                    "offers": {
-                        "@type": "Offer",
-                        "price": "45000",
-                        "priceCurrency": "INR",
-                        "availability": "https://schema.org/InStock",
-                        "url": "https://www.erpvits.com/sap-fieldglass-training/",
-                        "eligibleRegion": {
-                            "@type": "Place",
-                            "name": "Global"
-                        }
-                    }
-                },
-                "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": "4.7",
-                    "bestRating": "5",
-                    "ratingCount": "254",
-                    "reviewCount": "254"
-                },
-                "review": {
-                    "@type": "Review",
-                    "author": {
-                        "@type": "Person",
-                        "name": "Anjali Verma"
-                    },
-                    "reviewBody": "ERPVITS SAP Fieldglass Training gave me strong practical exposure to real-time VMS workflows. The live sessions and guided projects helped me crack my Fieldglass Consultant interview easily.",
-                    "reviewRating": {
-                        "@type": "Rating",
-                        "ratingValue": "5",
-                        "bestRating": "5"
-                    }
-                }
+        "@type": "Course",
+        "name": "SAP Fieldglass Online Training",
+        "description": "Master SAP Fieldglass with ERPVITS — a complete hands-on online training program for Vendor Management, Contingent Workforce, and SOW projects. Learn real-time Fieldglass workflows, integration with SAP S/4HANA, and get ready for global certification and placement support.",
+        "provider": {
+            "@type": "Organization",
+            "name": "ERPVITS",
+            "url": "https://www.erpvits.com/",
+            "logo": "https://www.erpvits.com/images/erpvits-logo.webp",
+            "sameAs": [
+                "https://www.instagram.com/erp_vits/",
+                "https://www.linkedin.com/company/erpvits/",
+                "https://www.youtube.com/@ERPVITS"
+            ]
+        },
+        "hasCourseInstance": {
+            "@type": "CourseInstance",
+            "courseMode": "Online",
+            "inLanguage": "English",
+            "courseWorkload": "35 Hours",
+            "location": {
+                "@type": "VirtualLocation",
+                "url": "https://www.erpvits.com/sap-fieldglass-training/"
             },
-            {
-                "@type": "FAQPage",
-                "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": "What is SAP Fieldglass and how does ERPVITS help me learn it?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "SAP Fieldglass is a cloud solution for vendor and contingent workforce management. At ERPVITS, we train SAP Fieldglass with real-time VMS scenarios, hands-on practice, and guided projects to master Fieldglass workflows and contingent operations."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "What will I learn in the SAP Fieldglass Contingent Worker module?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "SAP Fieldglass Contingent Worker training covers the entire worker lifecycle with requisition and onboarding, timesheet processing, invoicing, and offboarding using the Fieldglass contingent module."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "What is SAP Fieldglass Statement of Work (SOW)?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "SAP Fieldglass SOW module deals with services procurement and project-based contingent work. ERPVITS supports your understanding of SOW project creation, bidding, service provider management, milestone billing, and compliance tracking."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "What is the Fieldglass Vendor Management System (VMS)?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "The VMS in Fieldglass enables centralized vendor onboarding, performance management, and contingent workforce operations. ERPVITS training covers complete vendor lifecycle management and VMS optimization."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "In what ways does SAP Fieldglass assist in the management of a contingent workforce?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "With SAP Fieldglass, all aspects of contingent workforce management are handled seamlessly, including onboarding, compliance documentation, timesheet processing, invoicing, and reporting analysis. ERPVITS equips you with practical Fieldglass contingent workflow exposure to prepare you for client implementation."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "What are the reasons to attend ERPVITS SAP Fieldglass Training?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "With SAP Fieldglass Online Training at ERPVITS, you can expect live sessions, real VMS projects, and placement assistance. You'll also get Fieldglass Certification guidance and interview readiness strategies."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Who is eligible for the SAP Fieldglass Course?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Individuals focused on HR, contingent workforce management, procurement, or SAP technologies are eligible. ERPVITS SAP Fieldglass Course is for freshers, working professionals, and consultants to gain job-ready skills."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "What does the SAP Fieldglass Certification entail, and what are its benefits?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "SAP Fieldglass Certification validates your skills in contingent workforce and vendor management. ERPVITS helps you prepare for certification to become a certified SAP Fieldglass consultant."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "How much are the SAP Fieldglass course fees at ERPVITS?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "At ERPVITS, SAP Fieldglass course fees are set at ₹45,000 INR and include practical sessions, learning materials, certification guidance, and placement support."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "What is the cost for SAP Fieldglass Certification?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "The cost is determined by SAP Education. ERPVITS provides complete guidance, practice tests, and mentoring to help you clear the exam on your first try."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "How can I become an SAP Fieldglass Consultant through ERPVITS?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Join the structured SAP Fieldglass Training Program at ERPVITS, complete live VMS projects, prepare for certification, and get career guidance and job support to become a successful consultant."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "What Fieldglass course career options are there?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "After completing SAP Fieldglass Training, you can become a Fieldglass Consultant, VMS Specialist, Contingent Workforce Manager, or SAP Functional Consultant. ERPVITS also shares job openings regularly."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "How does SAP Fieldglass work with SAP S/4HANA?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "ERPVITS explains Fieldglass integration with S/4HANA, data flow between systems, and Cloud Integration Gateway and API use for smooth synchronization."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "What are the main SAP Fieldglass Solutions covered?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "The course covers Contingent Worker Management, SOW, Vendor Management, Profile Worker, and Admin Configuration, with live applications and client use cases."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "How does SAP Fieldglass pricing work?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Fieldglass pricing depends on company size and usage. ERPVITS explains licensing architecture, implementation costs, and functional pricing models."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Does ERPVITS have SAP Fieldglass Training with Placement Support?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Yes! ERPVITS offers SAP Fieldglass Training with resume preparation, mock interviews, and recruiter connections for SAP Fieldglass consultant jobs."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Can I take SAP Fieldglass Online Training from anywhere?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Yes. ERPVITS offers SAP Fieldglass Online Training accessible globally with live instructors, recorded sessions, and hands-on system practice."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Is SAP Fieldglass Training available near me?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Yes. ERPVITS provides SAP Fieldglass Training online and in-class in Hyderabad, Pune, and Bangalore with flexible weekday and weekend batches."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "How does ERPVITS help in Fieldglass Careers?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "ERPVITS not only provides technical training but also assists with resume writing, mock interviews, and job referrals to leading SAP consulting firms."
-                        }
-                    }
-                ]
+            "offers": {
+                "@type": "Offer",
+                "price": "45000",
+                "priceCurrency": "INR",
+                "availability": "https://schema.org/InStock",
+                "url": "https://www.erpvits.com/sap-fieldglass-training/",
+                "eligibleRegion": {
+                    "@type": "Place",
+                    "name": "Global"
+                }
             }
-        ]
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.7",
+            "bestRating": "5",
+            "ratingCount": "254",
+            "reviewCount": "254"
+        },
+        "review": {
+            "@type": "Review",
+            "author": {
+                "@type": "Person",
+                "name": "Anjali Verma"
+            },
+            "reviewBody": "ERPVITS SAP Fieldglass Training gave me strong practical exposure to real-time VMS workflows. The live sessions and guided projects helped me crack my Fieldglass Consultant interview easily.",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+            }
+        }
     }),
 
     sections: [
         {
             type: 'detailed_features',
-            title: "What's Included in the SAP Fieldglass Training – Complete Learning Package",
-            subtitle: "A complete SAP Fieldglass online training program that includes live expert sessions, real VMS projects, practical labs, mock interviews, and career guidance.",
+            title: "Learn SAP Fieldglass from Certified Experts – 100% Hands-On, Job-Oriented Training",
+            subtitle: "Unlike passive video courses or self-paced modules, our SAP Fieldglass Online Training offers direct training from a SAP certified trainer who has over 10 years of experience in contingent workforce management. Your training is interactive in real-time where trainers explain methodologies and work with you on complex workforce problems",
             items: [
                 {
-                    title: "Live Interactive Classes",
-                    description: "35+ hours of instructor-led sessions via live video conferencing with real-time Q&A and interactive discussions for 8–10 weeks on the topic of contingent workforce management.",
-                    icon: "Video"
+                    title: "Certified Instructor Expertise",
+                    description: "Every one of our trainers has official SAP Fieldglass certifications and has managed numerous enterprise SAP Fieldglass implementations for Fortune 500 companies. Trainers are not just teaching theories; they bring real client stories, common implementation challenges, and industry best practices from live deployments of VMS systems that manage thousands of contingent workers. Having this real-world experience is a game-changer for your first SAP Fieldglass consulting assignment.",
                 },
                 {
-                    title: "Real-World Projects",
-                    description: "Work on projects inspired by Fortune 500 companies that cover contingent worker onboarding, vendor management, SOW project setup, invoicing automation, and S/4HANA integration.",
-                    icon: "Briefcase"
+                    title: "100% Hands-On Learning Methodology",
+                    description: "Conventional training teaches Fieldglass System concepts through slide decks and classroom training. Our SAP Fieldglass Training does a lot more. Each of the training sessions has live demonstration and training using SAP Fieldglass systems and afterwards you are given real hands-on Fieldglass system training/labs to complete the exercises. At the end of the course, you will have configured and onboarded worker onboarding workflows, created and managed SOW project structures, handled contingent worker profile management, invoice processing, and risk analytic execution. All of these will be completed on live systems.",
                 },
                 {
-                    title: "Hands-On Lab Environment",
-                    description: "SAP VMS Fieldglass Systems ensures that you will be able to onboard workers into SAP Fieldglass, configure vendors, process SOW workflows, process timesheets, manage invoices and create analytics dashboards.",
-                    icon: "Laptop"
+                    title: "Job-Oriented Curriculum Design",
+                    description: "The course curriculum is designed to fit the real-world skills, tasks, responsibilities, and problem-solving challenges you will encounter in the field as an SAP Fieldglass consultant. Whether you are deploying processes for contingent workforce, configuring vendor portal, streamlined automation for invoicing, or compliance workflows, this training will provide you with actionable clarity that will help you.",
                 },
                 {
-                    title: "Certification Exam Prep",
-                    description: "ERPVITS prepares you for the SAP certified application associate exam for Fieldglass services and external workforce management. You will get dedicated study guides, practice exams, and bootcamp sessions.",
-                    icon: "Award"
+                    title: "Interactive Q&A Sessions",
+                    description: "In addition to the primary teaching sessions, you have interactive Q&A sessions, as well as live office hours, during which you can post questions, receive clarifications on the more intricate VMS elements, and obtain guidance that is customized to your individual learning velocity and career aspirations.",
                 },
                 {
-                    title: "Resume & Interview Coaching",
-                    description: "Get personalized VMS tailored resume optimization, mock consulting interviews and SAP Fieldglass technical interview preparation guidance.",
-                    icon: "FileText"
+                    title: "Flexible Batch Timings",
+                    description: "Understanding that numerous professionals balance a job, a family, and studies, we provide evening sessions on the weekdays (Monday to Friday, 6 PM to 9 PM IST) and weekend classes (Saturday and Sunday). Sessions are recorded, so if you miss a live class, you can catch up asynchronously without losing continuity.",
                 },
                 {
-                    title: "Complete Study Materials",
-                    description: "Access interview question banks, SAP certified vertical Fieldglass documentation links, PDF's, presentations, VMS configuration checklists and VMS documentation.",
-                    icon: "BookOpen"
+                    title: "Small Batch Sizes for Personalized Attention",
+                    description: "Unlike massive online courses, which may have thousands of anonymous learners, our classes are limited to 8-10 participants. This allows instructors to tailor their teaching to your particular learning and provide individual constructive attention.",
                 },
                 {
-                    title: "Lifetime Recording Access",
-                    description: "You will obtain lifetime access to the recorded, transcribed and indexed sessions. You will be able to revise the materials on contingent workforce topics, at your convenience.",
-                    icon: "Clock"
+                    title: "Placement & Career Support",
+                    description: "Learning SAP Fieldglass is half the journey; for most learners, getting placed constitutes the goal of the course. Our career support team is focused on helping you construct a Fieldglass-centered resume, assists you with mock interviews, and provides you with Fieldglass interview questions based on recent hiring inquiries within the VMS and contingent workforce space. You will receive instruction on effectively framing your project experiences to make a positive impression during SAP Fieldglass job interviews.",
                 },
                 {
-                    title: "Expert Q&A Sessions",
-                    description: "Participate in the weekly Expert Q&A Session on VMS and Fieldglass to get guided mentorship on your career in contingent workforce consulting.",
-                    icon: "HelpCircle"
+                    title: "Active Alumni Network & Community Forum",
+                    description: "Participate in the active and vibrant community of professionals using SAP Fieldglass. Network with professionals to gain insights and share job leads, ask questions, and create relationships that may result in referrals and partnerships in consulting for contingent work.",
+                },
+                {
+                    title: "Ongoing Support Post-Training",
+                    description: "The SAP Fieldglass course and training may mark the end of formal training, but the learning journey will not end there. For any challenge related to concept clarification, any real-world challenges related to the VMS project the participant is working on, and initial consulting work in the area, there will be instructor support for the participant for six months post training.",
                 }
             ],
-            stats: [
-                { value: "35+", label: "Hours of Live Training" },
-                { value: "40+", label: "Hands-On Lab Exercises" },
-                { value: "24/7", label: "SAP Fieldglass Lab Access" }
-            ]
+            badge: "Why Choose Us"
         },
         {
             type: 'content_with_image',
@@ -301,13 +134,17 @@ export const fieldglassContent = {
             ]
         },
         {
+            type: 'whats_included'
+        },
+        {
             type: 'detailed_curriculum',
             title: "Comprehensive SAP Fieldglass Course Curriculum",
             subtitle: "35+ hours of expert-led training covering every aspect from basics to advanced VMS implementation",
+            syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-fieldglass.pdf",
             modules: [
                 {
                     title: "Module 1: Introduction to SAP Fieldglass & Vendor Management System (VMS) (3 Hours)",
-                    topics: [
+                    learning_points: [
                         "Overview of SAP Fieldglass platform and VMS role in enterprise",
                         "Key features and benefits: cost optimization, compliance management, process automation",
                         "Fieldglass user interface navigation and system architecture",
@@ -322,7 +159,7 @@ export const fieldglassContent = {
                 },
                 {
                     title: "Module 2: Admin Configuration & User Management (6 Hours)",
-                    topics: [
+                    learning_points: [
                         "System setup and initialization",
                         "User management: creating profiles, assigning roles (Admin, Manager, Requestor), defining permissions",
                         "Supplier/Vendor management and onboarding workflows",
@@ -338,59 +175,59 @@ export const fieldglassContent = {
                 },
                 {
                     title: "Module 3: Contingent Worker Module & Lifecycle Management (5 Hours)",
-                    topics: [
-                        "Management of the contingent worker lifecycle",
-                        "Creation of worker requisitions and the sourcing process",
-                        "Onboarding workers and the verification of compliance checks",
-                        "Submission and approval of timesheets",
-                        "Management of expenses and the procedures for offboarding a worker",
-                        "Classification of workers and monitoring compliance"
+                    learning_points: [
+                        "Management of the contingent worker lifecycle.",
+                        "Creation of worker requisitions and the sourcing process.",
+                        "Onboarding workers and the verification of compliance checks.",
+                        "Submission and approval of timesheets.",
+                        "Management of expenses and the procedures for offboarding a worker.",
+                        "Classification of workers and monitoring compliance."
                     ],
                     hands_on: [
-                        "Creation of worker requisitions and the workflows for sourcing them",
-                        "Onboarding contingent workers, including compliance checks",
-                        "Establishment of timesheet and expense submission workflows",
-                        "Configuration of offboarding and exit procedures for workers",
-                        "Implementation of worker classification policies"
+                        "Creation of worker requisitions and the workflows for sourcing them.",
+                        "Onboarding contingent workers, including compliance checks.",
+                        "Establishment of timesheet and expense submission workflows.",
+                        "Configuration of offboarding and exit procedures for workers.",
+                        "Implementation of worker classification policies."
                     ]
                 },
                 {
                     title: "Module 4: Statement of Work (SOW) Module & Services Procurement (4 Hours)",
-                    topics: [
-                        "Creation and management workflows for SOW projects",
-                        "SOW project structures and various billing models",
-                        "Understanding the bidding process and vendor selection for SOW",
-                        "Automating billing and invoicing based on project milestones",
-                        "Collaboration with service providers and tracking performance",
-                        "Governance and compliance frameworks for SOW"
+                    learning_points: [
+                        "Creation and management workflows for SOW projects.",
+                        "SOW project structures and various billing models.",
+                        "Understanding the bidding process and vendor selection for SOW.",
+                        "Automating billing and invoicing based on project milestones.",
+                        "Collaboration with service providers and tracking performance.",
+                        "Governance and compliance frameworks for SOW."
                     ],
                     hands_on: [
-                        "Design comprehensive SOW process flows",
-                        "Manage bidding workflows for your created SOW projects",
-                        "Establish systems for milestone-driven billing and invoicing",
-                        "Execute compliance for SOW and tracking procedures"
+                        "Design comprehensive SOW process flows.",
+                        "Manage bidding workflows for your created SOW projects.",
+                        "Establish systems for milestone-driven billing and invoicing.",
+                        "Execute compliance for SOW and tracking procedures."
                     ]
                 },
                 {
                     title: "Module 5: Invoicing & Payment Automation (4 Hours)",
-                    topics: [
-                        "The integration of timesheet with invoice workflows",
-                        "Comparison of automated invoicing with manual processes",
-                        "Validation of invoices and management of exceptions",
-                        "Implementation of a three-way match (Timesheet, PO, Invoice)",
-                        "Processing payments, settlement, and closures",
-                        "Reconciliation and management of disputes"
+                    learning_points: [
+                        "The integration of timesheet with invoice workflows.",
+                        "Comparison of automated invoicing with manual processes.",
+                        "Validation of invoices and management of exceptions.",
+                        "Implementation of a three-way match (Timesheet, PO, Invoice).",
+                        "Processing payments, settlement, and closures.",
+                        "Reconciliation and management of disputes."
                     ],
                     hands_on: [
-                        "Control timesheet to invoice workflow processing",
-                        "Setup rules for automated invoicing",
-                        "Manage exceptions and discrepancies of invoices",
-                        "The reconciliation and payment workflows"
+                        "Control timesheet to invoice workflow processing.",
+                        "Setup rules for automated invoicing.",
+                        "Manage exceptions and discrepancies of invoices.",
+                        "The reconciliation and payment workflows."
                     ]
                 },
                 {
                     title: "Module 6: Master Data Management & Compliance (5 Hours)",
-                    topics: [
+                    learning_points: [
                         "The significance of master data and its governance",
                         "Maintenance of vendor/supplier master data",
                         "Configuring worker profile and associated skills",
@@ -407,7 +244,7 @@ export const fieldglassContent = {
                 },
                 {
                     title: "Module 7: Integration & Analytics (5 Hours)",
-                    topics: [
+                    learning_points: [
                         "Fieldglass data integration with SAP S/4HANA",
                         "Upload and download data processes",
                         "VMS integration with Cloud Integration Gateway (CIG)",
@@ -425,7 +262,7 @@ export const fieldglassContent = {
                 },
                 {
                     title: "Module 8: Advanced Workflows & Customization (3 Hours)",
-                    topics: [
+                    learning_points: [
                         "Crafting advanced approval workflows with conditional routing",
                         "Custom form development for specific business requirements",
                         "Workflow streamlining and automation methods",
@@ -438,24 +275,6 @@ export const fieldglassContent = {
                     ]
                 }
             ]
-        },
-        {
-            type: 'detailed_prerequisites',
-            title: "Prerequisites for SAP Fieldglass Training",
-            items: {
-                minimum: [
-                    "Understanding the fundamentals of HR processes such as hiring, onboarding, and vendor management.",
-                    "Understanding of contingent workforce and some HR operations.",
-                    "Experience with web and business applications.",
-                    "Ability to operate unsupervised and seek relevant questions."
-                ],
-                nicetohave: [
-                    "Some experience with SAP (HR, MM, FICO or any other module).",
-                    "Some experience in HR or procurement.",
-                    "Understanding of ERP systems or enterprise workforce applications.",
-                    "Reporting in Excel."
-                ]
-            }
         },
         {
             type: 'detailed_target_audience',
@@ -516,99 +335,130 @@ export const fieldglassContent = {
                         "MBA or HR graduates aspiring to SAP workforce management careers",
                         "IT professionals shifting to enterprise workforce solutions",
                         "Business analysts who are targeting consulting roles in VMS",
-                        "Career changers with foundational human resource or procurement competencies"
+                        "Career changers with foundational human resource or procurement competencies."
                     ],
-                    icon: "GraduationCap",
+                    icon: "Globe",
                     color: "text-indigo-600",
                     bg: "bg-indigo-50"
                 }
             ]
         },
         {
+            type: 'detailed_prerequisites',
+            title: "Prerequisites",
+            items: {
+                minimum: [
+                    "Understanding the fundamentals of HR processes such as hiring, onboarding, and vendor management.",
+                    "Understanding of contingent workforce and some HR operations.",
+                    "Experience with web and business applications.",
+                    "Ability to operate unsupervised and seek relevant questions."
+                ],
+                nicetohave: [
+                    "Some experience with SAP (HR, MM, FICO or any other module).",
+                    "Some experience in HR or procurement.",
+                    "Understanding of ERP systems or enterprise workforce applications.",
+                    "Reporting in Excel."
+                ]
+            }
+        },
+        {
             type: 'detailed_learning_outcomes',
             title: "What You'll Master in This SAP Fieldglass Online Course – Core Competencies",
-            items: [
-                {
-                    title: "End-to-End Contingent Worker Lifecycle Management",
-                    points: [
-                        "Set up and supervise the entire contingent worker onboarding and offboarding processes.",
-                        "Manage requisitions, worker assignments, and timesheet approval processes.",
-                        "Execute contingent workforce strategies, compliance, and cost control.",
-                        "Optimize processes and external talent acquisition cost."
-                    ],
-                    icon: "Users"
-                },
-                {
-                    title: "Statement of Work (SOW) Services Procurement",
-                    points: [
-                        "Manage the end to end lifecycle of SOW project including creation, bidding, and awarding.",
-                        "Configure SOW structure, billing models, and approval process.",
-                        "Facilitate SOW-related service provider onboarding and performance management.",
-                        "Automation of invoicing and payment collection for rendered services."
-                    ],
-                    icon: "FileText"
-                },
-                {
-                    title: "Vendor & Supplier Management",
-                    points: [
-                        "Formulate and construct vendor onboarding and qualification processes.",
-                        "Provide accurate vendor master data and vendor performance metrics.",
-                        "Create vendor self-service portals and establish vendor collaboration.",
-                        "Oversee vendor relationship management and vendor compliance."
-                    ],
-                    icon: "Briefcase"
-                },
-                {
-                    title: "Contingent Workforce Compliance & Risk Management",
-                    points: [
-                        "Design automation for compliance and governance control.",
-                        "Implement worker classification and compliance control.",
-                        "Produce compliance documentation and audit trail.",
-                        "Disseminate compliance and control for regulations within a set of rules for multiple jurisdictions."
-                    ],
-                    icon: "ShieldAlert"
-                },
-                {
-                    title: "Master Data & System Administration",
-                    points: [
-                        "Oversee Users, roles, permissions, and approval processes.",
-                        "Arrange organizational and managerial structures.",
-                        "Ensure consistency of data for employees, vendors, and businesses.",
-                        "Manage continuity of architecture and control of the system."
-                    ],
-                    icon: "Database"
-                },
-                {
-                    title: "Integration & System Connectivity",
-                    points: [
-                        "Connect SAP Fieldglass with SAP S/4HANA and other ERPs.",
-                        "Provide seamless automation of processes and data exchange.",
-                        "Create integration flow for worker data and invoice.",
-                        "Test and troubleshoot to ensure synchronization."
-                    ],
-                    icon: "Link"
-                },
-                {
-                    title: "Analytics & Reporting",
-                    points: [
-                        "Analyze spending of the contingent workforce.",
-                        "Measure vendor performance and worker performance.",
-                        "Design management dashboards and KPI reports, illustrating performance and operational metrics.",
-                        "Use workforce analytics to make a strategic operational framework and business plan."
-                    ],
-                    icon: "BarChart"
-                },
-                {
-                    title: "Advanced Workflows & Customization",
-                    points: [
-                        "Develop complex approval structures, with a hierarchy of conditional routing.",
-                        "For specific vendor management system (VMS) needs, custom form creation.",
-                        "Implement optimized and automated workflows",
-                        "Identify and solve complex workflow problem."
-                    ],
-                    icon: "Cpu"
-                }
-            ]
+            subtitle: "Compete competencies you'll acquire",
+            items: {
+                tabs: [
+                    {
+                        name: "Functional Mastery",
+                        items: [
+                            {
+                                title: "End-to-End Contingent Worker Lifecycle",
+                                titleKeywords: "Worker Lifecycle",
+                                points: [
+                                    "Set up and supervise the entire contingent worker onboarding and offboarding processes.",
+                                    "Manage requisitions, worker assignments, and timesheet approval processes.",
+                                    "Execute contingent workforce strategies, compliance, and cost control.",
+                                    "Optimize processes and external talent acquisition cost."
+                                ]
+                            },
+                            {
+                                title: "Statement of Work (SOW) Services Procurement",
+                                titleKeywords: "SOW",
+                                points: [
+                                    "Manage the end to end lifecycle of SOW project including creation, bidding, and awarding.",
+                                    "Configure SOW structure, billing models, and approval process.",
+                                    "Facilitate SOW-related service provider onboarding and performance management.",
+                                    "Automation of invoicing and payment collection for rendered services."
+                                ]
+                            },
+                            {
+                                title: "Vendor & Supplier Management",
+                                titleKeywords: "Vendor Management",
+                                points: [
+                                    "Formulate and construct vendor onboarding and qualification processes.",
+                                    "Provide accurate vendor master data and vendor performance metrics.",
+                                    "Create vendor self-service portals and establish vendor collaboration.",
+                                    "Oversee vendor relationship management and vendor compliance."
+                                ]
+                            },
+                            {
+                                title: "Contingent Workforce Compliance & Risk",
+                                titleKeywords: "Compliance",
+                                points: [
+                                    "Design automation for compliance and governance control.",
+                                    "Implement worker classification and compliance control.",
+                                    "Produce compliance documentation and audit trail.",
+                                    "Disseminate compliance and control for regulations within a set of rules for multiple jurisdictions."
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        name: "Technical Skills",
+                        items: [
+                            {
+                                title: "Master Data & System Administration",
+                                titleKeywords: "Master Data",
+                                points: [
+                                    "Oversee Users, roles, permissions, and approval processes.",
+                                    "Arrange organizational and managerial structures.",
+                                    "Ensure consistency of data for employees, vendors, and businesses.",
+                                    "Manage continuity of architecture and control of the system."
+                                ]
+                            },
+                            {
+                                title: "Integration & System Connectivity",
+                                titleKeywords: "Integration",
+                                points: [
+                                    "Connect SAP Fieldglass with SAP S/4HANA and other ERPs.",
+                                    "Provide seamless automation of processes and data exchange.",
+                                    "Create integration flow for worker data and invoice.",
+                                    "Test and troubleshoot to ensure synchronization."
+                                ]
+                            },
+                            {
+                                title: "Analytics & Reporting",
+                                titleKeywords: "Analytics",
+                                points: [
+                                    "Analyze spending of the contingent workforce.",
+                                    "Measure vendor performance and worker performance.",
+                                    "Design management dashboards and KPI reports, illustrating performance and operational metrics.",
+                                    "Use workforce analytics to make a strategic operational framework and business plan."
+                                ]
+                            },
+                            {
+                                title: "Advanced Workflows & Customization",
+                                titleKeywords: "Workflows",
+                                points: [
+                                    "Develop complex approval structures, with a hierarchy of conditional routing.",
+                                    "For specific vendor management system (VMS) needs, custom form creation.",
+                                    "Implement optimized and automated workflows",
+                                    "Identify and solve complex workflow problem."
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         {
             type: 'real_world_scenarios',
@@ -671,6 +521,12 @@ export const fieldglassContent = {
         {
             type: 'detailed_certification',
             title: "SAP Fieldglass Certification – Your Global Career Credential",
+            subtitle: "We Provide Support for Below SAP Fieldglass Certification",
+            stats: [
+                { label: "Exam Code", value: "C_FG_SRV_90" },
+                { label: "Certification Value", value: "Global Recognition" },
+                { label: "Job Relevance", value: "High Demand" }
+            ],
             items: [
                 {
                     title: "SAP Certified Application Associate – Fieldglass Services and External Workforce Management",
@@ -680,25 +536,76 @@ export const fieldglassContent = {
                     relevance: "Demonstrates expertise in end-to-end VMS implementation and external workforce management"
                 }
             ],
+            supportFeatures: [
+                { title: "Focused Exam Prep", subtitle: "Comprehensive guides that match SAP exam blueprints" },
+                { title: "Mock Exams", subtitle: "Practice exams to simulate time constraints and real exam scenarios for Fieldglass" },
+                { title: "Exam Techniques", subtitle: "Time management tips, question-reading strategies, and pitfalls to avoid" },
+                { title: "Exam Scheduling Assistance", subtitle: "Help with exam enrollment and scheduling coordination" },
+                { title: "Retake Guidance", subtitle: "If you don’t pass on your first attempt, we will provide tailored Fieldglass support regarding the exam's content and guide you on how to retake it." }
+            ],
+            benefits: [
+                { title: "Globally Recognized Credentials", desc: "SAP Fieldglass certifications are widely acknowledged by employers, clients, and VMS recruitment agencies worldwide.", icon: "Globe" },
+                { title: "Increased Earning Potential", desc: "Certified Fieldglass professionals earn between 20-35% more than their non-certified peers.", icon: "TrendingUp" },
+                { title: "Enhanced Professional Reputation", desc: "Clients and employers will regard you more highly for having met the industry’s demanding VMS standards.", icon: "Award" },
+                { title: "Market Differentiation", desc: "FA Certified Fieldglass professionals also enjoy less competition for VMS job applications and contingent workforce consulting proposals.", icon: "CheckCircle2" },
+                { title: "Motivated to Learn", desc: "Certification motivates you to master the evolving VMS platform.", icon: "BookOpen" }
+            ],
             imageSrc: "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP FG Infographic.webp"
         },
         {
-            type: 'detailed_companies'
+            type: 'detailed_companies',
+            customData: {
+                tier1: {
+                    title: "Tier 1 – Global Consulting Firms",
+                    companies: ["Accenture", "Capgemini", "Deloitte Consulting", "EY (Ernst & Young)", "KPMG", "PwC", "IBM Consulting"],
+                    color: "bg-slate-800",
+                    lightColor: "bg-slate-50"
+                },
+                tier2: {
+                    title: "Tier 2 – Enterprise SAP Implementation Partners",
+                    companies: ["Infosys", "Wipro", "Cognizant", "TCS (Tata Consulting Services)", "HCL Technologies", "Tech Mahindra"],
+                    color: "bg-orange-600",
+                    lightColor: "bg-orange-50"
+                },
+                tier3: {
+                    title: "Tier 3 – Major Global Services & IT Companies",
+                    companies: ["Accenture", "Capgemini", "Deloitte", "IBM", "HP", "Dell", "Adobe", "Salesforce", "Microsoft", "Amazon", "Google", "Morgan Stanley", "JP Morgan"],
+                    color: "bg-slate-800",
+                    lightColor: "bg-slate-50"
+                },
+                tier4: {
+                    title: "Tier 4 – Mid-Market & Regional Leaders",
+                    companies: ["Regional consulting firms specializing in VMS", "Staffing and recruitment service providers", "In-house contingent workforce and procurement teams"],
+                    color: "bg-orange-600",
+                    lightColor: "bg-orange-50"
+                },
+                hiringTrends: {
+                    title: "Hiring Trends (2025)",
+                    stats: [
+                        { value: "150%+", label: "Increase in Job Openings", color: "blue" },
+                        { value: "400+", label: "Companies Hiring", color: "orange" },
+                        { value: "$115K", label: "Average Starting Salary", color: "purple" },
+                        { value: "High Demand", label: "S/4HANA Integration Expertise", color: "green" }
+                    ]
+                }
+            }
         },
         {
             type: 'detailed_career_opportunities',
+            title: "Career Opportunities After SAP Fieldglass Training",
+            subtitle: "Step Into Global VMS and Contingent Workforce Consulting Roles",
             items: [
                 {
-                    title: "SAP Fieldglass Functional Consultant",
+                    title: "SAP Fieldglass Functional Consultant (Entry Level)",
                     salary: "$115,000–$145,000 (USA) | ₹8–12 LPA (India)",
                     responsibilities: "Configure Fieldglass workflows, manage VMS projects, support contingent workforce implementations",
                     employers: "Accenture, Capgemini, Deloitte, Infosys, Wipro",
                     path: "2–3 years → Senior VMS Consultant",
-                    icon: "User",
+                    icon: "Award",
                     color: "blue"
                 },
                 {
-                    title: "Contingent Workforce Program Manager",
+                    title: "Contingent Workforce Program Manager / VMS Lead",
                     salary: "$135,000–$175,000 (USA) | ₹11–16 LPA (India)",
                     responsibilities: "Lead Fieldglass implementations, manage VMS teams, optimize contingent operations",
                     employers: "IT Services, Consulting, Large Enterprises",
@@ -716,94 +623,256 @@ export const fieldglassContent = {
                     color: "purple"
                 },
                 {
-                    title: "Vendor Management Specialist",
+                    title: "Vendor Management Specialist / SOW Services Consultant",
                     salary: "$120,000–$160,000 (USA) | ₹9–14 LPA (India)",
                     responsibilities: "Manage SOW implementations, optimize vendor workflows, conduct spend analysis",
                     employers: "Consulting, Services, Multi-sector",
                     path: "3–5 years → Senior Services Procurement Manager",
                     icon: "Users",
                     color: "orange"
+                },
+                {
+                    title: "Solutions Architect – Fieldglass / Contingent Workforce Solutions",
+                    salary: "$180,000–$250,000+ (USA) | ₹16–25+ LPA (India)",
+                    responsibilities: "Design enterprise VMS strategies, lead large-scale Fieldglass implementations, advise on contingent workforce technology",
+                    employers: "Consulting, Financial Services, Enterprise",
+                    path: "7+ years → Principal Consultant, VMS Practice Lead",
+                    icon: "Cpu",
+                    color: "indigo"
                 }
             ]
         },
         {
-            type: 'detailed_post_training_journey'
+            type: 'detailed_career_roadmap'
         },
         {
-            type: 'detailed_upcoming_batches'
+            type: 'detailed_post_training_journey',
+            title: "What to Expect After Completing SAP Fieldglass Training – Your Growth Roadmap",
+            items: [
+                {
+                    title: "Immediate Post-Training",
+                    timeline: "Week 1-2",
+                    color: "orange",
+                    icon: "CheckCircle2",
+                    points: [
+                        "Receive course completion certificate",
+                        "Access lifetime course materials and Fieldglass recordings",
+                        "Join alumni network and VMS community forum",
+                        "Begin resume updates highlighting SAP Fieldglass expertise"
+                    ]
+                },
+                {
+                    title: "Certification & Job Search",
+                    timeline: "Week 3-6",
+                    color: "slate",
+                    icon: "Award",
+                    points: [
+                        "Apply for SAP Fieldglass Certification exam",
+                        "Start job search with career services support",
+                        "Participate in alumni networking events",
+                        "Receive interview coaching and mock VMS interview feedback"
+                    ]
+                },
+                {
+                    title: "First Role Secured",
+                    timeline: "Month 2-3",
+                    color: "orange",
+                    icon: "Briefcase",
+                    points: [
+                        "Secure first SAP Fieldglass consulting opportunity (typical timeline)",
+                        "Begin real-world contingent workforce project experience",
+                        "Continue post-training support from instructors",
+                        "Prepare for certification with focused guidance"
+                    ]
+                },
+                {
+                    title: "First Year in Role",
+                    timeline: "Month 1-12",
+                    color: "slate",
+                    icon: "TrendingUp",
+                    points: [
+                        "**Month 1-3:** Learn client's contingent workforce operations, understand current VMS processes, get hands-on experience.",
+                        "**Month 4-6:** Lead small configuration tasks, mentor other junior Fieldglass consultants, build reputation for reliability.",
+                        "**Month 7-12:** Lead components of Fieldglass implementation projects, drive process improvements, demonstrate business acumen."
+                    ]
+                },
+                {
+                    title: "Long-Term Growth",
+                    timeline: "1-5 Years",
+                    color: "orange",
+                    icon: "TrendingUp",
+                    points: [
+                        "Earn SAP Fieldglass certification and related VMS credentials",
+                        "Build domain expertise in specific industries (IT services, staffing, finance, etc.)",
+                        "Develop leadership and project management capabilities for large VMS programs",
+                        "Transition to senior consulting roles or contingent workforce program management",
+                        "Explore specializations (VMS analytics, integration architecture, governance)"
+                    ]
+                }
+            ]
+        },
+        {
+            type: 'detailed_upcoming_batches',
+            title: "Join Our Next Live Batch – Limited Seats Available",
+            items: [
+                {
+                    date: "November 15, 2025",
+                    time: "Weekdays – 7:00 AM | 8:00 PM IST",
+                    type: "Weekday Batch",
+                    status: "Filling Fast (4/10 Seats Left)"
+                },
+                {
+                    date: "November 16, 2025",
+                    time: "Weekends – Saturday & Sunday, 7:30 AM | 7:00 PM IST",
+                    type: "Weekend Batch",
+                    status: "Filling Fast (6/10 Seats Left)"
+                },
+                {
+                    date: "December 1, 2025",
+                    time: "Flexible timings – customized per batch",
+                    type: "Accelerated Batch",
+                    status: "Open (7/10 Seats Left)"
+                }
+            ]
         },
         {
             type: 'detailed_testimonials',
+            title: "Hear from Our Successful SAP Fieldglass Learners – Real Reviews, Real Results",
             items: [
                 {
                     name: "Raj Patel",
                     role: "SAP Fieldglass Consultant at Accenture",
-                    quote: "Outstanding VMS training with real project exposure. I landed a consulting role at Accenture within 9 weeks managing Fieldglass implementations.",
+                    quote: "Outstanding VMS training with real project exposure. I landed a consulting role at Accenture within 9 weeks managing Fieldglass implementations. The hands-on approach and expert instructors made all the difference.",
                     initial: "R",
                     color: "bg-blue-500"
                 },
                 {
                     name: "Priya Desai",
                     role: "Contingent Workforce Manager",
-                    quote: "The weekend flexibility allowed me to learn while working in HR. My organization was so impressed with my Fieldglass skills that they promoted me. This course accelerated my career by 4 years.",
+                    quote: "The weekend flexibility allowed me to learn while working in HR. My organization was so impressed with my Fieldglass skills that they promoted me to Contingent Workforce Manager. This course accelerated my career by 4 years.",
                     initial: "P",
                     color: "bg-green-500"
                 },
                 {
                     name: "Vikram Mishra",
                     role: "Senior VMS Consultant",
-                    quote: "Best decision I made for my SAP career. The capstone projects were exactly like real client VMS work. I walked into my first consulting engagement feeling confident.",
+                    quote: "Best decision I made for my SAP career. The capstone projects were exactly like real client VMS work. I walked into my first consulting engagement feeling confident, not intimidated. The certification support was exceptional.",
                     initial: "V",
                     color: "bg-orange-500"
                 },
                 {
                     name: "Ananya Singh",
                     role: "Certified SAP Fieldglass Professional",
-                    quote: "Superb Fieldglass certification preparation. I passed the SAP Fieldglass exam on my first attempt. The mock exams and study materials were spot-on.",
+                    quote: "Superb Fieldglass certification preparation. I passed the SAP Fieldglass exam on my first attempt. The mock exams and study materials were spot-on. Highly recommended for VMS careers!",
                     initial: "A",
                     color: "bg-purple-500"
                 },
                 {
                     name: "Vikram Desai",
                     role: "Integration Consultant at Deloitte",
-                    quote: "The instructor's real-world VMS insights were invaluable. I learned how to think like a contingent workforce consultant. The alumni network has brought several opportunities.",
+                    quote: "The instructor's real-world VMS insights were invaluable. I didn't just learn Fieldglass; I learned how to think like a contingent workforce consultant. The alumni network has brought several implementation opportunities my way.",
                     initial: "V",
                     color: "bg-red-500"
                 },
                 {
                     name: "Sneha Reddy",
                     role: "Contingent Workforce Analyst at Infosys",
-                    quote: "From zero Fieldglass knowledge to landing my dream VMS consulting job in 5 months! The instructors are patient and truly care about learner success.",
+                    quote: "From zero Fieldglass knowledge to landing my dream VMS consulting job in 5 months! The instructors are patient, knowledgeable, and truly care about learner success. Lifetime recording access is a huge bonus.",
                     initial: "S",
                     color: "bg-indigo-500"
                 }
             ]
         },
         {
-            type: 'detailed_demo_booking'
+            type: 'detailed_demo_booking',
+            title: "Ready to Become an SAP Fieldglass Consultant?",
+            subtitle: "Book your free demo today and take the first step towards a lucrative SAP Fieldglass VMS career",
+            benefits: [
+                { title: "Live Session Insight", desc: "Observe real SAP Fieldglass training and instructor methodology" },
+                { title: "Career Consultation", desc: "Personalized guidance based on your background" },
+                { title: "Instructor Q&A", desc: "Ask questions about SAP Fieldglass course, certification, and career" },
+                { title: "Special Offer", desc: "Exclusive discount for demo attendees" }
+            ]
         },
         {
             type: 'detailed_faq',
             items: [
-                { q: "What is SAP Fieldglass and how does ERPVITS help me learn it?", a: "SAP Fieldglass is a cloud solution for vendor and contingent workforce management. At ERPVITS, we train SAP Fieldglass with real-time VMS scenarios, hands-on practice, and guided projects to master Fieldglass workflows and contingent operations." },
-                { q: "What will I learn in the SAP Fieldglass Contingent Worker module?", a: "SAP Fieldglass Contingent Worker training covers the entire worker lifecycle with requisition and onboarding, timesheet processing, invoicing, and offboarding using the Fieldglass contingent module." },
-                { q: "What is SAP Fieldglass Statement of Work (SOW)?", a: "SAP Fieldglass SOW module deals with services procurement and project-based contingent work. ERPVITS supports your understanding of SOW project creation, bidding, service provider management, milestone billing, and compliance tracking." },
-                { q: "What is the Fieldglass Vendor Management System (VMS)?", a: "The VMS in Fieldglass enables centralized vendor onboarding, performance management, and contingent workforce operations. ERPVITS training covers complete vendor lifecycle management and VMS optimization." },
-                { q: "In what ways does SAP Fieldglass assist in the management of a contingent workforce?", a: "With SAP Fieldglass, all aspects of contingent workforce management are handled seamlessly, including onboarding, compliance documentation, timesheet processing, invoicing, and reporting analysis. ERPVITS equips you with practical Fieldglass contingent workflow exposure." },
-                { q: "What are the reasons to attend ERPVITS SAP Fieldglass Training?", a: "With SAP Fieldglass Online Training at ERPVITS, you can expect live sessions, real VMS projects, and placement assistance. You'll also get Fieldglass Certification guidance and interview readiness strategies." },
-                { q: "Who is eligible for the SAP Fieldglass Course?", a: "Individuals focused on HR, contingent workforce management, procurement, or SAP technologies are eligible. ERPVITS SAP Fieldglass Course is for freshers, working professionals, and consultants to gain job-ready skills." },
-                { q: "What does the SAP Fieldglass Certification entail, and what are its benefits?", a: "SAP Fieldglass Certification validates your skills in contingent workforce and vendor management. ERPVITS helps you prepare for certification to become a certified SAP Fieldglass consultant." },
-                { q: "How much are the SAP Fieldglass course fees at ERPVITS?", a: "At ERPVITS, SAP Fieldglass course fees are set at ₹45,000 INR and include practical sessions, learning materials, certification guidance, and placement support." },
-                { q: "What is the cost for SAP Fieldglass Certification?", a: "The cost is determined by SAP Education. ERPVITS provides complete guidance, practice tests, and mentoring to help you clear the exam on your first try." },
-                { q: "How can I become an SAP Fieldglass Consultant through ERPVITS?", a: "Join the structured SAP Fieldglass Training Program at ERPVITS, complete live VMS projects, prepare for certification, and get career guidance and job support to become a successful consultant." },
-                { q: "What Fieldglass course career options are there?", a: "After completing SAP Fieldglass Training, you can become a Fieldglass Consultant, VMS Specialist, Contingent Workforce Manager, or SAP Functional Consultant. ERPVITS also shares job openings regularly." },
-                { q: "How does SAP Fieldglass work with SAP S/4HANA?", a: "ERPVITS explains Fieldglass integration with S/4HANA, data flow between systems, and Cloud Integration Gateway and API use for smooth synchronization." },
-                { q: "What are the main SAP Fieldglass Solutions covered?", a: "The course covers Contingent Worker Management, SOW, Vendor Management, Profile Worker, and Admin Configuration, with live applications and client use cases." },
-                { q: "How does SAP Fieldglass pricing work?", a: "Fieldglass pricing depends on company size and usage. ERPVITS explains licensing architecture, implementation costs, and functional pricing models." },
-                { q: "Does ERPVITS have SAP Fieldglass Training with Placement Support?", a: "Yes! ERPVITS offers SAP Fieldglass Training with resume preparation, mock interviews, and recruiter connections for SAP Fieldglass consultant jobs." },
-                { q: "Can I take SAP Fieldglass Online Training from anywhere?", a: "Yes. ERPVITS offers SAP Fieldglass Online Training accessible globally with live instructors, recorded sessions, and hands-on system practice." },
-                { q: "Is SAP Fieldglass Training available near me?", a: "Yes. ERPVITS provides SAP Fieldglass Training online and in-class in Hyderabad, Pune, and Bangalore with flexible weekday and weekend batches." },
-                { q: "How does ERPVITS help in Fieldglass Careers?", a: "ERPVITS not only provides technical training but also assists with resume writing, mock interviews, and job referrals to leading SAP consulting firms." }
+                {
+                    q: "What is SAP Fieldglass and how does ERPVITS help me learn it?",
+                    a: "SAP Fieldglass is a cloud solution for vendor and contingent workforce management. At ERPVITS, we train SAP Fieldglass with real-time VMS scenarios, hands-on practice, and guided projects to master Fieldglass workflows and contingent operations."
+                },
+                {
+                    q: "What will I learn in the SAP Fieldglass Contingent Worker module?",
+                    a: "SAP Fieldglass Contingent Worker training covers the entire worker lifecycle with requisition and onboarding, timesheet processing, invoicing, and offboarding using the Fieldglass contingent module."
+                },
+                {
+                    q: "What is SAP Fieldglass Statement of Work (SOW)?",
+                    a: "SAP Fieldglass SOW module deals with services procurement and project-based contingent work. ERPVITS supports your understanding of SOW project creation, bidding, service provider management, milestone billing, and compliance tracking."
+                },
+                {
+                    q: "What is the Fieldglass Vendor Management System (VMS)?",
+                    a: "The VMS in Fieldglass enables centralized vendor onboarding, performance management, and contingent workforce operations. ERPVITS training covers complete vendor lifecycle management and VMS optimization."
+                },
+                {
+                    q: "In what ways does SAP Fieldglass assist in the management of a contingent workforce?",
+                    a: "With SAP Fieldglass, all aspects of contingent workforce management are handled seamlessly, including onboarding, compliance documentation, timesheet processing, invoicing, and reporting analysis. ERPVITS equips you with practical Fieldglass contingent workflow exposure to prepare you for client implementation."
+                },
+                {
+                    q: "What are the reasons to attend ERPVITS SAP Fieldglass Training?",
+                    a: "With SAP Fieldglass Online Training at ERPVITS, you can expect live sessions, real VMS projects, and placement assistance. You'll also get Fieldglass Certification guidance and interview readiness strategies."
+                },
+                {
+                    q: "Who is eligible for the SAP Fieldglass Course?",
+                    a: "Individuals focused on HR, contingent workforce management, procurement, or SAP technologies are eligible. ERPVITS SAP Fieldglass Course is for freshers, working professionals, and consultants to gain job-ready skills."
+                },
+                {
+                    q: "What does the SAP Fieldglass Certification entail, and what are its benefits?",
+                    a: "SAP Fieldglass Certification validates your skills in contingent workforce and vendor management. ERPVITS helps you prepare for certification to become a certified SAP Fieldglass consultant."
+                },
+                {
+                    q: "How much are the SAP Fieldglass course fees at ERPVITS?",
+                    a: "At ERPVITS, SAP Fieldglass course fees are set at ₹45,000 INR and include practical sessions, learning materials, certification guidance, and placement support."
+                },
+                {
+                    q: "What is the cost for SAP Fieldglass Certification?",
+                    a: "The cost is determined by SAP Education. ERPVITS provides complete guidance, practice tests, and mentoring to help you clear the exam on your first try."
+                },
+                {
+                    q: "How can I become an SAP Fieldglass Consultant through ERPVITS?",
+                    a: "Join the structured SAP Fieldglass Training Program at ERPVITS, complete live VMS projects, prepare for certification, and get career guidance and job support to become a successful consultant."
+                },
+                {
+                    q: "What Fieldglass course career options are there?",
+                    a: "After completing SAP Fieldglass Training, you can become a Fieldglass Consultant, VMS Specialist, Contingent Workforce Manager, or SAP Functional Consultant. ERPVITS also shares job openings regularly."
+                },
+                {
+                    q: "How does SAP Fieldglass work with SAP S/4HANA?",
+                    a: "ERPVITS explains Fieldglass integration with S/4HANA, data flow between systems, and Cloud Integration Gateway and API use for smooth synchronization."
+                },
+                {
+                    q: "What are the main SAP Fieldglass Solutions covered?",
+                    a: "The course covers Contingent Worker Management, SOW, Vendor Management, Profile Worker, and Admin Configuration, with live applications and client use cases."
+                },
+                {
+                    q: "How does SAP Fieldglass pricing work?",
+                    a: "Fieldglass pricing depends on company size and usage. ERPVITS explains licensing architecture, implementation costs, and functional pricing models."
+                },
+                {
+                    q: "Does ERPVITS have SAP Fieldglass Training with Placement Support?",
+                    a: "Yes! ERPVITS offers SAP Fieldglass Training with resume preparation, mock interviews, and recruiter connections for SAP Fieldglass consultant jobs."
+                },
+                {
+                    q: "Can I take SAP Fieldglass Online Training from anywhere?",
+                    a: "Yes. ERPVITS offers SAP Fieldglass Online Training accessible globally with live instructors, recorded sessions, and hands-on system practice."
+                },
+                {
+                    q: "Is SAP Fieldglass Training available near me?",
+                    a: "Yes. ERPVITS provides SAP Fieldglass Training online and in-class in Hyderabad, Pune, and Bangalore with flexible weekday and weekend batches."
+                },
+                {
+                    q: "How does ERPVITS help in Fieldglass Careers?",
+                    a: "ERPVITS not only provides technical training but also assists with resume writing, mock interviews, and job referrals to leading SAP consulting firms."
+                }
             ]
         }
     ]

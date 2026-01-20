@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Laptop, ShoppingCart, BarChart3, GraduationCap, Building2, HelpCircle, Wallet, Users, Banknote } from 'lucide-react';
+import { Laptop, ShoppingCart, BarChart3, GraduationCap, Building2, HelpCircle, Wallet, Users, Banknote, TrendingUp, Globe } from 'lucide-react';
 import { aribaTargetAudience } from '@/lib/contentHelpers';
 
 const iconMap: Record<string, any> = {
@@ -13,7 +13,9 @@ const iconMap: Record<string, any> = {
     "HelpCircle": HelpCircle,
     "Wallet": Wallet,
     "Users": Users,
-    "Banknote": Banknote
+    "Banknote": Banknote,
+    "TrendingUp": TrendingUp,
+    "Globe": Globe
 };
 
 export default function DetailedTargetAudience({ items, title, subtitle }: { items?: any[], title?: string, subtitle?: string }) {
