@@ -1,3 +1,4 @@
+import React from 'react';
 import { Section } from './courseData';
 
 export const cpiContent = {
@@ -5,7 +6,7 @@ export const cpiContent = {
     price: "45,000",
     duration: "60-70 Hours",
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Technical/sap-cpi.pdf",
-    heroHeading: "Master Cloud Integration Skills with Our SAP CPI Training",
+    heroHeading: <>Transform Your Career with the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">#1 SAP CPI Online Training Program</span></>,
     heroSubheading: "Master Cloud Integration Skills with Our SAP CPI Training",
     badges: ["SAP Certified Trainers", "4.6 Learner Rating", "24/7 Team Support"],
     description: "The SAP CPI Training (Cloud Platform Integration) by ERPVITS enables professionals to master cloud integration, API management, and enterprise middleware technologies. As organizations increasingly adopt hybrid environments, the demand for certified SAP CPI experts who can connect cloud and on-premise systems, design integration flows, and enable real-time data exchange continues to rise. This comprehensive SAP CPI course combines instructor-led sessions, hands-on lab practice, and real-world integration projects to help developers, consultants, and cloud architects build the technical and practical skills required for global consulting and implementation careers.",
@@ -354,8 +355,8 @@ export const cpiContent = {
                 {
                     title: "Existing SAP Integration Teams",
                     icon: "Users",
-                    bg: "bg-orange-50",
-                    color: "text-orange-600",
+                    bg: "bg-[#ff4500]/10",
+                    color: "text-[#ff4500]",
                     description: [
                         "Teams migrating from SAP PI/PO to CPI",
                         "Integration specialists at SAP customer organizations",
@@ -491,8 +492,8 @@ export const cpiContent = {
                     ],
                     outcome: "Deliverables: B2B integration setup, partner configuration guide, mapping documentation, and monitoring dashboards.",
                     icon: "Factory",
-                    bg: "bg-orange-100",
-                    iconColor: "text-orange-600"
+                    bg: "bg-[#ff4500]/10",
+                    iconColor: "text-[#ff4500]"
                 }
             ]
         },
@@ -537,7 +538,7 @@ export const cpiContent = {
                     title: "Tier 4 - Mid-Market & Regional Leaders",
                     companies: ["Regional consulting firms", "Cloud-native technology companies", "Enterprise customers with in-house integration teams", "System integrators and ISVs"],
                     color: "bg-orange-600",
-                    lightColor: "bg-orange-50"
+                    lightColor: "bg-[#ff4500]/10"
                 },
                 hiringTrends: {
                     title: "Hiring Trends (2025)",

@@ -1,3 +1,4 @@
+import React from 'react';
 
 // Icons are now referenced by string names to avoid serialization issues with Client Components
 
@@ -5,7 +6,7 @@ export const fieldglassContent = {
     price: "45,000",
     duration: "35+ Hours",
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-fieldglass.pdf",
-    heroHeading: "Become a Leader in Managing a Contingent Workforce with SAP Fieldglass Training",
+    heroHeading: <>Transform Your Career with the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">#1 Learn SAP Fieldglass from Certified Experts – 100% Hands-On, Job-Oriented Training Online Training Program</span></>,
     heroSubheading: "This SAP Fieldglass training course is specifically tailored for HR professionals, procurement professionals, IT consultants, work program managers, and other professionals who aspire to work in global contingent workforce and services procurement consulting. This SAP Fieldglass course combines hands-on system training, expert instruction with real-world application, and a curriculum designed to a certification.",
     badges: ["SAP Certified Trainers", "4.7 Learner Rating", "24/7 Team Support"],
     description: "This SAP Fieldglass training course is specifically tailored for HR professionals, procurement professionals, IT consultants, work program managers, and other professionals who aspire to work in global contingent workforce and services procurement consulting. This SAP Fieldglass course combines hands-on system training, expert instruction with real-world application, and a curriculum designed to a certification.",
@@ -302,8 +303,8 @@ export const fieldglassContent = {
                         "Category managers who manage spending on the contingent workforce"
                     ],
                     icon: "ShoppingCart",
-                    color: "text-orange-600",
-                    bg: "bg-orange-50"
+                    color: "text-[#ff4500]",
+                    bg: "bg-[#ff4500]/10"
                 },
                 {
                     title: "IT & ERP Professionals",
@@ -496,8 +497,8 @@ export const fieldglassContent = {
                     ],
                     outcome: "Deliverables: Portal design documentation, workflow diagrams, vendor guides, and support procedures.",
                     icon: "ShoppingBag",
-                    bg: "bg-orange-100",
-                    iconColor: "text-orange-600"
+                    bg: "bg-[#ff4500]/10",
+                    iconColor: "text-[#ff4500]"
                 },
                 {
                     title: "Enterprise Statement of Work Implementation for Global Services Company",
@@ -565,7 +566,7 @@ export const fieldglassContent = {
                     title: "Tier 2 – Enterprise SAP Implementation Partners",
                     companies: ["Infosys", "Wipro", "Cognizant", "TCS (Tata Consulting Services)", "HCL Technologies", "Tech Mahindra"],
                     color: "bg-orange-600",
-                    lightColor: "bg-orange-50"
+                    lightColor: "bg-[#ff4500]/10"
                 },
                 tier3: {
                     title: "Tier 3 – Major Global Services & IT Companies",
@@ -577,7 +578,7 @@ export const fieldglassContent = {
                     title: "Tier 4 – Mid-Market & Regional Leaders",
                     companies: ["Regional consulting firms specializing in VMS", "Staffing and recruitment service providers", "In-house contingent workforce and procurement teams"],
                     color: "bg-orange-600",
-                    lightColor: "bg-orange-50"
+                    lightColor: "bg-[#ff4500]/10"
                 },
                 hiringTrends: {
                     title: "Hiring Trends (2025)",
@@ -758,7 +759,7 @@ export const fieldglassContent = {
                     role: "Senior VMS Consultant",
                     quote: "Best decision I made for my SAP career. The capstone projects were exactly like real client VMS work. I walked into my first consulting engagement feeling confident, not intimidated. The certification support was exceptional.",
                     initial: "V",
-                    color: "bg-orange-500"
+                    color: "bg-[#ff4500]"
                 },
                 {
                     name: "Ananya Singh",

@@ -70,7 +70,7 @@ export default function WhatsIncluded({ features: customFeatures, stats: customS
             <div className="max-w-7xl mx-auto px-4">
                 {/* Header */}
                 <div className="text-center mb-12">
-                    <span className="bg-orange-50 text-orange-600 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block border border-orange-100">
+                    <span className="bg-[#ff4500]/10 text-[#ff4500] px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block border border-[#ff4500]/10">
                         {badge || "Complete Learning Package"}
                     </span>
                     <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
@@ -84,9 +84,9 @@ export default function WhatsIncluded({ features: customFeatures, stats: customS
                 {/* Features Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
                     {features.map((feature, idx) => (
-                        <div key={idx} className="flex gap-4 p-6 bg-white rounded-2xl border border-orange-100 hover:border-orange-200 shadow-sm hover:shadow-md transition-all duration-300">
+                        <div key={idx} className="flex gap-4 p-6 bg-white rounded-2xl border border-[#ff4500]/10 hover:border-[#ff4500]/20 shadow-sm hover:shadow-md transition-all duration-300">
                             <div className="flex-shrink-0">
-                                <div className="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center text-orange-500">
+                                <div className="w-10 h-10 rounded-full bg-[#ff4500]/10 flex items-center justify-center text-[#ff4500]">
                                     <CheckCircle2 className="w-6 h-6" />
                                 </div>
                             </div>
@@ -104,7 +104,7 @@ export default function WhatsIncluded({ features: customFeatures, stats: customS
                 <div className={`grid grid-cols-1 md:grid-cols-${Math.max(stats.length, 3)} gap-6`}>
                     {stats.map((stat, idx) => {
                         // Force orange styling regardless of stat.color for consistency as requested
-                        const colorClass = 'bg-orange-50/50 border-orange-100 text-orange-600';
+                        const colorClass = 'bg-[#ff4500]/10/50 border-[#ff4500]/10 text-[#ff4500]';
                         const textClass = 'text-orange-800';
 
                         return (

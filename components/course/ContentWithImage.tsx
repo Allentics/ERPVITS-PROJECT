@@ -50,7 +50,7 @@ export default function ContentWithImage({ title, subtitle, description, items, 
                 )}
 
                 <div className={`w-full ${(imageSrc || videoSrc) ? 'lg:w-1/2 text-left' : 'w-full max-w-5xl mx-auto text-center'} space-y-6`}>
-                    {subtitle && <span className="text-orange-500 font-bold tracking-widest uppercase text-sm block">{subtitle}</span>}
+                    {subtitle && <span className="text-[#ff4500] font-bold tracking-widest uppercase text-sm block">{subtitle}</span>}
                     <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 leading-tight">{renderRichText(title)}</h2>
                     <div className="text-lg text-slate-600 leading-relaxed">{renderRichText(description)}</div>
 
@@ -58,7 +58,7 @@ export default function ContentWithImage({ title, subtitle, description, items, 
                         <div className={`grid grid-cols-1 ${(imageSrc || videoSrc) ? 'md:grid-cols-2' : 'md:grid-cols-2 text-left max-w-3xl mx-auto'} gap-4 pt-4`}>
                             {items.map((item, idx) => (
                                 <div key={idx} className="flex gap-3 items-start p-2 rounded-lg hover:bg-slate-50 transition-colors">
-                                    <CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
+                                    <CheckCircle2 className="w-5 h-5 text-[#ff4500] flex-shrink-0 mt-0.5" />
                                     <span className="text-slate-700 font-medium">{renderRichText(item)}</span>
                                 </div>
                             ))}

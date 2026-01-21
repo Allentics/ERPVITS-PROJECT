@@ -18,7 +18,7 @@ export default function JobRolesTable({ title, description, items }: JobRolesTab
         <div className="max-w-7xl mx-auto px-4 py-12">
             <h2 className="text-3xl font-bold text-slate-900 mb-4">{title}</h2>
             {/* Orange Underline */}
-            <div className="w-16 h-1 bg-orange-500 rounded-full mb-8"></div>
+            <div className="w-16 h-1 bg-[#ff4500] rounded-full mb-8"></div>
 
             {/* Content text */}
             <div className="prose prose-lg text-slate-600 mb-12 max-w-none">

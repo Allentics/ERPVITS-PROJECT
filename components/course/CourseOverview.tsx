@@ -18,7 +18,7 @@ export default function CourseOverview({ items }: { items: OverviewItem[] }) {
                             {item.title}
                         </h2>
                         {/* Orange Underline */}
-                        <div className="w-16 h-1 bg-orange-500 rounded-full"></div>
+                        <div className="w-16 h-1 bg-[#ff4500] rounded-full"></div>
                     </div>
 
                     {item.content && (
@@ -34,7 +34,7 @@ export default function CourseOverview({ items }: { items: OverviewItem[] }) {
                                 const parts = listItem.split(/(\*\*.*?\*\*)/g);
                                 return (
                                     <li key={lIdx} className="flex items-start gap-4">
-                                        <CheckCircle2 className="w-5 h-5 text-orange-600 flex-shrink-0 mt-1" />
+                                        <CheckCircle2 className="w-5 h-5 text-[#ff4500] flex-shrink-0 mt-1" />
                                         <p className="text-slate-600 leading-relaxed text-[17px]">
                                             {parts.map((part, pIdx) => {
                                                 if (part.startsWith('**') && part.endsWith('**')) {

@@ -79,7 +79,7 @@ export default function AllCoursesPage() {
                                 {/* Description */}
                                 <div className="flex-1 mb-6">
                                     <p className="text-gray-600 text-sm line-clamp-3 leading-relaxed">
-                                        {course.description || (course.heroHeading && !course.heroHeading.startsWith("H1:")
+                                        {course.description || ((typeof course.heroHeading === 'string' && course.heroHeading && !course.heroHeading.startsWith("H1:"))
                                             ? course.heroHeading
                                             : `Comprehensive training for ${course.title} with real-time projects and certification support.`)}
                                     </p>

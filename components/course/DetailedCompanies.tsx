@@ -10,8 +10,8 @@ const companiesData: CompaniesData = {
     tier2: {
         title: "Tier 2 - Enterprise SAP Implementation Partners",
         companies: ["Infosys", "Wipro", "Capgemini", "TCS", "HCL Tech", "Tech Mahindra"],
-        color: "bg-orange-600",
-        lightColor: "bg-orange-50"
+        color: "bg-[#ff4500]",
+        lightColor: "bg-[#ff4500]/10"
     },
     tier3: {
         title: "Tier 3 - Fortune 500 Enterprises",
@@ -22,8 +22,8 @@ const companiesData: CompaniesData = {
     tier4: {
         title: "Tier 4 - Mid-Market & Regional Leaders",
         companies: ["Regional consulting firms", "Industry specific service providers", "In-house procurement teams", "SAP system integrators"],
-        color: "bg-orange-600",
-        lightColor: "bg-orange-50"
+        color: "bg-[#ff4500]",
+        lightColor: "bg-[#ff4500]/10"
     }
 };
 
@@ -134,16 +134,16 @@ export default function DetailedCompanies({ courseName = "SAP Ariba", customData
                             {data.hiringTrends.stats.map((stat, idx) => {
                                 const colorClasses =
                                     stat.color === 'blue' ? 'bg-blue-50 border-blue-100 text-blue-600' :
-                                        stat.color === 'green' ? 'bg-orange-50 border-orange-100 text-orange-600' :
+                                        stat.color === 'green' ? 'bg-[#ff4500]/10 border-[#ff4500]/10 text-[#ff4500]' :
                                             stat.color === 'purple' ? 'bg-purple-50 border-purple-100 text-purple-600' :
-                                                'bg-orange-50 border-orange-100 text-orange-600';
+                                                'bg-[#ff4500]/10 border-[#ff4500]/10 text-[#ff4500]';
 
                                 return (
                                     <div key={idx} className={`${colorClasses} border p-6 rounded-2xl text-center hover:shadow-md transition-all`}>
                                         <div className={`text-3xl font-bold mb-2 ${stat.color === 'blue' ? 'text-blue-600' :
-                                            stat.color === 'green' ? 'text-orange-600' :
+                                            stat.color === 'green' ? 'text-[#ff4500]' :
                                                 stat.color === 'purple' ? 'text-purple-600' :
-                                                    'text-orange-600'
+                                                    'text-[#ff4500]'
                                             }`}>
                                             {stat.value}
                                         </div>

@@ -107,8 +107,8 @@ export default function SyllabusDownloadModal({ isOpen, onClose, courseTitle, sy
                 <div className="p-6">
                     {status === 'success' ? (
                         <div className="text-center py-8">
-                            <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <CheckCircle className="w-8 h-8 text-orange-600" />
+                            <div className="w-16 h-16 bg-[#ff4500]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <CheckCircle className="w-8 h-8 text-[#ff4500]" />
                             </div>
                             <h4 className="text-xl font-bold text-gray-900 mb-2">Success!</h4>
                             <p className="text-gray-600 mb-4">
@@ -142,7 +142,7 @@ export default function SyllabusDownloadModal({ isOpen, onClose, courseTitle, sy
                                         value={formData.name}
                                         onChange={handleChange}
                                         required
-                                        className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all"
+                                        className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#ff4500] focus:border-[#ff4500] outline-none transition-all"
                                         placeholder="Enter your name"
                                     />
                                 </div>
@@ -155,7 +155,7 @@ export default function SyllabusDownloadModal({ isOpen, onClose, courseTitle, sy
                                         value={formData.email}
                                         onChange={handleChange}
                                         required
-                                        className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all"
+                                        className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#ff4500] focus:border-[#ff4500] outline-none transition-all"
                                         placeholder="john@example.com"
                                     />
                                 </div>
@@ -167,7 +167,7 @@ export default function SyllabusDownloadModal({ isOpen, onClose, courseTitle, sy
                                             name="countryCode"
                                             value={formData.countryCode}
                                             onChange={handleChange}
-                                            className="px-2 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none bg-white text-sm"
+                                            className="px-2 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#ff4500] focus:border-[#ff4500] outline-none bg-white text-sm"
                                         >
                                             <option value="+91">+91</option>
                                             <option value="+1">+1</option>
@@ -180,7 +180,7 @@ export default function SyllabusDownloadModal({ isOpen, onClose, courseTitle, sy
                                             value={formData.phone}
                                             onChange={handleChange}
                                             required
-                                            className="flex-1 px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all"
+                                            className="flex-1 px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#ff4500] focus:border-[#ff4500] outline-none transition-all"
                                             placeholder="Phone number"
                                         />
                                     </div>
@@ -189,7 +189,7 @@ export default function SyllabusDownloadModal({ isOpen, onClose, courseTitle, sy
                                 <button
                                     type="submit"
                                     disabled={status === 'loading'}
-                                    className="w-full mt-2 bg-gradient-to-r from-orange-500 to-red-600 text-white font-bold py-3 rounded-lg hover:from-orange-600 hover:to-red-700 transition-all shadow-md flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                                    className="w-full mt-2 bg-gradient-to-r from-[#ff4500] to-red-600 text-white font-bold py-3 rounded-lg hover:from-orange-600 hover:to-red-700 transition-all shadow-md flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                                 >
                                     {status === 'loading' ? (
                                         <>

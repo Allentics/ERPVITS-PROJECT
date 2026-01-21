@@ -1,3 +1,4 @@
+import React from 'react';
 import { Briefcase, Building2, TrendingUp, Users, Settings, Factory, GraduationCap, CheckCircle, Star, Truck, Package, Map, DollarSign, Database, BarChart, ShoppingCart, Globe, Award, Zap, Layout, MonitorSmartphone } from 'lucide-react';
 
 export const ewmTargetAudience = [
@@ -217,7 +218,7 @@ export const ewmContent = {
     price: "Competitive",
     duration: "35-40 Hours",
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-ewm.pdf",
-    heroHeading: "Master Modern Warehouse Operations with the #1 SAP EWM Online Training Program",
+    heroHeading: <>Transform Your Career with the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">#1 Warehouse & Logistics Professionals Online Training Program</span></>,
     heroSubheading: "The SAP Extended Warehouse Management Online Training Program from ERPVITS represents a transformative learning pathway for professionals eager to excel in warehouse optimization, inventory management, and advanced logistics operations. In today's hyper-competitive business landscape, organizations urgently need certified SAP EWM experts who can streamline warehouse processes, reduce operational costs, enhance order fulfillment accuracy, and drive supply chain efficiency through intelligent automation. This comprehensive SAP EWM training course combines interactive, instructor-led sessions, hands-on lab exercises, real-time industry projects, warehouse automation simulations, and end-to-end certification support—designed specifically for warehouse managers, logistics professionals, SAP consultants, supply chain specialists, ERP implementers, and ambitious graduates targeting global consulting and implementation roles.",
 
     title: "SAP EWM",

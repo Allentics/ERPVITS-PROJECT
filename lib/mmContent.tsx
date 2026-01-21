@@ -1,3 +1,4 @@
+import React from 'react';
 
 export const mmContent = {
     title: "SAP MM",
@@ -5,7 +6,7 @@ export const mmContent = {
     duration: "45-50 Hours",
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-s4-hana-mm.pdf",
 
-    heroHeading: "Upskill Your Career with SAP S/4HANA MM Online Training",
+    heroHeading: <>Transform Your Career with the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">#1 SAP MM Online Training Program</span></>,
     heroSubheading: "The ERPVITS SAP S/4HANA MM Online Training Program is a step toward a new career track for supply chain professionals and SAP consultants focusing on inventory management, procurement, and enterprise resource planning. Supply chain organizations today seek certified experts in the SAP S/4HANA MM module to help optimize the flow of materials, shrink costly inventory, streamline procurement, and improve overall supply chain management. This all-inclusive SAP MM course is aimed at supply chain professionals, inventory managers, procurement specialists, consultants in ERP, and highly motivated graduates looking for international careers in consulting and implementation. The SAP material management course is designed with interactive, live training, hands-on workshops, real-world supply chain exercises, and complete certification support.",
     badges: ["SAP Certified Trainers", "4.8 Learner Rating", "24/7 Team Support"],
     heroStats: [
@@ -503,8 +504,8 @@ export const mmContent = {
                         "For Database administrators who are working on SAP MM systems"
                     ],
                     icon: "Laptop",
-                    color: "text-orange-600",
-                    bg: "bg-orange-50"
+                    color: "text-[#ff4500]",
+                    bg: "bg-[#ff4500]/10"
                 },
                 {
                     title: "Manufacturing & Operations Leaders",
@@ -654,8 +655,8 @@ export const mmContent = {
                     ],
                     outcome: "Deliverables: Process documentation, configuration specifications, training videos, and support procedures.",
                     icon: "ShoppingBag",
-                    bg: "bg-orange-100",
-                    iconColor: "text-orange-600"
+                    bg: "bg-[#ff4500]/10",
+                    iconColor: "text-[#ff4500]"
                 },
                 {
                     title: "Pharmaceutical Company's Materials Compliance Implementation",
@@ -900,7 +901,7 @@ export const mmContent = {
                     role: "Senior SAP Consultant",
                     quote: "Best decision I made. The capstone projects were exactly like real client work. I walked into my first consulting role feeling confident, not intimidated. The certification support was exceptional.",
                     initial: "R",
-                    color: "bg-orange-500"
+                    color: "bg-[#ff4500]"
                 },
                 {
                     name: "Ananya Singh",

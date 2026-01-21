@@ -1,3 +1,4 @@
+import React from 'react';
 
 import { Section } from './courseData';
 
@@ -43,6 +44,7 @@ export const pythonAimlContent: { price: string; duration: string; syllabusUrl: 
             items: [
                 {
                     title: "Expert-led Training",
+    heroHeading: <>Transform Your Career with the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">#1 Expert-led Training Online Training Program</span></>,
                     description: "Learn from certified professionals with real-world industry experience in AI & ML.",
                     icon: "UserCheck"
                 },

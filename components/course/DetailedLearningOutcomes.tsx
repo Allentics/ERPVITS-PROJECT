@@ -54,7 +54,7 @@ export default function DetailedLearningOutcomes({ items, title, subtitle }: { i
             <div className="max-w-7xl mx-auto px-4">
                 {/* Header */}
                 <div className="text-center mb-6">
-                    <span className="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block">
+                    <span className="bg-[#ff4500]/10 text-[#ff4500] px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block">
                         Learning Outcomes
                     </span>
                     <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
@@ -74,7 +74,7 @@ export default function DetailedLearningOutcomes({ items, title, subtitle }: { i
                                     key={idx}
                                     onClick={() => setActiveTab(idx)}
                                     className={`flex-1 py-3 rounded-full text-sm font-bold transition-all duration-300 ${activeTab === idx
-                                        ? 'bg-white text-orange-600 shadow-md'
+                                        ? 'bg-white text-[#ff4500] shadow-md'
                                         : 'text-gray-500 hover:text-gray-700'
                                         }`}
                                 >
@@ -101,11 +101,11 @@ export default function DetailedLearningOutcomes({ items, title, subtitle }: { i
 
                         return (
                             <div key={idx} className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
-                                <div className="absolute top-0 left-0 w-1 h-full bg-orange-500 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+                                <div className="absolute top-0 left-0 w-1 h-full bg-[#ff4500] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
                                 <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                                     {/* Only show icon box if explicit icon provided or inferred implies a major section */}
                                     {inferredIcon !== "CheckCircle2" && (
-                                        <div className="p-2 bg-orange-50 rounded-lg text-orange-600 group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                                        <div className="p-2 bg-[#ff4500]/10 rounded-lg text-[#ff4500] group-hover:bg-[#ff4500] group-hover:text-white transition-colors">
                                             <Icon className="w-6 h-6" />
                                         </div>
                                     )}
@@ -115,7 +115,7 @@ export default function DetailedLearningOutcomes({ items, title, subtitle }: { i
                                     {outcome.points.map((point: string, pIdx: number) => (
                                         <li key={pIdx} className="flex items-start gap-3">
                                             <div className="mt-1">
-                                                <CheckCircle2 className="w-5 h-5 text-orange-500" />
+                                                <CheckCircle2 className="w-5 h-5 text-[#ff4500]" />
                                             </div>
                                             <span className="text-slate-600 text-[15px] leading-relaxed">{point}</span>
                                         </li>

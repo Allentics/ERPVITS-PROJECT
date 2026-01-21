@@ -12,7 +12,7 @@ export default function CurriculumTable({ title, items }: { title: string, items
         <div className="py-12 bg-white">
             <div className="max-w-7xl mx-auto px-4">
                 <div className="text-center mb-10">
-                    <span className="text-orange-500 font-bold uppercase tracking-widest text-sm">Course Syllabus</span>
+                    <span className="text-[#ff4500] font-bold uppercase tracking-widest text-sm">Course Syllabus</span>
                     <h2 className="text-3xl font-bold text-slate-900 mt-2">{title}</h2>
                 </div>
 
@@ -28,9 +28,9 @@ export default function CurriculumTable({ title, items }: { title: string, items
                         </thead>
                         <tbody className="divide-y divide-gray-100">
                             {items.map((item, idx) => (
-                                <tr key={idx} className="hover:bg-orange-50 transition-colors even:bg-gray-50/50">
+                                <tr key={idx} className="hover:bg-[#ff4500]/10 transition-colors even:bg-gray-50/50">
                                     <td className="p-4 text-center font-bold text-slate-700">{item.session}</td>
-                                    <td className="p-4 font-bold text-orange-600">{item.topic}</td>
+                                    <td className="p-4 font-bold text-[#ff4500]">{item.topic}</td>
                                     <td className="p-4 text-center font-medium text-slate-600">{item.hours}</td>
                                     <td className="p-4 text-slate-700">{item.description}</td>
                                 </tr>

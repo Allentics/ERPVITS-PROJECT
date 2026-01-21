@@ -21,7 +21,7 @@ export default function CourseEnrollmentCTA() {
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
                     <button
                         onClick={() => setIsModalOpen(true)}
-                        className="inline-block px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-lg shadow-lg transition-colors"
+                        className="inline-block px-8 py-4 bg-[#ff4500] hover:bg-[#ff4500] text-white font-bold rounded-lg shadow-lg transition-colors"
                     >
                         Reserve Your Seat
                     </button>

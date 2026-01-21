@@ -1,10 +1,11 @@
+import React from 'react';
 
 export const abapHanaContent = {
     title: "SAP ABAP on HANA",
     price: "45,000",
     duration: "60-70 Hours",
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Technical/sap-abap-on-hana.pdf",
-    heroHeading: "Master Modern ABAP Development with the #1 SAP ABAP on HANA Online Training Program",
+    heroHeading: <>Transform Your Career with the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">#1 SAP ABAP on HANA Online Training Program</span></>,
     heroSubheading: "The SAP ABAP on HANA Online Training Program from ERPVITS represents a transformative learning pathway for professionals eager to excel in modern enterprise application development, cloud-native programming, and next-generation SAP technology.",
     badges: ["SAP Certified Trainers", "4.8 Learner Rating", "24/7 Team Support", "15+ Years ABAP Development Experience"],
     description: "In today's digital transformation landscape, organizations urgently need certified SAP ABAP on HANA developers who can build robust applications, optimize database performance, leverage in-memory computing, and drive innovation through intelligent enterprise software. This comprehensive SAP ABAP on HANA training course combines interactive, instructor-led sessions, hands-on coding labs, real-time development projects, performance optimization simulations, and end-to-end certification support.",
@@ -342,8 +343,8 @@ export const abapHanaContent = {
                         "Technical consultants supporting ABAP"
                     ],
                     icon: "Server",
-                    color: "text-orange-600",
-                    bg: "bg-orange-50"
+                    color: "text-[#ff4500]",
+                    bg: "bg-[#ff4500]/10"
                 },
                 {
                     title: "IT and Systems Professionals",
@@ -550,8 +551,8 @@ export const abapHanaContent = {
                     ],
                     outcome: "Supply chain visibility improved 100%, forecasting accuracy increased 35%.",
                     icon: "Truck",
-                    bg: "bg-orange-100",
-                    iconColor: "text-orange-600"
+                    bg: "bg-[#ff4500]/10",
+                    iconColor: "text-[#ff4500]"
                 },
                 {
                     title: "FIORI-Based Customer Portal",
@@ -741,7 +742,7 @@ export const abapHanaContent = {
                     role: "Certified ABAP/HANA Developer",
                     quote: "Excellent HANA-specific training. I passed both C_TAW12_750 and C_HANAIMP_13 certifications on first attempt.",
                     initial: "S",
-                    color: "bg-orange-500"
+                    color: "bg-[#ff4500]"
                 }
             ]
         },

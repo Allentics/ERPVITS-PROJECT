@@ -1,9 +1,10 @@
+import React from 'react';
 import { aribaTargetAudience, aribaPrerequisites, aribaLearningOutcomes, aribaRealWorldScenarios } from './contentHelpers';
 
 export const aribaContent = {
     price: "45,000",
     duration: "45-50 Hours",
-    // heroHeading: "Transform Your Career with SAP Ariba",
+    // heroHeading: <>Transform Your Career with the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">#1 SAP Ariba Online Training Program</span></>,
     heroSubheading: "The ERPVITS **SAP Ariba Online Training** Program is a new step for individuals to learn various skills within digital procurement, supply chain management, and enterprise resource planning. Organizations are looking for certified SAP Ariba professionals and experts for maintaining procurement efficiency, managing cost and efficiency within the supply chain. The advanced **SAP Ariba Training** program focuses on the training and skills development for the IT professionals, procurement especially for ERP specialists and ERP consultants, and for learners to develop their skills and prepare for global consulting and implementations in **SAP Ariba Career** paths.",
     heroLayout: "centered",
     themeColor: "orange",

@@ -136,9 +136,9 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
         ...course,
         // Basic Info
         title: course?.title || localCourse?.title,
-        heroHeading: course?.hero_heading || localCourse?.heroHeading,
-        heroSubheading: course?.hero_subheading || localCourse?.heroSubheading,
-        heroImage: course?.hero_image || localCourse?.heroImage,
+        heroHeading: localCourse?.heroHeading || course?.hero_heading,
+        heroSubheading: localCourse?.heroSubheading || course?.hero_subheading,
+        heroImage: localCourse?.heroImage || course?.hero_image,
         metaTitle: course?.meta_title || localCourse?.metaTitle,
         metaDescription: course?.meta_description || localCourse?.metaDescription,
         price: course?.price || localCourse?.price,
@@ -200,14 +200,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
 
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
 
-                    {/* Premium Badge */}
-                    <div className="flex justify-center mb-8">
-                        <div className={`text-white text-sm font-bold px-6 py-2 rounded-full shadow-xl flex items-center gap-2 ${mappedCourse.themeColor === 'purple' ? 'bg-gradient-to-r from-blue-600 to-purple-600 shadow-purple-500/20' : 'bg-gradient-to-r from-orange-500 to-red-600 shadow-orange-500/20'}`}>
-                            <span className="text-yellow-200">★</span>
-                            Rated #1 {mappedCourse.title} Training Program 2025
-                            <span className="text-yellow-300">★</span>
-                        </div>
-                    </div>
+
 
                     {/* Heading */}
                     <h1 className="text-5xl lg:text-7xl font-extrabold mb-8 leading-tight tracking-tight text-slate-900">

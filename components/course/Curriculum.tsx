@@ -15,7 +15,7 @@ export default function Curriculum({ modules }: { modules: Topic[] }) {
     return (
         <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-                <span className="text-orange-500 font-bold uppercase tracking-widest text-sm">Course Syllabus</span>
+                <span className="text-[#ff4500] font-bold uppercase tracking-widest text-sm">Course Syllabus</span>
                 <h2 className="text-3xl font-bold text-slate-900 mt-2">Comprehensive Curriculum</h2>
                 <p className="text-gray-600 mt-4">Designed by industry experts to make you job-ready</p>
             </div>
@@ -26,7 +26,7 @@ export default function Curriculum({ modules }: { modules: Topic[] }) {
                         <Accordion.Header className="flex">
                             <Accordion.Trigger className="flex flex-1 items-center justify-between p-6 w-full text-left group bg-white hover:bg-gray-50 transition-colors">
                                 <div className="flex items-center gap-4">
-                                    <div className="w-10 h-10 rounded-lg bg-orange-50 text-orange-600 flex items-center justify-center font-bold text-lg group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                                    <div className="w-10 h-10 rounded-lg bg-[#ff4500]/10 text-[#ff4500] flex items-center justify-center font-bold text-lg group-hover:bg-[#ff4500] group-hover:text-white transition-colors">
                                         {i + 1}
                                     </div>
                                     <div>

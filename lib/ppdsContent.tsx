@@ -1,7 +1,8 @@
+import React from 'react';
 export const ppdsContent = {
     price: "45,000",
     duration: "45-50 Hours",
-    heroHeading: "Transform Your Career with the #1 SAP PPDS Online Training Program",
+    heroHeading: <>Transform Your Career with the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">#1 SAP PPDS Online Training Program</span></>,
     heroSubheading: "The SAP PPDS (Production Planning and Detailed Scheduling) Online Training Program from ERPVITS represents a transformative learning pathway for production planning professionals and SAP consultants eager to excel in advanced production scheduling, demand planning, and manufacturing optimization. In today's hyper-competitive manufacturing landscape, organizations urgently need certified SAP PPDS experts who can optimize production schedules, reduce lead times, minimize inventory costs, and drive operational excellence. This comprehensive SAP PPDS training course combines interactive, instructor-led sessions, hands-on lab exercises, real-world production planning projects, and end-to-end certification support—designed specifically for production planners, scheduling specialists, supply chain professionals, ERP consultants, and ambitious graduates targeting global consulting and implementation roles.",
     heroLayout: "centered",
     themeColor: "orange",
@@ -279,8 +280,8 @@ export const ppdsContent = {
                 {
                     title: "Manufacturing & Operations Leaders",
                     icon: "Building2",
-                    color: "text-orange-600",
-                    bg: "bg-orange-50",
+                    color: "text-[#ff4500]",
+                    bg: "bg-[#ff4500]/10",
                     description: [
                         "Operations managers modernizing planning processes",
                         "Manufacturing directors implementing SAP PPDS",
@@ -620,7 +621,7 @@ export const ppdsContent = {
                     title: "Tier 4 – Mid-Market & Specialized Companies",
                     companies: ["Regional supply chain consultancies", "Specialized manufacturing firms", "In-house optimization teams", "Logistics companies"],
                     color: "bg-orange-600",
-                    lightColor: "bg-orange-50"
+                    lightColor: "bg-[#ff4500]/10"
                 }
             }
         },
@@ -694,7 +695,7 @@ export const ppdsContent = {
                 {
                     name: "Batch 1: November 2025 (Weekdays)",
                     status: "Filling Fast",
-                    statusColor: "bg-orange-100 text-orange-600",
+                    statusColor: "bg-[#ff4500]/10 text-[#ff4500]",
                     date: "November 15, 2025",
                     schedule: "Weekdays | 6:00 PM – 9:00 PM IST",
                     duration: "35–40 Hours",

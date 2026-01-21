@@ -81,7 +81,7 @@ export default function DetailedTestimonials({ items, courseName = "SAP Ariba" }
             author: "Rahul Mehta",
             role: "SAP Ariba Consultant at Accenture",
             initial: "R",
-            color: "bg-orange-500"
+            color: "bg-[#ff4500]"
         },
         {
             text: "The weekend flexibility allowed me to learn while working. My employer was so impressed with my skills that they promoted me to Procurement Manager. The course accelerated my career by 2 years.",
@@ -95,7 +95,7 @@ export default function DetailedTestimonials({ items, courseName = "SAP Ariba" }
             author: "Rajesh S.",
             role: "Senior SAP Consultant",
             initial: "R",
-            color: "bg-orange-500"
+            color: "bg-[#ff4500]"
         },
         {
             text: "Superb certification preparation. I passed all three SAP Ariba exams on my first attempt. The study material and mock tests were spot on. Highly recommended!",
@@ -124,7 +124,7 @@ export default function DetailedTestimonials({ items, courseName = "SAP Ariba" }
 
     // Normalize reviews to ensure they have color/initial
     const reviews = rawReviews.map((r, i) => {
-        const colors = ["bg-orange-500", "bg-blue-500", "bg-orange-500", "bg-purple-500", "bg-red-500", "bg-indigo-500"];
+        const colors = ["bg-[#ff4500]", "bg-blue-500", "bg-[#ff4500]", "bg-purple-500", "bg-red-500", "bg-indigo-500"];
         return {
             text: r.quote || r.text, // Handle mismatch (mmContent uses quote)
             author: r.name || r.author, // Handle mismatch
@@ -143,16 +143,16 @@ export default function DetailedTestimonials({ items, courseName = "SAP Ariba" }
     ];
 
     return (
-        <section className="py-8 bg-orange-50/30">
+        <section className="py-8 bg-[#ff4500]/10/30">
             <div className="max-w-7xl mx-auto px-4">
 
                 {/* Testimonials Header */}
                 <div className="text-center mb-6">
-                    <span className="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block">
+                    <span className="bg-[#ff4500]/10 text-[#ff4500] px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block">
                         Student Success Stories
                     </span>
                     <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                        Hear from Our Successful <span className="text-orange-600">{courseName} Learners</span>
+                        Hear from Our Successful <span className="text-[#ff4500]">{courseName} Learners</span>
                     </h2>
                     <p className="text-gray-600">Real reviews, real results from professionals who transformed their careers</p>
 
@@ -173,7 +173,7 @@ export default function DetailedTestimonials({ items, courseName = "SAP Ariba" }
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
                     {reviews.map((review, idx) => (
                         <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow relative">
-                            <Quote className="w-8 h-8 text-orange-100 absolute top-6 right-6 fill-orange-50" />
+                            <Quote className="w-8 h-8 text-[#ff4500]/20 absolute top-6 right-6 fill-orange-50" />
                             <div className="flex gap-1 mb-4">
                                 {[1, 2, 3, 4, 5].map((_, i) => (
                                     <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />

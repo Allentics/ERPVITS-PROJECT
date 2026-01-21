@@ -1,6 +1,7 @@
+import React from 'react';
 
 export const trmContent = {
-    heroHeading: "Master the Future of Corporate Treasury with SAP TRM Online Training",
+    heroHeading: <>Transform Your Career with the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">#1 Learn SAP TRM from Certified Experts – 100% Hands-On, Job-Oriented Training Online Training Program</span></>,
     heroSubheading: "Unlock premium treasury consulting careers with SAP TRM Online Training (Treasury and Risk Management), Cash Management, Foreign Exchange Operations, Trading of Securities, Derivative Hedging, Advanced Credit Risk Determination. Learn with hands-on training, work with real financial workflows and earn industry-recognized SAP TRM certification. For finance professionals and SAP consultants hoping to sharpen their skills in treasury operations, risk management, and enterprise financial systems, the SAP TRM Training Program from ERPVITS is a transformative learning pathway. Designed especially for treasury professionals, finance leaders and ERP consultants, our all encompassing SAP TRM course incorporates interactive, instructor-led components, practical exercises, real-world financial scenarios and certification support from start to finish.",
     badges: ["SAP Certified Trainers", "4.8 Learner Rating", "24/7 Team Support"],
     description: "For finance professionals and SAP consultants hoping to sharpen their skills in treasury operations, risk management, and enterprise financial systems, the SAP TRM Training Program from ERPVITS is a transformative learning pathway. Designed especially for treasury professionals, finance leaders and ERP consultants, our all encompassing SAP TRM course incorporates interactive, instructor-led components, practical exercises, real-world financial scenarios and certification support from start to finish.",
@@ -287,7 +288,7 @@ export const trmContent = {
                     title: "Tier 2 - IT Services & Banks",
                     companies: ["Infosys", "Wipro", "JPMorgan Chase", "Citi", "HCL Tech"],
                     color: "bg-orange-600",
-                    lightColor: "bg-orange-50"
+                    lightColor: "bg-[#ff4500]/10"
                 },
                 tier3: {
                     title: "Tier 3 - Corporate Treasuries",
@@ -299,7 +300,7 @@ export const trmContent = {
                     title: "Tier 4 - Regional & Specialized",
                     companies: ["Regional Banks", "Fintech Firms", "Specialized Consultancies"],
                     color: "bg-orange-600",
-                    lightColor: "bg-orange-50"
+                    lightColor: "bg-[#ff4500]/10"
                 }
             }
         },
@@ -500,8 +501,8 @@ export const trmContent = {
                         "DBA who supports SAP financial systems."
                     ],
                     icon: "Server",
-                    color: "text-orange-600",
-                    bg: "bg-orange-50"
+                    color: "text-[#ff4500]",
+                    bg: "bg-[#ff4500]/10"
                 },
                 {
                     title: "Banking and Financial Services",

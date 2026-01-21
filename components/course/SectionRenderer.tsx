@@ -69,7 +69,7 @@ export const renderRichText = (text: string) => {
                     href={htmlLinkMatch[1]}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-orange-600 hover:text-orange-700 underline underline-offset-4 decoration-orange-300 transition-colors"
+                    className="text-[#ff4500] hover:text-[#ff4500] underline underline-offset-4 decoration-[#ff4500]/40 transition-colors"
                 >
                     {htmlLinkMatch[2]}
                 </a>
@@ -85,7 +85,7 @@ export const renderRichText = (text: string) => {
                     href={mdLinkMatch[2]}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-orange-600 hover:text-orange-700 underline underline-offset-4 decoration-orange-300 transition-colors"
+                    className="text-[#ff4500] hover:text-[#ff4500] underline underline-offset-4 decoration-[#ff4500]/40 transition-colors"
                 >
                     {mdLinkMatch[1]}
                 </a>
@@ -119,7 +119,7 @@ export function DetailedFeatures({ badge, title, subtitle, items, textAlign = 'c
             return (
                 <>
                     {parts[0]}
-                    <span className="text-orange-600">100% Hands-On</span>
+                    <span className="text-[#ff4500]">100% Hands-On</span>
                     {parts[1]}
                 </>
             );
@@ -130,7 +130,7 @@ export function DetailedFeatures({ badge, title, subtitle, items, textAlign = 'c
     return (
         <div className="py-8 detailed-features-section bg-white">
             <div className={`mb-6 max-w-7xl mx-auto px-4 ${textAlign === 'left' ? 'text-left' : 'text-center'}`}>
-                {badge && <span className="bg-orange-500 text-white px-4 py-1.5 rounded-full text-sm font-medium mb-5 inline-block shadow-sm">{badge}</span>}
+                {badge && <span className="bg-[#ff4500] text-white px-4 py-1.5 rounded-full text-sm font-medium mb-5 inline-block shadow-sm">{badge}</span>}
                 <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6 leading-tight">{renderTitle(title)}</h2>
                 {subtitle && (
                     <div className={`text-gray-600 text-lg leading-relaxed ${textAlign === 'center' ? 'max-w-3xl mx-auto' : 'max-w-5xl'}`}>
@@ -145,7 +145,7 @@ export function DetailedFeatures({ badge, title, subtitle, items, textAlign = 'c
 
                     return (
                         <div key={i} className="flex flex-col p-8 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full group">
-                            <div className="w-14 h-14 rounded-xl bg-orange-50 group-hover:bg-orange-500 transition-colors duration-300 flex items-center justify-center text-orange-500 group-hover:text-white mb-6">
+                            <div className="w-14 h-14 rounded-xl bg-[#ff4500]/10 group-hover:bg-[#ff4500] transition-colors duration-300 flex items-center justify-center text-[#ff4500] group-hover:text-white mb-6">
                                 <ItemIcon className="w-7 h-7" />
                             </div>
                             <div className="flex-1">
@@ -192,7 +192,7 @@ export function TestimonialsSection({ title, items }: any) {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto px-6">
                 {items?.map((item: any, i: number) => (
                     <div key={i} className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col">
-                        <Quote className="w-8 h-8 text-orange-200 mb-4" />
+                        <Quote className="w-8 h-8 text-[#ff4500]/30 mb-4" />
                         <p className="text-slate-600 italic mb-6 flex-1">"{item.quote}"</p>
                         <div className="flex items-center gap-3 mt-auto pt-4 border-t border-slate-50">
                             <div className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center text-slate-500 font-bold uppercase">

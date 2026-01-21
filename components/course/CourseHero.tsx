@@ -6,25 +6,25 @@ const CourseHero = ({ course }: { course: Course }) => {
     // Centered Layout (Light Theme)
     if (course.heroLayout === 'centered') {
         const isOrange = course.themeColor === 'orange' || course.themeColor === 'purple';
-        const gradientText = isOrange ? "text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-700" : "text-slate-900";
+        const gradientText = isOrange ? "text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-[#cc3700]" : "text-slate-900";
         const badgeClass = isOrange
-            ? "bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg shadow-orange-200"
-            : "bg-orange-100 text-orange-800";
+            ? "bg-gradient-to-r from-[#ff4500] to-[#cc3700] text-white shadow-lg shadow-[#ff4500]/20"
+            : "bg-[#ff4500]/10 text-[#cc3700]";
         const buttonClass = isOrange
-            ? "bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white shadow-lg shadow-orange-500/30"
+            ? "bg-gradient-to-r from-[#ff4500] to-[#cc3700] hover:from-[#cc3700] hover:to-[#b03000] text-white shadow-lg shadow-[#ff4500]/30"
             : "bg-blue-600 text-white hover:bg-blue-700";
 
         return (
             <div className="bg-slate-50 pt-16 pb-20 md:py-24 relative overflow-hidden text-center border-b border-slate-100">
                 {/* Subtle Background Glow */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-orange-100/40 rounded-full blur-3xl opacity-50 -z-10 pointer-events-none"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#ff4500]/10/40 rounded-full blur-3xl opacity-50 -z-10 pointer-events-none"></div>
 
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
                     {course.badges && course.badges.length > 0 && (
                         <div className="flex justify-center mb-8">
                             {course.badges.map((badge, idx) => (
-                                <span key={idx} className="inline-flex items-center px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wide bg-[#FF5722] text-white shadow-lg shadow-orange-200">
+                                <span key={idx} className="inline-flex items-center px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wide bg-[#ff4500] text-white shadow-lg shadow-[#ff4500]/20">
                                     <Star className="w-4 h-4 mr-2 fill-current" />
                                     {badge}
                                     <Star className="w-4 h-4 ml-2 fill-current" />
@@ -34,12 +34,16 @@ const CourseHero = ({ course }: { course: Course }) => {
                     )}
 
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-[#0F172A] mb-6">
-                        {course.heroHeading?.split(course.title).map((part, i, arr) => (
-                            <span key={i}>
-                                {part}
-                                {i < arr.length - 1 && <span className="text-[#FF5722]">{course.title}</span>}
-                            </span>
-                        )) || course.heroHeading}
+                        {typeof course.heroHeading === 'string' ? (
+                            course.heroHeading.split(course.title).map((part, i, arr) => (
+                                <span key={i}>
+                                    {part}
+                                    {i < arr.length - 1 && <span className="text-[#ff4500]">{course.title}</span>}
+                                </span>
+                            ))
+                        ) : (
+                            course.heroHeading
+                        )}
                     </h1>
 
                     <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-10 leading-relaxed">
@@ -49,7 +53,7 @@ const CourseHero = ({ course }: { course: Course }) => {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                         <Link
                             href="#enroll"
-                            className="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl transition-all transform hover:-translate-y-1 bg-[#FF5722] hover:bg-[#F4511E] text-white shadow-lg shadow-orange-500/30"
+                            className="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl transition-all transform hover:-translate-y-1 bg-[#ff4500] hover:bg-[#cc3700] text-white shadow-lg shadow-[#ff4500]/30"
                         >
                             {course.buttonLabels?.primary || "Book Free Demo Class"}
                         </Link>
@@ -67,7 +71,7 @@ const CourseHero = ({ course }: { course: Course }) => {
                         <div className="flex flex-wrap justify-center gap-8 md:gap-12 text-sm font-medium text-slate-500 pt-8 border-t border-slate-200/60">
                             {course.heroStats.map((stat, idx) => (
                                 <div key={idx} className="flex items-center gap-2">
-                                    <div className="text-[#FF5722]">
+                                    <div className="text-[#ff4500]">
                                         {stat.icon === 'award' ? <CheckCircle className="w-5 h-5" /> :
                                             stat.icon === 'infinity' ? <Clock className="w-5 h-5" /> :
                                                 <Users className="w-5 h-5" />}
@@ -110,9 +114,9 @@ const CourseHero = ({ course }: { course: Course }) => {
                         )}
 
                         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-                            {course.heroHeading && !course.heroHeading.startsWith("H1:")
+                            {(typeof course.heroHeading === 'string' && !course.heroHeading.startsWith("H1:"))
                                 ? course.heroHeading
-                                : `Master ${course.title} & Get Certified`}
+                                : (typeof course.heroHeading !== 'string' ? course.heroHeading : `Master ${course.title} & Get Certified`)}
                         </h1>
 
                         <p className="text-lg text-slate-300 max-w-2xl">
@@ -123,7 +127,7 @@ const CourseHero = ({ course }: { course: Course }) => {
                             {course.heroStats ? (
                                 course.heroStats.map((stat, idx) => (
                                     <div key={idx} className="flex items-center text-slate-300">
-                                        <CheckCircle className="h-4 w-4 mr-1 text-orange-400" />
+                                        <CheckCircle className="h-4 w-4 mr-1 text-[#ff4500]" />
                                         <span>{stat.label}</span>
                                     </div>
                                 ))
@@ -148,7 +152,7 @@ const CourseHero = ({ course }: { course: Course }) => {
                         <div className="pt-6 flex flex-col sm:flex-row gap-4">
                             <Link
                                 href="#enroll"
-                                className="inline-flex items-center justify-center px-8 py-3.5 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-lg transition-colors shadow-lg"
+                                className="inline-flex items-center justify-center px-8 py-3.5 bg-[#ff4500] hover:bg-[#ff4500] text-white font-bold rounded-lg transition-colors shadow-lg"
                             >
                                 {course.buttonLabels?.primary || "Enroll Now"}
                             </Link>
@@ -163,27 +167,27 @@ const CourseHero = ({ course }: { course: Course }) => {
 
                     {/* Right Card */}
                     <div className="lg:col-span-1">
-                        <div className="bg-white text-gray-800 rounded-xl p-6 shadow-2xl border-t-4 border-orange-500">
+                        <div className="bg-white text-gray-800 rounded-xl p-6 shadow-2xl border-t-4 border-[#ff4500]">
                             <h3 className="text-xl font-bold mb-4">Course Highlights</h3>
                             <ul className="space-y-4 text-sm font-medium">
                                 <li className="flex items-start">
-                                    <CheckCircle className="h-5 w-5 text-orange-500 mr-3 flex-shrink-0" />
+                                    <CheckCircle className="h-5 w-5 text-[#ff4500] mr-3 flex-shrink-0" />
                                     <span>100% Hands-on Practical Training</span>
                                 </li>
                                 <li className="flex items-start">
-                                    <CheckCircle className="h-5 w-5 text-orange-500 mr-3 flex-shrink-0" />
+                                    <CheckCircle className="h-5 w-5 text-[#ff4500] mr-3 flex-shrink-0" />
                                     <span>Real-time Project Scenarios</span>
                                 </li>
                                 <li className="flex items-start">
-                                    <CheckCircle className="h-5 w-5 text-orange-500 mr-3 flex-shrink-0" />
+                                    <CheckCircle className="h-5 w-5 text-[#ff4500] mr-3 flex-shrink-0" />
                                     <span>Certification Guidance Included</span>
                                 </li>
                                 <li className="flex items-start">
-                                    <CheckCircle className="h-5 w-5 text-orange-500 mr-3 flex-shrink-0" />
+                                    <CheckCircle className="h-5 w-5 text-[#ff4500] mr-3 flex-shrink-0" />
                                     <span>Placement Support & Resumes</span>
                                 </li>
                                 <li className="flex items-start">
-                                    <CheckCircle className="h-5 w-5 text-orange-500 mr-3 flex-shrink-0" />
+                                    <CheckCircle className="h-5 w-5 text-[#ff4500] mr-3 flex-shrink-0" />
                                     <span>Lifetime Video Access</span>
                                 </li>
                             </ul>

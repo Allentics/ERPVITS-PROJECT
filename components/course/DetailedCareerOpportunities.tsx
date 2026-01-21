@@ -65,9 +65,9 @@ export default function DetailedCareerOpportunities({ items, courseName = "SAP A
     const getColorClasses = (color: string) => {
         const map: any = {
             blue: { bg: "bg-blue-50", text: "text-blue-600", border: "border-blue-100" },
-            green: { bg: "bg-orange-50", text: "text-orange-600", border: "border-orange-100" },
+            green: { bg: "bg-[#ff4500]/10", text: "text-[#ff4500]", border: "border-[#ff4500]/10" },
             purple: { bg: "bg-purple-50", text: "text-purple-600", border: "border-purple-100" },
-            orange: { bg: "bg-orange-50", text: "text-orange-600", border: "border-orange-100" },
+            orange: { bg: "bg-[#ff4500]/10", text: "text-[#ff4500]", border: "border-[#ff4500]/10" },
             cyan: { bg: "bg-cyan-50", text: "text-cyan-600", border: "border-cyan-100" }
         };
         return map[color] || map.blue;
@@ -78,7 +78,7 @@ export default function DetailedCareerOpportunities({ items, courseName = "SAP A
             <div className="max-w-7xl mx-auto px-4">
                 {/* Header */}
                 <div className="text-center mb-6">
-                    <span className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block">
+                    <span className="bg-[#ff4500]/10 text-[#cc3700] px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block">
                         Career Paths
                     </span>
                     <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
@@ -106,7 +106,7 @@ export default function DetailedCareerOpportunities({ items, courseName = "SAP A
                                             <h3 className="font-bold text-slate-900">{role.title}</h3>
                                         </div>
                                         <div className="pl-14">
-                                            <div className="text-sm font-semibold text-orange-600 flex items-center gap-1">
+                                            <div className="text-sm font-semibold text-[#ff4500] flex items-center gap-1">
                                                 <span className="text-slate-400 text-xs font-normal uppercase tracking-wider">Salary:</span>
                                                 {role.salary}
                                             </div>

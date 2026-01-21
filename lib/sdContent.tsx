@@ -1,10 +1,11 @@
+import React from 'react';
 
 export const sdContent = {
     title: "SAP SD",
     price: "45,000",
     duration: "30-35 Hours",
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-sd.pdf",
-    heroHeading: "Transform Your Career with SAP SD",
+    heroHeading: <>Transform Your Career with the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">#1 SAP SD Online Training Program</span></>,
     heroSubheading: "Master sales & distribution management with 100% hands-on, job-oriented training",
     badges: ["SAP Certified Trainers", "4.8 Learner Rating", "24/7 Team Support"],
     description: "The SAP SD Online Training Program (Sales & Distribution) from ERPVITS offers transformational learning opportunities... (refer to heroSubheading)",
@@ -467,8 +468,8 @@ export const sdContent = {
                         "Database administrators working on SAP SD systems"
                     ],
                     icon: "Server",
-                    color: "text-orange-600",
-                    bg: "bg-orange-50"
+                    color: "text-[#ff4500]",
+                    bg: "bg-[#ff4500]/10"
                 },
                 {
                     title: "Supply Chain & Logistics Leaders",
@@ -607,8 +608,8 @@ export const sdContent = {
                     ],
                     outcome: "Deliverables: Documentation of the processes, specifications of the configurations, and training materials for the users.",
                     icon: "Factory",
-                    bg: "bg-orange-100",
-                    iconColor: "text-orange-600"
+                    bg: "bg-[#ff4500]/10",
+                    iconColor: "text-[#ff4500]"
                 },
                 {
                     title: "E-Commerce Platform's Special Sales Scenarios",
@@ -770,7 +771,7 @@ export const sdContent = {
                     role: "Senior SD Consultant",
                     quote: "Best decision I made. The capstone projects were exactly like real client work. I walked into my first consulting role feeling confident, not intimidated.",
                     initial: "R",
-                    color: "bg-orange-500"
+                    color: "bg-[#ff4500]"
                 },
                 {
                     name: "Ananya Singh",

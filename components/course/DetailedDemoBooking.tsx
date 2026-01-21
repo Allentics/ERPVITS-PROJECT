@@ -62,7 +62,7 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant", tit
     const displayBenefits = benefits && benefits.length > 0 ? benefits : defaultBenefits;
 
     return (
-        <section id="detailed-demo-booking" className="py-8 bg-orange-600 relative overflow-hidden">
+        <section id="detailed-demo-booking" className="py-8 bg-[#ff4500] relative overflow-hidden">
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
             <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-slate-900/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2"></div>
 
@@ -109,22 +109,22 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant", tit
                                 <h3 className="font-bold text-sm mb-2">Contact Information</h3>
                                 <div className="space-y-1.5 text-xs">
                                     <div className="flex items-center gap-2">
-                                        <Phone className="w-3.5 h-3.5 text-orange-600" />
+                                        <Phone className="w-3.5 h-3.5 text-[#ff4500]" />
                                         <span>+91 84088 78222</span>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                        <Mail className="w-3.5 h-3.5 text-orange-600" />
+                                        <Mail className="w-3.5 h-3.5 text-[#ff4500]" />
                                         <span>info@erpvits.com</span>
                                     </div>
                                     <div className="flex items-start gap-2">
-                                        <MapPin className="w-3.5 h-3.5 mt-0.5 text-orange-600" />
+                                        <MapPin className="w-3.5 h-3.5 mt-0.5 text-[#ff4500]" />
                                         <span>ERPVITS Training Center, Pune, India</span>
                                     </div>
                                 </div>
                             </div>
                             {/* Decorative circles */}
-                            <div className="absolute top-0 right-0 w-24 h-24 bg-orange-50 rounded-full translate-x-1/2 -translate-y-1/2"></div>
-                            <div className="absolute bottom-0 right-8 w-16 h-16 bg-orange-50 rounded-full translate-y-1/2"></div>
+                            <div className="absolute top-0 right-0 w-24 h-24 bg-[#ff4500]/10 rounded-full translate-x-1/2 -translate-y-1/2"></div>
+                            <div className="absolute bottom-0 right-8 w-16 h-16 bg-[#ff4500]/10 rounded-full translate-y-1/2"></div>
                         </div>
                     </div>
 
@@ -253,7 +253,7 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant", tit
                                         </>
                                     ) : (
                                         <>
-                                            Book Demo Now <ArrowRight className="w-3 h-3 text-orange-600" />
+                                            Book Demo Now <ArrowRight className="w-3 h-3 text-[#ff4500]" />
                                         </>
                                     )}
                                 </button>

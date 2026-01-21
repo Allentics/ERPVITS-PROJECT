@@ -54,7 +54,7 @@ export default function DetailedCareerRoadmap({ items, stats }: { items?: any[],
                     <div className="grid grid-cols-3 gap-6 max-w-4xl mx-auto">
                         {currentStats.map((stat: any, idx: number) => (
                             <div key={idx} className="bg-gray-50 p-6 rounded-xl text-center">
-                                <div className={`text-2xl font-bold mb-1 ${idx === 0 ? 'text-orange-600' : idx === 1 ? 'text-blue-600' : 'text-purple-600'}`}>{stat.value}</div>
+                                <div className={`text-2xl font-bold mb-1 ${idx === 0 ? 'text-[#ff4500]' : idx === 1 ? 'text-blue-600' : 'text-purple-600'}`}>{stat.value}</div>
                                 <div className="text-xs text-slate-500 font-medium">{stat.label}</div>
                             </div>
                         ))}
@@ -73,39 +73,39 @@ export default function DetailedCareerRoadmap({ items, stats }: { items?: any[],
                             <div className="text-xl font-bold text-blue-600 mb-1">200%+</div>
                             <div className="text-xs text-slate-600">Increase in Consultant Earnings</div>
                         </div>
-                        <div className="bg-orange-50 p-6 rounded-xl text-center border border-orange-100">
-                            <div className="text-xl font-bold text-orange-600 mb-1">High</div>
+                        <div className="bg-[#ff4500]/10 p-6 rounded-xl text-center border border-[#ff4500]/10">
+                            <div className="text-xl font-bold text-[#ff4500] mb-1">High</div>
                             <div className="text-xs text-slate-600">Demand for S-Market Innovation</div>
                         </div>
                         <div className="bg-purple-50 p-6 rounded-xl text-center border border-purple-100">
                             <div className="text-xl font-bold text-purple-600 mb-1">Premium</div>
                             <div className="text-xs text-slate-600">Salaries for Certified Pros</div>
                         </div>
-                        <div className="bg-orange-50 p-6 rounded-xl text-center border border-orange-100">
-                            <div className="text-xl font-bold text-orange-600 mb-1">Global</div>
+                        <div className="bg-[#ff4500]/10 p-6 rounded-xl text-center border border-[#ff4500]/10">
+                            <div className="text-xl font-bold text-[#ff4500] mb-1">Global</div>
                             <div className="text-xs text-slate-600">Remote Opportunities</div>
                         </div>
                     </div>
                 </div>
 
                 {/* 4. Alumni Network Banner */}
-                <div className="bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl p-8 md:p-12 text-center text-white shadow-xl relative overflow-hidden">
+                <div className="bg-gradient-to-r from-[#ff4500] to-red-600 rounded-2xl p-8 md:p-12 text-center text-white shadow-xl relative overflow-hidden">
                     <div className="relative z-10">
                         <h3 className="text-2xl md:text-3xl font-bold mb-2">Join Our Successful Alumni Network</h3>
-                        <p className="text-orange-100 mb-8 max-w-2xl mx-auto text-sm">Our graduates are working at top companies worldwide. Fast-track your career with ERPVITS SAP Ariba training and join this elite network of professionals.</p>
+                        <p className="text-[#ff4500]/20 mb-8 max-w-2xl mx-auto text-sm">Our graduates are working at top companies worldwide. Fast-track your career with ERPVITS SAP Ariba training and join this elite network of professionals.</p>
 
                         <div className="grid grid-cols-3 gap-8 max-w-3xl mx-auto border-t border-orange-400/30 pt-8">
                             <div>
                                 <div className="text-3xl md:text-4xl font-bold mb-1">500+</div>
-                                <div className="text-xs md:text-sm text-orange-100">Alumni Placed</div>
+                                <div className="text-xs md:text-sm text-[#ff4500]/20">Alumni Placed</div>
                             </div>
                             <div>
                                 <div className="text-3xl md:text-4xl font-bold mb-1">98%</div>
-                                <div className="text-xs md:text-sm text-orange-100">Success Rate</div>
+                                <div className="text-xs md:text-sm text-[#ff4500]/20">Success Rate</div>
                             </div>
                             <div>
                                 <div className="text-3xl md:text-4xl font-bold mb-1">3 Months</div>
-                                <div className="text-xs md:text-sm text-orange-100">Average Job Time</div>
+                                <div className="text-xs md:text-sm text-[#ff4500]/20">Average Job Time</div>
                             </div>
                         </div>
                     </div>

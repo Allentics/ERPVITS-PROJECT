@@ -22,7 +22,7 @@ export default function RealWorldScenarios({ items }: { items?: any[] }) {
             <div className="max-w-7xl mx-auto px-4">
                 {/* Header */}
                 <div className="text-center mb-6">
-                    <span className="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block">
+                    <span className="bg-[#ff4500]/10 text-[#ff4500] px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block">
                         Real-World Projects
                     </span>
                     <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
@@ -39,7 +39,7 @@ export default function RealWorldScenarios({ items }: { items?: any[] }) {
                         const Icon = iconMap[item.icon] || Factory;
                         return (
                             <div key={idx} className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-lg transition-transform hover:-translate-y-1 flex flex-col h-full">
-                                <div className={`w-14 h-14 rounded-xl ${item.bg} ${item.iconColor} flex items-center justify-center mb-6`}>
+                                <div className={`w-14 h-14 rounded-xl ${item.bg || 'bg-[#ff4500]/10'} ${item.iconColor || 'text-[#ff4500]'} flex items-center justify-center mb-6`}>
                                     <Icon className="w-7 h-7" />
                                 </div>
 
@@ -54,7 +54,7 @@ export default function RealWorldScenarios({ items }: { items?: any[] }) {
 
                                     <div>
                                         <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Your Role</h4>
-                                        <p className="text-sm font-semibold text-orange-600">{item.role}</p>
+                                        <p className="text-sm font-semibold text-[#ff4500]">{item.role}</p>
                                     </div>
 
                                     <div>
@@ -72,7 +72,7 @@ export default function RealWorldScenarios({ items }: { items?: any[] }) {
 
                                 <div className="mt-8 pt-6 border-t border-slate-100">
                                     <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Outcome</h4>
-                                    <p className="text-sm text-orange-700 font-medium bg-orange-50 p-2 rounded-lg inline-block w-full">
+                                    <p className="text-sm text-[#ff4500] font-medium bg-[#ff4500]/10 p-2 rounded-lg inline-block w-full">
                                         {item.outcome}
                                     </p>
                                 </div>
@@ -85,7 +85,7 @@ export default function RealWorldScenarios({ items }: { items?: any[] }) {
                 <div className="max-w-4xl mx-auto mt-12">
                     <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 text-center">
                         <p className="text-slate-600 text-[15px] leading-relaxed">
-                            <span className="font-bold text-orange-600">Portfolio-Ready Projects:</span> These capstone projects ensure you graduate with real-world problem-solving experience and portfolio pieces—invaluable for your first consulting engagement and job interviews.
+                            <span className="font-bold text-[#ff4500]">Portfolio-Ready Projects:</span> These capstone projects ensure you graduate with real-world problem-solving experience and portfolio pieces—invaluable for your first consulting engagement and job interviews.
                         </p>
                     </div>
                 </div>

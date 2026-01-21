@@ -1,10 +1,11 @@
+import React from 'react';
 
 export const abapContent = {
     title: "SAP ABAP on Cloud",
     price: "Competitive",
     duration: "30-35 Hours",
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Technical/sap-abap-on-cloud.pdf",
-    heroHeading: "Gain Expertise in Cloud Development with SAP ABAP Training",
+    heroHeading: <>Transform Your Career with the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">#1 SAP ABAP on Cloud Online Training Program</span></>,
     heroSubheading: "The SAP ABAP Training offered by ERPVITS is a game changer for ABAP developers and SAP consultants interested in advancing their skills in cloud application development, contemporary programming, and enterprise software. In a cutting-edge business era, organizations demand certified SAP ABAB on cloud experts as proficient in cloud-native application development, ABAP Cloud runtime application, implementing clean architecture patterns, and digital transformation initiatives.",
     badges: ["SAP Certified Trainers", "4.7 Learner Rating", "24/7 Team Support"],
     description: "The SAP ABAP Training offered by ERPVITS is a game changer for ABAP developers and SAP consultants interested in advancing their skills in cloud application development...",
@@ -491,8 +492,8 @@ export const abapContent = {
                         "Technical PM managing cloud projects"
                     ],
                     icon: "Briefcase",
-                    color: "text-orange-600",
-                    bg: "bg-orange-50"
+                    color: "text-[#ff4500]",
+                    bg: "bg-[#ff4500]/10"
                 },
                 {
                     title: "Cloud & DevOps Professionals",
@@ -663,8 +664,8 @@ export const abapContent = {
                     ],
                     outcome: "Deliverables: Service specifications, API documentation, architecture diagrams, and operations guide.",
                     icon: "Server",
-                    bg: "bg-orange-100",
-                    iconColor: "text-orange-600"
+                    bg: "bg-[#ff4500]/10",
+                    iconColor: "text-[#ff4500]"
                 },
                 {
                     title: "Real-Time Integration Hub",
@@ -826,7 +827,7 @@ export const abapContent = {
                     role: "ABAP Cloud Architect",
                     quote: "Best decision for transitioning to cloud. The capstone projects mirrored real cloud scenarios. I walked in confident in design and RAP development.",
                     initial: "V",
-                    color: "bg-orange-500"
+                    color: "bg-[#ff4500]"
                 },
                 {
                     name: "Ananya Desai",

@@ -105,11 +105,11 @@ export default function DetailedFAQ({ items }: { items?: any[] }) {
 
                 {/* Header */}
                 <div className="text-center mb-6">
-                    <span className="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block">
+                    <span className="bg-[#ff4500]/10 text-[#ff4500] px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block">
                         FAQ
                     </span>
                     <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                        Frequently Asked <span className="text-orange-600">Questions</span>
+                        Frequently Asked <span className="text-[#ff4500]">Questions</span>
                     </h2>
                     <p className="text-gray-600">
                         SAP Ariba Training at ERPVITS - Everything you need to know
@@ -125,11 +125,11 @@ export default function DetailedFAQ({ items }: { items?: any[] }) {
                                 className="w-full text-left px-6 py-5 flex items-start gap-4 hover:bg-slate-50 transition-colors"
                             >
                                 <div className={`flex-shrink-0 mt-0.5 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold
-                                    ${openIndex === idx ? 'bg-orange-600 text-white' : 'bg-slate-100 text-slate-500'}`}>
+                                    ${openIndex === idx ? 'bg-[#ff4500] text-white' : 'bg-slate-100 text-slate-500'}`}>
                                     {idx + 1}
                                 </div>
                                 <div className="flex-grow">
-                                    <div className={`font-bold text-[15px] ${openIndex === idx ? 'text-orange-600' : 'text-slate-800'}`}>
+                                    <div className={`font-bold text-[15px] ${openIndex === idx ? 'text-[#ff4500]' : 'text-slate-800'}`}>
                                         {faq.question}
                                     </div>
                                     <div className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === idx ? 'max-h-96 opacity-100 mt-3' : 'max-h-0 opacity-0'}`}>
@@ -139,7 +139,7 @@ export default function DetailedFAQ({ items }: { items?: any[] }) {
                                     </div>
                                 </div>
                                 {openIndex === idx ? (
-                                    <Minus className="w-5 h-5 text-orange-600 flex-shrink-0" />
+                                    <Minus className="w-5 h-5 text-[#ff4500] flex-shrink-0" />
                                 ) : (
                                     <Plus className="w-5 h-5 text-slate-400 flex-shrink-0" />
                                 )}
@@ -152,7 +152,7 @@ export default function DetailedFAQ({ items }: { items?: any[] }) {
                     <p className="text-slate-500 mb-4">Still have questions?</p>
                     <button
                         onClick={scrollToBooking}
-                        className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-xl shadow-md hover:shadow-lg transition-all flex items-center gap-2 mx-auto"
+                        className="bg-[#ff4500] hover:bg-[#cc3700] text-white font-bold py-3 px-8 rounded-xl shadow-md hover:shadow-lg transition-all flex items-center gap-2 mx-auto"
                     >
                         <HelpCircle className="w-5 h-5" /> Get Free SAP Career Guidance
                     </button>

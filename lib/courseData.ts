@@ -1,3 +1,4 @@
+import React from 'react';
 import { abapContent } from './abapContent';
 import { abapHanaContent } from './abapHanaContent';
 import { c4cContent } from './c4cContent';
@@ -22,22 +23,31 @@ export interface Section {
     type: 'target_audience' | 'prerequisites' | 'learning_outcomes' | 'curriculum' | 'detailed_features' | 'features' | 'faq' | 'video' | 'text' | 'detailed_curriculum' | 'detailed_prerequisites' | 'detailed_target_audience' | 'detailed_learning_outcomes' | 'real_world_scenarios' | 'detailed_certification' | 'detailed_career_opportunities' | 'detailed_companies' | 'detailed_testimonials' | 'detailed_faq' | 'detailed_upcoming_batches' | 'detailed_demo_booking' | 'detailed_career_roadmap' | 'detailed_post_training_journey' | 'list_checker' | 'rich_text' | 'content_with_image' | 'whats_included' | 'testimonials' | 'course_overview' | 'table_curriculum' | 'job_roles_table';
     title?: string;
     subtitle?: string;
-    items?: any[];
+    items?: any;
     badge?: string;
     modules?: any[];
+    features?: any[];
+    syllabusUrl?: string;
     content?: string;
     courseName?: string;
     description?: string;
-    stats?: { value: string, label: string }[];
+    stats?: { value: string, label: string, color?: string }[];
+    imageSrc?: string;
+    imageSrc2?: string;
     videoUrl?: string; // used for standalone video section
     videoSrc?: string; // used for content_with_image
     benefits?: any[];
+    customData?: any;
+    supportFeatures?: any[];
+    supportTitle?: string;
+    supportText?: string;
+    textAlign?: 'left' | 'center' | 'right';
 }
 
 export interface Course {
     id: string;
     title: string;
-    heroHeading?: string;
+    heroHeading?: string | React.ReactNode;
     heroSubheading?: string;
     heroImage?: string;
     description?: string;

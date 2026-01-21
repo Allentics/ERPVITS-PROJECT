@@ -1,3 +1,4 @@
+import React from 'react';
 import { ShieldCheck, Database, FileText, Settings, Users, BarChart, Globe, Briefcase, GraduationCap, CheckCircle, Star, Clock, Laptop, Building2, UserCheck, Search, Filter, Server, Layout, Box, DollarSign, TrendingUp, Rocket, Award } from 'lucide-react';
 
 export const mdgTargetAudience = [
@@ -276,7 +277,7 @@ export const mdgContent = {
     price: "Competitive",
     duration: "48-56 Hours",
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-mdg.pdf",
-    heroHeading: "Master Data Excellence with the #1 SAP MDG Online Training Program",
+    heroHeading: <>Transform Your Career with the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">#1 Data Governance and Quality Professionals Online Training Program</span></>,
     heroSubheading: "The SAP Master Data Governance Online Training Program from ERPVITS represents a transformative learning pathway for professionals eager to excel in data quality management, organizational data governance, and enterprise information management. In today's data-driven business landscape, organizations urgently need certified SAP MDG experts who can establish master data governance frameworks, ensure data quality across the enterprise, maintain data governance compliance, and drive organizational alignment through standardized master data processes. This comprehensive SAP MDG training course combines interactive, instructor-led sessions, hands-on lab exercises, real-time industry projects, data governance simulations, and end-to-end certification support—designed specifically for data governance professionals, master data managers, SAP consultants, ERP implementers, quality assurance specialists, and ambitious graduates targeting global data governance and compliance roles.",
 
     title: "SAP MDG",

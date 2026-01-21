@@ -1,3 +1,4 @@
+import React from 'react';
 import { Code, Cloud, Database, Layout, Settings, Smartphone, Zap, MonitorSmartphone, Layers, ShieldCheck, Terminal, Globe, UserCheck, Briefcase, GraduationCap, Users } from 'lucide-react';
 
 export const c4cTechnicalTargetAudience = [
@@ -168,7 +169,7 @@ export const c4cContent = {
     price: "Competitive",
     duration: "30-35 Hours",
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Technical/sap-c4c-technical.pdf",
-    heroHeading: "End-to-End SAP C4C Technical Training with Real-Time Implementation",
+    heroHeading: <>Transform Your Career with the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">#1 Developers & Technical Professionals Online Training Program</span></>,
     heroSubheading: "Master Cloud Application Studio, ABSL scripting, UI Designer, and cloud integration through real-world projects.",
 
     title: "SAP C4C Technical",

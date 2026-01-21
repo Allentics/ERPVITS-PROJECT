@@ -1,3 +1,4 @@
+import React from 'react';
 import { Briefcase, Building2, TrendingUp, Users, Settings, BarChart, LineChart, PieChart, Globe, DollarSign, Brain, Target, ShieldCheck, Clock, Zap, MessageSquare } from 'lucide-react';
 
 export const ibpTargetAudience = [
@@ -206,7 +207,7 @@ export const ibpContent = {
     price: "Competitive",
     duration: "45 Hours",
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-ibp.pdf",
-    heroHeading: "Transform Your Supply Chain Strategy with the #1 SAP IBP Online Training Program",
+    heroHeading: <>Transform Your Career with the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">#1 Supply Chain & Planning Professionals Online Training Program</span></>,
     heroSubheading: "Excel in demand planning, supply chain optimization, and data-driven business strategy with expert-led training.",
 
     title: "SAP IBP",

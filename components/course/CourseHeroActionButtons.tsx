@@ -32,8 +32,8 @@ export default function CourseHeroActionButtons({
                 <Link
                     href={enrollHref}
                     className={`text-white px-10 py-4 rounded-lg font-bold shadow-lg transition-all flex items-center justify-center gap-2 text-lg ${isPurple
-                        ? 'bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 shadow-orange-500/25'
-                        : 'bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 shadow-orange-500/25'
+                        ? 'bg-gradient-to-r from-[#ff4500] to-red-600 hover:from-[#cc3700] hover:to-red-700 shadow-[#ff4500]/25'
+                        : 'bg-gradient-to-r from-[#ff4500] to-red-600 hover:from-[#cc3700] hover:to-red-700 shadow-[#ff4500]/25'
                         }`}
                 >
                     {primaryLabel}
