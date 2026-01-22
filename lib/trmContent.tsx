@@ -329,7 +329,6 @@ export const trmContent = {
                     title: "Module 2: Foreign Exchange Operations (6 Hours)",
                     topics: [
                         "Overview of FX management and its role in enterprise treasury",
-                        "Overview of FX management and its role in enterprise treasury",
                         "Spot transactions, forwards, and exotic derivatives",
                         "Netting procedures and currency exposure management",
                         "ERP integration for FX operations",
@@ -403,7 +402,8 @@ export const trmContent = {
                         "Perform Automated Payment Procedures"
                     ],
                     hands_on: [
-                        "Set Up Workflows For Letter of Creditestablish bank communication protocols",
+                        "Set Up Workflows For Letter of Credit",
+                        "Establish bank communication protocols",
                         "Create SWIFT messages",
                         "Evaluate correspondence integration"
                     ]

@@ -93,8 +93,11 @@ export default function DetailedCurriculum({ modules, title, courseName = "SAP A
 
                     if ((!points || points.length === 0) && module.topics) {
                         points = module.topics.filter(t => !t.toLowerCase().includes('hands-on'));
-                        labs = module.topics.filter(t => t.toLowerCase().includes('hands-on'))
-                            .map(t => t.replace(/Hands-On[:\s\-]*/i, ''));
+
+                        const legacyLabs = module.topics.filter(t => t.toLowerCase().includes('hands-on'));
+                        if (legacyLabs.length > 0) {
+                            labs = legacyLabs.map(t => t.replace(/Hands-On[:\s\-]*/i, ''));
+                        }
                     }
 
                     return (
