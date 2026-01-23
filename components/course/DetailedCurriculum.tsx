@@ -3,6 +3,7 @@
 import React from 'react';
 import { ChevronDown, Clock, BookOpen, CheckCircle2, ChevronRight, Download } from 'lucide-react';
 import * as Accordion from '@radix-ui/react-accordion';
+import { renderRichText } from './SectionRenderer';
 
 export interface DetailedModule {
     title: string;
@@ -15,11 +16,12 @@ export interface DetailedModule {
 interface DetailedCurriculumProps {
     modules: DetailedModule[];
     title?: string;
+    subtitle?: string;
     courseName?: string;
     syllabusUrl?: string;
 }
 
-export default function DetailedCurriculum({ modules, title, courseName = "SAP Ariba", syllabusUrl }: DetailedCurriculumProps) {
+export default function DetailedCurriculum({ modules, title, subtitle, courseName = "SAP Ariba", syllabusUrl }: DetailedCurriculumProps) {
     if (!modules || modules.length === 0) return null;
 
     return (
@@ -32,9 +34,9 @@ export default function DetailedCurriculum({ modules, title, courseName = "SAP A
                 <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4 max-w-3xl mx-auto leading-tight">
                     {title || `${courseName} Course Curriculum – From Basics to Advanced Projects`}
                 </h2>
-                <p className="text-gray-600 text-lg">
-                    {modules.length} comprehensive modules covering every aspect of {courseName} with extensive hands-on labs
-                </p>
+                <div className="text-gray-600 text-lg">
+                    {subtitle ? renderRichText(subtitle) : `${modules.length} comprehensive modules covering every aspect of ${courseName} with extensive hands-on labs`}
+                </div>
             </div>
 
             {/* Summary Cards */}

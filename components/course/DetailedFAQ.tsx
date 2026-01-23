@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Plus, Minus, HelpCircle } from 'lucide-react';
 
-export default function DetailedFAQ({ items }: { items?: any[] }) {
+export default function DetailedFAQ({ items, title, subtitle }: { items?: any[], title?: string, subtitle?: string }) {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
 
@@ -112,7 +112,7 @@ export default function DetailedFAQ({ items }: { items?: any[] }) {
                         Frequently Asked <span className="text-[#ff4500]">Questions</span>
                     </h2>
                     <p className="text-gray-600">
-                        SAP Ariba Training at ERPVITS - Everything you need to know
+                        {subtitle || "Everything you need to know about the training program"}
                     </p>
                 </div>
 

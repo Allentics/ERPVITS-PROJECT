@@ -50,7 +50,7 @@ export interface CompaniesData {
     };
 }
 
-export default function DetailedCompanies({ courseName = "SAP Ariba", customData }: { courseName?: string, customData?: CompaniesData }) {
+export default function DetailedCompanies({ courseName = "SAP", customData }: { courseName?: string, customData?: CompaniesData }) {
     const data = customData || companiesData;
 
     return (

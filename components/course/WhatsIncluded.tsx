@@ -1,6 +1,8 @@
 import React from 'react';
 import { CheckCircle2 } from 'lucide-react';
 
+import { renderRichText } from './SectionRenderer';
+
 interface Feature {
     title: string;
     description: string;
@@ -18,9 +20,10 @@ interface WhatsIncludedProps {
     title?: string;
     badge?: string;
     description?: string;
+    subtitle?: string;
 }
 
-export default function WhatsIncluded({ features: customFeatures, stats: customStats, title, badge, description }: WhatsIncludedProps) {
+export default function WhatsIncluded({ features: customFeatures, stats: customStats, title, badge, description, subtitle }: WhatsIncludedProps) {
     const defaultFeatures = [
         {
             title: "Live Interactive Classes",
@@ -74,10 +77,10 @@ export default function WhatsIncluded({ features: customFeatures, stats: customS
                         {badge || "Complete Learning Package"}
                     </span>
                     <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                        {title || "What's Included in the SAP Ariba Training"}
+                        {title || "What's Included in the Training"}
                     </h2>
                     <p className="text-gray-600 max-w-3xl mx-auto text-lg">
-                        {description || "Everything you need to become a certified SAP Ariba professional—from live training to career support"}
+                        {renderRichText(subtitle || description || "Everything you need to become a certified professional—from live training to career support")}
                     </p>
                 </div>
 
@@ -92,9 +95,9 @@ export default function WhatsIncluded({ features: customFeatures, stats: customS
                             </div>
                             <div>
                                 <h3 className="font-bold text-slate-900 text-lg mb-2">{feature.title}</h3>
-                                <p className="text-slate-600 text-[15px] leading-relaxed">
-                                    {feature.description}
-                                </p>
+                                <div className="text-slate-600 text-[15px] leading-relaxed">
+                                    {renderRichText(feature.description)}
+                                </div>
                             </div>
                         </div>
                     ))}

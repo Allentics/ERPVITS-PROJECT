@@ -1,7 +1,7 @@
 import React from 'react';
 import { Award, CheckCircle2, BookOpen, Trophy, TrendingUp, FileCheck } from 'lucide-react';
 
-export default function DetailedCertification({ items, title, subtitle, badge, stats, courseName = "SAP Ariba", description, imageSrc, imageSrc2, supportFeatures, benefits }: {
+export default function DetailedCertification({ items, title, subtitle, badge, stats, courseName = "SAP Ariba", description, imageSrc, imageSrc2, supportFeatures, benefits, whyMattersTitle, targetAudienceLabel }: {
     items?: any[],
     title?: string,
     subtitle?: string,
@@ -12,7 +12,9 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
     imageSrc?: string,
     imageSrc2?: string,
     supportFeatures?: any[],
-    benefits?: any[]
+    benefits?: any[],
+    whyMattersTitle?: string,
+    targetAudienceLabel?: string
 }) {
     const defaultCerts = [
         {
@@ -96,9 +98,15 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
         <section className="pt-8 pb-16 bg-white text-slate-900">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-slate-900 leading-tight">
+                <h2 className="text-3xl lg:text-4xl font-bold mb-2 text-slate-900 leading-tight">
                     {title || `SAP ${courseName} Certification – Your Global Career Credential`}
                 </h2>
+
+                {subtitle && (
+                    <p className="text-lg text-slate-600 mb-8 max-w-3xl">
+                        {subtitle}
+                    </p>
+                )}
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
                     {/* Left Column - Certifications & Benefits */}
@@ -124,7 +132,7 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
                                             </div>
                                             {cert.who && (
                                                 <div className="flex gap-2">
-                                                    <span className="font-bold text-slate-900 whitespace-nowrap">Target Audience:</span>
+                                                    <span className="font-bold text-slate-900 whitespace-nowrap">{targetAudienceLabel || "Target Audience"}:</span>
                                                     <span className="leading-relaxed">{cert.who}</span>
                                                 </div>
                                             )}
@@ -142,7 +150,7 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
                         <div className="bg-gradient-to-br from-[#ff4500] to-red-600 rounded-xl p-5 text-white shadow-xl shadow-orange-500/20 mt-2">
                             <div className="flex items-center gap-3 mb-4 border-b border-white/20 pb-3">
                                 <Trophy className="w-5 h-5 text-white" />
-                                <h3 className="font-bold text-lg text-white">Why SAP Certification Matters</h3>
+                                <h3 className="font-bold text-lg text-white">{whyMattersTitle || "Why SAP Certification Matters"}</h3>
                             </div>
                             <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
                                 {benefitsToDisplay.map((benefit, idx) => (

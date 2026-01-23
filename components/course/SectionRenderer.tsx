@@ -52,13 +52,26 @@ const getIconForTitle = (title: string) => {
 export const renderRichText = (text: string) => {
     if (!text) return null;
 
-    // Regex for: 1. HTML links, 2. Markdown links, 3. Bold/Italic (Markdown & HTML)
+    // Regex for: 1. HTML links, 2. Markdown links, 3. Bold/Italic (Markdown & HTML), 4. Orange highlights
     // Using [\s\S]*? to handle multi-line content correctly
-    const pattern = /(<a\s+[\s\S]*?href=["'][\s\S]*?["'][\s\S]*?>[\s\S]*?<\/a>|\[[^\]]+\]\([^)]+\)|\*\*[\s\S]*?\*\*|__[\s\S]*?__|<b>[\s\S]*?<\/b>|<strong>[\s\S]*?<\/strong>|<i>[\s\S]*?<\/i>|<em>[\s\S]*?<\/em>)/g;
+    const pattern = /(<a\s+[\s\S]*?href=["'][\s\S]*?["'][\s\S]*?>[\s\S]*?<\/a>|\[[^\]]+\]\([^)]+\)|\*\*[\s\S]*?\*\*|__[\s\S]*?__|<b>[\s\S]*?<\/b>|<strong>[\s\S]*?<\/strong>|<i>[\s\S]*?<\/i>|<em>[\s\S]*?<\/em>|<orange>[\s\S]*?<\/orange>)/g;
     const parts = text.split(pattern);
 
     return parts.map((part, index) => {
         if (!part) return null;
+
+        // Orange Highlights (Custom tag <orange>)
+        if (part.toLowerCase().startsWith('<orange>')) {
+            const content = part.replace(/^<orange>|<\/orange>$/gi, '');
+            return (
+                <span
+                    key={index}
+                    className="text-[#ff4500] underline underline-offset-4 decoration-[#ff4500]/40 font-medium"
+                >
+                    {content}
+                </span>
+            );
+        }
 
         // Check if it's an HTML link
         const htmlLinkMatch = part.match(/^<a\s+[\s\S]*?href=["']([\s\S]*?)["'][\s\S]*?>([\s\S]*?)<\/a>$/i);
@@ -231,7 +244,7 @@ export default function SectionRenderer({ sections, courseName, syllabusUrl }: {
                         </section>;
                     case 'detailed_curriculum':
                         return <section key={idx} id="curriculum" className="scroll-mt-32">
-                            <DetailedCurriculum modules={section.modules} title={section.title} courseName={courseName || section.courseName} syllabusUrl={section.syllabusUrl || syllabusUrl} />
+                            <DetailedCurriculum modules={section.modules} title={section.title} subtitle={section.subtitle} courseName={courseName || section.courseName} syllabusUrl={section.syllabusUrl || syllabusUrl} />
                         </section>;
                     case 'detailed_prerequisites':
                         return <DetailedPrerequisites key={idx} items={section.items} />;
@@ -248,7 +261,7 @@ export default function SectionRenderer({ sections, courseName, syllabusUrl }: {
                     case 'table_curriculum':
                         return <CurriculumTable key={idx} items={section.items} title={section.title} />;
                     case 'detailed_certification':
-                        return <DetailedCertification key={idx} items={section.items} title={section.title} subtitle={section.subtitle} badge={section.badge} stats={section.stats} courseName={courseName || section.courseName} description={section.description || section.content} imageSrc={section.imageSrc} supportFeatures={section.supportFeatures} benefits={section.benefits} />;
+                        return <DetailedCertification key={idx} items={section.items} title={section.title} subtitle={section.subtitle} badge={section.badge} stats={section.stats} courseName={courseName || section.courseName} description={section.description || section.content} imageSrc={section.imageSrc} supportFeatures={section.supportFeatures} benefits={section.benefits} whyMattersTitle={section.whyMattersTitle} targetAudienceLabel={section.targetAudienceLabel} />;
                     case 'detailed_career_opportunities':
                         return <DetailedCareerOpportunities key={idx} items={section.items} courseName={courseName || section.courseName} />;
                     case 'detailed_companies':
@@ -262,7 +275,7 @@ export default function SectionRenderer({ sections, courseName, syllabusUrl }: {
                     case 'detailed_upcoming_batches':
                         return <DetailedUpcomingBatches key={idx} batches={section.items} courseName={section.courseName || courseName} />;
                     case 'detailed_faq':
-                        return <DetailedFAQ key={idx} items={section.items} />;
+                        return <DetailedFAQ key={idx} items={section.items} title={section.title} subtitle={section.subtitle} />;
                     case 'detailed_demo_booking':
                         return <DetailedDemoBooking key={idx} courseName={courseName} {...section} />;
                     case 'features':
