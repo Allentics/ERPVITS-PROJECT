@@ -8,31 +8,31 @@ import Link from 'next/link';
 
 // Tab Definitions
 const TABS = [
-    { id: 'basic', label: 'Basic Info', icon: ClipboardList },
-    { id: 'hero', label: 'Hero Section', icon: Target },
-    { id: 'overview', label: 'Why Choose Us', icon: BookOpen },
-    { id: 'course_overview', label: 'Course Overview (Python)', icon: BookOpen },
-    { id: 'why_choose_us', label: 'Success Guarantee & Credibility', icon: Star },
-    { id: 'whats_included', label: 'What\'s Included', icon: AlarmClock },
-    { id: 'curriculum', label: 'Comprehensive Curriculum', icon: Library },
-    { id: 'table_curriculum', label: 'Alternative Curriculum (Table)', icon: Library },
-    { id: 'tools', label: 'Tools & Modules Covered', icon: Laptop },
-    { id: 'audience', label: 'Who Should Enroll', icon: Users },
-    { id: 'prerequisites', label: 'Prerequisites', icon: ClipboardList },
-    { id: 'methodology', label: 'Training Methodology', icon: NotebookPen },
-    { id: 'hands_on', label: 'Real-World Projects', icon: Laptop },
-    { id: 'certification', label: 'Certification', icon: Trophy },
-    { id: 'companies', label: 'Hiring Companies', icon: Users },
-    { id: 'career', label: 'Career Growth', icon: TrendingUp },
-    { id: 'jobs', label: 'Job Roles & Salaries', icon: Briefcase },
-    { id: 'roadmap', label: 'Career Roadmap', icon: TrendingUp },
-    { id: 'journey', label: 'Post-Training Journey', icon: Target },
-    { id: 'batches', label: 'Upcoming Batches', icon: Calendar },
-    { id: 'testimonials', label: 'Testimonials', icon: MessageSquareQuote },
-    { id: 'demo', label: 'Demo Booking', icon: MessageSquare },
-    { id: 'faq', label: 'FAQ', icon: HelpCircle },
-    { id: 'integrations', label: 'SAP Integrations', icon: Link2 },
-    { id: 'resources', label: 'Resources', icon: FileText },
+    { id: 'basic', label: '1. Basic Information', icon: ClipboardList },
+    { id: 'hero', label: '2. Hero & Primary Stats', icon: Target },
+    { id: 'overview', label: '3. Why Choose Us', icon: BookOpen },
+    { id: 'why_choose_us', label: '4. Success Guarantee & Credibility', icon: Star },
+    { id: 'whats_included', label: '5. Complete Learning Package', icon: AlarmClock },
+    { id: 'curriculum', label: '6. Comprehensive Curriculum', icon: Library },
+    { id: 'audience', label: '7. Who Should Enroll (Audience)', icon: Users },
+    { id: 'prerequisites', label: '8. Prerequisites', icon: ClipboardList },
+    { id: 'methodology', label: '9. Learning Outcomes', icon: NotebookPen },
+    { id: 'hands_on', label: '10. Real-World Projects', icon: Laptop },
+    { id: 'certification', label: '11. Certification', icon: Trophy },
+    { id: 'jobs', label: '12. Career Paths', icon: Briefcase },
+    { id: 'journey', label: '13. Your Career Journey', icon: Target },
+    { id: 'faq', label: '14. FAQ', icon: HelpCircle },
+    // Secondary Sections
+    { id: 'course_overview', label: '15. Detailed Overview (Long Text)', icon: BookOpen },
+    { id: 'batches', label: '16. Upcoming Online Batches', icon: Calendar },
+    { id: 'testimonials', label: '17. Student Success Stories', icon: MessageSquareQuote },
+    { id: 'companies', label: '18. Global Hiring Partners', icon: Users },
+    { id: 'roadmap', label: '19. Career Roadmap', icon: TrendingUp },
+    { id: 'resources', label: '20. Syllabus & Downloadables', icon: FileText },
+    { id: 'tools', label: '21. Technology Tools', icon: Laptop },
+    { id: 'table_curriculum', label: '22. Curriculum Table', icon: Library },
+    { id: 'demo', label: '23. Demo Booking', icon: MessageSquare },
+    { id: 'integrations', label: '24. SAP Integrations', icon: Link2 },
 ];
 
 export default function EditCoursePage({ params }: { params: Promise<{ id: string }> }) {
@@ -167,80 +167,86 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
     // --- Tab Content Components ---
 
     const BasicInfoTab = () => (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="space-y-2">
-                <label className="text-sm font-semibold text-gray-700">Module ID</label>
-                <input name="id" disabled value={formData.id} className="w-full p-2 border rounded bg-gray-50" />
+        <div className="space-y-6">
+            <div className="border-b pb-4 mb-6">
+                <h3 className="text-xl font-bold text-slate-900">Basic Course Configuration</h3>
+                <p className="text-sm text-slate-500 italic">Configure primary course metadata, pricing, and SEO settings.</p>
             </div>
-            <div className="space-y-2">
-                <label className="text-sm font-semibold text-gray-700">Course Title</label>
-                <input name="title" value={formData.title} onChange={handleChange} className="w-full p-2 border rounded" />
-            </div>
-            <div className="space-y-2">
-                <label className="text-sm font-semibold text-gray-700">Type / Category</label>
-                <select name="category" value={formData.category || 'Functional'} onChange={handleChange} className="w-full p-2 border rounded">
-                    <option value="Functional">Functional</option>
-                    <option value="Technical">Technical</option>
-                </select>
-            </div>
-            <div className="space-y-2">
-                <label className="text-sm font-semibold text-gray-700">Page Title (SEO)</label>
-                <input name="meta_title" value={formData.meta_title || ''} onChange={handleChange} className="w-full p-2 border rounded" />
-            </div>
-            <div className="md:col-span-2 space-y-2">
-                <label className="text-sm font-semibold text-gray-700">Meta Description</label>
-                <textarea name="meta_description" rows={3} value={formData.meta_description || ''} onChange={handleChange} className="w-full p-2 border rounded" />
-            </div>
-            <div className="space-y-2">
-                <label className="text-sm font-semibold text-gray-700">Price</label>
-                <input name="price" value={formData.price || ''} onChange={handleChange} className="w-full p-2 border rounded" />
-            </div>
-            <div className="space-y-2">
-                <label className="text-sm font-semibold text-gray-700">Duration</label>
-                <input name="duration" value={formData.duration || ''} onChange={handleChange} className="w-full p-2 border rounded" />
-            </div>
-            <div className="md:col-span-2 space-y-2">
-                <label className="text-sm font-semibold text-gray-700">Schema Markup (JSON-LD)</label>
-                <textarea
-                    name="schema"
-                    rows={6}
-                    value={typeof formData.schema === 'object' ? JSON.stringify(formData.schema, null, 2) : (formData.schema || '')}
-                    onChange={(e) => {
-                        // Try to parse if it looks like JSON to store as object, otherwise string
-                        try {
-                            JSON.parse(e.target.value);
-                            handleChange(e); // Let it save as string or whatever the backend expects
-                        } catch (err) {
-                            handleChange(e);
-                        }
-                    }}
-                    className="w-full p-2 border rounded font-mono text-xs bg-slate-50"
-                    placeholder='{"@context": "https://schema.org", "@type": "Course", ...}'
-                />
-                <p className="text-xs text-gray-500">Auto-generated if left blank. Override here to provide custom structured data.</p>
-            </div>
-            <div className="md:col-span-2 grid grid-cols-2 gap-4 pt-4 border-t">
-                <div className="space-y-1">
-                    <label className="text-sm font-medium text-gray-700">Theme Color</label>
-                    <select
-                        value={formData.themeColor || 'default'}
-                        onChange={(e) => setFormData((p: any) => ({ ...p, themeColor: e.target.value }))}
-                        className="w-full p-2 border rounded bg-white"
-                    >
-                        <option value="default">Default</option>
-                        <option value="orange">Orange</option>
-                        <option value="purple">Purple</option>
-                        <option value="blue">Blue</option>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                    <label className="text-sm font-semibold text-gray-700">Module ID</label>
+                    <input name="id" disabled value={formData.id} className="w-full p-2 border rounded bg-gray-50" />
+                </div>
+                <div className="space-y-2">
+                    <label className="text-sm font-semibold text-gray-700">Course Title</label>
+                    <input name="title" value={formData.title} onChange={handleChange} className="w-full p-2 border rounded" />
+                </div>
+                <div className="space-y-2">
+                    <label className="text-sm font-semibold text-gray-700">Type / Category</label>
+                    <select name="category" value={formData.category || 'Functional'} onChange={handleChange} className="w-full p-2 border rounded">
+                        <option value="Functional">Functional</option>
+                        <option value="Technical">Technical</option>
                     </select>
                 </div>
-                <div className="space-y-1">
-                    <label className="text-sm font-medium text-gray-700">Course Badges (Comma sep)</label>
-                    <input
-                        value={formData.badges?.join(', ') || ''}
-                        onChange={(e) => setFormData((p: any) => ({ ...p, badges: e.target.value.split(',').map((s: string) => s.trim()).filter(Boolean) }))}
-                        placeholder="Rated #1, Best Seller"
-                        className="w-full p-2 border rounded"
+                <div className="space-y-2">
+                    <label className="text-sm font-semibold text-gray-700">Page Title (SEO)</label>
+                    <input name="meta_title" value={formData.meta_title || ''} onChange={handleChange} className="w-full p-2 border rounded" />
+                </div>
+                <div className="md:col-span-2 space-y-2">
+                    <label className="text-sm font-semibold text-gray-700">Meta Description</label>
+                    <textarea name="meta_description" rows={3} value={formData.meta_description || ''} onChange={handleChange} className="w-full p-2 border rounded" />
+                </div>
+                <div className="space-y-2">
+                    <label className="text-sm font-semibold text-gray-700">Price</label>
+                    <input name="price" value={formData.price || ''} onChange={handleChange} className="w-full p-2 border rounded" />
+                </div>
+                <div className="space-y-2">
+                    <label className="text-sm font-semibold text-gray-700">Duration</label>
+                    <input name="duration" value={formData.duration || ''} onChange={handleChange} className="w-full p-2 border rounded" />
+                </div>
+                <div className="md:col-span-2 space-y-2">
+                    <label className="text-sm font-semibold text-gray-700">Schema Markup (JSON-LD)</label>
+                    <textarea
+                        name="schema"
+                        rows={6}
+                        value={typeof formData.schema === 'object' ? JSON.stringify(formData.schema, null, 2) : (formData.schema || '')}
+                        onChange={(e) => {
+                            // Try to parse if it looks like JSON to store as object, otherwise string
+                            try {
+                                JSON.parse(e.target.value);
+                                handleChange(e); // Let it save as string or whatever the backend expects
+                            } catch (err) {
+                                handleChange(e);
+                            }
+                        }}
+                        className="w-full p-2 border rounded font-mono text-xs bg-slate-50"
+                        placeholder='{"@context": "https://schema.org", "@type": "Course", ...}'
                     />
+                    <p className="text-xs text-gray-500">Auto-generated if left blank. Override here to provide custom structured data.</p>
+                </div>
+                <div className="md:col-span-2 grid grid-cols-2 gap-4 pt-4 border-t">
+                    <div className="space-y-1">
+                        <label className="text-sm font-medium text-gray-700">Theme Color</label>
+                        <select
+                            value={formData.themeColor || 'default'}
+                            onChange={(e) => setFormData((p: any) => ({ ...p, themeColor: e.target.value }))}
+                            className="w-full p-2 border rounded bg-white"
+                        >
+                            <option value="default">Default</option>
+                            <option value="orange">Orange</option>
+                            <option value="purple">Purple</option>
+                            <option value="blue">Blue</option>
+                        </select>
+                    </div>
+                    <div className="space-y-1">
+                        <label className="text-sm font-medium text-gray-700">Course Badges (Comma sep)</label>
+                        <input
+                            value={formData.badges?.join(', ') || ''}
+                            onChange={(e) => setFormData((p: any) => ({ ...p, badges: e.target.value.split(',').map((s: string) => s.trim()).filter(Boolean) }))}
+                            placeholder="Rated #1, Best Seller"
+                            className="w-full p-2 border rounded"
+                        />
+                    </div>
                 </div>
             </div>
         </div>
@@ -248,6 +254,10 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
 
     const HeroTab = () => (
         <div className="space-y-6">
+            <div className="border-b pb-4 mb-6">
+                <h3 className="text-xl font-bold text-slate-900">Section 1: Hero Banner (Top of Page)</h3>
+                <p className="text-sm text-slate-500 italic">The first thing users see. Includes the main heading, subheading, and trust indicators.</p>
+            </div>
             <div className="space-y-2">
                 <label className="text-sm font-semibold text-gray-700">Hero Heading</label>
                 <input name="hero_heading" value={formData.hero_heading || ''} onChange={handleChange} className="w-full p-2 border rounded" />
@@ -310,21 +320,35 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
         </div>
     );
 
-    const CourseOverviewTab = () => {
+    const DetailedFeaturesTab = () => {
         const section = getSection('detailed_features', { items: [] });
         const items = section.items || [];
-
         const updateOverview = (newItems: any[]) => updateSection('detailed_features', { ...section, items: newItems });
 
         return (
             <div className="space-y-6">
-                <div className="space-y-2">
-                    <label className="text-sm font-semibold text-gray-700">Section Title</label>
-                    <input
-                        value={section.title || ''}
-                        onChange={(e) => updateSection('detailed_features', { ...section, title: e.target.value })}
-                        className="w-full p-2 border rounded"
-                    />
+                <div className="border-b pb-4 mb-6">
+                    <h3 className="text-xl font-bold text-slate-900">Section 3: Why Choose Us</h3>
+                    <p className="text-sm text-slate-500 italic">Strategic advantages and unique selling points.</p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                        <label className="text-sm font-semibold text-gray-700">Section Title</label>
+                        <input
+                            value={section.title || ''}
+                            onChange={(e) => updateSection('detailed_features', { ...section, title: e.target.value })}
+                            className="w-full p-2 border rounded"
+                        />
+                    </div>
+                    <div className="space-y-2">
+                        <label className="text-sm font-semibold text-gray-700">Badge Label (Top Tag)</label>
+                        <input
+                            value={section.badge || ''}
+                            onChange={(e) => updateSection('detailed_features', { ...section, badge: e.target.value })}
+                            className="w-full p-2 border rounded"
+                            placeholder="e.g. Why Choose Us"
+                        />
+                    </div>
                 </div>
                 <div className="space-y-2">
                     <label className="text-sm font-semibold text-gray-700">Section Subtitle</label>
@@ -341,7 +365,6 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                         </button>
                     </div>
                 </div>
-
                 <div className="space-y-4">
                     <h4 className="font-bold text-gray-900 border-b pb-2 flex justify-between items-center">
                         Why Choose Us
@@ -402,6 +425,10 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
 
         return (
             <div className="space-y-6">
+                <div className="border-b pb-4 mb-6">
+                    <h3 className="text-xl font-bold text-slate-900">Section 6: Comprehensive Curriculum</h3>
+                    <p className="text-sm text-slate-500 italic">Phase-by-phase learning modules and laboratory work.</p>
+                </div>
                 <div className="flex justify-between items-center bg-gray-100 p-4 rounded-lg">
                     <h4 className="font-bold text-gray-900">Comprehensive Curriculum ({modules.length})</h4>
                     <button type="button" onClick={() => updateModules([...modules, { title: 'New Module', duration: '5 hours', learning_points: [], hands_on: [] }])} className="text-sm bg-black text-white px-3 py-1.5 rounded-lg flex items-center gap-2">
@@ -480,6 +507,10 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
 
         return (
             <div className="space-y-6">
+                <div className="border-b pb-4 mb-6">
+                    <h3 className="text-xl font-bold text-slate-900">Section 20: Syllabus & Downloadables</h3>
+                    <p className="text-sm text-slate-500 italic">Manage downloadable resources like the syllabus PDF.</p>
+                </div>
                 <div className="space-y-2">
                     <label className="text-sm font-semibold text-gray-700">Syllabus PDF URL</label>
                     <input
@@ -494,7 +525,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
         )
     }
 
-    const WhyChooseUsTab = () => {
+    const SuccessGuaranteeTab = () => {
         const section = getSection('content_with_image', { items: [] });
 
         const handleVideoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -512,7 +543,10 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
 
         return (
             <div className="space-y-6">
-                <h4 className="font-bold text-gray-900 border-b pb-2">Success Guarantee & Credibility</h4>
+                <div className="border-b pb-4 mb-6">
+                    <h3 className="text-xl font-bold text-slate-900">Section 4: Success Guarantee & Credibility</h3>
+                    <p className="text-sm text-slate-500 italic">Video evidence and core training guarantees.</p>
+                </div>
                 <div className="space-y-2">
                     <label className="text-sm font-semibold text-gray-700">Title</label>
                     <input value={section.title || ''} onChange={(e) => updateSection('content_with_image', { ...section, title: e.target.value })} className="w-full p-2 border rounded" />
@@ -532,16 +566,30 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                         </button>
                     </div>
                 </div>
-                <div className="space-y-2">
-                    <label className="text-sm font-semibold text-gray-700">Video Embed URL</label>
-                    <input
-                        value={section.videoSrc || ''}
-                        onChange={handleVideoChange}
-                        className="w-full p-2 border rounded"
-                        placeholder="https://www.youtube.com/embed/..."
-                    />
-                    <p className="text-xs text-gray-500">Paste a YouTube link here. We'll automatically convert standard links to embed format.</p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                        <label className="text-sm font-semibold text-gray-700">Image URL</label>
+                        <input
+                            value={section.imageSrc || ''}
+                            onChange={(e) => updateSection('content_with_image', { ...section, imageSrc: e.target.value })}
+                            className="w-full p-2 border rounded"
+                            placeholder="/images/example.webp"
+                        />
+                        <p className="text-xs text-gray-500">Provide an image URL if no video is available.</p>
+                    </div>
+                    <div className="space-y-2">
+                        <label className="text-sm font-semibold text-gray-700">Video Embed URL</label>
+                        <input
+                            value={section.videoSrc || ''}
+                            onChange={handleVideoChange}
+                            className="w-full p-2 border rounded"
+                            placeholder="https://www.youtube.com/embed/..."
+                        />
+                        <p className="text-xs text-gray-500">YouTube link (auto-converts to embed). Takes priority over image.</p>
+                    </div>
                 </div>
+
                 <div className="space-y-2">
                     <label className="text-sm font-semibold text-gray-700">List Items (One per line)</label>
                     <textarea
@@ -575,6 +623,10 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
 
         return (
             <div className="space-y-6">
+                <div className="border-b pb-4 mb-6">
+                    <h3 className="text-xl font-bold text-slate-900">Section 7: Who Should Enroll (Audience)</h3>
+                    <p className="text-sm text-slate-500 italic">Ideal background and target roles for this training.</p>
+                </div>
                 <div className="space-y-2">
                     <label className="text-sm font-semibold text-gray-700">Section Title</label>
                     <input
@@ -685,6 +737,10 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
 
         return (
             <div className="space-y-6">
+                <div className="border-b pb-4 mb-6">
+                    <h3 className="text-xl font-bold text-slate-900">Section 8: Prerequisites</h3>
+                    <p className="text-sm text-slate-500 italic">Entry requirements and recommended background.</p>
+                </div>
                 <h4 className="font-bold text-gray-900 border-b pb-2">Course Prerequisites</h4>
 
                 <div className="bg-orange-50 p-4 rounded-lg border border-orange-100">
@@ -720,6 +776,10 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
 
         return (
             <div className="space-y-6">
+                <div className="border-b pb-4 mb-6">
+                    <h3 className="text-xl font-bold text-slate-900">Section 5: Complete Learning Package</h3>
+                    <p className="text-sm text-slate-500 italic">Everything included in the course: access, materials, and certificates.</p>
+                </div>
                 <div className="space-y-2">
                     <label className="text-sm font-semibold text-gray-700">Section Title</label>
                     <input
@@ -823,7 +883,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
         return (
             <div className="space-y-6">
                 <div className="flex justify-between items-center mb-4">
-                    <h4 className="font-bold">Frequently Asked Questions</h4>
+                    <h4 className="font-bold">Section 14: FAQ</h4>
                     <button type="button" onClick={() => updateFAQs([...items, { question: 'New Question', answer: '' }])} className="text-sm bg-black text-white px-3 py-1.5 rounded flex items-center gap-2">
                         <Plus size={16} /> Add FAQ
                     </button>
@@ -916,7 +976,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
         return (
             <div className="space-y-6">
                 <div className="p-4 bg-blue-50 border border-blue-200 rounded text-sm text-blue-800 mb-4">
-                    Edit Certification Section details below.
+                    Section 11: Professional Certification details below.
                 </div>
 
                 <div className="space-y-2">
@@ -1060,7 +1120,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
         );
     };
 
-    const MethodologyTab = () => {
+    const LearningOutcomesTab = () => {
         const section = getSection('detailed_learning_outcomes', { items: [] });
         const isTabbed = section.items && typeof section.items === 'object' && !Array.isArray(section.items) && section.items.tabs;
 
@@ -1163,6 +1223,11 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
 
         return (
             <div className="space-y-6">
+                <div className="border-b pb-4 mb-6">
+                    <h3 className="text-xl font-bold text-slate-900">Section 9: Learning Outcomes</h3>
+                    <p className="text-sm text-slate-500 italic">Skills and mastery students will acquire.</p>
+                </div>
+
                 <div className="space-y-2 border-b pb-4">
                     <label className="text-sm font-semibold text-gray-700">Section Title</label>
                     <input
@@ -1290,7 +1355,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                     <input value={section.title || ''} onChange={(e) => updateSection('detailed_post_training_journey', { ...section, title: e.target.value })} className="w-full p-2 border rounded" />
                 </div>
                 <div className="flex justify-between items-center bg-gray-100 p-4 rounded-lg">
-                    <h4 className="font-bold text-gray-900">Journey Steps ({items.length})</h4>
+                    <h4 className="font-bold text-gray-900">Section 13: Your Career Journey ({items.length})</h4>
                     <button type="button" onClick={() => updateItems([...items, { title: 'Step Name', timeline: '', points: [] }])} className="text-sm bg-black text-white px-3 py-1.5 rounded flex items-center gap-2">
                         <Plus size={16} /> Add Step
                     </button>
@@ -1418,7 +1483,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
         return (
             <div className="space-y-6">
                 <div className="flex justify-between items-center bg-gray-100 p-4 rounded-lg">
-                    <h4 className="font-bold text-gray-900">Projects / Casestudies ({items.length})</h4>
+                    <h4 className="font-bold text-gray-900">Section 10: Real-World Projects ({items.length})</h4>
                     <button type="button" onClick={() => updateItems([...items, { title: 'New Project', scenario: '', role: '', outcome: '' }])} className="text-sm bg-black text-white px-3 py-1.5 rounded flex items-center gap-2">
                         <Plus size={16} /> Add Project
                     </button>
@@ -1438,13 +1503,17 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
         );
     };
 
-    const PythonOverviewTab = () => {
+    const CourseOverviewTab = () => {
         const section = getSection('course_overview', { items: [] });
         const items = section.items || [];
         const updateItems = (newItems: any[]) => updateSection('course_overview', { ...section, items: newItems });
 
         return (
             <div className="space-y-8">
+                <div className="border-b pb-4 mb-4">
+                    <h3 className="text-xl font-bold text-slate-900">Section 5: Detailed Course Overview (Long Text Blocks)</h3>
+                    <p className="text-sm text-slate-500 italic">Great for in-depth explanations or modular text content with lists.</p>
+                </div>
                 <div className="flex justify-between items-center bg-purple-50 p-4 rounded-xl border border-purple-100">
                     <div>
                         <h4 className="font-bold text-purple-900 text-lg">Python Overview Blocks</h4>
@@ -1549,7 +1618,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
             <div className="space-y-6">
                 <div className="bg-emerald-600 text-white p-6 rounded-2xl flex justify-between items-center">
                     <div>
-                        <h4 className="text-xl font-bold">Jobs & Career Opportunities</h4>
+                        <h4 className="text-xl font-bold">Section 12: Career Paths</h4>
                         <p className="text-emerald-100 text-sm italic">Define roles, required skills, and salary expectations</p>
                     </div>
                     <button type="button" onClick={() => updateItems([...items, { role: 'Job Role', skills: '', companies: '', salary: '' }])} className="bg-white text-emerald-700 px-4 py-2 rounded-lg text-sm font-bold shadow-lg hover:bg-emerald-50 transition-colors flex items-center gap-2">
@@ -1688,29 +1757,31 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
             <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 min-h-[500px]">
                 {activeTab === 'basic' && BasicInfoTab()}
                 {activeTab === 'hero' && HeroTab()}
-                {activeTab === 'overview' && CourseOverviewTab()}
-                {activeTab === 'course_overview' && PythonOverviewTab()}
+                {activeTab === 'overview' && DetailedFeaturesTab()}
+                {activeTab === 'why_choose_us' && SuccessGuaranteeTab()}
+                {activeTab === 'whats_included' && WhatsIncludedTab()}
                 {activeTab === 'curriculum' && CurriculumTab()}
-                {activeTab === 'table_curriculum' && TableCurriculumTab()}
-                {activeTab === 'tools' && ListCheckerTab()}
-                {activeTab === 'hands_on' && RealWorldProjectsTab()}
-                {activeTab === 'why_choose_us' && WhyChooseUsTab()}
-                {activeTab === 'career' && CareerGrowthTab()}
-                {activeTab === 'jobs' && JobRolesTab()}
                 {activeTab === 'audience' && TargetAudienceTab()}
                 {activeTab === 'prerequisites' && PrerequisitesTab()}
+                {activeTab === 'methodology' && LearningOutcomesTab()}
+                {activeTab === 'hands_on' && RealWorldProjectsTab()}
                 {activeTab === 'certification' && CertificationTab()}
-                {activeTab === 'integrations' && GenericJsonTab({ type: "detailed_sap_integrations", title: "SAP Integrations" })}
-                {activeTab === 'methodology' && MethodologyTab()}
-                {activeTab === 'whats_included' && WhatsIncludedTab()}
-                {activeTab === 'roadmap' && RoadmapTab()}
+                {activeTab === 'jobs' && JobRolesTab()}
                 {activeTab === 'journey' && JourneyTab()}
-                {activeTab === 'companies' && HiringCompaniesTab()}
-                {activeTab === 'batches' && BatchesTab()}
-                {activeTab === 'demo' && GenericJsonTab({ type: "detailed_demo_booking", title: "Demo Booking" })}
                 {activeTab === 'faq' && FAQTab()}
+
+                {/* Secondary Sections */}
+                {activeTab === 'course_overview' && CourseOverviewTab()}
+                {activeTab === 'batches' && BatchesTab()}
                 {activeTab === 'testimonials' && TestimonialsTab()}
+                {activeTab === 'companies' && HiringCompaniesTab()}
+                {activeTab === 'roadmap' && RoadmapTab()}
                 {activeTab === 'resources' && ResourcesTab()}
+                {activeTab === 'tools' && ListCheckerTab()}
+                {activeTab === 'table_curriculum' && TableCurriculumTab()}
+                {activeTab === 'demo' && GenericJsonTab({ type: "detailed_demo_booking", title: "Demo Booking" })}
+                {activeTab === 'integrations' && GenericJsonTab({ type: "detailed_sap_integrations", title: "SAP Integrations" })}
+                {activeTab === 'career' && CareerGrowthTab()}
             </div>
         </div>
     );

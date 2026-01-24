@@ -130,28 +130,26 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
     const isPython = slug === 'python-aiml' || slug === 'sap-python-aiml' || slug === 'python-ai-ml';
 
     // Map DB fields to component expectations if they differ (using snake_case in DB, camelCase in components)
-    // Priority: DB values > Local file values
+    // Priority: Local file values (Hardcoded) > DB values (CMS)
     const mappedCourse = {
-        ...localCourse,
         ...course,
-        // Basic Info
-        title: course?.title || localCourse?.title,
+        ...localCourse,
+        // Basic Info - Priority to Local (Code)
+        title: localCourse?.title || course?.title,
         heroHeading: localCourse?.heroHeading || course?.hero_heading,
         heroSubheading: localCourse?.heroSubheading || course?.hero_subheading,
         heroImage: localCourse?.heroImage || course?.hero_image,
-        metaTitle: course?.meta_title || localCourse?.metaTitle,
-        metaDescription: course?.meta_description || localCourse?.metaDescription,
-        price: course?.price || localCourse?.price,
-        duration: course?.duration || localCourse?.duration,
-        syllabusUrl: course?.sections?.find((s: any) => s.type === 'detailed_curriculum')?.syllabusUrl || localCourse?.syllabusUrl,
+        metaTitle: localCourse?.metaTitle || course?.meta_title,
+        metaDescription: localCourse?.metaDescription || course?.meta_description,
+        price: localCourse?.price || course?.price,
+        duration: localCourse?.duration || course?.duration,
+        syllabusUrl: localCourse?.syllabusUrl || course?.sections?.find((s: any) => s.type === 'detailed_curriculum')?.syllabusUrl,
 
-        // Content Sections
-        // Priority: Local (Code) > DB (CMS)
-        // This ensures code updates are always reflected immediately
-        sections: (localCourse?.sections) ? localCourse.sections : course?.sections,
-        features: (localCourse?.features) ? localCourse.features : course?.features,
-        curriculum: (localCourse?.curriculum) ? localCourse.curriculum : course?.curriculum,
-        faqs: (localCourse?.faqs) ? localCourse.faqs : (course?.faqs || defaultFaqs),
+        // Content Sections - Priority: Local (Code) > DB (CMS)
+        sections: (localCourse?.sections && localCourse.sections.length > 0) ? localCourse.sections : course?.sections,
+        features: (localCourse?.features && localCourse.features.length > 0) ? localCourse.features : course?.features,
+        curriculum: (localCourse?.curriculum && localCourse.curriculum.length > 0) ? localCourse.curriculum : course?.curriculum,
+        faqs: (localCourse?.faqs && localCourse.faqs.length > 0) ? localCourse.faqs : (course?.faqs || defaultFaqs),
     };
 
 

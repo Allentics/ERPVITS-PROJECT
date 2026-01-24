@@ -31,7 +31,8 @@ import {
 } from 'lucide-react';
 
 // specific icon mapping based on title keywords
-const getIconForTitle = (title: string) => {
+const getIconForTitle = (title: any) => {
+    if (typeof title !== 'string') return CheckCircle2;
     const t = title.toLowerCase();
     if (t.includes('instructor') || t.includes('expert')) return UserCheck;
     if (t.includes('hands-on') || t.includes('practical')) return Laptop;
@@ -231,7 +232,7 @@ export default function SectionRenderer({ sections, courseName, syllabusUrl }: {
             {sections.map((section, idx) => {
                 switch (section.type) {
                     case 'detailed_features':
-                        return <DetailedFeatures key={idx} {...section} badge={section.badge || "Key Features"} items={section.items} />;
+                        return <DetailedFeatures key={idx} {...section} badge={section.badge || "Why Choose Us"} items={section.items} />;
                     case 'target_audience':
                         return <DetailedTargetAudience key={idx} items={section.items} />;
                     case 'prerequisites':
