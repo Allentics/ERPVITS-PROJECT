@@ -219,10 +219,22 @@ const Navbar = () => {
                                     </div>
                                 </div>
 
-                                {/* Blogs Dropdown */}
-                                <Link href="/blog" className="px-2 py-2 text-white hover:text-orange-500 font-bold transition-colors rounded-lg hover:bg-white/10 text-[13px] xl:text-sm whitespace-nowrap">
-                                    Blogs
-                                </Link>
+                                {/* More Resources Dropdown */}
+                                <div className="relative group">
+                                    <button className="px-2 py-2 text-white group-hover:text-orange-500 font-bold inline-flex items-center transition-colors rounded-lg hover:bg-white/10 focus:outline-none text-[13px] xl:text-sm whitespace-nowrap">
+                                        More Resources <ChevronDown className="ml-1 h-4 w-4" />
+                                    </button>
+                                    <div className="absolute left-0 top-full w-48 bg-white border-t-4 border-orange-500 rounded-b-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left translate-y-2 group-hover:translate-y-0 z-50">
+                                        <div className="py-2">
+                                            <Link href="/blog" className="block px-4 py-3 text-sm text-slate-900 hover:bg-orange-50 hover:text-orange-600 transition-colors border-l-4 border-transparent hover:border-orange-500">
+                                                Blogs
+                                            </Link>
+                                            <Link href="/web-stories" className="block px-4 py-3 text-sm text-slate-900 hover:bg-orange-50 hover:text-orange-600 transition-colors border-l-4 border-transparent hover:border-orange-500">
+                                                Web Stories
+                                            </Link>
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <Link href="/contact" className="px-2 py-2 text-white hover:text-orange-500 font-bold transition-colors rounded-lg hover:bg-white/10 text-[13px] xl:text-sm whitespace-nowrap">
                                     Contact
@@ -292,7 +304,19 @@ const Navbar = () => {
                             </div>
                         </div>
 
-                        <Link href="/blog" className="block px-4 py-3 rounded-xl text-base font-semibold text-white hover:text-orange-500 hover:bg-white/5" onClick={() => setIsOpen(false)}>Blogs</Link>
+                        <div>
+                            <button onClick={() => toggleDropdown('resources')} className="w-full flex justify-between items-center px-4 py-3 rounded-xl text-base font-semibold text-white hover:text-orange-500 hover:bg-white/5">
+                                More Resources <ChevronDown className={cn("h-5 w-5 transition-transform", activeDropdown === 'resources' && "rotate-180")} />
+                            </button>
+                            <div className={cn("pl-4 space-y-1 overflow-hidden transition-all duration-300", activeDropdown === 'resources' ? "max-h-[500px]" : "max-h-0")}>
+                                <Link href="/blog" className="block px-4 py-2 rounded-lg text-sm text-slate-300 hover:text-orange-500 hover:bg-white/5" onClick={() => setIsOpen(false)}>
+                                    Blogs
+                                </Link>
+                                <Link href="/web-stories" className="block px-4 py-2 rounded-lg text-sm text-slate-300 hover:text-orange-500 hover:bg-white/5" onClick={() => setIsOpen(false)}>
+                                    Web Stories
+                                </Link>
+                            </div>
+                        </div>
 
                         <Link href="/contact" className="block px-4 py-3 rounded-xl text-base font-semibold text-white hover:text-orange-500 hover:bg-white/5" onClick={() => setIsOpen(false)}>Contact</Link>
 
