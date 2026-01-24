@@ -134,7 +134,8 @@ export const abapHanaContent = {
             ],
             stats: [
                 { value: "60-70", label: "Hours of Live Training", color: "orange" },
-                { value: "100+", label: "Hands-On Coding Labs", color: "orange" }
+                { value: "100+", label: "Hands-On Coding Labs", color: "orange" },
+                { value: "24/7", label: "SAP HANA Lab Access", color: "orange" }
             ]
         },
         {
@@ -890,11 +891,7 @@ Competitive Advantage: Stand out in technical interviews and project selections`
                 }
             ]
         },
-        {
-            type: 'rich_text',
-            title: "Download the Most Asked SAP ABAP Interview Questions",
-            content: "Prepare for your interviews with our curated list of 100+ SAP ABAP on HANA interview questions and answers, covering everything from Data Dictionary and OOPs to HANA performance tuning and FIORI/OData services.\n\n**[Download Free Interview Guide](#)**"
-        },
+
         {
             type: 'detailed_upcoming_batches',
             batches: [
