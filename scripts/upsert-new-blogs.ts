@@ -188,6 +188,16 @@ const blogPosts = [
         category: "SAP TRM",
         author: "ERPVITS Expert",
         content: "CONTENT_MANAGED_LOCALLY"
+    },
+    {
+        id: "ultimate-guide-to-sap-fieldglass-login-access-setup",
+        title: "Ultimate Guide to SAP Fieldglass Login & Access Setup (Step-by-Step)",
+        description: "Complete SAP Fieldglass login guide for buyers, suppliers & S-users. Learn step-by-step login processes, fix common issues & secure your account with best practices for workforce management.",
+        image: "/images/blog/sap-fieldglass-login-guide.png",
+        date: "Jan 12, 2026",
+        category: "SAP Fieldglass",
+        author: "ERPVITS Expert",
+        content: "CONTENT_MANAGED_LOCALLY"
     }
 ];
 

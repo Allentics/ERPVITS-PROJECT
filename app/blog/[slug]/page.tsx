@@ -24,6 +24,7 @@ import MtoAndStoProcessContent from '@/components/blog/MtoAndStoProcessContent';
 import MasterSapAribaIndustryContent from '@/components/blog/MasterSapAribaIndustryContent';
 import SapTrmMasterDataContent from '@/components/blog/SapTrmMasterDataContent';
 import SapTrmComplementaryContent from '@/components/blog/SapTrmComplementaryContent';
+import SapFieldglassLoginGuideContent from '@/components/blog/SapFieldglassLoginGuideContent';
 import { Metadata } from 'next';
 
 export const dynamic = 'force-dynamic';
@@ -53,6 +54,7 @@ const blogHeroImages: Record<string, string> = {
     'master-sap-ariba-with-industry-leading-online-training': '/images/blog/master-sap-ariba.webp',
     'sap-trm-master-data-essentials': '/images/SAP TRM Blog Image ERPVITS.webp',
     'sap-trm-complementary-technologies': '/images/blog/sap-trm-complementary.webp',
+    'ultimate-guide-to-sap-fieldglass-login-access-setup': '/images/blog/sap-fieldglass-login-guide.png',
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -139,6 +141,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             case 'master-sap-ariba-with-industry-leading-online-training': return MasterSapAribaIndustryContent;
             case 'sap-trm-master-data-essentials': return SapTrmMasterDataContent;
             case 'sap-trm-complementary-technologies': return SapTrmComplementaryContent;
+            case 'ultimate-guide-to-sap-fieldglass-login-access-setup': return SapFieldglassLoginGuideContent;
             default: return null;
         }
     })();
