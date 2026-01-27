@@ -707,11 +707,26 @@ export const c4cContent = {
             ],
             imageSrc: "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP C4C Tech Infographic.webp",
             benefits: [
-                "Universal Credential Acknowledgment: SAP certificates are honored everywhere.",
-                "Career Boost: Certified developers earn 20-35% more than their non-certified counterparts.",
-                "Edge: You will get priority in developer job applications and cloud consulting proposals.",
-                "Added Knowledge: Certification will push you to the next level of cloud development.",
-                "Client Trust: You have proven to potential clients and employers that you meet high professional standards."
+                {
+                    title: "Universal Credential Acknowledgment",
+                    desc: "SAP certificates are honored everywhere."
+                },
+                {
+                    title: "Career Boost",
+                    desc: "Certified developers earn 20-35% more than their non-certified counterparts."
+                },
+                {
+                    title: "Edge",
+                    desc: "You will get priority in developer job applications and cloud consulting proposals."
+                },
+                {
+                    title: "Added Knowledge",
+                    desc: "Certification will push you to the next level of cloud development."
+                },
+                {
+                    title: "Client Trust",
+                    desc: "You have proven to potential clients and employers that you meet high professional standards."
+                }
             ]
         },
         {

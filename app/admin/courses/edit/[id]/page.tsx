@@ -33,6 +33,7 @@ const TABS = [
     { id: 'table_curriculum', label: '22. Curriculum Table', icon: Library },
     { id: 'demo', label: '23. Demo Booking', icon: MessageSquare },
     { id: 'integrations', label: '24. SAP Integrations', icon: Link2 },
+    { id: 'career', label: '25. Career Opportunities', icon: TrendingUp },
 ];
 
 export default function EditCoursePage({ params }: { params: Promise<{ id: string }> }) {
