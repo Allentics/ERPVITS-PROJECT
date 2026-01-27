@@ -3,38 +3,36 @@
 import React, { useEffect, useState, use } from 'react';
 import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
-import { ArrowLeft, Save, Loader2, Link as LinkIcon, Plus, Trash2, ClipboardList, Target, BookOpen, Library, Laptop, Star, TrendingUp, Users, Trophy, Link as Link2, NotebookPen, AlarmClock, HelpCircle, MessageSquareQuote, FileText, Calendar, MessageSquare, Briefcase, Layers } from 'lucide-react';
+import { ArrowLeft, Save, Loader2, Link as LinkIcon, Plus, Trash2, ClipboardList, Target, BookOpen, Library, Laptop, Star, TrendingUp, Users, Trophy, Link as Link2, NotebookPen, AlarmClock, HelpCircle, MessageSquareQuote, FileText, Calendar, MessageSquare, Briefcase, Layers, ShieldCheck, Building2 } from 'lucide-react';
 import Link from 'next/link';
 
-// Tab Definitions
-const TABS = [
-    { id: 'basic', label: '1. Basic Information', icon: ClipboardList },
-    { id: 'hero', label: '2. Hero & Primary Stats', icon: Target },
-    { id: 'overview', label: '3. Why Choose Us', icon: BookOpen },
-    { id: 'why_choose_us', label: '4. Success Guarantee & Credibility', icon: Star },
-    { id: 'whats_included', label: '5. Complete Learning Package', icon: AlarmClock },
-    { id: 'curriculum', label: '6. Comprehensive Curriculum', icon: Library },
-    { id: 'audience', label: '7. Who Should Enroll (Audience)', icon: Users },
-    { id: 'prerequisites', label: '8. Prerequisites', icon: ClipboardList },
-    { id: 'methodology', label: '9. Learning Outcomes', icon: NotebookPen },
-    { id: 'hands_on', label: '10. Real-World Projects', icon: Laptop },
-    { id: 'certification', label: '11. Certification', icon: Trophy },
-    { id: 'jobs', label: '12. Career Paths', icon: Briefcase },
-    { id: 'journey', label: '13. Your Career Journey', icon: Target },
-    { id: 'faq', label: '14. FAQ', icon: HelpCircle },
-    // Secondary Sections
-    { id: 'course_overview', label: '15. Detailed Overview (Long Text)', icon: BookOpen },
-    { id: 'batches', label: '16. Upcoming Online Batches', icon: Calendar },
-    { id: 'testimonials', label: '17. Student Success Stories', icon: MessageSquareQuote },
-    { id: 'companies', label: '18. Global Hiring Partners', icon: Users },
-    { id: 'roadmap', label: '19. Career Roadmap', icon: TrendingUp },
-    { id: 'resources', label: '20. Syllabus & Downloadables', icon: FileText },
-    { id: 'tools', label: '21. Technology Tools', icon: Laptop },
-    { id: 'table_curriculum', label: '22. Curriculum Table', icon: Library },
-    { id: 'demo', label: '23. Demo Booking', icon: MessageSquare },
-    { id: 'integrations', label: '24. SAP Integrations', icon: Link2 },
-    { id: 'career', label: '25. Career Opportunities', icon: TrendingUp },
-];
+// Section Metadata Mapping for Dynamic Tabs
+const SECTION_MAP: Record<string, { label: string, icon: any, id: string }> = {
+    'course_overview': { id: 'course_overview', label: 'Detailed Overview', icon: BookOpen },
+    'detailed_features': { id: 'overview', label: 'Features / Why Choose Us', icon: Star },
+    'content_with_image': { id: 'why_choose_us', label: 'Success Guarantee', icon: ShieldCheck },
+    'whats_included': { id: 'whats_included', label: 'Complete Package', icon: AlarmClock },
+    'detailed_curriculum': { id: 'curriculum', label: 'Course Curriculum', icon: Library },
+    'table_curriculum': { id: 'table_curriculum', label: 'Curriculum Table', icon: Library },
+    'detailed_target_audience': { id: 'audience', label: 'Target Audience', icon: Users },
+    'detailed_prerequisites': { id: 'prerequisites', label: 'Entry Prerequisites', icon: ClipboardList },
+    'detailed_learning_outcomes': { id: 'methodology', label: 'Learning Outcomes', icon: NotebookPen },
+    'real_world_projects': { id: 'hands_on', label: 'Real-World Projects', icon: Laptop },
+    'real_world_scenarios': { id: 'hands_on', label: 'Real-World Scenarios', icon: Laptop },
+    'detailed_certification': { id: 'certification', label: 'Professional Certification', icon: Trophy },
+    'job_roles_table': { id: 'jobs', label: 'Career Paths', icon: Briefcase },
+    'detailed_career_opportunities': { id: 'career', label: 'Career Opportunities', icon: TrendingUp },
+    'detailed_post_training_journey': { id: 'journey', label: 'Career Growth Journey', icon: Target },
+    'detailed_faq': { id: 'faq', label: 'FAQ', icon: HelpCircle },
+    'detailed_upcoming_batches': { id: 'batches', label: 'Upcoming Batches', icon: Calendar },
+    'detailed_testimonials': { id: 'testimonials', label: 'Student Reviews', icon: MessageSquareQuote },
+    'testimonials': { id: 'testimonials', label: 'Student Reviews', icon: MessageSquareQuote },
+    'detailed_companies': { id: 'companies', label: 'Hiring Partners', icon: Building2 },
+    'detailed_career_roadmap': { id: 'roadmap', label: 'Career Roadmap', icon: TrendingUp },
+    'list_checker': { id: 'tools', label: 'Tools Covered', icon: Laptop },
+    'detailed_demo_booking': { id: 'demo', label: 'Demo Booking', icon: MessageSquare },
+    'detailed_sap_integrations': { id: 'integrations', label: 'SAP Integrations', icon: LinkIcon },
+};
 
 export default function EditCoursePage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = use(params);
@@ -64,8 +62,53 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                 data.sections = [];
             }
 
+            // Standardize field names for the UI
+            data.sections = data.sections.map((section: any) => {
+                // Standardize FAQ items (q/a -> question/answer)
+                if (section.type === 'detailed_faq' && section.items) {
+                    section.items = section.items.map((item: any) => ({
+                        ...item,
+                        question: item.question || item.q || '',
+                        answer: item.answer || item.a || ''
+                    }));
+                }
+
+                // Standardize Testimonials (name/quote -> author/text)
+                if (section.type === 'detailed_testimonials' && section.items) {
+                    section.items = section.items.map((item: any) => ({
+                        ...item,
+                        author: item.author || item.name || '',
+                        text: item.text || item.quote || ''
+                    }));
+                }
+
+                // Standardize Upcoming Batches (batches -> items)
+                if (section.type === 'detailed_upcoming_batches') {
+                    if (section.batches && !section.items) {
+                        section.items = section.batches;
+                    }
+                }
+
+                // Standardize Learning Outcomes (make sure it's not breaking)
+                if (section.type === 'detailed_learning_outcomes' && !section.items) {
+                    section.items = [];
+                }
+
+                return section;
+            });
+
+            // Standardize top-level FAQs
+            if (data.faqs && Array.isArray(data.faqs)) {
+                data.faqs = data.faqs.map((f: any) => ({
+                    ...f,
+                    question: f.question || f.q || '',
+                    answer: f.answer || f.a || ''
+                }));
+            }
+
             setFormData(data);
         } catch (err: any) {
+            console.error('Fetch error:', err);
             alert('Error fetching course: ' + err.message);
             router.push('/admin/courses');
         } finally {
@@ -164,6 +207,43 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
     }
 
     if (!formData) return null;
+
+    // Dynamically compute tabs based on course content
+    const courseTabs = (() => {
+        const baseTabs = [
+            { id: 'basic', label: '1. Basic Info', icon: ClipboardList },
+            { id: 'hero', label: '2. Hero Content', icon: Target },
+        ];
+
+        // Get unique section types from the database, maintain order if it's Python
+        let types = formData.sections.map((s: any) => s.type);
+        if (id !== 'python-aiml') {
+            // For others, deduplicate and keep base logic
+            types = Array.from(new Set(types));
+        }
+
+        const dynamicTabs = types.map((type: string) => {
+            return SECTION_MAP[type] || { id: type, label: type, icon: Layers };
+        }).filter((t: any) => !['basic', 'hero'].includes(t.id));
+
+        // Deduplicate final tab list by ID
+        const finalTabs: any[] = [...baseTabs];
+        const seen = new Set(['basic', 'hero']);
+
+        dynamicTabs.forEach((tab: any) => {
+            if (!seen.has(tab.id)) {
+                // Numbering
+                const num = finalTabs.length + 1;
+                finalTabs.push({ ...tab, label: `${num}. ${tab.label}` });
+                seen.add(tab.id);
+            }
+        });
+
+        // Extras
+        finalTabs.push({ id: 'raw_sections', label: `${finalTabs.length + 1}. Raw Data (Failsafe)`, icon: Layers });
+
+        return finalTabs;
+    })();
 
     // --- Tab Content Components ---
 
@@ -322,98 +402,69 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
     );
 
     const DetailedFeaturesTab = () => {
-        const section = getSection('detailed_features', { items: [] });
-        const items = section.items || [];
-        const updateOverview = (newItems: any[]) => updateSection('detailed_features', { ...section, items: newItems });
+        const matchingSections = formData.sections.filter((s: any) => s.type === 'detailed_features');
+        const displaySections = matchingSections.length > 0 ? matchingSections : [{ type: 'detailed_features', items: [] }];
+
+        const updateSectionData = (section: any, newData: any) => {
+            const actualIdx = formData.sections.indexOf(section);
+            const newSections = [...formData.sections];
+            if (actualIdx !== -1) {
+                newSections[actualIdx] = { ...section, ...newData };
+            } else {
+                newSections.push({ ...section, ...newData });
+            }
+            setFormData({ ...formData, sections: newSections });
+        };
 
         return (
-            <div className="space-y-6">
+            <div className="space-y-12">
                 <div className="border-b pb-4 mb-6">
-                    <h3 className="text-xl font-bold text-slate-900">Section 3: Why Choose Us</h3>
-                    <p className="text-sm text-slate-500 italic">Strategic advantages and unique selling points.</p>
+                    <h3 className="text-xl font-bold text-slate-900">Features / Why Choose Us</h3>
+                    <p className="text-sm text-slate-500 italic">Managing {displaySections.length} features section(s).</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                        <label className="text-sm font-semibold text-gray-700">Section Title</label>
-                        <input
-                            value={section.title || ''}
-                            onChange={(e) => updateSection('detailed_features', { ...section, title: e.target.value })}
-                            className="w-full p-2 border rounded"
-                        />
-                    </div>
-                    <div className="space-y-2">
-                        <label className="text-sm font-semibold text-gray-700">Badge Label (Top Tag)</label>
-                        <input
-                            value={section.badge || ''}
-                            onChange={(e) => updateSection('detailed_features', { ...section, badge: e.target.value })}
-                            className="w-full p-2 border rounded"
-                            placeholder="e.g. Why Choose Us"
-                        />
-                    </div>
-                </div>
-                <div className="space-y-2">
-                    <label className="text-sm font-semibold text-gray-700">Section Subtitle</label>
-                    <div className="relative">
-                        <textarea
-                            id="overview_subtitle"
-                            value={section.subtitle || ''}
-                            onChange={(e) => updateSection('detailed_features', { ...section, subtitle: e.target.value })}
-                            className="w-full p-2 border rounded pr-10"
-                            rows={2}
-                        />
-                        <button type="button" onClick={() => insertHyperlink('overview_subtitle')} className="absolute top-2 right-2 text-gray-400 hover:text-orange-500" title="Copy Markdown Link">
-                            <LinkIcon size={16} />
-                        </button>
-                    </div>
-                </div>
-                <div className="space-y-4">
-                    <h4 className="font-bold text-gray-900 border-b pb-2 flex justify-between items-center">
-                        Why Choose Us
-                        <button type="button" onClick={() => updateOverview([...items, { title: 'New Feature', description: '' }])} className="text-xs bg-orange-50 text-orange-600 px-2 py-1 rounded hover:bg-orange-100 flex items-center gap-1">
-                            <Plus size={14} /> Add Feature
-                        </button>
-                    </h4>
-                    {items.map((item: any, idx: number) => (
-                        <div key={idx} className="bg-gray-50 p-4 rounded-lg border border-gray-100 relative group">
-                            <button
-                                type="button"
-                                onClick={() => updateOverview(items.filter((_: any, i: number) => i !== idx))}
-                                className="absolute top-2 right-2 text-red-400 opacity-0 group-hover:opacity-100 hover:text-red-600 transition-opacity"
-                            >
-                                <Trash2 size={16} />
-                            </button>
-                            <div className="grid gap-3">
-                                <input
-                                    value={item.title || ''}
-                                    onChange={(e) => {
-                                        const newItems = [...items];
-                                        newItems[idx].title = e.target.value;
-                                        updateOverview(newItems);
-                                    }}
-                                    className="w-full p-2 border rounded text-sm font-bold"
-                                    placeholder="Feature Title"
-                                />
-                                <div className="relative">
-                                    <textarea
-                                        id={`feature_desc_${idx}`}
-                                        value={item.description || ''}
-                                        onChange={(e) => {
-                                            const newItems = [...items];
-                                            newItems[idx].description = e.target.value;
-                                            updateOverview(newItems);
-                                        }}
-                                        className="w-full p-2 border rounded text-sm pr-8"
-                                        placeholder="Feature Description"
-                                        rows={2}
-                                    />
-                                    <button type="button" onClick={() => insertHyperlink(`feature_desc_${idx}`)} className="absolute top-2 right-2 text-gray-400 hover:text-orange-500" title="Copy Markdown Link">
-                                        <LinkIcon size={14} />
-                                    </button>
+
+                {displaySections.map((section: any, sIdx: number) => {
+                    const items = section.items || [];
+                    const updateItems = (newItems: any[]) => updateSectionData(section, { items: newItems });
+
+                    return (
+                        <div key={sIdx} className="space-y-6 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm relative">
+                            <div className="flex justify-between items-center mb-4">
+                                <h4 className="font-bold text-gray-700">Section Instance {sIdx + 1}</h4>
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="space-y-2">
+                                    <label className="text-sm font-semibold text-gray-700">Section Title</label>
+                                    <input value={section.title || ''} onChange={(e) => updateSectionData(section, { title: e.target.value })} className="w-full p-2 border rounded" />
+                                </div>
+                                <div className="space-y-2">
+                                    <label className="text-sm font-semibold text-gray-700">Badge Label</label>
+                                    <input value={section.badge || ''} onChange={(e) => updateSectionData(section, { badge: e.target.value })} className="w-full p-2 border rounded" />
                                 </div>
                             </div>
+                            <div className="space-y-2">
+                                <label className="text-sm font-semibold text-gray-700">Section Subtitle</label>
+                                <textarea value={section.subtitle || ''} onChange={(e) => updateSectionData(section, { subtitle: e.target.value })} className="w-full p-2 border rounded" rows={2} />
+                            </div>
+
+                            <div className="space-y-4 pt-4 border-t">
+                                <h5 className="font-bold text-gray-900 flex justify-between items-center">
+                                    Feature Items ({items.length})
+                                    <button type="button" onClick={() => updateItems([...items, { title: 'New Feature', description: '' }])} className="text-xs bg-black text-white px-2 py-1 rounded">Add Item</button>
+                                </h5>
+                                {items.map((item: any, idx: number) => (
+                                    <div key={idx} className="bg-gray-50 p-4 rounded-lg border relative group">
+                                        <button type="button" onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))} className="absolute top-2 right-2 text-red-400 opacity-0 group-hover:opacity-100"><Trash2 size={16} /></button>
+                                        <div className="grid gap-2">
+                                            <input value={item.title || ''} onChange={(e) => { const n = [...items]; n[idx].title = e.target.value; updateItems(n); }} className="w-full p-2 border rounded text-sm font-bold" placeholder="Title" />
+                                            <textarea value={item.description || ''} onChange={(e) => { const n = [...items]; n[idx].description = e.target.value; updateItems(n); }} className="w-full p-2 border rounded text-sm" placeholder="Description" rows={2} />
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                    ))}
-                </div>
+                    );
+                })}
             </div>
         );
     };
@@ -768,101 +819,79 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
     };
 
     const WhatsIncludedTab = () => {
-        const section = getSection('whats_included', { features: [], stats: [] });
-        const features = section.features || [];
-        const stats = section.stats || [];
+        const matchingSections = formData.sections.filter((s: any) => s.type === 'whats_included');
+        const displaySections = matchingSections.length > 0 ? matchingSections : [{ type: 'whats_included', items: [], stats: [] }];
 
-        const updateFeatures = (newFeatures: any[]) => updateSection('whats_included', { ...section, features: newFeatures });
-        const updateStats = (newStats: any[]) => updateSection('whats_included', { ...section, stats: newStats });
+        const updateSectionData = (section: any, newData: any) => {
+            const actualIdx = formData.sections.indexOf(section);
+            const newSections = [...formData.sections];
+            if (actualIdx !== -1) {
+                newSections[actualIdx] = { ...section, ...newData };
+            } else {
+                newSections.push({ ...section, ...newData });
+            }
+            setFormData({ ...formData, sections: newSections });
+        };
 
         return (
-            <div className="space-y-6">
+            <div className="space-y-12">
                 <div className="border-b pb-4 mb-6">
-                    <h3 className="text-xl font-bold text-slate-900">Section 5: Complete Learning Package</h3>
-                    <p className="text-sm text-slate-500 italic">Everything included in the course: access, materials, and certificates.</p>
-                </div>
-                <div className="space-y-2">
-                    <label className="text-sm font-semibold text-gray-700">Section Title</label>
-                    <input
-                        value={section.title || ''}
-                        onChange={(e) => updateSection('whats_included', { ...section, title: e.target.value })}
-                        className="w-full p-2 border rounded"
-                        placeholder="What's Included..."
-                    />
-                </div>
-                <div className="space-y-2">
-                    <label className="text-sm font-semibold text-gray-700">Badge</label>
-                    <input
-                        value={section.badge || ''}
-                        onChange={(e) => updateSection('whats_included', { ...section, badge: e.target.value })}
-                        className="w-full p-2 border rounded"
-                        placeholder="Complete Learning Package"
-                    />
-                </div>
-                <div className="space-y-2">
-                    <label className="text-sm font-semibold text-gray-700">Description</label>
-                    <textarea
-                        value={section.description || ''}
-                        onChange={(e) => updateSection('whats_included', { ...section, description: e.target.value })}
-                        className="w-full p-2 border rounded"
-                        placeholder="Subtitle description..."
-                    />
+                    <h3 className="text-xl font-bold text-slate-900">Complete Learning Package</h3>
+                    <p className="text-sm text-slate-500 italic">Managing {displaySections.length} package section(s).</p>
                 </div>
 
-                <div className="space-y-4 pt-4 border-t">
-                    <div className="flex justify-between items-center bg-gray-100 p-4 rounded-lg">
-                        <h4 className="font-bold text-gray-900">Features List</h4>
-                        <button type="button" onClick={() => updateFeatures([...features, { title: 'New Feature', description: '' }])} className="text-sm bg-black text-white px-3 py-1.5 rounded flex items-center gap-2">
-                            <Plus size={16} /> Add Feature
-                        </button>
-                    </div>
-                    <div className="grid gap-4">
-                        {features.map((item: any, idx: number) => (
-                            <div key={idx} className="bg-white p-4 border rounded-lg shadow-sm group relative">
-                                <button type="button" onClick={() => updateFeatures(features.filter((_: any, i: number) => i !== idx))} className="absolute top-2 right-2 text-red-400 opacity-0 group-hover:opacity-100"><Trash2 size={16} /></button>
+                {displaySections.map((section: any, sIdx: number) => {
+                    const features = section.features || section.items || [];
+                    const stats = section.stats || [];
+
+                    return (
+                        <div key={sIdx} className="space-y-6 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm relative">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div className="space-y-2">
-                                    <input
-                                        value={item.title || ''}
-                                        onChange={(e) => {
-                                            const newF = [...features];
-                                            newF[idx].title = e.target.value;
-                                            updateFeatures(newF);
-                                        }}
-                                        className="w-full p-2 border rounded font-bold text-sm"
-                                        placeholder="Feature Title"
-                                    />
-                                    <textarea
-                                        value={item.description || ''}
-                                        onChange={(e) => {
-                                            const newF = [...features];
-                                            newF[idx].description = e.target.value;
-                                            updateFeatures(newF);
-                                        }}
-                                        className="w-full p-2 border rounded text-xs"
-                                        placeholder="Description"
-                                        rows={2}
-                                    />
+                                    <label className="text-sm font-semibold text-gray-700">Section Title</label>
+                                    <input value={section.title || ''} onChange={(e) => updateSectionData(section, { title: e.target.value })} className="w-full p-2 border rounded" />
+                                </div>
+                                <div className="space-y-2">
+                                    <label className="text-sm font-semibold text-gray-700">Badge</label>
+                                    <input value={section.badge || ''} onChange={(e) => updateSectionData(section, { badge: e.target.value })} className="w-full p-2 border rounded" />
                                 </div>
                             </div>
-                        ))}
-                    </div>
-                </div>
 
-                <div className="space-y-4 pt-4 border-t">
-                    <h4 className="font-bold text-gray-900">Stats Cards</h4>
-                    <textarea
-                        value={JSON.stringify(stats, null, 2)}
-                        onChange={(e) => {
-                            try { updateStats(JSON.parse(e.target.value)) } catch { }
-                        }}
-                        className="w-full p-3 border rounded font-mono text-xs h-32 bg-gray-50"
-                        placeholder='[{"value": "50+", "label": "Hours"}, ...]'
-                    />
-                    <p className="text-xs text-gray-500">Enter JSON for stats: val, label, color</p>
-                </div>
+                            <div className="space-y-4 pt-4 border-t">
+                                <h4 className="font-bold text-gray-900 flex justify-between items-center">
+                                    Features List
+                                    <button type="button" onClick={() => updateSectionData(section, { features: [...features, { title: 'New', description: '' }] })} className="text-xs bg-black text-white px-2 py-1 rounded">Add Feature</button>
+                                </h4>
+                                <div className="grid gap-4">
+                                    {features.map((item: any, idx: number) => (
+                                        <div key={idx} className="bg-white p-4 border rounded-lg shadow-sm group relative">
+                                            <button type="button" onClick={() => updateSectionData(section, { features: features.filter((_: any, i: number) => i !== idx) })} className="absolute top-2 right-2 text-red-400 opacity-0 group-hover:opacity-100"><Trash2 size={16} /></button>
+                                            <input value={typeof item === 'string' ? item : (item.title || '')} onChange={(e) => {
+                                                const n = [...features];
+                                                if (typeof item === 'string') n[idx] = e.target.value;
+                                                else n[idx].title = e.target.value;
+                                                updateSectionData(section, { features: n });
+                                            }} className="w-full p-2 border rounded font-bold text-sm mb-1" />
+                                            {typeof item !== 'string' && <textarea value={item.description || ''} onChange={(e) => { const n = [...features]; n[idx].description = e.target.value; updateSectionData(section, { features: n }); }} className="w-full p-2 border rounded text-xs" rows={2} />}
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div className="space-y-4 pt-4 border-t">
+                                <h4 className="font-bold text-gray-900">Stats Cards (JSON)</h4>
+                                <textarea
+                                    value={JSON.stringify(stats, null, 2)}
+                                    onChange={(e) => { try { updateSectionData(section, { stats: JSON.parse(e.target.value) }) } catch { } }}
+                                    className="w-full p-3 border rounded font-mono text-xs h-32 bg-gray-50"
+                                />
+                            </div>
+                        </div>
+                    );
+                })}
             </div>
-        )
-    }
+        );
+    };
 
     const FAQTab = () => {
         // Handle FAQs which might be in sections OR top level
@@ -904,16 +933,20 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                             onChange={(e) => {
                                 const newItems = [...items];
                                 newItems[idx].question = e.target.value;
+                                // Keep q in sync for database compatibility if needed
+                                newItems[idx].q = e.target.value;
                                 updateFAQs(newItems);
                             }}
                             className="w-full p-2 border rounded font-semibold"
                             placeholder="Question"
                         />
                         <textarea
-                            value={item.answer || ''}
+                            value={item.answer || item.a || ''}
                             onChange={(e) => {
                                 const newItems = [...items];
                                 newItems[idx].answer = e.target.value;
+                                // Keep a in sync
+                                newItems[idx].a = e.target.value;
                                 updateFAQs(newItems);
                             }}
                             className="w-full p-2 border rounded text-sm"
@@ -1334,8 +1367,8 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                     {items.map((item: any, idx: number) => (
                         <div key={idx} className="bg-white p-4 border rounded-lg shadow-sm group relative grid md:grid-cols-3 gap-4">
                             <button type="button" onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))} className="absolute top-2 right-2 text-red-400 opacity-0 group-hover:opacity-100"><Trash2 size={16} /></button>
-                            <div><label className="text-xs font-bold text-gray-500">Stage / Year</label><input value={item.stage || ''} onChange={(e) => { const n = [...items]; n[idx].stage = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" placeholder="e.g. Year 1-2" /></div>
-                            <div><label className="text-xs font-bold text-gray-500">Role Title</label><input value={item.title || ''} onChange={(e) => { const n = [...items]; n[idx].title = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" /></div>
+                            <div><label className="text-xs font-bold text-gray-500">Stage / Year / Phase</label><input value={item.stage || item.phase || ''} onChange={(e) => { const n = [...items]; n[idx].stage = e.target.value; n[idx].phase = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" placeholder="e.g. Phase 1" /></div>
+                            <div><label className="text-xs font-bold text-gray-500">Role Title / Milestone</label><input value={item.title || ''} onChange={(e) => { const n = [...items]; n[idx].title = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" /></div>
                             <div className="md:col-span-3"><label className="text-xs font-bold text-gray-500">Description</label><textarea value={item.description || ''} onChange={(e) => { const n = [...items]; n[idx].description = e.target.value; updateItems(n); }} className="w-full p-2 border rounded h-16" /></div>
                         </div>
                     ))}
@@ -1381,12 +1414,33 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
     };
 
     const CareerGrowthTab = () => {
-        const section = getSection('detailed_career_opportunities', { items: [] });
+        const section = getSection('detailed_career_opportunities', { items: [], stats: [] });
         const items = section.items || [];
         const updateItems = (newItems: any[]) => updateSection('detailed_career_opportunities', { ...section, items: newItems });
 
         return (
             <div className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                        <label className="text-sm font-semibold text-gray-700">Section Title</label>
+                        <input value={section.title || ''} onChange={(e) => updateSection('detailed_career_opportunities', { ...section, title: e.target.value })} className="w-full p-2 border rounded" placeholder="Career Opportunities..." />
+                    </div>
+                    <div className="space-y-2">
+                        <label className="text-sm font-semibold text-gray-700">Section Subtitle</label>
+                        <input value={section.subtitle || ''} onChange={(e) => updateSection('detailed_career_opportunities', { ...section, subtitle: e.target.value })} className="w-full p-2 border rounded" placeholder="Step Into Global Roles..." />
+                    </div>
+                </div>
+
+                <div className="space-y-2">
+                    <label className="text-sm font-semibold text-gray-700">Career Stats (JSON)</label>
+                    <textarea
+                        value={JSON.stringify(section.stats || [], null, 2)}
+                        onChange={(e) => { try { updateSection('detailed_career_opportunities', { ...section, stats: JSON.parse(e.target.value) }) } catch { } }}
+                        className="w-full p-2 border rounded font-mono text-xs h-24"
+                        placeholder='[{"value": "190%+", "label": "Job Growth"}]'
+                    />
+                </div>
+
                 <div className="flex justify-between items-center bg-gray-100 p-4 rounded-lg">
                     <h4 className="font-bold text-gray-900">Career Roles ({items.length})</h4>
                     <button type="button" onClick={() => updateItems([...items, { title: 'New Role', salary: '', responsibilities: '' }])} className="text-sm bg-black text-white px-3 py-1.5 rounded flex items-center gap-2">
@@ -1429,11 +1483,21 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                             <div className="grid md:grid-cols-2 gap-4">
                                 <div className="md:col-span-2">
                                     <label className="text-xs font-bold text-gray-500">Review Text</label>
-                                    <textarea value={item.text || ''} onChange={(e) => { const n = [...items]; n[idx].text = e.target.value; updateItems(n); }} className="w-full p-2 border rounded text-sm h-20" />
+                                    <textarea value={item.text || item.quote || ''} onChange={(e) => {
+                                        const n = [...items];
+                                        n[idx].text = e.target.value;
+                                        n[idx].quote = e.target.value;
+                                        updateItems(n);
+                                    }} className="w-full p-2 border rounded text-sm h-20" />
                                 </div>
                                 <div>
                                     <label className="text-xs font-bold text-gray-500">Author Name</label>
-                                    <input value={item.author || item.name || ''} onChange={(e) => { const n = [...items]; n[idx].author = e.target.value; updateItems(n); }} className="w-full p-2 border rounded text-sm" />
+                                    <input value={item.author || item.name || ''} onChange={(e) => {
+                                        const n = [...items];
+                                        n[idx].author = e.target.value;
+                                        n[idx].name = e.target.value;
+                                        updateItems(n);
+                                    }} className="w-full p-2 border rounded text-sm" />
                                 </div>
                                 <div>
                                     <label className="text-xs font-bold text-gray-500">Role / Job Title</label>
@@ -1505,152 +1569,209 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
     };
 
     const CourseOverviewTab = () => {
-        const section = getSection('course_overview', { items: [] });
-        const items = section.items || [];
-        const updateItems = (newItems: any[]) => updateSection('course_overview', { ...section, items: newItems });
+        const matchingSections = formData.sections.filter((s: any) => s.type === 'course_overview');
+        const displaySections = matchingSections.length > 0 ? matchingSections : [{ type: 'course_overview', items: [] }];
+
+        const updateSectionItems = (section: any, newItems: any[]) => {
+            const actualIdx = formData.sections.indexOf(section);
+            const newSections = [...formData.sections];
+            if (actualIdx !== -1) {
+                newSections[actualIdx] = { ...section, items: newItems };
+            } else {
+                newSections.push({ ...section, items: newItems });
+            }
+            setFormData({ ...formData, sections: newSections });
+        };
+
+        const updateSectionTitle = (section: any, title: string) => {
+            const actualIdx = formData.sections.indexOf(section);
+            const newSections = [...formData.sections];
+            if (actualIdx !== -1) {
+                newSections[actualIdx] = { ...section, sectionTitle: title };
+            }
+            setFormData({ ...formData, sections: newSections });
+        };
 
         return (
-            <div className="space-y-8">
+            <div className="space-y-12">
                 <div className="border-b pb-4 mb-4">
-                    <h3 className="text-xl font-bold text-slate-900">Section 5: Detailed Course Overview (Long Text Blocks)</h3>
-                    <p className="text-sm text-slate-500 italic">Great for in-depth explanations or modular text content with lists.</p>
-                </div>
-                <div className="flex justify-between items-center bg-purple-50 p-4 rounded-xl border border-purple-100">
-                    <div>
-                        <h4 className="font-bold text-purple-900 text-lg">Python Overview Blocks</h4>
-                        <p className="text-sm text-purple-700">Flexible content blocks with text or lists</p>
-                    </div>
-                    <button type="button" onClick={() => updateItems([...items, { title: 'New Block', content: '', list: [] }])} className="bg-white text-purple-700 px-4 py-2 rounded-lg text-sm font-bold shadow-sm flex items-center gap-2 hover:bg-purple-100 transition-colors">
-                        <Plus size={18} /> Add Block
-                    </button>
+                    <h3 className="text-xl font-bold text-slate-900">Detailed Course Overview</h3>
+                    <p className="text-sm text-slate-500 italic">Managing {displaySections.length} overview section(s) found in database.</p>
                 </div>
 
-                {items.map((item: any, idx: number) => (
-                    <div key={idx} className="bg-white p-6 border border-gray-100 rounded-2xl shadow-sm relative group space-y-4">
-                        <button type="button" onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))} className="absolute top-4 right-4 text-gray-300 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity"><Trash2 size={20} /></button>
-
-                        <div className="max-w-xl">
-                            <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest block mb-1">Block Title</label>
-                            <input value={item.title || ''} onChange={(e) => { const n = [...items]; n[idx].title = e.target.value; updateItems(n); }} className="w-full text-xl font-bold bg-transparent border-none focus:ring-0 p-0 text-slate-800" placeholder="Block Title..." />
-                        </div>
-
-                        <div className="grid md:grid-cols-2 gap-6 pt-2">
-                            <div className="space-y-2">
-                                <label className="text-xs font-bold text-gray-500 uppercase">Text Content</label>
-                                <textarea value={item.content || ''} onChange={(e) => { const n = [...items]; n[idx].content = e.target.value; updateItems(n); }} className="w-full p-3 border rounded-xl text-sm h-40 leading-relaxed" placeholder="Detailed content..." />
+                {displaySections.map((section: any, sIdx: number) => {
+                    const items = section.items || [];
+                    return (
+                        <div key={sIdx} className="space-y-8 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                            <div className="flex justify-between items-center bg-purple-50 p-4 rounded-xl border border-purple-100">
+                                <div className="flex-1 mr-4">
+                                    <label className="text-xs font-bold text-purple-700 uppercase">Section Module Title (Optional)</label>
+                                    <input
+                                        value={section.sectionTitle || ''}
+                                        onChange={(e) => updateSectionTitle(section, e.target.value)}
+                                        className="w-full bg-transparent border-none font-bold text-lg focus:ring-0 p-0"
+                                        placeholder="e.g. Assessment Methodology"
+                                    />
+                                </div>
+                                <button type="button" onClick={() => updateSectionItems(section, [...items, { title: 'New Topic', content: '' }])} className="text-sm bg-purple-600 text-white px-4 py-2 rounded-lg font-bold shadow-lg hover:bg-purple-700 transition-colors flex items-center gap-2">
+                                    <Plus size={18} /> Add Block
+                                </button>
                             </div>
-                            <div className="space-y-2">
-                                <label className="text-xs font-bold text-gray-500 uppercase">List Points (Optional, one per line)</label>
-                                <textarea value={Array.isArray(item.list) ? item.list.join('\n') : (item.list || '')} onChange={(e) => { const n = [...items]; n[idx].list = e.target.value.split('\n'); updateItems(n); }} className="w-full p-3 border rounded-xl font-mono text-sm h-40 leading-relaxed" placeholder="**Bold Title:** Point description..." />
+
+                            <div className="space-y-6">
+                                {items.map((item: any, idx: number) => (
+                                    <div key={idx} className="bg-gray-50/50 p-6 rounded-2xl border border-gray-100 relative group">
+                                        <button type="button" onClick={() => updateSectionItems(section, items.filter((_: any, i: number) => i !== idx))} className="absolute top-4 right-4 text-gray-300 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity"><Trash2 size={18} /></button>
+                                        <div className="space-y-4">
+                                            <div><label className="text-xs font-bold text-gray-400 uppercase">Block Title</label>
+                                                <input value={item.title || ''} onChange={(e) => { const n = [...items]; n[idx].title = e.target.value; updateSectionItems(section, n); }} className="w-full p-2 border rounded font-bold text-lg bg-white" />
+                                            </div>
+                                            <div><label className="text-xs font-bold text-gray-400 uppercase">Description / Long Text (Markdown)</label>
+                                                <textarea value={item.content || item.description || ''} onChange={(e) => { const n = [...items]; n[idx].content = e.target.value; n[idx].description = e.target.value; updateSectionItems(section, n); }} className="w-full p-3 border rounded text-sm bg-white" rows={4} />
+                                            </div>
+                                            <div><label className="text-xs font-bold text-gray-400 uppercase">List Points (Optional, one per line)</label>
+                                                <textarea value={item.list?.join('\n') || ''} onChange={(e) => { const n = [...items]; n[idx].list = e.target.value.split('\n'); updateSectionItems(section, n); }} className="w-full p-3 border rounded font-mono text-xs bg-white" rows={4} />
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
                         </div>
-
-                        <div>
-                            <label className="text-xs font-bold text-gray-500 uppercase">Footer Text (Optional)</label>
-                            <input value={item.footer || ''} onChange={(e) => { const n = [...items]; n[idx].footer = e.target.value; updateItems(n); }} className="w-full p-2 border rounded-lg text-sm italic" placeholder="Closing sentence..." />
-                        </div>
-                    </div>
-                ))}
+                    );
+                })}
             </div>
         );
     };
 
     const TableCurriculumTab = () => {
-        const section = getSection('table_curriculum', { items: [] });
-        const items = section.items || [];
-        const updateItems = (newItems: any[]) => updateSection('table_curriculum', { ...section, items: newItems });
+        const matchingSections = formData.sections.filter((s: any) => s.type === 'table_curriculum');
+        const displaySections = matchingSections.length > 0 ? matchingSections : [{ type: 'table_curriculum', items: [] }];
+
+        const updateSectionItems = (section: any, newItems: any[]) => {
+            const actualIdx = formData.sections.indexOf(section);
+            const newSections = [...formData.sections];
+            if (actualIdx !== -1) {
+                newSections[actualIdx] = { ...section, items: newItems };
+            } else {
+                newSections.push({ ...section, items: newItems });
+            }
+            setFormData({ ...formData, sections: newSections });
+        };
 
         return (
-            <div className="space-y-6">
-                <div className="bg-slate-900 text-white p-6 rounded-2xl flex justify-between items-center">
-                    <div>
-                        <h4 className="text-xl font-bold">Curriculum Table</h4>
-                        <p className="text-slate-400 text-sm">Session-by-session breakdown</p>
-                    </div>
-                    <button type="button" onClick={() => updateItems([...items, { session: (items.length + 1).toString(), topic: '', hours: '2', description: '' }])} className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-bold transition-colors flex items-center gap-2">
-                        <Plus size={18} /> Add Session
-                    </button>
-                </div>
+            <div className="space-y-12">
+                {displaySections.map((section: any, sIdx: number) => {
+                    const items = section.items || [];
+                    return (
+                        <div key={sIdx} className="space-y-6 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                            <div className="bg-slate-900 text-white p-6 rounded-2xl flex justify-between items-center">
+                                <div>
+                                    <h4 className="text-xl font-bold">Curriculum Table {displaySections.length > 1 ? `#${sIdx + 1}` : ''}</h4>
+                                    <p className="text-slate-400 text-sm">Session-by-session breakdown</p>
+                                </div>
+                                <button type="button" onClick={() => updateSectionItems(section, [...items, { session: (items.length + 1).toString(), topic: '', hours: '2', description: '' }])} className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-bold transition-colors flex items-center gap-2">
+                                    <Plus size={18} /> Add Session
+                                </button>
+                            </div>
 
-                <div className="overflow-x-auto">
-                    <table className="w-full border-collapse">
-                        <thead>
-                            <tr className="bg-slate-50 border-b">
-                                <th className="p-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider w-20">No.</th>
-                                <th className="p-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Topic / Session Name</th>
-                                <th className="p-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider w-24">Hours</th>
-                                <th className="p-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Description</th>
-                                <th className="p-3 w-10"></th>
-                            </tr>
-                        </thead>
-                        <tbody className="divide-y divide-slate-100 bg-white">
-                            {items.map((item: any, idx: number) => (
-                                <tr key={idx} className="group hover:bg-slate-50/50 transition-colors">
-                                    <td className="p-3">
-                                        <input value={item.session || ''} onChange={(e) => { const n = [...items]; n[idx].session = e.target.value; updateItems(n); }} className="w-full bg-transparent border-none p-0 font-mono text-sm" />
-                                    </td>
-                                    <td className="p-3">
-                                        <input value={item.topic || ''} onChange={(e) => { const n = [...items]; n[idx].topic = e.target.value; updateItems(n); }} className="w-full bg-transparent border-none p-0 font-bold text-sm text-slate-800" placeholder="Session topic..." />
-                                    </td>
-                                    <td className="p-3">
-                                        <input value={item.hours || ''} onChange={(e) => { const n = [...items]; n[idx].hours = e.target.value; updateItems(n); }} className="w-full bg-transparent border-none p-0 text-sm" />
-                                    </td>
-                                    <td className="p-3">
-                                        <input value={item.description || ''} onChange={(e) => { const n = [...items]; n[idx].description = e.target.value; updateItems(n); }} className="w-full bg-transparent border-none p-0 text-sm text-slate-600" placeholder="Brief description..." />
-                                    </td>
-                                    <td className="p-3">
-                                        <button type="button" onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))} className="text-slate-300 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-all"><Trash2 size={16} /></button>
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
+                            <div className="overflow-x-auto">
+                                <table className="w-full border-collapse">
+                                    <thead>
+                                        <tr className="bg-slate-50 border-b">
+                                            <th className="p-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider w-20">No.</th>
+                                            <th className="p-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Topic / Session Name</th>
+                                            <th className="p-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider w-24">Hours</th>
+                                            <th className="p-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Description</th>
+                                            <th className="p-3 w-10"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="divide-y divide-slate-100 bg-white">
+                                        {items.map((item: any, idx: number) => (
+                                            <tr key={idx} className="group hover:bg-slate-50/50 transition-colors">
+                                                <td className="p-3">
+                                                    <input value={item.session || ''} onChange={(e) => { const n = [...items]; n[idx].session = e.target.value; updateSectionItems(section, n); }} className="w-full bg-transparent border-none p-0 font-mono text-sm" />
+                                                </td>
+                                                <td className="p-3">
+                                                    <input value={item.topic || ''} onChange={(e) => { const n = [...items]; n[idx].topic = e.target.value; updateSectionItems(section, n); }} className="w-full bg-transparent border-none p-0 font-bold text-sm text-slate-800" placeholder="Session topic..." />
+                                                </td>
+                                                <td className="p-3">
+                                                    <input value={item.hours || ''} onChange={(e) => { const n = [...items]; n[idx].hours = e.target.value; updateSectionItems(section, n); }} className="w-full bg-transparent border-none p-0 text-sm" />
+                                                </td>
+                                                <td className="p-3">
+                                                    <input value={item.description || ''} onChange={(e) => { const n = [...items]; n[idx].description = e.target.value; updateSectionItems(section, n); }} className="w-full bg-transparent border-none p-0 text-sm text-slate-600" placeholder="Brief description..." />
+                                                </td>
+                                                <td className="p-3">
+                                                    <button type="button" onClick={() => updateSectionItems(section, items.filter((_: any, i: number) => i !== idx))} className="text-slate-300 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-all"><Trash2 size={16} /></button>
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    );
+                })}
             </div>
         );
     };
 
     const JobRolesTab = () => {
-        const section = getSection('job_roles_table', { items: [] });
-        const items = section.items || [];
-        const updateItems = (newItems: any[]) => updateSection('job_roles_table', { ...section, items: newItems });
+        const matchingSections = formData.sections.filter((s: any) => s.type === 'job_roles_table');
+        const displaySections = matchingSections.length > 0 ? matchingSections : [{ type: 'job_roles_table', items: [] }];
+
+        const updateSectionItems = (section: any, newItems: any[]) => {
+            const actualIdx = formData.sections.indexOf(section);
+            const newSections = [...formData.sections];
+            if (actualIdx !== -1) {
+                newSections[actualIdx] = { ...section, items: newItems };
+            } else {
+                newSections.push({ ...section, items: newItems });
+            }
+            setFormData({ ...formData, sections: newSections });
+        };
 
         return (
-            <div className="space-y-6">
-                <div className="bg-emerald-600 text-white p-6 rounded-2xl flex justify-between items-center">
-                    <div>
-                        <h4 className="text-xl font-bold">Section 12: Career Paths</h4>
-                        <p className="text-emerald-100 text-sm italic">Define roles, required skills, and salary expectations</p>
-                    </div>
-                    <button type="button" onClick={() => updateItems([...items, { role: 'Job Role', skills: '', companies: '', salary: '' }])} className="bg-white text-emerald-700 px-4 py-2 rounded-lg text-sm font-bold shadow-lg hover:bg-emerald-50 transition-colors flex items-center gap-2">
-                        <Plus size={18} /> Add Role
-                    </button>
-                </div>
+            <div className="space-y-12">
+                {displaySections.map((section: any, sIdx: number) => {
+                    const items = section.items || [];
+                    return (
+                        <div key={sIdx} className="space-y-6 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                            <div className="bg-emerald-600 text-white p-6 rounded-2xl flex justify-between items-center">
+                                <div>
+                                    <h4 className="text-xl font-bold">Career Paths & Job Roles {displaySections.length > 1 ? `#${sIdx + 1}` : ''}</h4>
+                                    <p className="text-emerald-100 text-sm italic">Define roles, required skills, and salary expectations</p>
+                                </div>
+                                <button type="button" onClick={() => updateSectionItems(section, [...items, { role: 'Job Role', skills: '', companies: '', salary: '' }])} className="bg-white text-emerald-700 px-4 py-2 rounded-lg text-sm font-bold shadow-lg hover:bg-emerald-50 transition-colors flex items-center gap-2">
+                                    <Plus size={18} /> Add Role
+                                </button>
+                            </div>
 
-                <div className="space-y-4">
-                    {items.map((item: any, idx: number) => (
-                        <div key={idx} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm relative group grid md:grid-cols-4 gap-6">
-                            <button type="button" onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))} className="absolute top-2 right-2 text-slate-300 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity"><Trash2 size={18} /></button>
-
-                            <div className="space-y-1">
-                                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Role Name</label>
-                                <input value={item.role || ''} onChange={(e) => { const n = [...items]; n[idx].role = e.target.value; updateItems(n); }} className="w-full p-0 bg-transparent border-none font-bold text-lg text-slate-900 focus:ring-0" placeholder="Data Scientist..." />
-                            </div>
-                            <div className="space-y-1">
-                                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Key Skills</label>
-                                <textarea value={item.skills || ''} onChange={(e) => { const n = [...items]; n[idx].skills = e.target.value; updateItems(n); }} className="w-full p-2 border rounded-lg text-sm h-20" placeholder="Python, TensorFlow..." />
-                            </div>
-                            <div className="space-y-1">
-                                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Top Companies</label>
-                                <textarea value={item.companies || ''} onChange={(e) => { const n = [...items]; n[idx].companies = e.target.value; updateItems(n); }} className="w-full p-2 border rounded-lg text-sm h-20" placeholder="Google, Meta..." />
-                            </div>
-                            <div className="space-y-1">
-                                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Est. Salary</label>
-                                <input value={item.salary || ''} onChange={(e) => { const n = [...items]; n[idx].salary = e.target.value; updateItems(n); }} className="w-full p-2 border rounded-lg text-sm font-bold text-emerald-600" placeholder="₹8L - ₹12L" />
+                            <div className="space-y-4">
+                                {items.map((item: any, idx: number) => (
+                                    <div key={idx} className="bg-gray-50 p-6 rounded-2xl border border-slate-200 relative group grid md:grid-cols-4 gap-6">
+                                        <button type="button" onClick={() => updateSectionItems(section, items.filter((_: any, i: number) => i !== idx))} className="absolute top-2 right-2 text-slate-300 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity"><Trash2 size={18} /></button>
+                                        <div className="space-y-1">
+                                            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Role Name</label>
+                                            <input value={item.role || ''} onChange={(e) => { const n = [...items]; n[idx].role = e.target.value; updateSectionItems(section, n); }} className="w-full p-0 bg-transparent border-none font-bold text-lg text-slate-900 focus:ring-0" placeholder="Data Scientist..." />
+                                        </div>
+                                        <div className="space-y-1">
+                                            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Key Skills</label>
+                                            <textarea value={item.skills || ''} onChange={(e) => { const n = [...items]; n[idx].skills = e.target.value; updateSectionItems(section, n); }} className="w-full p-2 border rounded-lg text-sm h-20 bg-white" placeholder="Python, TensorFlow..." />
+                                        </div>
+                                        <div className="space-y-1">
+                                            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Top Companies</label>
+                                            <textarea value={item.companies || ''} onChange={(e) => { const n = [...items]; n[idx].companies = e.target.value; updateSectionItems(section, n); }} className="w-full p-2 border rounded-lg text-sm h-20 bg-white" placeholder="Google, Meta..." />
+                                        </div>
+                                        <div className="space-y-1">
+                                            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Est. Salary</label>
+                                            <input value={item.salary || ''} onChange={(e) => { const n = [...items]; n[idx].salary = e.target.value; updateSectionItems(section, n); }} className="w-full p-2 border rounded-lg text-sm font-bold text-emerald-600 bg-white" placeholder="₹8L - ₹12L" />
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
                         </div>
-                    ))}
-                </div>
+                    );
+                })}
             </div>
         );
     };
@@ -1684,6 +1805,58 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                             <button type="button" onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))} className="text-slate-300 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity"><Trash2 size={16} /></button>
                         </div>
                     ))}
+                </div>
+            </div>
+        );
+    };
+
+    const RawSectionsTab = () => {
+        return (
+            <div className="space-y-6">
+                <div className="bg-slate-900 text-white p-6 rounded-2xl">
+                    <h4 className="text-xl font-bold">All Database Sections</h4>
+                    <p className="text-slate-400 text-sm">Every section object stored in the course's "sections" column. Use this to verify or edit sections that don't have a dedicated tab.</p>
+                </div>
+
+                <div className="space-y-8">
+                    {formData.sections.map((section: any, idx: number) => (
+                        <div key={idx} className="bg-white border rounded-xl overflow-hidden shadow-sm">
+                            <div className="bg-gray-50 px-4 py-2 border-b flex justify-between items-center">
+                                <span className="text-xs font-bold font-mono text-blue-600">Section {idx + 1}: {section.type}</span>
+                                <button
+                                    type="button"
+                                    onClick={() => {
+                                        const newS = [...formData.sections];
+                                        newS.splice(idx, 1);
+                                        setFormData((p: any) => ({ ...p, sections: newS }));
+                                    }}
+                                    className="text-red-500 hover:text-red-700 text-xs flex items-center gap-1"
+                                >
+                                    <Trash2 size={12} /> Remove
+                                </button>
+                            </div>
+                            <textarea
+                                value={JSON.stringify(section, null, 2)}
+                                onChange={(e) => {
+                                    try {
+                                        const parsed = JSON.parse(e.target.value);
+                                        const newS = [...formData.sections];
+                                        newS[idx] = parsed;
+                                        setFormData((p: any) => ({ ...p, sections: newS }));
+                                    } catch (err) { }
+                                }}
+                                className="w-full p-4 font-mono text-xs h-64 focus:ring-0 border-none"
+                            />
+                        </div>
+                    ))}
+
+                    <button
+                        type="button"
+                        onClick={() => setFormData((p: any) => ({ ...p, sections: [...p.sections, { type: 'new_section' }] }))}
+                        className="w-full py-4 border-2 border-dashed border-gray-200 rounded-xl text-gray-400 hover:text-blue-500 hover:border-blue-200 transition-all flex items-center justify-center gap-2"
+                    >
+                        <Plus size={20} /> Add New Generic Section
+                    </button>
                 </div>
             </div>
         );
@@ -1735,15 +1908,15 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
             </div>
 
             {/* Tabs Navigation */}
-            <div className="flex overflow-x-auto pb-2 gap-2 scrollbar-hide border-b bg-white sticky top-[73px] z-10">
-                {TABS.map((tab) => {
+            <div className="flex overflow-x-auto pb-2 gap-2 scrollbar-hide border-b bg-white sticky top-[73px] z-10 p-1">
+                {courseTabs.map((tab) => {
                     const Icon = tab.icon;
                     return (
                         <button
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
                             className={`whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-2 ${activeTab === tab.id
-                                ? 'bg-blue-50 text-blue-700 border border-blue-200 shadow-sm'
+                                ? 'bg-orange-50 text-orange-700 border border-orange-200 shadow-sm'
                                 : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                                 }`}
                         >
@@ -1783,6 +1956,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                 {activeTab === 'demo' && GenericJsonTab({ type: "detailed_demo_booking", title: "Demo Booking" })}
                 {activeTab === 'integrations' && GenericJsonTab({ type: "detailed_sap_integrations", title: "SAP Integrations" })}
                 {activeTab === 'career' && CareerGrowthTab()}
+                {activeTab === 'raw_sections' && RawSectionsTab()}
             </div>
         </div>
     );
