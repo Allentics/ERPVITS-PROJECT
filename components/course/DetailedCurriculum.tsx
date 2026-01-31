@@ -4,6 +4,8 @@ import React from 'react';
 import { ChevronDown, Clock, BookOpen, CheckCircle2, ChevronRight, Download } from 'lucide-react';
 import * as Accordion from '@radix-ui/react-accordion';
 import { renderRichText } from './SectionRenderer';
+import { useState } from 'react';
+import SyllabusDownloadModal from './SyllabusDownloadModal';
 
 export interface DetailedModule {
     title: string;
@@ -22,10 +24,24 @@ interface DetailedCurriculumProps {
 }
 
 export default function DetailedCurriculum({ modules, title, subtitle, courseName = "SAP Ariba", syllabusUrl }: DetailedCurriculumProps) {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     if (!modules || modules.length === 0) return null;
+
+    const handleDownloadClick = (e: React.MouseEvent) => {
+        e.preventDefault();
+        setIsModalOpen(true);
+    };
 
     return (
         <div className="max-w-5xl mx-auto px-4 py-8">
+            <SyllabusDownloadModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                courseTitle={courseName}
+                syllabusUrl={syllabusUrl || ''}
+            />
+
             {/* Header */}
             <div className="text-center mb-12">
                 <span className="bg-[#ff4500] text-white px-4 py-1.5 rounded-full text-sm font-medium inline-block mb-6 shadow-sm">
@@ -51,18 +67,9 @@ export default function DetailedCurriculum({ modules, title, subtitle, courseNam
                     </div>
                 </div>
 
-                <a
-                    href={syllabusUrl || '#'}
-                    target={syllabusUrl ? "_blank" : undefined}
-                    rel="noopener noreferrer"
+                <div
+                    onClick={handleDownloadClick}
                     className="flex-1 bg-slate-900 rounded-2xl p-5 border border-slate-800 flex items-center gap-4 shadow-sm hover:shadow-md hover:bg-slate-800 transition-all cursor-pointer group"
-                    onClick={(e) => {
-                        if (!syllabusUrl) {
-                            e.preventDefault();
-                            // Optional: Alert user or scroll to contact form?
-                            // alert("Syllabus download coming soon!");
-                        }
-                    }}
                 >
                     <div className="w-12 h-12 rounded-xl bg-[#ff4500] flex items-center justify-center text-white shadow-sm flex-shrink-0 group-hover:scale-110 transition-transform">
                         <Download className="w-6 h-6" />
@@ -71,7 +78,7 @@ export default function DetailedCurriculum({ modules, title, subtitle, courseNam
                         <div className="text-xl font-bold text-white">Download</div>
                         <div className="text-sm font-medium text-slate-400">Curriculum PDF</div>
                     </div>
-                </a>
+                </div>
             </div>
 
             {/* Accordion Modules */}
@@ -178,15 +185,13 @@ export default function DetailedCurriculum({ modules, title, subtitle, courseNam
 
             {syllabusUrl && (
                 <div className="mt-12 text-center">
-                    <a
-                        href={syllabusUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-3 bg-[#ff4500] text-white px-8 py-4 rounded-full font-bold text-base hover:bg-[#ff4500] transition-colors shadow-lg hover:shadow-orange-200"
+                    <button
+                        onClick={handleDownloadClick}
+                        className="inline-flex items-center gap-3 bg-[#ff4500] text-white px-8 py-4 rounded-full font-bold text-base hover:bg-[#ff4500] transition-colors shadow-lg hover:shadow-orange-200 cursor-pointer"
                     >
                         <Download className="w-6 h-6" />
                         Download Full {courseName} Curriculum
-                    </a>
+                    </button>
                 </div>
             )}
         </div>
