@@ -75,7 +75,7 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
                     <h1 className="text-3xl sm:text-4xl md:text-4xl font-extrabold text-gray-900 mb-6 tracking-tight">
                         Insights & <span className="text-orange-500">{filterCategory || "Industry Guides"}</span>
                     </h1>
-                    <p className="text-xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-lg text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">
                         Stay ahead in the SAP ecosystem with expert insights, technical tutorials, and career guidance.
                     </p>
 

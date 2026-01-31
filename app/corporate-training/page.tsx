@@ -102,7 +102,7 @@ export default async function CorporateTrainingPage() {
                         <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold mb-6 leading-tight">
                             {titleParts[0]}<span className="text-blue-400">{hero.highlight}</span>{titleParts[1]}
                         </h1>
-                        <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+                        <p className="text-lg text-gray-300 mb-8 leading-relaxed">
                             {hero.description}
                         </p>
                         <Link

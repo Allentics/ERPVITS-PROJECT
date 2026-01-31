@@ -96,7 +96,7 @@ const Hero = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
-                        className="text-xl lg:text-2xl text-black font-semibold mb-6 max-w-3xl mx-auto"
+                        className="text-lg lg:text-xl text-black font-semibold mb-6 max-w-3xl mx-auto"
                     >
                         {content.subheading}
                     </motion.h2>
@@ -106,7 +106,7 @@ const Hero = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.25 }}
-                        className="text-lg lg:text-xl text-black font-medium mb-10 leading-relaxed max-w-3xl mx-auto"
+                        className="text-base lg:text-lg text-black font-medium mb-10 leading-relaxed max-w-3xl mx-auto"
                     >
                         {content.description}
                     </motion.p>

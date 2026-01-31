@@ -46,7 +46,7 @@ const CourseHero = ({ course }: { course: Course }) => {
                         )}
                     </h1>
 
-                    <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-10 leading-relaxed">
+                    <p className="text-lg text-slate-600 max-w-3xl mx-auto mb-10 leading-relaxed">
                         {course.heroSubheading}
                     </p>
 
@@ -119,7 +119,7 @@ const CourseHero = ({ course }: { course: Course }) => {
                                 : (typeof course.heroHeading !== 'string' ? course.heroHeading : `Master ${course.title} & Get Certified`)}
                         </h1>
 
-                        <p className="text-lg text-slate-300 max-w-2xl">
+                        <p className="text-base text-slate-300 max-w-2xl">
                             {course.heroSubheading || `Detailed, hands-on training for ${course.title}. Learn from industry experts, work on real projects, and launch your consulting career.`}
                         </p>
 
