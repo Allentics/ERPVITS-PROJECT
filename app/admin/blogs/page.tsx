@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
 import {
     Plus,
@@ -20,6 +21,7 @@ import {
 import { blogPosts as localPosts } from '@/lib/blogData';
 
 export default function BlogsPage() {
+    const router = useRouter();
     const [blogs, setBlogs] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
