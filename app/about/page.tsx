@@ -83,7 +83,7 @@ export default async function AboutPage() {
             <div className="bg-slate-50 text-slate-900 py-20 lg:py-28 relative overflow-hidden border-b border-slate-200">
                 <div className="absolute top-0 right-0 w-1/2 h-full bg-orange-100 opacity-50 transform -skew-x-12"></div>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-                    <h1 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">{hero.title}</h1>
+                    <h1 className="text-2xl md:text-3xl font-bold mb-6 text-slate-900">{hero.title}</h1>
                     <p className="text-xl text-slate-600 max-w-3xl mx-auto">
                         {hero.description}
                     </p>

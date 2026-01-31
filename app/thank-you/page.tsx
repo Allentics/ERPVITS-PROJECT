@@ -17,10 +17,10 @@ export default function ThankYouPage() {
                     </div>
 
                     <div className="space-y-4">
-                        <h1 className="text-4xl font-extrabold text-slate-900 tracking-tight">
+                        <h1 className="text-2xl font-bold text-slate-900 tracking-tight">
                             Thank You!
                         </h1>
-                        <p className="text-xl text-slate-600 max-w-lg mx-auto leading-relaxed">
+                        <p className="text-lg text-slate-600 max-w-lg mx-auto leading-relaxed">
                             Your request has been received successfully. We have sent the detailed syllabus to your registered email address.
                         </p>
                     </div>

@@ -33,7 +33,7 @@ const CourseHero = ({ course }: { course: Course }) => {
                         </div>
                     )}
 
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-[#0F172A] mb-6">
+                    <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold leading-tight text-[#0F172A] mb-6">
                         {typeof course.heroHeading === 'string' ? (
                             course.heroHeading.split(course.title).map((part, i, arr) => (
                                 <span key={i}>
@@ -113,7 +113,7 @@ const CourseHero = ({ course }: { course: Course }) => {
                             </div>
                         )}
 
-                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+                        <h1 className="text-2xl md:text-3xl lg:text-3xl font-bold leading-tight">
                             {(typeof course.heroHeading === 'string' && !course.heroHeading.startsWith("H1:"))
                                 ? course.heroHeading
                                 : (typeof course.heroHeading !== 'string' ? course.heroHeading : `Master ${course.title} & Get Certified`)}

@@ -166,7 +166,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                         <span className="mx-2 text-gray-400">›</span>
                         <span className="text-gray-900 truncate max-w-[200px] sm:max-w-md">{post.title}</span>
                     </nav>
-                    <h1 className="text-3xl lg:text-4xl font-extrabold text-gray-900 leading-tight mb-4">
+                    <h1 className="text-2xl lg:text-3xl font-extrabold text-gray-900 leading-tight mb-4">
                         {post.title}
                     </h1>
                 </div>

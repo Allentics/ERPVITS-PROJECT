@@ -84,7 +84,7 @@ const Hero = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1] text-black"
+                        className="text-4xl lg:text-5xl font-extrabold tracking-tight mb-6 leading-[1.1] text-black"
                     >
                         {headingParts[0]}
                         <span className="text-[#FF5722]">{content.highlight_text}</span>

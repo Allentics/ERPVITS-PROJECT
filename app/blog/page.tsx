@@ -72,7 +72,7 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
             {/* Header Section - More premium look */}
             <div className="bg-gradient-to-b from-white to-gray-50 py-20 px-4 sm:px-6 lg:px-8 text-center">
                 <div className="max-w-4xl mx-auto">
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 mb-6 tracking-tight">
+                    <h1 className="text-3xl sm:text-4xl md:text-4xl font-extrabold text-gray-900 mb-6 tracking-tight">
                         Insights & <span className="text-orange-500">{filterCategory || "Industry Guides"}</span>
                     </h1>
                     <p className="text-xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">
