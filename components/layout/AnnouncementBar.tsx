@@ -2,9 +2,11 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
 
 export default function AnnouncementBar() {
+    const pathname = usePathname();
     const [isVisible, setIsVisible] = useState(true);
     const [content, setContent] = useState({
         text: "Save 10% on all SAP Online Courses! (Limited Slots)",
@@ -40,7 +42,7 @@ export default function AnnouncementBar() {
         fetchSettings();
     }, []);
 
-    if (!isVisible || !content.visible) return null;
+    if (pathname.startsWith('/admin') || !isVisible || !content.visible) return null;
 
     return (
         <div className="bg-[#fbc02d] text-black text-[13px] py-1.5 px-4 relative z-50 border-b border-black/5">

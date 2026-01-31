@@ -3,12 +3,14 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X, ChevronDown, Phone, Mail, Globe } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { courses as localCourses } from '@/lib/courseData';
 import { supabase } from '@/lib/supabase';
 import ContactModal from '../ContactModal';
 
 const Navbar = () => {
+    const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
     const [isContactModalOpen, setIsContactModalOpen] = useState(false);
@@ -116,6 +118,8 @@ const Navbar = () => {
     const toggleDropdown = (name: string) => {
         setActiveDropdown(activeDropdown === name ? null : name);
     };
+
+    if (pathname.startsWith('/admin')) return null;
 
     return (
         <>

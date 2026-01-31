@@ -14,14 +14,17 @@ import {
     Loader2,
     AlertCircle,
     Calendar,
-    FileText
+    FileText,
+    RefreshCw
 } from 'lucide-react';
+import { blogPosts as localPosts } from '@/lib/blogData';
 
 export default function BlogsPage() {
     const [blogs, setBlogs] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [searchTerm, setSearchTerm] = useState('');
+    const [syncing, setSyncing] = useState(false);
 
     useEffect(() => {
         fetchBlogs();
@@ -60,6 +63,64 @@ export default function BlogsPage() {
         }
     }
 
+    async function syncBlogs() {
+        if (!confirm('This will sync missing blogs from the local code to the database. Continue?')) return;
+
+        setSyncing(true);
+        try {
+            // Check authentication status first
+            const { data: { session } } = await supabase.auth.getSession();
+            if (!session) {
+                alert('Session expired or not logged in. Please log in again.');
+                router.push('/admin/login');
+                return;
+            }
+
+            let count = 0;
+            let errors = [];
+            for (const post of localPosts) {
+                // Check if blog already exists in our current state (which represents the DB)
+                const exists = blogs.some(b => b.id === post.id);
+
+                if (!exists) {
+                    console.log(`Syncing missing blog: ${post.id}`);
+                    const { error } = await supabase
+                        .from('blog_posts')
+                        .upsert({
+                            id: post.id,
+                            title: post.title,
+                            description: post.description,
+                            image: post.image,
+                            date: new Date(post.date).toISOString().split('T')[0],
+                            category: post.category,
+                            author: post.author,
+                            content: "" // Website uses fallback to React component if content is empty
+                        }, { onConflict: 'id' });
+
+                    if (error) {
+                        console.error(`Error syncing ${post.id}:`, error.message, error);
+                        errors.push(`${post.id}: ${error.message}`);
+                    } else {
+                        count++;
+                    }
+                }
+            }
+
+            if (count > 0) {
+                alert(`Successfully synced ${count} missing blog posts!`);
+                await fetchBlogs();
+            } else if (errors.length > 0) {
+                alert(`Failed to sync blogs due to database permissions (RLS). Please follow the instructions to fix your Supabase settings.`);
+            } else {
+                alert('All local blogs are already in the database.');
+            }
+        } catch (err: any) {
+            alert('Error syncing blogs: ' + err.message);
+        } finally {
+            setSyncing(false);
+        }
+    }
+
     const filteredBlogs = blogs.filter(blog =>
         blog.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
         blog.id?.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -73,13 +134,24 @@ export default function BlogsPage() {
                     <h2 className="text-xl font-bold text-gray-900">Blog Management</h2>
                     <p className="text-gray-500 text-sm">Publish and edit blog posts for your audience.</p>
                 </div>
-                <Link
-                    href="/admin/blogs/new"
-                    className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors shadow-sm"
-                >
-                    <Plus size={18} />
-                    New Post
-                </Link>
+                <div className="flex gap-2">
+                    <button
+                        onClick={syncBlogs}
+                        disabled={syncing}
+                        className="flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-200 transition-colors disabled:opacity-50"
+                        title="Sync missing blogs from code"
+                    >
+                        {syncing ? <Loader2 size={18} className="animate-spin" /> : <RefreshCw size={18} />}
+                        Sync Missing
+                    </button>
+                    <Link
+                        href="/admin/blogs/new"
+                        className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors shadow-sm"
+                    >
+                        <Plus size={18} />
+                        New Post
+                    </Link>
+                </div>
             </div>
 
             {/* Filters & Search */}

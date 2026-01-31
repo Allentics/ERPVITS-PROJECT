@@ -22,7 +22,7 @@ const WebinarPopup = () => {
     const excludedPaths = ['/privacy', '/terms-conditions', '/refund-policy', '/privacy-policy'];
 
     useEffect(() => {
-        if (excludedPaths.includes(pathname) || isVisible || isSubmitted) {
+        if (pathname.startsWith('/admin') || excludedPaths.includes(pathname) || isVisible || isSubmitted) {
             return;
         }
 

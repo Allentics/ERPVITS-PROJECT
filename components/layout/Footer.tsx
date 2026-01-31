@@ -1,12 +1,14 @@
 "use client";
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 import React, { useState, useEffect } from 'react';
 import { courses as localCourses } from '@/lib/courseData';
 import { supabase } from '@/lib/supabase';
 
 const Footer = () => {
+    const pathname = usePathname();
     const [dynCourses, setDynCourses] = useState(localCourses);
     const [settings, setSettings] = useState({
         site_email: "info@erpvits.com",
@@ -45,6 +47,8 @@ const Footer = () => {
     }, []);
 
     const popularCourses = dynCourses.slice(0, 6);
+
+    if (pathname.startsWith('/admin')) return null;
 
     return (
         <footer className="bg-slate-900 text-gray-300">

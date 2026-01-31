@@ -24,14 +24,15 @@ export default function FeaturedCourses() {
 
                 if (data && !error) {
                     const enriched = courses.map((localCourse) => {
-                        const dbCourse = data.find((c: any) => c.id === localCourse.id);
+                        const dbCourse = data.find((c: any) => c.id === localCourse.id || `sap-${c.id}` === localCourse.id || c.id === `sap-${localCourse.id}`);
                         return {
                             ...localCourse,
                             ...dbCourse, // Merge DB data
-                            // Prioritize local heroImage if it exists, otherwise DB hero_image
-                            heroImage: localCourse.heroImage || dbCourse?.hero_image,
+                            // Priority to DB values
+                            title: dbCourse?.title || localCourse.title,
+                            heroImage: dbCourse?.hero_image || localCourse.heroImage,
                             price: (dbCourse?.price && dbCourse.price.trim() !== '') ? dbCourse.price : localCourse.price,
-                            duration: localCourse.duration || dbCourse?.duration
+                            duration: dbCourse?.duration || localCourse.duration
                         };
                     });
                     // Sort or filter if necessary, for now we keep the order from courses.json/lib

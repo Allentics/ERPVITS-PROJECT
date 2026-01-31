@@ -12,7 +12,7 @@ if (!supabaseUrl || !supabaseAnonKey) {
 export const supabase = (supabaseUrl && supabaseAnonKey)
     ? createClient(supabaseUrl, supabaseAnonKey, {
         auth: {
-            persistSession: false
+            persistSession: true
         }
     })
     : null as any;
