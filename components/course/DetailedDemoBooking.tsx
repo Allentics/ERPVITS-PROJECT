@@ -71,10 +71,10 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant", tit
                     <span className="bg-white text-slate-900 px-3 py-0.5 rounded-full text-[10px] font-bold tracking-widest uppercase mb-2 inline-block">
                         Get Started
                     </span>
-                    <h2 className="text-2xl font-bold text-white mb-2">
+                    <h2 className="text-xl font-bold text-white mb-2">
                         {title || <>Ready to Become an <span className="text-white underline decoration-white/30">{courseName} Consultant?</span></>}
                     </h2>
-                    <p className="text-orange-50 max-w-xl mx-auto text-xs">
+                    <p className="text-orange-50 max-w-xl mx-auto text-[11px]">
                         {subtitle || `Book your free demo today and take the first step towards a lucrative ${courseName} career`}
                     </p>
                 </div>
@@ -82,7 +82,7 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant", tit
                 <div className="grid lg:grid-cols-2 gap-6 items-start">
                     <div className="space-y-4">
                         <div>
-                            <h3 className="text-base font-bold text-white mb-3">What You'll Get With Your Free Demo</h3>
+                            <h3 className="text-sm font-bold text-white mb-3">What You'll Get With Your Free Demo</h3>
                             <div className="space-y-2">
                                 {displayBenefits.map((item: any, i: number) => {
                                     const Icon = item.icon || CheckCircle2; // Fallback icon
@@ -94,8 +94,8 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant", tit
                                                 <Icon className="w-3.5 h-3.5" />
                                             </div>
                                             <div>
-                                                <h4 className="font-bold text-white mb-0 text-xs">{item.title}</h4>
-                                                <p className="text-[10px] text-orange-50">{item.desc || item.description}</p>
+                                                <h4 className="font-bold text-white mb-0 text-[11px]">{item.title}</h4>
+                                                <p className="text-[9px] text-orange-50">{item.desc || item.description}</p>
                                             </div>
                                         </div>
                                     )
@@ -106,8 +106,8 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant", tit
                         {/* Contact Box */}
                         <div className="bg-white rounded-xl p-4 text-slate-900 relative overflow-hidden shadow-lg">
                             <div className="relative z-10">
-                                <h3 className="font-bold text-sm mb-2">Contact Information</h3>
-                                <div className="space-y-1.5 text-xs">
+                                <h3 className="font-bold text-xs mb-2">Contact Information</h3>
+                                <div className="space-y-1.5 text-[11px]">
                                     <div className="flex items-center gap-2">
                                         <Phone className="w-3.5 h-3.5 text-[#ff4500]" />
                                         <span>+91 84088 78222</span>
@@ -131,13 +131,13 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant", tit
                     {/* Right Column: Form */}
                     <div className="bg-white rounded-xl p-4 lg:p-5 shadow-2xl relative">
                         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-slate-700 to-slate-900 rounded-t-xl"></div>
-                        <h3 className="text-lg font-bold text-slate-900 mb-3">Book Your <span className="text-slate-900 underline decoration-orange-500 decoration-2 underline-offset-2">Free Demo</span></h3>
+                        <h3 className="text-base font-bold text-slate-900 mb-3">Book Your <span className="text-slate-900 underline decoration-orange-500 decoration-2 underline-offset-2">Free Demo</span></h3>
 
                         {status === 'success' ? (
                             <div className="bg-green-50 border border-green-200 rounded-xl p-6 text-center animate-in fade-in zoom-in duration-300">
                                 <CheckCircle2 className="h-10 w-10 text-green-600 mx-auto mb-3" />
-                                <h3 className="text-lg font-bold text-green-900 mb-1">Registration Confirmed!</h3>
-                                <p className="text-green-700 text-sm mb-4">
+                                <h3 className="text-base font-bold text-green-900 mb-1">Registration Confirmed!</h3>
+                                <p className="text-green-700 text-xs mb-4">
                                     Our training coordinator will contact you shortly.
                                 </p>
                                 <div className="flex flex-col gap-2 items-center">
@@ -244,7 +244,7 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant", tit
                                 <button
                                     type="submit"
                                     disabled={status === 'loading'}
-                                    className="w-full bg-white hover:bg-slate-50 text-slate-900 border-2 border-slate-900/10 font-bold py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 mt-1 disabled:bg-slate-100 disabled:text-slate-400 text-sm"
+                                    className="w-full bg-white hover:bg-slate-50 text-slate-900 border-2 border-slate-900/10 font-bold py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 mt-1 disabled:bg-slate-100 disabled:text-slate-400 text-xs"
                                 >
                                     {status === 'loading' ? (
                                         <>

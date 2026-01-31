@@ -16,12 +16,12 @@ interface JobRolesTableProps {
 export default function JobRolesTable({ title, description, items }: JobRolesTableProps) {
     return (
         <div className="max-w-7xl mx-auto px-4 py-12">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">{title}</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">{title}</h2>
             {/* Orange Underline */}
             <div className="w-16 h-1 bg-[#ff4500] rounded-full mb-8"></div>
 
             {/* Content text */}
-            <div className="prose prose-lg text-slate-600 mb-12 max-w-none">
+            <div className="prose text-slate-600 mb-12 max-w-none">
                 {/* This handles the paragraph splits if the description contains newlines, 
                      though typically we might pass content as an array or use a rich text parser. 
                      For simplicity, we'll split by double newline. */}
@@ -32,7 +32,7 @@ export default function JobRolesTable({ title, description, items }: JobRolesTab
 
             {/* Table */}
             <div className="overflow-x-auto border border-gray-200 rounded-lg shadow-sm">
-                <table className="w-full text-left border-collapse bg-white">
+                <table className="w-full text-left border-collapse bg-white text-sm">
                     <thead className="bg-gray-50 text-slate-800">
                         <tr>
                             <th className="p-4 font-bold border-r border-b border-gray-200 w-1/5">Job Role</th>

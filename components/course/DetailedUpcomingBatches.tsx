@@ -64,10 +64,10 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
                     <span className="bg-[#ff4500] text-white px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block shadow-lg shadow-orange-600/20">
                         Limited Seats Available
                     </span>
-                    <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+                    <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
                         Join Our Next Live Batch – <span className="text-[#ff4500]">{courseName} Training</span>
                     </h2>
-                    <p className="text-slate-600 max-w-2xl mx-auto">
+                    <p className="text-slate-600 text-sm max-w-2xl mx-auto">
                         Secure your spot in our upcoming batches with flexible timings designed for working professionals
                     </p>
                 </div>
@@ -87,28 +87,28 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
                                 )}
                             </div>
 
-                            <h3 className="font-bold text-lg mb-6 min-h-[56px]">{batch.name}</h3>
+                            <h3 className="font-bold text-base mb-6 min-h-[56px]">{batch.name}</h3>
 
                             <div className="space-y-4 mb-8 flex-grow">
                                 <div className="flex items-start gap-3">
                                     <Calendar className="w-5 h-5 text-[#ff4500] flex-shrink-0 mt-0.5" />
                                     <div>
-                                        <div className="text-xs font-bold text-slate-400 uppercase">Start Date</div>
-                                        <div className="font-medium text-sm">{batch.date}</div>
+                                        <div className="text-[10px] font-bold text-slate-400 uppercase">Start Date</div>
+                                        <div className="font-medium text-xs">{batch.date}</div>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-3">
                                     <Clock className="w-5 h-5 text-[#ff4500] flex-shrink-0 mt-0.5" />
                                     <div>
-                                        <div className="text-xs font-bold text-slate-400 uppercase">Schedule</div>
-                                        <div className="font-medium text-sm">{batch.schedule}</div>
+                                        <div className="text-[10px] font-bold text-slate-400 uppercase">Schedule</div>
+                                        <div className="font-medium text-xs">{batch.schedule}</div>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-3">
                                     <ShieldCheck className="w-5 h-5 text-[#ff4500] flex-shrink-0 mt-0.5" />
                                     <div>
-                                        <div className="text-xs font-bold text-slate-400 uppercase">Duration</div>
-                                        <div className="font-medium text-sm">{batch.duration}</div>
+                                        <div className="text-[10px] font-bold text-slate-400 uppercase">Duration</div>
+                                        <div className="font-medium text-xs">{batch.duration}</div>
                                     </div>
                                 </div>
                             </div>
@@ -140,14 +140,14 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
 
                 {/* Why Enroll Now Footer */}
                 <div className="bg-[#ff4500] text-white rounded-2xl p-8 border border-[#ff4500] shadow-2xl max-w-4xl mx-auto">
-                    <h3 className="text-center font-bold text-xl mb-8">Why Enroll Now?</h3>
+                    <h3 className="text-center font-bold text-lg mb-8">Why Enroll Now?</h3>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {features.map((feature, idx) => (
                             <div key={idx} className="flex items-start gap-3">
                                 <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-[#ff4500] flex-shrink-0 shadow-sm">
                                     <feature.icon className="w-4 h-4" />
                                 </div>
-                                <span className="text-sm text-white font-bold">{feature.text}</span>
+                                <span className="text-xs text-white font-bold">{feature.text}</span>
                             </div>
                         ))}
                     </div>

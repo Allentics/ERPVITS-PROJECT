@@ -145,9 +145,9 @@ export function DetailedFeatures({ badge, title, subtitle, items, textAlign = 'c
         <div className="py-8 detailed-features-section bg-white">
             <div className={`mb-6 max-w-7xl mx-auto px-4 ${textAlign === 'left' ? 'text-left' : 'text-center'}`}>
                 {badge && <span className="bg-[#ff4500] text-white px-4 py-1.5 rounded-full text-sm font-medium mb-5 inline-block shadow-sm">{badge}</span>}
-                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6 leading-tight">{renderTitle(title)}</h2>
+                <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-6 leading-tight">{renderTitle(title)}</h2>
                 {subtitle && (
-                    <div className={`text-gray-600 text-lg leading-relaxed ${textAlign === 'center' ? 'max-w-3xl mx-auto' : 'max-w-5xl'}`}>
+                    <div className={`text-gray-600 text-base leading-relaxed ${textAlign === 'center' ? 'max-w-3xl mx-auto' : 'max-w-5xl'}`}>
                         {renderRichText(subtitle)}
                     </div>
                 )}
@@ -165,11 +165,11 @@ export function DetailedFeatures({ badge, title, subtitle, items, textAlign = 'c
                             <div className="flex-1">
                                 {isObject ? (
                                     <>
-                                        <h3 className="font-bold text-slate-900 text-xl mb-3">{renderRichText(item.title)}</h3>
-                                        <p className="text-slate-600 leading-relaxed text-[15px]">{renderRichText(item.description)}</p>
+                                        <h3 className="font-bold text-slate-900 text-lg mb-3">{renderRichText(item.title)}</h3>
+                                        <p className="text-slate-600 leading-relaxed text-sm">{renderRichText(item.description)}</p>
                                     </>
                                 ) : (
-                                    <p className="text-slate-700 font-medium text-lg">{renderRichText(item)}</p>
+                                    <p className="text-slate-700 font-medium text-base">{renderRichText(item)}</p>
                                 )}
                             </div>
                         </div>
@@ -183,7 +183,7 @@ export function DetailedFeatures({ badge, title, subtitle, items, textAlign = 'c
 export function RichTextSection({ title, content }: any) {
     return (
         <div className="py-8 max-w-4xl mx-auto">
-            {title && <h2 className="text-2xl font-bold text-slate-900 mb-6">{title}</h2>}
+            {title && <h2 className="text-xl font-bold text-slate-900 mb-6">{title}</h2>}
             <div className="prose prose-slate max-w-none prose-headings:text-slate-800 prose-p:text-slate-600 prose-li:text-slate-600 bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
                 <div className="whitespace-pre-line leading-relaxed text-gray-700">
                     {content && content.split('\n').map((line: string, i: number) => (
@@ -201,7 +201,7 @@ export function TestimonialsSection({ title, items }: any) {
     return (
         <div className="py-12 bg-slate-50 rounded-3xl my-8">
             <div className="text-center mb-10 px-4">
-                <h2 className="text-3xl font-bold text-slate-900">{title}</h2>
+                <h2 className="text-2xl font-bold text-slate-900">{title}</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto px-6">
                 {items?.map((item: any, i: number) => (

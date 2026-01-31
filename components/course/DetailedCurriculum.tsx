@@ -31,10 +31,10 @@ export default function DetailedCurriculum({ modules, title, subtitle, courseNam
                 <span className="bg-[#ff4500] text-white px-4 py-1.5 rounded-full text-sm font-medium inline-block mb-6 shadow-sm">
                     Comprehensive Curriculum
                 </span>
-                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4 max-w-3xl mx-auto leading-tight">
+                <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-4 max-w-3xl mx-auto leading-tight">
                     {title || `${courseName} Course Curriculum – From Basics to Advanced Projects`}
                 </h2>
-                <div className="text-gray-600 text-lg">
+                <div className="text-gray-600 text-base">
                     {subtitle ? renderRichText(subtitle) : `${modules.length} comprehensive modules covering every aspect of ${courseName} with extensive hands-on labs`}
                 </div>
             </div>
@@ -46,7 +46,7 @@ export default function DetailedCurriculum({ modules, title, subtitle, courseNam
                         <Clock className="w-6 h-6" />
                     </div>
                     <div>
-                        <div className="text-2xl font-bold text-slate-900">50 Hours</div>
+                        <div className="text-xl font-bold text-slate-900">50 Hours</div>
                         <div className="text-sm font-medium text-slate-600">Total Training Duration</div>
                     </div>
                 </div>
@@ -68,7 +68,7 @@ export default function DetailedCurriculum({ modules, title, subtitle, courseNam
                         <Download className="w-6 h-6" />
                     </div>
                     <div>
-                        <div className="text-2xl font-bold text-white">Download</div>
+                        <div className="text-xl font-bold text-white">Download</div>
                         <div className="text-sm font-medium text-slate-400">Curriculum PDF</div>
                     </div>
                 </a>
@@ -111,11 +111,11 @@ export default function DetailedCurriculum({ modules, title, subtitle, courseNam
                             <Accordion.Header className="flex">
                                 <Accordion.Trigger className="flex flex-1 items-center justify-between p-6 w-full text-left group bg-white hover:bg-gray-50/80 transition-colors cursor-pointer outline-none">
                                     <div className="flex items-center gap-5">
-                                        <div className="w-10 h-10 rounded-full bg-[#ff4500] text-white flex items-center justify-center font-bold text-lg shadow-sm flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                        <div className="w-10 h-10 rounded-full bg-[#ff4500] text-white flex items-center justify-center font-bold text-base shadow-sm flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                                             {i + 1}
                                         </div>
                                         <div>
-                                            <h3 className="font-bold text-slate-900 text-lg md:text-xl group-hover:text-[#ff4500] transition-colors">
+                                            <h3 className="font-bold text-slate-900 text-base md:text-lg group-hover:text-[#ff4500] transition-colors">
                                                 {displayTitle}
                                             </h3>
                                             {displayDuration && (
@@ -143,7 +143,7 @@ export default function DetailedCurriculum({ modules, title, subtitle, courseNam
                                             </h4>
                                             <ul className="space-y-3">
                                                 {points?.map((point, j) => (
-                                                    <li key={j} className="flex items-start gap-3 text-slate-600 text-[15px] leading-relaxed group/item">
+                                                    <li key={j} className="flex items-start gap-3 text-slate-600 text-sm leading-relaxed group/item">
                                                         <ChevronRight className="w-4 h-4 text-orange-400 mt-1 flex-shrink-0 group-hover/item:translate-x-1 transition-transform" />
                                                         <span>{point}</span>
                                                     </li>
@@ -160,7 +160,7 @@ export default function DetailedCurriculum({ modules, title, subtitle, courseNam
                                                 </h4>
                                                 <ul className="space-y-3">
                                                     {labs.map((activity, k) => (
-                                                        <li key={k} className="flex items-start gap-3 text-slate-600 text-[15px] leading-relaxed group/item">
+                                                        <li key={k} className="flex items-start gap-3 text-slate-600 text-sm leading-relaxed group/item">
                                                             <CheckCircle2 className="w-4 h-4 text-[#ff4500] mt-1 flex-shrink-0" />
                                                             <span>{activity}</span>
                                                         </li>
@@ -182,7 +182,7 @@ export default function DetailedCurriculum({ modules, title, subtitle, courseNam
                         href={syllabusUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-3 bg-[#ff4500] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#ff4500] transition-colors shadow-lg hover:shadow-orange-200"
+                        className="inline-flex items-center gap-3 bg-[#ff4500] text-white px-8 py-4 rounded-full font-bold text-base hover:bg-[#ff4500] transition-colors shadow-lg hover:shadow-orange-200"
                     >
                         <Download className="w-6 h-6" />
                         Download Full {courseName} Curriculum

@@ -16,8 +16,8 @@ export default function Curriculum({ modules }: { modules: Topic[] }) {
         <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
                 <span className="text-[#ff4500] font-bold uppercase tracking-widest text-sm">Course Syllabus</span>
-                <h2 className="text-3xl font-bold text-slate-900 mt-2">Comprehensive Curriculum</h2>
-                <p className="text-gray-600 mt-4">Designed by industry experts to make you job-ready</p>
+                <h2 className="text-2xl font-bold text-slate-900 mt-2">Comprehensive Curriculum</h2>
+                <p className="text-gray-600 mt-4 text-sm">Designed by industry experts to make you job-ready</p>
             </div>
 
             <Accordion.Root type="single" collapsible className="space-y-4">
@@ -26,11 +26,11 @@ export default function Curriculum({ modules }: { modules: Topic[] }) {
                         <Accordion.Header className="flex">
                             <Accordion.Trigger className="flex flex-1 items-center justify-between p-6 w-full text-left group bg-white hover:bg-gray-50 transition-colors">
                                 <div className="flex items-center gap-4">
-                                    <div className="w-10 h-10 rounded-lg bg-[#ff4500]/10 text-[#ff4500] flex items-center justify-center font-bold text-lg group-hover:bg-[#ff4500] group-hover:text-white transition-colors">
+                                    <div className="w-10 h-10 rounded-lg bg-[#ff4500]/10 text-[#ff4500] flex items-center justify-center font-bold text-base group-hover:bg-[#ff4500] group-hover:text-white transition-colors">
                                         {i + 1}
                                     </div>
                                     <div>
-                                        <h3 className="font-bold text-slate-900 text-lg">{module.title}</h3>
+                                        <h3 className="font-bold text-slate-900 text-base">{module.title}</h3>
                                         <div className="flex items-center gap-4 mt-1 text-sm text-gray-500">
                                             <span className="flex items-center gap-1"><BookOpen className="w-3 h-3" /> {module.topics?.length || 0} Topics</span>
                                         </div>

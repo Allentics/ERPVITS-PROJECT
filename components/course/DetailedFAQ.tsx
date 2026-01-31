@@ -108,7 +108,7 @@ export default function DetailedFAQ({ items, title, subtitle }: { items?: any[],
                     <span className="bg-[#ff4500]/10 text-[#ff4500] px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block">
                         FAQ
                     </span>
-                    <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+                    <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
                         Frequently Asked <span className="text-[#ff4500]">Questions</span>
                     </h2>
                     <p className="text-gray-600">
@@ -129,7 +129,7 @@ export default function DetailedFAQ({ items, title, subtitle }: { items?: any[],
                                     {idx + 1}
                                 </div>
                                 <div className="flex-grow">
-                                    <div className={`font-bold text-[15px] ${openIndex === idx ? 'text-[#ff4500]' : 'text-slate-800'}`}>
+                                    <div className={`font-bold text-sm ${openIndex === idx ? 'text-[#ff4500]' : 'text-slate-800'}`}>
                                         {faq.question}
                                     </div>
                                     <div className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === idx ? 'max-h-96 opacity-100 mt-3' : 'max-h-0 opacity-0'}`}>

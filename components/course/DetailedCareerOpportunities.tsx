@@ -81,10 +81,10 @@ export default function DetailedCareerOpportunities({ items, courseName = "SAP A
                     <span className="bg-[#ff4500]/10 text-[#cc3700] px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block">
                         Career Paths
                     </span>
-                    <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+                    <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
                         Career Opportunities After {courseName} Training
                     </h2>
-                    <p className="text-gray-600 text-lg">
+                    <p className="text-gray-600 text-base">
                         Step into global consulting and implementation roles with competitive salaries
                     </p>
                 </div>
@@ -106,8 +106,8 @@ export default function DetailedCareerOpportunities({ items, courseName = "SAP A
                                             <h3 className="font-bold text-slate-900">{role.title}</h3>
                                         </div>
                                         <div className="pl-14">
-                                            <div className="text-sm font-semibold text-[#ff4500] flex items-center gap-1">
-                                                <span className="text-slate-400 text-xs font-normal uppercase tracking-wider">Salary:</span>
+                                            <div className="text-xs font-semibold text-[#ff4500] flex items-center gap-1">
+                                                <span className="text-slate-400 text-[10px] font-normal uppercase tracking-wider">Salary:</span>
                                                 {role.salary}
                                             </div>
                                         </div>
@@ -115,20 +115,20 @@ export default function DetailedCareerOpportunities({ items, courseName = "SAP A
 
                                     {/* Responsibilities */}
                                     <div className="lg:col-span-3">
-                                        <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Responsibilities</div>
-                                        <p className="text-sm text-slate-600 leading-relaxed">{role.responsibilities}</p>
+                                        <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Responsibilities</div>
+                                        <p className="text-xs text-slate-600 leading-relaxed">{role.responsibilities}</p>
                                     </div>
 
                                     {/* Employers */}
                                     <div className="lg:col-span-3">
-                                        <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Top Employers</div>
-                                        <p className="text-sm text-slate-600">{role.employers}</p>
+                                        <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Top Employers</div>
+                                        <p className="text-xs text-slate-600">{role.employers}</p>
                                     </div>
 
                                     {/* Career Path */}
                                     <div className="lg:col-span-2">
-                                        <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Career Path</div>
-                                        <p className="text-sm text-blue-600 font-medium">{role.path}</p>
+                                        <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Career Path</div>
+                                        <p className="text-xs text-blue-600 font-medium">{role.path}</p>
                                     </div>
                                 </div>
                             </div>

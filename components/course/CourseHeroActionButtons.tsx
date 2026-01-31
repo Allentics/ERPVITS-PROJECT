@@ -31,7 +31,7 @@ export default function CourseHeroActionButtons({
             <div className="flex flex-col sm:flex-row gap-5 justify-center mb-16">
                 <Link
                     href={enrollHref}
-                    className={`text-white px-10 py-4 rounded-lg font-bold shadow-lg transition-all flex items-center justify-center gap-2 text-lg ${isPurple
+                    className={`text-white px-8 py-4 rounded-lg font-bold shadow-lg transition-all flex items-center justify-center gap-2 text-base ${isPurple
                         ? 'bg-gradient-to-r from-[#ff4500] to-red-600 hover:from-[#cc3700] hover:to-red-700 shadow-[#ff4500]/25'
                         : 'bg-gradient-to-r from-[#ff4500] to-red-600 hover:from-[#cc3700] hover:to-red-700 shadow-[#ff4500]/25'
                         }`}
@@ -44,7 +44,7 @@ export default function CourseHeroActionButtons({
 
                 <button
                     onClick={() => setIsModalOpen(true)}
-                    className="bg-white border text-slate-700 border-slate-200 hover:border-slate-300 hover:bg-slate-50 px-10 py-4 rounded-lg font-bold transition-all shadow-sm text-lg block text-center cursor-pointer"
+                    className="bg-white border text-slate-700 border-slate-200 hover:border-slate-300 hover:bg-slate-50 px-8 py-4 rounded-lg font-bold transition-all shadow-sm text-base block text-center cursor-pointer"
                 >
                     {secondaryLabel}
                 </button>

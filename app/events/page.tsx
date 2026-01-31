@@ -21,8 +21,8 @@ export default function EventsPage() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                     {/* Left Column: Information */}
                     <div>
-                        <h1 className="text-4xl font-bold text-slate-900 mb-6">Contact Us to Register</h1>
-                        <p className="text-xl text-slate-600 mb-8 leading-relaxed">
+                        <h1 className="text-2xl font-bold text-slate-900 mb-6">Contact Us to Register</h1>
+                        <p className="text-lg text-slate-600 mb-8 leading-relaxed">
                             Interested in our upcoming events or specific training programs? Fill out the form, and our team will get back to you with all the details and registration confirmation.
                         </p>
 

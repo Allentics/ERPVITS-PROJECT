@@ -57,10 +57,10 @@ export default function DetailedLearningOutcomes({ items, title, subtitle }: { i
                     <span className="bg-[#ff4500]/10 text-[#ff4500] px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block">
                         Learning Outcomes
                     </span>
-                    <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+                    <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
                         {title || "What You'll Master in This Course"}
                     </h2>
-                    <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+                    <p className="text-gray-600 text-base max-w-3xl mx-auto">
                         {subtitle || "Comprehensive competencies you'll acquire to excel as a professional"}
                     </p>
                 </div>
@@ -102,7 +102,7 @@ export default function DetailedLearningOutcomes({ items, title, subtitle }: { i
                         return (
                             <div key={idx} className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
                                 <div className="absolute top-0 left-0 w-1 h-full bg-[#ff4500] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
-                                <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                                <h3 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-3">
                                     {/* Only show icon box if explicit icon provided or inferred implies a major section */}
                                     {inferredIcon !== "CheckCircle2" && (
                                         <div className="p-2 bg-[#ff4500]/10 rounded-lg text-[#ff4500] group-hover:bg-[#ff4500] group-hover:text-white transition-colors">
@@ -117,7 +117,7 @@ export default function DetailedLearningOutcomes({ items, title, subtitle }: { i
                                             <div className="mt-1">
                                                 <CheckCircle2 className="w-5 h-5 text-[#ff4500]" />
                                             </div>
-                                            <span className="text-slate-600 text-[15px] leading-relaxed">{point}</span>
+                                            <span className="text-slate-600 text-sm leading-relaxed">{point}</span>
                                         </li>
                                     ))}
                                 </ul>

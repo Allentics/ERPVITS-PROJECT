@@ -151,10 +151,10 @@ export default function DetailedTestimonials({ items, courseName = "SAP Ariba" }
                     <span className="bg-[#ff4500]/10 text-[#ff4500] px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block">
                         Student Success Stories
                     </span>
-                    <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+                    <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
                         Hear from Our Successful <span className="text-[#ff4500]">{courseName} Learners</span>
                     </h2>
-                    <p className="text-gray-600">Real reviews, real results from professionals who transformed their careers</p>
+                    <p className="text-gray-600 text-sm">Real reviews, real results from professionals who transformed their careers</p>
 
                     <div className="mt-8 flex justify-center">
                         <div className="bg-white px-8 py-4 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center">
@@ -163,8 +163,8 @@ export default function DetailedTestimonials({ items, courseName = "SAP Ariba" }
                                     <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
                                 ))}
                             </div>
-                            <div className="font-bold text-2xl text-slate-900">4.9/5</div>
-                            <div className="text-xs text-slate-500">Based on 500+ student reviews</div>
+                            <div className="font-bold text-xl text-slate-900">4.9/5</div>
+                            <div className="text-[10px] text-slate-500">Based on 500+ student reviews</div>
                         </div>
                     </div>
                 </div>
@@ -179,14 +179,14 @@ export default function DetailedTestimonials({ items, courseName = "SAP Ariba" }
                                     <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
                                 ))}
                             </div>
-                            <p className="text-slate-600 text-sm leading-relaxed mb-6 italic">"{review.text}"</p>
+                            <p className="text-slate-600 text-xs leading-relaxed mb-6 italic">"{review.text}"</p>
                             <div className="flex items-center gap-4">
-                                <div className={`w-10 h-10 rounded-full ${review.color} text-white flex items-center justify-center font-bold text-sm`}>
+                                <div className={`w-10 h-10 rounded-full ${review.color} text-white flex items-center justify-center font-bold text-xs`}>
                                     {review.initial}
                                 </div>
                                 <div>
-                                    <div className="font-bold text-slate-900 text-sm">{review.author}</div>
-                                    <div className="text-xs text-slate-500">{review.role}</div>
+                                    <div className="font-bold text-slate-900 text-xs">{review.author}</div>
+                                    <div className="text-[10px] text-slate-500">{review.role}</div>
                                 </div>
                             </div>
                         </div>

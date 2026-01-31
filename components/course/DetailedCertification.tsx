@@ -98,12 +98,12 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
         <section className="pt-8 pb-16 bg-white text-slate-900">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                <h2 className="text-3xl lg:text-4xl font-bold mb-2 text-slate-900 leading-tight">
+                <h2 className="text-2xl lg:text-3xl font-bold mb-2 text-slate-900 leading-tight">
                     {title || `SAP ${courseName} Certification – Your Global Career Credential`}
                 </h2>
 
                 {subtitle && (
-                    <p className="text-lg text-slate-600 mb-8 max-w-3xl">
+                    <p className="text-base text-slate-600 mb-8 max-w-3xl">
                         {subtitle}
                     </p>
                 )}
@@ -121,11 +121,11 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
                                     </div>
                                     <div className="flex-1">
                                         <div className="flex flex-col mb-2">
-                                            <h3 className="font-bold text-xl text-slate-900">{cert.title}</h3>
-                                            {cert.code && <span className="text-[#ff4500] text-sm font-semibold mt-1">Exam Code: {cert.code}</span>}
+                                            <h3 className="font-bold text-lg text-slate-900">{cert.title}</h3>
+                                            {cert.code && <span className="text-[#ff4500] text-xs font-semibold mt-1">Exam Code: {cert.code}</span>}
                                         </div>
 
-                                        <div className="space-y-3 text-sm text-slate-600">
+                                        <div className="space-y-3 text-xs text-slate-600">
                                             <div className="flex gap-2">
                                                 <span className="font-bold text-slate-900 whitespace-nowrap">Focus:</span>
                                                 <span className="leading-relaxed">{cert.focus || cert.description}</span>
@@ -150,15 +150,15 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
                         <div className="bg-gradient-to-br from-[#ff4500] to-red-600 rounded-xl p-5 text-white shadow-xl shadow-orange-500/20 mt-2">
                             <div className="flex items-center gap-3 mb-4 border-b border-white/20 pb-3">
                                 <Trophy className="w-5 h-5 text-white" />
-                                <h3 className="font-bold text-lg text-white">{whyMattersTitle || "Why SAP Certification Matters"}</h3>
+                                <h3 className="font-bold text-base text-white">{whyMattersTitle || "Why SAP Certification Matters"}</h3>
                             </div>
                             <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
                                 {benefitsToDisplay.map((benefit, idx) => (
                                     <li key={idx} className="flex gap-2 items-start">
                                         <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-white flex-shrink-0" />
-                                        <span className="text-sm">
+                                        <span className="text-[13px]">
                                             <strong className="text-white font-bold block">{benefit.title}</strong>
-                                            <span className="text-orange-50 block leading-relaxed text-xs">{benefit.desc}</span>
+                                            <span className="text-orange-50 block leading-relaxed text-[11px]">{benefit.desc}</span>
                                         </span>
                                     </li>
                                 ))}
@@ -191,21 +191,21 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
 
                         {/* Support Card (White) */}
                         <div className="bg-white text-slate-900 rounded-2xl p-5 shadow-lg border border-slate-100">
-                            <h3 className="text-lg font-bold mb-4 text-slate-900 border-b border-slate-100 pb-3 flex items-center gap-2">
+                            <h3 className="text-base font-bold mb-4 text-slate-900 border-b border-slate-100 pb-3 flex items-center gap-2">
                                 <FileCheck className="w-5 h-5 text-[#ff4500]" />
                                 Our Certification Support:
                             </h3>
                             <ul className="grid grid-cols-1 gap-3">
                                 {featuresToDisplay.map((feature: any, idx) => (
-                                    <li key={idx} className="flex gap-3 text-sm items-start group">
+                                    <li key={idx} className="flex gap-3 text-xs items-start group">
                                         <div className="mt-0.5 bg-white p-1 rounded-full border border-[#ff4500]/20 shadow-sm group-hover:bg-[#ff4500]/10 transition-colors">
                                             <CheckCircle2 className="w-3.5 h-3.5 text-[#ff4500]" />
                                         </div>
                                         <div>
-                                            <span className="font-bold text-slate-900 block text-sm mb-0.5">
+                                            <span className="font-bold text-slate-900 block text-xs mb-0.5">
                                                 {feature.title}
                                             </span>
-                                            <span className="text-slate-600 text-[11px] block leading-snug">
+                                            <span className="text-slate-600 text-[10px] block leading-snug">
                                                 {feature.subtitle}
                                             </span>
                                         </div>

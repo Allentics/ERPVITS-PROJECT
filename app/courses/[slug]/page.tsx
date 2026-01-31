@@ -201,7 +201,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
 
 
                     {/* Heading */}
-                    <h1 className="text-5xl lg:text-7xl font-extrabold mb-8 leading-tight tracking-tight text-slate-900">
+                    <h1 className="text-4xl lg:text-5xl font-extrabold mb-8 leading-tight tracking-tight text-slate-900">
                         {mappedCourse.heroHeading ? (
                             mappedCourse.heroHeading
                         ) : (
@@ -211,7 +211,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
 
                     {/* Subheading */}
                     {/* Subheading */}
-                    <div className="text-xl text-slate-600 mb-12 leading-relaxed max-w-3xl mx-auto">
+                    <div className="text-lg text-slate-600 mb-12 leading-relaxed max-w-3xl mx-auto">
                         {renderRichText(mappedCourse.heroSubheading || (mappedCourse.description ? mappedCourse.description.substring(0, 150) + "..." : ""))}
                     </div>
 

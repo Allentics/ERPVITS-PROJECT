@@ -44,9 +44,10 @@ const DEFAULT_CONTENT = {
         },
         {
             name: "One-to-One Training",
-            desc: "Daily customized session schedule",
+            desc: "Personalized mentoring & flexible learning",
             price: "Personalized",
             features: [
+                "Daily customized session schedule",
                 "Live Q&A with experts",
                 "Full project lab access",
                 "1-on-1 mentoring support",
@@ -90,7 +91,41 @@ export default function PricingPlans() {
                     .single();
 
                 if (data && !error) {
-                    setContent({ ...DEFAULT_CONTENT, ...data.content });
+                    const dbContent = data.content as any;
+
+                    // Intelligent merge: 
+                    // 1. Start with DEFAULT_CONTENT plans
+                    // 2. Overwrite with DB versions if they exist (by name)
+                    // 3. Keep any default plans that aren't in the DB yet
+                    const mergedPlans = DEFAULT_CONTENT.plans.map(defaultPlan => {
+                        const dbPlan = dbContent.plans?.find((p: any) => p.name === defaultPlan.name);
+                        if (!dbPlan) return defaultPlan;
+
+                        // Merge features: combination of default and DB features, removing duplicates
+                        const mergedFeatures = Array.from(new Set([
+                            ...(defaultPlan.features || []),
+                            ...(dbPlan.features || [])
+                        ]));
+
+                        return {
+                            ...defaultPlan,
+                            ...dbPlan,
+                            features: mergedFeatures
+                        };
+                    });
+
+                    // 4. Add any plans from DB that aren't in defaults
+                    dbContent.plans?.forEach((dbPlan: any) => {
+                        if (!mergedPlans.some(p => p.name === dbPlan.name)) {
+                            mergedPlans.push(dbPlan);
+                        }
+                    });
+
+                    setContent({
+                        ...DEFAULT_CONTENT,
+                        ...dbContent,
+                        plans: mergedPlans
+                    });
                 }
             } catch (err) {
                 console.error('Error fetching Pricing content:', err);

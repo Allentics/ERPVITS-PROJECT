@@ -89,10 +89,10 @@ export default function DetailedPostTrainingJourney({ title, steps: propSteps, c
                     <span className="bg-[#ff4500]/10 text-[#ff4500] px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block">
                         Your Career Journey
                     </span>
-                    <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+                    <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
                         {title || `What to Expect After Completing ${courseName} Training`}
                     </h2>
-                    <p className="text-gray-600 text-lg">
+                    <p className="text-gray-600 text-base">
                         Your comprehensive growth roadmap from certification to career excellence
                     </p>
                 </div>
@@ -121,9 +121,9 @@ export default function DetailedPostTrainingJourney({ title, steps: propSteps, c
                                                 ${step.color === 'orange' ? 'bg-[#ff4500]' : 'bg-slate-800'}`}>
                                                 <Icon className="w-5 h-5" />
                                             </div>
-                                            <h3 className="text-xl font-bold text-slate-900">{step.title}</h3>
+                                            <h3 className="text-lg font-bold text-slate-900">{step.title}</h3>
                                         </div>
-                                        <span className="text-sm font-bold text-[#ff4500] bg-[#ff4500]/10 px-3 py-1 rounded-full border border-[#ff4500]/10 inline-block w-fit">
+                                        <span className="text-xs font-bold text-[#ff4500] bg-[#ff4500]/10 px-3 py-1 rounded-full border border-[#ff4500]/10 inline-block w-fit">
                                             {step.timeline}
                                         </span>
                                     </div>
@@ -132,7 +132,7 @@ export default function DetailedPostTrainingJourney({ title, steps: propSteps, c
                                         {step.points.map((point: string, pIdx: number) => (
                                             <li key={pIdx} className="flex items-start gap-3">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-orange-400 mt-2 flex-shrink-0" />
-                                                <span className="text-slate-600 text-[15px] leading-relaxed">{renderRichText(point)}</span>
+                                                <span className="text-slate-600 text-sm leading-relaxed">{renderRichText(point)}</span>
                                             </li>
                                         ))}
                                     </ul>
@@ -148,29 +148,29 @@ export default function DetailedPostTrainingJourney({ title, steps: propSteps, c
                         <div className="w-10 h-10 mx-auto bg-white rounded-full flex items-center justify-center text-[#ff4500] mb-3 shadow-sm">
                             <Clock className="w-5 h-5" />
                         </div>
-                        <div className="text-xl font-bold text-slate-900 mb-1">2-3 Months</div>
-                        <div className="text-xs text-slate-500">Average Time to First Role</div>
+                        <div className="text-lg font-bold text-slate-900 mb-1">2-3 Months</div>
+                        <div className="text-[10px] text-slate-500">Average Time to First Role</div>
                     </div>
                     <div className="bg-slate-900 p-6 rounded-xl text-center border border-slate-800">
                         <div className="w-10 h-10 mx-auto bg-white/10 rounded-full flex items-center justify-center text-white mb-3">
                             <Briefcase className="w-5 h-5" />
                         </div>
-                        <div className="text-xl font-bold text-white mb-1">100%</div>
-                        <div className="text-xs text-slate-400">Career Support</div>
+                        <div className="text-lg font-bold text-white mb-1">100%</div>
+                        <div className="text-[10px] text-slate-400">Career Support</div>
                     </div>
                     <div className="bg-[#ff4500]/10 p-6 rounded-xl text-center border border-[#ff4500]/10">
                         <div className="w-10 h-10 mx-auto bg-white rounded-full flex items-center justify-center text-[#ff4500] mb-3 shadow-sm">
                             <Headphones className="w-5 h-5" />
                         </div>
-                        <div className="text-xl font-bold text-slate-900 mb-1">6 Months</div>
-                        <div className="text-xs text-slate-500">Post-Training Support</div>
+                        <div className="text-lg font-bold text-slate-900 mb-1">6 Months</div>
+                        <div className="text-[10px] text-slate-500">Post-Training Support</div>
                     </div>
                     <div className="bg-slate-900 p-6 rounded-xl text-center border border-slate-800">
                         <div className="w-10 h-10 mx-auto bg-white/10 rounded-full flex items-center justify-center text-white mb-3">
                             <Users className="w-5 h-5" />
                         </div>
-                        <div className="text-xl font-bold text-white mb-1">Lifetime</div>
-                        <div className="text-xs text-slate-400">Alumni Network Access</div>
+                        <div className="text-lg font-bold text-white mb-1">Lifetime</div>
+                        <div className="text-[10px] text-slate-400">Alumni Network Access</div>
                     </div>
                 </div>
 
