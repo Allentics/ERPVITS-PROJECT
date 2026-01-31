@@ -80,20 +80,20 @@ export default function BlogContactForm({ slug }: BlogContactFormProps) {
     };
 
     return (
-        <div className="bg-[#FFF7ED] rounded-2xl shadow-lg border border-orange-100 p-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">Request More Info</h3>
-            <p className="text-gray-600 mb-8">Get expert guidance on your SAP career path.</p>
+        <div className="bg-[#FFF7ED] rounded-2xl shadow-lg border border-orange-100 p-6">
+            <h3 className="text-xl font-bold text-gray-900 mb-1">Request More Info</h3>
+            <p className="text-gray-600 text-sm mb-5">Get expert guidance on your SAP career path.</p>
 
             {status === 'success' ? (
-                <div className="bg-green-50 border border-green-200 text-green-700 p-6 rounded-lg mb-6 text-center">
-                    <h4 className="font-bold text-lg mb-2">Thank you!</h4>
-                    <p className="mb-4">Our expert will contact you shortly.</p>
-                    <a href="/" className="inline-block px-6 py-2 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors shadow-sm">
+                <div className="bg-green-50 border border-green-200 text-green-700 p-5 rounded-lg mb-4 text-center">
+                    <h4 className="font-bold text-base mb-1">Thank you!</h4>
+                    <p className="text-sm mb-3">Our expert will contact you shortly.</p>
+                    <a href="/" className="inline-block px-5 py-2 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors shadow-sm text-sm">
                         Back to Home
                     </a>
                 </div>
             ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-3">
                     <div>
                         <input
                             type="text"
@@ -102,7 +102,7 @@ export default function BlogContactForm({ slug }: BlogContactFormProps) {
                             required
                             value={formData.name}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none bg-white"
+                            className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none bg-white text-sm"
                         />
                     </div>
                     <div>
@@ -113,7 +113,7 @@ export default function BlogContactForm({ slug }: BlogContactFormProps) {
                             required
                             value={formData.email}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none bg-white"
+                            className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none bg-white text-sm"
                         />
                     </div>
                     <div className="flex gap-2">
@@ -121,7 +121,7 @@ export default function BlogContactForm({ slug }: BlogContactFormProps) {
                             name="countryCode"
                             value={formData.countryCode}
                             onChange={handleChange}
-                            className="w-24 px-2 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none bg-white text-sm"
+                            className="w-24 px-2 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none bg-white text-sm"
                         >
                             <option value="+91">IN (+91)</option>
                             <option value="+1">US (+1)</option>
@@ -139,7 +139,7 @@ export default function BlogContactForm({ slug }: BlogContactFormProps) {
                             required
                             value={formData.phone}
                             onChange={handleChange}
-                            className="flex-1 min-w-0 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none bg-white"
+                            className="flex-1 min-w-0 px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none bg-white text-sm"
                         />
                     </div>
                     <div>
@@ -147,7 +147,7 @@ export default function BlogContactForm({ slug }: BlogContactFormProps) {
                             name="course"
                             value={formData.course}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none bg-white"
+                            className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none bg-white text-sm"
                         >
                             <option value="">Interested Course</option>
                             {courses.map((course) => (
@@ -158,26 +158,26 @@ export default function BlogContactForm({ slug }: BlogContactFormProps) {
                     <div>
                         <textarea
                             name="message"
-                            rows={4}
+                            rows={3}
                             placeholder="Tell us about your requirements..."
                             value={formData.message}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none resize-none bg-white"
+                            className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none resize-none bg-white text-sm"
                         ></textarea>
                     </div>
 
                     {status === 'error' && (
-                        <div className="text-red-600 text-sm">{errorMessage}</div>
+                        <div className="text-red-600 text-xs">{errorMessage}</div>
                     )}
 
                     <button
                         type="submit"
                         disabled={status === 'loading'}
-                        className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-lg shadow-lg hover:shadow-orange-500/40 transition-all disabled:opacity-50"
+                        className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 rounded-lg shadow-md hover:shadow-orange-500/40 transition-all disabled:opacity-50 text-base"
                     >
                         {status === 'loading' ? 'Submitting...' : 'Schedule Free Counseling'}
                     </button>
-                    <p className="text-center text-xs text-gray-500">By submitting, you agree to our privacy policy.</p>
+                    <p className="text-center text-[10px] text-gray-400">By submitting, you agree to our privacy policy.</p>
                 </form>
             )}
         </div>

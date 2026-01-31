@@ -60,11 +60,11 @@ const Hero = () => {
                     src={content.bg_image || "/images/home_hero_bg.png"}
                     alt="Office Background"
                     fill
-                    className="object-cover object-center brightness-110 contrast-125"
+                    className="object-cover object-center"
                     priority
-                    quality={90}
+                    quality={100}
                 />
-                <div className="absolute inset-0 bg-white/65" />
+                <div className="absolute inset-0 bg-white/20" />
             </div>
 
             <ContactModal

@@ -232,9 +232,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     </div>
 
                     {/* Sidebar (Right) */}
-                    <div className="lg:col-span-4 space-y-12">
-                        {/* Contact Form Card */}
-                        <div className="sticky top-24">
+                    <div className="lg:col-span-4 relative">
+                        <div className="sticky top-32 h-fit mb-12">
                             <BlogContactForm slug={slug} />
                         </div>
                     </div>

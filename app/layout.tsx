@@ -4,6 +4,7 @@ import './globals.css'
 import AnnouncementBar from '@/components/layout/AnnouncementBar'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+import WebinarPopup from '@/components/WebinarPopup'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,6 +27,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <WebinarPopup />
       </body>
     </html>
   )
