@@ -3,7 +3,8 @@ import { notFound } from 'next/navigation';
 import Curriculum from '@/components/course/Curriculum';
 import FAQ from '@/components/course/FAQ';
 import ComparisonTable from '@/components/home/ComparisonTable';
-import SectionRenderer, { DetailedFeatures, renderRichText } from '@/components/course/SectionRenderer';
+import SectionRenderer, { DetailedFeatures } from '@/components/course/SectionRenderer';
+import { renderRichText } from '@/lib/richText';
 import DetailedDemoBooking from '@/components/course/DetailedDemoBooking';
 import DetailedFAQ from '@/components/course/DetailedFAQ';
 import DetailedPrerequisites from '@/components/course/DetailedPrerequisites';
@@ -203,7 +204,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                     {/* Heading */}
                     <h1 className="text-4xl lg:text-5xl font-extrabold mb-8 leading-tight tracking-tight text-slate-900">
                         {mappedCourse.heroHeading ? (
-                            mappedCourse.heroHeading
+                            renderRichText(mappedCourse.heroHeading)
                         ) : (
                             <>Transform Your Career with <span className={`text-transparent bg-clip-text bg-gradient-to-r ${mappedCourse.themeColor === 'purple' ? 'from-blue-700 to-purple-700' : 'from-orange-600 to-red-600'}`}>{mappedCourse.title}</span></>
                         )}

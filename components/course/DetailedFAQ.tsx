@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Plus, Minus, HelpCircle } from 'lucide-react';
+import { renderRichText } from '@/lib/richText';
 
 export default function DetailedFAQ({ items, title, subtitle }: { items?: any[], title?: string, subtitle?: string }) {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -112,7 +113,7 @@ export default function DetailedFAQ({ items, title, subtitle }: { items?: any[],
                         Frequently Asked <span className="text-[#ff4500]">Questions</span>
                     </h2>
                     <p className="text-gray-600">
-                        {subtitle || "Everything you need to know about the training program"}
+                        {renderRichText(subtitle || "Everything you need to know about the training program")}
                     </p>
                 </div>
 
@@ -130,12 +131,12 @@ export default function DetailedFAQ({ items, title, subtitle }: { items?: any[],
                                 </div>
                                 <div className="flex-grow">
                                     <div className={`font-bold text-sm ${openIndex === idx ? 'text-[#ff4500]' : 'text-slate-800'}`}>
-                                        {faq.question}
+                                        {renderRichText(faq.question)}
                                     </div>
                                     <div className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === idx ? 'max-h-96 opacity-100 mt-3' : 'max-h-0 opacity-0'}`}>
-                                        <p className="text-slate-600 text-sm leading-relaxed pr-8">
-                                            {faq.answer}
-                                        </p>
+                                        <div className="text-slate-600 text-sm leading-relaxed pr-8">
+                                            {renderRichText(faq.answer)}
+                                        </div>
                                     </div>
                                 </div>
                                 {openIndex === idx ? (

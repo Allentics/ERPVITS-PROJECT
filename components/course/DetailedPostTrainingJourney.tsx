@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { CheckCircle2, Award, Rocket, Target, BookOpen, Clock, Users, ShieldCheck, TrendingUp, Briefcase, Headphones } from 'lucide-react';
-import { renderRichText } from './SectionRenderer';
+import { renderRichText } from '@/lib/richText';
 
 export default function DetailedPostTrainingJourney({ title, steps: propSteps, courseName = "this course" }: { title?: string, steps?: any[], courseName?: string }) {
     const scrollToBooking = () => {

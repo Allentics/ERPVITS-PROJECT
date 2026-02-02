@@ -1,5 +1,6 @@
 import React from 'react';
 import { Award, CheckCircle2, BookOpen, Trophy, TrendingUp, FileCheck } from 'lucide-react';
+import { renderRichText } from '@/lib/richText';
 
 export default function DetailedCertification({ items, title, subtitle, badge, stats, courseName = "SAP Ariba", description, imageSrc, imageSrc2, supportFeatures, benefits, whyMattersTitle, targetAudienceLabel }: {
     items?: any[],
@@ -99,13 +100,13 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <h2 className="text-2xl lg:text-3xl font-bold mb-2 text-slate-900 leading-tight">
-                    {title || `SAP ${courseName} Certification – Your Global Career Credential`}
+                    {renderRichText(title || `SAP ${courseName} Certification – Your Global Career Credential`)}
                 </h2>
 
                 {subtitle && (
-                    <p className="text-base text-slate-600 mb-8 max-w-3xl">
-                        {subtitle}
-                    </p>
+                    <div className="text-base text-slate-600 mb-8 max-w-3xl">
+                        {renderRichText(subtitle)}
+                    </div>
                 )}
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
@@ -121,24 +122,24 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
                                     </div>
                                     <div className="flex-1">
                                         <div className="flex flex-col mb-2">
-                                            <h3 className="font-bold text-lg text-slate-900">{cert.title}</h3>
+                                            <h3 className="font-bold text-lg text-slate-900">{renderRichText(cert.title)}</h3>
                                             {cert.code && <span className="text-[#ff4500] text-xs font-semibold mt-1">Exam Code: {cert.code}</span>}
                                         </div>
 
                                         <div className="space-y-3 text-xs text-slate-600">
                                             <div className="flex gap-2">
                                                 <span className="font-bold text-slate-900 whitespace-nowrap">Focus:</span>
-                                                <span className="leading-relaxed">{cert.focus || cert.description}</span>
+                                                <span className="leading-relaxed">{renderRichText(cert.focus || cert.description)}</span>
                                             </div>
                                             {cert.who && (
                                                 <div className="flex gap-2">
                                                     <span className="font-bold text-slate-900 whitespace-nowrap">{targetAudienceLabel || "Target Audience"}:</span>
-                                                    <span className="leading-relaxed">{cert.who}</span>
+                                                    <span className="leading-relaxed">{renderRichText(cert.who)}</span>
                                                 </div>
                                             )}
                                             <div className="flex gap-2">
                                                 <span className="font-bold text-slate-900 whitespace-nowrap">Job Relevance:</span>
-                                                <span className="leading-relaxed">{cert.relevance}</span>
+                                                <span className="leading-relaxed">{renderRichText(cert.relevance)}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -150,15 +151,15 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
                         <div className="bg-gradient-to-br from-[#ff4500] to-red-600 rounded-xl p-5 text-white shadow-xl shadow-orange-500/20 mt-2">
                             <div className="flex items-center gap-3 mb-4 border-b border-white/20 pb-3">
                                 <Trophy className="w-5 h-5 text-white" />
-                                <h3 className="font-bold text-base text-white">{whyMattersTitle || "Why SAP Certification Matters"}</h3>
+                                <h3 className="font-bold text-base text-white">{renderRichText(whyMattersTitle || "Why SAP Certification Matters")}</h3>
                             </div>
                             <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
                                 {benefitsToDisplay.map((benefit, idx) => (
                                     <li key={idx} className="flex gap-2 items-start">
                                         <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-white flex-shrink-0" />
                                         <span className="text-[13px]">
-                                            <strong className="text-white font-bold block">{benefit.title}</strong>
-                                            <span className="text-orange-50 block leading-relaxed text-[11px]">{benefit.desc}</span>
+                                            <strong className="text-white font-bold block">{renderRichText(benefit.title)}</strong>
+                                            <span className="text-orange-50 block leading-relaxed text-[11px]">{renderRichText(benefit.desc)}</span>
                                         </span>
                                     </li>
                                 ))}
@@ -203,10 +204,10 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
                                         </div>
                                         <div>
                                             <span className="font-bold text-slate-900 block text-xs mb-0.5">
-                                                {feature.title}
+                                                {renderRichText(feature.title)}
                                             </span>
                                             <span className="text-slate-600 text-[10px] block leading-snug">
-                                                {feature.subtitle}
+                                                {renderRichText(feature.subtitle)}
                                             </span>
                                         </div>
                                     </li>

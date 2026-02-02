@@ -1,17 +1,33 @@
 import React from 'react';
 
-/**
- * Helper to render text with **bold**, _italic_, [links](url), and common HTML tags (a, b, i, strong, em)
- */
-export const renderRichText = (text: string) => {
+// Helper to render text with **bold**, _italic_, [links](url), and common HTML tags (a, b, i, strong, em, span)
+export const renderRichText = (text: any) => {
     if (!text) return null;
+    if (typeof text !== 'string') return text;
 
-    // Regex for: 1. HTML links, 2. Markdown links, 3. Bold/Italic (Markdown & HTML), 4. Orange highlights
-    const pattern = /(<a\s+[\s\S]*?href=["'][\s\S]*?["'][\s\S]*?>[\s\S]*?<\/a>|\[[^\]]+\]\([^)]+\)|\*\*[\s\S]*?\*\*|__[\s\S]*?__|<b>[\s\S]*?<\/b>|<strong>[\s\S]*?<\/strong>|<i>[\s\S]*?<\/i>|<em>[\s\S]*?<\/em>|<orange>[\s\S]*?<\/orange>)/g;
-    const parts = text.split(pattern);
+    // Special case for common highlights if not already tagged
+    let processedText = text;
+    if (processedText.includes("100% Hands-On") && !processedText.includes("<span") && !processedText.includes("<orange>")) {
+        processedText = processedText.replace("100% Hands-On", '<span class="text-[#ff4500]">100% Hands-On</span>');
+    }
+
+    // Regex for: 1. HTML links, 2. Markdown links, 3. Bold/Italic (Markdown & HTML), 4. Orange highlights, 5. Spans with classes
+    // Using [\s\S]*? to handle multi-line content correctly
+    const pattern = /(<a\s+[\s\S]*?href=["'][\s\S]*?["'][\s\S]*?>[\s\S]*?<\/a>|\[[^\]]+\]\([^)]+\)|\*\*[\s\S]*?\*\*|__[\s\S]*?__|<b>[\s\S]*?<\/b>|<strong>[\s\S]*?<\/strong>|<i>[\s\S]*?<\/i>|<em>[\s\S]*?<\/em>|<orange>[\s\S]*?<\/orange>|<span[\s\S]*?class=["'][\s\S]*?["'][\s\S]*?>[\s\S]*?<\/span>)/g;
+    const parts = processedText.split(pattern);
 
     return parts.map((part, index) => {
         if (!part) return null;
+
+        // Check for span with classes
+        const spanMatch = part.match(/^<span\s+[\s\S]*?class=["']([\s\S]*?)["'][\s\S]*?>([\s\S]*?)<\/span>$/i);
+        if (spanMatch) {
+            return (
+                <span key={index} className={spanMatch[1]}>
+                    {spanMatch[2]}
+                </span>
+            );
+        }
 
         // Orange Highlights (Custom tag <orange>)
         if (part.toLowerCase().startsWith('<orange>')) {
@@ -58,18 +74,21 @@ export const renderRichText = (text: string) => {
             );
         }
 
-        // Check for Bold/Strong (Markdown ** or <b>/<strong>)
-        if (part.match(/^(\*\*|<b>|<strong>)[\s\S]*?(\*\*|<\/b>|<\/strong>)$/)) {
-            const content = part.replace(/^(\*\*|<b>|<strong>)|(\*\*|<\/b>|<\/strong>)$/g, '');
+        // Bold (Markdown: ** or __, HTML: <b> or <strong>)
+        if ((part.startsWith('**') && part.endsWith('**')) || (part.startsWith('__') && part.endsWith('__'))) {
+            return <strong key={index} className="font-bold text-slate-900">{part.slice(2, -2)}</strong>;
+        }
+        if (part.toLowerCase().startsWith('<b>') || part.toLowerCase().startsWith('<strong>')) {
+            const content = part.replace(/^<[^>]+>|<\/[^>]+>$/gi, '');
             return <strong key={index} className="font-bold text-slate-900">{content}</strong>;
         }
 
-        // Check for Italic/Em (Markdown _ or <i>/<em>)
-        if (part.match(/^(_|<i>|<em>)[\s\S]*?(_|<\/i>|<\/em>)$/)) {
-            const content = part.replace(/^(_|<i>|<em>)|(_|<\/i>|<\/em>)$/g, '');
-            return <em key={index} className="italic">{content}</em>;
+        // Italic (HTML: <i> or <em>) - Markdown italic (_) not explicitly handled to avoid conflict with links/snake_case
+        if (part.toLowerCase().startsWith('<i>') || part.toLowerCase().startsWith('<em>')) {
+            const content = part.replace(/^<[^>]+>|<\/[^>]+>$/gi, '');
+            return <em key={index} className="italic text-slate-800">{content}</em>;
         }
 
-        return part;
+        return <span key={index}>{part}</span>;
     });
 };

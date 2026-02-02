@@ -1,7 +1,7 @@
 import React from 'react';
 import { CheckCircle2 } from 'lucide-react';
 
-import { renderRichText } from './SectionRenderer';
+import { renderRichText } from '@/lib/richText';
 
 interface Feature {
     title: string;

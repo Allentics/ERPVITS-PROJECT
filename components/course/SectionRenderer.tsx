@@ -1,4 +1,6 @@
 import React from 'react';
+import { renderRichText } from '@/lib/richText';
+export { renderRichText };
 import Curriculum from './Curriculum';
 import VideoSection from './VideoSection';
 import TargetAudience from './TargetAudience';
@@ -49,103 +51,16 @@ const getIconForTitle = (title: any) => {
     return CheckCircle2;
 };
 
-// Helper to render text with **bold**, _italic_, [links](url), and common HTML tags (a, b, i, strong, em)
-export const renderRichText = (text: string) => {
-    if (!text) return null;
-
-    // Regex for: 1. HTML links, 2. Markdown links, 3. Bold/Italic (Markdown & HTML), 4. Orange highlights
-    // Using [\s\S]*? to handle multi-line content correctly
-    const pattern = /(<a\s+[\s\S]*?href=["'][\s\S]*?["'][\s\S]*?>[\s\S]*?<\/a>|\[[^\]]+\]\([^)]+\)|\*\*[\s\S]*?\*\*|__[\s\S]*?__|<b>[\s\S]*?<\/b>|<strong>[\s\S]*?<\/strong>|<i>[\s\S]*?<\/i>|<em>[\s\S]*?<\/em>|<orange>[\s\S]*?<\/orange>)/g;
-    const parts = text.split(pattern);
-
-    return parts.map((part, index) => {
-        if (!part) return null;
-
-        // Orange Highlights (Custom tag <orange>)
-        if (part.toLowerCase().startsWith('<orange>')) {
-            const content = part.replace(/^<orange>|<\/orange>$/gi, '');
-            return (
-                <span
-                    key={index}
-                    className="text-[#ff4500] underline underline-offset-4 decoration-[#ff4500]/40 font-medium"
-                >
-                    {content}
-                </span>
-            );
-        }
-
-        // Check if it's an HTML link
-        const htmlLinkMatch = part.match(/^<a\s+[\s\S]*?href=["']([\s\S]*?)["'][\s\S]*?>([\s\S]*?)<\/a>$/i);
-        if (htmlLinkMatch) {
-            return (
-                <a
-                    key={index}
-                    href={htmlLinkMatch[1]}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#ff4500] hover:text-[#ff4500] underline underline-offset-4 decoration-[#ff4500]/40 transition-colors"
-                >
-                    {htmlLinkMatch[2]}
-                </a>
-            );
-        }
-
-        // Check if it's a markdown link
-        const mdLinkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
-        if (mdLinkMatch) {
-            return (
-                <a
-                    key={index}
-                    href={mdLinkMatch[2]}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#ff4500] hover:text-[#ff4500] underline underline-offset-4 decoration-[#ff4500]/40 transition-colors"
-                >
-                    {mdLinkMatch[1]}
-                </a>
-            );
-        }
-
-        // Bold (Markdown: ** or __, HTML: <b> or <strong>)
-        if ((part.startsWith('**') && part.endsWith('**')) || (part.startsWith('__') && part.endsWith('__'))) {
-            return <strong key={index} className="font-bold text-slate-900">{part.slice(2, -2)}</strong>;
-        }
-        if (part.toLowerCase().startsWith('<b>') || part.toLowerCase().startsWith('<strong>')) {
-            const content = part.replace(/^<[^>]+>|<\/[^>]+>$/gi, '');
-            return <strong key={index} className="font-bold text-slate-900">{content}</strong>;
-        }
-
-        // Italic (HTML: <i> or <em>) - Markdown italic (_) not explicitly handled to avoid conflict with links/snake_case
-        if (part.toLowerCase().startsWith('<i>') || part.toLowerCase().startsWith('<em>')) {
-            const content = part.replace(/^<[^>]+>|<\/[^>]+>$/gi, '');
-            return <em key={index} className="italic text-slate-800">{content}</em>;
-        }
-
-        return <span key={index}>{part}</span>;
-    });
-};
+// Helper to render text with **bold**, _italic_, [links](url), and common HTML tags (a, b, i, strong, em, span)
+// Moved to @/lib/richText
 
 // Defined locally to avoid circular dependency
 export function DetailedFeatures({ badge, title, subtitle, items, textAlign = 'center' }: any) {
-    const renderTitle = (t: any) => {
-        if (typeof t === 'string' && t.includes("100% Hands-On")) {
-            const parts = t.split("100% Hands-On");
-            return (
-                <>
-                    {parts[0]}
-                    <span className="text-[#ff4500]">100% Hands-On</span>
-                    {parts[1]}
-                </>
-            );
-        }
-        return t;
-    };
-
     return (
         <div className="py-8 detailed-features-section bg-white">
             <div className={`mb-6 max-w-7xl mx-auto px-4 ${textAlign === 'left' ? 'text-left' : 'text-center'}`}>
                 {badge && <span className="bg-[#ff4500] text-white px-4 py-1.5 rounded-full text-sm font-medium mb-5 inline-block shadow-sm">{badge}</span>}
-                <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-6 leading-tight">{renderTitle(title)}</h2>
+                <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-6 leading-tight">{renderRichText(title)}</h2>
                 {subtitle && (
                     <div className={`text-gray-600 text-base leading-relaxed ${textAlign === 'center' ? 'max-w-3xl mx-auto' : 'max-w-5xl'}`}>
                         {renderRichText(subtitle)}
@@ -183,7 +98,7 @@ export function DetailedFeatures({ badge, title, subtitle, items, textAlign = 'c
 export function RichTextSection({ title, content }: any) {
     return (
         <div className="py-8 max-w-4xl mx-auto">
-            {title && <h2 className="text-xl font-bold text-slate-900 mb-6">{title}</h2>}
+            {title && <h2 className="text-xl font-bold text-slate-900 mb-6">{renderRichText(title)}</h2>}
             <div className="prose prose-slate max-w-none prose-headings:text-slate-800 prose-p:text-slate-600 prose-li:text-slate-600 bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
                 <div className="whitespace-pre-line leading-relaxed text-gray-700">
                     {content && content.split('\n').map((line: string, i: number) => (
@@ -201,7 +116,7 @@ export function TestimonialsSection({ title, items }: any) {
     return (
         <div className="py-12 bg-slate-50 rounded-3xl my-8">
             <div className="text-center mb-10 px-4">
-                <h2 className="text-2xl font-bold text-slate-900">{title}</h2>
+                <h2 className="text-2xl font-bold text-slate-900">{renderRichText(title)}</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto px-6">
                 {items?.map((item: any, i: number) => (

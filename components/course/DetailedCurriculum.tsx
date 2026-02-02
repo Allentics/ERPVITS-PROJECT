@@ -1,10 +1,9 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import { ChevronDown, Clock, BookOpen, CheckCircle2, ChevronRight, Download } from 'lucide-react';
 import * as Accordion from '@radix-ui/react-accordion';
-import { renderRichText } from './SectionRenderer';
-import { useState } from 'react';
+import { renderRichText } from '@/lib/richText';
 import SyllabusDownloadModal from './SyllabusDownloadModal';
 
 export interface DetailedModule {
@@ -48,7 +47,7 @@ export default function DetailedCurriculum({ modules, title, subtitle, courseNam
                     Comprehensive Curriculum
                 </span>
                 <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-4 max-w-3xl mx-auto leading-tight">
-                    {title || `${courseName} Course Curriculum – From Basics to Advanced Projects`}
+                    {renderRichText(title || `${courseName} Course Curriculum – From Basics to Advanced Projects`)}
                 </h2>
                 <div className="text-gray-600 text-base">
                     {subtitle ? renderRichText(subtitle) : `${modules.length} comprehensive modules covering every aspect of ${courseName} with extensive hands-on labs`}
@@ -123,7 +122,7 @@ export default function DetailedCurriculum({ modules, title, subtitle, courseNam
                                         </div>
                                         <div>
                                             <h3 className="font-bold text-slate-900 text-base md:text-lg group-hover:text-[#ff4500] transition-colors">
-                                                {displayTitle}
+                                                {renderRichText(displayTitle)}
                                             </h3>
                                             {displayDuration && (
                                                 <div className="flex items-center gap-2 mt-1.5 text-sm font-medium text-[#ff4500]">
@@ -152,7 +151,7 @@ export default function DetailedCurriculum({ modules, title, subtitle, courseNam
                                                 {points?.map((point, j) => (
                                                     <li key={j} className="flex items-start gap-3 text-slate-600 text-sm leading-relaxed group/item">
                                                         <ChevronRight className="w-4 h-4 text-orange-400 mt-1 flex-shrink-0 group-hover/item:translate-x-1 transition-transform" />
-                                                        <span>{point}</span>
+                                                        <span>{renderRichText(point)}</span>
                                                     </li>
                                                 ))}
                                             </ul>
@@ -169,7 +168,7 @@ export default function DetailedCurriculum({ modules, title, subtitle, courseNam
                                                     {labs.map((activity, k) => (
                                                         <li key={k} className="flex items-start gap-3 text-slate-600 text-sm leading-relaxed group/item">
                                                             <CheckCircle2 className="w-4 h-4 text-[#ff4500] mt-1 flex-shrink-0" />
-                                                            <span>{activity}</span>
+                                                            <span>{renderRichText(activity)}</span>
                                                         </li>
                                                     ))}
                                                 </ul>

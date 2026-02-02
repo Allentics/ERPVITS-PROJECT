@@ -2,7 +2,7 @@ import React from 'react';
 import { CheckCircle2 } from 'lucide-react';
 import Image from 'next/image';
 import ContactForm from '@/components/ContactForm';
-import { renderRichText } from './SectionRenderer';
+import { renderRichText } from '@/lib/richText';
 
 interface ContentWithImageProps {
     title: string;
@@ -63,7 +63,7 @@ export default function ContentWithImage({ title, subtitle, description, items, 
                             {items.map((item, idx) => (
                                 <div key={idx} className="flex gap-3 items-start p-2 rounded-lg hover:bg-slate-50 transition-colors">
                                     <CheckCircle2 className="w-5 h-5 text-[#ff4500] shrink-0 mt-1" />
-                                    <span className="text-slate-700 font-medium">{item}</span>
+                                    <span className="text-slate-700 font-medium">{renderRichText(item)}</span>
                                 </div>
                             ))}
                         </div>

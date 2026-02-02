@@ -1,7 +1,7 @@
 import React from 'react';
 import { CheckCircle2, Star, Info } from 'lucide-react';
-
 import { aribaPrerequisites } from '@/lib/contentHelpers';
+import { renderRichText } from '@/lib/richText';
 
 interface PrerequisiteItem {
     type: 'required' | 'optional';
@@ -41,7 +41,7 @@ export default function DetailedPrerequisites({ items }: { items?: any }) {
                             {data.minimum.map((item: string, idx: number) => (
                                 <li key={idx} className="flex items-start gap-3">
                                     <CheckCircle2 className="w-5 h-5 text-[#ff4500] flex-shrink-0 mt-0.5" />
-                                    <span className="text-slate-600 text-sm">{item}</span>
+                                    <span className="text-slate-600 text-sm">{renderRichText(item)}</span>
                                 </li>
                             ))}
                         </ul>
@@ -57,7 +57,7 @@ export default function DetailedPrerequisites({ items }: { items?: any }) {
                             {data.nicetohave.map((item: string, idx: number) => (
                                 <li key={idx} className="flex items-start gap-3">
                                     <Star className="w-5 h-5 text-orange-400 flex-shrink-0 mt-0.5 fill-orange-50" />
-                                    <span className="text-slate-600 text-sm">{item}</span>
+                                    <span className="text-slate-600 text-sm">{renderRichText(item)}</span>
                                 </li>
                             ))}
                         </ul>
@@ -68,9 +68,9 @@ export default function DetailedPrerequisites({ items }: { items?: any }) {
                 <div className="max-w-5xl mx-auto bg-[#ff4500]/10 border border-[#ff4500]/10 rounded-xl p-6 flex items-start gap-4">
                     <Info className="w-6 h-6 text-[#ff4500] flex-shrink-0 mt-1" />
                     <div>
-                        <p className="text-orange-900 text-sm leading-relaxed">
+                        <div className="text-orange-900 text-sm leading-relaxed">
                             <span className="font-bold">Good to Know:</span> If you're completely new to SAP, we provide foundational modules to get you started. If you're transitioning from SAP ERP or MM, we can accelerate you to advanced topics faster. Our personalized pre-assessment ensures you get the right learning path.
-                        </p>
+                        </div>
                     </div>
                 </div>
             </div>

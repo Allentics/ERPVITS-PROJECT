@@ -3,6 +3,7 @@
 import React from 'react';
 import { Laptop, ShoppingCart, BarChart3, GraduationCap, Building2, HelpCircle, Wallet, Users, Banknote, TrendingUp, Globe } from 'lucide-react';
 import { aribaTargetAudience } from '@/lib/contentHelpers';
+import { renderRichText } from '@/lib/richText';
 
 const iconMap: Record<string, any> = {
     "Laptop": Laptop,
@@ -35,11 +36,11 @@ export default function DetailedTargetAudience({ items, title, subtitle }: { ite
             const parts = t.split("–");
             return (
                 <>
-                    {parts[0]} – <span className="text-[#ff4500]">{parts[1]}</span>
+                    {renderRichText(parts[0])} – <span className="text-[#ff4500]">{renderRichText(parts[1])}</span>
                 </>
             );
         }
-        return t;
+        return renderRichText(t);
     };
 
     return (
@@ -54,7 +55,7 @@ export default function DetailedTargetAudience({ items, title, subtitle }: { ite
                         {renderTitle(title || "Who Can Learn This Course? – Perfect for Diverse Career Paths")}
                     </h2>
                     <p className="text-gray-600 text-base">
-                        {subtitle || "Our training is designed for professionals from various backgrounds aiming to excel"}
+                        {renderRichText(subtitle || "Our training is designed for professionals from various backgrounds aiming to excel")}
                     </p>
                 </div>
 
@@ -67,12 +68,12 @@ export default function DetailedTargetAudience({ items, title, subtitle }: { ite
                                 <div className={`w-14 h-14 rounded-xl ${item.bg || 'bg-[#ff4500]/10'} ${item.color || 'text-[#ff4500]'} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
                                     <Icon className="w-7 h-7" />
                                 </div>
-                                <h3 className="text-lg font-bold text-slate-900 mb-4">{item.title}</h3>
+                                <h3 className="text-lg font-bold text-slate-900 mb-4">{renderRichText(item.title)}</h3>
                                 <ul className="space-y-2">
                                     {item.description.map((point: string, pIdx: number) => (
                                         <li key={pIdx} className="flex items-start gap-2 text-slate-600 text-sm leading-relaxed">
                                             <div className="w-1 h-1 rounded-full bg-slate-400 mt-2 flex-shrink-0" />
-                                            <span>{point}</span>
+                                            <span>{renderRichText(point)}</span>
                                         </li>
                                     ))}
                                 </ul>
