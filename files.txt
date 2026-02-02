@@ -1,0 +1,12 @@
+366ffb7 Migrate local blogs to Supabase and improve Admin Blog Management
+app/admin/blogs/page.tsx
+app/courses/[slug]/page.tsx
+app/page.tsx
+components/WebinarPopup.tsx
+components/home/FeaturedCourses.tsx
+components/layout/AnnouncementBar.tsx
+components/layout/Footer.tsx
+components/layout/Navbar.tsx
+extracted_blog_content.json
+lib/supabase.ts
+scripts/insert_missing_blogs.sql
