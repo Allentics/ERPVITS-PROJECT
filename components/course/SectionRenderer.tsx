@@ -187,7 +187,9 @@ export default function SectionRenderer({ sections, courseName, syllabusUrl }: {
                     case 'detailed_post_training_journey':
                         return <DetailedPostTrainingJourney key={idx} steps={section.items} title={section.title} courseName={section.courseName || courseName} />;
                     case 'detailed_testimonials':
-                        return <DetailedTestimonials key={idx} items={section.items} courseName={courseName || section.courseName} />;
+                        return <section key={idx} id="reviews" className="scroll-mt-32">
+                            <DetailedTestimonials items={section.items} courseName={courseName || section.courseName} />
+                        </section>;
                     case 'detailed_upcoming_batches':
                         return <DetailedUpcomingBatches key={idx} batches={section.items} courseName={section.courseName || courseName} />;
                     case 'detailed_faq':
@@ -202,7 +204,9 @@ export default function SectionRenderer({ sections, courseName, syllabusUrl }: {
                     case 'rich_text':
                         return <RichTextSection key={idx} title={section.title} content={section.content} />;
                     case 'testimonials':
-                        return <TestimonialsSection key={idx} title={section.title} items={section.items} />;
+                        return <section key={idx} id="reviews" className="scroll-mt-32">
+                            <TestimonialsSection title={section.title} items={section.items} />
+                        </section>;
                     case 'detailed_sap_integrations':
                         return <DetailedFeatures key={idx} items={section.items} title={section.title || "SAP Integrations"} />;
                     case 'content_with_image':

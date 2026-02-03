@@ -249,10 +249,115 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                             </div>
                         )}
                     </div>
+
+                    {/* Review Ratings - Integrated into Hero */}
+                    <div className="mt-12">
+                        <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12">
+                            {/* Trustpilot */}
+                            <div className="flex items-center gap-4">
+                                <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center shrink-0 shadow-sm">
+                                    <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                </div>
+                                <div className="text-left">
+                                    <div className="flex items-center gap-2 mb-1">
+                                        <h4 className="font-bold text-slate-900 text-sm">Trustpilot</h4>
+                                        <div className="flex gap-0.5">
+                                            {[...Array(4)].map((_, i) => (
+                                                <svg key={i} className="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                                </svg>
+                                            ))}
+                                            <svg className="w-3.5 h-3.5 text-slate-300" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center gap-2 text-xs">
+                                        <span className="font-bold text-slate-900 text-base">4.0</span>
+                                        <a href="#reviews" className="text-slate-500 hover:text-orange-500 hover:underline transition-colors">Based on 500+ reviews</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Divider */}
+                            <div className="hidden md:block w-px h-12 bg-slate-200"></div>
+
+                            {/* SiteJabber */}
+                            <div className="flex items-center gap-4">
+                                <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center shrink-0 shadow-sm">
+                                    <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                </div>
+                                <div className="text-left">
+                                    <div className="flex items-center gap-2 mb-1">
+                                        <h4 className="font-bold text-slate-900 text-sm">SiteJabber</h4>
+                                        <div className="flex gap-0.5">
+                                            {[...Array(4)].map((_, i) => (
+                                                <svg key={i} className="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                                </svg>
+                                            ))}
+                                            <svg className="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <defs>
+                                                    <linearGradient id="half-star-sitejabber-h">
+                                                        <stop offset="50%" stopColor="rgb(250, 204, 21)" />
+                                                        <stop offset="50%" stopColor="rgb(203, 213, 225)" />
+                                                    </linearGradient>
+                                                </defs>
+                                                <path fill="url(#half-star-sitejabber-h)" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center gap-2 text-xs">
+                                        <span className="font-bold text-slate-900 text-base">4.5</span>
+                                        <a href="#reviews" className="text-slate-500 hover:text-orange-500 hover:underline transition-colors">Based on 300+ reviews</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Divider */}
+                            <div className="hidden md:block w-px h-12 bg-slate-200"></div>
+
+                            {/* Google */}
+                            <div className="flex items-center gap-4">
+                                <div className="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center shrink-0 shadow-sm">
+                                    <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12.545,10.239v3.821h5.445c-0.712,2.315-2.647,3.972-5.445,3.972c-3.332,0-6.033-2.701-6.033-6.032s2.701-6.032,6.033-6.032c1.498,0,2.866,0.549,3.921,1.453l2.814-2.814C17.503,2.988,15.139,2,12.545,2C7.021,2,2.543,6.477,2.543,12s4.478,10,10.002,10c8.396,0,10.249-7.85,9.426-11.748L12.545,10.239z" />
+                                    </svg>
+                                </div>
+                                <div className="text-left">
+                                    <div className="flex items-center gap-2 mb-1">
+                                        <h4 className="font-bold text-slate-900 text-sm">Google</h4>
+                                        <div className="flex gap-0.5">
+                                            {[...Array(4)].map((_, i) => (
+                                                <svg key={i} className="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                                </svg>
+                                            ))}
+                                            <svg className="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <defs>
+                                                    <linearGradient id="half-star-google-h">
+                                                        <stop offset="50%" stopColor="rgb(250, 204, 21)" />
+                                                        <stop offset="50%" stopColor="rgb(203, 213, 225)" />
+                                                    </linearGradient>
+                                                </defs>
+                                                <path fill="url(#half-star-google-h)" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center gap-2 text-xs">
+                                        <span className="font-bold text-slate-900 text-base">4.5</span>
+                                        <a href="#reviews" className="text-slate-500 hover:text-orange-500 hover:underline transition-colors">Based on 400+ reviews</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 {/* Main Content */}
