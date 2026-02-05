@@ -25,6 +25,9 @@ import MasterSapAribaIndustryContent from '@/components/blog/MasterSapAribaIndus
 import SapTrmMasterDataContent from '@/components/blog/SapTrmMasterDataContent';
 import SapTrmComplementaryContent from '@/components/blog/SapTrmComplementaryContent';
 import SapFieldglassLoginGuideContent from '@/components/blog/SapFieldglassLoginGuideContent';
+import SapConsultantSalaryGuideContent from '@/components/blog/SapConsultantSalaryGuideContent';
+import SapFioriAppsLibraryContent from '@/components/blog/SapFioriAppsLibraryContent';
+import SapBtpCockpitContent from '@/components/blog/SapBtpCockpitContent';
 import { Metadata } from 'next';
 
 export const dynamic = 'force-dynamic';
@@ -86,7 +89,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         .single();
 
     if (dbPost) {
-        post = dbPost;
+        const localPost = localPosts.find((p: any) => p.id === slug);
+        post = localPost ? { ...dbPost, ...localPost } : dbPost;
     } else {
         // Fallback to local posts
         post = localPosts.find((p: any) => p.id === slug);
@@ -118,13 +122,15 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     const useDbContent = post.content && post.content.length > 50;
 
     // Check if it's one of the legacy component paths
+    // Check if it's one of the legacy component paths
     const LegacyComponent = (() => {
-        if (useDbContent) return null; // If we have DB content, ignore legacy component
+        if (useDbContent) return null; // Prioritize DB content over legacy components
 
         switch (slug) {
             case 'sap-tcodes-list-pdf': return SapTCodesContent;
             case 'sap-sd-process-flow': return SapSdProcessFlowContent;
             case 'sap-fico-cash-journal-configuration': return SapFicoCashJournalContent;
+            case 'sap-s4hana-mm-career-opportunities': return SapS4HanaMmCareerContent;
             case 'sap-s4hana-mm-career-opportunities': return SapS4HanaMmCareerContent;
             case 'high-paying-sap-fico-jobs': return HighPayingSapFicoJobsContent;
             case 'sap-ariba-supplier-login-tutorial': return SapAribaSupplierLoginContent;
@@ -142,6 +148,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             case 'sap-trm-master-data-essentials': return SapTrmMasterDataContent;
             case 'sap-trm-complementary-technologies': return SapTrmComplementaryContent;
             case 'ultimate-guide-to-sap-fieldglass-login-access-setup': return SapFieldglassLoginGuideContent;
+            case 'sap-consultant-salary-guide-2026': return SapConsultantSalaryGuideContent;
+            case 'sap-fiori-apps-library-explained': return SapFioriAppsLibraryContent;
+            case 'sap-btp-cockpit-guide': return SapBtpCockpitContent;
             default: return null;
         }
     })();

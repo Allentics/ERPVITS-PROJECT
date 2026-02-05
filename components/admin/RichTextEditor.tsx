@@ -15,15 +15,28 @@ import {
 } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 
+import BlogPreview from '@/components/admin/BlogPreview';
+
 interface RichTextEditorProps {
     value: string;
     onChange: (value: string) => void;
     label?: string;
+    previewContext?: {
+        id: string;
+        title: string;
+        image?: string;
+        author?: string;
+        date?: string;
+        category?: string;
+        description?: string;
+    };
 }
 
-export default function RichTextEditor({ value, onChange, label }: RichTextEditorProps) {
+export default function RichTextEditor({ value, onChange, label, previewContext }: RichTextEditorProps) {
     const textareaRef = useRef<HTMLTextAreaElement>(null);
     const [uploading, setUploading] = useState(false);
+    const [mode, setMode] = useState<'simple' | 'html'>('simple');
+    const [view, setView] = useState<'write' | 'preview'>('write');
 
     const insertTag = (tag: string, endTag?: string) => {
         const textarea = textareaRef.current;
@@ -109,56 +122,135 @@ export default function RichTextEditor({ value, onChange, label }: RichTextEdito
 
     return (
         <div className="space-y-2">
-            {label && <label className="text-sm font-medium text-gray-700">{label}</label>}
-            <div className="border border-gray-200 rounded-lg overflow-hidden bg-white">
-                {/* Toolbar */}
-                <div className="flex flex-wrap items-center gap-1 p-2 bg-gray-50 border-b border-gray-200">
-                    <button type="button" onClick={() => insertTag('<b>', '</b>')} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="Bold">
-                        <Bold size={18} />
-                    </button>
-                    <button type="button" onClick={() => insertTag('<i>', '</i>')} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="Italic">
-                        <Italic size={18} />
-                    </button>
-                    <div className="w-px h-6 bg-gray-300 mx-1"></div>
-                    <button type="button" onClick={() => insertTag('<h2>', '</h2>')} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="Heading 2">
-                        <Heading1 size={18} />
-                    </button>
-                    <button type="button" onClick={() => insertTag('<h3>', '</h3>')} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="Heading 3">
-                        <Heading2 size={18} />
-                    </button>
-                    <button type="button" onClick={() => insertTag('<ul>\n<li>', '</li>\n</ul>')} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="List">
-                        <List size={18} />
-                    </button>
-                    <button type="button" onClick={() => insertTag('<pre><code>', '</code></pre>')} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="Code Block">
-                        <Code size={18} />
-                    </button>
-                    <div className="w-px h-6 bg-gray-300 mx-1"></div>
-                    <button type="button" onClick={handleLink} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="Link">
-                        <LinkIcon size={18} />
-                    </button>
+            <div className="flex justify-between items-end">
+                {label && <label className="text-sm font-medium text-gray-700">{label}</label>}
 
-                    <label className={`p-2 hover:bg-gray-200 rounded text-gray-700 cursor-pointer ${uploading ? 'opacity-50' : ''}`} title="Insert Image">
-                        {uploading ? <Loader2 size={18} className="animate-spin" /> : <ImageIcon size={18} />}
-                        <input type="file" accept="image/*" className="hidden" onChange={handleImageUpload} disabled={uploading} />
-                    </label>
+                <div className="flex items-center gap-4 text-xs font-medium">
+                    <div className="flex bg-gray-100 p-1 rounded-lg">
+                        <button
+                            type="button"
+                            onClick={() => setMode('simple')}
+                            className={`px-3 py-1 rounded-md transition-all ${mode === 'simple'
+                                ? 'bg-green-500 text-white shadow-sm'
+                                : 'text-gray-600 hover:bg-gray-200'
+                                }`}
+                        >
+                            📝 Simple Mode
+                        </button>
+                        <button
+                            type="button"
+                            onClick={() => setMode('html')}
+                            className={`px-3 py-1 rounded-md transition-all ${mode === 'html'
+                                ? 'bg-blue-600 text-white shadow-sm'
+                                : 'text-gray-600 hover:bg-gray-200'
+                                }`}
+                        >
+                            🔧 HTML Mode
+                        </button>
+                    </div>
 
-                    <button type="button" onClick={handleYoutube} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="Insert YouTube Video">
-                        <Youtube size={18} />
-                    </button>
+                    <div className="flex bg-gray-100 p-1 rounded-lg">
+                        <button
+                            type="button"
+                            onClick={() => setView('write')}
+                            className={`px-3 py-1 rounded-md transition-all ${view === 'write'
+                                ? 'bg-white text-gray-900 shadow-sm'
+                                : 'text-gray-500 hover:bg-gray-200'
+                                }`}
+                        >
+                            Write
+                        </button>
+                        <button
+                            type="button"
+                            onClick={() => setView('preview')}
+                            className={`px-3 py-1 rounded-md transition-all ${view === 'preview'
+                                ? 'bg-white text-gray-900 shadow-sm'
+                                : 'text-gray-500 hover:bg-gray-200'
+                                }`}
+                        >
+                            Preview
+                        </button>
+                    </div>
                 </div>
-
-                {/* Editor Area */}
-                <textarea
-                    ref={textareaRef}
-                    value={value}
-                    onChange={(e) => onChange(e.target.value)}
-                    className="w-full h-[500px] p-4 outline-none font-mono text-sm resize-none"
-                    placeholder="Write your blog post here... (HTML supported)"
-                />
             </div>
-            <p className="text-xs text-gray-500">
-                Tip: You can write raw HTML. Use the toolbar to insert common tags and upload media.
-            </p>
+
+            <div className="border border-gray-200 rounded-lg overflow-hidden bg-white min-h-[500px] flex flex-col">
+                {/* View: Preview */}
+                {view === 'preview' ? (
+                    previewContext ? (
+                        <div className="h-[800px] overflow-y-auto bg-gray-50 border rounded-lg">
+                            <BlogPreview data={{ ...previewContext, content: value }} />
+                        </div>
+                    ) : (
+                        <div className="p-8 prose prose-lg max-w-none bg-white h-[500px] overflow-y-auto">
+                            <div dangerouslySetInnerHTML={{ __html: value || '<p class="text-gray-400 italic">No content to preview...</p>' }} />
+                        </div>
+                    )
+                ) : (
+                    /* View: Write */
+                    <>
+                        {/* Toolbar - Only visible in Simple Mode */}
+                        {mode === 'simple' && (
+                            <div className="flex flex-wrap items-center gap-1 p-2 bg-gray-50 border-b border-gray-200 sticky top-0 z-10">
+                                <button type="button" onClick={() => insertTag('<b>', '</b>')} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="Bold">
+                                    <Bold size={18} />
+                                </button>
+                                <button type="button" onClick={() => insertTag('<i>', '</i>')} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="Italic">
+                                    <Italic size={18} />
+                                </button>
+                                <div className="w-px h-6 bg-gray-300 mx-1"></div>
+                                <button type="button" onClick={() => insertTag('<h2>', '</h2>')} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="Heading 2">
+                                    <Heading1 size={18} />
+                                </button>
+                                <button type="button" onClick={() => insertTag('<h3>', '</h3>')} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="Heading 3">
+                                    <Heading2 size={18} />
+                                </button>
+                                <button type="button" onClick={() => insertTag('<ul>\n<li>', '</li>\n</ul>')} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="List">
+                                    <List size={18} />
+                                </button>
+                                <button type="button" onClick={() => insertTag('<pre><code>', '</code></pre>')} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="Code Block">
+                                    <Code size={18} />
+                                </button>
+                                <div className="w-px h-6 bg-gray-300 mx-1"></div>
+                                <button type="button" onClick={handleLink} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="Link">
+                                    <LinkIcon size={18} />
+                                </button>
+
+                                <label className={`p-2 hover:bg-gray-200 rounded text-gray-700 cursor-pointer ${uploading ? 'opacity-50' : ''}`} title="Insert Image">
+                                    {uploading ? <Loader2 size={18} className="animate-spin" /> : <ImageIcon size={18} />}
+                                    <input type="file" accept="image/*" className="hidden" onChange={handleImageUpload} disabled={uploading} />
+                                </label>
+
+                                <button type="button" onClick={handleYoutube} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="Insert YouTube Video">
+                                    <Youtube size={18} />
+                                </button>
+                            </div>
+                        )}
+
+                        {/* Editor Area */}
+                        <textarea
+                            ref={textareaRef}
+                            value={value}
+                            onChange={(e) => onChange(e.target.value)}
+                            className={`w-full flex-1 p-4 outline-none font-mono text-sm resize-none ${mode === 'html' ? 'bg-gray-900 text-green-400 font-mono' : 'bg-white text-gray-900'
+                                }`}
+                            placeholder={mode === 'simple' ? "Write your blog post here..." : "<!-- HTML Mode Active: Write raw HTML here -->"}
+                            spellCheck={false}
+                        />
+                    </>
+                )}
+            </div>
+
+            {view === 'write' && (
+                <p className="text-xs text-gray-500 flex justify-between">
+                    <span>
+                        {mode === 'simple'
+                            ? "Tip: Use the toolbar to format text. HTML tags are still visible."
+                            : "HTML Mode: You have full control over the markup."}
+                    </span>
+                    <span>{value.length} characters</span>
+                </p>
+            )}
         </div>
     );
 }

@@ -5,6 +5,9 @@ import { blogPosts as localPosts } from '@/lib/blogData';
 
 function formatDate(dateStr: string) {
     const date = new Date(dateStr);
+    if (isNaN(date.getTime())) {
+        return { day: '00', month: 'JAN', weekday: 'MONDAY' };
+    }
     const day = date.getDate().toString().padStart(2, '0');
     const month = date.toLocaleDateString('en-US', { month: 'long' }).toUpperCase();
     const weekday = date.toLocaleDateString('en-US', { weekday: 'long' }).toUpperCase();
@@ -39,10 +42,10 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
     if (dbPosts) {
         dbPosts.forEach((post: any) => {
             const localPost = mergedPostsMap.get(post.id);
-            // If local post exists, use DB data but prioritize local image
-            // This allows us to update images locally while keeping content dynamic
-            if (localPost && localPost.image) {
-                mergedPostsMap.set(post.id, { ...post, image: localPost.image });
+            // If local post exists, prioritize local properties (image, date, description, etc.)
+            // to ensure consistency when DB updates are restricted
+            if (localPost) {
+                mergedPostsMap.set(post.id, { ...post, ...localPost });
             } else {
                 mergedPostsMap.set(post.id, post);
             }
@@ -50,7 +53,9 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
     }
 
     let allPosts = Array.from(mergedPostsMap.values()).sort((a, b) => {
-        return new Date(b.date).getTime() - new Date(a.date).getTime();
+        const dateA = new Date(a.date).getTime() || 0;
+        const dateB = new Date(b.date).getTime() || 0;
+        return dateB - dateA;
     }).filter(post => post.id !== 'sap-trm-setup-essentials');
 
     // Apply category filter if present
@@ -106,13 +111,13 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
                             <div key={post.id} className="flex flex-col md:flex-row gap-8 lg:gap-12 pb-12 border-b border-gray-100 last:border-0 group">
                                 {/* Date Section - Desktop Sidebar Style */}
                                 <div className="hidden md:flex flex-col items-center justify-start w-24 pt-2">
-                                    <div className="text-[42px] font-bold text-[#F58220] leading-none mb-1">
+                                    <div className="text-[42px] font-bold text-[#F58220] leading-none mb-1" suppressHydrationWarning>
                                         {day}
                                     </div>
-                                    <div className="text-[14px] font-medium text-gray-400 uppercase tracking-[2px]">
+                                    <div className="text-[14px] font-medium text-gray-400 uppercase tracking-[2px]" suppressHydrationWarning>
                                         {month}
                                     </div>
-                                    <div className="text-[12px] font-medium text-gray-400 uppercase tracking-[1px] mt-1">
+                                    <div className="text-[12px] font-medium text-gray-400 uppercase tracking-[1px] mt-1" suppressHydrationWarning>
                                         {weekday}
                                     </div>
                                 </div>
@@ -121,9 +126,9 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
                                 <div className="flex-grow flex flex-col md:flex-row gap-8 lg:gap-12">
                                     <div className="flex-grow order-1 md:order-1">
                                         <div className="md:hidden flex items-center gap-3 mb-4">
-                                            <span className="text-3xl font-bold text-[#F58220]">{day}</span>
-                                            <span className="text-sm font-semibold text-gray-400 uppercase tracking-widest">{month}</span>
-                                            <span className="text-xs text-gray-400 uppercase">| {weekday}</span>
+                                            <span className="text-3xl font-bold text-[#F58220]" suppressHydrationWarning>{day}</span>
+                                            <span className="text-sm font-semibold text-gray-400 uppercase tracking-widest" suppressHydrationWarning>{month}</span>
+                                            <span className="text-xs text-gray-400 uppercase" suppressHydrationWarning>| {weekday}</span>
                                         </div>
 
                                         <Link href={`/blog/${post.id}`} className="group-hover:text-orange-600 transition-colors">
@@ -148,11 +153,11 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
                                     {(post.image || post.featured_image) && (
                                         <div className="w-full md:w-64 lg:w-72 flex-shrink-0 order-2 md:order-2 overflow-hidden rounded-none shadow-sm group-hover:shadow-md transition-all duration-300">
                                             <Link href={`/blog/${post.id}`}>
-                                                <div className="aspect-[1.6/1] relative">
+                                                <div className="relative">
                                                     <img
                                                         src={post.image || post.featured_image}
                                                         alt={post.title}
-                                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                                        className="w-full h-auto object-contain rounded-lg group-hover:scale-105 transition-transform duration-500"
                                                     />
                                                 </div>
                                             </Link>

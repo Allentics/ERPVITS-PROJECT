@@ -11,6 +11,33 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
     {
+        id: "sap-btp-cockpit-guide",
+        title: "SAP BTP Cockpit: Complete Guide to Login, Trial Account Setup, Training Path, Certification & Integration Suite Overview",
+        description: "Master the SAP BTP Cockpit with our comprehensive guide. Learn how to set up a trial account, navigate the integration suite, follow the training path, and prepare for certification.",
+        image: "/images/blog/sap-btp-cockpit-guide.png",
+        date: "Jan 16, 2026",
+        category: "SAP Technical",
+        author: "ERPVITS Expert"
+    },
+    {
+        id: "sap-fiori-apps-library-explained",
+        title: "SAP Fiori Apps Library Explained: How to Choose the Right SAP Fiori Application",
+        description: "Looking to simplify your SAP user experience? Our comprehensive guide explains how to navigate the SAP Fiori Apps Library, understand technical requirements, and select the right applications to optimize your business processes and maximize ROI.",
+        image: "/images/blog/sap-fiori-apps-library-explained.png",
+        date: "Jan 14, 2026",
+        category: "SAP Technical",
+        author: "ERPVITS Expert"
+    },
+    {
+        id: "sap-consultant-salary-guide-2026",
+        title: "SAP Consultant Salary Guide 2026: Complete Breakdown by Module and Experience",
+        description: "Comprehensive SAP consultant salary guide for 2026 covering all modules including FICO, MM, SD, ABAP, Basis, and HCM. Learn about fresher salaries, senior consultant pay, and company-specific compensation at Deloitte, PwC, and Infosys.",
+        image: "/images/blog/sap-consultant-salary-guide-2026.png",
+        date: "Jan 13, 2026",
+        category: "SAP Career",
+        author: "ERPVITS Expert"
+    },
+    {
         id: "sap-trm-master-data-essentials",
         title: "Laying the Foundation: Essential SAP TRM Master Data for Treasury Success",
         description: "Discover why accurate master data is the backbone of SAP Treasury and Risk Management (TRM). Learn key components, best practices, and configuration tips for treasury success.",
@@ -35,6 +62,15 @@ export const blogPosts: BlogPost[] = [
         image: "/images/blog/sap-ariba-spend-management.webp",
         date: "Jan 06, 2026",
         category: "SAP Ariba",
+        author: "ERPVITS Expert"
+    },
+    {
+        id: "top-ten-tools-techniques-for-efficient-abap-on-cloud-programming",
+        title: "Top 10 Tools & Techniques for Efficient ABAP on Cloud Programming",
+        description: "Discover the essential tools and techniques for modern ABAP Cloud programming. Boost your development efficiency with ADT, abapGit, and clean code practices.",
+        image: "/images/blog/top-10-tools-abap-cloud.webp",
+        date: "Jan 05, 2026",
+        category: "SAP Technical",
         author: "ERPVITS Expert"
     },
 

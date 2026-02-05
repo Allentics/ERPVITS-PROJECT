@@ -6,9 +6,10 @@ import { courses } from '@/lib/courseData';
 
 interface BlogContactFormProps {
     slug: string;
+    isPreview?: boolean;
 }
 
-export default function BlogContactForm({ slug }: BlogContactFormProps) {
+export default function BlogContactForm({ slug, isPreview = false }: BlogContactFormProps) {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -79,6 +80,8 @@ export default function BlogContactForm({ slug }: BlogContactFormProps) {
         });
     };
 
+    const FormTag = isPreview ? 'div' : 'form';
+
     return (
         <div className="bg-[#FFF7ED] rounded-2xl shadow-lg border border-orange-100 p-6">
             <h3 className="text-xl font-bold text-gray-900 mb-1">Request More Info</h3>
@@ -93,10 +96,11 @@ export default function BlogContactForm({ slug }: BlogContactFormProps) {
                     </a>
                 </div>
             ) : (
-                <form onSubmit={handleSubmit} className="space-y-3">
+                <FormTag onSubmit={isPreview ? undefined : handleSubmit} className="space-y-3" role={isPreview ? 'form' : undefined}>
                     <div>
                         <input
                             type="text"
+                            // ... inputs
                             name="name"
                             placeholder="Full Name"
                             required
@@ -178,7 +182,7 @@ export default function BlogContactForm({ slug }: BlogContactFormProps) {
                         {status === 'loading' ? 'Submitting...' : 'Schedule Free Counseling'}
                     </button>
                     <p className="text-center text-[10px] text-gray-400">By submitting, you agree to our privacy policy.</p>
-                </form>
+                </FormTag>
             )}
         </div>
     );

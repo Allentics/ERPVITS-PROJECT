@@ -24,9 +24,15 @@ export default function LatestInsights() {
                 let combined = [...localPosts];
 
                 if (dbPosts && dbPosts.length > 0) {
-                    const dbIds = new Set(dbPosts.map((p: any) => p.id));
+                    // Merge local data into DB posts to ensure consistent dates/images
+                    const mergedDbPosts = dbPosts.map((p: any) => {
+                        const local = localPosts.find(lp => lp.id === p.id);
+                        return local ? { ...p, ...local } : p;
+                    });
+
+                    const dbIds = new Set(mergedDbPosts.map((p: any) => p.id));
                     const uniqueLocal = localPosts.filter(p => !dbIds.has(p.id));
-                    combined = [...dbPosts, ...uniqueLocal];
+                    combined = [...mergedDbPosts, ...uniqueLocal];
                 }
 
                 // Sort by date descending (safeguard date parsing)

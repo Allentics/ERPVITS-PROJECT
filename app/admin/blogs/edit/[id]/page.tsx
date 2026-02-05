@@ -177,6 +177,15 @@ export default function EditBlogPage({ params }: { params: Promise<{ id: string 
                             label="Post Content"
                             value={formData.content || ''}
                             onChange={handleContentChange}
+                            previewContext={{
+                                id: formData.id,
+                                title: formData.title,
+                                image: formData.image,
+                                author: formData.author,
+                                date: formData.date,
+                                category: formData.category,
+                                description: formData.description
+                            }}
                         />
                     </div>
                 </div>

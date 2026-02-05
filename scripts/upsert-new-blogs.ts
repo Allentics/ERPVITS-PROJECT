@@ -10,6 +10,16 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 const blogPosts = [
     {
+        id: "sap-consultant-salary-guide-2026",
+        title: "SAP Consultant Salary Guide 2026: Complete Breakdown by Module and Experience",
+        description: "Comprehensive SAP consultant salary guide for 2026 covering all modules including FICO, MM, SD, ABAP, Basis, and HCM. Learn about fresher salaries, senior consultant pay, and company-specific compensation at Deloitte, PwC, and Infosys.",
+        image: "/images/blog/sap-consultant-salary-guide-2026.png",
+        date: "Jan 13, 2026",
+        category: "SAP Career",
+        author: "ERPVITS Expert",
+        content: "CONTENT_MANAGED_LOCALLY"
+    },
+    {
         id: "sap-mm-course-complete-guide",
         title: "SAP MM Course: Complete Guide to Materials Management Professional Excellence",
         description: "Join the best SAP MM course at ERPVITS. Get certified with expert-led training in Materials Management, S/4HANA, and procurement. Enroll now!",
