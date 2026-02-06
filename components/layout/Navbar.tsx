@@ -64,6 +64,7 @@ const Navbar = () => {
 
                         return {
                             ...dbCourse,
+                            title: local?.title || dbCourse.title,
                             category
                         };
                     });

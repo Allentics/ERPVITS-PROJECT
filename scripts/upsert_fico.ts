@@ -19,7 +19,7 @@ const supabase = createClient(supabaseUrl, supabaseServiceKey);
 async function upsertFico() {
     console.log('Upserting SAP FICO...');
     const course = {
-        id: 'sap-fico',
+        id: 'fico',
         title: 'SAP FICO',
         hero_heading: 'Master Financial Accounting & Controlling',
         hero_subheading: '',
@@ -37,6 +37,9 @@ async function upsertFico() {
         meta_description: 'Master SAP FICO with our comprehensive training.',
         schema: ''
     };
+
+    // First, try to delete 'sap-fico' if it exists to avoid duplicates
+    await supabase.from('courses').delete().eq('id', 'sap-fico');
 
     const { data, error } = await supabase
         .from('courses')

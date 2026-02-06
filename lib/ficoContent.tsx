@@ -4,7 +4,7 @@ import { Course } from './courseData';
 
 export const ficoContent: Partial<Course> = {
     id: 'fico',
-    title: "SAP FICO Certification Training",
+    title: "SAP FICO",
     heroHeading: <>Transform Your Career with the <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">#1 SAP FICO Online Training Program</span></>,
     heroSubheading: "The SAP FICO Online Training Program offered by ERPVITS is a transformative training opportunity for accountants and SAP consultants looking to strengthen their skills in financial and cost accounting, as well as enterprise resource planning. The current business environment is fast-paced and organizations are looking for certified SAP FICO professionals as a priority. Such professionals have the skills to refine and optimize financial processes, streamline accounting for efficiency, maintain compliance with regulations, and improve overall financial performance. This extensive SAP FICO training program has been designed with the help of finance and SAP FICO professionals, and comprises of live, interactive instructor-led training, practical lab activities, appli-cable financial case studies, and complete certification support, targeting financial professionals, accounting professionals, CFO teams, ERP consultants, and aspiring graduates who are looking for opportunities for global consulting and implementation.",
     themeColor: "orange",
