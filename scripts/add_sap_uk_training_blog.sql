@@ -193,6 +193,6 @@ VALUES ('sap-training-courses-uk', 'SAP Training Courses in UK: SAP Training Ins
                     <a href="/courses" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-bold hover:bg-white/10 transition-colors no-underline">Browse Courses</a>
                 </div>
             </div>
-        </div>', '/images/blog/sap-uk-training-landing.png', 'Feb 9, 2026', 'SAP Training', 'ERPVITS')
+        </div>', '/images/blog/sap-uk-training-landing.png', 'Jan 22, 2026', 'SAP Training', 'ERPVITS')
 ON CONFLICT (id) DO UPDATE SET 
 title = EXCLUDED.title, description = EXCLUDED.description, content = EXCLUDED.content, image = EXCLUDED.image, date = EXCLUDED.date, category = EXCLUDED.category, author = EXCLUDED.author;
