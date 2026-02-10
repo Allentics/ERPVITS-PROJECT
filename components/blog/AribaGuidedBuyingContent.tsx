@@ -17,21 +17,18 @@ export default function AribaGuidedBuyingContent() {
 
             <h2 className="text-2xl font-bold mt-8 mb-4">What is Ariba Guided Buying</h2>
             <p>
-                Ariba guided buying is a way to facilitate a first-time user procurement experience within SAP Ariba Solutions. As with any purchasing system, procurement is usually the end user systems, Ariba Guided Buying is no system that helps streamline user journeys with minimal training. Unlike most procurement systems that are troublesome and complicated, it provides a system that users are familiar with, engagement wise.
-            </p>
-            <p>
-                Ariba guided buying, like most systems, will offer streamlined processes in selecting contracted suppliers and compliance tracks, and then reducing cycle times to ease the procurement company processes. This is possible by the offering or building intelligent search options, user preferences, and operational workflows. As a result, Ariba's buying guided services, end users, and organizations will realize process and operational cost savings.
+                Ariba guided buying is a way to facilitate a first-time user procurement experience within SAP Ariba Solutions. As with any purchasing system, procurement is usually the end user systems, Ariba Guided Buying is no system that helps streamline user journeys with minimal training. Unlike most procurement systems that are troublesome and complicated, it provides a system that users are familiar with, engagement wise. Ariba guided buying, like most systems, will offer streamlined processes in selecting contracted suppliers and compliance tracks, and then reducing cycle times to ease the procurement company processes. This is possible by the offering or building intelligent search options, user preferences, and operational workflows. As a result, Ariba's buying guided services, end users, and organizations will realize process and operational cost savings.
             </p>
 
             <h2 className="text-2xl font-bold mt-8 mb-4">Benefits of Using Ariba Guided Buying</h2>
             <p>
-                Analytics offer some of the most valuable insights in any systems procurement as they provide data that can aide in assessing user engagement, spend trends, supplier performance, and other factors related to procurement processes. Building strong insights into each of these areas can more positively inform each aspect of the supplier relationship, from contract negotiation to in-the-moment adjustments to the procurement process to achieve more streamlined activity.
+                Analytics offer some of the most valuable insights in any systems procurement as they provide data that can aide in assessing user engagement, spend trends, supplier performance, and other factors related to procurement processes. Building strong insights into each of these areas can more positively inform each aspect of the supplier relationship, from contract negotiation to in-the-moment adjustments to the procurement process to achieve more streamlined activity. From guiding buyers to preferred, contracted suppliers and points of spend, sifting through post encumbrate options to build overall organizational savings, in addition to dominating savings renegotiated, the Ariba Guided Buying System streamlines process time and covers more of the spend that should be focused on high savings opportunities. Additionally, the consumer-driven experience, which reduces the overhead on procurement teams, ultimately drives more engagement and purchasing activity in comparison to past processes. Improved spend control, more streamlined activity, and overall heightened engagement are key elements that are at the forefront of ariba guided buying within SAP Ariba Solutions.
             </p>
 
-            <div className="bg-slate-50 p-6 rounded-xl border border-slate-200 my-8">
-                <h4 className="font-bold text-slate-900 mb-4">Key Benefits at a Glance</h4>
+            <div className="bg-orange-50 p-6 rounded-xl border border-orange-100 my-8">
+                <h4 className="font-bold text-orange-900 mb-4">Key Benefits at a Glance</h4>
                 <ul className="list-none pl-0 space-y-2">
-                    <li>🌟 <strong>Enhanced User Experience:</strong> Consumer-like interface increases adoption rates</li>
+                    <li>✨ <strong>Enhanced User Experience:</strong> Consumer-like interface increases adoption rates</li>
                     <li>✅ <strong>Improved Compliance:</strong> Automatic guidance to preferred suppliers and contracts</li>
                     <li>⏱️ <strong>Reduced Cycle Time:</strong> Streamlined purchasing process from requisition to order</li>
                     <li>💰 <strong>Cost Savings:</strong> Up to 50% faster analytics with 60% lower TCO</li>
@@ -41,11 +38,11 @@ export default function AribaGuidedBuyingContent() {
 
             <h2 className="text-2xl font-bold mt-8 mb-4">Ariba Guided Buying Login: Getting Started</h2>
             <h3 className="text-xl font-bold mt-6 mb-3">How to Access Your Account</h3>
-            <p>The ariba guided buying login process is simple and secure. Users may enter the platform via different pathways, including Direct URL Access, Single Sign-On (SSO), and Mobile Access.</p>
+            <p>The ariba guided buying login process is simple and secure. Users may enter the platform via different pathways, including:</p>
             <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Direct URL Access:</strong> Your company provides a unique URL like: <code>https://[yourcompany].ariba.com</code></li>
-                <li><strong>Single Sign-On (SSO):</strong> Enter using your company credentials, no extra passwords required.</li>
-                <li><strong>Mobile Access:</strong> Use mobile apps available with SAP Ariba Solutions for purchasing on the go.</li>
+                <li><strong>Single Sign-On (SSO):</strong> Employees can enter the Ariba platform using their company credentials, no extra passwords required.</li>
+                <li><strong>Mobile Access:</strong> Users can access guided buying in ariba while on the go using the mobile apps.</li>
             </ul>
 
             <h3 className="text-xl font-bold mt-6 mb-3">Steps for First Time Logging In</h3>
@@ -55,39 +52,38 @@ export default function AribaGuidedBuyingContent() {
                 <li>Finish multi-factor authentication (if applicable)</li>
                 <li>Review and accept the terms of use</li>
                 <li>Fill in your user profile (department, cost center, etc.)</li>
-                <li>Get to know the home page navigation</li>
+                <li>Get to know the home page navigation features</li>
             </ol>
 
+            <h3 className="text-xl font-bold mt-6 mb-3">Login Issues</h3>
+            <p>If you experience issues, you can delete cache and cookies, use a compatible browser (Chrome, Firefox, Safari, Edge), check account provisioning, or reach out to IT helpdesk.</p>
+
             <h2 className="text-2xl font-bold mt-8 mb-4">Get to Know the Ariba Guided Buying System</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-6">
-                <div>
-                    <h4 className="font-bold text-slate-900 mb-2">Homepage Navigation</h4>
-                    <ul className="list-disc pl-6 space-y-2">
-                        <li><strong>Search Bar:</strong> Locate products, services, or suppliers.</li>
-                        <li><strong>Featured Categories:</strong> Office Supplies, IT, Marketing, Travel.</li>
-                        <li><strong>Recommendations:</strong> Based on your purchase history.</li>
-                        <li><strong>Quick Access Tiles:</strong> Direct access to requisition reviews.</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 className="font-bold text-slate-900 mb-2">Shopping Experience</h4>
-                    <ul className="list-disc pl-6 space-y-2">
-                        <li>Add items from different suppliers</li>
-                        <li>Manage cart and adjust quantities</li>
-                        <li>Enter business unit and cost center</li>
-                        <li>Include notes and special requests</li>
-                        <li>Send order to approver seamlessly</li>
-                    </ul>
-                </div>
-            </div>
+            <h3 className="text-xl font-bold mt-6 mb-3">Navigation on the Homepage</h3>
+            <ul className="list-disc pl-6 space-y-2">
+                <li><strong>Search Bar:</strong> Locate products, services, or suppliers using terms, part numbers, or descriptions.</li>
+                <li><strong>Featured Categories:</strong> Office Supplies, IT Equipment, Marketing Services, and Travel.</li>
+                <li><strong>Personalized Recommendations:</strong> Based on your purchase history and profile.</li>
+                <li><strong>Quick Access Tiles:</strong> Direct access to requisition reviews and order status updates.</li>
+            </ul>
+
+            <h3 className="text-xl font-bold mt-6 mb-3">Shopping Cart and Checkout</h3>
+            <p>Guided buying in Ariba mimics shopping on a contemporary e-commerce site:</p>
+            <ul className="list-disc pl-6 space-y-2">
+                <li>Add items to your shopping cart from different suppliers</li>
+                <li>Manage your shopping cart and adjust quantities</li>
+                <li>Enter your business unit and cost center codes</li>
+                <li>Include notes and special requests</li>
+                <li>Seamlessly send the order to your approver</li>
+            </ul>
 
             <h2 className="text-2xl font-bold mt-8 mb-4">Ariba Guided Buying Configuration: The Foundation</h2>
-            <p>To capitalize on your ROI from SAP Ariba Solutions, proper ariba guided buying configuration is critical.</p>
+            <p>The importance of proper ariba guided buying configuration cannot be overstated. Configuration encompasses a multitude of levels.</p>
 
             <h3 className="text-xl font-bold mt-6 mb-3">System Configuration</h3>
             <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Realm Configuration:</strong> Environment details, primary currency, tax, and ERP integration.</li>
-                <li><strong>User Configuration:</strong> Segments identification and role-based access control.</li>
+                <li><strong>Realm Configuration:</strong> Environment details, primary currency, tax, legal entity, and ERP integration.</li>
+                <li><strong>User Configuration:</strong> Assignment of appropriate user roles, hierarchy delegation for approvals, and spend controls.</li>
             </ul>
 
             <h3 className="text-xl font-bold mt-6 mb-3">Catalog Configuration</h3>
@@ -115,15 +111,31 @@ export default function AribaGuidedBuyingContent() {
                 </table>
             </div>
 
+            <h2 className="text-2xl font-bold mt-8 mb-4">Best Practices: Ariba Guided Buying Administration Guide</h2>
+            <h3 className="text-xl font-bold mt-6 mb-3">Supplier Enablement</h3>
+            <p>Onboarding includes assessment (spend volume, strategy) and the onboarding stage (requirements, piloto tests, education).</p>
+
+            <h3 className="text-xl font-bold mt-6 mb-3">Approval Workflow Design</h3>
+            <ul className="list-disc pl-6 space-y-2">
+                <li><strong>Threshold-Based Approvals:</strong> Financial thresholds.</li>
+                <li><strong>Department-Based Routing:</strong> Route based on organizational unit.</li>
+                <li><strong>Commodity-Specific Approvals:</strong> Technical evaluation by experts.</li>
+                <li><strong>Escalation Rules:</strong> Avoid bottlenecks.</li>
+            </ul>
+
             <h2 className="text-2xl font-bold mt-8 mb-4">Frequently Asked Questions</h2>
-            <div className="space-y-4 my-8">
+            <div className="space-y-6 my-8">
                 <div className="bg-slate-50 p-6 rounded-xl">
                     <p className="font-bold text-slate-900 mb-2">What is Ariba Guided Buying?</p>
-                    <p className="text-slate-600 m-0">An intuitive procurement solution providing a consumer-like shopping experience while reducing maverick spending.</p>
+                    <p className="text-slate-600 m-0">Ariba Guided Buying is an intuitive procurement solution within SAP Ariba Solutions that provides a consumer-like shopping experience while reducing maverick spending.</p>
+                </div>
+                <div className="bg-slate-50 p-6 rounded-xl">
+                    <p className="font-bold text-slate-900 mb-2">How do I access Ariba Guided Buying?</p>
+                    <p className="text-slate-600 m-0">Via Direct URL, SSO credentials, or mobile apps. First-time users must complete profile setup.</p>
                 </div>
                 <div className="bg-slate-50 p-6 rounded-xl">
                     <p className="font-bold text-slate-900 mb-2">How long does configuration take?</p>
-                    <p className="text-slate-600 m-0">Typically 8-12 weeks depending on complexity and realm setup.</p>
+                    <p className="text-slate-600 m-0">Typically 8-12 weeks depending on complexity, including realm setup, catalog configuration, and ERP integration.</p>
                 </div>
             </div>
 
