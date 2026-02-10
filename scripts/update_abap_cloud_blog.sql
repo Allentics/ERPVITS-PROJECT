@@ -172,5 +172,5 @@ content = '<div class="prose prose-lg prose-slate max-w-none
                 </a>
             </div>
         </div>',
-date = 'Feb 09, 2026'
+date = 'Jan 05, 2026'
 WHERE id = 'top-ten-tools-techniques-for-efficient-abap-on-cloud-programming';

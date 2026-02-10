@@ -144,5 +144,5 @@ content = '<div class="prose prose-lg prose-slate max-w-none
                 for a rewarding career in one of the most in-demand fields in finance and technology.
             </p>
         </div>',
-date = 'Feb 09, 2026'
+date = 'Nov 28, 2025'
 WHERE id = 'high-paying-sap-fico-jobs';

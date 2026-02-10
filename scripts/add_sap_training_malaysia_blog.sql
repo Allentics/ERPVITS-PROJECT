@@ -268,6 +268,6 @@ VALUES ('sap-training-malaysia-2026', 'SAP Training in Malaysia: The Courses, Ce
             <p>The SAP job market is expanding in Malaysia, with positions in Kuala Lumpur, Penang, Johor Bahru, and more. Reach out to ERPVITS to start your career transformation.</p>
 
             <p class="text-xs italic">Disclaimer: Salary figures and costs mentioned are approximate and may vary based on company, location, experience, and market conditions. Exchange rates are subject to change.</p>
-        </div>', '/images/blog/sap-training-malaysia.png', 'Jan 29, 2026', 'SAP Training', 'ERPVITS Expert')
+        </div>', '/images/blog/sap-training-malaysia.png', 'Jan 29, 2025', 'SAP Training', 'ERPVITS Expert')
 ON CONFLICT (id) DO UPDATE SET 
 title = EXCLUDED.title, description = EXCLUDED.description, content = EXCLUDED.content, image = EXCLUDED.image, date = EXCLUDED.date, category = EXCLUDED.category, author = EXCLUDED.author;

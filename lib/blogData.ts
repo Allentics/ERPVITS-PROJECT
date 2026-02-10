@@ -227,7 +227,7 @@ export const blogPosts: BlogPost[] = [
         title: "End-to-End SAP SD Shipping Point Determination Process",
         description: "Master SAP SD Shipping Point Determination, Route Determination, and Storage Location Determination. Complete guide to configuration, optimization, and best practices for logistics execution in SAP S/4HANA.",
         image: "/images/blog/sap-sd-shipping-point.png",
-        date: "Jan 28, 2026",
+        date: "Jan 28, 2025",
         category: "SAP Functional",
         author: "ERPVITS Expert"
     },
@@ -236,7 +236,7 @@ export const blogPosts: BlogPost[] = [
         title: "SAP Training in Malaysia: The Courses, Certifications, Jobs, and Salary in 2026",
         description: "Explore SAP Training in Malaysia for 2026. Discover popular SAP modules, certification costs, salary trends, and top job opportunities in Kuala Lumpur, Penang, and Johor Bahru.",
         image: "/images/blog/sap-training-malaysia.png",
-        date: "Jan 29, 2026",
+        date: "Jan 29, 2025",
         category: "SAP Training",
         author: "ERPVITS Expert"
     },
@@ -245,7 +245,7 @@ export const blogPosts: BlogPost[] = [
         title: "SAP HANA Course: Complete Training Guide & Certification 2026",
         description: "Master the future of SAP HANA enterprise computing. Deep dive into in-memory architecture, columnar storage, parallel processing, and deployment strategies for SAP S/4HANA professionals.",
         image: "/images/blog/sap-hana-course-masterclass.png",
-        date: "Jan 30, 2026",
+        date: "Jan 30, 2025",
         category: "SAP Functional",
         author: "ERPVITS Expert"
     },
@@ -254,7 +254,7 @@ export const blogPosts: BlogPost[] = [
         title: "The Ultimate End-to-End Guide to Ariba Guided Buying Configuration in SAP Ariba Solutions: From Login to Set Up",
         description: "A comprehensive administration guide covering everything about Ariba Guided Buying, from basic login to sophisticated configuration and best practices.",
         image: "/images/blog/ariba-guided-buying-guide.png",
-        date: "Feb 06, 2026",
+        date: "Feb 06, 2025",
         category: "SAP Ariba",
         author: "ERPVITS Expert"
     }

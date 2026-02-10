@@ -202,21 +202,19 @@ export default function SapSdShippingPointContent() {
                 A solid grasp of the intricacies of SAP SD determination will go a long way towards streamlined order fulfillment and other logistical processes in an organization. Knowledge in SAP SD shipping point determination, SAP SD route determination, and SAP storage location determination enables the automation of these processes and the reduction of the need for manual logistics functions.
             </p>
 
-            <div className="mt-12 mb-8">
-                <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                    <span className="text-pink-500">📢</span> Stay Connected With ERPVITS!
-                </h3>
-                <p className="text-slate-600 mb-6">Stay updated with the latest insights on SAP SD best practices and configuration tips:</p>
-                <ul className="space-y-3 list-none pl-0">
-                    <li className="flex items-start gap-3 text-slate-700">
-                        <span className="text-emerald-500 mt-1">✅</span>
-                        <span>Connect with us on <a href="https://linkedin.com/company/erpvits" className="text-cyan-600 hover:underline font-medium">LinkedIn</a> for expert guidance</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-slate-700">
-                        <span className="text-emerald-500 mt-1">✅</span>
-                        <span>Join our <a href="/whatsapp" className="text-cyan-600 hover:underline font-medium">WhatsApp Channel</a> for instant updates</span>
-                    </li>
-                </ul>
+            <div className="mt-12 mb-8 bg-orange-600 text-white p-8 rounded-2xl shadow-xl font-sans">
+                <h3 className="text-2xl font-bold mb-4 text-white uppercase tracking-wider mt-0">Master SAP SD with ERPVITS</h3>
+                <p className="text-orange-50 mb-6 font-medium">
+                    Optimize your logistics execution and order fulfillment processes with our expert-led SAP SD training. Our programs cover everything from basic configuration to advanced determination techniques.
+                </p>
+                <p className="text-white font-bold mb-6">Contact us today to start your SAP SD journey!</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm mb-8">
+                    <div className="flex items-center gap-2 font-bold"><span>📞</span> +91 8408878222</div>
+                    <div className="flex items-center gap-2 font-bold"><span>📧</span> info@erpvits.com</div>
+                </div>
+                <Link href="/contact" className="inline-block bg-white text-orange-600 hover:bg-orange-50 font-black py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-lg">
+                    Contact ERPVITS Today
+                </Link>
             </div>
         </div>
     );

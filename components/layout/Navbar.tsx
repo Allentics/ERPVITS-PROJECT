@@ -134,10 +134,10 @@ const Navbar = () => {
                 <div className="bg-slate-900 text-white text-xs py-2.5 px-4 hidden lg:block border-b border-white/10">
                     <div className="max-w-7xl mx-auto flex justify-between items-center">
                         <div className="flex items-center space-x-6 text-[11px] font-bold tracking-wide">
-                            <a href={`mailto:${settings.site_email}`} className="flex items-center hover:text-orange-400 transition-colors uppercase">
+                            <a href={`mailto:${settings.site_email}`} className="flex items-center hover:text-orange-400 transition-colors">
                                 <Mail className="h-3.5 w-3.5 mr-2" /> {settings.site_email}
                             </a>
-                            <a href={`tel:${settings.site_phone.replace(/\s+/g, '')}`} className="flex items-center hover:text-orange-400 transition-colors uppercase">
+                            <a href={`tel:${settings.site_phone.replace(/\s+/g, '')}`} className="flex items-center hover:text-orange-400 transition-colors">
                                 <Phone className="h-3.5 w-3.5 mr-2" /> {settings.site_phone}
                             </a>
                         </div>
