@@ -19,6 +19,10 @@ import SapMmCourseCompleteContent from '@/components/blog/SapMmCourseCompleteCon
 import HowSapAribaPoweringContent from '@/components/blog/HowSapAribaPoweringContent';
 import TopTenAbapCloudToolsContent from '@/components/blog/TopTenAbapCloudToolsContent';
 import HowSapFieldglassTransformingContent from '@/components/blog/HowSapFieldglassTransformingContent';
+import SapSdShippingPointContent from '@/components/blog/SapSdShippingPointContent';
+import SapTrainingMalaysiaContent from '@/components/blog/SapTrainingMalaysiaContent';
+import SapHanaMasterclassContent from '@/components/blog/SapHanaMasterclassContent';
+import AribaGuidedBuyingContent from '@/components/blog/AribaGuidedBuyingContent';
 
 import MtoAndStoProcessContent from '@/components/blog/MtoAndStoProcessContent';
 import MasterSapAribaIndustryContent from '@/components/blog/MasterSapAribaIndustryContent';
@@ -151,6 +155,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             case 'sap-consultant-salary-guide-2026': return SapConsultantSalaryGuideContent;
             case 'sap-fiori-apps-library-explained': return SapFioriAppsLibraryContent;
             case 'sap-btp-cockpit-guide': return SapBtpCockpitContent;
+            case 'sap-sd-shipping-point-determination': return SapSdShippingPointContent;
+            case 'sap-training-malaysia-2026': return SapTrainingMalaysiaContent;
+            case 'sap-hana-course-masterclass': return SapHanaMasterclassContent;
+            case 'ariba-guided-buying-guide': return AribaGuidedBuyingContent;
             default: return null;
         }
     })();
