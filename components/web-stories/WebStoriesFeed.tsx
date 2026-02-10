@@ -243,7 +243,7 @@ const WebStoriesFeed = () => {
         <div className="bg-slate-50 min-h-screen">
 
             {/* --- Hero Section (Restored) --- */}
-            <section className="relative bg-gradient-to-r from-purple-700 via-pink-600 to-blue-600 text-white py-24 px-4 overflow-hidden">
+            <section className="relative bg-gradient-to-r from-orange-800 via-orange-700 to-orange-600 text-white py-24 px-4 overflow-hidden">
                 {/* Radial Gradient overlay for depth */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
 
@@ -405,7 +405,7 @@ const WebStoriesFeed = () => {
             </section>
 
             {/* --- Share Your Story CTA --- */}
-            <section className="relative bg-gradient-to-r from-purple-700 via-pink-600 to-blue-600 text-white py-24 px-4 overflow-hidden mt-12">
+            <section className="relative bg-gradient-to-r from-orange-800 via-orange-700 to-orange-600 text-white py-24 px-4 overflow-hidden mt-12">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
 
                 <div className="max-w-4xl mx-auto text-center relative z-10">
