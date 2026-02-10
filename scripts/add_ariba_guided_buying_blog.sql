@@ -139,6 +139,6 @@ VALUES ('ariba-guided-buying-guide', 'The Ultimate End-to-End Guide to Ariba Gui
                     <div class="text-white">Email: info@erpvits.com</div>
                 </div>
             </div>
-        </div>', '/images/blog/ariba-guided-buying-guide.png', 'Feb 06, 2025', 'SAP Ariba', 'ERPVITS Expert')
+        </div>', '/images/blog/ariba-guided-buying-guide.png', 'Feb 06, 2026', 'SAP Ariba', 'ERPVITS Expert')
 ON CONFLICT (id) DO UPDATE SET 
 title = EXCLUDED.title, description = EXCLUDED.description, content = EXCLUDED.content, image = EXCLUDED.image, date = EXCLUDED.date, category = EXCLUDED.category, author = EXCLUDED.author;

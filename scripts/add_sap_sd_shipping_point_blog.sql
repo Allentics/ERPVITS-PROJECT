@@ -214,6 +214,6 @@ VALUES ('sap-sd-shipping-point-determination', 'End-to-End SAP SD Shipping Point
                     </li>
                 </ul>
             </div>
-        </div>', '/images/blog/sap-sd-shipping-point.png', 'Jan 28, 2025', 'SAP Functional', 'ERPVITS Expert')
+        </div>', '/images/blog/sap-sd-shipping-point.png', 'Jan 28, 2026', 'SAP Functional', 'ERPVITS Expert')
 ON CONFLICT (id) DO UPDATE SET 
 title = EXCLUDED.title, description = EXCLUDED.description, content = EXCLUDED.content, image = EXCLUDED.image, date = EXCLUDED.date, category = EXCLUDED.category, author = EXCLUDED.author;

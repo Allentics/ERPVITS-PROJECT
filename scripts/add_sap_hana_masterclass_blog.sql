@@ -101,6 +101,6 @@ VALUES ('sap-hana-course-masterclass', 'SAP HANA Course: Complete Training Guide
                 <p class="text-white"><strong>Contact us today to start your SAP HANA journey!</strong></p>
                 <p class="text-white">Phone: +91 8408878222 | Email: info@erpvits.com</p>
             </div>
-        </div>', '/images/blog/sap-hana-course-masterclass.png', 'Jan 30, 2025', 'SAP Functional', 'ERPVITS Expert')
+        </div>', '/images/blog/sap-hana-course-masterclass.png', 'Jan 30, 2026', 'SAP Functional', 'ERPVITS Expert')
 ON CONFLICT (id) DO UPDATE SET 
 title = EXCLUDED.title, description = EXCLUDED.description, content = EXCLUDED.content, image = EXCLUDED.image, date = EXCLUDED.date, category = EXCLUDED.category, author = EXCLUDED.author;

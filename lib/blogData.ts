@@ -11,6 +11,105 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
     {
+        id: "ariba-guided-buying-guide",
+        title: "The Ultimate End-to-End Guide to Ariba Guided Buying Configuration in SAP Ariba Solutions: From Login to Set Up",
+        description: "A comprehensive administration guide covering everything about Ariba Guided Buying, from basic login to sophisticated configuration and best practices.",
+        image: "/images/blog/ariba-guided-buying-guide.png",
+        date: "Feb 06, 2026",
+        category: "SAP Ariba",
+        author: "ERPVITS Expert"
+    },
+    {
+        id: "sap-hana-course-masterclass",
+        title: "SAP HANA Course: Complete Training Guide & Certification 2026",
+        description: "Master the future of SAP HANA enterprise computing. Deep dive into in-memory architecture, columnar storage, parallel processing, and deployment strategies for SAP S/4HANA professionals.",
+        image: "/images/blog/sap-hana-course-masterclass.png",
+        date: "Jan 30, 2026",
+        category: "SAP Functional",
+        author: "ERPVITS Expert"
+    },
+    {
+        id: "sap-training-malaysia-2026",
+        title: "SAP Training in Malaysia: The Courses, Certifications, Jobs, and Salary in 2026",
+        description: "Explore SAP Training in Malaysia for 2026. Discover popular SAP modules, certification costs, salary trends, and top job opportunities in Kuala Lumpur, Penang, and Johor Bahru.",
+        image: "/images/blog/sap-training-malaysia.png",
+        date: "Jan 29, 2026",
+        category: "SAP Training",
+        author: "ERPVITS Expert"
+    },
+    {
+        id: "sap-sd-shipping-point-determination",
+        title: "End-to-End SAP SD Shipping Point Determination Process",
+        description: "Master SAP SD Shipping Point Determination, Route Determination, and Storage Location Determination. Complete guide to configuration, optimization, and best practices for logistics execution in SAP S/4HANA.",
+        image: "/images/blog/sap-sd-shipping-point.png",
+        date: "Jan 28, 2026",
+        category: "SAP Functional",
+        author: "ERPVITS Expert"
+    },
+    {
+        id: "sap-finance-module-career-path-2026",
+        title: "SAP Finance Module Career Path in 2026: Roles, Salary & Future Scope",
+        description: "Explore the career trajectory, salary prospects, and future scope for SAP finance professionals in 2026. Complete guide to SAP FICO, S/4HANA Finance, and FICA careers.",
+        image: "/images/blog/sap-finance-career-guide.png",
+        date: "Jan 27, 2026",
+        category: "SAP Career",
+        author: "ERPVITS Expert"
+    },
+    {
+        id: "sap-modules-list-complete-guide-2026",
+        title: "SAP Modules List: Complete Guide to SAP Functional, Technical & Business Modules (2026)",
+        description: "Explore the definitive list of SAP modules. Learn about SAP FI, MM, SD, PP, PM, HR, TM, and more in this comprehensive 2026 guide.",
+        image: "/images/blog/sap-modules-guide.png",
+        date: "Jan 24, 2026",
+        category: "SAP Functional",
+        author: "ERPVITS Expert"
+    },
+    {
+        id: "sap-ariba-interview-questions-answers-2026",
+        title: "Top 50+ SAP Ariba Interview Questions & Answers (2026) — For Freshers & Experienced",
+        description: "Master SAP Ariba interviews with our comprehensive guide featuring 50+ questions and answers for freshers and experienced professionals.",
+        image: "/images/blog/sap-ariba-interview-questions.png",
+        date: "Jan 23, 2026",
+        category: "SAP Career",
+        author: "ERPVITS Expert"
+    },
+    {
+        id: "sap-training-courses-uk",
+        title: "SAP Training Courses in UK: SAP Training Institutes, Courses, Certification & Placement Support",
+        description: "Join the best SAP training institute in UK. Complete SAP courses with certification support, expert faculty, and placement assistance in London, Manchester & Birmingham.",
+        image: "/images/blog/sap-uk-training-landing.png",
+        date: "Jan 22, 2026",
+        category: "SAP Training",
+        author: "ERPVITS"
+    },
+    {
+        id: "listing-and-exclusion-in-sap-sd",
+        title: "Listing and Exclusion in SAP SD: Complete Guide to Product Assortment Management",
+        description: "Master product assortment management in SAP SD. Complete guide to Listing and Exclusion, configuration steps, and real-world business scenarios.",
+        image: "/images/blog/sap-sd-listing-exclusion.png",
+        date: "Jan 21, 2026",
+        category: "SAP Functional",
+        author: "ERPVITS Expert"
+    },
+    {
+        id: "best-sap-s4hana-training-institute",
+        title: "Best SAP S/4HANA Training Institute: SAP S4HANA Course & Certification Support",
+        description: "Join the best SAP S/4HANA training institute. Complete SAP S4HANA course with certification support, expert faculty, and placement assistance.",
+        image: "/images/blog/sap-s4hana-training.png",
+        date: "Jan 20, 2026",
+        category: "SAP Career",
+        author: "ERPVITS Expert"
+    },
+    {
+        id: "sap-courses-germany-jobs-2026",
+        title: "SAP Courses in Germany: High-Demand SAP Modules for Jobs in 2026",
+        description: "Explore high-demand SAP modules in Germany for 2026. Complete guide to SAP courses, salaries, and career prospects in the home of SAP.",
+        image: "/images/blog/sap-courses-germany.png",
+        date: "Jan 19, 2026",
+        category: "SAP Career",
+        author: "ERPVITS Expert"
+    },
+    {
         id: "sap-btp-cockpit-guide",
         title: "SAP BTP Cockpit: Complete Guide to Login, Trial Account Setup, Training Path, Certification & Integration Suite Overview",
         description: "Master the SAP BTP Cockpit with our comprehensive guide. Learn how to set up a trial account, navigate the integration suite, follow the training path, and prepare for certification.",
@@ -35,6 +134,15 @@ export const blogPosts: BlogPost[] = [
         image: "/images/blog/sap-consultant-salary-guide-2026.png",
         date: "Jan 13, 2026",
         category: "SAP Career",
+        author: "ERPVITS Expert"
+    },
+    {
+        id: "ultimate-guide-to-sap-fieldglass-login-access-setup",
+        title: "Ultimate Guide to SAP Fieldglass Login & Access Setup (Step-by-Step)",
+        description: "Complete SAP Fieldglass login guide for buyers, suppliers & S-users. Learn step-by-step login processes, fix common issues & secure your account with best practices for workforce management.",
+        image: "/images/blog/sap-fieldglass-login-guide.png",
+        date: "Jan 12, 2026",
+        category: "SAP Fieldglass",
         author: "ERPVITS Expert"
     },
     {
@@ -73,7 +181,6 @@ export const blogPosts: BlogPost[] = [
         category: "SAP Technical",
         author: "ERPVITS Expert"
     },
-
     {
         id: "how-sap-fieldglass-transforming-global-contingent-workforce-market",
         title: "How SAP Fieldglass is Transforming the Global Contingent Workforce Market",
@@ -83,7 +190,6 @@ export const blogPosts: BlogPost[] = [
         category: "SAP Fieldglass",
         author: "ERPVITS Expert"
     },
-
     {
         id: "mto-and-sto-process-in-sap",
         title: "MTO & STO Process in SAP: Enhance Supply Chain Performance Through Integrated MM And SD Modules",
@@ -102,13 +208,10 @@ export const blogPosts: BlogPost[] = [
         category: "SAP Ariba",
         author: "ERPVITS Expert"
     },
-
     {
         id: "sap-ariba-sourcing-configuration",
         title: "SAP Ariba Sourcing Configuration Guide: Complete Setup & Best Practices",
         description: "Complete guide to configuring SAP Ariba Sourcing for optimal procurement. Learn setup steps, templates, workflows, integration, and best practices for strategic sourcing success.",
-
-
         image: "/images/sap-ariba-sourcing.webp",
         date: "Dec 27, 2025",
         category: "SAP Ariba",
@@ -130,6 +233,15 @@ export const blogPosts: BlogPost[] = [
         image: "/images/sap-tcodes-list-hero.webp",
         date: "Dec 22, 2025",
         category: "SAP Technical",
+        author: "ERPVITS Expert"
+    },
+    {
+        id: "sap-trm-complementary-technologies",
+        title: "SAP TRM Complementary Technologies for Modern Treasury and Risk Management",
+        description: "Explore how SAP TRM integrates with analytics, automation, and compliance tools to enable real-time insights, risk control, and digital treasury transformation.",
+        image: "/images/blog/sap-trm-complementary.webp",
+        date: "Dec 18, 2025",
+        category: "SAP TRM",
         author: "ERPVITS Expert"
     },
     {
@@ -202,60 +314,6 @@ export const blogPosts: BlogPost[] = [
         image: "/images/sap-training-institutes.webp",
         date: "Nov 25, 2025",
         category: "SAP Career",
-        author: "ERPVITS Expert"
-    },
-    {
-        id: "sap-trm-complementary-technologies",
-        title: "SAP TRM Complementary Technologies for Modern Treasury and Risk Management",
-        description: "Explore how SAP TRM integrates with analytics, automation, and compliance tools to enable real-time insights, risk control, and digital treasury transformation.",
-        image: "/images/blog/sap-trm-complementary.webp",
-        date: "Dec 18, 2025",
-        category: "SAP TRM",
-        author: "ERPVITS Expert"
-    },
-    {
-        id: "ultimate-guide-to-sap-fieldglass-login-access-setup",
-        title: "Ultimate Guide to SAP Fieldglass Login & Access Setup (Step-by-Step)",
-        description: "Complete SAP Fieldglass login guide for buyers, suppliers & S-users. Learn step-by-step login processes, fix common issues & secure your account with best practices for workforce management.",
-        image: "/images/blog/sap-fieldglass-login-guide.png",
-        date: "Jan 12, 2026",
-        category: "SAP Fieldglass",
-        author: "ERPVITS Expert"
-    },
-    {
-        id: "sap-sd-shipping-point-determination",
-        title: "End-to-End SAP SD Shipping Point Determination Process",
-        description: "Master SAP SD Shipping Point Determination, Route Determination, and Storage Location Determination. Complete guide to configuration, optimization, and best practices for logistics execution in SAP S/4HANA.",
-        image: "/images/blog/sap-sd-shipping-point.png",
-        date: "Jan 28, 2025",
-        category: "SAP Functional",
-        author: "ERPVITS Expert"
-    },
-    {
-        id: "sap-training-malaysia-2026",
-        title: "SAP Training in Malaysia: The Courses, Certifications, Jobs, and Salary in 2026",
-        description: "Explore SAP Training in Malaysia for 2026. Discover popular SAP modules, certification costs, salary trends, and top job opportunities in Kuala Lumpur, Penang, and Johor Bahru.",
-        image: "/images/blog/sap-training-malaysia.png",
-        date: "Jan 29, 2025",
-        category: "SAP Training",
-        author: "ERPVITS Expert"
-    },
-    {
-        id: "sap-hana-course-masterclass",
-        title: "SAP HANA Course: Complete Training Guide & Certification 2026",
-        description: "Master the future of SAP HANA enterprise computing. Deep dive into in-memory architecture, columnar storage, parallel processing, and deployment strategies for SAP S/4HANA professionals.",
-        image: "/images/blog/sap-hana-course-masterclass.png",
-        date: "Jan 30, 2025",
-        category: "SAP Functional",
-        author: "ERPVITS Expert"
-    },
-    {
-        id: "ariba-guided-buying-guide",
-        title: "The Ultimate End-to-End Guide to Ariba Guided Buying Configuration in SAP Ariba Solutions: From Login to Set Up",
-        description: "A comprehensive administration guide covering everything about Ariba Guided Buying, from basic login to sophisticated configuration and best practices.",
-        image: "/images/blog/ariba-guided-buying-guide.png",
-        date: "Feb 06, 2025",
-        category: "SAP Ariba",
         author: "ERPVITS Expert"
     }
 ];
