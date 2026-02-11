@@ -5,7 +5,7 @@ import { User, Mail, Phone, Briefcase, MessageSquare, ArrowRight, CheckCircle2, 
 import { supabase } from '@/lib/supabase';
 import { submitToGoogleSheets } from '@/app/actions/submitToGoogleSheets';
 
-export default function DetailedDemoBooking({ courseName = "SAP Consultant", title, subtitle, benefits }: { courseName?: string, title?: string, subtitle?: string, benefits?: any[] }) {
+export default function DetailedDemoBooking({ courseName = "SAP Consultant", title, subtitle, benefits, features }: { courseName?: string, title?: string, subtitle?: string, benefits?: any[], features?: any[] }) {
     const [formData, setFormData] = useState({
         fullName: '',
         email: '',
@@ -53,13 +53,13 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant", tit
     };
 
     const defaultBenefits = [
-        { icon: Video, title: "Insightful Live Ariba Session", desc: "Observe real training and instructor methodology" },
+        { icon: Video, title: `Insightful Live ${courseName.includes('Consultant') ? 'SAP' : ''} Session`, desc: "Observe real training and instructor methodology" },
         { icon: Calendar, title: "30 Min Career Consultation", desc: "Personalized guidance based on your background" },
         { icon: HelpCircle, title: "Q&A with Instructor", desc: "Ask questions about course, certification, and career" },
         { icon: Gift, title: "Special Discount Offer", desc: "Exclusive discount pass for demo attendees" }
     ];
 
-    const displayBenefits = benefits && benefits.length > 0 ? benefits : defaultBenefits;
+    const displayBenefits = (benefits || features || []).length > 0 ? (benefits || features || []) : defaultBenefits;
 
     return (
         <section id="detailed-demo-booking" className="py-8 bg-[#ff4500] relative overflow-hidden">
@@ -84,47 +84,25 @@ export default function DetailedDemoBooking({ courseName = "SAP Consultant", tit
                         <div>
                             <h3 className="text-sm font-bold text-white mb-3">What You'll Get With Your Free Demo</h3>
                             <div className="space-y-2">
-                                {displayBenefits.map((item: any, i: number) => {
-                                    const Icon = item.icon || CheckCircle2; // Fallback icon
-                                    // if benefit comes from admin (JSON), icon might be string name, hard to map dynamically here without map logic. 
-                                    // simpler: support title/desc only for dynamic items, use fixed icon.
+                                {displayBenefits.map((itemValue: any, i: number) => {
+                                    const isString = typeof itemValue === 'string';
+                                    const title = isString ? itemValue.split(' – ')[0] : itemValue.title;
+                                    const desc = isString ? itemValue.split(' – ')[1] : (itemValue.desc || itemValue.description);
+                                    const Icon = !isString && itemValue.icon ? itemValue.icon : CheckCircle2;
+
                                     return (
                                         <div key={i} className="bg-white/10 border border-white/20 p-2.5 rounded-lg flex items-start gap-3">
                                             <div className="w-6 h-6 rounded bg-white flex items-center justify-center text-slate-900 shrink-0">
                                                 <Icon className="w-3.5 h-3.5" />
                                             </div>
                                             <div>
-                                                <h4 className="font-bold text-white mb-0 text-[11px]">{item.title}</h4>
-                                                <p className="text-[9px] text-orange-50">{item.desc || item.description}</p>
+                                                <h4 className="font-bold text-white mb-0 text-[11px]">{title}</h4>
+                                                {desc && <p className="text-[9px] text-orange-50">{desc}</p>}
                                             </div>
                                         </div>
                                     )
                                 })}
                             </div>
-                        </div>
-
-                        {/* Contact Box */}
-                        <div className="bg-white rounded-xl p-4 text-slate-900 relative overflow-hidden shadow-lg">
-                            <div className="relative z-10">
-                                <h3 className="font-bold text-xs mb-2">Contact Information</h3>
-                                <div className="space-y-1.5 text-[11px]">
-                                    <div className="flex items-center gap-2">
-                                        <Phone className="w-3.5 h-3.5 text-[#ff4500]" />
-                                        <span>+91 84088 78222</span>
-                                    </div>
-                                    <div className="flex items-center gap-2">
-                                        <Mail className="w-3.5 h-3.5 text-[#ff4500]" />
-                                        <span>info@erpvits.com</span>
-                                    </div>
-                                    <div className="flex items-start gap-2">
-                                        <MapPin className="w-3.5 h-3.5 mt-0.5 text-[#ff4500]" />
-                                        <span>ERPVITS Training Center, Pune, India</span>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* Decorative circles */}
-                            <div className="absolute top-0 right-0 w-24 h-24 bg-[#ff4500]/10 rounded-full translate-x-1/2 -translate-y-1/2"></div>
-                            <div className="absolute bottom-0 right-8 w-16 h-16 bg-[#ff4500]/10 rounded-full translate-y-1/2"></div>
                         </div>
                     </div>
 

@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Star, Quote, CheckCircle2, Download, FileText, User, Mail, Briefcase, Calendar, Loader2, AlertCircle } from 'lucide-react';
+import { Star, Quote, CheckCircle2, Download, User, Mail, Briefcase, Calendar, AlertCircle } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { submitToGoogleSheets } from '@/app/actions/submitToGoogleSheets';
 
-export default function DetailedTestimonials({ items, courseName = "SAP Ariba" }: { items?: any[], courseName?: string }) {
+export default function DetailedTestimonials({ items, stats, courseName = "SAP Ariba" }: { items?: any[], stats?: any, courseName?: string }) {
     const [formData, setFormData] = useState({
         fullName: '',
         email: '',
@@ -48,7 +48,7 @@ export default function DetailedTestimonials({ items, courseName = "SAP Ariba" }
                         last_name: lastName,
                         email: formData.email,
                         phone: '', // Not collected in this form
-                        course: 'SAP Ariba - Interview Guide',
+                        course: `${courseName} - Interview Guide`,
                         message: fullMessage,
                     }
                 ]);
@@ -74,8 +74,8 @@ export default function DetailedTestimonials({ items, courseName = "SAP Ariba" }
             setErrorMessage(error.message || 'Submission failed.');
         }
     };
+
     const defaultReviews = [
-        // ... (Keep existing Ariba reviews as default)
         {
             text: "Outstanding training and real project exposure. I landed a consulting role at Accenture within 2 weeks of completing the course. The hands-on approach and expert instructors made all the difference.",
             author: "Rahul Mehta",
@@ -96,51 +96,25 @@ export default function DetailedTestimonials({ items, courseName = "SAP Ariba" }
             role: "Senior SAP Consultant",
             initial: "R",
             color: "bg-[#ff4500]"
-        },
-        {
-            text: "Superb certification preparation. I passed all three SAP Ariba exams on my first attempt. The study material and mock tests were spot on. Highly recommended!",
-            author: "Aditya Singh",
-            role: "Certified SAP Ariba Professional",
-            initial: "A",
-            color: "bg-purple-500"
-        },
-        {
-            text: "The instructor's real-world insights were invaluable. I didn't just learn SAP Ariba; I learned how to apply it in complex enterprise environments. The alumni network has already brought networking opportunities my way.",
-            author: "Vikram Desai",
-            role: "Integration Consultant at Deloitte",
-            initial: "V",
-            color: "bg-red-500"
-        },
-        {
-            text: "From zero SAP knowledge to landing my dream job in 3 months! The instructors are patient, knowledgeable, and truly care about student success. The lifetime recording access is a huge bonus.",
-            author: "Sneha Reddy",
-            role: "Procurement Analyst at Infosys",
-            initial: "S",
-            color: "bg-indigo-500"
         }
     ];
 
     const rawReviews = items || defaultReviews;
 
     // Normalize reviews to ensure they have color/initial
-    const reviews = rawReviews.map((r, i) => {
+    const reviewsArray = rawReviews.map((r, i) => {
         const colors = ["bg-[#ff4500]", "bg-blue-500", "bg-[#ff4500]", "bg-purple-500", "bg-red-500", "bg-indigo-500"];
         return {
-            text: r.quote || r.text, // Handle mismatch (mmContent uses quote)
-            author: r.name || r.author, // Handle mismatch
+            text: r.quote || r.text,
+            author: r.name || r.author,
             role: r.role,
             initial: r.initial || (r.name || r.author || "U").charAt(0).toUpperCase(),
             color: r.color || colors[i % colors.length]
         };
     });
 
-    const benefits = [
-        "50+ real interview questions with expert answers",
-        "Behavioral questions common in SAP consulting interviews",
-        "Scenario-based problem-solving questions",
-        "Career growth and salary negotiation tips",
-        "Interview tips specific to each role"
-    ];
+    const ratingValue = stats?.rating || "4.9/5";
+    const reviewsCountLabel = stats?.reviews || "500+ student reviews";
 
     return (
         <section className="py-8 bg-[#ff4500]/10/30">
@@ -163,15 +137,15 @@ export default function DetailedTestimonials({ items, courseName = "SAP Ariba" }
                                     <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
                                 ))}
                             </div>
-                            <div className="font-bold text-xl text-slate-900">4.9/5</div>
-                            <div className="text-[10px] text-slate-500">Based on 500+ student reviews</div>
+                            <div className="font-bold text-xl text-slate-900">{ratingValue}</div>
+                            <div className="text-[10px] text-slate-500">Based on {reviewsCountLabel}</div>
                         </div>
                     </div>
                 </div>
 
                 {/* Reviews Grid */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
-                    {reviews.map((review, idx) => (
+                    {reviewsArray.map((review, idx) => (
                         <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow relative">
                             <Quote className="w-8 h-8 text-[#ff4500]/20 absolute top-6 right-6 fill-orange-50" />
                             <div className="flex gap-1 mb-4">
@@ -192,164 +166,6 @@ export default function DetailedTestimonials({ items, courseName = "SAP Ariba" }
                         </div>
                     ))}
                 </div>
-
-
-
-                {/* Lead Magnet / Interview Guide Section - Hidden Temporarily
-                <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100 max-w-6xl mx-auto">
-                    <div className="grid md:grid-cols-2">
-                        <div className="p-8 md:p-12 lg:p-16 bg-slate-50 flex flex-col justify-center">
-                            <span className="text-green-600 font-bold tracking-wider text-sm mb-2 uppercase">Free Resource</span>
-                            <h3 className="text-3xl font-bold text-slate-900 mb-4">
-                                Download the Most Asked <br />
-                                <span className="text-blue-600">{courseName} Interview Questions</span>
-                            </h3>
-                            <p className="text-slate-600 mb-8 max-w-md">
-                                Get a comprehensive guide to help you ace your {courseName} interviews and land your dream consulting role.
-                            </p>
-                            <div className="space-y-4">
-                                {benefits.map((item, idx) => (
-                                    <div key={idx} className="flex items-start gap-3">
-                                        <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                                        <span className="text-slate-700 text-sm font-medium">{item}</span>
-                                    </div>
-                                ))}
-                            </div>
-
-                            <div className="mt-8">
-                                <button className="w-full bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-xl p-4 flex items-center gap-4 transition-all group text-left">
-                                    <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white shrink-0 group-hover:scale-105 transition-transform shadow-md shadow-blue-600/20">
-                                        <Download className="w-6 h-6" />
-                                    </div>
-                                    <div>
-                                        <div className="font-bold text-slate-900 group-hover:text-blue-700 transition-colors">Instant Download</div>
-                                        <div className="text-sm text-slate-600">PDF guide sent directly to your email</div>
-                                    </div>
-                                </button>
-                            </div>
-                        </div>
-
-                        <div className="p-8 md:p-12 lg:p-16 bg-white">
-                            <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
-                                <div className="flex items-center gap-3 mb-6 pb-6 border-b border-slate-100">
-                                    <div className="p-3 bg-green-50 text-green-600 rounded-lg">
-                                        <Download className="w-6 h-6" />
-                                    </div>
-                                    <div>
-                                        <div className="font-bold text-slate-900">Download Free Guide</div>
-                                        <div className="text-xs text-slate-500">Fill out the form below</div>
-                                    </div>
-                                </div>
-
-                                {status === 'success' ? (
-                                    <div className="bg-green-50 border border-green-200 rounded-xl p-6 text-center">
-                                        <CheckCircle2 className="mx-auto h-12 w-12 text-green-500 mb-4" />
-                                        <h3 className="text-lg font-bold text-green-900 mb-2">Guide Sent!</h3>
-                                        <p className="text-green-700 text-sm mb-4">
-                                            Please check your email inbox (and spam folder) for the download link.
-                                        </p>
-                                        <button
-                                            onClick={() => setStatus('idle')}
-                                            className="text-sm text-green-700 hover:underline font-semibold"
-                                        >
-                                            Send to another email
-                                        </button>
-                                    </div>
-                                ) : (
-                                    <form onSubmit={handleSubmit} className="space-y-4">
-                                        {status === 'error' && (
-                                            <div className="bg-red-50 border border-red-200 p-3 rounded-lg text-sm text-red-700 flex items-center gap-2">
-                                                <AlertCircle className="w-4 h-4" /> {errorMessage}
-                                            </div>
-                                        )}
-                                        <div>
-                                            <label className="block text-xs font-bold text-slate-700 mb-1.5 ml-1">Full Name</label>
-                                            <div className="relative">
-                                                <User className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
-                                                <input
-                                                    type="text"
-                                                    name="fullName"
-                                                    value={formData.fullName}
-                                                    onChange={handleChange}
-                                                    required
-                                                    placeholder="Enter your name"
-                                                    className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 transition-colors"
-                                                />
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <label className="block text-xs font-bold text-slate-700 mb-1.5 ml-1">Email Address</label>
-                                            <div className="relative">
-                                                <Mail className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
-                                                <input
-                                                    type="email"
-                                                    name="email"
-                                                    value={formData.email}
-                                                    onChange={handleChange}
-                                                    required
-                                                    placeholder="your.email@example.com"
-                                                    className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 transition-colors"
-                                                />
-                                            </div>
-                                        </div>
-                                        <div className="grid grid-cols-2 gap-4">
-                                            <div>
-                                                <label className="block text-xs font-bold text-slate-700 mb-1.5 ml-1">Desired Role</label>
-                                                <div className="relative">
-                                                    <Briefcase className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
-                                                    <select
-                                                        name="role"
-                                                        value={formData.role}
-                                                        onChange={handleChange}
-                                                        className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 transition-colors appearance-none text-slate-600"
-                                                    >
-                                                        <option value="">Select role</option>
-                                                        <option value="Consultant">Consultant</option>
-                                                        <option value="End User">End User</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <label className="block text-xs font-bold text-slate-700 mb-1.5 ml-1">Years Experience</label>
-                                                <div className="relative">
-                                                    <Calendar className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
-                                                    <select
-                                                        name="experience"
-                                                        value={formData.experience}
-                                                        onChange={handleChange}
-                                                        className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 transition-colors appearance-none text-slate-600"
-                                                    >
-                                                        <option value="">Select years</option>
-                                                        <option value="0-2 Years">0-2 Years</option>
-                                                        <option value="3-5 Years">3-5 Years</option>
-                                                        <option value="5+ Years">5+ Years</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <button
-                                            type="submit"
-                                            disabled={status === 'loading'}
-                                            className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg shadow-md hover:shadow-lg transition-all mt-2 flex items-center justify-center gap-2 disabled:bg-green-400"
-                                        >
-                                            {status === 'loading' ? (
-                                                <>Processing...</>
-                                            ) : (
-                                                <><Download className="w-4 h-4" /> Download Interview Guide</>
-                                            )}
-                                        </button>
-                                        <p className="text-[10px] text-center text-slate-400 mt-2">
-                                            By downloading, you agree to receive updates about our {courseName} training programs.
-                                        </p>
-                                    </form>
-                                )}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                */}
-
             </div>
         </section>
     );

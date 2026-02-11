@@ -160,7 +160,7 @@ export default function SectionRenderer({ sections, courseName, syllabusUrl }: {
                         </section>;
                     case 'detailed_curriculum':
                         return <section key={idx} id="curriculum" className="scroll-mt-32">
-                            <DetailedCurriculum modules={section.modules} title={section.title} subtitle={section.subtitle} courseName={courseName || section.courseName} syllabusUrl={section.syllabusUrl || syllabusUrl} />
+                            <DetailedCurriculum modules={section.modules} title={section.title} subtitle={section.subtitle} courseName={courseName || section.courseName} syllabusUrl={section.syllabusUrl || syllabusUrl} duration={section.duration} />
                         </section>;
                     case 'detailed_prerequisites':
                         return <DetailedPrerequisites key={idx} items={section.items} />;
@@ -169,7 +169,7 @@ export default function SectionRenderer({ sections, courseName, syllabusUrl }: {
                     case 'detailed_learning_outcomes':
                         return <DetailedLearningOutcomes key={idx} items={section.items} title={section.title} subtitle={section.subtitle} />;
                     case 'real_world_scenarios':
-                        return <RealWorldScenarios key={idx} items={section.items} />;
+                        return <RealWorldScenarios key={idx} items={section.items} title={section.title} subtitle={section.subtitle} portfolioNote={section.portfolioNote} />;
                     case 'course_overview':
                         return <CourseOverview key={idx} items={section.items} />;
                     case 'job_roles_table':
@@ -185,13 +185,13 @@ export default function SectionRenderer({ sections, courseName, syllabusUrl }: {
                     case 'detailed_career_roadmap':
                         return <DetailedCareerRoadmap key={idx} items={section.items} stats={section.stats} />;
                     case 'detailed_post_training_journey':
-                        return <DetailedPostTrainingJourney key={idx} steps={section.items} title={section.title} courseName={section.courseName || courseName} />;
+                        return <DetailedPostTrainingJourney key={idx} steps={section.items} stats={section.stats} title={section.title} courseName={section.courseName || courseName} />;
                     case 'detailed_testimonials':
                         return <section key={idx} id="reviews" className="scroll-mt-32">
-                            <DetailedTestimonials items={section.items} courseName={courseName || section.courseName} />
+                            <DetailedTestimonials items={section.items} stats={section.stats} courseName={courseName || section.courseName} />
                         </section>;
                     case 'detailed_upcoming_batches':
-                        return <DetailedUpcomingBatches key={idx} batches={section.items} courseName={section.courseName || courseName} />;
+                        return <DetailedUpcomingBatches key={idx} batches={section.items} features={section.features} courseName={section.courseName || courseName} />;
                     case 'detailed_faq':
                         return <DetailedFAQ key={idx} items={section.items} title={section.title} subtitle={section.subtitle} />;
                     case 'detailed_demo_booking':
