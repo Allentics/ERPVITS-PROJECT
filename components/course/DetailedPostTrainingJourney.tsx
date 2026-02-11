@@ -25,7 +25,7 @@ interface StepsData {
     [key: string]: any;
 }
 
-export default function DetailedPostTrainingJourney({ title, steps: propSteps, stats: propStats, courseName = "this course" }: { title?: string | React.ReactNode, steps?: any[], stats?: any[], courseName?: string }) {
+export default function DetailedPostTrainingJourney({ title, steps: propSteps, items, stats: propStats, courseName = "this course" }: { title?: string | React.ReactNode, steps?: any[], items?: any[], stats?: any[], courseName?: string }) {
     const scrollToBooking = () => {
         const element = document.getElementById('detailed-demo-booking');
         if (element) {
@@ -103,7 +103,7 @@ export default function DetailedPostTrainingJourney({ title, steps: propSteps, s
         }
     ];
 
-    const steps = propSteps || defaultSteps;
+    const steps = propSteps || items || defaultSteps;
 
     return (
         <section className="py-20 bg-slate-50">
