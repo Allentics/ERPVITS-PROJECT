@@ -21,8 +21,8 @@ import coursesData from '@/courses.json';
 // Define Types
 export interface Section {
     type: 'target_audience' | 'prerequisites' | 'learning_outcomes' | 'curriculum' | 'detailed_features' | 'features' | 'faq' | 'video' | 'text' | 'detailed_curriculum' | 'detailed_prerequisites' | 'detailed_target_audience' | 'detailed_learning_outcomes' | 'real_world_scenarios' | 'detailed_certification' | 'detailed_career_opportunities' | 'detailed_companies' | 'detailed_testimonials' | 'detailed_faq' | 'detailed_upcoming_batches' | 'detailed_demo_booking' | 'detailed_career_roadmap' | 'detailed_post_training_journey' | 'list_checker' | 'rich_text' | 'content_with_image' | 'whats_included' | 'testimonials' | 'course_overview' | 'table_curriculum' | 'job_roles_table';
-    title?: string;
-    subtitle?: string;
+    title?: string | React.ReactNode;
+    subtitle?: string | React.ReactNode;
     items?: any;
     badge?: string;
     modules?: any[];

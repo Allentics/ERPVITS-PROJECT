@@ -1,10 +1,31 @@
 "use client";
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
-import { CheckCircle2, Award, Rocket, Target, BookOpen, Clock, Users, ShieldCheck, TrendingUp, Briefcase, Headphones } from 'lucide-react';
+import { CheckCircle2, Award, Rocket, Target, BookOpen, Clock, Users, ShieldCheck, TrendingUp, Briefcase, Headphones, Star, Search, Zap, MessageSquare } from 'lucide-react';
 import { renderRichText } from '@/lib/richText';
 
-export default function DetailedPostTrainingJourney({ title, steps: propSteps, courseName = "this course" }: { title?: string, steps?: any[], courseName?: string }) {
+interface Step {
+    title: string;
+    timeline: string;
+    points: string[];
+    icon?: any;
+    color?: string;
+}
+
+interface StepsData {
+    items?: Step[];
+    stats?: {
+        value: string;
+        label: string;
+        icon: string;
+    }[];
+    // Allow array access for legacy support if needed, or better, change the component to handle object structure
+    [key: string]: any;
+}
+
+export default function DetailedPostTrainingJourney({ title, steps: propSteps, stats: propStats, courseName = "this course" }: { title?: string | React.ReactNode, steps?: any[], stats?: any[], courseName?: string }) {
     const scrollToBooking = () => {
         const element = document.getElementById('detailed-demo-booking');
         if (element) {
@@ -17,7 +38,10 @@ export default function DetailedPostTrainingJourney({ title, steps: propSteps, c
         "Rocket": Rocket,
         "TrendingUp": TrendingUp,
         "Award": Award,
-        "Briefcase": Briefcase
+        "Briefcase": Briefcase,
+        "Clock": Clock,
+        "Headphones": Headphones,
+        "Users": Users
     };
 
     const defaultSteps = [
@@ -90,7 +114,11 @@ export default function DetailedPostTrainingJourney({ title, steps: propSteps, c
                         Your Career Journey
                     </span>
                     <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
-                        {title || `What to Expect After Completing ${courseName} Training`}
+                        {title ? (
+                            <span dangerouslySetInnerHTML={{ __html: title }} />
+                        ) : (
+                            `What to Expect After Completing ${courseName} Training`
+                        )}
                     </h2>
                     <p className="text-gray-600 text-base">
                         Your comprehensive growth roadmap from certification to career excellence
@@ -123,9 +151,11 @@ export default function DetailedPostTrainingJourney({ title, steps: propSteps, c
                                             </div>
                                             <h3 className="text-lg font-bold text-slate-900">{step.title}</h3>
                                         </div>
-                                        <span className="text-xs font-bold text-[#ff4500] bg-[#ff4500]/10 px-3 py-1 rounded-full border border-[#ff4500]/10 inline-block w-fit">
-                                            {step.timeline}
-                                        </span>
+                                        {step.timeline && (
+                                            <span className="text-xs font-bold text-[#ff4500] bg-[#ff4500]/10 px-3 py-1 rounded-full border border-[#ff4500]/10 inline-block w-fit">
+                                                {step.timeline}
+                                            </span>
+                                        )}
                                     </div>
 
                                     <ul className="space-y-3">
@@ -143,36 +173,56 @@ export default function DetailedPostTrainingJourney({ title, steps: propSteps, c
                 </div>
 
                 {/* Footer Stats & CTA */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-                    <div className="bg-[#ff4500]/10 p-6 rounded-xl text-center border border-[#ff4500]/10">
-                        <div className="w-10 h-10 mx-auto bg-white rounded-full flex items-center justify-center text-[#ff4500] mb-3 shadow-sm">
-                            <Clock className="w-5 h-5" />
-                        </div>
-                        <div className="text-lg font-bold text-slate-900 mb-1">2-3 Months</div>
-                        <div className="text-[10px] text-slate-500">Average Time to First Role</div>
+                {propStats && (
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+                        {propStats.map((stat: any, idx: number) => {
+                            const Icon = iconMap[stat.icon] || CheckCircle2;
+                            const isDark = idx % 2 !== 0; // Alternating style based on index or prop
+
+                            return (
+                                <div key={idx} className={`${isDark ? 'bg-slate-900 border-slate-800' : 'bg-[#ff4500]/10 border-[#ff4500]/10'} p-6 rounded-xl text-center border`}>
+                                    <div className={`w-10 h-10 mx-auto rounded-full flex items-center justify-center mb-3 shadow-sm ${isDark ? 'bg-white/10 text-white' : 'bg-white text-[#ff4500]'}`}>
+                                        <Icon className="w-5 h-5" />
+                                    </div>
+                                    <div className={`text-lg font-bold mb-1 ${isDark ? 'text-white' : 'text-slate-900'}`}>{stat.value}</div>
+                                    <div className={`text-[10px] ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>{stat.label}</div>
+                                </div>
+                            );
+                        })}
                     </div>
-                    <div className="bg-slate-900 p-6 rounded-xl text-center border border-slate-800">
-                        <div className="w-10 h-10 mx-auto bg-white/10 rounded-full flex items-center justify-center text-white mb-3">
-                            <Briefcase className="w-5 h-5" />
+                )}
+                {!propStats && (
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+                        <div className="bg-[#ff4500]/10 p-6 rounded-xl text-center border border-[#ff4500]/10">
+                            <div className="w-10 h-10 mx-auto bg-white rounded-full flex items-center justify-center text-[#ff4500] mb-3 shadow-sm">
+                                <Clock className="w-5 h-5" />
+                            </div>
+                            <div className="text-lg font-bold text-slate-900 mb-1">2-3 Months</div>
+                            <div className="text-[10px] text-slate-500">Average Time to First Role</div>
                         </div>
-                        <div className="text-lg font-bold text-white mb-1">100%</div>
-                        <div className="text-[10px] text-slate-400">Career Support</div>
-                    </div>
-                    <div className="bg-[#ff4500]/10 p-6 rounded-xl text-center border border-[#ff4500]/10">
-                        <div className="w-10 h-10 mx-auto bg-white rounded-full flex items-center justify-center text-[#ff4500] mb-3 shadow-sm">
-                            <Headphones className="w-5 h-5" />
+                        <div className="bg-slate-900 p-6 rounded-xl text-center border border-slate-800">
+                            <div className="w-10 h-10 mx-auto bg-white/10 rounded-full flex items-center justify-center text-white mb-3">
+                                <Briefcase className="w-5 h-5" />
+                            </div>
+                            <div className="text-lg font-bold text-white mb-1">100%</div>
+                            <div className="text-[10px] text-slate-400">Career Support</div>
                         </div>
-                        <div className="text-lg font-bold text-slate-900 mb-1">6 Months</div>
-                        <div className="text-[10px] text-slate-500">Post-Training Support</div>
-                    </div>
-                    <div className="bg-slate-900 p-6 rounded-xl text-center border border-slate-800">
-                        <div className="w-10 h-10 mx-auto bg-white/10 rounded-full flex items-center justify-center text-white mb-3">
-                            <Users className="w-5 h-5" />
+                        <div className="bg-[#ff4500]/10 p-6 rounded-xl text-center border border-[#ff4500]/10">
+                            <div className="w-10 h-10 mx-auto bg-white rounded-full flex items-center justify-center text-[#ff4500] mb-3 shadow-sm">
+                                <Headphones className="w-5 h-5" />
+                            </div>
+                            <div className="text-lg font-bold text-slate-900 mb-1">6 Months</div>
+                            <div className="text-[10px] text-slate-500">Post-Training Support</div>
                         </div>
-                        <div className="text-lg font-bold text-white mb-1">Lifetime</div>
-                        <div className="text-[10px] text-slate-400">Alumni Network Access</div>
+                        <div className="bg-slate-900 p-6 rounded-xl text-center border border-slate-800">
+                            <div className="w-10 h-10 mx-auto bg-white/10 rounded-full flex items-center justify-center text-white mb-3">
+                                <Users className="w-5 h-5" />
+                            </div>
+                            <div className="text-lg font-bold text-white mb-1">Lifetime</div>
+                            <div className="text-[10px] text-slate-400">Alumni Network Access</div>
+                        </div>
                     </div>
-                </div>
+                )}
 
                 <div className="text-center">
                     <p className="text-slate-500 text-sm mb-6">Ready to start your {courseName} career journey?</p>

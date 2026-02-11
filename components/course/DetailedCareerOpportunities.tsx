@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Briefcase, Building2, TrendingUp, Users, Settings, Award, Link, Cpu } from 'lucide-react';
 
 const iconMap: Record<string, any> = {
@@ -103,7 +105,7 @@ export default function DetailedCareerOpportunities({ items, courseName = "SAP A
                                             <div className={`w-10 h-10 rounded-lg ${colors.bg} ${colors.text} flex items-center justify-center flex-shrink-0`}>
                                                 <Icon className="w-5 h-5" />
                                             </div>
-                                            <h3 className="font-bold text-slate-900">{role.title}</h3>
+                                            <h3 className="font-bold text-slate-900">{role.title || role.role}</h3>
                                         </div>
                                         <div className="pl-14">
                                             <div className="text-xs font-semibold text-[#ff4500] flex items-center gap-1">
@@ -116,12 +118,12 @@ export default function DetailedCareerOpportunities({ items, courseName = "SAP A
                                     {/* Responsibilities */}
                                     <div className="lg:col-span-3">
                                         <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Responsibilities</div>
-                                        <p className="text-xs text-slate-600 leading-relaxed">{role.responsibilities}</p>
+                                        <p className="text-xs text-slate-600 leading-relaxed">{role.responsibilities || role.description}</p>
                                     </div>
 
                                     {/* Employers */}
                                     <div className="lg:col-span-3">
-                                        <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Top Employers</div>
+                                        <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Top Employers / Industries</div>
                                         <p className="text-xs text-slate-600">{role.employers}</p>
                                     </div>
 

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 import { renderRichText } from '@/lib/richText';
 export { renderRichText };
@@ -33,7 +35,7 @@ import {
 } from 'lucide-react';
 
 // specific icon mapping based on title keywords
-const getIconForTitle = (title: any) => {
+const getIconForTitle = (title: string | null | undefined) => {
     if (typeof title !== 'string') return CheckCircle2;
     const t = title.toLowerCase();
     if (t.includes('instructor') || t.includes('expert')) return UserCheck;
@@ -55,12 +57,17 @@ const getIconForTitle = (title: any) => {
 // Moved to @/lib/richText
 
 // Defined locally to avoid circular dependency
-export function DetailedFeatures({ badge, title, subtitle, items, textAlign = 'center' }: any) {
+interface FeatureItem {
+    title: string;
+    description: string;
+}
+
+export function DetailedFeatures({ badge, title, subtitle, items, textAlign = 'center' }: { badge?: string; title?: string | React.ReactNode; subtitle?: string | React.ReactNode; items: (string | FeatureItem)[]; textAlign?: 'center' | 'left' }) {
     return (
         <div className="py-8 detailed-features-section bg-white">
             <div className={`mb-6 max-w-7xl mx-auto px-4 ${textAlign === 'left' ? 'text-left' : 'text-center'}`}>
                 {badge && <span className="bg-[#ff4500] text-white px-4 py-1.5 rounded-full text-sm font-medium mb-5 inline-block shadow-sm">{badge}</span>}
-                <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-6 leading-tight">{renderRichText(title)}</h2>
+                <H2Heading title={title} />
                 {subtitle && (
                     <div className={`text-gray-600 text-base leading-relaxed ${textAlign === 'center' ? 'max-w-3xl mx-auto' : 'max-w-5xl'}`}>
                         {renderRichText(subtitle)}
@@ -68,9 +75,9 @@ export function DetailedFeatures({ badge, title, subtitle, items, textAlign = 'c
                 )}
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 max-w-7xl mx-auto px-4">
-                {items?.map((item: any, i: number) => {
-                    const isObject = typeof item === 'object' && item !== null;
-                    const ItemIcon = isObject ? getIconForTitle(item.title) : CheckCircle2;
+                {items?.map((item, i: number) => {
+                    const isObject = typeof item === 'object' && item !== null && 'title' in item;
+                    const ItemIcon = isObject ? getIconForTitle((item as FeatureItem).title) : CheckCircle2;
 
                     return (
                         <div key={i} className="flex flex-col p-8 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full group">
@@ -80,11 +87,11 @@ export function DetailedFeatures({ badge, title, subtitle, items, textAlign = 'c
                             <div className="flex-1">
                                 {isObject ? (
                                     <>
-                                        <h3 className="font-bold text-slate-900 text-lg mb-3">{renderRichText(item.title)}</h3>
-                                        <p className="text-slate-600 leading-relaxed text-sm">{renderRichText(item.description)}</p>
+                                        <h3 className="font-bold text-slate-900 text-lg mb-3">{renderRichText((item as FeatureItem).title)}</h3>
+                                        <p className="text-slate-600 leading-relaxed text-sm">{renderRichText((item as FeatureItem).description)}</p>
                                     </>
                                 ) : (
-                                    <p className="text-slate-700 font-medium text-base">{renderRichText(item)}</p>
+                                    <p className="text-slate-700 font-medium text-base">{renderRichText(item as string)}</p>
                                 )}
                             </div>
                         </div>
@@ -95,13 +102,18 @@ export function DetailedFeatures({ badge, title, subtitle, items, textAlign = 'c
     );
 }
 
-export function RichTextSection({ title, content }: any) {
+function H2Heading({ title }: { title?: string | React.ReactNode }) {
+    if (!title) return null;
+    return <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-6 leading-tight">{renderRichText(title)}</h2>;
+}
+
+export function RichTextSection({ title, content }: { title?: string | React.ReactNode; content: string }) {
     return (
         <div className="py-8 max-w-4xl mx-auto">
             {title && <h2 className="text-xl font-bold text-slate-900 mb-6">{renderRichText(title)}</h2>}
             <div className="prose prose-slate max-w-none prose-headings:text-slate-800 prose-p:text-slate-600 prose-li:text-slate-600 bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
                 <div className="whitespace-pre-line leading-relaxed text-gray-700">
-                    {content && content.split('\n').map((line: string, i: number) => (
+                    {content && content.split('\n').map((line, i: number) => (
                         <p key={i} className="mb-2">
                             {renderRichText(line)}
                         </p>
@@ -112,17 +124,23 @@ export function RichTextSection({ title, content }: any) {
     );
 }
 
-export function TestimonialsSection({ title, items }: any) {
+interface TestimonialItem {
+    quote: string;
+    name: string;
+    role: string;
+}
+
+export function TestimonialsSection({ title, items }: { title: string; items: TestimonialItem[] }) {
     return (
         <div className="py-12 bg-slate-50 rounded-3xl my-8">
             <div className="text-center mb-10 px-4">
                 <h2 className="text-2xl font-bold text-slate-900">{renderRichText(title)}</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto px-6">
-                {items?.map((item: any, i: number) => (
+                {items?.map((item, i: number) => (
                     <div key={i} className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col">
                         <Quote className="w-8 h-8 text-[#ff4500]/30 mb-4" />
-                        <p className="text-slate-600 italic mb-6 flex-1">"{item.quote}"</p>
+                        <p className="text-slate-600 italic mb-6 flex-1">&quot;{item.quote}&quot;</p>
                         <div className="flex items-center gap-3 mt-auto pt-4 border-t border-slate-50">
                             <div className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center text-slate-500 font-bold uppercase">
                                 {item.name.charAt(0)}
@@ -139,7 +157,12 @@ export function TestimonialsSection({ title, items }: any) {
     );
 }
 
-export default function SectionRenderer({ sections, courseName, syllabusUrl }: { sections: any[]; courseName?: string; syllabusUrl?: string }) {
+interface Section {
+    type: string;
+    [key: string]: any;
+}
+
+export default function SectionRenderer({ sections, courseName, syllabusUrl }: { sections: any[]; courseName?: string | React.ReactNode; syllabusUrl?: string }) {
     if (!sections) return null;
 
     return (
@@ -177,21 +200,21 @@ export default function SectionRenderer({ sections, courseName, syllabusUrl }: {
                     case 'table_curriculum':
                         return <CurriculumTable key={idx} items={section.items} title={section.title} />;
                     case 'detailed_certification':
-                        return <DetailedCertification key={idx} items={section.items} title={section.title} subtitle={section.subtitle} badge={section.badge} stats={section.stats} courseName={courseName || section.courseName} description={section.description || section.content} imageSrc={section.imageSrc} supportFeatures={section.supportFeatures} benefits={section.benefits} whyMattersTitle={section.whyMattersTitle} targetAudienceLabel={section.targetAudienceLabel} />;
+                        return <DetailedCertification key={idx} {...section} courseName={courseName || section.courseName} />;
                     case 'detailed_career_opportunities':
-                        return <DetailedCareerOpportunities key={idx} items={section.items} courseName={courseName || section.courseName} />;
+                        return <DetailedCareerOpportunities key={idx} {...section} courseName={courseName || section.courseName} />;
                     case 'detailed_companies':
-                        return <DetailedCompanies key={idx} courseName={courseName || section.courseName} customData={section.customData} />;
+                        return <DetailedCompanies key={idx} {...section} courseName={courseName || section.courseName} />;
                     case 'detailed_career_roadmap':
-                        return <DetailedCareerRoadmap key={idx} items={section.items} stats={section.stats} />;
+                        return <DetailedCareerRoadmap key={idx} {...section} />;
                     case 'detailed_post_training_journey':
-                        return <DetailedPostTrainingJourney key={idx} steps={section.items} stats={section.stats} title={section.title} courseName={section.courseName || courseName} />;
+                        return <DetailedPostTrainingJourney key={idx} {...section} courseName={courseName || section.courseName} />;
                     case 'detailed_testimonials':
                         return <section key={idx} id="reviews" className="scroll-mt-32">
-                            <DetailedTestimonials items={section.items} stats={section.stats} courseName={courseName || section.courseName} />
+                            <DetailedTestimonials key={idx} {...section} courseName={courseName || section.courseName} />
                         </section>;
                     case 'detailed_upcoming_batches':
-                        return <DetailedUpcomingBatches key={idx} batches={section.items} features={section.features} courseName={section.courseName || courseName} />;
+                        return <DetailedUpcomingBatches key={idx} {...section} courseName={courseName || section.courseName} />;
                     case 'detailed_faq':
                         return <DetailedFAQ key={idx} items={section.items} title={section.title} subtitle={section.subtitle} />;
                     case 'detailed_demo_booking':

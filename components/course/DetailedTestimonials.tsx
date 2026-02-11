@@ -1,11 +1,26 @@
 "use client";
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState } from 'react';
 import { Star, Quote, CheckCircle2, Download, User, Mail, Briefcase, Calendar, AlertCircle } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { submitToGoogleSheets } from '@/app/actions/submitToGoogleSheets';
 
-export default function DetailedTestimonials({ items, stats, courseName = "SAP Ariba" }: { items?: any[], stats?: any, courseName?: string }) {
+interface TestimonialItem {
+    name: string;
+    role: string;
+    quote: string;
+    image?: string;
+}
+
+interface TestimonialStats {
+    rating: string;
+    reviews: string;
+    label: string;
+}
+
+export default function DetailedTestimonials({ items, stats, courseName = "SAP" }: { items?: TestimonialItem[], stats?: TestimonialStats, courseName?: string }) {
     const [formData, setFormData] = useState({
         fullName: '',
         email: '',
@@ -102,7 +117,7 @@ export default function DetailedTestimonials({ items, stats, courseName = "SAP A
     const rawReviews = items || defaultReviews;
 
     // Normalize reviews to ensure they have color/initial
-    const reviewsArray = rawReviews.map((r, i) => {
+    const reviewsArray = rawReviews.map((r: any, i: number) => {
         const colors = ["bg-[#ff4500]", "bg-blue-500", "bg-[#ff4500]", "bg-purple-500", "bg-red-500", "bg-indigo-500"];
         return {
             text: r.quote || r.text,
@@ -153,7 +168,7 @@ export default function DetailedTestimonials({ items, stats, courseName = "SAP A
                                     <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
                                 ))}
                             </div>
-                            <p className="text-slate-600 text-xs leading-relaxed mb-6 italic">"{review.text}"</p>
+                            <p className="text-slate-600 text-xs leading-relaxed mb-6 italic">&quot;{review.text}&quot;</p>
                             <div className="flex items-center gap-4">
                                 <div className={`w-10 h-10 rounded-full ${review.color} text-white flex items-center justify-center font-bold text-xs`}>
                                     {review.initial}

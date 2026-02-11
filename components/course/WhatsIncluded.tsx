@@ -17,10 +17,10 @@ interface Stat {
 interface WhatsIncludedProps {
     features?: Feature[];
     stats?: Stat[];
-    title?: string;
+    title?: string | React.ReactNode;
     badge?: string;
     description?: string;
-    subtitle?: string;
+    subtitle?: string | React.ReactNode;
 }
 
 export default function WhatsIncluded({ features: customFeatures, stats: customStats, title, badge, description, subtitle }: WhatsIncludedProps) {
@@ -77,7 +77,7 @@ export default function WhatsIncluded({ features: customFeatures, stats: customS
                         {badge || "Complete Learning Package"}
                     </span>
                     <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                        {title || "What's Included in the Training"}
+                        {renderRichText(title || "What's Included in the Training")}
                     </h2>
                     <p className="text-gray-600 max-w-3xl mx-auto text-lg">
                         {renderRichText(subtitle || description || "Everything you need to become a certified professional—from live training to career support")}

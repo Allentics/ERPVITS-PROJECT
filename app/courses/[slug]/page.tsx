@@ -60,8 +60,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         (slug === 'python-aiml' || slug === 'sap-python-aiml' || slug === 'python-ai-ml' ? courses.find(c => c.id === 'python-aiml') : undefined);
 
     return {
-        title: course?.meta_title || local?.metaTitle || `${course?.title || local?.title} Online Training | ERPVITS`,
-        description: course?.meta_description || local?.metaDescription || `Master ${course?.title || local?.title} with ERPVITS - Live online training, real projects, and placement assistance.`,
+        title: course?.meta_title ?? local?.metaTitle ?? `${course?.title ?? local?.title ?? ''} Online Training | ERPVITS`,
+        description: course?.meta_description ?? local?.metaDescription ?? `Master ${course?.title ?? local?.title ?? ''} with ERPVITS - Live online training, real projects, and placement assistance.`,
     };
 }
 
@@ -136,15 +136,15 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
         ...localCourse,
         ...course,
         // Basic Info - Priority to DB (CMS)
-        title: course?.title || localCourse?.title,
-        heroHeading: course?.hero_heading || localCourse?.heroHeading,
-        heroSubheading: course?.hero_subheading || localCourse?.heroSubheading,
-        heroImage: course?.hero_image || localCourse?.heroImage,
-        metaTitle: course?.meta_title || localCourse?.metaTitle,
-        metaDescription: course?.meta_description || localCourse?.metaDescription,
-        price: course?.price || localCourse?.price,
-        duration: course?.duration || localCourse?.duration,
-        syllabusUrl: course?.sections?.find((s: any) => s.type === 'detailed_curriculum')?.syllabusUrl || course?.syllabus_url || localCourse?.syllabusUrl,
+        title: course?.title ?? localCourse?.title ?? undefined,
+        heroHeading: course?.hero_heading ?? localCourse?.heroHeading ?? undefined,
+        heroSubheading: course?.hero_subheading ?? localCourse?.heroSubheading ?? undefined,
+        heroImage: course?.hero_image ?? localCourse?.heroImage ?? undefined,
+        metaTitle: course?.meta_title ?? localCourse?.metaTitle ?? undefined,
+        metaDescription: course?.meta_description ?? localCourse?.metaDescription ?? undefined,
+        price: course?.price ?? localCourse?.price ?? undefined,
+        duration: course?.duration ?? localCourse?.duration ?? undefined,
+        syllabusUrl: (course?.sections?.find((s: Section) => s.type === 'detailed_curriculum')?.syllabusUrl || course?.syllabus_url || localCourse?.syllabusUrl) ?? undefined,
 
         // Content Sections - Priority: DB (CMS) > Local (Code)
         sections: (course?.sections && course.sections.length > 0) ? course.sections : localCourse?.sections,
@@ -381,12 +381,12 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                             </section>
 
                             {/* Inject Prerequisites if missing from both DB and local */}
-                            {!mappedCourse.sections?.some((s: any) => s.type === 'detailed_prerequisites' || s.type === 'prerequisites') && !course && (
+                            {!mappedCourse.sections?.some((s: Section) => s.type === 'detailed_prerequisites' || s.type === 'prerequisites') && !course && (
                                 <DetailedPrerequisites items={getGenericPrerequisites(mappedCourse.title)} />
                             )}
 
                             {/* Inject Target Audience if missing from both DB and local */}
-                            {!mappedCourse.sections?.some((s: any) => s.type === 'detailed_target_audience' || s.type === 'target_audience') && !course && (
+                            {!mappedCourse.sections?.some((s: Section) => s.type === 'detailed_target_audience' || s.type === 'target_audience') && !course && (
                                 <DetailedTargetAudience items={getGenericTargetAudience(mappedCourse.title)} />
                             )}
 
@@ -394,17 +394,19 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                         </div>
                     )}
 
-                    {/* Check if standard flow (ariba/detailed) implies prerequisites are inside sections. If not, add them. */}
-                    {((mappedCourse.sections as Section[])?.some((s: Section) => s.type === 'detailed_features') || isAriba || isMM || isFICO || isFieldglass || isTRM || isSD || isC4C || isABAP || isCPI || isPPDS || isTM || isEWM || isIBP || isMDG || isC4CFunc || isABAPHana) && (
+
+                    {/* Inject Prerequisites/Target Audience only if page has sections but missing these specific types */}
+                    {mappedCourse.sections && mappedCourse.sections.length > 0 && (
                         <>
-                            {!mappedCourse.sections?.some((s: any) => s.type === 'detailed_prerequisites' || s.type === 'prerequisites') && !course && (
+                            {!mappedCourse.sections?.some((s: Section) => s.type === 'detailed_prerequisites' || s.type === 'prerequisites') && !course && (
                                 <DetailedPrerequisites items={getGenericPrerequisites(mappedCourse.title)} />
                             )}
-                            {!mappedCourse.sections?.some((s: any) => s.type === 'detailed_target_audience' || s.type === 'target_audience') && !course && (
+                            {!mappedCourse.sections?.some((s: Section) => s.type === 'detailed_target_audience' || s.type === 'target_audience') && !course && (
                                 <DetailedTargetAudience items={getGenericTargetAudience(mappedCourse.title)} />
                             )}
                         </>
                     )}
+
 
                     {/* Highlights Section (for local data courses that don't have it in sections) */}
                     {(!(mappedCourse.sections as Section[]) || !(mappedCourse.sections as Section[]).some((s: Section) => s.type === 'features')) && (!isAriba && !isMM && !isFICO && !isFieldglass && !isTRM && !isSD && !isC4C && !isABAP && !isCPI && !isPPDS && !isTM && !isEWM && !isIBP && !isMDG && !isC4CFunc && !isABAPHana) && mappedCourse.features && mappedCourse.features.length > 0 && (

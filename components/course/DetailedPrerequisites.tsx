@@ -9,7 +9,7 @@ interface PrerequisiteItem {
     items: string[];
 }
 
-export default function DetailedPrerequisites({ items }: { items?: any }) {
+export default function DetailedPrerequisites({ items, title, subtitle }: { items?: { minimum: (string | React.ReactNode)[], nicetohave: (string | React.ReactNode)[] }, title?: string | React.ReactNode, subtitle?: string | React.ReactNode }) {
     const data = items || aribaPrerequisites;
 
     return (
@@ -21,10 +21,10 @@ export default function DetailedPrerequisites({ items }: { items?: any }) {
                         Prerequisites
                     </span>
                     <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
-                        Course Prerequisites – Who Should Enroll?
+                        {renderRichText(title || "What You Need Before Starting - Build a Strong Foundation")}
                     </h2>
                     <p className="text-gray-600 text-base">
-                        Designed for professionals with varied backgrounds – from complete beginners to experienced consultants
+                        {renderRichText(subtitle || "To ensure your success, we recommend following prerequisites")}
                     </p>
                 </div>
 
@@ -38,7 +38,7 @@ export default function DetailedPrerequisites({ items }: { items?: any }) {
                         </div>
                         <h3 className="text-lg font-bold text-slate-900 mb-6">Minimum Requirements</h3>
                         <ul className="space-y-4">
-                            {data.minimum.map((item: string, idx: number) => (
+                            {data.minimum.map((item: string | React.ReactNode, idx: number) => (
                                 <li key={idx} className="flex items-start gap-3">
                                     <CheckCircle2 className="w-5 h-5 text-[#ff4500] flex-shrink-0 mt-0.5" />
                                     <span className="text-slate-600 text-sm">{renderRichText(item)}</span>
@@ -54,7 +54,7 @@ export default function DetailedPrerequisites({ items }: { items?: any }) {
                         </div>
                         <h3 className="text-lg font-bold text-slate-900 mb-6">Nice to Have (Not Required)</h3>
                         <ul className="space-y-4">
-                            {data.nicetohave.map((item: string, idx: number) => (
+                            {data.nicetohave.map((item: string | React.ReactNode, idx: number) => (
                                 <li key={idx} className="flex items-start gap-3">
                                     <Star className="w-5 h-5 text-orange-400 flex-shrink-0 mt-0.5 fill-orange-50" />
                                     <span className="text-slate-600 text-sm">{renderRichText(item)}</span>
@@ -69,7 +69,7 @@ export default function DetailedPrerequisites({ items }: { items?: any }) {
                     <Info className="w-6 h-6 text-[#ff4500] flex-shrink-0 mt-1" />
                     <div>
                         <div className="text-orange-900 text-sm leading-relaxed">
-                            <span className="font-bold">Good to Know:</span> If you're completely new to SAP, we provide foundational modules to get you started. If you're transitioning from SAP ERP or MM, we can accelerate you to advanced topics faster. Our personalized pre-assessment ensures you get the right learning path.
+                            <span className="font-bold">Good to Know:</span> If you&apos;re completely new to SAP, we provide foundational modules to get you started. If you&apos;re transitioning from SAP ERP or MM, we can accelerate you to advanced topics faster. Our personalized pre-assessment ensures you get the right learning path.
                         </div>
                     </div>
                 </div>

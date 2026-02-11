@@ -1,0 +1,620 @@
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\app\about\page.tsx
+   61:54  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   64:57  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   67:56  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  107:56  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  129:51  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\app\actions\sendSyllabus.ts
+  85:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\app\actions\submitToGoogleSheets.ts
+    3:54  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   74:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   82:58  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  151:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\app\admin\blogs\edit\[id]\page.tsx
+  15:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  32:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  42:28  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  46:28  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  62:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\app\admin\blogs\new\page.tsx
+  47:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\app\admin\blogs\page.tsx
+   25:40  error  Unexpected any. Specify a different type           @typescript-eslint/no-explicit-any
+   45:23  error  Unexpected any. Specify a different type           @typescript-eslint/no-explicit-any
+   63:23  error  Unexpected any. Specify a different type           @typescript-eslint/no-explicit-any
+   82:17  error  'errors' is never reassigned. Use 'const' instead  prefer-const
+  119:23  error  Unexpected any. Specify a different type           @typescript-eslint/no-explicit-any
+  276:24  error  Unexpected any. Specify a different type           @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\app\admin\content\page.tsx
+   14:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   39:56  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   44:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   54:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   60:37  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   70:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   95:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  109:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  163:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  203:51  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\app\admin\courses\edit\[id]\page.tsx
+    10:58   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+    43:46   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+    66:57   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+    69:62   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+    78:62   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   102:47   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   110:23   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   121:28   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   126:48   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   130:52   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   137:51   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   147:28   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   181:37   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   193:23   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   219:47   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   227:23   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   230:26   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   233:35   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   313:62   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   326:62   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   372:58   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   372:105  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   384:51   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   395:51   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   405:63   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   408:45   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   408:59   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   426:48   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   428:52   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   455:51   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   457:107  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   476:44   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   492:43   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   517:103  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   672:40   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   709:46   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   713:84   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   786:38   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   822:63   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   825:45   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   825:59   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   843:48   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   866:58   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   868:141  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   905:39   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   909:36   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   922:35   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   926:72   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1100:74   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1174:59   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1203:59   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1210:40   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1210:67   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1219:38   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1223:73   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1326:55   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1356:40   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1367:39   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1369:95   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1383:40   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1398:39   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1400:95   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1419:40   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1450:35   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1452:91   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1469:40   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1480:39   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1482:95   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1517:40   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1527:35   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1529:91   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1546:40   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1556:35   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1558:91   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1572:63   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1575:46   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1575:61   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1586:46   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1602:48   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1622:51   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1624:123  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1647:63   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1650:46   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1650:61   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1663:48   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1689:59   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1704:135  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1719:63   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1722:46   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1722:61   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1735:48   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1750:51   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1752:123  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1782:40   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1797:39   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1805:95   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1818:100  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  1818:103  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  1818:112  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  1818:166  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  1822:54   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1831:57   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1845:57   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  1855:56   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\app\admin\courses\new\page.tsx
+  23:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  24:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  25:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  33:52  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  48:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\app\admin\courses\page.tsx
+   20:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   39:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   57:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  225:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\app\admin\dashboard\page.tsx
+   36:67  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   36:94  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  124:24  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\app\admin\forms\page.tsx
+   20:52  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   39:23  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   57:23  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  140:45  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  140:66  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\app\admin\layout.tsx
+  130:55  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\app\admin\login\page.tsx
+   40:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   97:51  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  119:51  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\app\admin\pages\page.tsx
+   8:40  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  36:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  48:37  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  63:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  84:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  96:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\app\admin\settings\page.tsx
+   10:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   30:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   38:42  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   41:40  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   51:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   69:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   87:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  122:39  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  130:39  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  144:41  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  158:51  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\app\blog\[slug]\page.tsx
+   96:47  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  100:36  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  114:48  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  115:49  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  119:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\app\blog\page.tsx
+   43:32  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  108:42  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\app\contact\page.tsx
+  26:59  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\app\corporate-training\page.tsx
+   55:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   72:54  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   75:59  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   78:49  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  127:54  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\app\courses\[slug]\page.tsx
+  147:50  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  384:63  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  389:63  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  401:63  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  404:63  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\app\courses\page.tsx
+  33:65  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\app\events\page.tsx
+  48:77  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\ContactForm.tsx
+   64:56  error  Unexpected any. Specify a different type                                                                                                               @typescript-eslint/no-explicit-any
+   80:25  error  Unexpected any. Specify a different type                                                                                                               @typescript-eslint/no-explicit-any
+  114:21  error  Do not use an `<a>` element to navigate to `/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\WebinarPopup.tsx
+   76:28  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  191:96  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\admin\RichTextEditor.tsx
+  114:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\blog\AribaGuidedBuyingContent.tsx
+  20:774  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  50:39   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\blog\BlogContactForm.tsx
+  66:25  error  Unexpected any. Specify a different type                                                                                                               @typescript-eslint/no-explicit-any
+  94:21  error  Do not use an `<a>` element to navigate to `/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\blog\HowSapAribaPoweringContent.tsx
+   15:148  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   16:31   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   50:64   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   53:47   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  115:22   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\blog\HowSapFieldglassTransformingContent.tsx
+   22:241  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   33:95   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   46:103  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   61:204  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   80:24   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  104:23   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  104:116  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  124:78   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  129:23   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  133:65   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  147:26   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  151:82   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  151:105  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\blog\MasterSapAribaIndustryContent.tsx
+   34:32  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  227:61  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\blog\MtoAndStoProcessContent.tsx
+  37:39  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\blog\SapAribaSourcingConfigContent.tsx
+   16:109  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   17:28   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   22:53   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  157:82   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\blog\SapAribaSupplierLoginContent.tsx
+   36:30   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   41:70   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  115:27   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  115:35   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  163:81   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  163:98   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  171:162  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  277:248  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\blog\SapBtpCockpitContent.tsx
+    8:150  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   10:282  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   12:281  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   95:30   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+   95:52   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  110:27   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  110:45   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  110:50   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  110:65   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  114:27   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  114:34   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  144:58   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  322:40   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  358:65   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  360:62   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  368:187  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\blog\SapC4cTechnicalScenariosContent.tsx
+   17:25   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   32:25   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   40:126  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   71:19   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  105:67   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  105:72   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  105:130  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  105:141  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\blog\SapConsultantSalaryGuideContent.tsx
+   10:149  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   10:203  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   17:97   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   33:452  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  174:151  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\blog\SapCpiInterviewQuestionsContent.tsx
+  253:89  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\blog\SapFicoCashJournalContent.tsx
+   18:27   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   18:256  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  380:82   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  380:89   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\blog\SapFieldglassLoginGuideContent.tsx
+   19:19   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   33:21   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   33:83   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   59:78   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   59:80   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   79:61   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   79:77   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  170:111  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  174:61   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  174:77   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  174:170  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  174:229  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  190:53   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  190:138  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  190:153  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  194:146  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\blog\SapFieldglassVmsContent.tsx
+  37:133  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\blog\SapFioriAppsLibraryContent.tsx
+   25:91   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   25:255  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   29:332  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   41:18   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   54:106  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   61:240  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   66:24   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  113:333  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  117:141  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\blog\SapHanaMasterclassContent.tsx
+   26:179  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+   26:181  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+   46:65   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+   46:74   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+   93:22   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+   93:29   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  172:149  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\blog\SapMmCourseCompleteContent.tsx
+   15:25   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   19:26   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   35:75   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   46:75   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   46:126  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   58:74   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   59:128  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+   59:134  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  142:73   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\blog\SapS4HanaMmCareerContent.tsx
+  136:62  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\blog\SapSdProcessFlowContent.tsx
+  16:107  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  24:38   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  32:111  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\blog\SapTCodesContent.tsx
+  535:37   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  550:97   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  550:103  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  698:122  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  703:82   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  703:99   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  716:102  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  724:28   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\blog\SapTrmComplementaryContent.tsx
+   52:91   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   52:99   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   60:191  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   66:38   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  113:584  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  116:367  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  162:574  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  167:187  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\blog\SapTrmMasterDataContent.tsx
+   20:184  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   20:243  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   59:52   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  229:64   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  229:79   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  241:139  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\blog\Top7SapTrainingInstitutesContent.tsx
+   20:320  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   60:59   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   84:83   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  161:114  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  193:77   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  193:117  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  193:151  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  193:185  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  193:222  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  193:255  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  193:306  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\blog\TopTenAbapCloudToolsContent.tsx
+  22:42  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  22:79  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  23:25  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  23:37  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\course\ContentWithImage.tsx
+  11:13   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  64:104  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\course\CourseContactForm.tsx
+  54:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\course\DetailedCurriculum.tsx
+  151:57  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\course\DetailedDemoBooking.tsx
+  89:87  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\course\DetailedFAQ.tsx
+   7:75  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  98:52  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\course\DetailedPrerequisites.tsx
+  12:85   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  72:84   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  72:169  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\course\DetailedTargetAudience.tsx
+   8:31  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  22:86  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  64:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\course\FAQ.tsx
+  11:13   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  38:93   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  38:118  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  56:54   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  56:77   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\course\RealWorldScenarios.tsx
+   6:31  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  18:97  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  39:43  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  64:80  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  64:91  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\course\SyllabusDownloadModal.tsx
+   29:9   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\course\SyllabusDownloadModal.tsx:29:9
+  27 |
+  28 |     useEffect(() => {
+> 29 |         setMounted(true);
+     |         ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  30 |     }, []);
+  31 |
+  32 |     if (!isOpen || !mounted) return null;  react-hooks/set-state-in-effect
+  119:29  error  Do not use an `<a>` element to navigate to `/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     @next/next/no-html-link-for-pages
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\course\SyllabusModal.tsx
+  143:29  error  Do not use an `<a>` element to navigate to `/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
+  227:77  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                        react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\home\AlumniCommunity.tsx
+   9:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  80:48  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\home\CareerAdvisors.tsx
+  98:54  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\home\ContactRegistration.tsx
+  37:77  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\home\CustomTrainingPlan.tsx
+   12:17  error  Unexpected any. Specify a different type                                                                                                               @typescript-eslint/no-explicit-any
+  102:56  error  Unexpected any. Specify a different type                                                                                                               @typescript-eslint/no-explicit-any
+  108:25  error  Unexpected any. Specify a different type                                                                                                               @typescript-eslint/no-explicit-any
+  134:88  error  Unexpected any. Specify a different type                                                                                                               @typescript-eslint/no-explicit-any
+  151:67  error  Unexpected any. Specify a different type                                                                                                               @typescript-eslint/no-explicit-any
+  176:37  error  Do not use an `<a>` element to navigate to `/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\home\FeaturedCourses.tsx
+  11:60  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  27:56  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  74:63  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\home\HomeFAQ.tsx
+  65:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\home\LatestInsights.tsx
+  10:40  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  28:59  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  33:65  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\home\PlacementSection.tsx
+  63:55  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  84:52  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\home\PricingPlans.tsx
+   94:55  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  101:66  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  118:55  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  156:48  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\home\ProvenResults.tsx
+   8:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  89:48  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\home\SuccessStories.tsx
+  109:51  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  140:33  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  140:47  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\home\TrainerExpertise.tsx
+  22:48   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  25:133  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\home\UrgencySection.tsx
+   79:9   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\home\UrgencySection.tsx:79:9
+  77 |         };
+  78 |
+> 79 |         setNextBatchDate(getNextMonday());
+     |         ^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  80 |
+  81 |         return () => clearInterval(timer);
+  82 |     }, []);  react-hooks/set-state-in-effect
+  113:58  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\home\WhyChooseUs.tsx
+   7:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  92:47  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\layout\AnnouncementBar.tsx
+  25:56  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  25:67  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\layout\Footer.tsx
+  27:62  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  27:73  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\layout\Navbar.tsx
+  32:62  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  32:73  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  46:61  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  72:61  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Allenticspun2107\Desktop\ERPVITES-PROJECT-main\components\web-stories\WebStoriesFeed.tsx
+  159:31  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  166:58  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+??? 425 problems (425 errors, 0 warnings)
+  1 error and 0 warnings potentially fixable with the `--fix` option.
+
+

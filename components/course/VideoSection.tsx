@@ -2,8 +2,8 @@ import React from 'react';
 
 interface VideoSectionProps {
     videoUrl: string;
-    title?: string;
-    description?: string;
+    title?: string | React.ReactNode;
+    description?: string | React.ReactNode;
 }
 
 export default function VideoSection({ videoUrl, title, description }: VideoSectionProps) {
@@ -47,7 +47,7 @@ export default function VideoSection({ videoUrl, title, description }: VideoSect
                 <div className="relative w-full max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-white ring-1 ring-slate-900/5 group">
                     <iframe
                         src={embedUrl}
-                        title={title || "Course Video"}
+                        title={typeof title === 'string' ? title : "Course Video"}
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
                         className="absolute inset-0 w-full h-full"

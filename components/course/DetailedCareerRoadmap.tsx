@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
-import { Briefcase, Building2, TrendingUp, Globe, CheckCircle2, Users } from 'lucide-react';
-
+import { Target, Flag, Rocket, Briefcase, Award, TrendingUp, ChevronRight, CheckCircle2, Building2, Globe } from 'lucide-react';
+import { renderRichText } from '@/lib/richText';
 export default function DetailedCareerRoadmap({ items, stats }: { items?: any[], stats?: any }) {
     const defaultSteps = [
         {

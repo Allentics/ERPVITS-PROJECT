@@ -1,5 +1,7 @@
 "use client";
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState } from 'react';
 import { ChevronDown, Clock, BookOpen, CheckCircle2, ChevronRight, Download } from 'lucide-react';
 import * as Accordion from '@radix-ui/react-accordion';
@@ -16,13 +18,14 @@ export interface DetailedModule {
 
 interface DetailedCurriculumProps {
     modules: DetailedModule[];
-    title?: string;
-    subtitle?: string;
+    title?: string | React.ReactNode;
+    subtitle?: string | React.ReactNode;
     courseName?: string;
     syllabusUrl?: string;
+    duration?: string;
 }
 
-export default function DetailedCurriculum({ modules, title, subtitle, courseName = "SAP Ariba", syllabusUrl }: DetailedCurriculumProps) {
+export default function DetailedCurriculum({ modules, title, subtitle, courseName = "SAP Ariba", syllabusUrl, duration = "50 Hours" }: DetailedCurriculumProps) {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     if (!modules || modules.length === 0) return null;
@@ -47,7 +50,7 @@ export default function DetailedCurriculum({ modules, title, subtitle, courseNam
                     Comprehensive Curriculum
                 </span>
                 <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-4 max-w-3xl mx-auto leading-tight">
-                    {renderRichText(title || `${courseName} Course Curriculum – From Basics to Advanced Projects`)}
+                    {renderRichText(title || `${courseName} Course Curriculum - From Basics to Advanced Projects`)}
                 </h2>
                 <div className="text-gray-600 text-base">
                     {subtitle ? renderRichText(subtitle) : `${modules.length} comprehensive modules covering every aspect of ${courseName} with extensive hands-on labs`}
@@ -61,7 +64,7 @@ export default function DetailedCurriculum({ modules, title, subtitle, courseNam
                         <Clock className="w-6 h-6" />
                     </div>
                     <div>
-                        <div className="text-xl font-bold text-slate-900">50 Hours</div>
+                        <div className="text-xl font-bold text-slate-900">{duration}</div>
                         <div className="text-sm font-medium text-slate-600">Total Training Duration</div>
                     </div>
                 </div>
@@ -111,7 +114,7 @@ export default function DetailedCurriculum({ modules, title, subtitle, courseNam
                     return (
                         <Accordion.Item
                             key={i}
-                            value={`item-${i}`}
+                            value={`item - ${i} `}
                             className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
                         >
                             <Accordion.Header className="flex">

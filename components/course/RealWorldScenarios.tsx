@@ -1,6 +1,7 @@
 import React from 'react';
 import { Factory, ShoppingBag, Laptop2, Globe, Clock, Database, Laptop, Landmark, TrendingUp } from 'lucide-react';
 import { aribaRealWorldScenarios } from '@/lib/contentHelpers';
+import { renderRichText } from '@/lib/richText';
 
 const iconMap: Record<string, any> = {
     "Factory": Factory,
@@ -14,7 +15,7 @@ const iconMap: Record<string, any> = {
     "TrendingUp": TrendingUp
 };
 
-export default function RealWorldScenarios({ items }: { items?: any[] }) {
+export default function RealWorldScenarios({ items, title, subtitle, portfolioNote }: { items?: any[], title?: string | React.ReactNode, subtitle?: string | React.ReactNode, portfolioNote?: string }) {
     const scenarios = items || aribaRealWorldScenarios;
 
     return (
@@ -26,10 +27,10 @@ export default function RealWorldScenarios({ items }: { items?: any[] }) {
                         Real-World Projects
                     </span>
                     <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                        Experience Real-World Scenarios & Business Case Studies
+                        {renderRichText(title || "Experience Real-World Scenarios & Business Case Studies")}
                     </h2>
                     <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-                        Work on authentic Fortune 500 projects derived from actual client implementations
+                        {renderRichText(subtitle || "Work on authentic Fortune 500 projects derived from actual client implementations")}
                     </p>
                 </div>
 
@@ -70,8 +71,15 @@ export default function RealWorldScenarios({ items }: { items?: any[] }) {
                                     </div>
                                 </div>
 
-                                <div className="mt-8 pt-6 border-t border-slate-100">
-                                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Outcome</h4>
+                                {item.deliverables && (
+                                    <div className="pt-4 border-t border-slate-100">
+                                        <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Deliverables</h4>
+                                        <p className="text-sm text-slate-600 leading-relaxed text-justify">{item.deliverables}</p>
+                                    </div>
+                                )}
+
+                                <div className="mt-6 pt-4 border-t border-slate-100">
+                                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Business Impact</h4>
                                     <p className="text-sm text-[#ff4500] font-medium bg-[#ff4500]/10 p-2 rounded-lg inline-block w-full">
                                         {item.outcome}
                                     </p>
@@ -82,14 +90,14 @@ export default function RealWorldScenarios({ items }: { items?: any[] }) {
                 </div>
 
                 {/* Disclaimer/Note */}
-                <div className="max-w-4xl mx-auto mt-12">
+                <div className="max-w-5xl mx-auto mt-12">
                     <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 text-center">
                         <p className="text-slate-600 text-[15px] leading-relaxed">
-                            <span className="font-bold text-[#ff4500]">Portfolio-Ready Projects:</span> These capstone projects ensure you graduate with real-world problem-solving experience and portfolio pieces—invaluable for your first consulting engagement and job interviews.
+                            <span className="font-bold text-[#ff4500]">Portfolio-Ready Projects:</span> {renderRichText(portfolioNote || "These capstone projects ensure you graduate with real-world problem-solving experience and portfolio pieces—invaluable for your first consulting engagement and job interviews.")}
                         </p>
                     </div>
                 </div>
             </div>
-        </section>
+        </section >
     );
 }

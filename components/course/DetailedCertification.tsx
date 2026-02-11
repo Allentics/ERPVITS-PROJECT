@@ -1,11 +1,13 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 import { Award, CheckCircle2, BookOpen, Trophy, TrendingUp, FileCheck } from 'lucide-react';
 import { renderRichText } from '@/lib/richText';
 
 export default function DetailedCertification({ items, title, subtitle, badge, stats, courseName = "SAP Ariba", description, imageSrc, imageSrc2, supportFeatures, benefits, whyMattersTitle, targetAudienceLabel }: {
     items?: any[],
-    title?: string,
-    subtitle?: string,
+    title?: string | React.ReactNode,
+    subtitle?: string | React.ReactNode,
     badge?: string,
     stats?: { value: string, label: string }[],
     courseName?: string,
@@ -129,8 +131,24 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
                                         <div className="space-y-3 text-xs text-slate-600">
                                             <div className="flex gap-2">
                                                 <span className="font-bold text-slate-900 whitespace-nowrap">Focus:</span>
-                                                <span className="leading-relaxed">{renderRichText(cert.focus || cert.description)}</span>
+                                                <div className="leading-relaxed">
+                                                    {cert.focusAreas ? (
+                                                        <ul className="list-disc pl-4 mt-1 space-y-1">
+                                                            {cert.focusAreas.map((area: string, fIdx: number) => (
+                                                                <li key={fIdx}>{renderRichText(area)}</li>
+                                                            ))}
+                                                        </ul>
+                                                    ) : (
+                                                        renderRichText(cert.focus || cert.description)
+                                                    )}
+                                                </div>
                                             </div>
+                                            {cert.value && (
+                                                <div className="flex gap-2">
+                                                    <span className="font-bold text-slate-900 whitespace-nowrap">Value:</span>
+                                                    <span className="leading-relaxed">{renderRichText(cert.value)}</span>
+                                                </div>
+                                            )}
                                             {cert.who && (
                                                 <div className="flex gap-2">
                                                     <span className="font-bold text-slate-900 whitespace-nowrap">{targetAudienceLabel || "Target Audience"}:</span>

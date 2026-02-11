@@ -5,10 +5,10 @@ import ContactForm from '@/components/ContactForm';
 import { renderRichText } from '@/lib/richText';
 
 interface ContentWithImageProps {
-    title: string;
-    subtitle?: string;
-    description: string;
-    items?: string[];
+    title: string | React.ReactNode;
+    subtitle?: string | React.ReactNode;
+    description: string | React.ReactNode;
+    items?: any[];
     imageSrc?: string;
     imageAlt?: string;
     videoSrc?: string;
@@ -28,14 +28,14 @@ export default function ContentWithImage({ title, subtitle, description, items, 
                                 <iframe
                                     className="w-full h-full"
                                     src={videoSrc}
-                                    title={title}
+                                    title={typeof title === 'string' ? title : "Course Video"}
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen
                                 ></iframe>
                             ) : (
                                 <img
                                     src={imageSrc}
-                                    alt={imageAlt || title}
+                                    alt={imageAlt || (typeof title === 'string' ? title : "Course Overview")}
                                     className="object-cover w-full h-full"
                                 />
                             )}
@@ -60,12 +60,15 @@ export default function ContentWithImage({ title, subtitle, description, items, 
 
                     {items && items.length > 0 && (
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
-                            {items.map((item, idx) => (
-                                <div key={idx} className="flex gap-3 items-start p-2 rounded-lg hover:bg-slate-50 transition-colors">
-                                    <CheckCircle2 className="w-5 h-5 text-[#ff4500] shrink-0 mt-1" />
-                                    <span className="text-slate-700 font-medium">{renderRichText(item)}</span>
-                                </div>
-                            ))}
+                            {items.map((item, idx) => {
+                                const itemTitle = typeof item === 'object' && item !== null ? (item as any).title : item;
+                                return (
+                                    <div key={idx} className="flex gap-3 items-start p-2 rounded-lg hover:bg-slate-50 transition-colors">
+                                        <CheckCircle2 className="w-5 h-5 text-[#ff4500] shrink-0 mt-1" />
+                                        <span className="text-slate-700 font-medium">{renderRichText(itemTitle)}</span>
+                                    </div>
+                                );
+                            })}
                         </div>
                     )}
 

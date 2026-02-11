@@ -918,7 +918,7 @@ export const c4cContent = {
             ]
         },
         {
-            type: 'detailed_features',
+            type: 'download_guide',
             title: "Download the Most Asked SAP C4C Developer Interview Questions",
             subtitle: "Complete the form below to download a comprehensive guide covering technical questions, coding exercises, and architecture patterns.",
             items: [

@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Plus, Minus, HelpCircle } from 'lucide-react';
 import { renderRichText } from '@/lib/richText';
 
-export default function DetailedFAQ({ items, title, subtitle }: { items?: any[], title?: string, subtitle?: string }) {
+export default function DetailedFAQ({ items, title, subtitle }: { items?: { question?: string | React.ReactNode, answer?: string | React.ReactNode, q?: string | React.ReactNode, a?: string | React.ReactNode }[], title?: string | React.ReactNode, subtitle?: string | React.ReactNode }) {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
 

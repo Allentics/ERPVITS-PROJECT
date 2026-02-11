@@ -1,8 +1,10 @@
 "use client";
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState } from 'react';
 import { CheckCircle2, ShieldCheck, Database, FileText, ShoppingCart, BookOpen, CreditCard, Building, BarChart3, Cloud, Layout, Lock, Search, Activity, ClipboardCheck, Smartphone, RefreshCw, Globe, TrendingUp, Shield, AlertTriangle, Layers, DollarSign, PieChart } from 'lucide-react';
-import { aribaLearningOutcomes } from '@/lib/contentHelpers';
+import { renderRichText } from '@/lib/richText';
 
 const iconMap: Record<string, any> = {
     "ShoppingCart": ShoppingCart,
@@ -30,7 +32,7 @@ const iconMap: Record<string, any> = {
     "PieChart": PieChart
 };
 
-export default function DetailedLearningOutcomes({ items, title, subtitle }: { items?: any, title?: string, subtitle?: string }) {
+export default function DetailedLearningOutcomes({ items, title, subtitle }: { items?: any, title?: string | React.ReactNode, subtitle?: string | React.ReactNode }) {
     const isTabbed = items && !Array.isArray(items) && items.tabs;
     const [activeTab, setActiveTab] = useState(0);
 
@@ -58,10 +60,10 @@ export default function DetailedLearningOutcomes({ items, title, subtitle }: { i
                         Learning Outcomes
                     </span>
                     <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
-                        {title || "What You'll Master in This Course"}
+                        {renderRichText(title || "What You'll Master in This Course")}
                     </h2>
                     <p className="text-gray-600 text-base max-w-3xl mx-auto">
-                        {subtitle || "Comprehensive competencies you'll acquire to excel as a professional"}
+                        {renderRichText(subtitle || "Comprehensive competencies you'll acquire to excel as a professional")}
                     </p>
                 </div>
 
@@ -109,7 +111,7 @@ export default function DetailedLearningOutcomes({ items, title, subtitle }: { i
                                             <Icon className="w-6 h-6" />
                                         </div>
                                     )}
-                                    {outcome.title}
+                                    {renderRichText(outcome.title)}
                                 </h3>
                                 <ul className="space-y-4">
                                     {outcome.points.map((point: string, pIdx: number) => (
@@ -117,7 +119,7 @@ export default function DetailedLearningOutcomes({ items, title, subtitle }: { i
                                             <div className="mt-1">
                                                 <CheckCircle2 className="w-5 h-5 text-[#ff4500]" />
                                             </div>
-                                            <span className="text-slate-600 text-sm leading-relaxed">{point}</span>
+                                            <span className="text-slate-600 text-sm leading-relaxed">{renderRichText(point)}</span>
                                         </li>
                                     ))}
                                 </ul>

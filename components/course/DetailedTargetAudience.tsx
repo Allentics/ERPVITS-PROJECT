@@ -5,7 +5,7 @@ import { Laptop, ShoppingCart, BarChart3, GraduationCap, Building2, HelpCircle, 
 import { aribaTargetAudience } from '@/lib/contentHelpers';
 import { renderRichText } from '@/lib/richText';
 
-const iconMap: Record<string, any> = {
+const iconMap: Record<string, React.ElementType> = {
     "Laptop": Laptop,
     "ShoppingCart": ShoppingCart,
     "BarChart3": BarChart3,
@@ -19,7 +19,15 @@ const iconMap: Record<string, any> = {
     "Globe": Globe
 };
 
-export default function DetailedTargetAudience({ items, title, subtitle }: { items?: any[], title?: string, subtitle?: string }) {
+interface AudienceItem {
+    icon: string;
+    color?: string;
+    bg?: string;
+    title: string | React.ReactNode;
+    description: (string | React.ReactNode)[];
+}
+
+export default function DetailedTargetAudience({ items, title, subtitle }: { items?: AudienceItem[], title?: string | React.ReactNode, subtitle?: string | React.ReactNode }) {
     const scrollToBooking = () => {
         const element = document.getElementById('detailed-demo-booking');
         if (element) {
@@ -52,7 +60,7 @@ export default function DetailedTargetAudience({ items, title, subtitle }: { ite
                         Who Should Enroll
                     </span>
                     <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
-                        {renderTitle(title || "Who Can Learn This Course? – Perfect for Diverse Career Paths")}
+                        {renderRichText(title || "Who Can Learn This Course? - Perfect for Diverse Career Paths")}
                     </h2>
                     <p className="text-gray-600 text-base">
                         {renderRichText(subtitle || "Our training is designed for professionals from various backgrounds aiming to excel")}
@@ -61,7 +69,7 @@ export default function DetailedTargetAudience({ items, title, subtitle }: { ite
 
                 {/* Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-                    {audienceList.map((item: any, idx: number) => {
+                    {audienceList.map((item: AudienceItem, idx: number) => {
                         const Icon = iconMap[item.icon] || Laptop;
                         return (
                             <div key={idx} className="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
@@ -70,7 +78,7 @@ export default function DetailedTargetAudience({ items, title, subtitle }: { ite
                                 </div>
                                 <h3 className="text-lg font-bold text-slate-900 mb-4">{renderRichText(item.title)}</h3>
                                 <ul className="space-y-2">
-                                    {item.description.map((point: string, pIdx: number) => (
+                                    {item.description.map((point: string | React.ReactNode, pIdx: number) => (
                                         <li key={pIdx} className="flex items-start gap-2 text-slate-600 text-sm leading-relaxed">
                                             <div className="w-1 h-1 rounded-full bg-slate-400 mt-2 flex-shrink-0" />
                                             <span>{renderRichText(point)}</span>
