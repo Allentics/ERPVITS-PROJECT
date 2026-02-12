@@ -24,6 +24,7 @@ export interface Section {
     title?: string | React.ReactNode;
     subtitle?: string | React.ReactNode;
     items?: any;
+    batches?: any[];
     badge?: string;
     modules?: any[];
     features?: any[];
