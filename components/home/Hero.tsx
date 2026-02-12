@@ -16,7 +16,7 @@ const DEFAULT_CONTENT = {
     badge: "★ RATED #1 SAP TRAINING PROGRAM 2025 ★",
     cta_primary: "Start Your SAP Training Journey Today",
     cta_secondary: "Explore SAP Courses",
-    bg_image: "/images/home_hero_bg.png",
+    bg_image: "/images/home_hero_bg_v9.jpg",
     stats: [
         { val: "12+ Years", label: "In SAP Industry" },
         { val: "8000+", label: "Professionals Trained" },
@@ -57,12 +57,13 @@ const Hero = () => {
             {/* Background Image & Overlay */}
             <div className="absolute inset-0 w-full h-full z-0">
                 <Image
-                    src={content.bg_image || "/images/home_hero_bg.png"}
-                    alt="Office Background"
+                    src={content.bg_image || "/images/home_hero_bg_v9.jpg"}
+                    alt="Professional Man at Work"
                     fill
-                    className="object-cover object-center"
+                    className="object-contain"
                     priority
                     quality={100}
+                    unoptimized
                 />
                 <div className="absolute inset-0 bg-white/20" />
             </div>
@@ -74,7 +75,7 @@ const Hero = () => {
             />
 
             {/* Main Content Grid */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 lg:pt-20 pb-16 relative z-10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 lg:pt-28 pb-16 relative z-10">
                 <div className="max-w-4xl mx-auto text-center">
 
 
