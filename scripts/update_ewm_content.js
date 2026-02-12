@@ -484,7 +484,7 @@ const ewmContent = {
             "title": "Join Our Next Live Batch – <span class=\"text-orange-600\">Limited Seats Available</span>",
             "items": [
                 {
-                    "title": "Batch 1: November 2025 (Weekdays)",
+                    "title": "Batch 1: November 2025 (Weekdays – 7:00 AM | 8:00 PM IST)",
                     "date": "November 15, 2025",
                     "time": "7:00 AM | 8:00 PM IST",
                     "duration": "50-60 Hours",
@@ -492,18 +492,18 @@ const ewmContent = {
                     "seats": "3/10 Seats Left"
                 },
                 {
-                    "title": "Batch 2: November 2025 (Weekends)",
+                    "title": "Batch 2: November 2025 (Weekends – Saturday & Sunday, 7:30 AM | 7:00 PM IST)",
                     "date": "November 16, 2025",
-                    "time": "7:30 AM | 7:00 PM IST",
+                    "time": "Sat & Sun | 7:30 AM | 7:00 PM IST",
                     "duration": "50-60 Hours",
                     "status": "available",
                     "seats": "5/10 Seats Left"
                 },
                 {
-                    "title": "Batch 3: December 2025",
+                    "title": "Batch 3: December 2025 (Flexible timings – customized per batch)",
                     "date": "December 1, 2025",
                     "time": "Flexible timings",
-                    "duration": "50-60 Hours",
+                    "duration": "50-60 Hours (accelerated)",
                     "status": "available",
                     "seats": "6/10 Seats Left"
                 }

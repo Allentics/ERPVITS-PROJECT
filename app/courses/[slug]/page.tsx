@@ -130,27 +130,31 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
     const isABAPHana = slug === 'sap-abap-on-hana' || slug === 'abap-hana' || slug === 'abap-on-hana';
     const isPython = slug === 'python-aiml' || slug === 'sap-python-aiml' || slug === 'python-ai-ml';
 
+
+
     // Map DB fields to component expectations if they differ (using snake_case in DB, camelCase in components)
-    // Priority: DB values (CMS) > Local file values (Hardcoded)
+    // Priority: DB values (CMS) > Local file values (Hardcoded) 
+    const effectiveLocalCourse = localCourse;
+
     const mappedCourse = {
-        ...localCourse,
+        ...effectiveLocalCourse,
         ...course,
         // Basic Info - Priority to DB (CMS)
-        title: course?.title ?? localCourse?.title ?? undefined,
-        heroHeading: course?.hero_heading ?? localCourse?.heroHeading ?? undefined,
-        heroSubheading: course?.hero_subheading ?? localCourse?.heroSubheading ?? undefined,
-        heroImage: course?.hero_image ?? localCourse?.heroImage ?? undefined,
-        metaTitle: course?.meta_title ?? localCourse?.metaTitle ?? undefined,
-        metaDescription: course?.meta_description ?? localCourse?.metaDescription ?? undefined,
-        price: course?.price ?? localCourse?.price ?? undefined,
-        duration: course?.duration ?? localCourse?.duration ?? undefined,
-        syllabusUrl: (course?.sections?.find((s: Section) => s.type === 'detailed_curriculum')?.syllabusUrl || course?.syllabus_url || localCourse?.syllabusUrl) ?? undefined,
+        title: (course?.title ?? effectiveLocalCourse?.title) ?? undefined,
+        heroHeading: (course?.hero_heading ?? effectiveLocalCourse?.heroHeading) ?? undefined,
+        heroSubheading: (course?.hero_subheading ?? effectiveLocalCourse?.heroSubheading) ?? undefined,
+        heroImage: (course?.hero_image ?? effectiveLocalCourse?.heroImage) ?? undefined,
+        metaTitle: (course?.meta_title ?? effectiveLocalCourse?.metaTitle) ?? undefined,
+        metaDescription: (course?.meta_description ?? effectiveLocalCourse?.metaDescription) ?? undefined,
+        price: (course?.price ?? effectiveLocalCourse?.price) ?? undefined,
+        duration: (course?.duration ?? effectiveLocalCourse?.duration) ?? undefined,
+        syllabusUrl: ((course?.sections?.find((s: Section) => s.type === 'detailed_curriculum')?.syllabusUrl || course?.syllabus_url || effectiveLocalCourse?.syllabusUrl)) ?? undefined,
 
         // Content Sections - Priority: DB (CMS) > Local (Code)
-        sections: (course?.sections && course.sections.length > 0) ? course.sections : localCourse?.sections,
-        features: (course?.features && course.features.length > 0) ? course.features : localCourse?.features,
-        curriculum: (course?.curriculum && course.curriculum.length > 0) ? course.curriculum : localCourse?.curriculum,
-        faqs: (course?.faqs && course.faqs.length > 0) ? course.faqs : (localCourse?.faqs || defaultFaqs),
+        sections: ((course?.sections && course.sections.length > 0) ? course.sections : effectiveLocalCourse?.sections),
+        features: ((course?.features && course.features.length > 0) ? course.features : effectiveLocalCourse?.features),
+        curriculum: ((course?.curriculum && course.curriculum.length > 0) ? course.curriculum : effectiveLocalCourse?.curriculum),
+        faqs: ((course?.faqs && course.faqs.length > 0) ? course.faqs : (effectiveLocalCourse?.faqs || defaultFaqs)),
     };
 
 
@@ -253,7 +257,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                     {/* Review Ratings - Integrated into Hero */}
                     <div className="mt-12">
                         <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12">
-                            {/* Trustpilot */}
+                            {/* Trustpilot Review Block */}
                             <div className="flex items-center gap-4">
                                 <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center shrink-0 shadow-sm">
                                     <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -284,7 +288,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                             {/* Divider */}
                             <div className="hidden md:block w-px h-12 bg-slate-200"></div>
 
-                            {/* SiteJabber */}
+                            {/* SiteJabber Review Block */}
                             <div className="flex items-center gap-4">
                                 <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center shrink-0 shadow-sm">
                                     <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -321,7 +325,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                             {/* Divider */}
                             <div className="hidden md:block w-px h-12 bg-slate-200"></div>
 
-                            {/* Google */}
+                            {/* Google Review Block */}
                             <div className="flex items-center gap-4">
                                 <div className="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center shrink-0 shadow-sm">
                                     <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">

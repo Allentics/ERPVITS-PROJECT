@@ -97,125 +97,117 @@ export const aribaContent = {
             modules: [
                 {
                     title: "Introduction to SAP Ariba Buying",
-                    duration: "6 hours",
+                    duration: "5 Hours",
                     learning_points: [
-                        "Overview of SAP Ariba Buying and procurement ecosystem",
-                        "Key features: cost reduction, automation, compliance",
-                        "User interface navigation and system architecture",
-                        "Sourcing and contract templates configuration",
-                        "Approval workflow design and implementation",
-                        "Core admin activities: users, permissions, realms"
+                        "Get acquainted with SAP Ariba Buying and its place in the **SAP Procurement** ecosystem.",
+                        "Recognize the key features and benefits like cost reduction, process automation, and compliance.",
+                        "Understand user interface navigation and system architecture.",
+                        "Sourcing and contract templates: creation, configuration, and customization.",
+                        "Approval workflow design and basic administration setup."
                     ],
                     hands_on: [
-                        "Navigate SAP Ariba Buying interface",
-                        "Create first purchase requisition",
-                        "Set up basic approval workflows",
-                        "Configure organization templates"
+                        "Navigate SAP Ariba Buying interface.",
+                        "Create your first purchase requisition.",
+                        "Set up approval workflows and configure templates."
                     ]
                 },
                 {
-                    title: "Master Data Management (MDM)",
-                    duration: "8 hours",
+                    title: "Master Data Management (MDM) in SAP Ariba",
+                    duration: "6 Hours",
                     learning_points: [
-                        "User Management: profiles, roles, permissions",
-                        "Supplier Management: onboarding, qualification, tracking",
-                        "Accounting & Plant Management: codes, cost centers",
-                        "Integration with ERP systems"
+                        "Understand the role of MDM in **Ariba Procurement** operations.",
+                        "Know user, supplier, and accounting data management.",
+                        "Configuring plants, cost centers, and ERP integration points."
                     ],
                     hands_on: [
-                        "Create and manage user profiles",
-                        "Onboard suppliers into the system",
-                        "Set up accounting structures",
-                        "Configure plant data and ERP integration"
+                        "Manage user profiles and permissions.",
+                        "Onboard suppliers and configure accounting structures.",
+                        "Validate ERP integration for master data synchronization."
                     ]
                 },
                 {
-                    title: "End-to-End Purchasing Process",
-                    duration: "10 hours",
+                    title: "SAP Ariba Upstream – Sourcing & Contracts",
+                    duration: "8 Hours",
                     learning_points: [
-                        "Complete purchasing lifecycle management",
-                        "Requisition creation, budget checks, approvals",
-                        "Purchase Order generation and supplier selection",
-                        "Multi-level approval workflows and routing",
-                        "Goods receipt and invoice management",
-                        "Three-way matching and exception handling",
-                        "Reporting and spend analytics"
+                        "Overview of **SAP Ariba Sourcing** suite and its business value.",
+                        "Sourcing Lifecycle: Event creation, bid evaluation, and award.",
+                        "Contract Management: Template creation, clause library, versioning, and approvals."
                     ],
                     hands_on: [
-                        "Execute requisition to invoice cycle",
-                        "Set up budget controls",
-                        "Design approval hierarchies",
-                        "Resolve invoice exceptions"
+                        "Create sourcing events (RFI/RFQ/RFP) using **SAP Ariba Sourcing**.",
+                        "Build and execute contract templates with approval workflows.",
+                        "Negotiation Processes and Supplier Awards on **SAP Ariba Supplier Network**."
+                    ]
+                },
+                {
+                    title: "SAP Ariba Downstream – Procure-to-Pay (P2P)",
+                    duration: "8 Hours",
+                    learning_points: [
+                        "Complete lifecycle of **SAP Ariba Procurement** Procure-to-Pay",
+                        "Requisitioning, PO generation, and multi-tier approvals",
+                        "Receiving procured items, **SAP Ariba Invoice Management**, and exception handling",
+                        "Procurement analytics and comprehensive reporting using **Ariba Spend Management**"
+                    ],
+                    hands_on: [
+                        "Execute a complete requisition-to-invoice cycle",
+                        "Set up approval configurations",
+                        "Identify and resolve invoice discrepancies, and conduct a spend analysis"
                     ]
                 },
                 {
                     title: "Commerce Automation",
-                    duration: "5 hours",
+                    duration: "4 Hours",
                     learning_points: [
-                        "Automation of routine procurement tasks",
-                        "Supplier system integration",
-                        "Invoice automation and payment streamlining",
-                        "EDI and cXML integration for B2B",
-                        "Exception handling workflows"
+                        "Streamlining procurement through **Ariba Services** automation",
+                        "EDI and cXML interfaces for supplier communications",
+                        "Workflows for exception handling and escalation"
                     ],
                     hands_on: [
-                        "Configure EDI integrations",
-                        "Automate invoice processing",
-                        "Set up exception handling"
+                        "Set up automated systems for order and invoice processing",
+                        "Execute tests for EDI/cXML connections to supplier systems"
                     ]
                 },
                 {
-                    title: "Supply Chain Collaboration",
-                    duration: "6 hours",
+                    title: "Supply Chain Collaboration (SCC)",
+                    duration: "5 Hours",
                     learning_points: [
-                        "SAP Ariba Network overview",
-                        "Real-time order and shipment visibility",
-                        "Supplier collaboration: forecasting, planning, quality",
-                        "Multi-supplier coordination",
-                        "ERP integration for data synchronization"
+                        "Overview of **Ariba Network** and visibility across the supply chain",
+                        "Supplier collaboration on forecasts, shipments, and stock levels",
+                        "ERP synchronization for order and transport data"
                     ],
                     hands_on: [
-                        "Set up supplier collaboration workflows",
-                        "Track shipments and manage exceptions",
-                        "Conduct collaborative forecasting"
+                        "Establish supplier collaboration systems on **SAP Ariba Supplier Network**",
+                        "Monitor shipments and exercise control over real-time supply exceptions"
                     ]
                 },
                 {
                     title: "Guided Buying Implementation",
-                    duration: "8 hours",
+                    duration: "6 Hours",
                     learning_points: [
-                        "Purpose and benefits of guided buying",
-                        "Classic vs. guided buying approaches",
-                        "User groups, permissions, and policies",
-                        "Catalog management: punchout, hosted, punch-through",
-                        "Custom form design for non-catalog items",
-                        "User adoption strategies and change management",
-                        "Analytics: adoption, compliance, behavior tracking"
+                        "Purpose and configuration of Guided Buying systems",
+                        "Catalog management: hosted, punchout, and punch-through catalogs",
+                        "Custom forms, policies, and user adoption strategies",
+                        "Integration with sourcing, contracts, and ERP systems"
                     ],
                     hands_on: [
-                        "Design guided buying portal",
-                        "Configure punchout catalogs",
-                        "Create custom forms",
-                        "Analyze adoption metrics"
+                        "Design a guided buying portal",
+                        "Configure catalogs and user policies",
+                        "Monitor adoption metrics and enhance user experience accordingly"
                     ]
                 },
                 {
                     title: "Advanced Topics & Best Practices",
-                    duration: "7 hours",
+                    duration: "5 Hours",
                     learning_points: [
-                        "Cloud Integration Gateway (CIG) with S/4HANA",
-                        "Advanced analytics and custom reporting",
-                        "Risk management and compliance monitoring",
-                        "Contract lifecycle management",
-                        "Supplier performance management and scorecards",
-                        "Troubleshooting common issues",
-                        "Security, compliance, and audit trails"
+                        "Cloud Integration Gateway (CIG) for **SAP Ariba integration with S/4HANA** connectivity",
+                        "Advanced reporting and **Ariba Spend Management** analytics",
+                        "**SAP Ariba Supplier Management** performance and contract renewals",
+                        "Troubleshooting, compliance, and system security"
                     ],
                     hands_on: [
-                        "Configure CIG integration",
-                        "Build spend analysis reports",
-                        "Set up supplier performance dashboards",
-                        "Design contract management workflows"
+                        "Configure CIG **SAP Ariba integration** scenarios",
+                        "Build advanced procurement dashboards",
+                        "Set up supplier scorecards and contract workflows"
                     ]
                 }
             ]
@@ -440,10 +432,90 @@ Client and employer trust is even more robust with the SAP badge, which spellbou
             ]
         },
         {
-            type: 'detailed_upcoming_batches'
+            type: 'detailed_upcoming_batches',
+            batches: [
+                {
+                    name: "Batch 1: November 2025 (Weekdays)",
+                    status: "Filling Fast",
+                    statusColor: "bg-red-100 text-red-600",
+                    date: "November 15, 2025",
+                    schedule: "Mon-Fri | 07:00 AM | 08:00 PM IST",
+                    duration: "45-50 Hours",
+                    seats: "4/10"
+                },
+                {
+                    name: "Batch 2: November 2025 (Weekends)",
+                    status: "Booking Open",
+                    statusColor: "bg-green-100 text-green-600",
+                    date: "November 16, 2025",
+                    schedule: "Sat-Sun | 07:30 AM | 07:00 PM IST",
+                    duration: "45-50 Hours",
+                    seats: "6/10"
+                },
+                {
+                    name: "Batch 3: December 2025 (Flexible)",
+                    status: "Booking Open",
+                    statusColor: "bg-blue-100 text-blue-600",
+                    date: "December 1, 2025",
+                    schedule: "Flexible timings – customized per batch",
+                    duration: "45-50 Hours (accelerated)",
+                    seats: "7/10"
+                }
+            ],
+            features: [
+                { icon: "Zap", text: "Early-bird discounts (10-15% off) for first 10 registrations" },
+                { icon: "Users", text: "Personal learning path consultation" },
+                { icon: "ShieldCheck", text: "Priority support and mentoring" },
+                { icon: "CheckCircle2", text: "Networking with cohort members" },
+                { icon: "Users", text: "Guaranteed access to current curriculum and trainers" }
+            ]
         },
         {
-            type: 'detailed_testimonials'
+            type: 'detailed_testimonials',
+            title: "Hear from Our Successful SAP Ariba Learners – Real Reviews, Real Results",
+            stats: {
+                rating: "4.8/5",
+                reviews: "320+ learner reviews",
+                label: "Student Success Stories"
+            },
+            items: [
+                {
+                    name: "Amit Kumar",
+                    role: "SAP Ariba Consultant at Accenture",
+                    quote: "Outstanding training and real project exposure. I landed a consulting role at Accenture within 8 weeks of completing the course. The hands-on approach and expert instructors made all the difference.",
+                    image: "/images/testimonials/amit.jpg"
+                },
+                {
+                    name: "Priya Sharma",
+                    role: "Procurement Manager",
+                    quote: "The weekend flexibility allowed me to learn while working. My employer was so impressed with my skills that they promoted me to Procurement Manager. This course accelerated my career by 3 years.",
+                    image: "/images/testimonials/priya.jpg"
+                },
+                {
+                    name: "Rajesh Patel",
+                    role: "Senior SAP Consultant",
+                    quote: "Best decision I made. The capstone projects were exactly like real client work. I walked into my first consulting role feeling confident, not intimidated. The certification support was exceptional.",
+                    image: "/images/testimonials/rajesh.jpg"
+                },
+                {
+                    name: "Ananya Singh",
+                    role: "Certified SAP Ariba Professional",
+                    quote: "Superb certification preparation. I passed all three SAP Ariba exams on my first attempt. The mock exams and study materials were spot-on. Highly recommended!",
+                    image: "/images/testimonials/ananya.jpg"
+                },
+                {
+                    name: "Vikram Desai",
+                    role: "Integration Consultant at Deloitte",
+                    quote: "The instructor's real-world insights were invaluable. I didn't just learn SAP Ariba; I learned how to apply it in complex enterprise environments. The alumni network has already brought consulting opportunities my way.",
+                    image: "/images/testimonials/vikram.jpg"
+                },
+                {
+                    name: "Sneha Reddy",
+                    role: "Procurement Analyst at Infosys",
+                    quote: "From zero SAP knowledge to landing my dream job in 4 months! The instructors are patient, knowledgeable, and truly care about learner success. The lifetime recording access is a huge bonus.",
+                    image: "/images/testimonials/sneha.jpg"
+                }
+            ]
         },
         {
             type: 'detailed_demo_booking',
@@ -457,7 +529,86 @@ Client and employer trust is even more robust with the SAP badge, which spellbou
             ]
         },
         {
-            type: 'detailed_faq'
+            type: 'detailed_faq',
+            title: "Frequently Asked Questions (FAQs) – SAP Ariba Training at ERPVITS",
+            items: [
+                {
+                    question: "What is SAP Ariba and how does ERPVITS help me learn it?",
+                    answer: "SAP Ariba is an important Cloud based solution for your procurement, sourcing, and supplier collaboration. At ERPVITS we offer complete SAP Ariba Training with a focus on important business scenarios, practical sessions, and guided projects. Let us help you master Ariba Software tools and workflows."
+                },
+                {
+                    question: "What can I expect to learn in the SAP Ariba Sourcing module?",
+                    answer: "In the SAP Ariba Sourcing module training at ERPVITS, you learn to configure various Ariba sourcing applications to create sourcing events, administer RFQs, analyze supplier bid proposals, refine negotiation tactics, and facilitate execution through the Ariba sourcing platform."
+                },
+                {
+                    question: "What is SAP Ariba Supplier Network?",
+                    answer: "SAP Ariba Supplier Network connects buyers and suppliers across the world. At ERPVITS, you learn the supplier registration process, catalog management, and the steps within the Ariba Supplier Management system pertaining to transaction processes."
+                },
+                {
+                    question: "What are Ariba Services and Ariba Spend Management?",
+                    answer: "ERPVITS covers Ariba Services and Ariba Spend Management to help learners analyze company spend, automate procurement processes, and achieve cost control through intelligent spend analytics."
+                },
+                {
+                    question: "How does SAP Ariba support modern procurement?",
+                    answer: "SAP Procurement powered by Ariba Procurement simplifies sourcing, contract management, and supplier collaboration. ERPVITS provides practical exposure to SAP Ariba Procurement workflows to prepare you for real-world projects."
+                },
+                {
+                    question: "Why should I join SAP Ariba Training at ERPVITS?",
+                    answer: "ERPVITS offers SAP Ariba Online Training with live sessions, industry-aligned projects, and placement support. You'll also receive guidance on SAP Ariba Certification, resume preparation, and interview success strategies."
+                },
+                {
+                    question: "Who can enroll in the SAP Ariba Course?",
+                    answer: "Anyone interested in procurement, supply chain, or SAP technologies can join. Whether you're a fresher, working professional, or consultant—ERPVITS SAP Ariba Course is designed to help you build job-ready skills."
+                },
+                {
+                    question: "What is the SAP Ariba Certification and why is it valuable?",
+                    answer: "SAP Ariba Certification validates your expertise in procurement and supplier management. ERPVITS prepares you for the official certification exam and helps you become a certified SAP Ariba Consultant or Ariba Specialist."
+                },
+                {
+                    question: "What are ERPVITS's SAP Ariba course fees?",
+                    answer: "ERPVITS offers SAP Ariba courses at reasonable fees. The SAP Ariba Course Fees depend on the course module and the preferred training mode. Pricing at ERPVITS covers all the essentials: hands-on training, learning materials, placement guidance, and assistance with certification."
+                },
+                {
+                    question: "What is the cost for SAP Ariba Certification?",
+                    answer: "The SAP Ariba Certification Cost is set by SAP Education. At ERPVITS, we provide comprehensive guidance for the exam, along with practice tests and mentoring aimed at helping you to obtain the certification on the first attempt."
+                },
+                {
+                    question: "How to become an SAP Ariba Consultant through ERPVITS?",
+                    answer: "ERPVITS provides comprehensive SAP Ariba Training with live project assignments which you are expected to complete and certification preparation. Career counseling and job assistance are also offered at ERPVITS to successfully become an SAP Ariba Consultant."
+                },
+                {
+                    question: "What are the different career opportunities available after completing the Ariba course?",
+                    answer: "After completing SAP Ariba Training at ERPVITS, you become qualified for positions such as Ariba Consultant, Procurement Analyst, Supplier Management Specialist, and SAP Functional Consultant. For the learners, we also provide job opportunities as Ariba Consultants and placement offers exploring various Ariba Careers."
+                },
+                {
+                    question: "How does SAP Ariba integrate with SAP S/4HANA?",
+                    answer: "ERPVITS explains the SAP Ariba integration with S4 HANA in intricate details. Sessions include data flow between Ariba and core SAP systems utilizing the Cloud Integration Gateway (CIG) along with API-driven connections."
+                },
+                {
+                    question: "What are the main SAP Ariba Solutions covered in the course?",
+                    answer: "We include all primary SAP Ariba Solutions in our course, which are SAP Ariba Sourcing, Buying & Invoicing, Contract Management, SAP Ariba Supplier Management, and Joined with practical implementation of use cases."
+                },
+                {
+                    question: "What is SAP Ariba Pricing and how does it work for companies?",
+                    answer: "SAP Ariba Pricing is determined by the scale of the business and usage. In Ariba Software training, ERPVITS discusses the functional aspects of pricing frameworks, licenses, and the costs related to implementation."
+                },
+                {
+                    question: "Does ERPVITS provide SAP Ariba Training with Placement Support?",
+                    answer: "Absolutely! ERPVITS provides SAP Ariba Training with Placement assistance. We aid in creating a strong resume, interview preparation, and offer connections with recruiters looking to fill positions related to SAP Ariba Consultant jobs."
+                },
+                {
+                    question: "Can I take SAP Ariba Online Training from anywhere?",
+                    answer: "Absolutely. ERPVITS offers SAP Ariba Online Training obtainable from any place. Engage with live trainers, access recorded sessions, and engage in practical sessions on the Ariba Software system remotely with our Ariba Online Training program."
+                },
+                {
+                    question: "Do you have SAP Ariba Training near me?",
+                    answer: "ERPVITS offers SAP Ariba Online Training for learners across India. We provide SAP Ariba Training in Hyderabad, SAP Ariba Training in Pune, and SAP Ariba Training in Bangalore through live online sessions led by industry experts. Flexible weekend and weekday batches are available for working professionals looking for SAP Ariba Training near me."
+                },
+                {
+                    question: "How does ERPVITS help in Ariba Careers?",
+                    answer: "At ERPVITS, we do provide technical training, but we also assist your SAP Ariba Career with resume preparation, interview coaching, and job placements in top SAP consulting firms for promising Ariba Careers."
+                }
+            ]
         }
     ]
 };
