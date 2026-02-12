@@ -113,7 +113,7 @@ export const ewmContent = {
     sections: [
         {
             type: 'detailed_features',
-            title: <>Learn SAP EWM from Certified Experts – <span className="text-orange-600">100% Hands-On, Job-Oriented Training</span></>,
+            title: "Learn SAP EWM from Certified Experts – 100% Hands-On, Job-Oriented Training",
             subtitle: "Our SAP Extended Warehouse Management Online Training is delivered exclusively by certified SAP professionals with 12+ years of direct implementation experience in warehouse operations, logistics networks, and advanced inventory management. Unlike passive video courses or self-paced modules, you receive interactive, real-time instruction where instructors share proven methodologies, address your specific questions, and guide you through complex warehouse scenarios step-by-step.",
             badge: "Why Choose Us",
             items: [
@@ -166,10 +166,10 @@ export const ewmContent = {
         },
         {
             type: 'content_with_image',
-            title: <>Why Professionals Choose ERPVITS for <span className="text-orange-600">SAP EWM Online Training</span></>,
+            title: "Why Professionals Choose ERPVITS for SAP EWM Online Training",
             subtitle: "SUCCESS GUARANTEE & CREDIBILITY",
             description: "ERPVITS has established itself as a trusted training partner for SAP Modules, with hundreds of successful learners working at top consulting firms like Accenture, Capgemini, Deloitte, Infosys, and Wipro, as well as leading logistics and e-commerce companies like Amazon, Flipkart, DHL, and Blue Yonder. Our alumni network testimonials speak to the quality of instruction and the career acceleration our program delivers.",
-            imageSrc: "/images/why-choose-us.jpg",
+            imageSrc: "/images/sap-expert-trainers.jpg",
             layout: "left",
             items: [
                 "Trusted by 500+ successful SAP professionals",
@@ -185,7 +185,7 @@ export const ewmContent = {
         },
         {
             type: 'whats_included',
-            title: <>What&apos;s Included in the SAP EWM Training – <span className="text-orange-600">Complete Learning Package</span></>,
+            title: "What's Included in the SAP EWM Training – Complete Learning Package",
             description: "A complete, career-focused SAP Extended Warehouse Management training program combining live expert sessions, real-world projects, hands-on labs, certification preparation, and ongoing career support to help you become a job-ready SAP EWM consultant.",
             features: [
                 {
@@ -438,7 +438,7 @@ export const ewmContent = {
         },
         {
             type: 'detailed_learning_outcomes',
-            title: <>What You&apos;ll Master in This SAP EWM Online Course – <span className="text-orange-600">Core Competencies</span></>,
+            title: "What You'll Master in This SAP EWM Online Course – Core Competencies",
             subtitle: "Upon successful completion of the ERPVITS SAP EWM training, you will possess the following capabilities:",
             items: {
                 tabs: [
@@ -567,7 +567,7 @@ export const ewmContent = {
         },
         {
             type: 'real_world_scenarios',
-            title: <>Experience Real-World SAP EWM Scenarios & <span className="text-orange-600">Business Case Studies</span></>,
+            title: "Experience Real-World SAP EWM Scenarios & Business Case Studies",
             subtitle: "Our capstone projects immerse you in realistic business scenarios. Here are representative examples:",
             portfolioNote: "These projects ensure you graduate with portfolio pieces and real-world problem-solving experience—invaluable for your first consulting engagement managing warehouse operations for global enterprises.",
             items: [
@@ -655,7 +655,7 @@ export const ewmContent = {
         },
         {
             type: 'detailed_certification',
-            title: <>SAP EWM Certification – <span className="text-orange-600">Your Global Career Credential</span></>,
+            title: "SAP EWM Certification – Your Global Career Credential",
             subtitle: "Support for SAP Certified Application Associate – Warehouse Management in SAP S/4HANA",
             imageSrc: "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP EWM Infographic.webp",
             whyMattersTitle: "Why SAP EWM Certification Matters",
@@ -724,7 +724,7 @@ export const ewmContent = {
         },
         {
             type: 'detailed_career_opportunities',
-            title: <>Career Opportunities After <span className="text-orange-600">SAP EWM Training</span></>,
+            title: "Career Opportunities After SAP EWM Training",
             subtitle: "Step Into Global Consulting and Implementation Roles",
             items: [
                 {

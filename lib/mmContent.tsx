@@ -854,28 +854,43 @@ export const mmContent = {
         },
         {
             type: 'detailed_upcoming_batches',
+            title: "Join Our Next Live Batch – Limited Seats Available for SAP S/4HANA MM Training",
+            subtitle: "Secure your spot in our upcoming batches with flexible timings designed for working professionals",
             batches: [
                 {
+                    name: "Batch 1: November 2025 (Weekdays)",
                     date: "November 15, 2025",
                     time: "Weekdays – 7:00 AM | 8:00 PM IST",
-                    duration: "40–45 Hours",
-                    seats: "6/10",
-                    mode: "Weekdays"
+                    duration: "40–45 Hours (SAP MM course duration)",
+                    seats: "6/10 Seats Left",
+                    status: "Filling Fast",
+                    statusColor: "bg-orange-100 text-orange-600"
                 },
                 {
+                    name: "Batch 2: November 2025 (Weekends)",
                     date: "November 16, 2025",
                     time: "Weekends – Saturday & Sunday, 7:00 AM | 7:00 PM IST",
                     duration: "40–45 Hours",
-                    seats: "3/10",
-                    mode: "Weekends"
+                    seats: "3/10 Seats Left",
+                    status: "Filling Fast",
+                    statusColor: "bg-orange-100 text-orange-600"
                 },
                 {
+                    name: "Batch 3: December 2025 (Flexible)",
                     date: "December 1, 2025",
                     time: "Flexible timings – customized per batch",
                     duration: "40–45 Hours (accelerated)",
-                    seats: "7/10",
-                    mode: "Custom"
+                    seats: "7/10 Seats Left",
+                    status: "Open",
+                    statusColor: "bg-green-100 text-green-600"
                 }
+            ],
+            features: [
+                { icon: "Zap", text: "Early-bird discounts (10–15% off) for first 10 registrations" },
+                { icon: "Users", text: "Personal MM learning path consultation" },
+                { icon: "ShieldCheck", text: "Priority support and mentoring" },
+                { icon: "CheckCircle2", text: "Networking with cohort members" },
+                { icon: "Users", text: "Guaranteed access to current curriculum and trainers" }
             ]
         },
         {

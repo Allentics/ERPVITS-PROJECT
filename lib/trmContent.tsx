@@ -943,11 +943,43 @@ export const trmContent = {
         },
         {
             type: 'detailed_upcoming_batches',
-            title: "Join Our Next Live Batch – Limited Seats Available",
+            title: "Join Our Next Live Batch – Limited Seats Available for SAP TRM Training",
+            subtitle: "Secure your spot in our upcoming batches with flexible timings designed for working finance professionals",
             batches: [
-                { date: "November 15, 2025", time: "Weekdays – 7:00 AM | 8:00 PM IST", status: "Filling Fast" },
-                { date: "November 16, 2025", time: "Weekends – 8:00 AM | 7:00 PM IST", status: "Filling Fast" },
-                { date: "December 1, 2025", time: "Flexible timings – customized", status: "Open" }
+                {
+                    name: "Batch 1: November 2025 (Weekdays)",
+                    date: "November 15, 2025",
+                    time: "Weekdays – 7:00 AM | 8:00 PM IST",
+                    duration: "50 Hours (SAP TRM course duration)",
+                    seats: "5/10 Seats Left",
+                    status: "Filling Fast",
+                    statusColor: "bg-orange-100 text-orange-600"
+                },
+                {
+                    name: "Batch 2: November 2025 (Weekends)",
+                    date: "November 16, 2025",
+                    time: "Weekends – Saturday & Sunday, 8:00 AM | 7:00 PM IST",
+                    duration: "50 Hours",
+                    seats: "4/10 Seats Left",
+                    status: "Filling Fast",
+                    statusColor: "bg-orange-100 text-orange-600"
+                },
+                {
+                    name: "Batch 3: December 2025 (Flexible)",
+                    date: "December 1, 2025",
+                    time: "Flexible timings – customized per batch",
+                    duration: "50 Hours (accelerated schedule)",
+                    seats: "8/10 Seats Left",
+                    status: "Open",
+                    statusColor: "bg-green-100 text-green-600"
+                }
+            ],
+            features: [
+                { icon: "Zap", text: "Early-bird discounts (10–15% off) for first 10 registrations" },
+                { icon: "Users", text: "Personal SAP TRM learning path consultation" },
+                { icon: "ShieldCheck", text: "Priority support and treasury mentoring" },
+                { icon: "CheckCircle2", text: "Networking with cohort members in finance" },
+                { icon: "Users", text: "Guaranteed access to current curriculum and experienced trainers" }
             ]
         },
         {

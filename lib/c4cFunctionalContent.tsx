@@ -768,28 +768,45 @@ export const c4cFunctionalContent = {
         },
         {
             type: 'detailed_upcoming_batches',
+            title: "Join Our Next Live Batch – Limited Seats Available for SAP C4C Functional Training",
+            subtitle: "Secure your spot in our upcoming batches with flexible timings designed for working professionals",
             batches: [
                 {
+                    name: "Batch 1: November 2025 (Weekdays)",
                     date: "November 15, 2025",
                     time: "Weekdays – 7:00 AM | 8:00 PM IST",
                     duration: "50-60 Hours",
-                    seats: "4/10",
-                    mode: "Weekdays"
+                    seats: "4/10 Seats Left",
+                    status: "Filling Fast",
+                    statusColor: "bg-orange-100 text-orange-600"
                 },
                 {
+                    name: "Batch 2: November 2025 (Weekends)",
                     date: "November 16, 2025",
-                    time: "Weekends – 7:30 AM | 7:00 PM IST",
+                    time: "Weekends – Saturday & Sunday, 7:30 AM | 7:00 PM IST",
                     duration: "50-60 Hours",
-                    seats: "5/10",
-                    mode: "Weekends"
+                    seats: "5/10 Seats Left",
+                    status: "Filling Fast",
+                    statusColor: "bg-orange-100 text-orange-600"
                 },
                 {
+                    name: "Batch 3: December 2025 (Flexible)",
                     date: "December 1, 2025",
-                    time: "Flexible timings – customized",
-                    duration: "50-60 Hours (Accelerated)",
-                    seats: "6/10",
-                    mode: "Custom"
+                    time: "Flexible timings – customized per batch",
+                    duration: "50-60 Hours (accelerated)",
+                    seats: "6/10 Seats Left",
+                    status: "Open",
+                    statusColor: "bg-green-100 text-green-600"
                 }
+            ],
+            features: [
+                { icon: "Zap", text: "Early-bird discounts (10-15% off) for first 10 registrations" },
+                { icon: "Users", text: "Personal learning path consultation with trainers" },
+                { icon: "ShieldCheck", text: "Priority support and mentoring throughout course" },
+                { icon: "CheckCircle2", text: "Networking with cohort members targeting CRM roles" },
+                { icon: "Users", text: "Guaranteed access to current curriculum and certified trainers" },
+                { icon: "Cloud", text: "Access to latest SAP C4C and cloud CRM updates" },
+                { icon: "BarChart", text: "Exclusive access to customer engagement strategy workshops" }
             ]
         },
         {

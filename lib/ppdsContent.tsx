@@ -691,34 +691,43 @@ export const ppdsContent = {
         },
         {
             type: 'detailed_upcoming_batches',
-            items: [
+            title: "Join Our Next Live Batch – Limited Seats Available for SAP PPDS Training",
+            subtitle: "Secure your spot in our upcoming batches with flexible timings designed for working professionals",
+            batches: [
                 {
                     name: "Batch 1: November 2025 (Weekdays)",
-                    status: "Filling Fast",
-                    statusColor: "bg-[#ff4500]/10 text-[#ff4500]",
                     date: "November 15, 2025",
-                    schedule: "Weekdays | 6:00 PM – 9:00 PM IST",
+                    time: "Weekdays – 6:00 PM – 9:00 PM IST",
                     duration: "35–40 Hours",
-                    seatsFilled: 50
+                    seats: "5/10 Seats Left",
+                    status: "Filling Fast",
+                    statusColor: "bg-orange-100 text-orange-600"
                 },
                 {
                     name: "Batch 2: November 2025 (Weekends)",
-                    status: "Filling Fast",
-                    statusColor: "bg-blue-100 text-blue-600",
                     date: "November 16, 2025",
-                    schedule: "Sat & Sun | 10:00 AM – 1:00 PM IST",
+                    time: "Weekends – Saturday & Sunday, 10:00 AM – 1:00 PM IST",
                     duration: "35–40 Hours",
-                    seatsFilled: 60
+                    seats: "6/10 Seats Left",
+                    status: "Filling Fast",
+                    statusColor: "bg-orange-100 text-orange-600"
                 },
                 {
                     name: "Batch 3: December 2025 (Flexible)",
-                    status: "Open",
-                    statusColor: "bg-green-100 text-green-600",
                     date: "December 1, 2025",
-                    schedule: "Flexible timings | Customized per batch",
-                    duration: "35–40 Hours",
-                    seatsFilled: 70
+                    time: "Flexible timings – customized per batch",
+                    duration: "35–40 Hours (accelerated)",
+                    seats: "7/10 Seats Left",
+                    status: "Open",
+                    statusColor: "bg-green-100 text-green-600"
                 }
+            ],
+            features: [
+                { icon: "Zap", text: "Early-bird discounts (10–15% off) for first 10 registrations" },
+                { icon: "Users", text: "Personal PPDS learning path consultation" },
+                { icon: "ShieldCheck", text: "Priority support and production planning mentoring" },
+                { icon: "CheckCircle2", text: "Networking with cohort members" },
+                { icon: "Users", text: "Guaranteed access to current curriculum and experienced trainers" }
             ]
         },
         {

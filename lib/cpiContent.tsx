@@ -524,25 +524,25 @@ export const cpiContent = {
                 tier1: {
                     title: "Tier 1 - Global Consulting Firms",
                     companies: ["Accenture", "Capgemini", "Deloitte Consulting", "EY (Ernst & Young)", "KPMG", "PwC", "IBM Consulting"],
-                    color: "bg-blue-600",
-                    lightColor: "bg-blue-50"
+                    color: "bg-slate-600",
+                    lightColor: "bg-slate-50"
                 },
                 tier2: {
                     title: "Tier 2 - Enterprise SAP Implementation Partners",
                     companies: ["Infosys", "Wipro", "Cognizant", "TCS (Tata Consulting Services)", "HCL Technologies", "Tech Mahindra"],
-                    color: "bg-green-600",
-                    lightColor: "bg-green-50"
+                    color: "bg-[#ff4500]",
+                    lightColor: "bg-[#ff4500]/10"
                 },
                 tier3: {
                     title: "Tier 3 - Technology & Cloud Platforms",
                     companies: ["Microsoft", "AWS", "Google Cloud", "SAP (Direct)", "Oracle", "Salesforce", "IBM", "Adobe", "ServiceNow", "Dell Technologies", "HPE"],
-                    color: "bg-purple-600",
-                    lightColor: "bg-purple-50"
+                    color: "bg-slate-600",
+                    lightColor: "bg-slate-50"
                 },
                 tier4: {
                     title: "Tier 4 - Mid-Market & Regional Leaders",
                     companies: ["Regional consulting firms", "Cloud-native technology companies", "Enterprise customers with in-house integration teams", "System integrators and ISVs"],
-                    color: "bg-orange-600",
+                    color: "bg-[#ff4500]",
                     lightColor: "bg-[#ff4500]/10"
                 },
                 hiringTrends: {
@@ -687,28 +687,43 @@ export const cpiContent = {
         },
         {
             type: 'detailed_upcoming_batches',
-            items: [
+            title: "Join Our Next Live Batch – Limited Seats Available for SAP CPI Training",
+            subtitle: "Secure your spot in our upcoming batches with flexible timings designed for working professionals",
+            batches: [
                 {
+                    name: "Batch 1: November 2025 (Weekdays – 7:30 AM – 8:00 PM IST)",
                     date: "November 15, 2025",
                     time: "Weekdays – 7:30 AM – 8:00 PM IST",
-                    duration: "30-35 Hours",
-                    seats: "8/10",
-                    mode: "Weekdays"
+                    duration: "30–35 Hours",
+                    seats: "8/10 Seats Left",
+                    status: "Filling Fast",
+                    statusColor: "bg-orange-100 text-orange-600"
                 },
                 {
+                    name: "Batch 2: November 2025 (Weekends – Saturday & Sunday, 10:00 AM – 7:00 PM IST)",
                     date: "November 16, 2025",
-                    time: "Weekends – 10:00 AM – 7:00 PM IST",
-                    duration: "30-35 Hours",
-                    seats: "6/10",
-                    mode: "Weekends"
+                    time: "Weekends – Saturday & Sunday, 10:00 AM – 7:00 PM IST",
+                    duration: "30–35 Hours",
+                    seats: "6/10 Seats Left",
+                    status: "Filling Fast",
+                    statusColor: "bg-orange-100 text-orange-600"
                 },
                 {
+                    name: "Batch 3: December 2025 (Flexible timings – customized per batch)",
                     date: "December 1, 2025",
                     time: "Flexible timings – customized per batch",
-                    duration: "30-35 Hours (accelerated)",
-                    seats: "10/10",
-                    mode: "Custom"
+                    duration: "30–35 Hours (accelerated)",
+                    seats: "10/10 Seats Left",
+                    status: "Open",
+                    statusColor: "bg-green-100 text-green-600"
                 }
+            ],
+            features: [
+                { icon: "Zap", text: "Early-bird discounts (10–15% off) for first 10 registrations" },
+                { icon: "Users", text: "Personal CPI learning path consultation" },
+                { icon: "ShieldCheck", text: "Priority support and integration mentoring" },
+                { icon: "CheckCircle2", text: "Networking with cohort members" },
+                { icon: "GraduationCap", text: "Guaranteed access to current curriculum and experienced trainers" }
             ]
         },
         {

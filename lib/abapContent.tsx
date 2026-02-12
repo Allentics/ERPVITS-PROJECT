@@ -956,28 +956,43 @@ export const abapContent = {
         },
         {
             type: 'detailed_upcoming_batches',
+            title: "Join Our Next Live Batch – Limited Seats Available for SAP ABAP on Cloud Training",
+            subtitle: "Secure your spot in our upcoming batches with flexible timings designed for working professionals. Find SAP ABAP classes near me and SAP ABAP training near me options with our online accessibility.",
             batches: [
                 {
+                    name: "Batch 1: November 2025 (Weekdays)",
                     date: "November 15, 2025",
                     time: "Weekdays – 7:00 AM – 8:00 PM IST",
                     duration: "30-35 Hours",
-                    seats: "8/10",
-                    mode: "Weekdays"
+                    seats: "8/10 Seats Left",
+                    status: "Filling Fast",
+                    statusColor: "bg-orange-100 text-orange-600"
                 },
                 {
+                    name: "Batch 2: November 2025 (Weekends)",
                     date: "November 16, 2025",
-                    time: "Weekends – 10:00 AM – 7:00 PM IST",
+                    time: "Weekends – Saturday & Sunday, 10:00 AM – 7:00 PM IST",
                     duration: "30-35 Hours",
-                    seats: "7/10",
-                    mode: "Weekends"
+                    seats: "7/10 Seats Left",
+                    status: "Filling Fast",
+                    statusColor: "bg-orange-100 text-orange-600"
                 },
                 {
+                    name: "Batch 3: December 2025 (Flexible)",
                     date: "December 1, 2025",
                     time: "Flexible timings – customized per batch",
                     duration: "30-35 Hours",
-                    seats: "8/10",
-                    mode: "Custom"
+                    seats: "8/10 Seats Left",
+                    status: "Open",
+                    statusColor: "bg-green-100 text-green-600"
                 }
+            ],
+            features: [
+                { icon: "Zap", text: "Early-bird discounts (10–15% off) for first 10 registrations" },
+                { icon: "Users", text: "Personal ABAP Cloud learning path consultation" },
+                { icon: "ShieldCheck", text: "Priority support and cloud ABAP mentoring" },
+                { icon: "CheckCircle2", text: "Networking with cohort members" },
+                { icon: "Users", text: "Guaranteed access to current curriculum and experienced trainers" }
             ]
         },
         {

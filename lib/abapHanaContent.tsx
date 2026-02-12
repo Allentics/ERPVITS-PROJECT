@@ -16,51 +16,51 @@ export const abapHanaContent = {
         {
             type: 'detailed_features',
             title: "Learn SAP ABAP on HANA from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            subtitle: "Our SAP ABAP on HANA Online Training is delivered exclusively by certified SAP developers with 15+ years of direct ABAP development experience on S/4HANA, cloud platforms, and enterprise applications.",
+            subtitle: "Our SAP ABAP on HANA Online Training is delivered exclusively by certified SAP developers with 15+ years of direct ABAP development experience on S/4HANA, cloud platforms, and enterprise applications. Unlike passive video courses or self-paced modules, you receive interactive, real-time instruction where instructors share proven development methodologies, address your specific questions, and guide you through complex coding scenarios step-by-step.",
             items: [
                 {
                     title: "Certified Instructor Expertise",
-                    description: "Each trainer holds official SAP certifications and has successfully developed multiple enterprise-scale ABAP applications on HANA, managing millions of database operations daily.",
+                    description: "Each trainer holds official SAP certifications and has successfully developed multiple enterprise-scale ABAP applications on HANA, managing millions of database operations daily. They don't just teach syntax; they share real-world development war stories, performance optimization techniques learned through production implementations, and industry best practices from actual client deployments. This real-world perspective is invaluable when you enter your first ABAP development role building mission-critical business applications.",
                     icon: "Award"
                 },
                 {
                     title: "100% Hands-On Learning Methodology",
-                    description: "Every session includes live coding demonstrations on SAP HANA environments, followed by guided coding labs where you replicate what you've learned on real systems with production-grade code.",
+                    description: "Traditional training teaches ABAP through theory and presentations. Our program goes further. Every session includes live coding demonstrations on SAP HANA environments, followed by guided coding labs where you replicate what you've learned. By the end of the course, you've developed complete applications, optimized database queries, created FIORI interfaces, implemented web services, managed debugging, and executed end-to-end development workflows—all on real systems with production-grade code.",
                     icon: "Terminal"
                 },
                 {
                     title: "Job-Oriented Curriculum Design",
-                    description: "The course curriculum is designed around the exact skills, responsibilities, and problem-solving scenarios you'll face as an ABAP developer.",
+                    description: "The course curriculum is not academic—it's designed around the exact skills, responsibilities, and problem-solving scenarios you'll face as an ABAP developer. Whether you're building new features, optimizing legacy code, or developing cloud applications, the training ensures you're equipped with practical development skills.",
                     icon: "Briefcase"
                 },
                 {
                     title: "Interactive Q&A Sessions",
-                    description: "Dedicated Q&A forums and live office hours where instructors address your doubts, clarify complex topics like database optimization, and provide personalized guidance.",
+                    description: "Beyond the main classroom instruction, you have dedicated Q&A forums and live office hours where instructors address your doubts, clarify complex topics like database optimization and framework patterns, and provide personalized guidance tailored to your learning pace and career goals.",
                     icon: "MessageSquare"
                 },
                 {
                     title: "Flexible Batch Timings",
-                    description: "We offer both weekday evening batches (6 PM – 9 PM IST) and weekend batches (Saturday & Sunday). Sessions are recorded for asynchronous learning.",
+                    description: "Recognizing that many professionals juggle jobs, families, and learning, we offer both weekday evening batches (6 PM – 9 PM IST) and weekend batches (Saturday & Sunday). Sessions are recorded, so if you miss a live class, you can catch up asynchronously without losing continuity.",
                     icon: "Clock"
                 },
                 {
-                    title: "Small Batch Sizes",
-                    description: "Batches are capped at 8-10 participants to ensure instructors can provide individualized attention, review your code, and offer targeted feedback.",
+                    title: "Small Batch Sizes for Personalized Attention",
+                    description: "Unlike massive online courses with thousands of anonymous learners, our batches are capped at 8-10 participants. This ensures instructors can provide individualized attention, review your code, and offer targeted feedback on your development practices.",
                     icon: "Users"
                 },
                 {
                     title: "Placement & Career Support",
-                    description: "Dedicated career support team helps you build an impactful ABAP-focused resume, prepare through mock technical interviews, and practice with real-world coding challenges.",
+                    description: "Learning ABAP is only half the journey—getting placed is the goal. Our dedicated career support team helps you build an impactful ABAP-focused resume with portfolio projects, prepare through mock technical interviews, and practice with real-world coding challenges from recent hiring trends. You'll also receive guidance on how to present your code and projects effectively in ABAP developer interviews.",
                     icon: "TrendingUp"
                 },
                 {
-                    title: "Active Alumni Network",
-                    description: "Join a thriving community of ABAP developers. Exchange coding techniques, share optimization strategies, and build professional relationships.",
+                    title: "Active Alumni Network & Community Forum",
+                    description: "Join a thriving community of ABAP developers. Exchange coding techniques, share optimization strategies, discuss architecture challenges, ask questions, and build professional relationships that can lead to code reviews, collaborations, and referrals.",
                     icon: "Globe"
                 },
                 {
                     title: "Ongoing Support Post-Training",
-                    description: "For six months after training, you'll continue to receive instructor guidance—whether for code reviews, troubleshooting, or seeking advice during your first role.",
+                    description: "Your learning journey doesn't end with SAP ABAP on HANA course completion. For six months after training, you'll continue to receive instructor guidance—whether you need help with code reviews, troubleshooting production issues, or seeking advice during your first ABAP development roles.",
                     icon: "LifeBuoy"
                 }
             ],
@@ -894,28 +894,45 @@ Competitive Advantage: Stand out in technical interviews and project selections`
 
         {
             type: 'detailed_upcoming_batches',
+            title: "Join Our Next Live Batch – Limited Seats Available for SAP ABAP on HANA Training",
+            subtitle: "Secure your spot in our upcoming batches with flexible timings designed for developers",
             batches: [
                 {
-                    date: "15th November 2025",
-                    time: "07:00 AM – 09:00 AM (IST) | Mon – Fri",
-                    duration: "12 Weeks",
-                    seats: "Filling Fast",
-                    mode: "Weekday Batch"
+                    name: "Batch 1: November 2025 (Weekdays – 7:00 AM | 8:00 PM IST)",
+                    date: "November 15, 2025",
+                    time: "Weekdays – 7:00 AM | 8:00 PM IST",
+                    duration: "60-70 Hours",
+                    seats: "4/10 Seats Left",
+                    status: "Filling Fast",
+                    statusColor: "bg-orange-100 text-orange-600"
                 },
                 {
-                    date: "22nd November 2025",
-                    time: "10:00 AM – 02:00 PM (IST) | Sat – Sun",
-                    duration: "14 Weeks",
-                    seats: "Open",
-                    mode: "Weekend Batch"
+                    name: "Batch 2: November 2025 (Weekends – Saturday & Sunday, 7:30 AM | 7:00 PM IST)",
+                    date: "November 16, 2025",
+                    time: "Weekends – Saturday & Sunday, 7:30 AM | 7:00 PM IST",
+                    duration: "60-70 Hours",
+                    seats: "5/10 Seats Left",
+                    status: "Filling Fast",
+                    statusColor: "bg-orange-100 text-orange-600"
                 },
                 {
-                    date: "5th December 2025",
-                    time: "08:00 PM – 10:00 PM (IST) | Mon – Fri",
-                    duration: "12 Weeks",
-                    seats: "Waitlist",
-                    mode: "Evening Batch"
+                    name: "Batch 3: December 2025 (Flexible timings – customized per batch)",
+                    date: "December 1, 2025",
+                    time: "Flexible timings – customized per batch",
+                    duration: "60-70 Hours (accelerated)",
+                    seats: "6/10 Seats Left",
+                    status: "Open",
+                    statusColor: "bg-green-100 text-green-600"
                 }
+            ],
+            features: [
+                { icon: "Zap", text: "Early-bird discounts (10-15% off) for first 10 registrations" },
+                { icon: "Users", text: "1-on-1 coding mentorship sessions" },
+                { icon: "ShieldCheck", text: "Priority code review from certified developers" },
+                { icon: "CheckCircle2", text: "Networking with cohort of developers" },
+                { icon: "Target", text: "Guaranteed access to latest HANA and S/4HANA" },
+                { icon: "ShieldCheck", text: "Exclusive access to code optimization workshops" },
+                { icon: "Award", text: "Career-accelerated placement guarantee" }
             ]
         },
         {

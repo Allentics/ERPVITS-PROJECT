@@ -6,7 +6,8 @@ export const fieldglassContent = {
     price: "45,000",
     duration: "35+ Hours",
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-fieldglass.pdf",
-    heroHeading: <>Transform Your Career with the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">#1 Learn SAP Fieldglass from Certified Experts – 100% Hands-On, Job-Oriented Training Online Training Program</span></>,
+    heroHeading: <>Become a Leader in Managing a Contingent Workforce with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">SAP Fieldglass Training</span></>,
+    themeColor: "orange",
     heroSubheading: "This SAP Fieldglass training course is specifically tailored for HR professionals, procurement professionals, IT consultants, work program managers, and other professionals who aspire to work in global contingent workforce and services procurement consulting. This SAP Fieldglass course combines hands-on system training, expert instruction with real-world application, and a curriculum designed to a certification.",
     badges: ["SAP Certified Trainers", "4.7 Learner Rating", "24/7 Team Support"],
     description: "This SAP Fieldglass training course is specifically tailored for HR professionals, procurement professionals, IT consultants, work program managers, and other professionals who aspire to work in global contingent workforce and services procurement consulting. This SAP Fieldglass course combines hands-on system training, expert instruction with real-world application, and a curriculum designed to a certification.",
@@ -714,26 +715,43 @@ export const fieldglassContent = {
         },
         {
             type: 'detailed_upcoming_batches',
-            title: "Join Our Next Live Batch – Limited Seats Available",
-            items: [
+            title: "Join Our Next Live Batch – Limited Seats Available for SAP Fieldglass Training",
+            subtitle: "Secure your spot in our upcoming batches with flexible timings designed for working professionals",
+            batches: [
                 {
+                    name: "Batch 1: November 2025 (Weekday)",
                     date: "November 15, 2025",
                     time: "Weekdays – 7:00 AM | 8:00 PM IST",
-                    type: "Weekday Batch",
-                    status: "Filling Fast (4/10 Seats Left)"
+                    duration: "35+ Hours",
+                    seats: "4/10 Seats Left",
+                    status: "Filling Fast",
+                    statusColor: "bg-orange-100 text-orange-600"
                 },
                 {
+                    name: "Batch 2: November 2025 (Weekends)",
                     date: "November 16, 2025",
                     time: "Weekends – Saturday & Sunday, 7:30 AM | 7:00 PM IST",
-                    type: "Weekend Batch",
-                    status: "Filling Fast (6/10 Seats Left)"
+                    duration: "35+ Hours",
+                    seats: "6/10 Seats Left",
+                    status: "Filling Fast",
+                    statusColor: "bg-orange-100 text-orange-600"
                 },
                 {
+                    name: "Batch 3: December 2025 (Flexible)",
                     date: "December 1, 2025",
                     time: "Flexible timings – customized per batch",
-                    type: "Accelerated Batch",
-                    status: "Open (7/10 Seats Left)"
+                    duration: "35+ Hours (accelerated)",
+                    seats: "7/10 Seats Left",
+                    status: "Open",
+                    statusColor: "bg-green-100 text-green-600"
                 }
+            ],
+            features: [
+                { icon: "Zap", text: "Early-bird discounts (10–15% off) for first 10 registrations" },
+                { icon: "Users", text: "Personal VMS learning path consultation" },
+                { icon: "ShieldCheck", text: "Priority support and mentoring on Fieldglass" },
+                { icon: "CheckCircle2", text: "Networking with cohort members in contingent workforce domain" },
+                { icon: "Users", text: "Guaranteed access to current curriculum and experienced trainers" }
             ]
         },
         {
