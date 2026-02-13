@@ -16,7 +16,7 @@ const DEFAULT_CONTENT = {
     badge: "★ RATED #1 SAP TRAINING PROGRAM 2025 ★",
     cta_primary: "Start Your SAP Training Journey Today",
     cta_secondary: "Explore SAP Courses",
-    bg_image: "/images/home_hero_bg_v9.jpg",
+    bg_image: "/images/home_hero_bg_v10.png",
     stats: [
         { val: "15+ Years", label: "In SAP Industry" },
         { val: "8000+", label: "Professionals Trained" },
@@ -42,7 +42,8 @@ const Hero = () => {
 
                 if (data && !error) {
                     const merged = { ...DEFAULT_CONTENT, ...data.content };
-                    // Force the new statistics locally even if DB has old ones
+                    // Force the new statistics and image locally even if DB has old ones
+                    merged.bg_image = "/images/home_hero_bg_v10.png";
                     if (merged.stats) {
                         merged.stats = merged.stats.map((s: any) => {
                             if (s.label === "Professionals Trained") return { ...s, val: "8000+" };
@@ -66,15 +67,17 @@ const Hero = () => {
             {/* Background Image & Overlay */}
             <div className="absolute inset-0 w-full h-full z-0">
                 <Image
-                    src={content.bg_image || "/images/home_hero_bg_v9.jpg"}
-                    alt="Professional Man at Work"
+                    src={content.bg_image || "/images/home_hero_bg_v10.png"}
+                    alt="Modern Professional Workspace"
                     fill
-                    className="object-cover brightness-[1.10] contrast-[1.05]"
+                    className="object-cover brightness-[1.15] contrast-[1.05]"
                     priority
                     quality={100}
                     unoptimized
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-white/30 via-white/10 to-transparent" />
+                {/* Multi-layered overlay for perfect readability */}
+                <div className="absolute inset-0 bg-white/30" />
+                <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/30 to-transparent" />
             </div>
 
             <ContactModal
@@ -94,7 +97,7 @@ const Hero = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="text-4xl lg:text-5xl font-extrabold tracking-tight mb-6 leading-[1.1] text-black"
+                        className="text-4xl lg:text-5xl font-extrabold tracking-tight mb-6 leading-[1.1] text-slate-900 drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)]"
                     >
                         {headingParts[0]}
                         <span className="text-[#FF5722]">{content.highlight_text}</span>
@@ -106,7 +109,7 @@ const Hero = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
-                        className="text-lg lg:text-xl text-black font-semibold mb-6 max-w-3xl mx-auto"
+                        className="text-lg lg:text-xl text-slate-900 font-extrabold mb-6 max-w-3xl mx-auto drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)]"
                     >
                         {content.subheading}
                     </motion.h2>
@@ -116,7 +119,7 @@ const Hero = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.25 }}
-                        className="text-base lg:text-lg text-black font-medium mb-10 leading-relaxed max-w-3xl mx-auto"
+                        className="text-base lg:text-lg text-slate-900 font-extrabold mb-10 leading-relaxed max-w-3xl mx-auto drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)]"
                     >
                         {content.description}
                     </motion.p>
