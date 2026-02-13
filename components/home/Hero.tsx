@@ -62,19 +62,19 @@ const Hero = () => {
     const headingParts = content.heading.split(content.highlight_text);
 
     return (
-        <div className="bg-white text-slate-900 relative overflow-hidden">
+        <div className="bg-white text-slate-900 relative overflow-hidden min-h-[85vh] flex items-center">
             {/* Background Image & Overlay */}
             <div className="absolute inset-0 w-full h-full z-0">
                 <Image
                     src={content.bg_image || "/images/home_hero_bg_v9.jpg"}
                     alt="Professional Man at Work"
                     fill
-                    className="object-contain"
+                    className="object-cover brightness-[1.10] contrast-[1.05]"
                     priority
                     quality={100}
                     unoptimized
                 />
-                <div className="absolute inset-0 bg-white/20" />
+                <div className="absolute inset-0 bg-gradient-to-r from-white/30 via-white/10 to-transparent" />
             </div>
 
             <ContactModal
@@ -84,7 +84,7 @@ const Hero = () => {
             />
 
             {/* Main Content Grid */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 lg:pt-14 pb-16 relative z-10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 lg:pt-20 pb-16 relative z-10 w-full">
                 <div className="max-w-4xl mx-auto text-center">
 
 
