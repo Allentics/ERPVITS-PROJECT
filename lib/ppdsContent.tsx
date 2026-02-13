@@ -600,28 +600,34 @@ export const ppdsContent = {
             title: "Top Companies Hiring SAP PPDS Professionals",
             customData: {
                 tier1: {
-                    title: "Tier 1 – Global Consulting Firms",
-                    companies: ["Accenture", "Capgemini", "Deloitte Consulting", "EY", "KPMG", "PwC", "IBM Consulting"],
-                    color: "bg-blue-600",
-                    lightColor: "bg-blue-50"
+                    title: "Tier 1 - Global Consulting Firms",
+                    companies: ["Accenture", "Deloitte", "Solution Consulting", "PWC", "EY", "IBM Consulting"],
+                    color: "bg-slate-600",
+                    lightColor: "bg-slate-50"
                 },
                 tier2: {
-                    title: "Tier 2 – Enterprise SAP Implementation Partners",
-                    companies: ["Infosys", "Wipro", "Cognizant", "TCS", "HCL Technologies", "Tech Mahindra"],
-                    color: "bg-green-600",
-                    lightColor: "bg-green-50"
+                    title: "Tier 2 - Enterprise SAP Implementation Partners",
+                    companies: ["Infosys", "Wipro", "Capgemini", "TCS", "HCL Tech", "Tech Mahindra"],
+                    color: "bg-[#ff4500]",
+                    lightColor: "bg-[#ff4500]/10"
                 },
                 tier3: {
-                    title: "Tier 3 – Manufacturing & Fortune 500 Enterprises",
-                    companies: ["Volkswagen", "BMW", "Ford", "General Motors", "Samsung", "LG", "Siemens", "Nestle", "Unilever", "PepsiCo"],
-                    color: "bg-purple-600",
-                    lightColor: "bg-purple-50"
+                    title: "Tier 3 - Fortune 500 Enterprises",
+                    companies: ["Amazon", "Microsoft", "Apple", "Google", "P&G", "Unilever", "Volkswagen", "Pfizer", "J&J"],
+                    color: "bg-slate-600",
+                    lightColor: "bg-slate-50"
                 },
                 tier4: {
-                    title: "Tier 4 – Mid-Market & Specialized Companies",
-                    companies: ["Regional supply chain consultancies", "Specialized manufacturing firms", "In-house optimization teams", "Logistics companies"],
-                    color: "bg-orange-600",
+                    title: "Tier 4 - Mid-Market & Regional Leaders",
+                    companies: ["Regional consulting firms", "Industry specific service providers", "In-house procurement teams", "SAP system integrators"],
+                    color: "bg-[#ff4500]",
                     lightColor: "bg-[#ff4500]/10"
+                },
+                tier5: {
+                    title: "Tier 5 - Niche Players",
+                    companies: ["Specialized firms"],
+                    color: "bg-slate-600",
+                    lightColor: "bg-slate-50"
                 }
             }
         },

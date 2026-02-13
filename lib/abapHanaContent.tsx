@@ -5,7 +5,7 @@ export const abapHanaContent = {
     metaTitle: "SAP ABAP on HANA Training - Certification Course | ERPVITS",
     metaDescription: "Master SAP ABAP on HANA with our expert-led online training. Gain hands-on experience, certification guidance, and 100% placement support. Enroll now!",
     price: "45,000",
-    duration: "60-70 Hours",
+    duration: "30+ Hrs",
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Technical/sap-abap-on-hana.pdf",
     heroHeading: <>Master Modern ABAP Development with the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">#1 SAP ABAP on HANA Online Training Program</span></>,
     heroSubheading: "The SAP ABAP on HANA Online Training Program from ERPVITS represents a transformative learning pathway for professionals eager to excel in modern enterprise application development, cloud-native programming, and next-generation SAP technology. In today's digital transformation landscape, organizations urgently need certified SAP ABAP on HANA developers who can build robust applications, optimize database performance, leverage in-memory computing, and drive innovation through intelligent enterprise software. This comprehensive SAP ABAP on HANA training course combines interactive, instructor-led sessions, hands-on coding labs, real-time development projects, performance optimization simulations, and end-to-end certification support—designed specifically for software developers, SAP technicians, database developers, systems architects, and ambitious graduates targeting global ABAP development and SAP technology roles.",
@@ -66,7 +66,7 @@ export const abapHanaContent = {
             ],
             col_1_features: [
                 {
-                    title: "60-70 Hours of Live Training",
+                    title: "30+ Hrs of Live Training",
                     description: "Comprehensive instructor-led sessions covering basic to advanced topics.",
                     icon: "Video"
                 },
@@ -101,7 +101,7 @@ export const abapHanaContent = {
             features: [
                 {
                     title: "Live Interactive Classes",
-                    description: "60–70 hours of instructor-led sessions over 12–16 weeks via live video conferencing with real-time coding demonstrations and interactive development discussions on ABAP syntax, database optimization, and cloud development."
+                    description: "30+ Hrs of instructor-led sessions over 8–10 weeks via live video conferencing with real-time coding demonstrations and interactive development discussions on ABAP syntax, database optimization, and cloud development."
                 },
                 {
                     title: "Real-World Development Projects",
@@ -133,7 +133,7 @@ export const abapHanaContent = {
                 }
             ],
             stats: [
-                { value: "60-70", label: "Hours of Live Training", color: "orange" },
+                { value: "30+", label: "Hours of Live Training", color: "orange" },
                 { value: "100+", label: "Hands-On Coding Labs", color: "orange" },
                 { value: "24/7", label: "SAP HANA Lab Access", color: "orange" }
             ]
@@ -141,7 +141,7 @@ export const abapHanaContent = {
         {
             type: 'detailed_curriculum',
             title: "Comprehensive SAP ABAP on HANA Course Curriculum",
-            subtitle: "60-70 hours of expert-led training covering every aspect from basics to advanced HANA-optimized development",
+            subtitle: "30+ Hrs of expert-led training covering every aspect from basics to advanced HANA-optimized development",
             modules: [
                 {
                     title: "Module 1: Introduction to ABAP and HANA Architecture (5 Hours)",
@@ -695,28 +695,34 @@ Competitive Advantage: Stand out in technical interviews and project selections`
             type: 'detailed_companies',
             customData: {
                 tier1: {
-                    title: "Tier 1 – Global Consulting Firms",
-                    companies: ["Accenture", "Capgemini", "Deloitte Consulting", "EY", "KPMG", "PwC", "IBM Consulting"],
+                    title: "Tier 1 - Global Consulting Firms",
+                    companies: ["Accenture", "Deloitte", "Solution Consulting", "PWC", "EY", "IBM Consulting"],
                     color: "bg-slate-600",
                     lightColor: "bg-slate-50"
                 },
                 tier2: {
-                    title: "Tier 2 – Enterprise SAP Implementation Partners",
-                    companies: ["Infosys", "Wipro", "Cognizant", "TCS", "HCL Technologies", "Tech Mahindra"],
+                    title: "Tier 2 - Enterprise SAP Implementation Partners",
+                    companies: ["Infosys", "Wipro", "Capgemini", "TCS", "HCL Tech", "Tech Mahindra"],
                     color: "bg-[#ff4500]",
                     lightColor: "bg-[#ff4500]/10"
                 },
                 tier3: {
-                    title: "Tier 3 – SAP and Technology Companies",
-                    companies: ["SAP Labs", "Microsoft", "Google", "Amazon", "Oracle", "VMware"],
+                    title: "Tier 3 - Fortune 500 Enterprises",
+                    companies: ["Amazon", "Microsoft", "Apple", "Google", "P&G", "Unilever", "Volkswagen", "Pfizer", "J&J"],
                     color: "bg-slate-600",
                     lightColor: "bg-slate-50"
                 },
                 tier4: {
-                    title: "Tier 4 – Financial Services and Enterprise",
-                    companies: ["JPMorgan Chase", "Goldman Sachs", "Bank of America", "Citigroup", "Siemens", "Volkswagen"],
+                    title: "Tier 4 - Mid-Market & Regional Leaders",
+                    companies: ["Regional consulting firms", "Industry specific service providers", "In-house procurement teams", "SAP system integrators"],
                     color: "bg-[#ff4500]",
                     lightColor: "bg-[#ff4500]/10"
+                },
+                tier5: {
+                    title: "Tier 5 - Niche Players",
+                    companies: ["Specialized firms"],
+                    color: "bg-slate-600",
+                    lightColor: "bg-slate-50"
                 },
                 hiringTrends: {
                     title: "Hiring Trends (2025)",

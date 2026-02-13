@@ -35,7 +35,7 @@ export default function RiskFreeGuarantee() {
     ];
 
     return (
-        <section className="py-20 bg-[#FFF9F0]">
+        <section className="py-12 bg-[#FFF9F0]">
             <ContactModal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}

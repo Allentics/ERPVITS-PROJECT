@@ -15,7 +15,7 @@ export default function AllCoursesPage() {
         : courses.filter(c => c.category === filter);
 
     return (
-        <div className="bg-gray-50 min-h-screen py-20">
+        <div className="bg-gray-50 min-h-screen pt-10 pb-12">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
                     <h1 className="text-2xl font-bold text-gray-900 mb-4">Explore Our SAP Courses</h1>

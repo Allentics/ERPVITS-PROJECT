@@ -686,38 +686,38 @@ export const c4cFunctionalContent = {
                 tier1: {
                     title: "Tier 1 - Global Consulting Firms",
                     companies: ["Accenture", "Capgemini", "Deloitte Consulting", "EY", "KPMG", "PwC", "IBM Consulting"],
-                    color: "bg-blue-600",
-                    lightColor: "bg-blue-50"
+                    color: "bg-slate-600",
+                    lightColor: "bg-slate-50"
                 },
                 tier2: {
                     title: "Tier 2 - Enterprise SAP Partners",
                     companies: ["Infosys", "Wipro", "Cognizant", "TCS", "HCL Technologies", "Tech Mahindra"],
-                    color: "bg-green-600",
-                    lightColor: "bg-green-50"
+                    color: "bg-[#ff4500]",
+                    lightColor: "bg-[#ff4500]/10"
                 },
                 tier3: {
                     title: "Tier 3 - Tech & Cloud Solutions",
                     companies: ["Microsoft", "Google", "Amazon", "Salesforce", "Oracle", "SAP"],
-                    color: "bg-purple-600",
-                    lightColor: "bg-purple-50"
+                    color: "bg-slate-600",
+                    lightColor: "bg-slate-50"
                 },
                 tier4: {
                     title: "Tier 4 - Financial & Tech Leaders",
                     companies: ["JPMorgan Chase", "Goldman Sachs", "Bank of America", "Apple", "Samsung", "IBM"],
-                    color: "bg-orange-600",
-                    lightColor: "bg-orange-50"
+                    color: "bg-[#ff4500]",
+                    lightColor: "bg-[#ff4500]/10"
                 },
                 tier5: {
                     title: "Tier 5 - Retail & E-Commerce",
                     companies: ["Walmart", "Amazon", "Shopify", "Target", "Carrefour", "Flipkart"],
-                    color: "bg-red-600",
-                    lightColor: "bg-red-50"
+                    color: "bg-slate-600",
+                    lightColor: "bg-slate-50"
                 },
                 tier6: {
                     title: "Tier 6 - Mid-Market & Regional",
                     companies: ["Regional CRM firms", "Industry-specific providers", "In-house CRM teams", "SaaS providers"],
-                    color: "bg-teal-600",
-                    lightColor: "bg-teal-50"
+                    color: "bg-[#ff4500]",
+                    lightColor: "bg-[#ff4500]/10"
                 },
                 hiringTrends: {
                     title: "Hiring Trends (2025)",

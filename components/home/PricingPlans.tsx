@@ -140,7 +140,7 @@ export default function PricingPlans() {
     };
 
     return (
-        <section className="py-20 bg-gray-50">
+        <section className="py-14 bg-white scroll-mt-20" id="pricing">
             <ContactModal
                 isOpen={isContactModalOpen}
                 onClose={() => setIsContactModalOpen(false)}

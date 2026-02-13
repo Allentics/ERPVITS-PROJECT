@@ -19,10 +19,10 @@ const DEFAULT_CONTENT = {
     cta_secondary: "SECURE SPOT WITH 30% Fees Now - PAY REST LATER"
 };
 
-export default function UrgencySection() {
-    const [timeLeft, setTimeLeft] = useState({ days: 2, hours: 14, minutes: 22, seconds: 0 });
+const UrgencySection = () => {
+    const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
     const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-    const [nextBatchDate, setNextBatchDate] = useState("");
+    const [nextBatchDateStr, setNextBatchDateStr] = useState("");
     const [content, setContent] = useState(DEFAULT_CONTENT);
 
     useEffect(() => {
@@ -37,9 +37,6 @@ export default function UrgencySection() {
 
                 if (data && !error) {
                     setContent({ ...DEFAULT_CONTENT, ...data.content });
-                    if (data.content.days !== undefined) {
-                        setTimeLeft(prev => ({ ...prev, days: data.content.days, hours: data.content.hours || 0, minutes: data.content.minutes || 0 }));
-                    }
                 }
             } catch (err) {
                 console.error('Error fetching Urgency content:', err);
@@ -49,34 +46,52 @@ export default function UrgencySection() {
     }, []);
 
     useEffect(() => {
-        // Timer logic
-        const timer = setInterval(() => {
-            setTimeLeft(prev => {
-                if (prev.seconds > 0) return { ...prev, seconds: prev.seconds - 1 };
-                if (prev.minutes > 0) return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
-                if (prev.hours > 0) return { ...prev, hours: prev.hours - 1, minutes: 59, seconds: 59 };
-                if (prev.days > 0) return { ...prev, days: prev.days - 1, hours: 23, minutes: 59, seconds: 59 };
-                return prev;
-            });
-        }, 1000);
+        const getTargetDate = () => {
+            const now = new Date();
+            const target = new Date();
 
-        // Date logic: Get next Monday
-        const getNextMonday = () => {
-            const today = new Date();
-            const dayOfWeek = today.getDay();
-            const daysUntilNextMonday = (8 - dayOfWeek) % 7 || 7;
+            // Set target to next Monday at 7:00 AM
+            const dayOfWeek = now.getDay(); // 0 is Sunday, 1 is Monday
+            let daysUntilMonday = (1 - dayOfWeek + 7) % 7;
 
-            const nextDate = new Date(today);
-            nextDate.setDate(today.getDate() + daysUntilNextMonday);
+            // If it's Monday but past 7:00 AM, target the next Monday
+            if (daysUntilMonday === 0 && (now.getHours() > 7 || (now.getHours() === 7 && now.getMinutes() > 0))) {
+                daysUntilMonday = 7;
+            }
 
-            return nextDate.toLocaleDateString('en-GB', {
-                day: 'numeric',
-                month: 'long',
-                year: 'numeric'
+            target.setDate(now.getDate() + daysUntilMonday);
+            target.setHours(7, 0, 0, 0);
+
+            return target;
+        };
+
+        const targetDate = getTargetDate();
+        setNextBatchDateStr(targetDate.toLocaleDateString('en-GB', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+        }));
+
+        const updateTimer = () => {
+            const now = new Date().getTime();
+            const distance = targetDate.getTime() - now;
+
+            if (distance < 0) {
+                // If we hit zero, force a re-calculation of the target date
+                window.location.reload(); // Simplest way to reset everything for the next cycle
+                return;
+            }
+
+            setTimeLeft({
+                days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+                hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+                minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+                seconds: Math.floor((distance % (1000 * 60)) / 1000)
             });
         };
 
-        setNextBatchDate(getNextMonday());
+        const timer = setInterval(updateTimer, 1000);
+        updateTimer(); // Initial call
 
         return () => clearInterval(timer);
     }, []);
@@ -112,7 +127,7 @@ export default function UrgencySection() {
                 <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-600 mb-8 font-medium">
                     {content.batch_details?.map((detail: any, i: number) => (
                         <div key={i} className="flex items-center gap-2">
-                            <span>{detail.icon}</span> {detail.label}: {detail.label === 'Date' && detail.value === 'Next Monday' ? nextBatchDate : detail.value}
+                            <span>{detail.icon}</span> {detail.label}: {detail.label === 'Date' ? nextBatchDateStr : detail.value}
                         </div>
                     ))}
                 </div>
@@ -135,3 +150,5 @@ export default function UrgencySection() {
         </section>
     );
 }
+
+export default UrgencySection;

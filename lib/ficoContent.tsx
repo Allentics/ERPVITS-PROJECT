@@ -659,21 +659,7 @@ export const ficoContent: Partial<Course> = {
                 }
             ]
         },
-        {
-            type: 'rich_text',
-            title: "Download the Most Asked SAP FICO Interview Questions",
-            content: `
-            Top SAP FICO Interview Questions You'll Encounter
-            Complete the form below to download a comprehensive guide covering:
-            - 50+ technical FICO interview questions with expert answers
-            - Behavioral questions common in SAP finance consulting interviews
-            - Scenario-based financial problem-solving questions
-            - Career growth and salary negotiation tips
-            - Interview tips specific to each role (consultant, analyst, architect)
 
-            [Download Free Interview Guide – Submit Form Below]
-            `
-        },
         {
             type: 'detailed_upcoming_batches',
             title: "Join Our Next Live Batch – Limited Seats Available for SAP FICO Training",
@@ -727,7 +713,16 @@ export const ficoContent: Partial<Course> = {
                 { q: "Who can enroll in the SAP FICO Course?", a: "Anyone can enroll in the SAP FICO Course, if you have interest in finance, accounting, or SAP technologies. ERPVITS SAP FICO Course will prepare you for the job leading accounting." },
                 { q: "What is SAP FICO Certification and how is it important?", a: "SAP FICO Certification confirms one owns validation for expertise in financial accounting, and ERPVITS is one of the pathways to prepare one for official certification and become a certified SAP FICO professional." },
                 { q: "What is the cost of SAP FICO course in ERPVITS?", a: "SAP FICO course fees are dependent on the program and training mode. We try to provide the strongest value on the market for the hands on learning, learning support, job assistance, and certification assistance which is why our prices are structured the way they are." },
-                { q: "What is the price of SAP FICO Certification?", a: "The cost of SAP FICO Certification is determined by SAP Education, while ERPVITS gives complete exam guidance, enables one to practice mock tests, and mentors one to ensure SAP FICO Certification exam is passed in one attempt." }
+                { q: "What is the price of SAP FICO Certification?", a: "The cost of SAP FICO Certification is determined by SAP Education, while ERPVITS gives complete exam guidance, enables one to practice mock tests, and mentors one to ensure SAP FICO Certification exam is passed in one attempt." },
+                { q: "How can I become an SAP FICO Consultant through ERPVITS?", a: "To become an SAP FICO Consultant, join the structured SAP FICO Training Program, complete financial project assignments, and prepare for certification. ERPVITS offers mentorship and job counseling." },
+                { q: "What job opportunities are there after the FICO course?", a: "After SAP FICO training, you can pursue roles like SAP FICO Consultant, Accounting Manager, Finance Analyst, Controlling Specialist, or SAP Finance Architect." },
+                { q: "How SAP FICO integrates with other modules?", a: "ERPVITS covers integration of FICO with Materials Management (MM), Sales and Distribution (SD), and Human Resource (HR) modules for complete enterprise process understanding." },
+                { q: "What are the main FICO functional areas covered?", a: "ERPVITS provides hands-on training in General Ledger, Accounts Payable, Accounts Receivable, Asset Management, Cost Accounting, and Controlling." },
+                { q: "What is SAP FICO pricing for companies?", a: "SAP FICO pricing is typically based on per-user or enterprise licenses. ERPVITS discusses these licensing models and offers insights during implementation guidance." },
+                { q: "Does ERPVITS provide SAP FICO Training with Placement Support?", a: "Yes, ERPVITS provides SAP FICO training with placement support, including resume building, interview preparation, and recruitment assistance." },
+                { q: "Can I take SAP FICO Online Training from anywhere?", a: "Yes. ERPVITS offers live SAP FICO online training accessible from anywhere, with recorded sessions and remote lab access for practical exercises." },
+                { q: "Is SAP FICO Training available near me?", a: "Yes. ERPVITS offers both online and in-person training options with flexible weekday and weekend batches to suit working professionals." },
+                { q: "How does ERPVITS help in SAP FICO Careers?", a: "ERPVITS supports your SAP FICO career through resume building, interview preparation, and job referrals with top SAP consulting firms and financial organizations." }
             ]
         },
         {

@@ -811,31 +811,31 @@ export const ewmContent = {
             customData: {
                 tier1: {
                     title: "Tier 1 - Global Consulting Firms",
-                    companies: ["Accenture", "Capgemini", "Deloitte Consulting", "EY (Ernst & Young)", "KPMG", "PwC", "IBM Consulting"],
+                    companies: ["Accenture", "Deloitte", "Solution Consulting", "PWC", "EY", "IBM Consulting"],
                     color: "bg-slate-600",
                     lightColor: "bg-slate-50"
                 },
                 tier2: {
                     title: "Tier 2 - Enterprise SAP Implementation Partners",
-                    companies: ["Infosys", "Wipro", "Cognizant", "TCS (Tata Consulting Services)", "HCL Technologies", "Tech Mahindra"],
+                    companies: ["Infosys", "Wipro", "Capgemini", "TCS", "HCL Tech", "Tech Mahindra"],
                     color: "bg-[#ff4500]",
                     lightColor: "bg-[#ff4500]/10"
                 },
                 tier3: {
-                    title: "Tier 3 - Leading E-Commerce and Logistics Companies",
-                    companies: ["Amazon", "Flipkart", "DHL", "Blue Yonder (formerly JDA)", "DPDgroup", "Fedex"],
+                    title: "Tier 3 - Fortune 500 Enterprises",
+                    companies: ["Amazon", "Microsoft", "Apple", "Google", "P&G", "Unilever", "Volkswagen", "Pfizer", "J&J"],
                     color: "bg-slate-600",
                     lightColor: "bg-slate-50"
                 },
                 tier4: {
-                    title: "Tier 4 - Manufacturing and Retail Enterprises",
-                    companies: ["Volkswagen", "BMW", "Audi", "Ford", "P&G", "Unilever", "Nestlé", "Walmart", "Target", "Carrefour", "Samsung", "LG Electronics", "Siemens", "ABB", "Schneider Electric"],
+                    title: "Tier 4 - Mid-Market & Regional Leaders",
+                    companies: ["Regional consulting firms", "Industry specific service providers", "In-house procurement teams", "SAP system integrators"],
                     color: "bg-[#ff4500]",
                     lightColor: "bg-[#ff4500]/10"
                 },
                 tier5: {
-                    title: "Tier 5 - Mid-Market and Regional Leaders",
-                    companies: ["Regional 3PL and logistics companies", "Industry-specific warehouse operators", "In-house supply chain teams", "Manufacturing distribution centers"],
+                    title: "Tier 5 - Niche Players",
+                    companies: ["Specialized firms"],
                     color: "bg-slate-600",
                     lightColor: "bg-slate-50"
                 },

@@ -52,7 +52,7 @@ export default function DetailedTargetAudience({ items, title, subtitle }: { ite
     };
 
     return (
-        <section className="py-16 bg-white">
+        <section className="py-12 bg-white scroll-mt-32">
             <div className="max-w-7xl mx-auto px-4">
                 {/* Header */}
                 <div className="text-center mb-16">

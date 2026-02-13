@@ -195,9 +195,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
             })()}
 
             {/* Hero Section */}
-            {/* Hero Section */}
-            {/* Hero Section */}
-            <div className="bg-[#F2F6FD] text-slate-900 relative overflow-hidden py-24 lg:py-32">
+            <div className="bg-[#F2F6FD] text-slate-900 relative overflow-hidden pt-10 lg:pt-16 pb-24 lg:pb-32">
                 <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-[0.03]"></div>
                 <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[500px] blur-[100px] rounded-full opacity-50 pointer-events-none ${mappedCourse.themeColor === 'purple' ? 'bg-purple-100/40' : 'bg-orange-100/40'}`}></div>
 
@@ -278,9 +276,9 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                                             </svg>
                                         </div>
                                     </div>
-                                    <div className="flex items-center gap-2 text-xs">
+                                    <div className="flex items-center gap-2 text-xs" suppressHydrationWarning>
                                         <span className="font-bold text-slate-900 text-base">4.0</span>
-                                        <a href="#reviews" className="text-slate-500 hover:text-orange-500 hover:underline transition-colors">Based on 500+ reviews</a>
+                                        <a href="#reviews" className="text-slate-500 hover:text-orange-500 hover:underline transition-colors uppercase tracking-wider font-medium">Based on 500+ reviews</a>
                                     </div>
                                 </div>
                             </div>
@@ -315,9 +313,9 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                                             </svg>
                                         </div>
                                     </div>
-                                    <div className="flex items-center gap-2 text-xs">
+                                    <div className="flex items-center gap-2 text-xs" suppressHydrationWarning>
                                         <span className="font-bold text-slate-900 text-base">4.5</span>
-                                        <a href="#reviews" className="text-slate-500 hover:text-orange-500 hover:underline transition-colors">Based on 300+ reviews</a>
+                                        <a href="#reviews" className="text-slate-500 hover:text-orange-500 hover:underline transition-colors uppercase tracking-wider font-medium">Based on 300+ reviews</a>
                                     </div>
                                 </div>
                             </div>
@@ -352,9 +350,9 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                                             </svg>
                                         </div>
                                     </div>
-                                    <div className="flex items-center gap-2 text-xs">
+                                    <div className="flex items-center gap-2 text-xs" suppressHydrationWarning>
                                         <span className="font-bold text-slate-900 text-base">4.5</span>
-                                        <a href="#reviews" className="text-slate-500 hover:text-orange-500 hover:underline transition-colors">Based on 400+ reviews</a>
+                                        <a href="#reviews" className="text-slate-500 hover:text-orange-500 hover:underline transition-colors uppercase tracking-wider font-medium">Based on 400+ reviews</a>
                                     </div>
                                 </div>
                             </div>
@@ -365,7 +363,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 {/* Main Content */}
-                <div className="space-y-16">
+                <div className="space-y-8">
 
                     {/* Main Content Area */}
                     {/* Main Content Area */}
@@ -374,7 +372,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                             <SectionRenderer sections={mappedCourse.sections as Section[]} courseName={mappedCourse.title} syllabusUrl={mappedCourse.syllabusUrl} />
                         </div>
                     ) : (
-                        <div className="space-y-16">
+                        <div className="space-y-8">
                             <section id="overview" className="scroll-mt-32">
                                 <DetailedFeatures
                                     badge="Why Choose Us"

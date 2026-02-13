@@ -20,7 +20,7 @@ const DEFAULT_MISSION = {
     description: "At ERPVITS, our mission is to bridging the gap between theoretical knowledge and industry demands. We believe that true learning happens through doing, which is why our curriculum is centered around hands-on projects and real-time scenarios.",
     secondary_description: "With over a decade of experience, we have helped thousands of professionals and students master SAP technologies and secure high-paying roles in top multinational corporations.",
     stats: [
-        { val: "6000+", label: "Prospective Students" },
+        { val: "8000+", label: "Prospective Students" },
         { val: "95%", label: "Placement Rate" },
         { val: "20+", label: "Countries Reach" },
         { val: "500+", label: "Hiring Partners" }
@@ -62,7 +62,16 @@ export default async function AboutPage() {
             if (heroSection) hero = heroSection.content;
 
             const missionSection = contentData.find((s: any) => s.section_key === 'mission');
-            if (missionSection) mission = missionSection.content;
+            if (missionSection) {
+                mission = missionSection.content;
+                // Force 8000+ local update
+                if (mission.stats) {
+                    mission.stats = mission.stats.map((s: any) => {
+                        if (s.label === "Prospective Students") return { ...s, val: "8000+" };
+                        return s;
+                    });
+                }
+            }
 
             const valuesSection = contentData.find((s: any) => s.section_key === 'values');
             if (valuesSection) values = valuesSection.content;
@@ -80,7 +89,7 @@ export default async function AboutPage() {
                 />
             )}
             {/* Hero */}
-            <div className="bg-slate-50 text-slate-900 py-20 lg:py-28 relative overflow-hidden border-b border-slate-200">
+            <div className="bg-slate-50 text-slate-900 pt-10 lg:pt-16 pb-20 lg:pb-28 relative overflow-hidden border-b border-slate-200">
                 <div className="absolute top-0 right-0 w-1/2 h-full bg-orange-100 opacity-50 transform -skew-x-12"></div>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
                     <h1 className="text-2xl md:text-3xl font-bold mb-6 text-slate-900">{hero.title}</h1>
@@ -91,7 +100,7 @@ export default async function AboutPage() {
             </div>
 
             {/* Mission */}
-            <section className="py-20">
+            <section className="py-12">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                         <div>
@@ -122,7 +131,7 @@ export default async function AboutPage() {
             </section>
 
             {/* Values */}
-            <section className="py-20 bg-gray-50">
+            <section className="py-12 bg-gray-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">{values.title}</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

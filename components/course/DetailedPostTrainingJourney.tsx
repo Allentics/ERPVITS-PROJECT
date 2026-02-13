@@ -106,7 +106,7 @@ export default function DetailedPostTrainingJourney({ title, steps: propSteps, i
     const steps = propSteps || items || defaultSteps;
 
     return (
-        <section className="py-20 bg-slate-50">
+        <section className="py-12 bg-white relative overflow-hidden">
             <div className="max-w-5xl mx-auto px-4">
                 {/* Header */}
                 <div className="text-center mb-16">

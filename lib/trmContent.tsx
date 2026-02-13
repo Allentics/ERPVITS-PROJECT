@@ -814,27 +814,33 @@ export const trmContent = {
             customData: {
                 tier1: {
                     title: "Tier 1 - Global Consulting Firms",
-                    companies: ["Accenture", "Capgemini", "Deloitte", "EY", "KPMG", "PwC", "IBM"],
+                    companies: ["Accenture", "Deloitte", "Solution Consulting", "PWC", "EY", "IBM Consulting"],
                     color: "bg-slate-600",
                     lightColor: "bg-slate-50"
                 },
                 tier2: {
                     title: "Tier 2 - Enterprise SAP Implementation Partners",
-                    companies: ["Infosys", "Wipro", "Cognizant", "TCS", "HCL Technologies", "Tech Mahindra"],
-                    color: "bg-orange-600",
+                    companies: ["Infosys", "Wipro", "Capgemini", "TCS", "HCL Tech", "Tech Mahindra"],
+                    color: "bg-[#ff4500]",
                     lightColor: "bg-[#ff4500]/10"
                 },
                 tier3: {
-                    title: "Tier 3 - Major Global Financial Institutions",
-                    companies: ["JPMorgan Chase", "Goldman Sachs", "Bank of America", "Citigroup", "HSBC", "Deutsche Bank"],
+                    title: "Tier 3 - Fortune 500 Enterprises",
+                    companies: ["Amazon", "Microsoft", "Apple", "Google", "P&G", "Unilever", "Volkswagen", "Pfizer", "J&J"],
                     color: "bg-slate-600",
                     lightColor: "bg-slate-50"
                 },
                 tier4: {
                     title: "Tier 4 - Mid-Market & Regional Leaders",
-                    companies: ["Regional banking", "Asset management", "In-house treasury teams"],
-                    color: "bg-orange-600",
+                    companies: ["Regional consulting firms", "Industry specific service providers", "In-house procurement teams", "SAP system integrators"],
+                    color: "bg-[#ff4500]",
                     lightColor: "bg-[#ff4500]/10"
+                },
+                tier5: {
+                    title: "Tier 5 - Niche Players",
+                    companies: ["Specialized firms"],
+                    color: "bg-slate-600",
+                    lightColor: "bg-slate-50"
                 }
             }
         },

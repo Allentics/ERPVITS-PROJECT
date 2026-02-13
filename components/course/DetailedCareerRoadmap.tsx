@@ -32,7 +32,7 @@ export default function DetailedCareerRoadmap({ items, stats }: { items?: any[],
     const currentStats = stats || defaultStats;
 
     return (
-        <section className="py-20 bg-white">
+        <section className="py-12 bg-gray-50 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4">
 
                 {/* 1. Career Progression Roadmap */}

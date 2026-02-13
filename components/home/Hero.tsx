@@ -18,7 +18,7 @@ const DEFAULT_CONTENT = {
     cta_secondary: "Explore SAP Courses",
     bg_image: "/images/home_hero_bg_v9.jpg",
     stats: [
-        { val: "12+ Years", label: "In SAP Industry" },
+        { val: "15+ Years", label: "In SAP Industry" },
         { val: "8000+", label: "Professionals Trained" },
         { val: "24/7", label: "Team Support" },
         { val: "8+", label: "SAP Solution Architects" }
@@ -41,7 +41,16 @@ const Hero = () => {
                     .single();
 
                 if (data && !error) {
-                    setContent({ ...DEFAULT_CONTENT, ...data.content });
+                    const merged = { ...DEFAULT_CONTENT, ...data.content };
+                    // Force the new statistics locally even if DB has old ones
+                    if (merged.stats) {
+                        merged.stats = merged.stats.map((s: any) => {
+                            if (s.label === "Professionals Trained") return { ...s, val: "8000+" };
+                            if (s.label === "In SAP Industry") return { ...s, val: "15+ Years" };
+                            return s;
+                        });
+                    }
+                    setContent(merged);
                 }
             } catch (err) {
                 console.error('Error fetching Hero content:', err);
@@ -75,7 +84,7 @@ const Hero = () => {
             />
 
             {/* Main Content Grid */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 lg:pt-28 pb-16 relative z-10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 lg:pt-14 pb-16 relative z-10">
                 <div className="max-w-4xl mx-auto text-center">
 
 

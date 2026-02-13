@@ -54,7 +54,7 @@ export default function PlacementSection() {
     }, []);
 
     return (
-        <section className="py-20 bg-gray-50 border-t border-gray-100">
+        <section className="py-14 bg-white relative overflow-hidden border-t border-gray-100">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 className="text-sm md:text-base font-bold text-slate-900/60 tracking-widest uppercase mb-12">{content.title}</h2>
 

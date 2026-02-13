@@ -23,7 +23,7 @@ const FAQ = ({ course, items }: FAQProps) => {
     if (data.length === 0) return null;
 
     return (
-        <section className="py-16 bg-gray-50" id="faq">
+        <section className="py-12 bg-gray-50" id="faq">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 className="text-3xl font-bold text-gray-900 mb-2 text-center">Frequently Asked Questions</h2>
                 <p className="text-gray-600 text-center mb-10">Common questions about {course?.title || 'SAP'} Training</p>

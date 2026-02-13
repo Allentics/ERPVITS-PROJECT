@@ -59,7 +59,7 @@ export default function AlumniCommunity() {
     }, []);
 
     return (
-        <section className="py-20 bg-[#0B1727] text-white">
+        <section className="py-14 bg-orange-600 text-white">
             <ContactModal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
@@ -68,10 +68,10 @@ export default function AlumniCommunity() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold mb-4 flex items-center justify-center gap-3">
-                        <HeartHandshake className="w-8 h-8 text-yellow-500" />
+                        <HeartHandshake className="w-8 h-8 text-white" />
                         {content.title}
                     </h2>
-                    <p className="text-slate-400 max-w-2xl mx-auto">
+                    <p className="text-orange-100 max-w-2xl mx-auto font-medium">
                         {content.subtitle}
                     </p>
                 </div>
@@ -80,36 +80,38 @@ export default function AlumniCommunity() {
                     {content.stats?.map((stat: any, index: number) => {
                         const Icon = ICON_MAP[stat.icon] || Users;
                         return (
-                            <div key={index} className="bg-[#162231] rounded-xl p-8 text-center border border-slate-700 hover:border-slate-500 transition-colors">
+                            <div key={index} className="bg-white rounded-2xl p-8 text-center shadow-xl border-t-4 border-orange-400 transform hover:-translate-y-1 transition-all duration-300">
                                 <div className="flex justify-center mb-4">
-                                    <Icon className="w-10 h-10 text-slate-400" strokeWidth={1.5} />
+                                    <div className="bg-orange-50 p-3 rounded-full">
+                                        <Icon className="w-8 h-8 text-orange-500" strokeWidth={2} />
+                                    </div>
                                 </div>
-                                <div className="text-3xl font-bold text-orange-500 mb-2">{stat.value}</div>
-                                <div className="text-sm text-slate-300">{stat.label}</div>
+                                <div className="text-4xl font-extrabold text-slate-900 mb-2">{stat.value}</div>
+                                <div className="text-sm font-bold text-orange-600 uppercase tracking-wider">{stat.label}</div>
                             </div>
                         );
                     })}
                 </div>
 
                 <div className="text-center">
-                    <h3 className="text-xl font-bold mb-8">Connect With Us</h3>
+                    <h3 className="text-xl font-bold mb-8 text-white">Connect With Us</h3>
                     <div className="flex flex-col sm:flex-row justify-center gap-6 mb-12">
                         <a
                             href={content.linkedin_url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-[#0077B5] hover:bg-[#006396] text-white font-bold rounded-lg transition-colors cursor-pointer"
+                            className="inline-flex items-center justify-center gap-3 px-8 py-3 bg-[#0077B5] hover:bg-[#006396] text-white font-bold rounded-xl shadow-lg transition-all hover:scale-105 cursor-pointer border border-white/10"
                         >
-                            <Linkedin className="w-5 h-5" />
+                            <Linkedin className="w-5 h-5 text-white" />
                             Follow LinkedIn Page
                         </a>
                         <a
                             href={content.whatsapp_url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold rounded-lg transition-colors cursor-pointer"
+                            className="inline-flex items-center justify-center gap-3 px-8 py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold rounded-xl shadow-lg transition-all hover:scale-105 cursor-pointer border border-white/10"
                         >
-                            <MessageCircle className="w-5 h-5" />
+                            <MessageCircle className="w-5 h-5 text-white" />
                             Join WhatsApp Channel
                         </a>
                     </div>

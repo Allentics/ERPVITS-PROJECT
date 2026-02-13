@@ -77,7 +77,7 @@ export default function CareerAdvisors() {
     };
 
     return (
-        <section className="py-16 bg-white">
+        <section className="py-14 bg-white overflow-hidden relative">
             <ContactModal
                 isOpen={isContactModalOpen}
                 onClose={() => setIsContactModalOpen(false)}

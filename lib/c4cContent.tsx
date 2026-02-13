@@ -476,6 +476,8 @@ export const c4cContent = {
         {
             type: 'content_with_image',
             title: "Why Professionals Choose ERPVITS for SAP C4C Technical Online Training",
+            subtitle: "Success Guarantee & Credibility",
+            videoSrc: "https://www.youtube.com/embed/EtlUBjNMsbM",
             description: "ERPVITS is known as a training partner for SAP Cloud technologies because thousands of learners started working with leading consulting firms like Accenture, Capgemini, Deloitte, Infosys, and Wipro. The testimonies from our alumni network show what value our instruction brought them and what leap forward it gave them in their careers.",
             items: [
                 "Trusted by 450+ successful SAP C4C developers.",
@@ -793,26 +795,26 @@ export const c4cContent = {
                 tier1: {
                     title: "Tier 1 – Global Consulting Firms",
                     companies: ["Accenture", "Capgemini", "Deloitte Consulting", "EY (Ernst & Young)", "KPMG", "PwC", "IBM Consulting"],
-                    color: "bg-blue-600",
-                    lightColor: "bg-blue-50"
+                    color: "bg-slate-600",
+                    lightColor: "bg-slate-50"
                 },
                 tier2: {
                     title: "Tier 2 – Enterprise SAP Implementation Partners",
                     companies: ["Infosys", "Wipro", "Cognizant", "TCS (Tata Consulting Services)", "HCL Technologies", "Tech Mahindra"],
-                    color: "bg-green-600",
-                    lightColor: "bg-green-50"
+                    color: "bg-[#ff4500]",
+                    lightColor: "bg-[#ff4500]/10"
                 },
                 tier3: {
                     title: "Tier 3 – Technology & Cloud Leaders",
                     companies: ["Salesforce", "Microsoft", "Google Cloud", "Amazon Web Services (AWS)", "Adobe", "Oracle", "ServiceNow", "IBM", "SAP (Direct)"],
-                    color: "bg-purple-600",
-                    lightColor: "bg-purple-50"
+                    color: "bg-slate-600",
+                    lightColor: "bg-slate-50"
                 },
                 tier4: {
                     title: "Tier 4 – Mid-Market & Specialized Companies",
                     companies: ["Regional technology partners", "Cloud-focused service providers", "SaaS development companies", "In-house development teams"],
-                    color: "bg-orange-600",
-                    lightColor: "bg-orange-50"
+                    color: "bg-[#ff4500]",
+                    lightColor: "bg-[#ff4500]/10"
                 },
                 hiringTrends: {
                     title: "Hiring Trends (2025)",

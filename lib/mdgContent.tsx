@@ -275,7 +275,7 @@ export const mdgRealWorldScenarios = [
 
 export const mdgContent = {
     price: "Competitive",
-    duration: "48-56 Hours",
+    duration: "40+ Hrs",
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-mdg.pdf",
     heroHeading: <>Transform Your Career with the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">#1 Data Governance and Quality Professionals Online Training Program</span></>,
     heroSubheading: "The SAP Master Data Governance Online Training Program from ERPVITS represents a transformative learning pathway for professionals eager to excel in data quality management, organizational data governance, and enterprise information management. In today's data-driven business landscape, organizations urgently need certified SAP MDG experts who can establish master data governance frameworks, ensure data quality across the enterprise, maintain data governance compliance, and drive organizational alignment through standardized master data processes. This comprehensive SAP MDG training course combines interactive, instructor-led sessions, hands-on lab exercises, real-time industry projects, data governance simulations, and end-to-end certification support—designed specifically for data governance professionals, master data managers, SAP consultants, ERP implementers, quality assurance specialists, and ambitious graduates targeting global data governance and compliance roles.",
@@ -365,7 +365,7 @@ export const mdgContent = {
             type: 'whats_included',
             content: "A complete, career-focused SAP Master Data Governance training program combining live expert sessions, real-world projects, hands-on labs, certification preparation, and ongoing career support to help you become a job-ready SAP MDG consultant.",
             stats: [
-                { value: "48-56", label: "Hours of Live Training" },
+                { value: "40+", label: "Hours of Live Training" },
                 { value: "70+", label: "Hands-On Lab Exercises" },
                 { value: "100%", label: "Placement Support" }
             ],
@@ -377,7 +377,7 @@ export const mdgContent = {
         {
             type: 'detailed_curriculum',
             title: "Comprehensive SAP MDG Course Curriculum",
-            subtitle: "48-56 hours of expert-led training covering every aspect from basics to advanced implementation",
+            subtitle: "40+ hours of expert-led training covering every aspect from basics to advanced implementation",
             syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-mdg.pdf",
             modules: [
                 {
@@ -785,7 +785,7 @@ Governance Portals and Reporting (≤10%)
                     status: "filling_fast",
                     date: "November 15, 2025",
                     schedule: "Mon-Fri | 7:00 AM & 8:00 PM IST",
-                    duration: "48-56 Hours",
+                    duration: "40+ Hrs",
                     seatsFilled: 4
                 },
                 {
@@ -793,7 +793,7 @@ Governance Portals and Reporting (≤10%)
                     status: "open",
                     date: "November 16, 2025",
                     schedule: "Sat & Sun | 7:30 AM & 7:00 PM IST",
-                    duration: "48-56 Hours",
+                    duration: "40+ Hrs",
                     seatsFilled: 5
                 },
                 {

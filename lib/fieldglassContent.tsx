@@ -558,28 +558,34 @@ export const fieldglassContent = {
             type: 'detailed_companies',
             customData: {
                 tier1: {
-                    title: "Tier 1 – Global Consulting Firms",
-                    companies: ["Accenture", "Capgemini", "Deloitte Consulting", "EY (Ernst & Young)", "KPMG", "PwC", "IBM Consulting"],
-                    color: "bg-slate-800",
+                    title: "Tier 1 - Global Consulting Firms",
+                    companies: ["Accenture", "Deloitte", "Solution Consulting", "PWC", "EY", "IBM Consulting"],
+                    color: "bg-slate-600",
                     lightColor: "bg-slate-50"
                 },
                 tier2: {
-                    title: "Tier 2 – Enterprise SAP Implementation Partners",
-                    companies: ["Infosys", "Wipro", "Cognizant", "TCS (Tata Consulting Services)", "HCL Technologies", "Tech Mahindra"],
-                    color: "bg-orange-600",
+                    title: "Tier 2 - Enterprise SAP Implementation Partners",
+                    companies: ["Infosys", "Wipro", "Capgemini", "TCS", "HCL Tech", "Tech Mahindra"],
+                    color: "bg-[#ff4500]",
                     lightColor: "bg-[#ff4500]/10"
                 },
                 tier3: {
-                    title: "Tier 3 – Major Global Services & IT Companies",
-                    companies: ["Accenture", "Capgemini", "Deloitte", "IBM", "HP", "Dell", "Adobe", "Salesforce", "Microsoft", "Amazon", "Google", "Morgan Stanley", "JP Morgan"],
-                    color: "bg-slate-800",
+                    title: "Tier 3 - Fortune 500 Enterprises",
+                    companies: ["Amazon", "Microsoft", "Apple", "Google", "P&G", "Unilever", "Volkswagen", "Pfizer", "J&J"],
+                    color: "bg-slate-600",
                     lightColor: "bg-slate-50"
                 },
                 tier4: {
-                    title: "Tier 4 – Mid-Market & Regional Leaders",
-                    companies: ["Regional consulting firms specializing in VMS", "Staffing and recruitment service providers", "In-house contingent workforce and procurement teams"],
-                    color: "bg-orange-600",
+                    title: "Tier 4 - Mid-Market & Regional Leaders",
+                    companies: ["Regional consulting firms", "Industry specific service providers", "In-house procurement teams", "SAP system integrators"],
+                    color: "bg-[#ff4500]",
                     lightColor: "bg-[#ff4500]/10"
+                },
+                tier5: {
+                    title: "Tier 5 - Niche Players",
+                    companies: ["Specialized firms"],
+                    color: "bg-slate-600",
+                    lightColor: "bg-slate-50"
                 },
                 hiringTrends: {
                     title: "Hiring Trends (2025)",

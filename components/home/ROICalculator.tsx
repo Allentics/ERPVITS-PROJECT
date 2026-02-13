@@ -28,7 +28,7 @@ export default function ROICalculator() {
     };
 
     return (
-        <section className="py-20 bg-slate-900 text-white">
+        <section className="py-14 bg-orange-600 text-white">
             <ContactModal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
@@ -39,12 +39,12 @@ export default function ROICalculator() {
                     <h2 className="text-3xl font-bold mb-4">
                         Calculate Your Personal ROI - See Your Return on Investment
                     </h2>
-                    <p className="text-slate-400">
+                    <p className="text-orange-100 font-medium">
                         Discover how SAP training can transform your earning potential
                     </p>
                 </div>
 
-                <div className="bg-white rounded-xl p-8 text-slate-900 shadow-2xl max-w-4xl mx-auto mb-16">
+                <div className="bg-white rounded-2xl p-8 text-slate-900 shadow-2xl max-w-4xl mx-auto mb-16 border-t-8 border-slate-900">
                     <h3 className="text-xl font-bold text-slate-800 mb-6 border-b pb-4">Enter Your Details</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                         <div>
@@ -94,22 +94,23 @@ export default function ROICalculator() {
                     </div>
 
                     {result !== null && (
-                        <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-8 text-center animate-in fade-in slide-in-from-bottom-4">
-                            <p className="text-green-800 font-medium mb-1">Estimated Additional Earnings over {years} years</p>
-                            <p className="text-4xl font-bold text-green-600">+${result.toLocaleString()}</p>
+                        <div className="bg-orange-50 border-2 border-orange-200 rounded-xl p-6 mb-8 text-center animate-in fade-in slide-in-from-bottom-4 shadow-inner">
+                            <p className="text-orange-900 font-bold mb-1 italic uppercase tracking-wider text-sm">Estimated Additional Earnings over {years} years</p>
+                            <p className="text-5xl font-black text-orange-600">+${result.toLocaleString()}</p>
                         </div>
                     )}
 
                     <button
                         onClick={calculateROI}
-                        className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-lg shadow-lg text-lg uppercase tracking-wide transition-all hover:scale-[1.01]"
+                        className="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-5 rounded-xl shadow-xl text-lg uppercase tracking-widest transition-all hover:scale-[1.01] flex items-center justify-center gap-3"
                     >
+                        <Calculator className="w-5 h-5" />
                         CALCULATE MY ROI
                     </button>
                 </div>
 
                 <div className="text-center mb-8">
-                    <h3 className="text-xl font-bold text-white">Example ROI Scenarios</h3>
+                    <h3 className="text-2xl font-bold text-white">Example ROI Scenarios</h3>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -130,22 +131,22 @@ export default function ROICalculator() {
                             roi: "1,850% over 5 years", payback: "2.1 months"
                         }
                     ].map((scenario, i) => (
-                        <div key={i} className="bg-white rounded-lg p-6 text-left">
-                            <div className="text-sm font-bold text-slate-500 mb-4">
-                                {scenario.from} <ArrowRight className="inline w-4 h-4 mx-1" /> {scenario.to}
+                        <div key={i} className="bg-white rounded-2xl p-8 text-left shadow-xl transform hover:scale-105 transition-all duration-300">
+                            <div className="text-xs font-black text-slate-400 mb-4 uppercase tracking-[0.2em]">
+                                {scenario.from} <ArrowRight className="inline w-3 h-3 mx-1 text-orange-500" /> {scenario.to}
                             </div>
                             <div className="space-y-1 mb-6">
-                                <div className="text-slate-400 text-sm">From: <span className="line-through">{scenario.start}</span></div>
-                                <div className="text-orange-500 text-2xl font-bold">To: {scenario.end}</div>
+                                <div className="text-slate-400 text-sm font-medium">From: <span className="line-through">{scenario.start}</span></div>
+                                <div className="text-orange-600 text-3xl font-black italic">To: {scenario.end}</div>
                             </div>
-                            <div className="space-y-2 text-xs font-semibold text-slate-600 border-t pt-4">
-                                <div className="flex justify-between">
-                                    <span>ROI:</span>
-                                    <span className="text-green-600">{scenario.roi}</span>
+                            <div className="space-y-2 text-sm font-bold text-slate-600 border-t border-slate-100 pt-6">
+                                <div className="flex justify-between items-center">
+                                    <span className="text-slate-400 uppercase tracking-tighter text-xs">ROI:</span>
+                                    <span className="text-orange-600 bg-orange-50 px-2 py-1 rounded text-xs">{scenario.roi}</span>
                                 </div>
-                                <div className="flex justify-between">
-                                    <span>Payback:</span>
-                                    <span className="text-slate-900">{scenario.payback}</span>
+                                <div className="flex justify-between items-center">
+                                    <span className="text-slate-400 uppercase tracking-tighter text-xs">Payback:</span>
+                                    <span className="text-slate-900 border-b-2 border-orange-200">{scenario.payback}</span>
                                 </div>
                             </div>
                         </div>

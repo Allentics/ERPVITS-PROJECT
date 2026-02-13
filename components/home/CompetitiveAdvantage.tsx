@@ -26,7 +26,7 @@ export default function CompetitiveAdvantage() {
     };
 
     return (
-        <section className="py-20 bg-slate-50">
+        <section className="py-14 bg-slate-50">
             <ContactModal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}

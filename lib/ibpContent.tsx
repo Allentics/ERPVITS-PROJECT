@@ -136,7 +136,7 @@ export const ibpRealWorldScenarios = [
 
 export const ibpContent = {
     price: "Competitive",
-    duration: "48-56 Hours",
+    duration: "35+ Hrs",
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Functional/sap-ibp.pdf",
 
     // SEO Metadata
@@ -235,7 +235,7 @@ export const ibpContent = {
             features: [
                 {
                     title: "Live Interactive Classes",
-                    description: "48–56 hours of instructor-led sessions over 9–13 weeks via live video conferencing with real-time Q&A"
+                    description: "35+ hours of instructor-led sessions over 8–10 weeks via live video conferencing with real-time Q&A"
                 },
                 {
                     title: "Real-World Projects",
@@ -267,7 +267,7 @@ export const ibpContent = {
                 }
             ],
             stats: [
-                { value: "48-56", label: "Hours of Live Training" },
+                { value: "35+", label: "Hours of Live Training" },
                 { value: "65+", label: "Hands-On Lab Exercises" }
             ]
         },
@@ -698,6 +698,12 @@ export const ibpContent = {
                     companies: ["Regional consulting firms", "Industry specific service providers", "In-house procurement teams", "SAP system integrators"],
                     color: "bg-[#ff4500]",
                     lightColor: "bg-[#ff4500]/10"
+                },
+                tier5: {
+                    title: "Tier 5 - Niche Players",
+                    companies: ["Specialized firms"],
+                    color: "bg-slate-600",
+                    lightColor: "bg-slate-50"
                 },
                 hiringTrends: {
                     title: "Hiring Trends",

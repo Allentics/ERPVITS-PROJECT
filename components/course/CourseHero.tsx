@@ -15,7 +15,7 @@ const CourseHero = ({ course }: { course: Course }) => {
             : "bg-blue-600 text-white hover:bg-blue-700";
 
         return (
-            <div className="bg-slate-50 pt-16 pb-20 md:py-24 relative overflow-hidden text-center border-b border-slate-100">
+            <div className="bg-slate-50 pt-10 pb-16 md:pt-14 md:pb-20 relative overflow-hidden text-center border-b border-slate-100">
                 {/* Subtle Background Glow */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#ff4500]/10/40 rounded-full blur-3xl opacity-50 -z-10 pointer-events-none"></div>
 
@@ -139,7 +139,7 @@ const CourseHero = ({ course }: { course: Course }) => {
                                     </div>
                                     <div className="flex items-center text-slate-300">
                                         <Users className="h-4 w-4 mr-1" />
-                                        <span>6000+ Enrolled</span>
+                                        <span>8000+ Enrolled</span>
                                     </div>
                                     <div className="flex items-center text-slate-300">
                                         <Clock className="h-4 w-4 mr-1" />

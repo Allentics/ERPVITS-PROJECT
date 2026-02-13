@@ -116,7 +116,7 @@ export default function CustomTrainingPlan() {
     const titleParts = content.title.split(content.highlight_word);
 
     return (
-        <section className="bg-sky-50 text-slate-900 py-20 relative overflow-hidden">
+        <section className="py-14 bg-white relative overflow-hidden">
             {/* Decorative */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-orange-100/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
 

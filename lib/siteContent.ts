@@ -20,8 +20,8 @@ export const testimonials = [
 ];
 
 export const heroStats = [
-    { label: "Years Experience", value: "13+" },
-    { label: "Professionals Trained", value: "6000+" },
+    { label: "Years Experience", value: "15+" },
+    { label: "Professionals Trained", value: "8000+" },
     { label: "Placement Success", value: "95%" },
     { label: "Hiring Partners", value: "500+" }
 ];

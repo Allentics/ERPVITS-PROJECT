@@ -55,7 +55,7 @@ export default function FeaturedCourses() {
 
 
     return (
-        <section className="py-20 bg-gray-50">
+        <section className="py-14 bg-slate-50 relative overflow-hidden" id="courses">
             <ContactModal
                 isOpen={isContactModalOpen}
                 onClose={() => setIsContactModalOpen(false)}

@@ -76,7 +76,12 @@ const Footer = () => {
                     <div>
                         <h3 className="text-white font-semibold mb-4 text-lg">Popular Courses</h3>
                         <ul className="space-y-2">
-                            {popularCourses.map(course => (
+                            <li>
+                                <Link href="/courses/ariba" className="hover:text-white text-sm transition-colors">
+                                    SAP Ariba
+                                </Link>
+                            </li>
+                            {popularCourses.filter(course => course.id !== 'ariba').slice(0, 5).map(course => (
                                 <li key={course.id}>
                                     <Link href={`/courses/${course.id}`} className="hover:text-white text-sm transition-colors">
                                         {course.title}
@@ -96,10 +101,10 @@ const Footer = () => {
                         <h3 className="text-white font-semibold mb-4 text-lg">Quick Links</h3>
                         <ul className="space-y-2 text-sm">
                             <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
-                            <li><Link href="/corporate-training" className="hover:text-white transition-colors">Corporate Training</Link></li>
-                            <li><Link href="/blog" className="hover:text-white transition-colors">Blog & News</Link></li>
+                            <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
                             <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
                             <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+                            <li><Link href="/refund-policy" className="hover:text-white transition-colors">Refund Policy</Link></li>
                         </ul>
                     </div>
 

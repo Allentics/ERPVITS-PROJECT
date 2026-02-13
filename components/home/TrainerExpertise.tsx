@@ -8,7 +8,7 @@ export default function TrainerExpertise() {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
-        <section className="py-20 bg-white">
+        <section className="py-12 bg-slate-50 relative overflow-hidden">
             <ContactModal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}

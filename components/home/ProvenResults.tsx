@@ -76,7 +76,7 @@ export default function ProvenResults() {
     }, []);
 
     return (
-        <section className="py-16 bg-slate-50">
+        <section className="py-14 bg-white overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 className="text-3xl font-bold text-slate-900 mb-4">
                     {content.title}

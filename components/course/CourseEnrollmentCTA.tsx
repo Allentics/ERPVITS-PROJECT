@@ -7,7 +7,7 @@ export default function CourseEnrollmentCTA() {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
-        <section id="enroll" className="py-20 bg-slate-900 text-center text-white mt-12">
+        <section id="enroll" className="py-12 bg-slate-900 text-center text-white mt-12">
             <ContactModal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
