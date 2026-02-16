@@ -135,16 +135,11 @@ const UrgencySection = () => {
                 <div className="flex flex-col md:flex-row justify-center gap-4 max-w-3xl mx-auto">
                     <button
                         onClick={() => setIsContactModalOpen(true)}
-                        className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold shadow-lg text-lg flex-1 uppercase tracking-wide transition-transform hover:-translate-y-0.5"
+                        className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold shadow-lg text-lg w-full md:w-auto min-w-[300px] uppercase tracking-wide transition-transform hover:-translate-y-0.5"
                     >
                         {content.cta_primary}
                     </button>
-                    <button
-                        onClick={() => setIsContactModalOpen(true)}
-                        className="bg-white hover:bg-gray-50 text-slate-900 border-2 border-slate-900 px-8 py-4 rounded-lg font-bold shadow-lg text-lg flex-1 uppercase tracking-wide transition-transform hover:-translate-y-0.5"
-                    >
-                        {content.cta_secondary}
-                    </button>
+
                 </div>
             </div>
         </section>
