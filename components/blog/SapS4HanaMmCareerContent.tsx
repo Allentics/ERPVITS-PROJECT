@@ -61,7 +61,7 @@ export default function SapS4HanaMmCareerContent() {
             <ul>
                 <li>SAP S/4HANA MM Consultant</li>
                 <li>Procurement Functional Consultant</li>
-                <li>SAP MM Support Analyst</li>
+                <li>SAP MM support Analyst</li>
                 <li>SAP Supply Chain Consultant</li>
                 <li>SAP Implementation Specialist</li>
             </ul>

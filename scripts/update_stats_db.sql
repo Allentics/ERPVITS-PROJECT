@@ -3,7 +3,7 @@ UPDATE site_content
 SET content = content || '{"stats": [
     {"val": "15+ Years", "label": "In SAP Industry"},
     {"val": "8000+", "label": "Professionals Trained"},
-    {"val": "24/7", "label": "Team Support"},
+    {"val": "24/7", "label": "Team support"},
     {"val": "8+", "label": "SAP Solution Architects"}
 ]}'::jsonb
 WHERE page_path = '/' AND section_key = 'hero';

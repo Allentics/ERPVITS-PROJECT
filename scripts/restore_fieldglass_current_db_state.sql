@@ -29,8 +29,8 @@ VALUES (
     '35+ Hours', 
     '45,000', 
     '/images/ERPVITS - All Modules Infographics/ERPVITS - SAP FG Infographic.webp', 
-    '["SAP Certified Trainers", "4.7 Learner Rating", "24/7 Team Support"]'::jsonb, 
-    '["Over 450 SAP Fieldglass professionals have put their trust in us", "Custom pre-evaluations and personalized VMS learning paths", "Active alumni network and contingent workforce community", "Over 40 guided lab exercises from basic worker setups to advanced analytics", "Materials aligned with the latest Fieldglass releases updated on a quarterly basis", "Mock interviews designed to provide a real-life VMS consultant experience", "A whole week dedicated to review before the exam for certification", "Complete Support Ecosystem from pre-evaluation to post-training"]'::jsonb, 
+    '["SAP Certified Trainers", "4.7 Learner Rating", "24/7 Team support"]'::jsonb, 
+    '["Over 450 SAP Fieldglass professionals have put their trust in us", "Custom pre-evaluations and personalized VMS learning paths", "Active alumni network and contingent workforce community", "Over 40 guided lab exercises from basic worker setups to advanced analytics", "Materials aligned with the latest Fieldglass releases updated on a quarterly basis", "Mock interviews designed to provide a real-life VMS consultant experience", "A whole week dedicated to review before the exam for certification", "Complete support Ecosystem from pre-evaluation to post-training"]'::jsonb, 
     '[]'::jsonb, 
     '[
         {
@@ -94,7 +94,7 @@ VALUES (
             "a": "Fieldglass pricing depends on company size and usage. ERPVITS explains licensing architecture, implementation costs, and functional pricing models."
         },
         {
-            "q": "Does ERPVITS have SAP Fieldglass Training with Placement Support?",
+            "q": "Does ERPVITS have SAP Fieldglass Training with Placement support?",
             "a": "Yes! ERPVITS offers SAP Fieldglass Training with resume preparation, mock interviews, and recruiter connections for SAP Fieldglass consultant jobs."
         },
         {
@@ -141,7 +141,7 @@ VALUES (
                     "description": "Unlike massive online courses, which may have thousands of anonymous learners, our classes are limited to 8-10 participants. This allows instructors to tailor their teaching to your particular learning and provide individual constructive attention."
                 },
                 {
-                    "title": "Placement & Career Support",
+                    "title": "Placement & Career support",
                     "description": "Learning SAP Fieldglass is half the journey; for most learners, getting placed constitutes the goal of the course. Our career support team is focused on helping you construct a Fieldglass-centered resume, assists you with mock interviews, and provides you with Fieldglass interview questions based on recent hiring inquiries within the VMS and contingent workforce space. You will receive instruction on effectively framing your project experiences to make a positive impression during SAP Fieldglass job interviews."
                 },
                 {
@@ -149,7 +149,7 @@ VALUES (
                     "description": "Participate in the active and vibrant community of professionals using SAP Fieldglass. Network with professionals to gain insights and share job leads, ask questions, and create relationships that may result in referrals and partnerships in consulting for contingent work."
                 },
                 {
-                    "title": "Ongoing Support Post-Training",
+                    "title": "Ongoing support Post-Training",
                     "description": "The SAP Fieldglass course and training may mark the end of formal training, but the learning journey will not end there. For any challenge related to concept clarification, any real-world challenges related to the VMS project the participant is working on, and initial consulting work in the area, there will be instructor support for the participant for six months post training."
                 }
             ],
@@ -168,7 +168,7 @@ VALUES (
                 "Materials aligned with the latest Fieldglass releases updated on a quarterly basis",
                 "Mock interviews designed to provide a real-life VMS consultant experience",
                 "A whole week dedicated to review before the exam for certification",
-                "Complete Support Ecosystem from pre-evaluation to post-training"
+                "Complete support Ecosystem from pre-evaluation to post-training"
             ]
         },
         {
@@ -559,7 +559,7 @@ VALUES (
         {
             "type": "detailed_certification",
             "title": "SAP Fieldglass Certification – Your Global Career Credential",
-            "subtitle": "We Provide Support for Below SAP Fieldglass Certification",
+            "subtitle": "We Provide support for Below SAP Fieldglass Certification",
             "stats": [
                 { "label": "Exam Code", "value": "C_FG_SRV_90" },
                 { "label": "Certification Value", "value": "Global Recognition" },

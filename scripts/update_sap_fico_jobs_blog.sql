@@ -46,7 +46,7 @@ content = '<div class="prose prose-lg prose-slate max-w-none
 
             <h3 class="text-xl font-bold mt-6 mb-3">Standard SAP FICO Career Ladder:</h3>
             <p>
-                <strong>Entry Level/Fresher Positions:</strong> Junior Consultant, Support Executive, SAP End-User<br />
+                <strong>Entry Level/Fresher Positions:</strong> Junior Consultant, support Executive, SAP End-User<br />
                 For those searching for SAP FICO fresher jobs or SAP FICO jobs for freshers, these entry-level roles 
                 provide an excellent starting point. Many companies offer SAP FICO openings specifically designed for 
                 candidates new to the field.
@@ -110,7 +110,7 @@ content = '<div class="prose prose-lg prose-slate max-w-none
                 </div>
                 <div>
                     <h3 class="text-lg font-bold text-slate-900 !mt-0 !mb-2">Are there SAP FICO jobs for freshers?</h3>
-                    <p class="text-slate-600">Yes, many companies offer SAP FICO fresher jobs in roles like Junior Consultant, Support Executive, and SAP End-User. Entry-level positions typically offer ₹3.5-6 lakhs annually and provide excellent starting points for building an SAP FICO career.</p>
+                    <p class="text-slate-600">Yes, many companies offer SAP FICO fresher jobs in roles like Junior Consultant, support Executive, and SAP End-User. Entry-level positions typically offer ₹3.5-6 lakhs annually and provide excellent starting points for building an SAP FICO career.</p>
                 </div>
                 <div>
                     <h3 class="text-lg font-bold text-slate-900 !mt-0 !mb-2">Which skills are most in-demand for SAP FICO jobs?</h3>

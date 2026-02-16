@@ -91,7 +91,7 @@ export const ewmContent = {
     heroStats: [
         { icon: "Award", label: "SAP Certified Trainers" },
         { icon: "Star", label: "4.8 Learner Rating" },
-        { icon: "Headphones", label: "24/7 Team Support" },
+        { icon: "Headphones", label: "24/7 Team support" },
         { icon: "Briefcase", label: "12+ Years Implementation Experience" }
     ],
     buttonLabels: {
@@ -105,7 +105,7 @@ export const ewmContent = {
         "Expert-led SAP EWM Training",
         "Real-time Project Implementation",
         "24/7 Server Access",
-        "Placement Support",
+        "Placement support",
         "Certification Guidance",
         "Mock Interviews"
     ],
@@ -149,7 +149,7 @@ export const ewmContent = {
                 },
                 {
                     icon: "TrendingUp",
-                    title: "Placement & Career Support",
+                    title: "Placement & Career support",
                     description: "Learning SAP EWM is only half the journey—getting placed is the goal. Our dedicated career support team helps you build an impactful SAP EWM-focused resume, prepare through mock interviews, and practice with real-world interview questions from recent hiring trends in warehouse and logistics sectors. You'll also receive guidance on how to present project experience effectively to stand out in SAP EWM job interviews."
                 },
                 {
@@ -159,7 +159,7 @@ export const ewmContent = {
                 },
                 {
                     icon: "Headphones",
-                    title: "Ongoing Support Post-Training",
+                    title: "Ongoing support Post-Training",
                     description: "Your learning journey doesn't end with SAP EWM course completion. For six months after training, you'll continue to receive instructor guidance—whether you need help clarifying concepts, troubleshooting real-world project challenges, or seeking advice during your first consulting engagements managing warehouse operations."
                 }
             ]
@@ -180,7 +180,7 @@ export const ewmContent = {
                 "Quarterly updated materials aligned with latest SAP EWM releases and S/4HANA updates",
                 "Mock interviews simulating real consultant scenarios in warehouse operations",
                 "Dedicated certification prep week before exams",
-                "Complete Support Ecosystem: From pre-evaluation to post-training support, we guide you through every step of your SAP EWM learning journey and career transition."
+                "Complete support Ecosystem: From pre-evaluation to post-training support, we guide you through every step of your SAP EWM learning journey and career transition."
             ]
         },
         {
@@ -638,7 +638,7 @@ export const ewmContent = {
                     role: "Solution Architect",
                     title: "Third-Party Logistics Provider's Multi-Client EWM Setup",
                     scenario: "A 3PL provider managing warehouse operations for 30+ clients with varying requirements needs SAP EWM to handle multi-tenant operations, maintain client-specific configurations, ensure billing accuracy, and provide visibility portals for clients.",
-                    outcome: "Support for 50+ concurrent clients, 99.2% order accuracy, 40% improvement in warehouse space utilization, 25% reduction in operational labor, enhanced client retention through transparency.",
+                    outcome: "support for 50+ concurrent clients, 99.2% order accuracy, 40% improvement in warehouse space utilization, 25% reduction in operational labor, enhanced client retention through transparency.",
                     deliverables: "Multi-tenant operational model, client configuration framework, visibility portal requirements, billing process documentation, SLA dashboard specifications, quality assurance procedures, and training materials.",
                     responsibilities: [
                         "Design multi-tenant warehouse organizational structures",
@@ -656,7 +656,7 @@ export const ewmContent = {
         {
             type: 'detailed_certification',
             title: "SAP EWM Certification – Your Global Career Credential",
-            subtitle: "Support for SAP Certified Application Associate – Warehouse Management in SAP S/4HANA",
+            subtitle: "support for SAP Certified Application Associate – Warehouse Management in SAP S/4HANA",
             imageSrc: "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP EWM Infographic.webp",
             whyMattersTitle: "Why SAP EWM Certification Matters",
             badge: "Exam Code: C_S4EWM_2023",
@@ -695,7 +695,7 @@ export const ewmContent = {
                     subtitle: "We assist with exam registration, scheduling, and technical setup"
                 },
                 {
-                    title: "Retake Support",
+                    title: "Retake support",
                     subtitle: "If you don't pass on your first attempt, we provide additional support, targeted study recommendations, and retake guidance"
                 }
             ],
@@ -780,7 +780,7 @@ export const ewmContent = {
                 {
                     year: "Years 1-2",
                     role: "SAP EWM Consultant",
-                    description: "Support clients in warehouse process design, system configuration, go-live execution for small to medium warehouses"
+                    description: "support clients in warehouse process design, system configuration, go-live execution for small to medium warehouses"
                 },
                 {
                     year: "Years 3-4",
@@ -854,8 +854,8 @@ export const ewmContent = {
             title: "What to Expect After Completing Training – <span class=\"text-orange-600\">Your Growth Roadmap</span>",
             stats: [
                 { icon: "Clock", label: "Average Time to First Role", value: "2-3 Months" },
-                { icon: "Briefcase", label: "Career Support Provided", value: "100%" },
-                { icon: "Headphones", label: "Post-Training Support", value: "6 Months" },
+                { icon: "Briefcase", label: "Career support Provided", value: "100%" },
+                { icon: "Headphones", label: "Post-Training support", value: "6 Months" },
                 { icon: "Users", label: "Alumni Network Access", value: "Lifetime" }
             ],
             items: [
@@ -1087,7 +1087,7 @@ export const ewmContent = {
                     answer: "SAP Warehouse Management (WM) is a legacy on-premise solution for basic warehouse operations. SAP EWM (Extended Warehouse Management) is a modern cloud-first solution with advanced capabilities including wave management, RF operations, and sophisticated automation. ERPVITS focuses on the more in-demand SAP EWM platform."
                 },
                 {
-                    question: "Does ERPVITS provide SAP EWM Training with Placement Support?",
+                    question: "Does ERPVITS provide SAP EWM Training with Placement support?",
                     answer: "Yes! ERPVITS offers comprehensive SAP EWM Training with Placement assistance. We help you build an impressive profile, prepare for interviews, connect with recruiters, and support your transition into SAP EWM consulting and warehouse management roles."
                 },
                 {

@@ -46,7 +46,7 @@ SET content = '<div class="prose prose-lg prose-slate max-w-none
                     <li>Concepts being clarified with real-life examples</li>
                     <li>Trainers assisting and guiding throughout the journey</li>
                     <li>Practice sessions instead of only theory</li>
-                    <li>Support in resume writing, career counseling, and module selection</li>
+                    <li>support in resume writing, career counseling, and module selection</li>
                     <li>Value for money compared to big-name institutes</li>
                 </ul>
             </div>

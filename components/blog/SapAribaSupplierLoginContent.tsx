@@ -164,7 +164,7 @@ export default function SapAribaSupplierLoginContent() {
                 </div>
                 <div>
                     <h4 className="font-bold">Locked Accounts</h4>
-                    <p className="text-sm">After multiple failed login attempts, wait 30 minutes before trying again. Use the password reset option or contact SAP Ariba Support if issues persist.</p>
+                    <p className="text-sm">After multiple failed login attempts, wait 30 minutes before trying again. Use the password reset option or contact SAP Ariba support if issues persist.</p>
                 </div>
                 <div>
                     <h4 className="font-bold">Missing Invitation Email</h4>
@@ -242,7 +242,7 @@ export default function SapAribaSupplierLoginContent() {
                 </div>
             </div>
 
-            <h2>Getting Support</h2>
+            <h2>Getting support</h2>
             <h3>Self-Service Resources</h3>
             <ul>
                 <li>Ariba Network Help Center</li>
@@ -250,7 +250,7 @@ export default function SapAribaSupplierLoginContent() {
                 <li>Community forums</li>
                 <li>Comprehensive FAQs</li>
             </ul>
-            <h3>Direct Support</h3>
+            <h3>Direct support</h3>
             <ul>
                 <li>Submit support tickets through portal</li>
                 <li>Call 24/7 support hotline</li>

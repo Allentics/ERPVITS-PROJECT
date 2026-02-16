@@ -76,7 +76,7 @@ INSERT INTO courses (
                 "description": "Learning SAP C4C is a key part of what we do, but getting placed is what we are aiming for. Getting a SAP C4C Job is not easy and our supportive career staff are here to help you prepare an SAP geared resume, handle mock interviews and practice the latest interview questions asked in SAP C4C jobs. This will help you during your interview to effectively present your project and you will definitely stand out."
             },
             {
-                "title": "Jobs, Ongoing Support After Training",
+                "title": "Jobs, Ongoing support After Training",
                 "description": "Training is not the end of your learning journey when the SAP C4C course is complete. For six months, the instructor will still be your mentor. You will be able to clarify any concepts that may still not be clear to you, help you during the challenging, real-world, cloud-related projects you are working on, and guide you when you are about to start your first development consulting."
             }
         ]
@@ -97,7 +97,7 @@ INSERT INTO courses (
             "Mock interviews simulating C4C developer real world scenarios.",
             "Focused bootcamp sessions for cert preparation and advanced training."
         ],
-        "supportTitle": "Complete Support Ecosystem",
+        "supportTitle": "Complete support Ecosystem",
         "supportText": "From pre-evaluation to post-training support, we support you at every stage of SAP C4C technical learning and the cloud development career transition."
     },
     {
@@ -458,7 +458,7 @@ INSERT INTO courses (
     {
         "type": "detailed_certification",
         "title": "SAP C4C Technical Certification – Your Global Career Credential",
-        "description": "We Provide Support for Below SAP Certification List",
+        "description": "We Provide support for Below SAP Certification List",
         "items": [
             {
                 "title": "SAP Certified Development Associate – SAP C4C (Customer Cloud)",
@@ -788,7 +788,7 @@ INSERT INTO courses (
                 "a": "ERPVITS teaches C4C development using ABSL, UI Designer, business configuration, web services, analytics, workflows, and extensions. All of these are accompanied by hands-on development experience."
             },
             {
-                "q": "Does ERPVITS offer SAP C4C Training with Placement Support?",
+                "q": "Does ERPVITS offer SAP C4C Training with Placement support?",
                 "a": "Yes! ERPVITS provides SAP C4C training and placement support. We prepare wonderful profiles as developers and help you get in touch with employers."
             },
             {

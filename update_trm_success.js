@@ -21,7 +21,7 @@ const trmSuccessSection = {
         "Mock interviews simulating real TRM consultant scenarios",
         "Dedicated certification prep week before official SAP exams"
     ],
-    supportTitle: "Complete Support Ecosystem",
+    supportTitle: "Complete support Ecosystem",
     supportText: "Learning SAP TRM provides end to end learning support during your SAP TRM online traning process and transition to a career in treasury. This is a 100% complete support."
 };
 

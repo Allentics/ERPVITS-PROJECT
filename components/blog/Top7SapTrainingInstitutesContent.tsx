@@ -50,7 +50,7 @@ export default function Top7SapTrainingInstitutesContent() {
                     <li>Concepts being clarified with real-life examples</li>
                     <li>Trainers assisting and guiding throughout the journey</li>
                     <li>Practice sessions instead of only theory</li>
-                    <li>Support in resume writing, career counseling, and module selection</li>
+                    <li>support in resume writing, career counseling, and module selection</li>
                     <li>Value for money compared to big-name institutes</li>
                 </ul>
             </BlogCallout>

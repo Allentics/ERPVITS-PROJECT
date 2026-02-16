@@ -9,7 +9,7 @@ SET
 
 [Book Your Free Demo Class] | [View Curriculum]
 
-✅ SAP Certified Trainers ✅ 4.8 Learner Rating ✅ 24/7 Team Support ✅ 15+ Years ABAP Development Experience
+✅ SAP Certified Trainers ✅ 4.8 Learner Rating ✅ 24/7 Team support ✅ 15+ Years ABAP Development Experience
 
 Our SAP ABAP on HANA Online Training is delivered exclusively by certified SAP developers with 15+ years of direct ABAP development experience on S/4HANA, cloud platforms, and enterprise applications. Unlike passive video courses or self-paced modules, you receive interactive, real-time instruction where instructors share proven development methodologies, address your specific questions, and guide you through complex coding scenarios step-by-step.
 
@@ -25,11 +25,11 @@ Flexible Batch Timings: Recognizing that many professionals juggle jobs, familie
 
 Small Batch Sizes for Personalized Attention: Unlike massive online courses with thousands of anonymous learners, our batches are capped at 8-10 participants. This ensures instructors can provide individualized attention, review your code, and offer targeted feedback on your development practices.
 
-Placement & Career Support: Learning ABAP is only half the journey—getting placed is the goal. Our dedicated career support team helps you build an impactful ABAP-focused resume with portfolio projects, prepare through mock technical interviews, and practice with real-world coding challenges from recent hiring trends.
+Placement & Career support: Learning ABAP is only half the journey—getting placed is the goal. Our dedicated career support team helps you build an impactful ABAP-focused resume with portfolio projects, prepare through mock technical interviews, and practice with real-world coding challenges from recent hiring trends.
 
 Active Alumni Network & Community Forum: Join a thriving community of ABAP developers. Exchange coding techniques, share optimization strategies, discuss architecture challenges, ask questions, and build professional relationships that can lead to code reviews, collaborations, and referrals.
 
-Ongoing Support Post-Training: Your learning journey doesn''t end with course completion. For six months after training, you''ll continue to receive instructor guidance—whether you need help with code reviews, troubleshooting production issues, or seeking advice during your first ABAP development roles.
+Ongoing support Post-Training: Your learning journey doesn''t end with course completion. For six months after training, you''ll continue to receive instructor guidance—whether you need help with code reviews, troubleshooting production issues, or seeking advice during your first ABAP development roles.
 
 ERPVITS has established itself as a trusted training partner for SAP Technical Modules, with hundreds of successful learners working at top technology companies, consulting firms, and SAP development centers like SAP Labs, Accenture, Capgemini, Infosys, Wipro, and Microsoft.
 

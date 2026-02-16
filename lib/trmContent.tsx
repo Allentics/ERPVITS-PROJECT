@@ -7,7 +7,7 @@ export const trmContent = {
     heroStats: [
         { icon: "award", label: "SAP Certified Trainers" },
         { icon: "star", label: "4.8 Learner Rating" },
-        { icon: "headphones", label: "24/7 Team Support" }
+        { icon: "headphones", label: "24/7 Team support" }
     ],
     buttonLabels: {
         primary: "Book Your Free Demo Class",
@@ -201,7 +201,7 @@ export const trmContent = {
             },
             {
                 "@type": "Question",
-                "name": "Does ERPVITS provide SAP TRM Training with Placement Support?",
+                "name": "Does ERPVITS provide SAP TRM Training with Placement support?",
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Yes, ERPVITS provides SAP TRM Training with full placement support, helping you prepare resumes, develop consulting profiles, and connect with top finance recruiters."
@@ -273,7 +273,7 @@ export const trmContent = {
                     description: "Capped at 8-10 members, we ensure you each get to know the instructor, and they get to know you, your strengths and weaknesses, and provide you with individual attention on complex financial scenarios."
                 },
                 {
-                    title: "Placement & Career Support",
+                    title: "Placement & Career support",
                     description: "To get you ready for interviews, we have real treasury and banking interview questions, help you with mock interviews, and guide you in SAP-focused resume building. You also get support on how to effectively present your project experience."
                 },
                 {
@@ -281,7 +281,7 @@ export const trmContent = {
                     description: "Experience building a network within a community of SAP TRM and treasury technology specialists. Provide and receive career-related assistance, pose queries, and establish connections."
                 },
                 {
-                    title: "Ongoing Support Post-Training",
+                    title: "Ongoing support Post-Training",
                     description: "For six months after training, you'll continue to receive instructor guidance—whether you need help clarifying treasury concepts, troubleshooting real-world financial project challenges, or seeking advice during your first TRM consulting engagements."
                 }
             ]
@@ -301,7 +301,7 @@ export const trmContent = {
                 "Mock interviews simulating real TRM consultant scenarios",
                 "Dedicated certification prep week before official SAP exams"
             ],
-            supportTitle: "Complete Support Ecosystem",
+            supportTitle: "Complete support Ecosystem",
             supportText: "Learning SAP TRM provides end to end learning support during your SAP TRM online traning process and transition to a career in treasury. This is a 100% complete support."
         },
         {
@@ -1059,7 +1059,7 @@ export const trmContent = {
                     answer: "SAP TRM pricing is determined by the scope of deployment and the volume of transactions. During TRM software training, ERPVITS provides functional information on TRM licensing details, implementation pricing, and expected financial ROI."
                 },
                 {
-                    question: "Does ERPVITS provide SAP TRM Training with Placement Support?",
+                    question: "Does ERPVITS provide SAP TRM Training with Placement support?",
                     answer: "Absolutely! ERPVITS does provide SAP TRM Training with full placement support. We assist you in developing a robust finance profile, getting ready for banking/consulting interviews, and we link you with recruiters looking for SAP TRM consultants."
                 },
                 {

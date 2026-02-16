@@ -71,7 +71,7 @@ SET sections = (
                             "answer": "SAP Ariba Pricing is determined by the scale of the business and usage. In Ariba Software training, ERPVITS discusses the functional aspects of pricing frameworks, licenses, and the costs related to implementation."
                         },
                         {
-                            "question": "Does ERPVITS provide SAP Ariba Training with Placement Support?",
+                            "question": "Does ERPVITS provide SAP Ariba Training with Placement support?",
                             "answer": "Absolutely! ERPVITS provides SAP Ariba Training with Placement assistance. We aid in creating a strong resume, interview preparation, and offer connections with recruiters looking to fill positions related to SAP Ariba Consultant jobs."
                         },
                         {

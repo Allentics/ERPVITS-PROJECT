@@ -1,5 +1,5 @@
 INSERT INTO public.blog_posts (id, title, description, content, image, date, category, author) 
-VALUES ('best-sap-s4hana-training-institute', 'Best SAP S/4HANA Training Institute: SAP S4HANA Course & Certification Support', 'Join the best SAP S/4HANA training institute. Complete SAP S4HANA course with certification support, expert faculty, and placement assistance.', '<div class="prose prose-lg prose-slate max-w-none 
+VALUES ('best-sap-s4hana-training-institute', 'Best SAP S/4HANA Training Institute: SAP S4HANA Course & Certification support', 'Join the best SAP S/4HANA training institute. Complete SAP S4HANA course with certification support, expert faculty, and placement assistance.', '<div class="prose prose-lg prose-slate max-w-none 
             prose-headings:text-slate-900 prose-headings:font-bold 
             prose-a:text-orange-600 hover:prose-a:text-orange-700 
             prose-img:rounded-2xl prose-img:shadow-lg prose-img:my-8
@@ -63,7 +63,7 @@ VALUES ('best-sap-s4hana-training-institute', 'Best SAP S/4HANA Training Institu
                 <li><strong>Comprehensive Course Structure:</strong> Full coverage of all significant S/4HANA modules with separate Finance, Supply Chain, Manufacturing, and Technical tracks.</li>
                 <li><strong>Live Project Training:</strong> Gain experience with real-life business scenarios by working on all components of end-to-end implementation projects.</li>
                 <li><strong>Flexible Learning Options:</strong> Weekend batches, weekday modules, fast track courses, and bespoke corporate training.</li>
-                <li><strong>Certification Support:</strong> Comprehensive materials, practice tests, mock exams, and personal coaching for sap s4hana certification.</li>
+                <li><strong>Certification support:</strong> Comprehensive materials, practice tests, mock exams, and personal coaching for sap s4hana certification.</li>
                 <li><strong>Placement Assistance:</strong> Direct industry relations with top-tier SAP implementation partners and enterprises.</li>
             </ul>
 

@@ -358,7 +358,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                         <LinkIcon size={16} />
                     </button>
                 </div>
-                <p className="text-xs text-gray-500">Supports Markdown. Use **bold** for bold text.</p>
+                <p className="text-xs text-gray-500">supports Markdown. Use **bold** for bold text.</p>
             </div>
             <div className="space-y-2">
                 <label className="text-sm font-semibold text-gray-700">Hero Image URL</label>
@@ -987,12 +987,12 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
             }
         ];
 
-        const defaultSupportFeatures = [
+        const defaultsupportFeatures = [
             { "title": "Targeted Exam Preparation", "subtitle": "Study guides aligned to official exam blueprints" },
             { "title": "Practice Exams", "subtitle": "Timed practice tests mirroring real exam conditions" },
             { "title": "Exam Strategies", "subtitle": "Time management tips and common pitfalls to avoid" },
             { "title": "Registration Guidance", "subtitle": "Assistance with exam registration and scheduling" },
-            { "title": "Retake Support", "subtitle": "Additional support if you don't pass on first attempt" }
+            { "title": "Retake support", "subtitle": "Additional support if you don't pass on first attempt" }
         ];
 
         const defaultBenefits = [
@@ -1004,7 +1004,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
 
         // Use existing items or defaults if empty
         const itemsToDisplay = (section.items && section.items.length > 0) ? section.items : defaultCerts;
-        const supportFeaturesDisplay = (section.supportFeatures && section.supportFeatures.length > 0) ? section.supportFeatures : defaultSupportFeatures;
+        const supportFeaturesDisplay = (section.supportFeatures && section.supportFeatures.length > 0) ? section.supportFeatures : defaultsupportFeatures;
         const benefitsDisplay = (section.benefits && section.benefits.length > 0) ? section.benefits : defaultBenefits;
 
         return (
@@ -1051,7 +1051,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                        <label className="text-sm font-semibold text-gray-700">Certification Support Features (JSON)</label>
+                        <label className="text-sm font-semibold text-gray-700">Certification support Features (JSON)</label>
                         <textarea
                             rows={8}
                             value={JSON.stringify(supportFeaturesDisplay, null, 2)}

@@ -9,7 +9,7 @@ export const fieldglassContent = {
     heroHeading: <>Become a Leader in Managing a Contingent Workforce with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">SAP Fieldglass Training</span></>,
     themeColor: "orange",
     heroSubheading: "This SAP Fieldglass training course is specifically tailored for HR professionals, procurement professionals, IT consultants, work program managers, and other professionals who aspire to work in global contingent workforce and services procurement consulting. This SAP Fieldglass course combines hands-on system training, expert instruction with real-world application, and a curriculum designed to a certification.",
-    badges: ["SAP Certified Trainers", "4.7 Learner Rating", "24/7 Team Support"],
+    badges: ["SAP Certified Trainers", "4.7 Learner Rating", "24/7 Team support"],
     description: "This SAP Fieldglass training course is specifically tailored for HR professionals, procurement professionals, IT consultants, work program managers, and other professionals who aspire to work in global contingent workforce and services procurement consulting. This SAP Fieldglass course combines hands-on system training, expert instruction with real-world application, and a curriculum designed to a certification.",
     metaTitle: "SAP Fieldglass Online Training | ERPVITS Certification",
     metaDescription: "Master SAP Fieldglass Online Training with ERPVITS. Learn VMS, Contingent Workforce, SOW modules, and integration with SAP S/4HANA. Get certification help.",
@@ -105,7 +105,7 @@ export const fieldglassContent = {
                     description: "Unlike massive online courses, which may have thousands of anonymous learners, our classes are limited to 8-10 participants. This allows instructors to tailor their teaching to your particular learning and provide individual constructive attention.",
                 },
                 {
-                    title: "Placement & Career Support",
+                    title: "Placement & Career support",
                     description: "Learning SAP Fieldglass is half the journey; for most learners, getting placed constitutes the goal of the course. Our career support team is focused on helping you construct a Fieldglass-centered resume, assists you with mock interviews, and provides you with Fieldglass interview questions based on recent hiring inquiries within the VMS and contingent workforce space. You will receive instruction on effectively framing your project experiences to make a positive impression during SAP Fieldglass job interviews.",
                 },
                 {
@@ -113,7 +113,7 @@ export const fieldglassContent = {
                     description: "Participate in the active and vibrant community of professionals using SAP Fieldglass. Network with professionals to gain insights and share job leads, ask questions, and create relationships that may result in referrals and partnerships in consulting for contingent work.",
                 },
                 {
-                    title: "Ongoing Support Post-Training",
+                    title: "Ongoing support Post-Training",
                     description: "The SAP Fieldglass course and training may mark the end of formal training, but the learning journey will not end there. For any challenge related to concept clarification, any real-world challenges related to the VMS project the participant is working on, and initial consulting work in the area, there will be instructor support for the participant for six months post training.",
                 }
             ],
@@ -132,7 +132,7 @@ export const fieldglassContent = {
                 "Materials aligned with the latest Fieldglass releases updated on a quarterly basis",
                 "Mock interviews designed to provide a real-life VMS consultant experience",
                 "A whole week dedicated to review before the exam for certification",
-                "Complete Support Ecosystem from pre-evaluation to post-training"
+                "Complete support Ecosystem from pre-evaluation to post-training"
             ]
         },
         {
@@ -523,7 +523,7 @@ export const fieldglassContent = {
         {
             type: 'detailed_certification',
             title: "SAP Fieldglass Certification – Your Global Career Credential",
-            subtitle: "We Provide Support for Below SAP Fieldglass Certification",
+            subtitle: "We Provide support for Below SAP Fieldglass Certification",
             stats: [
                 { label: "Exam Code", value: "C_FG_SRV_90" },
                 { label: "Certification Value", value: "Global Recognition" },
@@ -883,7 +883,7 @@ export const fieldglassContent = {
                     a: "Fieldglass pricing depends on company size and usage. ERPVITS explains licensing architecture, implementation costs, and functional pricing models."
                 },
                 {
-                    q: "Does ERPVITS have SAP Fieldglass Training with Placement Support?",
+                    q: "Does ERPVITS have SAP Fieldglass Training with Placement support?",
                     a: "Yes! ERPVITS offers SAP Fieldglass Training with resume preparation, mock interviews, and recruiter connections for SAP Fieldglass consultant jobs."
                 },
                 {

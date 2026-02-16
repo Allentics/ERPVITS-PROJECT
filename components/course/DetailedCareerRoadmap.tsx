@@ -8,7 +8,7 @@ export default function DetailedCareerRoadmap({ items, stats }: { items?: any[],
         {
             stage: "Start (1-3)",
             title: "Jr. Ariba Consultant",
-            description: "Support projects, process design, configuration basics."
+            description: "support projects, process design, configuration basics."
         },
         {
             stage: "Mid-Level (4-6)",

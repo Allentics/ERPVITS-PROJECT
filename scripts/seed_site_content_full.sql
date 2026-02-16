@@ -159,7 +159,7 @@ INSERT INTO public.site_content (page_path, section_key, content, order_index) V
             "description": "Gain practical experience by working on live projects that mimic real-world business scenarios."
         },
         {
-            "title": "Career Support",
+            "title": "Career support",
             "description": "From resume building to mock interviews, we provide end-to-end placement assistance."
         }
     ]

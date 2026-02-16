@@ -29,7 +29,7 @@ export default function ComparisonTable() {
                         <td className="p-4 border-l border-gray-100 text-red-400">❌ No</td>
                     </tr>
                     <tr className="border-b border-gray-100 hover:bg-gray-50">
-                        <td className="p-4 font-semibold text-gray-700">Placement Support</td>
+                        <td className="p-4 font-semibold text-gray-700">Placement support</td>
                         <td className="p-4 border-l border-gray-100 bg-orange-50 font-bold text-green-600">✅ Resume & Interview Prep</td>
                         <td className="p-4 border-l border-gray-100 text-gray-500">Limited / None</td>
                     </tr>

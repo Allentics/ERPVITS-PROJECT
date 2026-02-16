@@ -22,7 +22,7 @@ const ewmContent = {
     heroSubheading: 'The SAP Extended Warehouse Management Online Training Program from ERPVITS represents a transformative learning pathway for professionals eager to excel in warehouse optimization, inventory management, and advanced logistics operations.',
     description: "The SAP Extended Warehouse Management Online Training Program from ERPVITS represents a transformative learning pathway for professionals eager to excel in warehouse optimization, inventory management, and advanced logistics operations. In today's hyper-competitive business landscape, organizations urgently need certified SAP EWM experts who can streamline warehouse processes, reduce operational costs, enhance order fulfillment accuracy, and drive supply chain efficiency through intelligent automation. This comprehensive SAP EWM training course combines interactive, instructor-led sessions, hands-on lab exercises, real-time industry projects, warehouse automation simulations, and end-to-end certification support—designed specifically for warehouse managers, logistics professionals, SAP consultants, supply chain specialists, ERP implementers, and ambitious graduates targeting global consulting and implementation roles.",
 
-    features: ["SAP Certified Trainers", "4.8 Learner Rating", "24/7 Team Support", "12+ Years Implementation Experience"],
+    features: ["SAP Certified Trainers", "4.8 Learner Rating", "24/7 Team support", "12+ Years Implementation Experience"],
 
     sections: [
         {
@@ -51,7 +51,7 @@ const ewmContent = {
                     "icon": "ShieldCheck"
                 },
                 {
-                    "title": "Complete Support Ecosystem",
+                    "title": "Complete support Ecosystem",
                     "description": "From pre-evaluation to post-training support, we guide you through every step of your SAP EWM learning journey and career transition.",
                     "icon": "Headphones"
                 },
@@ -340,7 +340,7 @@ const ewmContent = {
         {
             "type": "detailed_certification",
             "title": "SAP EWM Certification – <span class=\"text-orange-600\">Your Global Career Credential</span>",
-            "subtitle": "Support for SAP Certified Application Associate – Warehouse Management in SAP S/4HANA",
+            "subtitle": "support for SAP Certified Application Associate – Warehouse Management in SAP S/4HANA",
             "badge": "Exam Code: C_S4EWM_2023",
             "imageSrc": "/images/certification-badge.png",
             "description": "Demonstrates expertise in SAP EWM configuration, warehouse operations, picking strategies, and S/4HANA integration.",
@@ -354,7 +354,7 @@ const ewmContent = {
                 "Targeted Exam Preparation with Study Guides",
                 "Timed Practice Exams Mirroring Real Conditions",
                 "Exam Strategy & Time Management Tips",
-                "Registration Guidance & Retake Support"
+                "Registration Guidance & Retake support"
             ]
         },
         {
@@ -424,7 +424,7 @@ const ewmContent = {
                 {
                     "year": "Years 1-2",
                     "role": "SAP EWM Consultant",
-                    "description": "Support clients in warehouse process design, system configuration, and go-live execution for small to medium warehouses."
+                    "description": "support clients in warehouse process design, system configuration, and go-live execution for small to medium warehouses."
                 },
                 {
                     "year": "Years 3-4",
@@ -546,7 +546,7 @@ const ewmContent = {
                 { "question": "What career options are available after completing the SAP EWM course?", "answer": "Roles include EWM Consultant, Warehouse Manager, Operations Specialist, Supply Chain Consultant, and SAP Logistics Consultant." },
                 { "question": "How does SAP EWM integrate with SAP S/4HANA?", "answer": "We cover integration using CIG, APIs, and real-time synchronization of warehouse data with core SAP systems like Sales & Purchasing." },
                 { "question": "What are the main SAP EWM Solutions covered?", "answer": "Warehouse Planning, Inbound Processing, Outbound Fulfillment, Inventory Management, Wave Management, RF Operations, and S/4HANA integration." },
-                { "question": "Does ERPVITS provide SAP EWM Training with Placement Support?", "answer": "Yes, we offer comprehensive placement assistance, resume building, mock interviews, and job referrals." },
+                { "question": "Does ERPVITS provide SAP EWM Training with Placement support?", "answer": "Yes, we offer comprehensive placement assistance, resume building, mock interviews, and job referrals." },
                 { "question": "What makes SAP EWM a lucrative career choice in 2025?", "answer": "High demand (280%+ increase in openings), premium salaries, and expanding opportunities in e-commerce and logistics." }
             ]
         }

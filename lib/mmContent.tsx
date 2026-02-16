@@ -8,7 +8,7 @@ export const mmContent = {
 
     heroHeading: <>Transform Your Career with the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">#1 SAP MM Online Training Program</span></>,
     heroSubheading: "The ERPVITS SAP S/4HANA MM Online Training Program is a step toward a new career track for supply chain professionals and SAP consultants focusing on inventory management, procurement, and enterprise resource planning. Supply chain organizations today seek certified experts in the SAP S/4HANA MM module to help optimize the flow of materials, shrink costly inventory, streamline procurement, and improve overall supply chain management. This all-inclusive SAP MM course is aimed at supply chain professionals, inventory managers, procurement specialists, consultants in ERP, and highly motivated graduates looking for international careers in consulting and implementation. The SAP material management course is designed with interactive, live training, hands-on workshops, real-world supply chain exercises, and complete certification support.",
-    badges: ["SAP Certified Trainers", "4.8 Learner Rating", "24/7 Team Support"],
+    badges: ["SAP Certified Trainers", "4.8 Learner Rating", "24/7 Team support"],
     heroStats: [
         { icon: "award", label: "SAP Certified Trainers" },
         { icon: "briefcase", label: "100% Job Assistance" },
@@ -274,7 +274,7 @@ export const mmContent = {
                     description: "Our batches are not huge, anonymous, and impersonal on-line classes. We keep it small, between 8-10 participants, so that the instructors are able to attend to each one of you, learn your specifics and offer you quality and constructive criticism."
                 },
                 {
-                    title: "Placement & Career Support",
+                    title: "Placement & Career support",
                     description: "SAP MM learning is not the end of the process—it is learning to get placed afterwards. Our dedicated career support team will build an SAP focused resume with you, prepare you with mock interviews and during practices, you will go through real and current interview questions to prepare you for the job. You will get coached on presenting your project experience to help you in SAP MM interviews."
                 },
                 {
@@ -282,7 +282,7 @@ export const mmContent = {
                     description: "You will have the SAP MM and supply chain professionals community. You will have the opportunity to exchange valuable insights and job leads, and build relationships that will help you get referrals and work together on projects."
                 },
                 {
-                    title: "Ongoing Support Post-Training",
+                    title: "Ongoing support Post-Training",
                     description: "After finishing the SAP MM certification course, your learning has just begun. Six months after training, you will still receive support from your instructors to help with understanding the supply chain concepts, working on real world projects, and guiding you through your first consulting projects."
                 }
             ]
@@ -303,7 +303,7 @@ export const mmContent = {
                 "Mock interviews replicating real MM consultant situations",
                 "One-week focused prep for certification right before the exams"
             ],
-            supportTitle: "Complete Support Ecosystem",
+            supportTitle: "Complete support Ecosystem",
             supportText: "We provide guidance from pre-evaluation steps to post-training assistance, showing how to access SAP MM training and how to transition into a supply chain career."
         },
         {
@@ -679,7 +679,7 @@ export const mmContent = {
         {
             type: 'detailed_certification',
             title: "SAP S/4HANA MM Certification – Your Global Career Credential",
-            subtitle: "We Provide Support for Below SAP Certification List",
+            subtitle: "We Provide support for Below SAP Certification List",
             stats: [
                 { label: "Exam Code", value: "C_TS4FI_2020" },
                 { label: "Certification Value", value: "Global Recognition" },
@@ -692,12 +692,12 @@ export const mmContent = {
 **Value:** Demonstrates expertise in end-to-end SAP MM implementation
 **Job Relevance:** Entry to mid-level consultant positions
 
-**Our Certification Support**
+**Our Certification support**
 **Targeted Exam Preparation:** Study guides aligned to official exam blueprints
 **Practice Exams:** Timed practice tests mirroring real exam conditions
 **Exam Strategies:** Tips for time management, question-reading techniques, and common pitfalls
 **Exam Registration Guidance:** We assist with exam registration and scheduling
-**Retake Support:** If you don't pass on your first attempt, we provide additional support and retake guidance
+**Retake support:** If you don't pass on your first attempt, we provide additional support and retake guidance
 
 **Why SAP MM Certification Matters**
 **Global Credential Recognition:** SAP MM global certification is recognized worldwide by employers, clients, and recruitment agencies
@@ -768,7 +768,7 @@ export const mmContent = {
                 {
                     stage: "Years 1-2",
                     title: "SAP MM Consultant",
-                    description: "Support clients in materials process design, configuration, go-live"
+                    description: "support clients in materials process design, configuration, go-live"
                 },
                 {
                     stage: "Years 3-4",
@@ -816,7 +816,7 @@ export const mmContent = {
                     ]
                 },
                 {
-                    title: "First Role & Project Support",
+                    title: "First Role & Project support",
                     timeline: "Month 2-3",
                     color: "blue",
                     icon: "Briefcase",

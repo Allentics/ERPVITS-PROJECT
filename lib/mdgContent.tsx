@@ -286,7 +286,7 @@ export const mdgContent = {
     heroStats: [
         { icon: "award", label: "SAP Certified Trainers" },
         { icon: "star", label: "4.8 Learner Rating" },
-        { icon: "clock", label: "24/7 Team Support" },
+        { icon: "clock", label: "24/7 Team support" },
         { icon: "briefcase", label: "12+ Years Implementation Experience" }
     ],
     buttonLabels: {
@@ -329,7 +329,7 @@ export const mdgContent = {
                     description: "Batches are capped at 8-10 participants. This ensures instructors can provide individualized attention, get to know your strengths, and offer targeted feedback on your governance configurations."
                 },
                 {
-                    title: "Placement & Career Support",
+                    title: "Placement & Career support",
                     description: "Our dedicated career support team helps you build an impactful SAP MDG-focused resume, prepare through mock interviews, and practice with real-world interview questions from recent trends."
                 },
                 {
@@ -337,7 +337,7 @@ export const mdgContent = {
                     description: "Join a thriving community of SAP MDG professionals. Exchange tips, share data governance best practices, discuss master data challenges, and build professional relationships."
                 },
                 {
-                    title: "Ongoing Support Post-Training",
+                    title: "Ongoing support Post-Training",
                     description: "For six months after training, you'll continue to receive instructor guidance—whether you need help clarifying concepts or troubleshooting real-world governance challenges."
                 }
             ]
@@ -358,7 +358,7 @@ export const mdgContent = {
                 "Dedicated certification prep week before exams",
                 "Live governance framework development workshops"
             ],
-            supportTitle: "Complete Support Ecosystem",
+            supportTitle: "Complete support Ecosystem",
             supportText: "From pre-evaluation to post-training support, we guide you through every step of your SAP MDG learning journey and career transition."
         },
         {
@@ -367,7 +367,7 @@ export const mdgContent = {
             stats: [
                 { value: "40+", label: "Hours of Live Training" },
                 { value: "70+", label: "Hands-On Lab Exercises" },
-                { value: "100%", label: "Placement Support" }
+                { value: "100%", label: "Placement support" }
             ],
             // Adding a list compatible property if supported, or rely on stats/description. 
             // Based on Ariba, it seems whats_included might not take a detailed list, but we can put the details in the content description or assume the component handles it.
@@ -610,8 +610,8 @@ export const mdgContent = {
         {
             type: 'detailed_certification',
             title: "SAP MDG Certification – Your Global Career Credential",
-            subtitle: "We Provide Support for Below SAP Certification",
-            content: "We Provide Support for SAP Certified Application Associate – Master Data Governance (Exam Code: C_SGMDG_1911).",
+            subtitle: "We Provide support for Below SAP Certification",
+            content: "We Provide support for SAP Certified Application Associate – Master Data Governance (Exam Code: C_SGMDG_1911).",
             imageSrc: "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP MDG Infographic.webp",
             stats: [
                 { label: "Exam Code", value: "C_SGMDG_1911" },
@@ -635,12 +635,12 @@ Governance Portals and Reporting (≤10%)
 **Value:** Demonstrates expertise in SAP MDG configuration, data governance frameworks, master data management, and organizational governance implementation.
 **Job Relevance:** Data governance consultant positions, master data management roles, information management opportunities, governance compliance roles.
 
-**Our Certification Support**
+**Our Certification support**
 **Targeted Exam Preparation:** Study guides aligned to official exam blueprints with focus on real-world governance scenarios.
 **Practice Exams:** Timed practice tests mirroring real exam conditions with detailed explanations for each question.
 **Exam Strategies:** Tips for time management, question-reading techniques, and common pitfalls to avoid.
 **Exam Registration Guidance:** We assist with exam registration, scheduling, and technical setup.
-**Retake Support:** If you don't pass on your first attempt, we provide additional support, targeted study recommendations, and retake guidance.
+**Retake support:** If you don't pass on your first attempt, we provide additional support, targeted study recommendations, and retake guidance.
 
 **Why SAP MDG Certification Matters**
 **Global Credential Recognition:** SAP certifications are recognized worldwide by employers, clients, consulting firms, and regulatory bodies.
@@ -916,7 +916,7 @@ Governance Portals and Reporting (≤10%)
                     a: "A master data governance tutorial guides professionals through governance concepts, best practices, and tool functionality. ERPVITS provides comprehensive tutorials, videos, and hands-on guidance to help you master MDG governance implementation."
                 },
                 {
-                    q: "Does ERPVITS provide SAP MDG Training with Placement Support?",
+                    q: "Does ERPVITS provide SAP MDG Training with Placement support?",
                     a: "Yes! ERPVITS offers comprehensive SAP MDG Training with Placement assistance. We help you build an impressive profile, prepare for interviews, connect with recruiters, and support your transition into SAP MDG governance and management roles."
                 },
                 {

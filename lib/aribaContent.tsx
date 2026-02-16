@@ -22,7 +22,7 @@ export const aribaContent = {
         primary: "Book Free Demo Class →",
         secondary: "View Curriculum"
     },
-    metaTitle: "SAP Ariba Training | Certification & Job Support",
+    metaTitle: "SAP Ariba Training | Certification & Job support",
     metaDescription: "Learn SAP Ariba from experts. comprehensive module covering Sourcing, Contracts, SLP, Buying & Invoicing. 100% Practical Training with Placement Assistance.",
 
     features: [],
@@ -55,7 +55,7 @@ export const aribaContent = {
                     description: "Different from massive online courses for which instructors cater to thousands of anonymous learners, we limit our batches to 8-10 attendees. This enables instructors to provide individualized support and understand what you need to help you improve."
                 },
                 {
-                    title: "Career Support",
+                    title: "Career support",
                     description: "Learning SAP Ariba is only part of the equation—getting placed is the other part. Our dedicated career support staff helps you craft an SAP-focused resume, prepares you with mock interviews, and walks you through real interview questions from current hiring trends for **SAP Ariba Consultant jobs**. You'll be coached on how to effectively present project experience to help you shine in **Ariba Careers** interviews."
                 },
                 {
@@ -63,7 +63,7 @@ export const aribaContent = {
                     description: "Become a part of a flourishing network of SAP Ariba practitioners. Provide and receive advice, job leads, and frameworks, ask for and provide help, and establish professional networks that can result in referrals and partnerships."
                 },
                 {
-                    title: "Post-Training Support",
+                    title: "Post-Training support",
                     description: "Your learning experience does not end with the completion of **SAP Ariba Course**. For the six months after training, you will receive instructor support whether to help you troubleshoot a real project, clarify tough concepts or prepare for your initial consulting engagements."
                 }
             ]
@@ -84,7 +84,7 @@ export const aribaContent = {
                 "Mock interviews simulating real consultant scenarios",
                 "Dedicated **SAP Ariba Certification** prep week before exams"
             ],
-            supportTitle: "Complete Support Ecosystem",
+            supportTitle: "Complete support Ecosystem",
             supportText: "From pre-evaluation to post-training support, we guide you through every step of your SAP learning journey and career transition."
         },
         {
@@ -319,7 +319,7 @@ export const aribaContent = {
         {
             type: 'detailed_certification',
             title: "SAP Ariba Certification – Your Global Career Credential",
-            subtitle: "We Provide Support for Below SAP Certification List",
+            subtitle: "We Provide support for Below SAP Certification List",
             stats: [
                 { label: "Exam Code", value: "C_ARP2P_2404 / C_ARS_SAP2P_2404" },
                 { label: "Certification Value", value: "Global Recognition" },
@@ -344,7 +344,7 @@ export const aribaContent = {
 **Value:** Validates contract management expertise and compliance knowledge
 **Job Relevance:** Contract management and risk/compliance roles
 
-**Our Certification Support**
+**Our Certification support**
 Our study materials are designed to aid candidates in their exam preparations. Our system of study materials adopts a structure that seeks to follow the official blueprint of the exam.
 Guided exercises are provided in the form of practice exams that are timed in a manner that sufficiently imitates the actual exam experience.
 Exam preparation support consists of time management strategies, common time traps, techniques for effective question reading, and pointers on frequent exam pitfalls.
@@ -397,7 +397,7 @@ Client and employer trust is even more robust with the SAP badge, which spellbou
                     ]
                 },
                 {
-                    title: "First Role & Project Support",
+                    title: "First Role & Project support",
                     timeline: "Month 2-3",
                     color: "orange",
                     icon: "Briefcase",
@@ -593,7 +593,7 @@ Client and employer trust is even more robust with the SAP badge, which spellbou
                     answer: "SAP Ariba Pricing is determined by the scale of the business and usage. In Ariba Software training, ERPVITS discusses the functional aspects of pricing frameworks, licenses, and the costs related to implementation."
                 },
                 {
-                    question: "Does ERPVITS provide SAP Ariba Training with Placement Support?",
+                    question: "Does ERPVITS provide SAP Ariba Training with Placement support?",
                     answer: "Absolutely! ERPVITS provides SAP Ariba Training with Placement assistance. We aid in creating a strong resume, interview preparation, and offer connections with recruiters looking to fill positions related to SAP Ariba Consultant jobs."
                 },
                 {

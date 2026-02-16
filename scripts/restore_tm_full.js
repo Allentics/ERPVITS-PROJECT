@@ -186,7 +186,7 @@ const tmContent = {
     heroStats: [
         { icon: "award", label: "SAP Certified Trainers" },
         { icon: "star", label: "4.8 Learner Rating" },
-        { icon: "clock", label: "24/7 Team Support" },
+        { icon: "clock", label: "24/7 Team support" },
         { icon: "briefcase", label: "10+ Years Implementation Experience" }
     ],
     buttonLabels: {
@@ -227,7 +227,7 @@ const tmContent = {
                     description: "Unlike massive online courses with thousands of anonymous learners, our batches are capped at 8-10 participants. This ensures instructors can provide individualized attention, get to know your strengths and challenges, and offer targeted feedback on your configuration work."
                 },
                 {
-                    title: "Placement & Career Support",
+                    title: "Placement & Career support",
                     description: "Our dedicated career support team helps you build an impactful SAP TM-focused resume, prepare through mock interviews, and practice with real-world interview questions from recent hiring trends in logistics and supply chain sectors. You'll also receive guidance on how to present project experience effectively to stand out in SAP TM job interviews."
                 },
                 {
@@ -235,7 +235,7 @@ const tmContent = {
                     description: "Join a thriving community of SAP TM professionals. Exchange tips, share freight optimization strategies, discuss carrier selection scenarios, ask questions, and build professional relationships that can lead to referrals and collaborations."
                 },
                 {
-                    title: "Ongoing Support Post-Training",
+                    title: "Ongoing support Post-Training",
                     description: "Your learning journey doesn't end with SAP TM course completion. For six months after training, you'll continue to receive instructor guidance—whether you need help clarifying concepts, troubleshooting real-world project challenges, or seeking advice during your first consulting engagements managing transportation networks."
                 }
             ]
@@ -297,7 +297,7 @@ const tmContent = {
             stats: [
                 { value: "45-50", label: "Hours of Live Training", color: "orange" },
                 { value: "60+", label: "Hands-On Lab Exercises", color: "orange" },
-                { value: "100%", label: "Placement Support", color: "orange" }
+                { value: "100%", label: "Placement support", color: "orange" }
             ]
         },
         {
@@ -673,7 +673,7 @@ const tmContent = {
                     subtitle: "We assist with exam registration, scheduling, and technical setup"
                 },
                 {
-                    title: "Retake Support",
+                    title: "Retake support",
                     subtitle: "If you don't pass on your first attempt, we provide additional support and targeted study recommendations"
                 }
             ],
@@ -902,7 +902,7 @@ const tmContent = {
                     a: "SAP Logistics Business Network (LBN) enables collaborative freight management and visibility. ERPVITS covers LBN freight collaboration features, real-time tracking, carrier communication, and integration with SAP TM for end-to-end supply chain visibility."
                 },
                 {
-                    q: "Does ERPVITS provide SAP TM Training with Placement Support?",
+                    q: "Does ERPVITS provide SAP TM Training with Placement support?",
                     a: "Yes! ERPVITS offers comprehensive SAP TM Training with Placement assistance. We help you build an impressive profile, prepare for interviews, connect with recruiters, and support your transition into SAP TM consulting roles."
                 },
                 {

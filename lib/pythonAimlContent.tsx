@@ -44,7 +44,6 @@ export const pythonAimlContent: { price: string; duration: string; syllabusUrl: 
             items: [
                 {
                     title: "Expert-led Training",
-    heroHeading: <>Transform Your Career with the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">#1 Expert-led Training Online Training Program</span></>,
                     description: "Learn from certified professionals with real-world industry experience in AI & ML.",
                     icon: "UserCheck"
                 },
@@ -59,7 +58,7 @@ export const pythonAimlContent: { price: string; duration: string; syllabusUrl: 
                     icon: "Server"
                 },
                 {
-                    title: "Placement Support",
+                    title: "Placement support",
                     description: "Dedicated assistance with resume building, mock interviews, and job referrals.",
                     icon: "Users"
                 },
@@ -155,7 +154,7 @@ export const pythonAimlContent: { price: string; duration: string; syllabusUrl: 
                     session: "13",
                     topic: "Supervised Learning: Advanced Models",
                     hours: "2",
-                    description: "Support Vector Machines (SVM), hands-on with real datasets"
+                    description: "support Vector Machines (SVM), hands-on with real datasets"
                 },
                 {
                     session: "14",

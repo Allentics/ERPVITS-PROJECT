@@ -177,7 +177,7 @@ export const sdContent = {
                 },
                 {
                     "@type": "Question",
-                    "name": "Does ERPVITS provide SAP SD Training with Placement Support?",
+                    "name": "Does ERPVITS provide SAP SD Training with Placement support?",
                     "acceptedAnswer": {
                         "@type": "Answer",
                         "text": "ERPVITS does provide training with placement support and assistance for SAP SD Training. We also assist in profile development, interview preparations, and recruiter outreach."
@@ -214,11 +214,11 @@ export const sdContent = {
     title: "SAP SD",
     heroHeading: <>SAP SD Training with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">Real-Time Scenarios & Certified Trainers</span></>,
     heroSubheading: "The SAP SD Online Training Program (Sales & Distribution) from ERPVITS offers transformational learning opportunities to sales professionals and SAP consultants wishing to advance their skills in order management, billing, shipping, and enterprise resource planning. With the rapid advancements in the business world, there is an acute need for trained certified SAP SD professionals. Every business strives to streamline sales, optimize order picking and fulfillment, improve customer satisfaction, and increase profitability. The SAP SD course offers live training, real-world sales scenarios, hands-on lab exercises, and complete certification prep. SAP SD Training is designed for sales professionals in training, order management, and logistics, ERP consultants, and graduates aiming for global consulting and implementation jobs.",
-    badges: ["SAP Certified Trainers", "4.8 Learner Rating", "24/7 Team Support"],
+    badges: ["SAP Certified Trainers", "4.8 Learner Rating", "24/7 Team support"],
     heroStats: [
         { icon: "award", label: "SAP Certified Trainers" },
         { icon: "briefcase", label: "4.8 Learner Rating" },
-        { icon: "clock", label: "24/7 Team Support" }
+        { icon: "clock", label: "24/7 Team support" }
     ],
     buttonLabels: {
         primary: "Book Your Free Demo Class",
@@ -258,7 +258,7 @@ export const sdContent = {
                     description: "Unlike online courses that cater to large audiences with thousands of anonymous learners, we limit each class size to 8-10 participants so we can offer individualized attention. We can understand your strengths and challenges and provide personalized feedback."
                 },
                 {
-                    title: "Placement & Career Support",
+                    title: "Placement & Career support",
                     description: "Learning SAP SD is half the journey, and we understand that getting placed is the end goal. Our dedicated career support team assists you in developing SAP-centric resumes, guides you with mock interviews, and prepares you with relevant interview questions that reflect current hiring trends."
                 },
                 {
@@ -266,7 +266,7 @@ export const sdContent = {
                     description: "You will become part of a strong professional community of SAP SD and sales operations colleagues. We help you cultivate professional ties for collaboration, job posting and referrals."
                 },
                 {
-                    title: "Ongoing Support Post-Training",
+                    title: "Ongoing support Post-Training",
                     description: "Your learning journey doesn’t end with the SAP SD course. You will get six months of instructor support after training to help you with any questions, real world sales project challenges and first time consulting project advice."
                 }
             ]
@@ -286,9 +286,9 @@ export const sdContent = {
                 "Quarterly updated materials aligned with latest SAP releases",
                 "Mock interviews simulating real SD consultant scenarios",
                 "Dedicated certification prep week before exams",
-                "Complete Support Ecosystem"
+                "Complete support Ecosystem"
             ],
-            supportTitle: "Complete Support Ecosystem",
+            supportTitle: "Complete support Ecosystem",
             supportText: "From pre-evaluation to post-training support, we guide you through every step of your SAP SD learning journey and sales career transition."
         },
         {
@@ -696,7 +696,7 @@ export const sdContent = {
         {
             type: 'detailed_certification',
             title: "SAP SD Certification – Your Global Career Credential",
-            subtitle: "We Provide Support for Below SAP Certification List",
+            subtitle: "We Provide support for Below SAP Certification List",
             stats: [
                 { label: "Exam Code", value: "C_EWM_95/Equivalent" },
                 { label: "Focus", value: "End-to-End SD" },
@@ -709,12 +709,12 @@ export const sdContent = {
 **Value:** Demonstrates expertise in end-to-end SAP SD implementation
 **Job Relevance:** Entry to mid-level consultant positions
 
-**Our Certification Support:**
+**Our Certification support:**
 * **Focused Preparation:** Study materials that conform to official test blueprints.
 * **Mock Examinations:** Timed practice exams under conditions that simulate the actual test.
 * **Examination Strategies:** Techniques for managing time, reading the questions, and navigating common mistakes.
 * **Guidance with Registration:** Registration and exam scheduling assistance.
-* **Support for Retakers:** For those who don't pass the exam on the first try, we give extra assistance and advice on retaking.
+* **support for Retakers:** For those who don't pass the exam on the first try, we give extra assistance and advice on retaking.
 
 **Why SAP SD Certification Matters:**
 * **Internationally Recognized Credential:** SAP certification is acknowledged globally by employers, clients and recruitment agencies.
@@ -892,7 +892,7 @@ export const sdContent = {
                 {
                     year: "Years 1–2",
                     title: "SAP SD Consultant",
-                    description: "Support clients in sales process design, configuration, go-live"
+                    description: "support clients in sales process design, configuration, go-live"
                 },
                 {
                     year: "Years 3–4",
@@ -1080,7 +1080,7 @@ export const sdContent = {
                     answer: "Corporate pricing will depend on how the company wants to be charged for the license. The licenses can be structured as per user licenses or an enterprise agreement. Functional licensing and implementation cost insights will be offered by ERPVITS."
                 },
                 {
-                    question: "Does ERPVITS provide SAP SD Training with Placement Support?",
+                    question: "Does ERPVITS provide SAP SD Training with Placement support?",
                     answer: "ERPVITS does provide training with placement support and assistance for SAP SD Training. We also assist in profile development, interview preparations, and recruiter outreach."
                 },
                 {

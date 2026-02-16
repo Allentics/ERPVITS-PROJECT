@@ -534,7 +534,7 @@ VALUES ('sap-fico-cash-journal-configuration', 'Step-by-Step Cash Journal Config
                     <h3>End-to-End Process Integration</h3>
                     <p>Comprehensive training on cash journal integration with AR/AP processes, bank reconciliation, month-end closing, and financial reporting procedures.</p>
 
-                    <h3>Certification and Career Support</h3>
+                    <h3>Certification and Career support</h3>
                     <p>ERPVITS provides comprehensive certification preparation and career placement assistance to help you succeed in your SAP FICO career journey.</p>
 
                     <h3>Expert Mentorship</h3>
@@ -635,7 +635,7 @@ VALUES ('sap-fico-cash-journal-configuration', 'Step-by-Step Cash Journal Config
                     <ul>
                         <li>SAP S/4HANA MM Consultant</li>
                         <li>Procurement Functional Consultant</li>
-                        <li>SAP MM Support Analyst</li>
+                        <li>SAP MM support Analyst</li>
                         <li>SAP Supply Chain Consultant</li>
                         <li>SAP Implementation Specialist</li>
                     </ul>
@@ -725,7 +725,7 @@ VALUES ('sap-tcodes-list-pdf', 'SAP Transaction Codes (TCodes): Download Complet
                     <h3>3. Integration with Financial Accounting (FI)</h3>
                     <p>One of the most powerful aspects of the Cash Journal is its tight integration with the SAP Financial Accounting (FI) module. Each entry in the Cash Journal automatically updates the General Ledger (G/L), Accounts Payable (AP), and Accounts Receivable (AR) based on the transaction type, ensuring consistent financial data across the system.</p>
 
-                    <h3>4. Support for Multiple Cash Journals</h3>
+                    <h3>4. support for Multiple Cash Journals</h3>
                     <p>SAP allows organizations to create multiple cash journals based on business requirements. For instance, you can set up separate journals for different company codes, currencies, or business units. This flexibility ensures that cash handling is organized and managed according to the organizational structure.</p>
 
                     <h3>5. Automatic Account Determination</h3>
@@ -1426,7 +1426,7 @@ VALUES ('sap-ariba-supplier-login-tutorial', 'SAP Ariba Supplier Login Tutorial:
                                 </tr>
                                 <tr>
                                     <td className="border border-gray-300 px-6 py-3 font-bold text-gray-700">Locked Accounts</td>
-                                    <td className="border border-gray-300 px-6 py-3 text-gray-600">Wait 30 minutes or use password reset option. Contact SAP Ariba Support if issues persist</td>
+                                    <td className="border border-gray-300 px-6 py-3 text-gray-600">Wait 30 minutes or use password reset option. Contact SAP Ariba support if issues persist</td>
                                 </tr>
                                 <tr>
                                     <td className="border border-gray-300 px-6 py-3 font-bold text-gray-700">Missing Invitation</td>
@@ -1540,7 +1540,7 @@ VALUES ('sap-fieldglass-vs-traditional-vms', 'SAP Fieldglass vs Traditional Vend
                         <li>VAT/GST handling for international transactions</li>
                     </ul>
 
-                    <h2>Getting Support</h2>
+                    <h2>Getting support</h2>
 
                     <h3>Self-Service Resources</h3>
                     <ul>
@@ -1550,7 +1550,7 @@ VALUES ('sap-fieldglass-vs-traditional-vms', 'SAP Fieldglass vs Traditional Vend
                         <li>Comprehensive FAQs</li>
                     </ul>
 
-                    <h3>Direct Support</h3>
+                    <h3>Direct support</h3>
                     <ul>
                         <li>Submit support tickets through portal</li>
                         <li>Call 24/7 support hotline</li>
@@ -1815,7 +1815,7 @@ VALUES ('sap-cpi-interview-questions', 'SAP CPI Interview Questions & Answers: C
 
                     <ul>
                         <li>SAP Fieldglass Consultant</li>
-                        <li>SAP Fieldglass Support Analyst</li>
+                        <li>SAP Fieldglass support Analyst</li>
                         <li>External Workforce Manager</li>
                         <li>Vendor Management Specialist</li>
                         <li>Contingent Workforce Coordinator</li>
@@ -1833,7 +1833,7 @@ VALUES ('sap-cpi-interview-questions', 'SAP CPI Interview Questions & Answers: C
                         <li>Exercises for practical application</li>
                         <li>Guidance from trainers</li>
                         <li>Preparation for interviews</li>
-                        <li>Support for obtaining certification</li>
+                        <li>support for obtaining certification</li>
                     </ul>
 
                     <p>Regardless of whether you come from procurement, HR, operations, or IT, SAP Fieldglass online training will help open up your career potential.</p>
@@ -2408,7 +2408,7 @@ VALUES ('high-paying-sap-fico-jobs', 'High Paying SAP FICO Jobs: Skills, Salary,
                     <p>SAP FICO careers start with domain knowledge (finance/accounting), SAP FICO course completion or certification, and sustained hands-on experience. Positions are offered at all experience levels and continue to offer career advancement opportunities.</p>
 
                     <h3>Standard SAP FICO Career Ladder:</h3>
-                    <p><strong>Entry Level/Fresher Positions:</strong> Junior Consultant, Support Executive, SAP End-User<br />
+                    <p><strong>Entry Level/Fresher Positions:</strong> Junior Consultant, support Executive, SAP End-User<br />
                         For those searching for SAP FICO fresher jobs or SAP FICO jobs for freshers, these entry-level roles provide an excellent starting point. Many companies offer SAP FICO openings specifically designed for candidates new to the field.</p>
 
                     <p><strong>Mid Level:</strong> SAP FICO Consultant, Implementation Consultant, Project Lead<br />
@@ -2605,7 +2605,7 @@ VALUES ('high-paying-sap-fico-jobs', 'High Paying SAP FICO Jobs: Skills, Salary,
                     <p>SAP FICO salary in India ranges from ₹3.5-6 lakhs for freshers to ₹35-50+ lakhs for senior architects and consultants with 10+ years of experience. Mid-level consultants with 5-10 years earn ₹12-20 lakhs annually.</p>
 
                     <h3>Are there SAP FICO jobs for freshers?</h3>
-                    <p>Yes, many companies offer SAP FICO fresher jobs in roles like Junior Consultant, Support Executive, and SAP End-User. Entry-level positions typically offer ₹3.5-6 lakhs annually and provide excellent starting points for building an SAP FICO career.</p>
+                    <p>Yes, many companies offer SAP FICO fresher jobs in roles like Junior Consultant, support Executive, and SAP End-User. Entry-level positions typically offer ₹3.5-6 lakhs annually and provide excellent starting points for building an SAP FICO career.</p>
 
                     <h3>Which skills are most in-demand for SAP FICO jobs?</h3>
                     <p>The most in-demand SAP FICO skills include S/4HANA Finance configuration, Central Finance (CFIN), SAP Analytics Cloud, automation and RPA, regulatory compliance (IFRS, GAAP, GST), and integration with AI and machine learning technologies.</p>
@@ -2766,7 +2766,7 @@ VALUES ('top-7-sap-training-institutes', 'Top 7 SAP Training Institutes in India
                         <li>Concepts being clarified with real-life examples</li>
                         <li>Trainers assisting and guiding throughout the journey</li>
                         <li>Practice sessions instead of only theory</li>
-                        <li>Support in resume writing, career counseling, and module selection</li>
+                        <li>support in resume writing, career counseling, and module selection</li>
                         <li>Value for money compared to big-name institutes</li>
                     </ul>
 
@@ -3278,7 +3278,7 @@ VALUES ('sap-btp-cockpit-guide', 'SAP BTP Cockpit: Complete Guide to Login, Tria
             <ul>
                 <li>Cross industry and process embedded AI services</li>
                 <li>Customizable SAP AI Business Services with pre-trained models</li>
-                <li>Support for all major machine learning frameworks</li>
+                <li>support for all major machine learning frameworks</li>
                 <li>Automated machine learning</li>
             </ul>
 
@@ -3784,7 +3784,7 @@ VALUES ('sap-btp-cockpit-guide', 'SAP BTP Cockpit: Complete Guide to Login, Tria
             <ul>
                 <li>Cross industry and process embedded AI services</li>
                 <li>Customizable SAP AI Business Services with pre-trained models</li>
-                <li>Support for all major machine learning frameworks</li>
+                <li>support for all major machine learning frameworks</li>
                 <li>Automated machine learning</li>
             </ul>
 
@@ -4570,11 +4570,11 @@ VALUES ('sap-mm-course-complete-guide', 'SAP MM Course: Complete Guide to Materi
                 </div>
             </div>
 
-            <h2 className="text-2xl font-bold mt-8 mb-4">Project Lifecycle Mastery: From Implementation to Support</h2>
+            <h2 className="text-2xl font-bold mt-8 mb-4">Project Lifecycle Mastery: From Implementation to support</h2>
             <ul className="list-disc pl-6 space-y-4">
                 <li><strong>Implementation Projects:</strong> Deciding to transform functions on the platform from scratch.</li>
                 <li><strong>Rollout Projects:</strong> Extending SAP to global locations from a successful implementation geography.</li>
-                <li><strong>Support and Maintenance:</strong> Continuous support to business users for everyday operational queries.</li>
+                <li><strong>support and Maintenance:</strong> Continuous support to business users for everyday operational queries.</li>
             </ul>
 
             <h2 className="text-2xl font-bold mt-8 mb-4">The System Landscape: Your Path to Production</h2>
@@ -5439,7 +5439,7 @@ VALUES ('master-sap-ariba-with-industry-leading-online-training', 'Master SAP Ar
             </p>
             <ul className="list-disc pl-6 space-y-2 mt-2">
                 <li><strong>Certification Prep:</strong> Preparation for SAP Ariba certification exams with study materials, practice tests, and one-on-one guidance.</li>
-                <li><strong>Interview Support:</strong> Extensive interview preparation including resume building, mock interviews, and industry-specific question sets to sharpen both technical and communication skills.</li>
+                <li><strong>Interview support:</strong> Extensive interview preparation including resume building, mock interviews, and industry-specific question sets to sharpen both technical and communication skills.</li>
             </ul>
 
             <h2 className="text-2xl font-bold mt-8 mb-4">SAP Ariba Training Features with ERPvits</h2>
@@ -5804,7 +5804,7 @@ VALUES ('sap-fico-cash-journal-configuration', 'Step-by-Step Cash Journal Config
 
                     <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                         <h3 className="text-2xl font-semibold mb-3 flex items-center text-orange-600">
-                            4. Support for Multiple Cash Journals
+                            4. support for Multiple Cash Journals
                         </h3>
                         <p className="text-gray-600">
                             SAP allows organizations to create multiple cash journals based on business requirements. For instance, you can set up separate journals for different company codes, currencies, or business units. This flexibility ensures that cash handling is organized and managed according to the organizational structure.
@@ -7251,7 +7251,7 @@ VALUES ('sap-s4hana-mm-career-opportunities', 'SAP S/4HANA MM Career Opportuniti
             <ul>
                 <li>SAP S/4HANA MM Consultant</li>
                 <li>Procurement Functional Consultant</li>
-                <li>SAP MM Support Analyst</li>
+                <li>SAP MM support Analyst</li>
                 <li>SAP Supply Chain Consultant</li>
                 <li>SAP Implementation Specialist</li>
             </ul>
@@ -7569,7 +7569,7 @@ VALUES ('sap-ariba-supplier-login-tutorial', 'SAP Ariba Supplier Login Tutorial:
                 </div>
                 <div>
                     <h4 className="font-bold">Locked Accounts</h4>
-                    <p className="text-sm">After multiple failed login attempts, wait 30 minutes before trying again. Use the password reset option or contact SAP Ariba Support if issues persist.</p>
+                    <p className="text-sm">After multiple failed login attempts, wait 30 minutes before trying again. Use the password reset option or contact SAP Ariba support if issues persist.</p>
                 </div>
                 <div>
                     <h4 className="font-bold">Missing Invitation Email</h4>
@@ -7647,7 +7647,7 @@ VALUES ('sap-ariba-supplier-login-tutorial', 'SAP Ariba Supplier Login Tutorial:
                 </div>
             </div>
 
-            <h2>Getting Support</h2>
+            <h2>Getting support</h2>
             <h3>Self-Service Resources</h3>
             <ul>
                 <li>Ariba Network Help Center</li>
@@ -7655,7 +7655,7 @@ VALUES ('sap-ariba-supplier-login-tutorial', 'SAP Ariba Supplier Login Tutorial:
                 <li>Community forums</li>
                 <li>Comprehensive FAQs</li>
             </ul>
-            <h3>Direct Support</h3>
+            <h3>Direct support</h3>
             <ul>
                 <li>Submit support tickets through portal</li>
                 <li>Call 24/7 support hotline</li>
@@ -7860,7 +7860,7 @@ VALUES ('sap-fieldglass-vs-traditional-vms', 'SAP Fieldglass vs Traditional Vend
             <p>The move to SAP Fieldglass from the earlier VMS has resulted in several opportunities to be created for high-demand job roles:</p>
             <ul>
                 <li>SAP Fieldglass Consultant</li>
-                <li>SAP Fieldglass Support Analyst</li>
+                <li>SAP Fieldglass support Analyst</li>
                 <li>External Workforce Manager</li>
                 <li>Vendor Management Specialist</li>
                 <li>Contingent Workforce Coordinator</li>
@@ -7876,7 +7876,7 @@ VALUES ('sap-fieldglass-vs-traditional-vms', 'SAP Fieldglass vs Traditional Vend
                 <li>Exercises for practical application</li>
                 <li>Guidance from trainers</li>
                 <li>Preparation for interviews</li>
-                <li>Support for obtaining certification</li>
+                <li>support for obtaining certification</li>
             </ul>
             <p>Regardless of whether you come from procurement, HR, operations, or IT, SAP Fieldglass online training will help open up your career potential.</p>
 
@@ -8375,7 +8375,7 @@ VALUES ('high-paying-sap-fico-jobs', 'High Paying SAP FICO Jobs: Skills, Salary,
 
             <h3 className="text-xl font-bold text-gray-800 mt-6 mb-3">Standard SAP FICO Career Ladder:</h3>
             <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li><strong>Entry Level/Fresher Position:</strong> Junior Consultant, Support Executive, ERP End User. For those searching for SAP FICO fresher jobs or SAP FICO jobs for freshers, these early-level roles provide an excellent starting point. Many companies offer SAP FICO openings specifically designed for candidates new to the field.</li>
+                <li><strong>Entry Level/Fresher Position:</strong> Junior Consultant, support Executive, ERP End User. For those searching for SAP FICO fresher jobs or SAP FICO jobs for freshers, these early-level roles provide an excellent starting point. Many companies offer SAP FICO openings specifically designed for candidates new to the field.</li>
                 <li><strong>Mid-Level:</strong> SAP FICO Consultant, Implementation Consultant, Project Lead. At this stage, professionals handle SAP FICO consultant jobs involving implementation, configuration, and client engagement.</li>
                 <li><strong>Senior Level:</strong> Senior Consultant, Solution Architect, Manager, Practice Lead.</li>
             </ul>
@@ -9385,7 +9385,7 @@ VALUES ('sap-btp-cockpit-guide', 'SAP BTP Cockpit: Complete Guide to Login, Tria
             <ul>
                 <li>Cross industry and process embedded AI services</li>
                 <li>Customizable SAP AI Business Services with pre-trained models</li>
-                <li>Support for all major machine learning frameworks</li>
+                <li>support for all major machine learning frameworks</li>
                 <li>Automated machine learning</li>
             </ul>
 
@@ -10171,11 +10171,11 @@ VALUES ('sap-mm-course-complete-guide', 'SAP MM Course: Complete Guide to Materi
                 </div>
             </div>
 
-            <h2 class="text-2xl font-bold mt-8 mb-4">Project Lifecycle Mastery: From Implementation to Support</h2>
+            <h2 class="text-2xl font-bold mt-8 mb-4">Project Lifecycle Mastery: From Implementation to support</h2>
             <ul class="list-disc pl-6 space-y-4">
                 <li><strong>Implementation Projects:</strong> Deciding to transform functions on the platform from scratch.</li>
                 <li><strong>Rollout Projects:</strong> Extending SAP to global locations from a successful implementation geography.</li>
-                <li><strong>Support and Maintenance:</strong> Continuous support to business users for everyday operational queries.</li>
+                <li><strong>support and Maintenance:</strong> Continuous support to business users for everyday operational queries.</li>
             </ul>
 
             <h2 class="text-2xl font-bold mt-8 mb-4">The System Landscape: Your Path to Production</h2>
@@ -11040,7 +11040,7 @@ VALUES ('master-sap-ariba-with-industry-leading-online-training', 'Master SAP Ar
             </p>
             <ul class="list-disc pl-6 space-y-2 mt-2">
                 <li><strong>Certification Prep:</strong> Preparation for SAP Ariba certification exams with study materials, practice tests, and one-on-one guidance.</li>
-                <li><strong>Interview Support:</strong> Extensive interview preparation including resume building, mock interviews, and industry-specific question sets to sharpen both technical and communication skills.</li>
+                <li><strong>Interview support:</strong> Extensive interview preparation including resume building, mock interviews, and industry-specific question sets to sharpen both technical and communication skills.</li>
             </ul>
 
             <h2 class="text-2xl font-bold mt-8 mb-4">SAP Ariba Training Features with ERPvits</h2>
@@ -11405,7 +11405,7 @@ VALUES ('sap-fico-cash-journal-configuration', 'Step-by-Step Cash Journal Config
 
                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                         <h3 class="text-2xl font-semibold mb-3 flex items-center text-orange-600">
-                            4. Support for Multiple Cash Journals
+                            4. support for Multiple Cash Journals
                         </h3>
                         <p class="text-gray-600">
                             SAP allows organizations to create multiple cash journals based on business requirements. For instance, you can set up separate journals for different company codes, currencies, or business units. This flexibility ensures that cash handling is organized and managed according to the organizational structure.
@@ -12852,7 +12852,7 @@ VALUES ('sap-s4hana-mm-career-opportunities', 'SAP S/4HANA MM Career Opportuniti
             <ul>
                 <li>SAP S/4HANA MM Consultant</li>
                 <li>Procurement Functional Consultant</li>
-                <li>SAP MM Support Analyst</li>
+                <li>SAP MM support Analyst</li>
                 <li>SAP Supply Chain Consultant</li>
                 <li>SAP Implementation Specialist</li>
             </ul>
@@ -13170,7 +13170,7 @@ VALUES ('sap-ariba-supplier-login-tutorial', 'SAP Ariba Supplier Login Tutorial:
                 </div>
                 <div>
                     <h4 class="font-bold">Locked Accounts</h4>
-                    <p class="text-sm">After multiple failed login attempts, wait 30 minutes before trying again. Use the password reset option or contact SAP Ariba Support if issues persist.</p>
+                    <p class="text-sm">After multiple failed login attempts, wait 30 minutes before trying again. Use the password reset option or contact SAP Ariba support if issues persist.</p>
                 </div>
                 <div>
                     <h4 class="font-bold">Missing Invitation Email</h4>
@@ -13248,7 +13248,7 @@ VALUES ('sap-ariba-supplier-login-tutorial', 'SAP Ariba Supplier Login Tutorial:
                 </div>
             </div>
 
-            <h2>Getting Support</h2>
+            <h2>Getting support</h2>
             <h3>Self-Service Resources</h3>
             <ul>
                 <li>Ariba Network Help Center</li>
@@ -13256,7 +13256,7 @@ VALUES ('sap-ariba-supplier-login-tutorial', 'SAP Ariba Supplier Login Tutorial:
                 <li>Community forums</li>
                 <li>Comprehensive FAQs</li>
             </ul>
-            <h3>Direct Support</h3>
+            <h3>Direct support</h3>
             <ul>
                 <li>Submit support tickets through portal</li>
                 <li>Call 24/7 support hotline</li>
@@ -13461,7 +13461,7 @@ VALUES ('sap-fieldglass-vs-traditional-vms', 'SAP Fieldglass vs Traditional Vend
             <p>The move to SAP Fieldglass from the earlier VMS has resulted in several opportunities to be created for high-demand job roles:</p>
             <ul>
                 <li>SAP Fieldglass Consultant</li>
-                <li>SAP Fieldglass Support Analyst</li>
+                <li>SAP Fieldglass support Analyst</li>
                 <li>External Workforce Manager</li>
                 <li>Vendor Management Specialist</li>
                 <li>Contingent Workforce Coordinator</li>
@@ -13477,7 +13477,7 @@ VALUES ('sap-fieldglass-vs-traditional-vms', 'SAP Fieldglass vs Traditional Vend
                 <li>Exercises for practical application</li>
                 <li>Guidance from trainers</li>
                 <li>Preparation for interviews</li>
-                <li>Support for obtaining certification</li>
+                <li>support for obtaining certification</li>
             </ul>
             <p>Regardless of whether you come from procurement, HR, operations, or IT, SAP Fieldglass online training will help open up your career potential.</p>
 
@@ -13976,7 +13976,7 @@ VALUES ('high-paying-sap-fico-jobs', 'High Paying SAP FICO Jobs: Skills, Salary,
 
             <h3 class="text-xl font-bold text-gray-800 mt-6 mb-3">Standard SAP FICO Career Ladder:</h3>
             <ul class="list-disc pl-6 mb-6 space-y-2">
-                <li><strong>Entry Level/Fresher Position:</strong> Junior Consultant, Support Executive, ERP End User. For those searching for SAP FICO fresher jobs or SAP FICO jobs for freshers, these early-level roles provide an excellent starting point. Many companies offer SAP FICO openings specifically designed for candidates new to the field.</li>
+                <li><strong>Entry Level/Fresher Position:</strong> Junior Consultant, support Executive, ERP End User. For those searching for SAP FICO fresher jobs or SAP FICO jobs for freshers, these early-level roles provide an excellent starting point. Many companies offer SAP FICO openings specifically designed for candidates new to the field.</li>
                 <li><strong>Mid-Level:</strong> SAP FICO Consultant, Implementation Consultant, Project Lead. At this stage, professionals handle SAP FICO consultant jobs involving implementation, configuration, and client engagement.</li>
                 <li><strong>Senior Level:</strong> Senior Consultant, Solution Architect, Manager, Practice Lead.</li>
             </ul>
@@ -14986,7 +14986,7 @@ VALUES ('sap-btp-cockpit-guide', 'SAP BTP Cockpit: Complete Guide to Login, Tria
             <ul>
                 <li>Cross industry and process embedded AI services</li>
                 <li>Customizable SAP AI Business Services with pre-trained models</li>
-                <li>Support for all major machine learning frameworks</li>
+                <li>support for all major machine learning frameworks</li>
                 <li>Automated machine learning</li>
             </ul>
 
@@ -15772,11 +15772,11 @@ VALUES ('sap-mm-course-complete-guide', 'SAP MM Course: Complete Guide to Materi
                 </div>
             </div>
 
-            <h2 class="text-2xl font-bold mt-8 mb-4">Project Lifecycle Mastery: From Implementation to Support</h2>
+            <h2 class="text-2xl font-bold mt-8 mb-4">Project Lifecycle Mastery: From Implementation to support</h2>
             <ul class="list-disc pl-6 space-y-4">
                 <li><strong>Implementation Projects:</strong> Deciding to transform functions on the platform from scratch.</li>
                 <li><strong>Rollout Projects:</strong> Extending SAP to global locations from a successful implementation geography.</li>
-                <li><strong>Support and Maintenance:</strong> Continuous support to business users for everyday operational queries.</li>
+                <li><strong>support and Maintenance:</strong> Continuous support to business users for everyday operational queries.</li>
             </ul>
 
             <h2 class="text-2xl font-bold mt-8 mb-4">The System Landscape: Your Path to Production</h2>
@@ -16641,7 +16641,7 @@ VALUES ('master-sap-ariba-with-industry-leading-online-training', 'Master SAP Ar
             </p>
             <ul class="list-disc pl-6 space-y-2 mt-2">
                 <li><strong>Certification Prep:</strong> Preparation for SAP Ariba certification exams with study materials, practice tests, and one-on-one guidance.</li>
-                <li><strong>Interview Support:</strong> Extensive interview preparation including resume building, mock interviews, and industry-specific question sets to sharpen both technical and communication skills.</li>
+                <li><strong>Interview support:</strong> Extensive interview preparation including resume building, mock interviews, and industry-specific question sets to sharpen both technical and communication skills.</li>
             </ul>
 
             <h2 class="text-2xl font-bold mt-8 mb-4">SAP Ariba Training Features with ERPvits</h2>
@@ -17006,7 +17006,7 @@ VALUES ('sap-fico-cash-journal-configuration', 'Step-by-Step Cash Journal Config
 
                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                         <h3 class="text-2xl font-semibold mb-3 flex items-center text-orange-600">
-                            4. Support for Multiple Cash Journals
+                            4. support for Multiple Cash Journals
                         </h3>
                         <p class="text-gray-600">
                             SAP allows organizations to create multiple cash journals based on business requirements. For instance, you can set up separate journals for different company codes, currencies, or business units. This flexibility ensures that cash handling is organized and managed according to the organizational structure.
@@ -18453,7 +18453,7 @@ VALUES ('sap-s4hana-mm-career-opportunities', 'SAP S/4HANA MM Career Opportuniti
             <ul>
                 <li>SAP S/4HANA MM Consultant</li>
                 <li>Procurement Functional Consultant</li>
-                <li>SAP MM Support Analyst</li>
+                <li>SAP MM support Analyst</li>
                 <li>SAP Supply Chain Consultant</li>
                 <li>SAP Implementation Specialist</li>
             </ul>
@@ -18771,7 +18771,7 @@ VALUES ('sap-ariba-supplier-login-tutorial', 'SAP Ariba Supplier Login Tutorial:
                 </div>
                 <div>
                     <h4 class="font-bold">Locked Accounts</h4>
-                    <p class="text-sm">After multiple failed login attempts, wait 30 minutes before trying again. Use the password reset option or contact SAP Ariba Support if issues persist.</p>
+                    <p class="text-sm">After multiple failed login attempts, wait 30 minutes before trying again. Use the password reset option or contact SAP Ariba support if issues persist.</p>
                 </div>
                 <div>
                     <h4 class="font-bold">Missing Invitation Email</h4>
@@ -18849,7 +18849,7 @@ VALUES ('sap-ariba-supplier-login-tutorial', 'SAP Ariba Supplier Login Tutorial:
                 </div>
             </div>
 
-            <h2>Getting Support</h2>
+            <h2>Getting support</h2>
             <h3>Self-Service Resources</h3>
             <ul>
                 <li>Ariba Network Help Center</li>
@@ -18857,7 +18857,7 @@ VALUES ('sap-ariba-supplier-login-tutorial', 'SAP Ariba Supplier Login Tutorial:
                 <li>Community forums</li>
                 <li>Comprehensive FAQs</li>
             </ul>
-            <h3>Direct Support</h3>
+            <h3>Direct support</h3>
             <ul>
                 <li>Submit support tickets through portal</li>
                 <li>Call 24/7 support hotline</li>
@@ -19062,7 +19062,7 @@ VALUES ('sap-fieldglass-vs-traditional-vms', 'SAP Fieldglass vs Traditional Vend
             <p>The move to SAP Fieldglass from the earlier VMS has resulted in several opportunities to be created for high-demand job roles:</p>
             <ul>
                 <li>SAP Fieldglass Consultant</li>
-                <li>SAP Fieldglass Support Analyst</li>
+                <li>SAP Fieldglass support Analyst</li>
                 <li>External Workforce Manager</li>
                 <li>Vendor Management Specialist</li>
                 <li>Contingent Workforce Coordinator</li>
@@ -19078,7 +19078,7 @@ VALUES ('sap-fieldglass-vs-traditional-vms', 'SAP Fieldglass vs Traditional Vend
                 <li>Exercises for practical application</li>
                 <li>Guidance from trainers</li>
                 <li>Preparation for interviews</li>
-                <li>Support for obtaining certification</li>
+                <li>support for obtaining certification</li>
             </ul>
             <p>Regardless of whether you come from procurement, HR, operations, or IT, SAP Fieldglass online training will help open up your career potential.</p>
 
@@ -19577,7 +19577,7 @@ VALUES ('high-paying-sap-fico-jobs', 'High Paying SAP FICO Jobs: Skills, Salary,
 
             <h3 class="text-xl font-bold text-gray-800 mt-6 mb-3">Standard SAP FICO Career Ladder:</h3>
             <ul class="list-disc pl-6 mb-6 space-y-2">
-                <li><strong>Entry Level/Fresher Position:</strong> Junior Consultant, Support Executive, ERP End User. For those searching for SAP FICO fresher jobs or SAP FICO jobs for freshers, these early-level roles provide an excellent starting point. Many companies offer SAP FICO openings specifically designed for candidates new to the field.</li>
+                <li><strong>Entry Level/Fresher Position:</strong> Junior Consultant, support Executive, ERP End User. For those searching for SAP FICO fresher jobs or SAP FICO jobs for freshers, these early-level roles provide an excellent starting point. Many companies offer SAP FICO openings specifically designed for candidates new to the field.</li>
                 <li><strong>Mid-Level:</strong> SAP FICO Consultant, Implementation Consultant, Project Lead. At this stage, professionals handle SAP FICO consultant jobs involving implementation, configuration, and client engagement.</li>
                 <li><strong>Senior Level:</strong> Senior Consultant, Solution Architect, Manager, Practice Lead.</li>
             </ul>
@@ -20587,7 +20587,7 @@ VALUES ('sap-btp-cockpit-guide', 'SAP BTP Cockpit: Complete Guide to Login, Tria
             <ul>
                 <li>Cross industry and process embedded AI services</li>
                 <li>Customizable SAP AI Business Services with pre-trained models</li>
-                <li>Support for all major machine learning frameworks</li>
+                <li>support for all major machine learning frameworks</li>
                 <li>Automated machine learning</li>
             </ul>
 
@@ -21380,11 +21380,11 @@ VALUES ('sap-mm-course-complete-guide', 'SAP MM Course: Complete Guide to Materi
                 </div>
             </div>
 
-            <h2 class="text-2xl font-bold mt-8 mb-4">Project Lifecycle Mastery: From Implementation to Support</h2>
+            <h2 class="text-2xl font-bold mt-8 mb-4">Project Lifecycle Mastery: From Implementation to support</h2>
             <ul class="list-disc pl-6 space-y-4">
                 <li><strong>Implementation Projects:</strong> Deciding to transform functions on the platform from scratch.</li>
                 <li><strong>Rollout Projects:</strong> Extending SAP to global locations from a successful implementation geography.</li>
-                <li><strong>Support and Maintenance:</strong> Continuous support to business users for everyday operational queries.</li>
+                <li><strong>support and Maintenance:</strong> Continuous support to business users for everyday operational queries.</li>
             </ul>
 
             <h2 class="text-2xl font-bold mt-8 mb-4">The System Landscape: Your Path to Production</h2>
@@ -22263,7 +22263,7 @@ VALUES ('master-sap-ariba-with-industry-leading-online-training', 'Master SAP Ar
             </p>
             <ul class="list-disc pl-6 space-y-2 mt-2">
                 <li><strong>Certification Prep:</strong> Preparation for SAP Ariba certification exams with study materials, practice tests, and one-on-one guidance.</li>
-                <li><strong>Interview Support:</strong> Extensive interview preparation including resume building, mock interviews, and industry-specific question sets to sharpen both technical and communication skills.</li>
+                <li><strong>Interview support:</strong> Extensive interview preparation including resume building, mock interviews, and industry-specific question sets to sharpen both technical and communication skills.</li>
             </ul>
 
             <h2 class="text-2xl font-bold mt-8 mb-4">SAP Ariba Training Features with ERPvits</h2>
@@ -22636,7 +22636,7 @@ VALUES ('sap-fico-cash-journal-configuration', 'Step-by-Step Cash Journal Config
 
                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                         <h3 class="text-2xl font-semibold mb-3 flex items-center text-orange-600">
-                            4. Support for Multiple Cash Journals
+                            4. support for Multiple Cash Journals
                         </h3>
                         <p class="text-gray-600">
                             SAP allows organizations to create multiple cash journals based on business requirements. For instance, you can set up separate journals for different company codes, currencies, or business units. This flexibility ensures that cash handling is organized and managed according to the organizational structure.
@@ -24095,7 +24095,7 @@ VALUES ('sap-s4hana-mm-career-opportunities', 'SAP S/4HANA MM Career Opportuniti
             <ul>
                 <li>SAP S/4HANA MM Consultant</li>
                 <li>Procurement Functional Consultant</li>
-                <li>SAP MM Support Analyst</li>
+                <li>SAP MM support Analyst</li>
                 <li>SAP Supply Chain Consultant</li>
                 <li>SAP Implementation Specialist</li>
             </ul>
@@ -24423,7 +24423,7 @@ VALUES ('sap-ariba-supplier-login-tutorial', 'SAP Ariba Supplier Login Tutorial:
                 </div>
                 <div>
                     <h4 class="font-bold">Locked Accounts</h4>
-                    <p class="text-sm">After multiple failed login attempts, wait 30 minutes before trying again. Use the password reset option or contact SAP Ariba Support if issues persist.</p>
+                    <p class="text-sm">After multiple failed login attempts, wait 30 minutes before trying again. Use the password reset option or contact SAP Ariba support if issues persist.</p>
                 </div>
                 <div>
                     <h4 class="font-bold">Missing Invitation Email</h4>
@@ -24501,7 +24501,7 @@ VALUES ('sap-ariba-supplier-login-tutorial', 'SAP Ariba Supplier Login Tutorial:
                 </div>
             </div>
 
-            <h2>Getting Support</h2>
+            <h2>Getting support</h2>
             <h3>Self-Service Resources</h3>
             <ul>
                 <li>Ariba Network Help Center</li>
@@ -24509,7 +24509,7 @@ VALUES ('sap-ariba-supplier-login-tutorial', 'SAP Ariba Supplier Login Tutorial:
                 <li>Community forums</li>
                 <li>Comprehensive FAQs</li>
             </ul>
-            <h3>Direct Support</h3>
+            <h3>Direct support</h3>
             <ul>
                 <li>Submit support tickets through portal</li>
                 <li>Call 24/7 support hotline</li>
@@ -24715,7 +24715,7 @@ VALUES ('sap-fieldglass-vs-traditional-vms', 'SAP Fieldglass vs Traditional Vend
             <p>The move to SAP Fieldglass from the earlier VMS has resulted in several opportunities to be created for high-demand job roles:</p>
             <ul>
                 <li>SAP Fieldglass Consultant</li>
-                <li>SAP Fieldglass Support Analyst</li>
+                <li>SAP Fieldglass support Analyst</li>
                 <li>External Workforce Manager</li>
                 <li>Vendor Management Specialist</li>
                 <li>Contingent Workforce Coordinator</li>
@@ -24731,7 +24731,7 @@ VALUES ('sap-fieldglass-vs-traditional-vms', 'SAP Fieldglass vs Traditional Vend
                 <li>Exercises for practical application</li>
                 <li>Guidance from trainers</li>
                 <li>Preparation for interviews</li>
-                <li>Support for obtaining certification</li>
+                <li>support for obtaining certification</li>
             </ul>
             <p>Regardless of whether you come from procurement, HR, operations, or IT, SAP Fieldglass online training will help open up your career potential.</p>
 
@@ -25236,7 +25236,7 @@ VALUES ('high-paying-sap-fico-jobs', 'High Paying SAP FICO Jobs: Skills, Salary,
 
             <h3 class="text-xl font-bold text-gray-800 mt-6 mb-3">Standard SAP FICO Career Ladder:</h3>
             <ul class="list-disc pl-6 mb-6 space-y-2">
-                <li><strong>Entry Level/Fresher Position:</strong> Junior Consultant, Support Executive, ERP End User. For those searching for SAP FICO fresher jobs or SAP FICO jobs for freshers, these early-level roles provide an excellent starting point. Many companies offer SAP FICO openings specifically designed for candidates new to the field.</li>
+                <li><strong>Entry Level/Fresher Position:</strong> Junior Consultant, support Executive, ERP End User. For those searching for SAP FICO fresher jobs or SAP FICO jobs for freshers, these early-level roles provide an excellent starting point. Many companies offer SAP FICO openings specifically designed for candidates new to the field.</li>
                 <li><strong>Mid-Level:</strong> SAP FICO Consultant, Implementation Consultant, Project Lead. At this stage, professionals handle SAP FICO consultant jobs involving implementation, configuration, and client engagement.</li>
                 <li><strong>Senior Level:</strong> Senior Consultant, Solution Architect, Manager, Practice Lead.</li>
             </ul>

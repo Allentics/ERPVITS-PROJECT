@@ -125,7 +125,7 @@ const MasterSapAribaIndustryContent = () => {
             </p>
             <ul className="list-disc pl-6 space-y-2 mt-2">
                 <li><strong>Certification Prep:</strong> Preparation for SAP Ariba certification exams with study materials, practice tests, and one-on-one guidance.</li>
-                <li><strong>Interview Support:</strong> Extensive interview preparation including resume building, mock interviews, and industry-specific question sets to sharpen both technical and communication skills.</li>
+                <li><strong>Interview support:</strong> Extensive interview preparation including resume building, mock interviews, and industry-specific question sets to sharpen both technical and communication skills.</li>
             </ul>
 
             <h2 className="text-2xl font-bold mt-8 mb-4">SAP Ariba Training Features with ERPvits</h2>

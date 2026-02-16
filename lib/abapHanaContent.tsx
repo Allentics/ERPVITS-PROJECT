@@ -9,7 +9,7 @@ export const abapHanaContent = {
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Technical/sap-abap-on-hana.pdf",
     heroHeading: <>Master Modern ABAP Development with the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">#1 SAP ABAP on HANA Online Training Program</span></>,
     heroSubheading: "The SAP ABAP on HANA Online Training Program from ERPVITS represents a transformative learning pathway for professionals eager to excel in modern enterprise application development, cloud-native programming, and next-generation SAP technology. In today's digital transformation landscape, organizations urgently need certified SAP ABAP on HANA developers who can build robust applications, optimize database performance, leverage in-memory computing, and drive innovation through intelligent enterprise software. This comprehensive SAP ABAP on HANA training course combines interactive, instructor-led sessions, hands-on coding labs, real-time development projects, performance optimization simulations, and end-to-end certification support—designed specifically for software developers, SAP technicians, database developers, systems architects, and ambitious graduates targeting global ABAP development and SAP technology roles.",
-    badges: ["SAP Certified Trainers", "4.8 Learner Rating", "24/7 Team Support", "15+ Years ABAP Development Experience"],
+    badges: ["SAP Certified Trainers", "4.8 Learner Rating", "24/7 Team support", "15+ Years ABAP Development Experience"],
     description: "This comprehensive SAP ABAP on HANA training course combines interactive, instructor-led sessions, hands-on coding labs, real-time development projects, performance optimization simulations, and end-to-end certification support—designed specifically for software developers, SAP technicians, database developers, systems architects, and ambitious graduates targeting global ABAP development and SAP technology roles.",
 
     sections: [
@@ -49,7 +49,7 @@ export const abapHanaContent = {
                     icon: "Users"
                 },
                 {
-                    title: "Placement & Career Support",
+                    title: "Placement & Career support",
                     description: "Learning ABAP is only half the journey—getting placed is the goal. Our dedicated career support team helps you build an impactful ABAP-focused resume with portfolio projects, prepare through mock technical interviews, and practice with real-world coding challenges from recent hiring trends. You'll also receive guidance on how to present your code and projects effectively in ABAP developer interviews.",
                     icon: "TrendingUp"
                 },
@@ -59,7 +59,7 @@ export const abapHanaContent = {
                     icon: "Globe"
                 },
                 {
-                    title: "Ongoing Support Post-Training",
+                    title: "Ongoing support Post-Training",
                     description: "Your learning journey doesn't end with SAP ABAP on HANA course completion. For six months after training, you'll continue to receive instructor guidance—whether you need help with code reviews, troubleshooting production issues, or seeking advice during your first ABAP development roles.",
                     icon: "LifeBuoy"
                 }
@@ -80,7 +80,7 @@ export const abapHanaContent = {
         {
             type: 'content_with_image',
             title: "Why Professionals Choose ERPVITS for SAP ABAP on HANA Online Training",
-            description: "ERPVITS has established itself as a trusted training partner for SAP Technical Modules, with hundreds of successful learners working at top technology companies, consulting firms, and SAP development centers like SAP Labs, Accenture, Capgemini, Infosys, Wipro, and Microsoft. Our alumni network testimonials speak to the quality of instruction and the career acceleration our program delivers.\n\n**Complete Support Ecosystem**\nFrom pre-evaluation to post-training support, we guide you through every step of your SAP ABAP development learning journey and career transition.",
+            description: "ERPVITS has established itself as a trusted training partner for SAP Technical Modules, with hundreds of successful learners working at top technology companies, consulting firms, and SAP development centers like SAP Labs, Accenture, Capgemini, Infosys, Wipro, and Microsoft. Our alumni network testimonials speak to the quality of instruction and the career acceleration our program delivers.\n\n**Complete support Ecosystem**\nFrom pre-evaluation to post-training support, we guide you through every step of your SAP ABAP development learning journey and career transition.",
             items: [
                 "Trusted by 500+ successful SAP professionals",
                 "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro, SAP Labs, and leading technology organizations",
@@ -91,7 +91,7 @@ export const abapHanaContent = {
                 "Mock technical interviews with coding challenges",
                 "Dedicated code review and architecture feedback sessions"
             ],
-            supportTitle: "Complete Support Ecosystem",
+            supportTitle: "Complete support Ecosystem",
             supportText: "From pre-evaluation to post-training support, we guide you through every step of your SAP ABAP development learning journey and career transition."
         },
         {
@@ -425,7 +425,7 @@ export const abapHanaContent = {
                     title: "Existing SAP Employees Seeking Growth",
                     description: [
                         "Functional consultants wanting technical skills",
-                        "Support staff seeking development opportunities",
+                        "support staff seeking development opportunities",
                         "Power users transitioning to development",
                         "Technical support wanting advanced knowledge",
                         "IT team members targeting developer roles"
@@ -661,7 +661,7 @@ export const abapHanaContent = {
         {
             type: 'detailed_certification',
             title: "SAP ABAP Certification – Your Global Career Credential",
-            description: `**Our Certification Support**
+            description: `**Our Certification support**
 Targeted Exam Preparation: Study guides aligned to official exam blueprints with focus on practical coding scenarios
 Practice Exams: Timed practice tests mirroring real exam conditions with detailed explanations
 Code Challenges: Live coding challenges simulating actual exam scenarios
@@ -818,7 +818,7 @@ Competitive Advantage: Stand out in technical interviews and project selections`
                 },
                 {
                     timeline: "Month 2-3",
-                    title: "First Role & Project Support",
+                    title: "First Role & Project support",
                     points: [
                         "Secure first SAP ABAP development opportunity (typical timeline)",
                         "Begin real-world ABAP development experience",

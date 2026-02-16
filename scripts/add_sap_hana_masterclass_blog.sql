@@ -22,7 +22,7 @@ VALUES ('sap-hana-course-masterclass', 'SAP HANA Course: Complete Training Guide
                 <li><strong>Speed:</strong> Up to 50% faster analytics compared to traditional databases</li>
                 <li><strong>Cost Efficiency:</strong> 60% lower Total Cost of Ownership (TCO)</li>
                 <li><strong>Real-time Processing:</strong> Instant access to organizational data</li>
-                <li><strong>Scalability:</strong> Supports petabyte-scale data solutions</li>
+                <li><strong>Scalability:</strong> supports petabyte-scale data solutions</li>
             </ul>
 
             <h2>3. The "Trifecta" of HANA Technology</h2>

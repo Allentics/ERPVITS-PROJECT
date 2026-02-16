@@ -14,7 +14,7 @@ export default function CompetitiveAdvantage() {
         { name: "Placement Guarantee", erpvits: true, compA: false, compB: false, compC: false },
         { name: "Instructor Experience", erpvits: "15+ Years", compA: "10 Years", compB: "6 Years", compC: "12 Years" },
         { name: "Flexible Formats", erpvits: "6 Options", compA: "5 Options", compB: "2 Options", compC: "3 Options" },
-        { name: "24/7 Support", erpvits: true, compA: false, compB: false, compC: true },
+        { name: "24/7 support", erpvits: true, compA: false, compB: false, compC: true },
         { name: "Money-Back Guarantee", erpvits: true, compA: false, compB: true, compC: false },
     ];
 

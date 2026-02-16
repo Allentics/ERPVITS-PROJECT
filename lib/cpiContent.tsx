@@ -8,9 +8,9 @@ export const cpiContent = {
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Technical/sap-cpi.pdf",
     heroHeading: <>Master Cloud Integration Skills with Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">SAP CPI Training</span></>,
     heroSubheading: "The SAP CPI Training (Cloud Platform Integration) by ERPVITS enables professionals to master cloud integration, API management, and enterprise middleware technologies. As organizations increasingly adopt hybrid environments, the demand for certified SAP CPI experts who can connect cloud and on-premise systems, design integration flows, and enable real-time data exchange continues to rise. This comprehensive SAP CPI course combines instructor-led sessions, hands-on lab practice, and real-world integration projects to help developers, consultants, and cloud architects build the technical and practical skills required for global consulting and implementation careers.",
-    badges: ["SAP Certified Trainers", "4.6 Learner Rating", "24/7 Team Support"],
+    badges: ["SAP Certified Trainers", "4.6 Learner Rating", "24/7 Team support"],
     description: "The SAP CPI Training (Cloud Platform Integration) by ERPVITS enables professionals to master cloud integration, API management, and enterprise middleware technologies. As organizations increasingly adopt hybrid environments, the demand for certified SAP CPI experts who can connect cloud and on-premise systems, design integration flows, and enable real-time data exchange continues to rise. This comprehensive SAP CPI course combines instructor-led sessions, hands-on lab practice, and real-world integration projects to help developers, consultants, and cloud architects build the technical and practical skills required for global consulting and implementation careers.",
-    metaTitle: "SAP CPI Training with Certification Support | ERPVITS",
+    metaTitle: "SAP CPI Training with Certification support | ERPVITS",
     metaDescription: "Master Cloud Integration with SAP CPI Training. Learn cloud connectivity, API management and real-world projects through live sessions & expert training.",
     metaKeywords: "cpi certification sap, learn sap cpi, sap cpi certificate, sap cpi course, sap cpi course online, sap cpi full course, sap cpi learning, sap cpi online training, sap cpi training, sap cpi training online, sap cpi training online free, CPI Course, CPI Online Training",
     sections: [
@@ -44,7 +44,7 @@ export const cpiContent = {
                     description: "Unlike massive online courses with thousands of anonymous learners, our batches are capped at 8-10 participants. This ensures instructors can provide individualized attention, get to know your strengths and challenges, and offer targeted feedback on complex integration scenarios."
                 },
                 {
-                    title: "Placement & Career Support",
+                    title: "Placement & Career support",
                     description: "Learning SAP CPI is only half the journey—getting placed is the goal. Our dedicated career support team helps you craft an SAP-focused resume, prepares you for mock interviews, and helps you practice with real interview questions based on recent trends to increase your chances on the job market. You'll also receive guidance on presenting project experience in a compelling way that distinguishes you during SAP CPI integration job interviews."
                 },
                 {
@@ -52,7 +52,7 @@ export const cpiContent = {
                     description: "You'll join a community of SAP CPI and integration professionals. You'll be able to exchange tips, share job leads, post questions, and develop professional ties that can lead to referrals and collaboration."
                 },
                 {
-                    title: "Ongoing Post-Training Support",
+                    title: "Ongoing Post-Training support",
                     description: "Your learning journey doesn't stop after you've completed the SAP CPI course. For the subsequent six months after training, you will still have instructor support, whether you need clarification on concepts, assistance with troubleshooting the challenges of a real-world integration project, or whether you need guidance during your first consulting starts."
                 }
             ]
@@ -74,7 +74,7 @@ export const cpiContent = {
                 "Mock interviews to practice as a real CPI consultant",
                 "Certification prep week offered pre-exams"
             ],
-            supportTitle: "Complete Support Ecosystem",
+            supportTitle: "Complete support Ecosystem",
             supportText: "We offer support from pre-evaluation to after training to ensure a seamless SAP CPI learning journey and integration career transition."
         },
         {
@@ -505,7 +505,7 @@ export const cpiContent = {
         {
             type: 'detailed_certification',
             title: "SAP CPI Certification – Your Global Career Credential",
-            description: "We Provide Support for Below SAP Certification List",
+            description: "We Provide support for Below SAP Certification List",
             items: [
                 {
                     title: "SAP Certified Development Associate – SAP Cloud Platform Integration",
@@ -849,7 +849,7 @@ export const cpiContent = {
                     a: "Our course encompasses the integration flows, adapters, mappings, routing, security, monitoring, and operational facets, all with hands-on development practice."
                 },
                 {
-                    q: "Does ERPVITS offer SAP CPI Training with Placement Support?",
+                    q: "Does ERPVITS offer SAP CPI Training with Placement support?",
                     a: "Yes! ERPVITS delivers SAP CPI training coupled with placement support, focusing on integration profile development and recruiter connections."
                 },
                 {

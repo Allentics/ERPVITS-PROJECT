@@ -55,7 +55,7 @@ SET
           "description": "Unlike massive online courses with thousands of anonymous learners, our batches are capped at 8-10 participants. This ensures instructors can provide individualized attention, review your code, and offer targeted feedback on your development practices."
         },
         {
-          "title": "Placement & Career Support",
+          "title": "Placement & Career support",
           "description": "Learning ABAP is only half the journey—getting placed is the goal. Our dedicated career support team helps you build an impactful ABAP-focused resume with portfolio projects, prepare through mock technical interviews, and practice with real-world coding challenges from recent hiring trends. You''ll also receive guidance on how to present your code and projects effectively in ABAP developer interviews."
         },
         {
@@ -63,7 +63,7 @@ SET
           "description": "Join a thriving community of ABAP developers. Exchange coding techniques, share optimization strategies, discuss architecture challenges, ask questions, and build professional relationships that can lead to code reviews, collaborations, and referrals."
         },
         {
-          "title": "Ongoing Support Post-Training",
+          "title": "Ongoing support Post-Training",
           "description": "Your learning journey doesn''t end with SAP ABAP on HANA course completion. For six months after training, you''ll continue to receive instructor guidance—whether you need help with code reviews, troubleshooting production issues, or seeking advice during your first ABAP development roles."
         }
       ]
@@ -84,7 +84,7 @@ SET
         "Mock technical interviews with coding challenges",
         "Dedicated code review and architecture feedback sessions"
       ],
-      "supportTitle": "Complete Support Ecosystem",
+      "supportTitle": "Complete support Ecosystem",
       "supportText": "From pre-evaluation to post-training support, we guide you through every step of your SAP ABAP development learning journey and career transition."
     },
     {
@@ -427,7 +427,7 @@ SET
           "title": "Existing SAP Employees Seeking Growth",
           "description": [
             "Functional consultants wanting technical skills",
-            "Support staff seeking development opportunities",
+            "support staff seeking development opportunities",
             "Power users transitioning to development",
             "Technical support wanting advanced knowledge",
             "IT team members targeting developer roles"

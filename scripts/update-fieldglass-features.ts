@@ -70,7 +70,7 @@ const updateFieldglassFeatures = async () => {
                 icon: "Users"
             },
             {
-                title: "Placement & Career Support",
+                title: "Placement & Career support",
                 description: "Learning SAP Fieldglass is half the journey; for most learners, getting placed constitutes the goal of the course. Our career support team is focused on helping you construct a Fieldglass-centered resume, assists you with mock interviews, and provides you with Fieldglass interview questions based on recent hiring inquiries within the VMS and contingent workforce space. You will receive instruction on effectively framing your project experiences to make a positive impression during SAP Fieldglass job interviews.",
                 icon: "TrendingUp"
             },
@@ -80,7 +80,7 @@ const updateFieldglassFeatures = async () => {
                 icon: "Globe"
             },
             {
-                title: "Ongoing Support Post-Training",
+                title: "Ongoing support Post-Training",
                 description: "The SAP Fieldglass course and training may mark the end of formal training, but the learning journey will not end there. For any challenge related to concept clarification, any real-world challenges related to the VMS project the participant is working on, and initial consulting work in the area, there will be instructor support for the participant for six months post training.",
                 icon: "Headphones"
             }

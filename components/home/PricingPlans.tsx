@@ -20,7 +20,7 @@ const DEFAULT_CONTENT = {
                 "Learning materials included",
                 "Self-study assistance",
                 "Flexible learning timeline",
-                "24/7 Team Support"
+                "24/7 Team support"
             ],
             cta: "Start Learning Now",
             color: "blue",

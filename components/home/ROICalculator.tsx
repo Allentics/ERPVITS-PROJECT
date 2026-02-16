@@ -116,7 +116,7 @@ export default function ROICalculator() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {[
                         {
-                            from: "IT Support", to: "SAP Consultant",
+                            from: "IT support", to: "SAP Consultant",
                             start: "$45K", end: "$95K",
                             roi: "1,233% over 5 years", payback: "3.5 months"
                         },

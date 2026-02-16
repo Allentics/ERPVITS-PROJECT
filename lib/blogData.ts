@@ -75,7 +75,7 @@ export const blogPosts: BlogPost[] = [
     },
     {
         id: "sap-training-courses-uk",
-        title: "SAP Training Courses in UK: SAP Training Institutes, Courses, Certification & Placement Support",
+        title: "SAP Training Courses in UK: SAP Training Institutes, Courses, Certification & Placement support",
         description: "Join the best SAP training institute in UK. Complete SAP courses with certification support, expert faculty, and placement assistance in London, Manchester & Birmingham.",
         image: "/images/blog/sap-uk-training-landing.png",
         date: "Jan 22, 2026",
@@ -93,7 +93,7 @@ export const blogPosts: BlogPost[] = [
     },
     {
         id: "best-sap-s4hana-training-institute",
-        title: "Best SAP S/4HANA Training Institute: SAP S4HANA Course & Certification Support",
+        title: "Best SAP S/4HANA Training Institute: SAP S4HANA Course & Certification support",
         description: "Join the best SAP S/4HANA training institute. Complete SAP S4HANA course with certification support, expert faculty, and placement assistance.",
         image: "/images/blog/sap-s4hana-training.png",
         date: "Jan 20, 2026",

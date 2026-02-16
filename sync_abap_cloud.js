@@ -38,7 +38,7 @@ const abapCloudSections = [
                 description: "Our approach is to prioritize community learning. This is why we cap class sizes to 8–10 participants, a stark contrast to huge online programs, where learners remain anonymous in the thousands. This means that the teachers can learn your name and your unique situation and provide the necessary scaffolding in complex cloud development."
             },
             {
-                title: "Placement & Career Support",
+                title: "Placement & Career support",
                 description: "Learning **SAP ABAP on Cloud** is a means to an end, and we believe that end must be a placement. Our career support renders real value by working with learners to build an SAP targeted resume and helping with mock interviews relevant to the current market with real interview questions, and offering interview prep focused on cloud modernization to position candidates for **ABAP on HANA certification** and ABAP on Cloud key offers."
             },
             {
@@ -46,7 +46,7 @@ const abapCloudSections = [
                 description: "Become part of a community of SAP ABAP on Cloud developers and professionals working with the cloud. Participate in professional exchanges, job referrals, and collaboration. The community forum enables seamless sharing, networking, and support."
             },
             {
-                title: "Post-Training Ongoing Support",
+                title: "Post-Training Ongoing support",
                 description: "Learning does not stop after completing the **SAP ABAP full course** as you have six months of post-training support with your instructor. You will be able to reach out for assistance with clarifying theories, overcoming challenges with real world cloud projects, or guidance during your initial cloud development consulting projects."
             }
         ]
@@ -64,9 +64,9 @@ const abapCloudSections = [
             "Quarterly updated materials aligned with latest BTP and ABAP Cloud releases",
             "Mock interviews simulating real **ABAP developer course** scenarios",
             "Dedicated **SAP ABAP certification course** prep and technical bootcamp sessions",
-            "Complete Support Ecosystem"
+            "Complete support Ecosystem"
         ],
-        supportTitle: "Complete Support Ecosystem",
+        supportTitle: "Complete support Ecosystem",
         supportText: "We assist you on every part of your **SAP ABAP on Cloud online training** learning and transition to a Cloud ABAP career, from pre-evaluation to after training."
     },
     {
@@ -514,7 +514,7 @@ const abapCloudSections = [
     {
         type: 'detailed_certification',
         title: "SAP ABAP on Cloud Certification – Your Global Career Credential",
-        subtitle: "We Provide Support for Below SAP Certification List",
+        subtitle: "We Provide support for Below SAP Certification List",
         targetAudienceLabel: "Value",
         whyMattersTitle: "Why SAP ABAP on Cloud Certification Matters",
         items: [
@@ -544,7 +544,7 @@ const abapCloudSections = [
                 subtitle: "We assist with exam registration and scheduling"
             },
             {
-                title: "Retake Support",
+                title: "Retake support",
                 subtitle: "If you don't pass on your first attempt, we provide additional support and retake guidance"
             }
         ],
@@ -685,7 +685,7 @@ const abapCloudSections = [
                 ]
             },
             {
-                title: "First Role & Project Support",
+                title: "First Role & Project support",
                 timeline: "Month 2-3",
                 color: "orange",
                 icon: "Briefcase",

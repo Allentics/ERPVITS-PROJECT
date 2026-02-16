@@ -4,7 +4,7 @@ import { FileText, Target, Briefcase, BadgeDollarSign, Globe, Users, Rocket, Lin
 import { useState } from 'react';
 import ContactModal from '../ContactModal';
 
-export default function PlacementSupport() {
+export default function Placementsupport() {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const services = [
@@ -60,12 +60,12 @@ export default function PlacementSupport() {
             <ContactModal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
-                title="Get Started with Placement Support"
+                title="Get Started with Placement support"
             />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl font-bold text-slate-900 mb-4">
-                        Career Transformation Guaranteed – Placement Support Included
+                        Career Transformation Guaranteed – Placement support Included
                     </h2>
                     <p className="text-slate-500 max-w-2xl mx-auto">
                         Comprehensive career services to ensure your success in landing your dream SAP role
@@ -91,7 +91,7 @@ export default function PlacementSupport() {
                         onClick={() => setIsModalOpen(true)}
                         className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-transform hover:-translate-y-0.5"
                     >
-                        Get Started with Placement Support
+                        Get Started with Placement support
                     </button>
                 </div>
             </div>

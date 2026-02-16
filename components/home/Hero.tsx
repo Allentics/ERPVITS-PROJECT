@@ -20,7 +20,7 @@ const DEFAULT_CONTENT = {
     stats: [
         { val: "15+ Years", label: "In SAP Industry" },
         { val: "8000+", label: "Professionals Trained" },
-        { val: "24/7", label: "Team Support" },
+        { val: "24/7", label: "Team support" },
         { val: "8+", label: "SAP Solution Architects" }
     ]
 };

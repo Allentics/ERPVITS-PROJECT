@@ -165,7 +165,7 @@ export default function SapFieldglassVmsContent() {
             <p>The move to SAP Fieldglass from the earlier VMS has resulted in several opportunities to be created for high-demand job roles:</p>
             <ul>
                 <li>SAP Fieldglass Consultant</li>
-                <li>SAP Fieldglass Support Analyst</li>
+                <li>SAP Fieldglass support Analyst</li>
                 <li>External Workforce Manager</li>
                 <li>Vendor Management Specialist</li>
                 <li>Contingent Workforce Coordinator</li>
@@ -181,7 +181,7 @@ export default function SapFieldglassVmsContent() {
                 <li>Exercises for practical application</li>
                 <li>Guidance from trainers</li>
                 <li>Preparation for interviews</li>
-                <li>Support for obtaining certification</li>
+                <li>support for obtaining certification</li>
             </ul>
             <p>Regardless of whether you come from procurement, HR, operations, or IT, SAP Fieldglass online training will help open up your career potential.</p>
 

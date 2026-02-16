@@ -205,14 +205,14 @@ export default function DetailedPostTrainingJourney({ title, steps: propSteps, i
                                 <Briefcase className="w-5 h-5" />
                             </div>
                             <div className="text-lg font-bold text-white mb-1">100%</div>
-                            <div className="text-[10px] text-slate-400">Career Support</div>
+                            <div className="text-[10px] text-slate-400">Career support</div>
                         </div>
                         <div className="bg-[#ff4500]/10 p-6 rounded-xl text-center border border-[#ff4500]/10">
                             <div className="w-10 h-10 mx-auto bg-white rounded-full flex items-center justify-center text-[#ff4500] mb-3 shadow-sm">
                                 <Headphones className="w-5 h-5" />
                             </div>
                             <div className="text-lg font-bold text-slate-900 mb-1">6 Months</div>
-                            <div className="text-[10px] text-slate-500">Post-Training Support</div>
+                            <div className="text-[10px] text-slate-500">Post-Training support</div>
                         </div>
                         <div className="bg-slate-900 p-6 rounded-xl text-center border border-slate-800">
                             <div className="w-10 h-10 mx-auto bg-white/10 rounded-full flex items-center justify-center text-white mb-3">

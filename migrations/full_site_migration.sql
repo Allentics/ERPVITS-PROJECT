@@ -60,7 +60,7 @@ INSERT INTO public.site_content (page_path, section_key, content, order_index) V
     "stats": [
         {"val": "12+ Years", "label": "In SAP Industry"},
         {"val": "6000+", "label": "Professionals Trained"},
-        {"val": "24/7", "label": "Team Support"},
+        {"val": "24/7", "label": "Team support"},
         {"val": "8+", "label": "SAP Solution Architects"}
     ]
 }'::jsonb, 0)
@@ -165,13 +165,13 @@ INSERT INTO public.site_content (page_path, section_key, content, order_index) V
         },
         {
             "icon": "Award",
-            "title": "Job Placement Support & Career Support",
+            "title": "Job Placement support & Career support",
             "desc": "Placement success rate of >95%. Comprehensive support including resume prep, mock interviews, and hiring partner connections."
         },
         {
             "icon": "ShieldCheck",
             "title": "Guidance for Multiple SAP Certifications",
-            "desc": "Support for global certifications (Ariba, FICO, S/4HANA, etc.). Align coursework with exam requirements."
+            "desc": "support for global certifications (Ariba, FICO, S/4HANA, etc.). Align coursework with exam requirements."
         },
         {
             "icon": "Clock",
@@ -185,7 +185,7 @@ INSERT INTO public.site_content (page_path, section_key, content, order_index) V
         },
         {
             "icon": "Users",
-            "title": "Lifetime Career Support & Mentorship",
+            "title": "Lifetime Career support & Mentorship",
             "desc": "Lifetime access to mentors, alumni network, and professional development resources even after course completion."
         }
     ]

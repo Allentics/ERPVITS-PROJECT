@@ -11,7 +11,7 @@ const premiumCourses = {
         features: [
             "12+ Years Expert Instructors",
             "100% Hands-On Training",
-            "SAP Certification Support",
+            "SAP Certification support",
             "Real-World Projects",
             "Trusted by 500+ Successful Students"
         ]
@@ -24,7 +24,7 @@ const premiumCourses = {
         features: [
             "12+ Years Expert Instructors",
             "Real-Time Finance Scenarios",
-            "Certification Exam Support",
+            "Certification Exam support",
             "Placement Assistance",
             "Lifetime Recording Access"
         ]

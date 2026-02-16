@@ -34,8 +34,8 @@ const newJourney = {
     "title": "What to Expect After Completing SAP EWM Training – <span class=\"text-orange-600\">Your Growth Roadmap</span>",
     "stats": [
         { "icon": "Clock", "label": "Average Time to First Role", "value": "2-3 Months" },
-        { "icon": "Briefcase", "label": "Career Support Provided", "value": "100%" },
-        { "icon": "Headphones", "label": "Post-Training Support", "value": "6 Months" },
+        { "icon": "Briefcase", "label": "Career support Provided", "value": "100%" },
+        { "icon": "Headphones", "label": "Post-Training support", "value": "6 Months" },
         { "icon": "Users", "label": "Alumni Network Access", "value": "Lifetime" }
     ],
     "items": [

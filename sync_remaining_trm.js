@@ -297,7 +297,7 @@ const faqs = [
         a: "SAP TRM pricing depends on implementation scope and transaction volume. ERPVITS provides training on TRM licensing, pricing structure, and ROI estimation for organizations."
     },
     {
-        q: "Does ERPVITS provide SAP TRM Training with Placement Support?",
+        q: "Does ERPVITS provide SAP TRM Training with Placement support?",
         a: "Yes, ERPVITS provides SAP TRM Training with full placement support, helping you prepare resumes, develop consulting profiles, and connect with top finance recruiters."
     },
     {

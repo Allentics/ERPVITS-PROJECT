@@ -326,7 +326,7 @@ VALUES ('sap-btp-cockpit-guide', 'SAP BTP Cockpit: Complete Guide to Login, Tria
             <ul>
                 <li>Cross industry and process embedded AI services</li>
                 <li>Customizable SAP AI Business Services with pre-trained models</li>
-                <li>Support for all major machine learning frameworks</li>
+                <li>support for all major machine learning frameworks</li>
                 <li>Automated machine learning</li>
             </ul>
 

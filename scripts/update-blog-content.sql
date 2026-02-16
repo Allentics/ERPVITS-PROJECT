@@ -107,7 +107,7 @@ UPDATE blog_posts SET content = '<h2>What is SAP S/4HANA MM?</h2>
 <li>SAP projects in progress worldwide</li>
 </ul>
 <h2>Career Opportunities in India</h2>
-<p><strong>Job Roles:</strong> SAP S/4HANA MM Consultant, Procurement Functional Consultant, SAP MM Support Analyst, SAP Supply Chain Consultant</p>
+<p><strong>Job Roles:</strong> SAP S/4HANA MM Consultant, Procurement Functional Consultant, SAP MM support Analyst, SAP Supply Chain Consultant</p>
 <p><strong>Salary Scope:</strong> Fresher: ₹4-7 LPA | 3-5 Years: ₹8-15 LPA | Senior: ₹18-30+ LPA</p>
 <h2>International Career Opportunities</h2>
 <p><strong>Top Countries:</strong> Germany, USA, Canada, UAE, Saudi Arabia, Australia, UK</p>

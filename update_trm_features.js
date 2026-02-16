@@ -36,7 +36,7 @@ const trmDetailedFeatures = {
             description: "Capped at 8-10 members, we ensure you each get to know the instructor, and they get to know you, your strengths and weaknesses, and provide you with individual attention on complex financial scenarios."
         },
         {
-            title: "Placement & Career Support",
+            title: "Placement & Career support",
             description: "To get you ready for interviews, we have real treasury and banking interview questions, help you with mock interviews, and guide you in SAP-focused resume building. You also get support on how to effectively present your project experience."
         },
         {
@@ -44,7 +44,7 @@ const trmDetailedFeatures = {
             description: "Experience building a network within a community of SAP TRM and treasury technology specialists. Provide and receive career-related assistance, pose queries, and establish connections."
         },
         {
-            title: "Ongoing Support Post-Training",
+            title: "Ongoing support Post-Training",
             description: "For six months after training, you'll continue to receive instructor guidance—whether you need help clarifying treasury concepts, troubleshooting real-world financial project challenges, or seeking advice during your first TRM consulting engagements."
         }
     ]

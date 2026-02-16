@@ -78,7 +78,7 @@ export default function DetailedFAQ({ items, title, subtitle }: { items?: { ques
             answer: "While we focus on the functional consulting aspect, we provide an overview of Ariba's subscription and transaction fee models to help you advise clients."
         },
         {
-            question: "Does ERPVITS provide SAP Ariba Training with Placement Support?",
+            question: "Does ERPVITS provide SAP Ariba Training with Placement support?",
             answer: "Yes, we offer 100% placement assistance, including mock interviews, resume workshops, and direct referrals to our hiring partners upon course completion."
         },
         {

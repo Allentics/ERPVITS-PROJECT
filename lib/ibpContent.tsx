@@ -151,7 +151,7 @@ export const ibpContent = {
     heroStats: [
         { icon: "award", label: "SAP Certified Trainers" },
         { icon: "star", label: "4.8 Learner Rating" },
-        { icon: "clock", label: "24/7 Team Support" },
+        { icon: "clock", label: "24/7 Team support" },
         { icon: "briefcase", label: "12+ Years Exp." }
     ],
     buttonLabels: {
@@ -196,7 +196,7 @@ export const ibpContent = {
                     description: "Batches are capped at 8-10 participants to ensure instructors can provide individualized attention, get to know your strengths, and offer targeted feedback on your planning configurations."
                 },
                 {
-                    title: "Placement & Career Support",
+                    title: "Placement & Career support",
                     description: "Our dedicated career support team helps you build an impactful SAP IBP-focused resume, prepare through mock interviews, and practice with real-world interview questions."
                 },
                 {
@@ -204,7 +204,7 @@ export const ibpContent = {
                     description: "Join a thriving community of SAP IBP professionals. Exchange tips, share demand planning strategies, discuss forecasting challenges, and build professional relationships."
                 },
                 {
-                    title: "Ongoing Support Post-Training",
+                    title: "Ongoing support Post-Training",
                     description: "For six months after training, receive instructor guidance for clarifying concepts, troubleshooting real-world project challenges, or seeking advice during your first consulting engagements."
                 }
             ]
@@ -225,7 +225,7 @@ export const ibpContent = {
                 "Mock interviews simulating real consultant scenarios in integrated planning",
                 "Dedicated certification prep week before exams"
             ],
-            supportTitle: "Complete Support Ecosystem",
+            supportTitle: "Complete support Ecosystem",
             supportText: "From pre-evaluation to post-training support, we guide you through every step of your SAP IBP learning journey and career transition."
         },
         {
@@ -628,7 +628,7 @@ export const ibpContent = {
         {
             type: 'detailed_certification',
             title: "SAP IBP Certification – Your Global Career Credential",
-            subtitle: "We Provide Support for Below SAP Certification",
+            subtitle: "We Provide support for Below SAP Certification",
             stats: [
                 { label: "Exam Code", value: "C_IBPP_2402" },
                 { label: "Passing Score", value: "61%" },
@@ -649,12 +649,12 @@ export const ibpContent = {
 * Finance Integration in Planning (10-15%)
 * Analytics, Reporting, and Collaboration (10-15%)
 
-**Our Certification Support:**
+**Our Certification support:**
 * **Targeted Exam Preparation:** Study guides aligned to official blueprints.
 * **Practice Exams:** Timed tests mirroring real exam conditions.
 * **Exam Strategies:** Time management and question-reading techniques.
 * **Registration Guidance:** Assistance with scheduling and setup.
-* **Retake Support:** Targeted study recommendations if needed.
+* **Retake support:** Targeted study recommendations if needed.
 
 **Why Certification Matters:**
 * **Global Recognition:** Recognized by employers worldwide.
@@ -772,7 +772,7 @@ export const ibpContent = {
                 {
                     year: "Years 1-2",
                     title: "SAP IBP Consultant",
-                    description: "Support clients in demand and supply planning, system configuration, S&OP implementation on small to medium projects"
+                    description: "support clients in demand and supply planning, system configuration, S&OP implementation on small to medium projects"
                 },
                 {
                     year: "Years 3-4",
@@ -820,7 +820,7 @@ export const ibpContent = {
                     ]
                 },
                 {
-                    title: "First Role & Support",
+                    title: "First Role & support",
                     timeline: "Month 2-3",
                     color: "orange",
                     icon: "Briefcase",
@@ -838,7 +838,7 @@ export const ibpContent = {
                     points: [
                         "Learn client business/planning processes",
                         "Lead demand/supply configurations",
-                        "Support S&OP cycle setup",
+                        "support S&OP cycle setup",
                         "Drive process improvements"
                     ]
                 },
@@ -995,7 +995,7 @@ export const ibpContent = {
                     a: "S&OP is a monthly business review process aligning sales, finance, supply chain, and operations. SAP IBP enables integrated S&OP by consolidating demand, supply, and financial plans into a unified system, facilitating cross-functional decision-making and business alignment."
                 },
                 {
-                    q: "Does ERPVITS provide SAP IBP Training with Placement Support?",
+                    q: "Does ERPVITS provide SAP IBP Training with Placement support?",
                     a: "Yes! ERPVITS offers comprehensive SAP IBP Training with Placement assistance. We help you build an impressive profile, prepare for interviews, connect with recruiters, and support your transition into SAP IBP consulting and supply chain planning roles."
                 },
                 {

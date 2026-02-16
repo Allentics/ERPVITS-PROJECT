@@ -39,7 +39,7 @@ const ewmContent = {
                     icon: "Users"
                 },
                 {
-                    title: "Placement & Career Support",
+                    title: "Placement & Career support",
                     description: "Learning SAP EWM is only half the journey—getting placed is the goal. Our dedicated career support team helps you build an impactful SAP EWM-focused resume, prepare through mock interviews, and practice with real-world interview questions from recent hiring trends in warehouse and logistics sectors. You'll also receive guidance on how to present project experience effectively to stand out in SAP EWM job interviews.",
                     icon: "TrendingUp"
                 },
@@ -49,7 +49,7 @@ const ewmContent = {
                     icon: "Globe"
                 },
                 {
-                    title: "Ongoing Support Post-Training",
+                    title: "Ongoing support Post-Training",
                     description: "Your learning journey doesn't end with SAP EWM course completion. For six months after training, you'll continue to receive instructor guidance—whether you need help clarifying concepts, troubleshooting real-world project challenges, or seeking advice during your first consulting engagements managing warehouse operations.",
                     icon: "Headphones"
                 }
@@ -106,8 +106,8 @@ const ewmContent = {
             title: "What to Expect After Completing Training – <span class=\"text-orange-600\">Your Growth Roadmap</span>",
             stats: [
                 { icon: "Clock", label: "Average Time to First Role", value: "2-3 Months" },
-                { icon: "Briefcase", label: "Career Support Provided", value: "100%" },
-                { icon: "Headphones", label: "Post-Training Support", value: "6 Months" },
+                { icon: "Briefcase", label: "Career support Provided", value: "100%" },
+                { icon: "Headphones", label: "Post-Training support", value: "6 Months" },
                 { icon: "Users", label: "Alumni Network Access", value: "Lifetime" }
             ],
             items: [

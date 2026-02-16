@@ -150,7 +150,7 @@ export function getDefaultDetailedFeatures(courseTitle: string) {
         `Expert-led ${courseTitle} Training`,
         "Real-time Project Implementation",
         "24/7 Server Access",
-        "Placement Support",
+        "Placement support",
         "Certification Guidance",
         "Mock Interviews"
     ];

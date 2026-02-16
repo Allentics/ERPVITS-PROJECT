@@ -13,11 +13,11 @@ export const ficoContent: Partial<Course> = {
         primary: "Book Your Free Demo Class",
         secondary: "View Curriculum"
     },
-    badges: ["SAP Certified Trainers", "4.7 Learner Rating", "24/7 Team Support"],
+    badges: ["SAP Certified Trainers", "4.7 Learner Rating", "24/7 Team support"],
     heroStats: [
         { icon: "CheckCircle2", label: "SAP Certified Trainers" },
         { icon: "Star", label: "4.7 Learner Rating" },
-        { icon: "Headphones", label: "24/7 Team Support" }
+        { icon: "Headphones", label: "24/7 Team support" }
     ],
     metaTitle: "SAP FICO Online Training | Finance & Controlling",
     metaDescription: "SAP FICO Online Training with ERPVITS through live instructor-led sessions, real-time projects, and certification support to boost your finance career.",
@@ -176,7 +176,7 @@ export const ficoContent: Partial<Course> = {
                 },
                 {
                     "@type": "Question",
-                    "name": "Does ERPVITS provide SAP FICO Training with Placement Support?",
+                    "name": "Does ERPVITS provide SAP FICO Training with Placement support?",
                     "acceptedAnswer": {
                         "@type": "Answer",
                         "text": "Yes, ERPVITS provides SAP FICO training with placement support, including resume building, interview preparation, and recruitment assistance."
@@ -242,7 +242,7 @@ export const ficoContent: Partial<Course> = {
                     description: "While other online courses enroll thousands of students, our courses are designed and structured so that no more than 8-10 participants are admitted to a class. This allows instructors to tailor their teaching, learn your individual strengths and weaknesses, and refine your understanding of challenging financial concepts."
                 },
                 {
-                    title: "Placement & Career Support",
+                    title: "Placement & Career support",
                     description: "You will prepare through mock interviews, refine your SAP-focused resume, and practice with real interview questions that are aligned with current hiring trends in finance. You will also receive instructions to help you articulate your project work to enhance your profile to adopt SAP FICO in interviews."
                 },
                 {
@@ -250,7 +250,7 @@ export const ficoContent: Partial<Course> = {
                     description: "Join a thriving community of SAP FICO and finance professionals. Exchange tips, share job opportunities, ask questions, and build professional relationships that can lead to referrals and collaborations."
                 },
                 {
-                    title: "Ongoing Support Post-Training",
+                    title: "Ongoing support Post-Training",
                     description: "Your learning journey does not end even after completing the SAP FICO course. For the next 6 months after the training, you will still have access to your instructor. This could be guidance for you helping you understand some accounting fundamentals that are tough for you, assistance for you working through some challenges for your financial project that you will be working on in the real world, or some advice for you while you are working on your initial consulting project."
                 }
             ]
@@ -271,7 +271,7 @@ export const ficoContent: Partial<Course> = {
                 "Mock interviews simulating real FICO consultant scenarios",
                 "Dedicated certification prep week before exams"
             ],
-            supportTitle: "Complete Support Ecosystem",
+            supportTitle: "Complete support Ecosystem",
             supportText: "From pre-evaluation to post-training support, we guide you through every step of your SAP FICO learning journey and accounting career transition."
         },
         {
@@ -469,7 +469,7 @@ export const ficoContent: Partial<Course> = {
         {
             type: 'detailed_certification',
             title: "SAP FICO Certification – Your Global Career Credential",
-            subtitle: "We Provide Support for Below SAP Certification List",
+            subtitle: "We Provide support for Below SAP Certification List",
             imageSrc: "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP FICO Infographic.webp",
             imageSrc2: "/images/ERPVITS - All Modules Infographics/SAP-Certified-logo.webp",
             items: [
@@ -488,12 +488,12 @@ export const ficoContent: Partial<Course> = {
 **Value:** Demonstrates expertise in end-to-end SAP FICO implementation
 **Job Relevance:** Entry to mid-level consultant positions in finance
 
-**Our Certification Support**
+**Our Certification support**
 **Targeted Exam Preparation:** We provide study guides tailored to match official exam blueprints.
 **Practice Exams:** You will take timed practice exams that replicate the conditions of the actual exam.
 **Exam Strategies:** We offer time management techniques, tips for reading questions, and a summary of common mistakes.
 **Exam Registration Guidance:** We aid you in exam registration and scheduling.
-**Retake Support:** In case you do not pass on the first try, we offer additional support and guidance for retaking the exam.
+**Retake support:** In case you do not pass on the first try, we offer additional support and guidance for retaking the exam.
 
 **Why SAP FICO Certification Matters**
 **Globally Recognized Credentials:** SAP certifications are internationally acknowledged by employers, financial institutions, and recruitment agencies.
@@ -587,7 +587,7 @@ export const ficoContent: Partial<Course> = {
                     ]
                 },
                 {
-                    title: "First Role & Project Support",
+                    title: "First Role & Project support",
                     timeline: "Month 2–3",
                     color: "orange",
                     icon: "Briefcase",
@@ -719,7 +719,7 @@ export const ficoContent: Partial<Course> = {
                 { q: "How SAP FICO integrates with other modules?", a: "ERPVITS covers integration of FICO with Materials Management (MM), Sales and Distribution (SD), and Human Resource (HR) modules for complete enterprise process understanding." },
                 { q: "What are the main FICO functional areas covered?", a: "ERPVITS provides hands-on training in General Ledger, Accounts Payable, Accounts Receivable, Asset Management, Cost Accounting, and Controlling." },
                 { q: "What is SAP FICO pricing for companies?", a: "SAP FICO pricing is typically based on per-user or enterprise licenses. ERPVITS discusses these licensing models and offers insights during implementation guidance." },
-                { q: "Does ERPVITS provide SAP FICO Training with Placement Support?", a: "Yes, ERPVITS provides SAP FICO training with placement support, including resume building, interview preparation, and recruitment assistance." },
+                { q: "Does ERPVITS provide SAP FICO Training with Placement support?", a: "Yes, ERPVITS provides SAP FICO training with placement support, including resume building, interview preparation, and recruitment assistance." },
                 { q: "Can I take SAP FICO Online Training from anywhere?", a: "Yes. ERPVITS offers live SAP FICO online training accessible from anywhere, with recorded sessions and remote lab access for practical exercises." },
                 { q: "Is SAP FICO Training available near me?", a: "Yes. ERPVITS offers both online and in-person training options with flexible weekday and weekend batches to suit working professionals." },
                 { q: "How does ERPVITS help in SAP FICO Careers?", a: "ERPVITS supports your SAP FICO career through resume building, interview preparation, and job referrals with top SAP consulting firms and financial organizations." }

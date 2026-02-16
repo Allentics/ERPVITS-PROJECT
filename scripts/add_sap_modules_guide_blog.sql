@@ -164,7 +164,7 @@ VALUES ('sap-modules-list-complete-guide-2026', 'SAP Modules List: Complete Guid
             </ul>
 
             <h2 class="text-2xl font-bold mt-12 mb-6">Additional Critical SAP Modules</h2>
-            <p><strong>SAP CO Module (Controlling):</strong> Supports the sap fi module offering accounting and management services. It enables cost center accounting and profit center accounting, product costing, and profitability analysis.</p>
+            <p><strong>SAP CO Module (Controlling):</strong> supports the sap fi module offering accounting and management services. It enables cost center accounting and profit center accounting, product costing, and profitability analysis.</p>
             <p><strong>SAP QM Module (Quality Management):</strong> Provides and maintains product and service quality through quality management in planning, inspection, and control.</p>
             <p><strong>SAP WM Module (Warehouse Management):</strong> Provides sophisticated warehouse management including bin management, warehouse task distribution, and advanced picking methods.</p>
 

@@ -1,5 +1,5 @@
 INSERT INTO public.blog_posts (id, title, description, content, image, date, category, author) 
-VALUES ('sap-training-courses-uk', 'SAP Training Courses in UK: SAP Training Institutes, Courses, Certification & Placement Support', 'Join the best SAP training institute in UK. Complete SAP courses with certification support, expert faculty, and placement assistance in London, Manchester & Birmingham.', '<div class="prose prose-lg prose-slate max-w-none 
+VALUES ('sap-training-courses-uk', 'SAP Training Courses in UK: SAP Training Institutes, Courses, Certification & Placement support', 'Join the best SAP training institute in UK. Complete SAP courses with certification support, expert faculty, and placement assistance in London, Manchester & Birmingham.', '<div class="prose prose-lg prose-slate max-w-none 
             prose-headings:text-slate-900 prose-headings:font-bold 
             prose-a:text-orange-600 hover:prose-a:text-orange-700 
             prose-img:rounded-2xl prose-img:shadow-lg prose-img:my-8

@@ -11,7 +11,7 @@ SET
   description = 'The SAP Extended Warehouse Management Online Training Program from ERPVITS represents a transformative learning pathway for professionals eager to excel in warehouse optimization, inventory management, and advanced logistics operations. In today''s hyper-competitive business landscape, organizations urgently need certified SAP EWM experts who can streamline warehouse processes, reduce operational costs, enhance order fulfillment accuracy, and drive supply chain efficiency through intelligent automation.',
   
   -- Top Level Features Array (Trust Indicators)
-  features = '["SAP Certified Trainers", "4.8 Learner Rating", "24/7 Team Support", "12+ Years Implementation Experience"]'::jsonb,
+  features = '["SAP Certified Trainers", "4.8 Learner Rating", "24/7 Team support", "12+ Years Implementation Experience"]'::jsonb,
   
   -- Comprehensive Sections JSON
   sections = '[
@@ -51,7 +51,7 @@ SET
                 "icon": "Users"
             },
             {
-                "title": "Placement & Career Support",
+                "title": "Placement & Career support",
                 "description": "Our dedicated career support team helps you build an impactful resume and prepare for interviews.",
                 "icon": "TrendingUp"
             },
@@ -61,7 +61,7 @@ SET
                 "icon": "Globe"
             },
             {
-                "title": "Ongoing Support Post-Training",
+                "title": "Ongoing support Post-Training",
                 "description": "continue to receive instructor guidance for six months after training for project challenges.",
                 "icon": "Headphones"
             }
@@ -256,14 +256,14 @@ SET
             {
                 "title": "Third-Party Logistics Provider''s Multi-Client EWM Setup",
                 "description": "Design multi-tenant warehouse structures and client-specific configurations for a 3PL provider managing operations for 30+ clients.",
-                "outcome": "Support for 50+ concurrent clients, 99.2% order accuracy."
+                "outcome": "support for 50+ concurrent clients, 99.2% order accuracy."
             }
         ]
     },
     {
         "type": "detailed_certification",
         "title": "SAP EWM Certification – <span class=\"text-orange-600\">Your Global Career Credential</span>",
-        "subtitle": "We Provide Support for SAP Certified Application Associate – Warehouse Management in SAP S/4HANA",
+        "subtitle": "We Provide support for SAP Certified Application Associate – Warehouse Management in SAP S/4HANA",
         "badge": "Exam Code: C_S4EWM_2023",
         "imageSrc": "/images/certification-badge.png",
         "description": "Demonstrates expertise in SAP EWM configuration, warehouse operations, picking strategies, and S/4HANA integration capabilities.",
@@ -277,7 +277,7 @@ SET
              "Targeted Exam Preparation with Study Guides",
              "Timed Practice Exams Mirroring Real Conditions",
              "Exam Strategy & Time Management Tips",
-             "Registration Guidance & Retake Support"
+             "Registration Guidance & Retake support"
         ]
     },
     {

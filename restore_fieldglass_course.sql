@@ -10,7 +10,7 @@ VALUES (
     '35+ Hours', 
     'Competitive', 
     '/images/ERPVITS - All Modules Infographics/ERPVITS - SAP FG Infographic.webp', 
-    '["SAP Certified Trainers", "4.7 Learner Rating", "24/7 Team Support"]'::jsonb, 
+    '["SAP Certified Trainers", "4.7 Learner Rating", "24/7 Team support"]'::jsonb, 
     '[]'::jsonb, 
     '[]'::jsonb, 
     '[]'::jsonb, 

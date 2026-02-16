@@ -39,7 +39,7 @@ const DEFAULT_VALUES = {
             description: "Gain practical experience by working on live projects that mimic real-world business scenarios. Build a portfolio that employers trust."
         },
         {
-            title: "Career Support",
+            title: "Career support",
             description: "From resume building to mock interviews, we provide end-to-end placement assistance to help you land your dream job."
         }
     ]

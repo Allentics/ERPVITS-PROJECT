@@ -4,7 +4,7 @@ export default function CareerServices() {
     const services = [
         { icon: Users, title: "Personalized Career Guidance", desc: "One-on-one mentoring to help you choose the right SAP module and career path." },
         { icon: FileText, title: "Resume & LinkedIn Optimization", desc: "Professionally crafted SAP-focused profiles that attract top recruiters." },
-        { icon: Mic, title: "Interview Preparation Support", desc: "Mock interviews, technical Q&A, and HR readiness sessions for real confidence." },
+        { icon: Mic, title: "Interview Preparation support", desc: "Mock interviews, technical Q&A, and HR readiness sessions for real confidence." },
         { icon: Award, title: "Global Certification Guidance", desc: "Step-by-step support to prepare for and clear SAP global certification exams." }
     ];
 

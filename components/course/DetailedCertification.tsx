@@ -45,7 +45,7 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
 
     const certs = items || defaultCerts;
 
-    const defaultSupportFeatures = [
+    const defaultsupportFeatures = [
         {
             title: "Targeted Exam Preparation",
             subtitle: "Study guides aligned to official exam blueprints"
@@ -63,13 +63,13 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
             subtitle: "Assistance with exam registration and scheduling"
         },
         {
-            title: "Retake Support",
+            title: "Retake support",
             subtitle: "Additional support if you don't pass on first attempt"
         }
     ];
 
     // Use prop or default
-    const featuresToDisplay = supportFeatures || defaultSupportFeatures;
+    const featuresToDisplay = supportFeatures || defaultsupportFeatures;
 
     const defaultBenefits = [
         {
@@ -185,7 +185,7 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
                         </div>
                     </div>
 
-                    {/* Right Column - Image & Support */}
+                    {/* Right Column - Image & support */}
                     <div className="lg:col-span-5 flex flex-col gap-6">
 
                         {/* Image - Improved fitting for Infographics */}
@@ -208,11 +208,11 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
                             </div>
                         )}
 
-                        {/* Support Card (White) */}
+                        {/* support Card (White) */}
                         <div className="bg-white text-slate-900 rounded-2xl p-5 shadow-lg border border-slate-100">
                             <h3 className="text-base font-bold mb-4 text-slate-900 border-b border-slate-100 pb-3 flex items-center gap-2">
                                 <FileCheck className="w-5 h-5 text-[#ff4500]" />
-                                Our Certification Support:
+                                Our Certification support:
                             </h3>
                             <ul className="grid grid-cols-1 gap-3">
                                 {featuresToDisplay.map((feature: any, idx) => (

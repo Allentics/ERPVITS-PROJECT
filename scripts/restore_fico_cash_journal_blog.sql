@@ -47,7 +47,7 @@ SET content = '<article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py
 
                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                         <h3 class="text-2xl font-semibold mb-3 flex items-center text-orange-600">
-                            4. Support for Multiple Cash Journals
+                            4. support for Multiple Cash Journals
                         </h3>
                         <p class="text-gray-600">
                             SAP allows organizations to create multiple cash journals based on business requirements. For instance, you can set up separate journals for different company codes, currencies, or business units. This flexibility ensures that cash handling is organized and managed according to the organizational structure.

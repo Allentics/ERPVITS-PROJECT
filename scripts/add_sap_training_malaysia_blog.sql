@@ -240,9 +240,9 @@ VALUES ('sap-training-malaysia-2026', 'SAP Training in Malaysia: The Courses, Ce
                 <li><strong>Expert Trainers:</strong> Certified consultants with decade-plus experience in multinational projects.</li>
                 <li><strong>Hands-On Experience:</strong> Live SAP systems access and capstone projects.</li>
                 <li><strong>Dual Certification:</strong> ERPVITS completion certificate plus support for global SAP certification.</li>
-                <li><strong>Placement Assistance:</strong> Support to develop resumes, prepare for interviews, and company referrals.</li>
+                <li><strong>Placement Assistance:</strong> support to develop resumes, prepare for interviews, and company referrals.</li>
                 <li><strong>Flexible Learning Options:</strong> Classroom training in Kuala Lumpur, online live sessions, or self-paced learning.</li>
-                <li><strong>Post-Training Support:</strong> Access to a continuous resource pool and unrecorded webinars.</li>
+                <li><strong>Post-Training support:</strong> Access to a continuous resource pool and unrecorded webinars.</li>
             </ul>
 
             <h2>Career Path for SAP Professionals in Malaysia</h2>

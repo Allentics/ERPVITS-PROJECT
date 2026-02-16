@@ -184,7 +184,7 @@ const CourseHero = ({ course }: { course: Course }) => {
                                 </li>
                                 <li className="flex items-start">
                                     <CheckCircle className="h-5 w-5 text-[#ff4500] mr-3 flex-shrink-0" />
-                                    <span>Placement Support & Resumes</span>
+                                    <span>Placement support & Resumes</span>
                                 </li>
                                 <li className="flex items-start">
                                     <CheckCircle className="h-5 w-5 text-[#ff4500] mr-3 flex-shrink-0" />

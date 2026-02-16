@@ -215,7 +215,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                     {/* Subheading */}
                     {/* Subheading */}
                     <div className="text-lg text-slate-600 mb-12 leading-relaxed max-w-3xl mx-auto">
-                        {renderRichText(mappedCourse.heroSubheading || (mappedCourse.description ? mappedCourse.description.substring(0, 150) + "..." : ""))}
+                        {renderRichText(mappedCourse.heroSubheading || (mappedCourse.description ? (mappedCourse.description.length > 250 ? mappedCourse.description.substring(0, 250) + "..." : mappedCourse.description) : ""))}
                     </div>
 
                     {/* Buttons */}

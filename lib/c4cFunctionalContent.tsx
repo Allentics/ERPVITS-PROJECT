@@ -88,12 +88,12 @@ export const c4cFunctionalContent = {
     themeColor: "orange",
 
     badge: "Rated #1 SAP C4C Functional Training 2025",
-    badges: ["SAP Certified Trainers", "4.8 Learner Rating", "24/7 Team Support", "12+ Years Cloud CRM Implementation Experience"],
+    badges: ["SAP Certified Trainers", "4.8 Learner Rating", "24/7 Team support", "12+ Years Cloud CRM Implementation Experience"],
 
     heroStats: [
         { icon: "award", label: "SAP Certified Trainers" },
         { icon: "star", label: "4.8 Learner Rating" },
-        { icon: "clock", label: "24/7 Team Support" },
+        { icon: "clock", label: "24/7 Team support" },
         { icon: "briefcase", label: "12+ Years Experience" }
     ],
 
@@ -143,7 +143,7 @@ export const c4cFunctionalContent = {
                     description: "Batches are capped at 8-10 participants to ensure personalized attention, allowing instructors to provide targeted feedback on your CRM configurations."
                 },
                 {
-                    title: "Placement & Career Support",
+                    title: "Placement & Career support",
                     description: "Our dedicated career support team helps you build an impactful SAP C4C-focused resume, prepare through mock interviews, and practice with real-world interview questions from recent hiring trends."
                 },
                 {
@@ -151,7 +151,7 @@ export const c4cFunctionalContent = {
                     description: "Join a thriving community of SAP C4C professionals. Exchange tips, share CRM best practices, and build professional relationships that can lead to referrals."
                 },
                 {
-                    title: "Ongoing Support Post-Training",
+                    title: "Ongoing support Post-Training",
                     description: "For six months after training, you'll continue to receive instructor guidance for clarifying concepts or troubleshooting real-world CRM challenges."
                 }
             ]
@@ -172,7 +172,7 @@ export const c4cFunctionalContent = {
                 "Mock interviews simulating real consultant scenarios",
                 "Dedicated certification prep and cloud skills development workshops"
             ],
-            supportTitle: "Complete Support Ecosystem",
+            supportTitle: "Complete support Ecosystem",
             supportText: "From pre-evaluation to post-training support, we guide you through every step of your SAP C4C functional learning journey and career transition."
         },
         {
@@ -181,7 +181,7 @@ export const c4cFunctionalContent = {
             stats: [
                 { value: "50-60", label: "Hours of Live Training", color: "blue" },
                 { value: "75+", label: "Hands-On Lab Exercises", color: "purple" },
-                { value: "100%", label: "Placement Support", color: "orange" }
+                { value: "100%", label: "Placement support", color: "orange" }
             ],
             features: [
                 { title: "Live Interactive Classes", description: "50–60 hours of instructor-led sessions over 10–14 weeks via live video conferencing." },
@@ -617,7 +617,7 @@ export const c4cFunctionalContent = {
         {
             type: 'detailed_certification',
             title: "SAP C4C Functional Certification – Your Global Career Credential",
-            description: "We Provide Support for SAP Certified Application Associate – SAP C4C (C_C4C14_2404)",
+            description: "We Provide support for SAP Certified Application Associate – SAP C4C (C_C4C14_2404)",
             imageSrc: "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP C4C Func Infographic.webp",
             items: [
                 {

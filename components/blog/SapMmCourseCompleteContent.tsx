@@ -112,11 +112,11 @@ const SapMmCourseCompleteContent = () => {
                 </div>
             </div>
 
-            <h2 className="text-2xl font-bold mt-8 mb-4">Project Lifecycle Mastery: From Implementation to Support</h2>
+            <h2 className="text-2xl font-bold mt-8 mb-4">Project Lifecycle Mastery: From Implementation to support</h2>
             <ul className="list-disc pl-6 space-y-4">
                 <li><strong>Implementation Projects:</strong> Deciding to transform functions on the platform from scratch.</li>
                 <li><strong>Rollout Projects:</strong> Extending SAP to global locations from a successful implementation geography.</li>
-                <li><strong>Support and Maintenance:</strong> Continuous support to business users for everyday operational queries.</li>
+                <li><strong>support and Maintenance:</strong> Continuous support to business users for everyday operational queries.</li>
             </ul>
 
             <h2 className="text-2xl font-bold mt-8 mb-4">The System Landscape: Your Path to Production</h2>
