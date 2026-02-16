@@ -223,7 +223,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                         courseTitle={mappedCourse.title}
                         syllabusUrl={mappedCourse.syllabusUrl || ''}
                         themeColor={mappedCourse.themeColor}
-                        enrollHref={(isAriba || isFieldglass || isMM || isFICO || isTRM || isSD || isC4C || isABAP || isTM || isEWM || isIBP || isMDG || isC4CFunc || isABAPHana) ? "#detailed-demo-booking" : "#enroll"}
+                        enrollHref={(isAriba || isFieldglass || isMM || isFICO || isTRM || isSD || isC4C || isABAP || isTM || isEWM || isIBP || isMDG || isC4CFunc || isABAPHana || isPython) ? "#detailed-demo-booking" : "#enroll"}
                     />
 
                     {/* Features/Trust Indicators */}
