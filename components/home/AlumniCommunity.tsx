@@ -30,8 +30,8 @@ const DEFAULT_CONTENT = {
             label: "Companies Actively Hiring"
         }
     ],
-    linkedin_url: "https://linkedin.com",
-    whatsapp_url: "https://whatsapp.com"
+    linkedin_url: "https://www.linkedin.com/company/13357826/",
+    whatsapp_url: "https://www.whatsapp.com/channel/0029Vb5u9luHwXb481Y1Dx1X"
 };
 
 export default function AlumniCommunity() {
@@ -97,7 +97,7 @@ export default function AlumniCommunity() {
                     <h3 className="text-xl font-bold mb-8 text-white">Connect With Us</h3>
                     <div className="flex flex-col sm:flex-row justify-center gap-6 mb-12">
                         <a
-                            href={content.linkedin_url}
+                            href="https://www.linkedin.com/company/13357826/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center justify-center gap-3 px-8 py-3 bg-[#0077B5] hover:bg-[#006396] text-white font-bold rounded-xl shadow-lg transition-all hover:scale-105 cursor-pointer border border-white/10"
@@ -106,7 +106,7 @@ export default function AlumniCommunity() {
                             Follow LinkedIn Page
                         </a>
                         <a
-                            href={content.whatsapp_url}
+                            href="https://www.whatsapp.com/channel/0029Vb5u9luHwXb481Y1Dx1X"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center justify-center gap-3 px-8 py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold rounded-xl shadow-lg transition-all hover:scale-105 cursor-pointer border border-white/10"

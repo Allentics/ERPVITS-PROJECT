@@ -139,8 +139,8 @@ INSERT INTO public.site_content (page_path, section_key, content, order_index) V
         {"icon": "Briefcase", "value": "1,200+", "label": "Job Referrals Shared Monthly"},
         {"icon": "Building2", "value": "250+", "label": "Companies Actively Hiring"}
     ],
-    "linkedin_url": "https://linkedin.com",
-    "whatsapp_url": "https://whatsapp.com"
+    "linkedin_url": "https://www.linkedin.com/company/13357826/",
+    "whatsapp_url": "https://www.whatsapp.com/channel/0029Vb5u9luHwXb481Y1Dx1X"
 }'::jsonb, 12)
 ON CONFLICT (page_path, section_key) DO UPDATE SET content = EXCLUDED.content;
 
