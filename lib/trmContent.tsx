@@ -945,7 +945,13 @@ export const trmContent = {
             type: 'detailed_demo_booking',
             title: "Download the Most Asked SAP TRM Interview Questions",
             subtitle: "Complete the form below to download a comprehensive guide covering 50+ technical treasury interview questions, behavioral questions, and scenario-based problem solving.",
-            buttonText: "Download Free Interview Guide"
+            buttonText: "Download Free Interview Guide",
+            benefits: [
+                { title: "Sample Live Class Session", desc: "Observe real TRM training and instructor methodology" },
+                { title: "30-Min Career Consultation", desc: "Personalized guidance based on your treasury background" },
+                { title: "Q&A with Instructor", desc: "Ask questions about TRM course, certification, and career" },
+                { title: "Special Discount Offer", desc: "Exclusive discount for demo attendees" }
+            ]
         },
         {
             type: 'detailed_upcoming_batches',

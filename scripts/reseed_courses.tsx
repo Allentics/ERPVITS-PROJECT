@@ -52,6 +52,33 @@ async function reseedCourses() {
             // Serialize to handle any JSX in heroHeading, etc.
             const s = serialize(course);
 
+            // Filter out specific sections if needed (per user request)
+            if (s.id === 'ppds' && s.sections) {
+                s.sections = s.sections.filter((section: any) =>
+                    section.title !== "Download the Most Asked SAP PPDS Interview Questions"
+                );
+            }
+
+            // Globally move 'detailed_upcoming_batches' before 'detailed_testimonials'
+            if (s.sections && Array.isArray(s.sections)) {
+                const testimonialsIndex = s.sections.findIndex((sec: any) => sec.type === 'detailed_testimonials');
+                const batchesIndex = s.sections.findIndex((sec: any) => sec.type === 'detailed_upcoming_batches');
+
+                if (testimonialsIndex !== -1 && batchesIndex !== -1 && batchesIndex > testimonialsIndex) {
+                    const [batchesSection] = s.sections.splice(batchesIndex, 1);
+                    s.sections.splice(testimonialsIndex, 0, batchesSection);
+                }
+
+                // Globally move 'detailed_demo_booking' before 'detailed_faq' or 'faq'
+                const faqIndex = s.sections.findIndex((sec: any) => sec.type === 'detailed_faq' || sec.type === 'faq');
+                const demoIndex = s.sections.findIndex((sec: any) => sec.type === 'detailed_demo_booking');
+
+                if (faqIndex !== -1 && demoIndex !== -1 && demoIndex > faqIndex) {
+                    const [demoSection] = s.sections.splice(demoIndex, 1);
+                    s.sections.splice(faqIndex, 0, demoSection);
+                }
+            }
+
             const payload: any = {
                 title: s.title,
                 category: s.category || null,

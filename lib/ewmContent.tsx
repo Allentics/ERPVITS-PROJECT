@@ -925,6 +925,48 @@ export const ewmContent = {
             ]
         },
         {
+            type: 'detailed_upcoming_batches',
+            title: "Join Our Next Live Batch – <span class=\"text-orange-600\">Limited Seats Available for SAP EWM Training</span>",
+            subtitle: "Secure your spot in our upcoming batches with flexible timings designed for working professionals",
+            features: [
+                { icon: "Zap", text: "Early-bird discounts (10-15% off) for first 10 registrations" },
+                { icon: "Users", text: "Personal learning path consultation with trainers" },
+                { icon: "ShieldCheck", text: "Priority support and mentoring throughout course" },
+                { icon: "CheckCircle2", text: "Networking with cohort members aspiring for warehouse roles" },
+                { icon: "ShieldCheck", text: "Guaranteed access to current curriculum and certified trainers" },
+                { icon: "Users", text: "Access to latest SAP EWM and S/4HANA updates" }
+            ],
+            batches: [
+                {
+                    title: "Batch 1: November 2025 (Weekdays – 7:00 AM | 8:00 PM IST)",
+                    date: "November 15, 2025",
+                    time: "7:00 AM | 8:00 PM IST",
+                    duration: "50-60 Hours",
+                    status: "filling-fast",
+                    seats: "3/10 Seats Left",
+                    seatsFilled: 70
+                },
+                {
+                    title: "Batch 2: November 2025 (Weekends – Saturday & Sunday, 7:30 AM | 7:00 PM IST)",
+                    date: "November 16, 2025",
+                    time: "Sat & Sun | 7:30 AM | 7:00 PM IST",
+                    duration: "50-60 Hours",
+                    status: "available",
+                    seats: "5/10 Seats Left",
+                    seatsFilled: 50
+                },
+                {
+                    title: "Batch 3: December 2025 (Flexible timings – customized per batch)",
+                    date: "December 1, 2025",
+                    time: "Flexible timings",
+                    duration: "50-60 Hours (accelerated)",
+                    status: "available",
+                    seats: "6/10 Seats Left",
+                    seatsFilled: 40
+                }
+            ]
+        },
+        {
             type: 'detailed_testimonials',
             title: "Hear from Our Successful <span class=\"text-orange-600\">SAP EWM Learners</span>",
             stats: { rating: "4.8/5", reviews: "320+ learner reviews" },
@@ -977,48 +1019,6 @@ export const ewmContent = {
                 "Q&A with Instructor – Ask questions about course content, certification, and career opportunities",
                 "Special Discount Offer – Exclusive discount for demo attendees (10-15% off course fees)",
                 "Personalized Learning Path – Custom roadmap based on your current skills and target role"
-            ]
-        },
-        {
-            type: 'detailed_upcoming_batches',
-            title: "Join Our Next Live Batch – <span class=\"text-orange-600\">Limited Seats Available for SAP EWM Training</span>",
-            subtitle: "Secure your spot in our upcoming batches with flexible timings designed for working professionals",
-            features: [
-                { icon: "Zap", text: "Early-bird discounts (10-15% off) for first 10 registrations" },
-                { icon: "Users", text: "Personal learning path consultation with trainers" },
-                { icon: "ShieldCheck", text: "Priority support and mentoring throughout course" },
-                { icon: "CheckCircle2", text: "Networking with cohort members aspiring for warehouse roles" },
-                { icon: "ShieldCheck", text: "Guaranteed access to current curriculum and certified trainers" },
-                { icon: "Users", text: "Access to latest SAP EWM and S/4HANA updates" }
-            ],
-            batches: [
-                {
-                    title: "Batch 1: November 2025 (Weekdays – 7:00 AM | 8:00 PM IST)",
-                    date: "November 15, 2025",
-                    time: "7:00 AM | 8:00 PM IST",
-                    duration: "50-60 Hours",
-                    status: "filling-fast",
-                    seats: "3/10 Seats Left",
-                    seatsFilled: 70
-                },
-                {
-                    title: "Batch 2: November 2025 (Weekends – Saturday & Sunday, 7:30 AM | 7:00 PM IST)",
-                    date: "November 16, 2025",
-                    time: "Sat & Sun | 7:30 AM | 7:00 PM IST",
-                    duration: "50-60 Hours",
-                    status: "available",
-                    seats: "5/10 Seats Left",
-                    seatsFilled: 50
-                },
-                {
-                    title: "Batch 3: December 2025 (Flexible timings – customized per batch)",
-                    date: "December 1, 2025",
-                    time: "Flexible timings",
-                    duration: "50-60 Hours (accelerated)",
-                    status: "available",
-                    seats: "6/10 Seats Left",
-                    seatsFilled: 40
-                }
             ]
         },
         {
