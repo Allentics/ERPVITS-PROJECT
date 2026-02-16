@@ -182,14 +182,34 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
         e?.preventDefault?.();
         setSaving(true);
         try {
+            // Prepare data for submission
+            const submissionData = { ...formData };
+
+            // Validate and parse Schema Markup if it's a string
+            if (submissionData.schema && typeof submissionData.schema === 'string') {
+                try {
+                    // Only try to parse if it looks like a JSON object/array
+                    const trimmed = submissionData.schema.trim();
+                    if (trimmed.startsWith('{') || trimmed.startsWith('[')) {
+                        submissionData.schema = JSON.parse(submissionData.schema);
+                    }
+                } catch (err) {
+                    alert("Invalid JSON in Schema Markup field. Please correct it before saving.");
+                    setSaving(false);
+                    return;
+                }
+            }
+
             const { error } = await supabase
                 .from('courses')
-                .update(formData)
+                .update(submissionData)
                 .eq('id', id);
 
             if (error) throw error;
             // No redirect, just notify success
             alert('Course updated successfully!');
+            // Update local state with parsed object
+            setFormData(submissionData);
         } catch (err: any) {
             alert('Error updating course: ' + err.message);
         } finally {
