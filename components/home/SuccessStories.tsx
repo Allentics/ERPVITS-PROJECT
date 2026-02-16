@@ -6,7 +6,7 @@ import { supabase } from '@/lib/supabase';
 import { Star, PlayCircle } from 'lucide-react';
 
 const DEFAULT_CONTENT = {
-    title: "🎉 Meet Our Success Stories",
+    title: "Meet Our Success Stories",
     subtitle: "People Who Transformed Their Careers with ERPVITS Training",
     stories: [
         {

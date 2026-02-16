@@ -112,7 +112,7 @@ ON CONFLICT (page_path, section_key) DO UPDATE SET content = EXCLUDED.content;
 -- 6. Success Stories
 INSERT INTO public.site_content (page_path, section_key, content, order_index) VALUES
 ('/', 'success_stories', '{
-    "title": "🎉 Meet Our Success Stories",
+    "title": "Meet Our Success Stories",
     "subtitle": "People Who Transformed Their Careers with ERPVITS Training",
     "stories": [
         {
