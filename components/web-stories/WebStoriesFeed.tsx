@@ -243,7 +243,7 @@ const WebStoriesFeed = () => {
         <div className="bg-slate-50 min-h-screen">
 
             {/* --- Hero Section (Restored) --- */}
-            <section className="relative bg-gradient-to-r from-orange-800 via-orange-700 to-orange-600 text-white py-24 px-4 overflow-hidden">
+            <section className="relative bg-gradient-to-br from-orange-600 via-orange-500 to-orange-400 text-white py-24 px-4 overflow-hidden">
                 {/* Radial Gradient overlay for depth */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
 
@@ -285,9 +285,9 @@ const WebStoriesFeed = () => {
 
                     {/* Button */}
                     <div className="flex justify-center mt-10">
-                        <button className="bg-white text-purple-700 hover:bg-purple-50 hover:text-purple-800 font-bold py-4 px-10 rounded-full flex items-center gap-3 transition-all transform hover:scale-105 shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.9)] ring-4 ring-purple-500/30">
-                            <div className="bg-purple-100 rounded-full p-1">
-                                <Play className="h-5 w-5 fill-purple-700" />
+                        <button className="bg-white text-orange-600 hover:bg-orange-50 hover:text-orange-700 font-bold py-4 px-10 rounded-full flex items-center gap-3 transition-all transform hover:scale-105 shadow-[0_20px_50px_rgba(249,_115,_22,_0.4)] ring-4 ring-orange-500/20">
+                            <div className="bg-orange-100 rounded-full p-1">
+                                <Play className="h-5 w-5 fill-orange-600" />
                             </div>
                             <span className="tracking-wide">Watch Featured Story</span>
                         </button>
@@ -298,8 +298,8 @@ const WebStoriesFeed = () => {
             {/* --- Featured Stories Section --- */}
             <section className="py-20 px-4 max-w-7xl mx-auto">
                 <div className="text-center mb-12">
-                    <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
-                        <Star className="h-4 w-4 fill-purple-700" /> KEY HIGHLIGHTS
+                    <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+                        <Star className="h-4 w-4 fill-orange-600" /> KEY HIGHLIGHTS
                     </div>
                     <h2 className="text-4xl font-black text-slate-900 mb-2 tracking-tight uppercase">Featured Stories</h2>
                     <p className="text-slate-500 font-medium">Hand-picked stories that inspire and educate.</p>
@@ -405,7 +405,7 @@ const WebStoriesFeed = () => {
             </section>
 
             {/* --- Share Your Story CTA --- */}
-            <section className="relative bg-gradient-to-r from-orange-800 via-orange-700 to-orange-600 text-white py-24 px-4 overflow-hidden mt-12">
+            <section className="relative bg-gradient-to-br from-orange-600 via-orange-500 to-orange-400 text-white py-24 px-4 overflow-hidden mt-12">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
 
                 <div className="max-w-4xl mx-auto text-center relative z-10">
@@ -422,7 +422,7 @@ const WebStoriesFeed = () => {
                     </p>
 
                     <div className="flex flex-col md:flex-row justify-center gap-4">
-                        <button className="bg-white text-purple-700 hover:bg-slate-50 font-bold py-4 px-10 rounded-full flex items-center justify-center gap-3 transition-all transform hover:scale-105 shadow-xl">
+                        <button className="bg-white text-orange-600 hover:bg-slate-50 font-bold py-4 px-10 rounded-full flex items-center justify-center gap-3 transition-all transform hover:scale-105 shadow-xl">
                             <Smartphone className="h-5 w-5" />
                             <span>SUBMIT YOUR STORY</span>
                         </button>

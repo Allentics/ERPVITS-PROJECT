@@ -34,7 +34,7 @@ const Footer = () => {
                 const { data: coursesData } = await supabase
                     .from('courses')
                     .select('id, title')
-                    .limit(6);
+                    .limit(10);
 
                 if (coursesData && coursesData.length > 0) {
                     setDynCourses(coursesData);
@@ -46,7 +46,7 @@ const Footer = () => {
         fetchData();
     }, []);
 
-    const popularCourses = dynCourses.slice(0, 6);
+    const popularCourses = dynCourses;
 
     if (pathname.startsWith('/admin')) return null;
 
@@ -81,7 +81,7 @@ const Footer = () => {
                                     SAP Ariba
                                 </Link>
                             </li>
-                            {popularCourses.filter(course => course.id !== 'ariba').slice(0, 5).map(course => (
+                            {popularCourses.filter(course => course.id !== 'ariba' && course.id !== 'c4c-functional').slice(0, 5).map(course => (
                                 <li key={course.id}>
                                     <Link href={`/courses/${course.id}`} className="hover:text-white text-sm transition-colors">
                                         {course.title}
