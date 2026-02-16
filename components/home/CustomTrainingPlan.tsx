@@ -246,13 +246,13 @@ export default function CustomTrainingPlan() {
                                         </select>
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-semibold mb-1">Interested Course</label>
+                                        <label className="block text-sm font-semibold mb-1">SAP Module *</label>
                                         <select
                                             value={formData.interestedCourse}
                                             onChange={(e) => setFormData({ ...formData, interestedCourse: e.target.value })}
                                             className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                                         >
-                                            <option value="">Select a course...</option>
+                                            <option value="">Select SAP Module</option>
                                             {uniqueCourses.map((course, index) => (
                                                 <option key={index} value={course}>
                                                     {course}
