@@ -13,16 +13,55 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
         }
     };
 
+    // Helper to get next occurrence of a specific day (0=Sunday, 1=Monday...)
+    const getNextDay = (dayIndex: number, weeksAhead = 0) => {
+        const date = new Date();
+        date.setDate(date.getDate() + ((dayIndex + 7 - date.getDay()) % 7 || 7) + (weeksAhead * 7));
+        return date;
+    };
+
+    const formatDate = (date: Date) => {
+        return date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+    };
+
+    const formatMonthYear = (date: Date) => {
+        return date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+    };
+
+    const nextMonday = getNextDay(1); // Next Monday
+    const nextSaturday = getNextDay(6); // Next Saturday
+    const nextFlexible = getNextDay(1, 2); // Monday, 2 weeks from now
+
     const defaultBatches = [
-        // ... (Keep existing defaultBatches as fallback)
         {
-            name: "Batch 1: November 2024 (Weekday)",
+            name: `Batch 1: ${formatMonthYear(nextMonday)} (Weekdays)`,
             status: "Filling Fast",
             statusColor: "bg-red-100 text-red-600",
-            date: "November 13, 2024",
-            schedule: "Mon-Fri | 07:00 AM - 08:30 AM IST",
-            duration: "10 Weeks",
-            seatsFilled: 85
+            date: formatDate(nextMonday),
+            schedule: "Mon-Fri | 07:00 AM | 08:00 PM IST",
+            duration: "45-50 Hours",
+            seatsFilled: 75,
+            seatsText: "3/10 Seats Available"
+        },
+        {
+            name: `Batch 2: ${formatMonthYear(nextSaturday)} (Weekends)`,
+            status: "Booking Open",
+            statusColor: "bg-green-100 text-green-600",
+            date: formatDate(nextSaturday),
+            schedule: "Sat-Sun | 07:30 AM | 07:00 PM IST",
+            duration: "45-50 Hours",
+            seatsFilled: 40,
+            seatsText: "6/10 Seats Available"
+        },
+        {
+            name: `Batch 3: ${formatMonthYear(nextFlexible)} (Flexible)`,
+            status: "Booking Open",
+            statusColor: "bg-blue-100 text-blue-600",
+            date: formatDate(nextFlexible),
+            schedule: "Flexible timings – customized per batch",
+            duration: "45-50 Hours (accelerated)",
+            seatsFilled: 20,
+            seatsText: "8/10 Seats Available"
         }
     ];
 
@@ -34,7 +73,7 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
         seatsFilledNormalized: batch.seatsFilled !== undefined ? batch.seatsFilled : (
             batch.seats ? (parseInt(batch.seats.split('/')[1]) - parseInt(batch.seats.split('/')[0])) / parseInt(batch.seats.split('/')[1]) * 100 : 50
         ),
-        seatsText: batch.seats || (batch.seatsFilled !== undefined ? `${100 - batch.seatsFilled}% Left` : "Available")
+        seatsText: batch.seatsText || batch.seats || (batch.seatsFilled !== undefined ? `${100 - batch.seatsFilled}% Left` : "Available")
     }));
 
     const defaultFeatures = [
