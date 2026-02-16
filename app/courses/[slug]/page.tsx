@@ -15,6 +15,7 @@ import { Metadata } from 'next';
 import { courses, defaultFaqs, getDefaultDetailedFeatures, Section } from '@/lib/courseData';
 import { getGenericPrerequisites, getGenericTargetAudience } from '@/lib/contentHelpers';
 import CourseHeroActionButtons from '@/components/course/CourseHeroActionButtons';
+import Script from 'next/script';
 
 // Dynamic rendering only to avoid build OOM
 export const dynamic = 'force-dynamic';
@@ -187,8 +188,10 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                 const cleanSchema = schemaMarkup.replace(/<script[^>]*>|<\/script>/gi, '').trim();
 
                 return (
-                    <script
+                    <Script
+                        id={`course-schema-${slug}`}
                         type="application/ld+json"
+                        strategy="beforeInteractive"
                         dangerouslySetInnerHTML={{ __html: cleanSchema }}
                     />
                 );
