@@ -15,9 +15,10 @@ interface ContentWithImageProps {
     layout?: 'left' | 'right';
     supportTitle?: string;
     supportText?: string;
+    courseName?: string;
 }
 
-export default function ContentWithImage({ title, subtitle, description, items, imageSrc, imageAlt, videoSrc, layout = 'left', supportTitle, supportText }: ContentWithImageProps) {
+export default function ContentWithImage({ title, subtitle, description, items, imageSrc, imageAlt, videoSrc, layout = 'left', supportTitle, supportText, courseName }: ContentWithImageProps) {
     return (
         <div className="py-12 bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-sm">
             <div className={`flex flex-col ${layout === 'right' ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-start gap-12 p-8 lg:p-12`}>
@@ -49,7 +50,7 @@ export default function ContentWithImage({ title, subtitle, description, items, 
                     {/* Embedded Contact Form */}
                     <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6">
                         <h3 className="text-xl font-bold text-slate-900 mb-4 text-center">Book Your Free Demo</h3>
-                        <ContactForm />
+                        <ContactForm defaultCourse={courseName} />
                     </div>
                 </div>
 

@@ -233,7 +233,7 @@ export default function SectionRenderer({ sections, courseName, syllabusUrl }: {
                     case 'detailed_sap_integrations':
                         return <DetailedFeatures key={idx} items={section.items} title={section.title || "SAP Integrations"} />;
                     case 'content_with_image':
-                        return <ContentWithImage key={idx} {...section} />;
+                        return <ContentWithImage key={idx} {...section} courseName={courseName || section.courseName} />;
                     case 'whats_included':
                         return <WhatsIncluded key={idx} {...section} />;
                     case 'faq':

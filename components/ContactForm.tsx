@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { courses } from '@/lib/courseData';
@@ -24,6 +24,12 @@ export default function ContactForm({ className = "", showLabels = true, success
         course: defaultCourse,
         message: ''
     });
+
+    useEffect(() => {
+        if (defaultCourse) {
+            setFormData(prev => ({ ...prev, course: defaultCourse }));
+        }
+    }, [defaultCourse]);
 
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const [errorMessage, setErrorMessage] = useState('');
@@ -206,9 +212,13 @@ export default function ContactForm({ className = "", showLabels = true, success
                     className="w-full px-3 py-1.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors bg-white text-gray-900 text-sm"
                 >
                     <option value="">Select SAP Module</option>
-                    {courses.filter(c => c.title !== 'Other' && c.id !== 'other').map((course) => (
-                        <option key={course.id} value={course.title}>{course.title}</option>
-                    ))}
+                    {courses
+                        .filter(c => c.title !== 'Other' && c.id !== 'other')
+                        .filter((c, index, self) => index === self.findIndex((t) => t.title === c.title))
+                        .map((course) => (
+                            <option key={course.id} value={course.title}>{course.title}</option>
+                        ))
+                    }
                 </select>
             </div>
 

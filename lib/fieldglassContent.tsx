@@ -122,6 +122,7 @@ export const fieldglassContent = {
         {
             type: 'content_with_image',
             title: "Why Professionals Choose ERPVITS for SAP Fieldglass Online Training",
+            subtitle: "Success Guarantee & Credibility",
             description: "ERPVITS's SAP Fieldglass training quality describes the company as a reliable SAP training institute for SAP solutions with hundreds of learners with successful training working in top consulting firms such as Accenture, Capgemini, Deloitte, Infosys, and Wipro in the contingent workforce and vendor management area. The alumni network reinforces the instructor quality and proceeds career transition that the Fieldglass course offers.",
             videoSrc: "https://www.youtube.com/embed/ESsjk0atabg",
             items: [
@@ -902,3 +903,4 @@ export const fieldglassContent = {
         }
     ]
 };
+
