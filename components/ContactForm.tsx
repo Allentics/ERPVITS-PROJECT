@@ -11,16 +11,17 @@ interface ContactFormProps {
     className?: string;
     showLabels?: boolean;
     successMessage?: string;
+    defaultCourse?: string;
 }
 
-export default function ContactForm({ className = "", showLabels = true, successMessage = "Thank you for reaching out. Our team will contact you shortly." }: ContactFormProps) {
+export default function ContactForm({ className = "", showLabels = true, successMessage = "Thank you for reaching out. Our team will contact you shortly.", defaultCourse = "" }: ContactFormProps) {
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
         email: '',
         countryCode: '+91',
         phone: '',
-        course: '',
+        course: defaultCourse,
         message: ''
     });
 
@@ -196,7 +197,7 @@ export default function ContactForm({ className = "", showLabels = true, success
             </div>
 
             <div>
-                {showLabels && <label className="block text-[10px] font-bold text-gray-700 mb-0.5">Interested Course</label>}
+                {showLabels && <label className="block text-[10px] font-bold text-gray-700 mb-0.5">SAP Module *</label>}
                 <select
                     name="course"
                     value={formData.course}
@@ -204,7 +205,7 @@ export default function ContactForm({ className = "", showLabels = true, success
                     required
                     className="w-full px-3 py-1.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors bg-white text-gray-900 text-sm"
                 >
-                    <option value="">Select a course...</option>
+                    <option value="">Select SAP Module</option>
                     {courses.filter(c => c.title !== 'Other' && c.id !== 'other').map((course) => (
                         <option key={course.id} value={course.title}>{course.title}</option>
                     ))}

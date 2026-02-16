@@ -442,7 +442,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                 </div>
             </div>
 
-            <CourseEnrollmentCTA />
+            <CourseEnrollmentCTA courseTitle={mappedCourse.title} />
         </main>
     );
 }

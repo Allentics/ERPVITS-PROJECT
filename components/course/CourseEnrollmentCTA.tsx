@@ -3,7 +3,11 @@
 import { useState } from 'react';
 import ContactModal from '@/components/ContactModal';
 
-export default function CourseEnrollmentCTA() {
+interface CourseEnrollmentCTAProps {
+    courseTitle?: string;
+}
+
+export default function CourseEnrollmentCTA({ courseTitle }: CourseEnrollmentCTAProps) {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
@@ -12,6 +16,7 @@ export default function CourseEnrollmentCTA() {
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
                 title="Reserve Your Seat"
+                defaultCourse={courseTitle}
             />
             <div className="max-w-3xl mx-auto px-4">
                 <h2 className="text-3xl font-bold mb-6">Ready to Start Your Career?</h2>

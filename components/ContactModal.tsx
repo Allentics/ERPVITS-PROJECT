@@ -9,9 +9,10 @@ interface ContactModalProps {
     onClose: () => void;
     title?: string;
     subtitle?: string;
+    defaultCourse?: string;
 }
 
-export default function ContactModal({ isOpen, onClose, title = "Get Started with SAP", subtitle = "Fill out the form below and our experts will get back to you shortly." }: ContactModalProps) {
+export default function ContactModal({ isOpen, onClose, title = "Get Started with SAP", subtitle = "Fill out the form below and our experts will get back to you shortly.", defaultCourse }: ContactModalProps) {
     const modalRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -58,7 +59,7 @@ export default function ContactModal({ isOpen, onClose, title = "Get Started wit
                         <p className="text-gray-600 mt-0.5 text-xs">{subtitle}</p>
                     </div>
 
-                    <ContactForm />
+                    <ContactForm defaultCourse={defaultCourse} />
                 </div>
             </div>
         </div>

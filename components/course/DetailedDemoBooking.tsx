@@ -8,12 +8,14 @@ import React, { useState, useEffect } from 'react';
 import { User, Mail, Phone, Briefcase, MessageSquare, ArrowRight, CheckCircle2, Video, Calendar, HelpCircle, Gift, MapPin, Loader2, AlertCircle } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { submitToGoogleSheets } from '@/app/actions/submitToGoogleSheets';
+import { courses } from '@/lib/courseData';
 
 export default function DetailedDemoBooking({ title, subtitle, courseName = "this course", benefits, features, syllabusUrl }: { title?: string | React.ReactNode, subtitle?: string | React.ReactNode, courseName?: string, benefits?: any[], features?: any[], syllabusUrl?: string }) {
     const [formData, setFormData] = useState({
         fullName: '',
         email: '',
         phone: '',
+        course: courseName,
         experience: '',
         message: ''
     });
@@ -40,14 +42,14 @@ export default function DetailedDemoBooking({ title, subtitle, courseName = "thi
 
             const { error } = await supabase.from('contacts').insert([{
                 name: formData.fullName, first_name: firstName, last_name: lastName,
-                email: formData.email, phone: formData.phone, course: courseName, message: fullMessage
+                email: formData.email, phone: formData.phone, course: formData.course, message: fullMessage
             }]);
 
             if (error) throw error;
-            submitToGoogleSheets({ firstName, lastName, email: formData.email, countryCode: '', phone: formData.phone, course: courseName, message: fullMessage }).catch(console.error);
+            submitToGoogleSheets({ firstName, lastName, email: formData.email, countryCode: '', phone: formData.phone, course: formData.course, message: fullMessage }).catch(console.error);
 
             setStatus('success');
-            setFormData({ fullName: '', email: '', phone: '', experience: '', message: '' });
+            setFormData({ fullName: '', email: '', phone: '', course: courseName, experience: '', message: '' });
         } catch (error: any) {
             if (newTab) newTab.close();
             console.error('Submission error:', error);
@@ -206,6 +208,22 @@ export default function DetailedDemoBooking({ title, subtitle, courseName = "thi
                                             <option value="5+ Years">5+ Years</option>
                                         </select>
                                     </div>
+                                </div>
+
+                                <div>
+                                    <label className="block text-[10px] font-bold text-slate-700 mb-0.5 ml-1">SAP Module *</label>
+                                    <select
+                                        name="course"
+                                        value={formData.course}
+                                        onChange={handleChange}
+                                        required
+                                        className="w-full px-2 py-1.5 bg-slate-50 border border-slate-200 rounded-md text-xs focus:outline-none focus:border-slate-900 transition-colors appearance-none text-slate-700"
+                                    >
+                                        <option value="">Select SAP Module</option>
+                                        {courses.filter(c => c.title !== 'Other' && c.id !== 'other').map((course) => (
+                                            <option key={course.id} value={course.title}>{course.title}</option>
+                                        ))}
+                                    </select>
                                 </div>
 
                                 <div>
