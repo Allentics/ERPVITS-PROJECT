@@ -13,10 +13,10 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
         }
     };
 
-    // Helper to get next occurrence of a specific day (0=Sunday, 1=Monday...)
-    const getNextDay = (dayIndex: number, weeksAhead = 0) => {
+    // Helper to get a date X days from now
+    const getFutureDate = (daysToAdd: number) => {
         const date = new Date();
-        date.setDate(date.getDate() + ((dayIndex + 7 - date.getDay()) % 7 || 7) + (weeksAhead * 7));
+        date.setDate(date.getDate() + daysToAdd);
         return date;
     };
 
@@ -28,36 +28,36 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
         return date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
     };
 
-    const nextMonday = getNextDay(1); // Next Monday
-    const nextSaturday = getNextDay(6); // Next Saturday
-    const nextFlexible = getNextDay(1, 2); // Monday, 2 weeks from now
+    const batch1Date = getFutureDate(2);
+    const batch2Date = getFutureDate(5);
+    const batch3Date = getFutureDate(12);
 
-    const defaultBatches = [
+    const dynamicBatches = [
         {
-            name: `Batch 1: ${formatMonthYear(nextMonday)} (Weekdays)`,
+            name: `Batch 1: ${formatMonthYear(batch1Date)} (Weekdays)`,
             status: "Filling Fast",
             statusColor: "bg-red-100 text-red-600",
-            date: formatDate(nextMonday),
+            date: formatDate(batch1Date),
             schedule: "Mon-Fri | 07:00 AM | 08:00 PM IST",
             duration: "45-50 Hours",
-            seatsFilled: 75,
-            seatsText: "3/10 Seats Available"
+            seatsFilled: 85,
+            seatsText: "2/10 Seats Available"
         },
         {
-            name: `Batch 2: ${formatMonthYear(nextSaturday)} (Weekends)`,
+            name: `Batch 2: ${formatMonthYear(batch2Date)} (Weekends)`,
             status: "Booking Open",
             statusColor: "bg-green-100 text-green-600",
-            date: formatDate(nextSaturday),
+            date: formatDate(batch2Date),
             schedule: "Sat-Sun | 07:30 AM | 07:00 PM IST",
             duration: "45-50 Hours",
             seatsFilled: 40,
             seatsText: "6/10 Seats Available"
         },
         {
-            name: `Batch 3: ${formatMonthYear(nextFlexible)} (Flexible)`,
+            name: `Batch 3: ${formatMonthYear(batch3Date)} (Flexible)`,
             status: "Booking Open",
             statusColor: "bg-blue-100 text-blue-600",
-            date: formatDate(nextFlexible),
+            date: formatDate(batch3Date),
             schedule: "Flexible timings – customized per batch",
             duration: "45-50 Hours (accelerated)",
             seatsFilled: 20,
@@ -65,15 +65,12 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
         }
     ];
 
-    const batches = (propBatches || defaultBatches).map(batch => ({
+    // Priority to dynamic batches to ensure dates are always current/upcoming, 
+    // overriding potential stale data from DB props.
+    const batches = dynamicBatches.map(batch => ({
         ...batch,
-        name: batch.title || batch.name,
-        schedule: batch.time || batch.schedule || "Flexible",
-        // Extract seats filled from string like "3/10 Seats Left" if seatsFilled is missing
-        seatsFilledNormalized: batch.seatsFilled !== undefined ? batch.seatsFilled : (
-            batch.seats ? (parseInt(batch.seats.split('/')[1]) - parseInt(batch.seats.split('/')[0])) / parseInt(batch.seats.split('/')[1]) * 100 : 50
-        ),
-        seatsText: batch.seatsText || batch.seats || (batch.seatsFilled !== undefined ? `${100 - batch.seatsFilled}% Left` : "Available")
+        // Ensure name is dynamic if it wasn't already
+        seatsFilledNormalized: batch.seatsFilled
     }));
 
     const defaultFeatures = [
