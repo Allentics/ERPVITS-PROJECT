@@ -15,7 +15,7 @@ import { Metadata } from 'next';
 import { courses, defaultFaqs, getDefaultDetailedFeatures, Section } from '@/lib/courseData';
 import { getGenericPrerequisites, getGenericTargetAudience } from '@/lib/contentHelpers';
 import CourseHeroActionButtons from '@/components/course/CourseHeroActionButtons';
-import Script from 'next/script';
+import JsonLd from '@/components/JsonLd';
 
 // Dynamic rendering only to avoid build OOM
 export const dynamic = 'force-dynamic';
@@ -184,16 +184,35 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                     });
                 }
 
-                // Clean schema: strip script tags if present (case-insensitive)
-                const cleanSchema = schemaMarkup.replace(/<script[^>]*>|<\/script>/gi, '').trim();
+                // Clean schema: strip script tags if present (case-insensitive) - handled by dangerouslySetInnerHTML, but careful strip can be useful
+                let cleanSchema = schemaMarkup;
+                try {
+                    const parsed = JSON.parse(schemaMarkup);
+                    cleanSchema = parsed;
+                } catch (e) {
+                    // if it's not valid json, we might have issues
+                }
+
+                // If it's a string, we need to parse it back to object for JsonLd component
+                let schemaObj = {};
+                if (typeof cleanSchema === 'string') {
+                    try {
+                        schemaObj = JSON.parse(cleanSchema);
+                    } catch (e) {
+                        // fallback to basic object if string is invalid
+                        schemaObj = {
+                            "@context": "https://schema.org",
+                            "@type": "Course",
+                            "name": mappedCourse.title,
+                            "description": mappedCourse.metaDescription || mappedCourse.description
+                        };
+                    }
+                } else {
+                    schemaObj = cleanSchema;
+                }
 
                 return (
-                    <Script
-                        id={`course-schema-${slug}`}
-                        type="application/ld+json"
-                        strategy="beforeInteractive"
-                        dangerouslySetInnerHTML={{ __html: cleanSchema }}
-                    />
+                    <JsonLd data={schemaObj} />
                 );
             })()}
 
