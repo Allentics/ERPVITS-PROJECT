@@ -1,0 +1,174 @@
+[
+  {
+    "page_path": "/",
+    "section_key": "hero",
+    "content": {
+      "stats": [
+        {
+          "val": "12+ Years",
+          "label": "In SAP Industry"
+        },
+        {
+          "val": "6000+",
+          "label": "Professionals Trained"
+        },
+        {
+          "val": "24/7",
+          "label": "Team Support"
+        },
+        {
+          "val": "8+",
+          "label": "SAP Solution Architects"
+        }
+      ],
+      "heading": "Empower Your Career with Expert SAP Online Training",
+      "subheading": "Industry-Leading SAP Online Training Institute with 95%+ Placement Success",
+      "cta_primary": "Start Your SAP Training Journey Today",
+      "description": "Transform your career with ERPVITS, your trusted online SAP training partner. Learn from industry experts with over 15 years of experience in SAP. Get your certification, achieve your dream job and boost your earnings with instructor SAP courses with hands-on projects and placement assistance.",
+      "cta_secondary": "Explore SAP Courses",
+      "highlight_text": "SAP Online Training"
+    }
+  },
+  {
+    "page_path": "/",
+    "section_key": "pricing",
+    "content": {
+      "plans": [
+        {
+          "cta": "Start Learning Now",
+          "desc": "Ideal for independent learners",
+          "name": "Self-Paced Program",
+          "color": "blue",
+          "price": "Lifetime Access",
+          "popular": false,
+          "features": [
+            "Lifetime access to recordings",
+            "Learning materials included",
+            "Self-study assistance",
+            "Flexible learning timeline",
+            "Certification guidance provided",
+            "24/7 Portal Access",
+            "Resume preparation tips"
+          ]
+        },
+        {
+          "cta": "Join Upcoming Batch",
+          "desc": "Best for career switchers",
+          "name": "Instructor-Led Program",
+          "color": "orange",
+          "price": "Live Batches",
+          "popular": true,
+          "features": [
+            "Live classes with expert trainers",
+            "Access to study materials & recordings",
+            "Job support included",
+            "Real SAP system access",
+            "Project-based learning"
+          ]
+        },
+        {
+          "cta": "Request Corporate Quote",
+          "desc": "For teams and organizations",
+          "name": "Corporate Training",
+          "color": "gray",
+          "price": "Custom",
+          "popular": false,
+          "features": [
+            "Tailored curriculum for team needs",
+            "Dedicated trainer for your organization",
+            "Team coordination & project alignment",
+            "Flexible training schedule",
+            "Post-training support & reports"
+          ]
+        }
+      ],
+      "title": "Affordable SAP Training – Flexible Pricing",
+      "subtitle": "Choose the program that fits your budget with flexible payment options available"
+    }
+  },
+  {
+    "page_path": "/about",
+    "section_key": "hero",
+    "content": {
+      "title": "About ERPVITS",
+      "description": "We are a global leader in SAP training, dedicated to transforming careers through expert-led education and real-world project experience."
+    }
+  },
+  {
+    "page_path": "/about",
+    "section_key": "mission",
+    "content": {
+      "stats": [
+        {
+          "val": "6000+",
+          "label": "Students Trained"
+        },
+        {
+          "val": "95%",
+          "label": "Placement Rate"
+        },
+        {
+          "val": "20+",
+          "label": "Countries Reach"
+        },
+        {
+          "val": "500+",
+          "label": "Hiring Partners"
+        }
+      ],
+      "title": "Our Mission",
+      "description": "At ERPVITS, our mission is to bridging the gap between theoretical knowledge and industry demands. We believe that true learning happens through doing, which is why our curriculum is centered around hands-on projects and real-time scenarios.",
+      "secondary_description": "With over a decade of experience, we have helped thousands of professionals and students master SAP technologies and secure high-paying roles in top multinational corporations."
+    }
+  },
+  {
+    "page_path": "/",
+    "section_key": "why_choose_us",
+    "content": {
+      "title": "Why Choose ERPVITS for Your SAP Online Training?",
+      "benefits": [
+        {
+          "desc": "Instructors with 15+ years of practical SAP experience. Learn from experts who have undertaken SAP projects in Fortune 500 companies.",
+          "icon": "Monitor",
+          "title": "Expert SAP Training with Industry Leaders"
+        },
+        {
+          "desc": "Interactive live sessions with real-time Q&A. No pre-recorded content. Engage in discussions and receive prompt responses.",
+          "icon": "Zap",
+          "title": "Real-Time, Instructor-Led SAP Courses"
+        },
+        {
+          "desc": "Practice with live SAP environments. Complete end-to-end projects from requirement gathering to implementation.",
+          "icon": "Briefcase",
+          "title": "Hands-On Project-Based SAP Learning"
+        },
+        {
+          "desc": "Placement success rate of >95%. Comprehensive support including resume prep, mock interviews, and hiring partner connections.",
+          "icon": "Award",
+          "title": "Job Placement Support & Career Support"
+        },
+        {
+          "desc": "Support for global certifications (Ariba, FICO, S/4HANA, etc.). Align coursework with exam requirements.",
+          "icon": "ShieldCheck",
+          "title": "Guidance for Multiple SAP Certifications"
+        },
+        {
+          "desc": "Instructor-Led, Self-Paced, and Corporate options. Weekend and evening batches available for working professionals.",
+          "icon": "Clock",
+          "title": "Flexible SAP Learning Formats for Your Schedule"
+        },
+        {
+          "desc": "Competitive pricing with flexible installment plans. High quality training that doesn't break the bank.",
+          "icon": "Calculator",
+          "title": "Affordable SAP Course Charges"
+        },
+        {
+          "desc": "Lifetime access to mentors, alumni network, and professional development resources even after course completion.",
+          "icon": "Users",
+          "title": "Lifetime Career Support & Mentorship"
+        }
+      ],
+      "subtitle": "Transform Your Career with Certified SAP Online Training – 6000+ Professionals Trained & Successfully Placed Globally"
+    }
+  }
+]
