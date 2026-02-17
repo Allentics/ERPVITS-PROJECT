@@ -59,7 +59,7 @@ INSERT INTO public.site_content (page_path, section_key, content, order_index) V
     "cta_secondary": "Explore SAP Courses",
     "stats": [
         {"val": "12+ Years", "label": "In SAP Industry"},
-        {"val": "6000+", "label": "Professionals Trained"},
+        {"val": "8000+", "label": "Professionals Trained"},
         {"val": "24/7", "label": "Team support"},
         {"val": "8+", "label": "SAP Solution Architects"}
     ]
@@ -134,7 +134,7 @@ INSERT INTO public.site_content (page_path, section_key, content, order_index) V
     "description": "At ERPVITS, our mission is to bridging the gap between theoretical knowledge and industry demands. We believe that true learning happens through doing, which is why our curriculum is centered around hands-on projects and real-time scenarios.",
     "secondary_description": "With over a decade of experience, we have helped thousands of professionals and students master SAP technologies and secure high-paying roles in top multinational corporations.",
     "stats": [
-        {"val": "6000+", "label": "Students Trained"},
+        {"val": "8000+", "label": "Professionals Trained"},
         {"val": "95%", "label": "Placement Rate"},
         {"val": "20+", "label": "Countries Reach"},
         {"val": "500+", "label": "Hiring Partners"}
@@ -146,7 +146,7 @@ ON CONFLICT (page_path, section_key) DO UPDATE SET content = EXCLUDED.content;
 INSERT INTO public.site_content (page_path, section_key, content, order_index) VALUES
 ('/', 'why_choose_us', '{
     "title": "Why Choose ERPVITS for Your SAP Online Training?",
-    "subtitle": "Transform Your Career with Certified SAP Online Training – 6000+ Professionals Trained & Successfully Placed Globally",
+    "subtitle": "Transform Your Career with Certified SAP Online Training – 8000+ Professionals Trained & Successfully Placed Globally",
     "benefits": [
         {
             "icon": "Monitor",

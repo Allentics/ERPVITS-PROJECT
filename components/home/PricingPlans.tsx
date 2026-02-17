@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Check } from 'lucide-react';
@@ -154,7 +153,7 @@ export default function PricingPlans() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
                     {content.plans?.map((plan: any, i: number) => (
-                        <div key={i} className={`bg-white rounded-2xl p-6 shadow-sm border transition-all duration-300 relative hover:-translate-y-2 hover:shadow-xl ${plan.popular ? 'border-orange-500 ring-2 ring-orange-200' : 'border-gray-200'}`}>
+                        <div key={i} className={`bg-white rounded-2xl p-6 shadow-sm border relative ${plan.popular ? 'border-orange-500 ring-2 ring-orange-200' : 'border-gray-200'}`}>
                             {plan.popular && (
                                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-orange-500 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide">
                                     Most Popular

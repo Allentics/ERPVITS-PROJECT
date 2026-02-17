@@ -97,7 +97,7 @@ export default function WhyChooseUs() {
                     {content.benefits.map((b: any, i: number) => {
                         const IconComponent = ICON_MAP[b.icon] || ShieldCheck;
                         return (
-                            <div key={i} className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                            <div key={i} className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 group">
                                 <div className="w-12 h-12 bg-orange-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-orange-600 transition-colors">
                                     <IconComponent className="h-6 w-6 text-orange-600 group-hover:text-white transition-colors" />
                                 </div>

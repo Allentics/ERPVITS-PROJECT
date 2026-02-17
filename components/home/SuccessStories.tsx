@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -107,7 +106,7 @@ export default function SuccessStories() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {content.stories?.map((story: any, i: number) => (
-                        <div key={i} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-all relative">
+                        <div key={i} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 relative">
                             <div className="absolute top-6 right-6 flex text-yellow-400">
                                 {[...Array(5)].map((_, s) => (
                                     <Star

@@ -72,7 +72,7 @@ export default function FeaturedCourses() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {featuredCourses.slice(0, 6).map((course: any) => (
-                        <div key={course.id} className="bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col group">
+                        <div key={course.id} className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group">
 
                             <div className="p-6 flex-1 flex flex-col">
                                 <div className="mb-4">

@@ -20,7 +20,7 @@ const DEFAULT_MISSION = {
     description: "At ERPVITS, our mission is to bridging the gap between theoretical knowledge and industry demands. We believe that true learning happens through doing, which is why our curriculum is centered around hands-on projects and real-time scenarios.",
     secondary_description: "With over a decade of experience, we have helped thousands of professionals and students master SAP technologies and secure high-paying roles in top multinational corporations.",
     stats: [
-        { val: "8000+", label: "Prospective Students" },
+        { val: "8000+", label: "Professionals Trained" },
         { val: "95%", label: "Placement Rate" },
         { val: "20+", label: "Countries Reach" },
         { val: "500+", label: "Hiring Partners" }
@@ -67,7 +67,7 @@ export default async function AboutPage() {
                 // Force 8000+ local update
                 if (mission.stats) {
                     mission.stats = mission.stats.map((s: any) => {
-                        if (s.label === "Prospective Students") return { ...s, val: "8000+" };
+                        if (s.label === "Prospective Students" || s.label === "Students Trained") return { ...s, val: "8000+", label: "Professionals Trained" };
                         return s;
                     });
                 }
