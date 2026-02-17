@@ -69,7 +69,7 @@ export default function WhatsIncluded({ features: customFeatures, stats: customS
     const stats = customStats || defaultStats;
 
     return (
-        <section className="py-16 bg-white">
+        <section className="py-8 bg-white">
             <div className="max-w-7xl mx-auto px-4">
                 {/* Header */}
                 <div className="text-center mb-12">
@@ -107,7 +107,7 @@ export default function WhatsIncluded({ features: customFeatures, stats: customS
                 <div className={`grid grid-cols-1 md:grid-cols-${Math.max(stats.length, 3)} gap-6`}>
                     {stats.map((stat, idx) => {
                         // Force orange styling regardless of stat.color for consistency as requested
-                        const colorClass = 'bg-[#ff4500]/10/50 border-[#ff4500]/10 text-[#ff4500]';
+                        const colorClass = 'bg-[#ff4500]/10 border-[#ff4500]/10 text-[#ff4500]';
                         const textClass = 'text-orange-800';
 
                         return (

@@ -17,7 +17,7 @@ const CourseHero = ({ course }: { course: Course }) => {
         return (
             <div className="bg-slate-50 pt-10 pb-16 md:pt-14 md:pb-20 relative overflow-hidden text-center border-b border-slate-100">
                 {/* Subtle Background Glow */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#ff4500]/10/40 rounded-full blur-3xl opacity-50 -z-10 pointer-events-none"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#ff4500]/10 rounded-full blur-3xl opacity-50 -z-10 pointer-events-none"></div>
 
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 

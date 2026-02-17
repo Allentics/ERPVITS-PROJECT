@@ -132,7 +132,7 @@ export default function DetailedTestimonials({ items, stats, courseName = "SAP" 
     const reviewsCountLabel = stats?.reviews || "500+ student reviews";
 
     return (
-        <section className="py-8 bg-[#ff4500]/10/30">
+        <section className="py-8 bg-white">
             <div className="max-w-7xl mx-auto px-4">
 
                 {/* Testimonials Header */}

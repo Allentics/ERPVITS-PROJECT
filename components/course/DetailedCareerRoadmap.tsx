@@ -94,20 +94,20 @@ export default function DetailedCareerRoadmap({ items, stats }: { items?: any[],
                 <div className="bg-gradient-to-r from-[#ff4500] to-red-600 rounded-2xl p-8 md:p-12 text-center text-white shadow-xl relative overflow-hidden">
                     <div className="relative z-10">
                         <h3 className="text-2xl md:text-3xl font-bold mb-2">Join Our Successful Alumni Network</h3>
-                        <p className="text-[#ff4500]/20 mb-8 max-w-2xl mx-auto text-sm">Our graduates are working at top companies worldwide. Fast-track your career with ERPVITS training and join this elite network of professionals.</p>
+                        <p className="text-orange-50 mb-8 max-w-2xl mx-auto text-sm">Our graduates are working at top companies worldwide. Fast-track your career with ERPVITS training and join this elite network of professionals.</p>
 
-                        <div className="grid grid-cols-3 gap-8 max-w-3xl mx-auto border-t border-orange-400/30 pt-8">
-                            <div>
-                                <div className="text-3xl md:text-4xl font-bold mb-1">500+</div>
-                                <div className="text-xs md:text-sm text-[#ff4500]/20">Alumni Placed</div>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto border-t border-white/20 pt-8 mt-4">
+                            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/10 shadow-lg">
+                                <div className="text-3xl md:text-4xl font-bold mb-1 text-white">500+</div>
+                                <div className="text-xs md:text-sm text-orange-50/90 font-medium">Alumni Placed</div>
                             </div>
-                            <div>
-                                <div className="text-3xl md:text-4xl font-bold mb-1">98%</div>
-                                <div className="text-xs md:text-sm text-[#ff4500]/20">Success Rate</div>
+                            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/10 shadow-lg">
+                                <div className="text-3xl md:text-4xl font-bold mb-1 text-white">98%</div>
+                                <div className="text-xs md:text-sm text-orange-50/90 font-medium">Success Rate</div>
                             </div>
-                            <div>
-                                <div className="text-3xl md:text-4xl font-bold mb-1">3 Months</div>
-                                <div className="text-xs md:text-sm text-[#ff4500]/20">Average Job Time</div>
+                            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/10 shadow-lg">
+                                <div className="text-3xl md:text-4xl font-bold mb-1 text-white">3 Months</div>
+                                <div className="text-xs md:text-sm text-orange-50/90 font-medium">Average Job Time</div>
                             </div>
                         </div>
                     </div>

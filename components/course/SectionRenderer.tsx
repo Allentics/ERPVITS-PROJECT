@@ -166,7 +166,7 @@ export default function SectionRenderer({ sections, courseName, syllabusUrl }: {
     if (!sections) return null;
 
     return (
-        <div className="space-y-8">
+        <div className="space-y-6">
             {sections.map((section, idx) => {
                 switch (section.type) {
                     case 'detailed_features':

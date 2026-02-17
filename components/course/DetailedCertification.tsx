@@ -98,7 +98,7 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
     const benefitsToDisplay = benefits || defaultBenefits;
 
     return (
-        <section className="pt-8 pb-16 bg-white text-slate-900">
+        <section className="pt-8 pb-8 bg-white text-slate-900">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <h2 className="text-2xl lg:text-3xl font-bold mb-2 text-slate-900 leading-tight">

@@ -227,7 +227,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                         {/* Left Content Side */}
                         <div className="lg:col-span-7 text-left">
                             {/* Heading */}
-                            <h1 className="text-4xl lg:text-5xl font-extrabold mb-8 leading-tight tracking-tight text-slate-900">
+                            <h1 className="text-2xl lg:text-3xl font-extrabold mb-8 leading-tight tracking-tight text-slate-900">
                                 {mappedCourse.heroHeading ? (
                                     renderRichText(mappedCourse.heroHeading)
                                 ) : (
@@ -426,7 +426,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-16">
                 {/* Main Content */}
-                <div className="space-y-8">
+                <div className="space-y-6">
 
                     {/* Main Content Area */}
                     {mappedCourse.sections && mappedCourse.sections.length > 0 ? (
@@ -434,7 +434,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                             <SectionRenderer sections={mappedCourse.sections as Section[]} courseName={mappedCourse.title} syllabusUrl={mappedCourse.syllabusUrl} />
                         </div>
                     ) : (
-                        <div className="space-y-8">
+                        <div className="space-y-6">
                             <section id="overview" className="scroll-mt-32">
                                 <DetailedFeatures
                                     badge="Why Choose Us"
