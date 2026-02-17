@@ -401,7 +401,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                                     <div className="flex items-center gap-2 text-xs">
                                         <span className="font-bold text-slate-900 text-base">4.9</span>
                                         <a href="#reviews" className="text-slate-500 hover:text-orange-500 hover:underline transition-colors font-medium">
-                                            ({isTRM ? '2894' : isMM ? '3018' : isSD ? '1118' : isFICO ? '1330' : isFieldglass ? '2665' : isCPI ? '885' : isC4C ? '946' : isABAP ? '421' : '5489'} Reviews)
+                                            ({isTRM ? '2894' : isMM ? '3018' : isSD ? '1118' : isFICO ? '1330' : isFieldglass ? '2665' : isCPI ? '885' : isC4C ? '946' : isABAP ? '421' : isEWM ? '1109' : isTM ? '945' : isMDG ? '1089' : isPPDS ? '896' : isC4CFunc ? '948' : isIBP ? '1069' : isABAPHana ? '865' : '5489'} Reviews)
                                         </a>
                                     </div>
                                 </div>
