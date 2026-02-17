@@ -130,6 +130,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
     const isC4CFunc = slug === 'sap-c4c-functional' || slug === 'c4c-functional';
     const isABAPHana = slug === 'sap-abap-on-hana' || slug === 'abap-hana' || slug === 'abap-on-hana';
     const isPython = slug === 'python-aiml' || slug === 'sap-python-aiml' || slug === 'python-ai-ml';
+    const is40Rating = isABAP || isC4C || isEWM || isTM || isMDG || isPPDS || isC4CFunc || isIBP || isABAPHana;
 
 
 
@@ -239,14 +240,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                                 {renderRichText(mappedCourse.heroSubheading || (mappedCourse.description ? (mappedCourse.description.length > 250 ? mappedCourse.description.substring(0, 250) + "..." : mappedCourse.description) : ""))}
                             </div>
 
-                            {/* Buttons */}
-                            <CourseHeroActionButtons
-                                courseTitle={mappedCourse.title}
-                                syllabusUrl={mappedCourse.syllabusUrl || ''}
-                                themeColor={mappedCourse.themeColor}
-                                enrollHref={(isAriba || isFieldglass || isMM || isFICO || isTRM || isSD || isC4C || isABAP || isTM || isEWM || isIBP || isMDG || isC4CFunc || isABAPHana || isPython) ? "#detailed-demo-booking" : "#enroll"}
-                                align="left"
-                            />
+
 
                             {/* Features/Trust Indicators */}
                             <div className="flex flex-wrap justify-start gap-x-4 md:gap-x-6 gap-y-3 text-[13px] md:text-sm font-semibold text-slate-600 mb-8">
@@ -286,8 +280,8 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                             </div>
 
                             {/* Review Ratings - Integrated into Hero */}
-                            <div className="mt-4">
-                                <div className="flex flex-wrap justify-start items-center gap-4 md:gap-8">
+                            <div className="mt-4 overflow-x-auto lg:overflow-visible no-scrollbar">
+                                <div className="flex flex-nowrap items-center gap-4 lg:gap-6 min-w-max lg:min-w-0">
                                     {/* Trustpilot Review Block */}
                                     <div className="flex items-center gap-3">
                                         <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center shrink-0 shadow-sm">
@@ -296,19 +290,23 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                                             </svg>
                                         </div>
                                         <div className="text-left">
-                                            <div className="flex items-center gap-2 mb-0.5">
-                                                <h4 className="font-bold text-slate-900 text-xs">Trustpilot</h4>
+                                            <h4 className="font-bold text-slate-900 text-xs mb-1">Trustpilot</h4>
+                                            <div className="flex flex-col gap-1">
+                                                <span className="font-bold text-slate-900 text-sm leading-none">4.0</span>
                                                 <div className="flex gap-0.5">
-                                                    {[...Array(4)].map((_, i) => (
-                                                        <svg key={i} className="w-3 h-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                                        </svg>
+                                                    {[...Array(5)].map((_, i) => (
+                                                        <div key={i} className="relative w-3 h-3">
+                                                            <svg className="absolute inset-0 w-3 h-3 text-yellow-400" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 20 20">
+                                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                                            </svg>
+                                                            <div className="absolute inset-0 overflow-hidden" style={{ width: i < 4 ? '100%' : '0%' }}>
+                                                                <svg className="w-3 h-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                                                </svg>
+                                                            </div>
+                                                        </div>
                                                     ))}
                                                 </div>
-                                            </div>
-                                            <div className="flex items-center gap-1.5 text-xs">
-                                                <span className="font-bold text-slate-900">4.0</span>
-                                                <span className="text-slate-500 uppercase tracking-wider font-medium text-[10px]">Based on 500+ reviews</span>
                                             </div>
                                         </div>
                                     </div>
@@ -323,19 +321,23 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                                             />
                                         </div>
                                         <div className="text-left">
-                                            <div className="flex items-center gap-2 mb-0.5">
-                                                <h4 className="font-bold text-slate-900 text-xs">SiteJabber</h4>
+                                            <h4 className="font-bold text-slate-900 text-xs mb-1">SiteJabber</h4>
+                                            <div className="flex flex-col gap-1">
+                                                <span className="font-bold text-slate-900 text-sm leading-none">4.5</span>
                                                 <div className="flex gap-0.5">
                                                     {[...Array(5)].map((_, i) => (
-                                                        <svg key={i} className="w-3 h-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                                        </svg>
+                                                        <div key={i} className="relative w-3 h-3">
+                                                            <svg className="absolute inset-0 w-3 h-3 text-yellow-400" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 20 20">
+                                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                                            </svg>
+                                                            <div className="absolute inset-0 overflow-hidden" style={{ width: i < 4 ? '100%' : '50%' }}>
+                                                                <svg className="w-3 h-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                                                </svg>
+                                                            </div>
+                                                        </div>
                                                     ))}
                                                 </div>
-                                            </div>
-                                            <div className="flex items-center gap-1.5 text-xs">
-                                                <span className="font-bold text-slate-900">4.5</span>
-                                                <span className="text-slate-500 uppercase tracking-wider font-medium text-[10px]">Based on 300+ reviews</span>
                                             </div>
                                         </div>
                                     </div>
@@ -348,19 +350,23 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                                             </svg>
                                         </div>
                                         <div className="text-left">
-                                            <div className="flex items-center gap-2 mb-0.5">
-                                                <h4 className="font-bold text-slate-900 text-sm">Google</h4>
+                                            <h4 className="font-bold text-slate-900 text-sm mb-1">Google</h4>
+                                            <div className="flex flex-col gap-1">
+                                                <span className="font-bold text-slate-900 text-sm leading-none">4.5</span>
                                                 <div className="flex gap-0.5">
                                                     {[...Array(5)].map((_, i) => (
-                                                        <svg key={i} className="w-3 h-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                                        </svg>
+                                                        <div key={i} className="relative w-3 h-3">
+                                                            <svg className="absolute inset-0 w-3 h-3 text-yellow-400" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 20 20">
+                                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                                            </svg>
+                                                            <div className="absolute inset-0 overflow-hidden" style={{ width: i < 4 ? '100%' : '50%' }}>
+                                                                <svg className="w-3 h-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                                                </svg>
+                                                            </div>
+                                                        </div>
                                                     ))}
                                                 </div>
-                                            </div>
-                                            <div className="flex items-center gap-1.5 text-xs">
-                                                <span className="font-bold text-slate-900">4.5</span>
-                                                <span className="text-slate-500 uppercase tracking-wider font-medium text-[10px]">Based on 400+ reviews</span>
                                             </div>
                                         </div>
                                     </div>
@@ -373,21 +379,30 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                                             </svg>
                                         </div>
                                         <div className="text-left">
-                                            <div className="flex items-center gap-2 mb-0.5">
-                                                <h4 className="font-bold text-slate-900 text-xs text-nowrap">Overall Reviews</h4>
+                                            <h4 className="font-bold text-slate-900 text-xs text-nowrap mb-1">Overall Ratings</h4>
+                                            <div className="flex flex-col gap-1">
+                                                <div className="flex items-center gap-1.5">
+                                                    <span className="font-bold text-slate-900 text-sm leading-none">
+                                                        {is40Rating ? '4.0' : '4.5'}
+                                                    </span>
+                                                    <a href="#reviews" className="text-slate-500 hover:text-orange-500 hover:underline transition-colors font-medium text-[10px]">
+                                                        ({isTRM ? '2894' : isMM ? '3018' : isSD ? '1118' : isFICO ? '1330' : isFieldglass ? '2665' : isCPI ? '885' : isC4C ? '946' : isABAP ? '421' : isEWM ? '1109' : isTM ? '945' : isMDG ? '1089' : isPPDS ? '896' : isC4CFunc ? '948' : isIBP ? '1069' : isABAPHana ? '865' : '5489'} Reviews)
+                                                    </a>
+                                                </div>
                                                 <div className="flex gap-0.5">
                                                     {[...Array(5)].map((_, i) => (
-                                                        <svg key={i} className="w-3 h-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                                        </svg>
+                                                        <div key={i} className="relative w-3 h-3">
+                                                            <svg className="absolute inset-0 w-3 h-3 text-yellow-400" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 20 20">
+                                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                                            </svg>
+                                                            <div className="absolute inset-0 overflow-hidden" style={{ width: i < 4 ? '100%' : (is40Rating ? '0%' : '50%') }}>
+                                                                <svg className="w-3 h-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                                                </svg>
+                                                            </div>
+                                                        </div>
                                                     ))}
                                                 </div>
-                                            </div>
-                                            <div className="flex items-center gap-1.5 text-xs">
-                                                <span className="font-bold text-slate-900">4.9</span>
-                                                <a href="#reviews" className="text-slate-500 hover:text-orange-500 hover:underline transition-colors font-medium text-[10px]">
-                                                    ({isTRM ? '2894' : isMM ? '3018' : isSD ? '1118' : isFICO ? '1330' : isFieldglass ? '2665' : isCPI ? '885' : isC4C ? '946' : isABAP ? '421' : isEWM ? '1109' : isTM ? '945' : isMDG ? '1089' : isPPDS ? '896' : isC4CFunc ? '948' : isIBP ? '1069' : isABAPHana ? '865' : '5489'} Reviews)
-                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -396,7 +411,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                         </div>
 
                         {/* Right Form Side */}
-                        <div className="lg:col-span-5">
+                        <div className="lg:col-span-5 lg:-mt-12">
                             <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-xl border border-slate-100 relative overflow-hidden">
                                 <div className={`absolute top-0 left-0 w-full h-1.5 ${mappedCourse.themeColor === 'purple' ? 'bg-blue-600' : 'bg-orange-500'}`}></div>
                                 <h3 className="text-xl font-bold text-slate-900 mb-6">
