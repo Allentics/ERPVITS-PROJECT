@@ -319,10 +319,12 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
 
                             {/* SiteJabber Review Block */}
                             <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center shrink-0 shadow-sm">
-                                    <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                                    </svg>
+                                <div className="w-12 h-12 shrink-0">
+                                    <img
+                                        src="/images/sitejabber-logo.png"
+                                        alt="SiteJabber"
+                                        className="w-full h-full object-contain"
+                                    />
                                 </div>
                                 <div className="text-left">
                                     <div className="flex items-center gap-2 mb-1">
