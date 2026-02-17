@@ -249,15 +249,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                     />
 
                     {/* Features/Trust Indicators */}
-                    <div className="flex flex-wrap justify-center gap-4 gap-y-3 text-sm font-semibold text-slate-600">
-                        {mappedCourse.duration && (
-                            <div className="flex items-center gap-2 whitespace-nowrap">
-                                <svg className={`w-5 h-5 ${mappedCourse.themeColor === 'purple' ? 'text-blue-500' : 'text-orange-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                                {mappedCourse.duration}
-                            </div>
-                        )}
+                    <div className="flex flex-wrap justify-center gap-4 md:gap-6 gap-y-3 text-sm font-semibold text-slate-600">
                         {mappedCourse.heroStats && mappedCourse.heroStats.length > 0 ? (
                             mappedCourse.heroStats.map((stat: any, i: number) => (
                                 <div key={i} className="flex items-center gap-2 whitespace-nowrap">
@@ -282,6 +274,14 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                                     Lifetime Access
                                 </div>
                             </>
+                        )}
+                        {mappedCourse.duration && (
+                            <div className="flex items-center gap-2 whitespace-nowrap">
+                                <svg className={`w-5 h-5 ${mappedCourse.themeColor === 'purple' ? 'text-blue-500' : 'text-orange-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                {mappedCourse.duration}
+                            </div>
                         )}
                     </div>
 
