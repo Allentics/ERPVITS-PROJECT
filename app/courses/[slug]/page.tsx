@@ -221,7 +221,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                 <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-[0.03]"></div>
                 <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[500px] blur-[100px] rounded-full opacity-50 pointer-events-none ${mappedCourse.themeColor === 'purple' ? 'bg-purple-100/40' : 'bg-orange-100/40'}`}></div>
 
-                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
 
 
 
@@ -249,7 +249,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                     />
 
                     {/* Features/Trust Indicators */}
-                    <div className="flex flex-wrap justify-center gap-4 md:gap-6 gap-y-3 text-sm font-semibold text-slate-600">
+                    <div className="flex flex-wrap justify-center gap-x-3 md:gap-x-4 lg:gap-x-6 gap-y-3 text-[13px] md:text-sm font-semibold text-slate-600">
                         {mappedCourse.heroStats && mappedCourse.heroStats.length > 0 ? (
                             mappedCourse.heroStats.map((stat: any, i: number) => (
                                 <div key={i} className="flex items-center gap-2 whitespace-nowrap">
