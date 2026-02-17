@@ -319,7 +319,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
 
                             {/* SiteJabber Review Block */}
                             <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 shrink-0">
+                                <div className="w-14 h-14 shrink-0 bg-white rounded-lg shadow-sm border border-slate-100 flex items-center justify-center p-1">
                                     <img
                                         src="/images/sitejabber-logo.png"
                                         alt="SiteJabber"
