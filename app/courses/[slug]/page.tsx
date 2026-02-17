@@ -249,10 +249,18 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                     />
 
                     {/* Features/Trust Indicators */}
-                    <div className="flex flex-wrap justify-center gap-8 gap-y-4 text-sm font-semibold text-slate-600">
+                    <div className="flex flex-wrap justify-center gap-4 gap-y-3 text-sm font-semibold text-slate-600">
+                        {mappedCourse.duration && (
+                            <div className="flex items-center gap-2 whitespace-nowrap">
+                                <svg className={`w-5 h-5 ${mappedCourse.themeColor === 'purple' ? 'text-blue-500' : 'text-orange-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                {mappedCourse.duration}
+                            </div>
+                        )}
                         {mappedCourse.heroStats && mappedCourse.heroStats.length > 0 ? (
                             mappedCourse.heroStats.map((stat: any, i: number) => (
-                                <div key={i} className="flex items-center gap-2">
+                                <div key={i} className="flex items-center gap-2 whitespace-nowrap">
                                     <svg className={`w-5 h-5 ${mappedCourse.themeColor === 'purple' ? 'text-blue-500' : 'text-orange-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                     </svg>
@@ -261,25 +269,19 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                             ))
                         ) : (
                             <>
-                                <div className="flex items-center gap-2">
+                                <div className="flex items-center gap-2 whitespace-nowrap">
                                     <svg className="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                     SAP Certified Trainers
                                 </div>
-                                <div className="flex items-center gap-2">
+                                <div className="flex items-center gap-2 whitespace-nowrap">
                                     <svg className={`w-5 h-5 ${mappedCourse.themeColor === 'purple' ? 'text-blue-500' : 'text-orange-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.956 11.956 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                                     100% Job Assistance
                                 </div>
-                                <div className="flex items-center gap-2">
+                                <div className="flex items-center gap-2 whitespace-nowrap">
                                     <svg className={`w-5 h-5 ${mappedCourse.themeColor === 'purple' ? 'text-purple-500' : 'text-red-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                                     Lifetime Access
                                 </div>
                             </>
-                        )}
-                        {mappedCourse.duration && (
-                            <div className="flex items-center gap-2 bg-white/80 px-3 py-1.5 rounded-full border border-slate-100 shadow-sm">
-                                <svg className="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <span className="font-bold text-slate-900">{mappedCourse.duration}</span>
-                            </div>
                         )}
                     </div>
 
