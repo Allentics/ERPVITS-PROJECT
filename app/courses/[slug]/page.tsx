@@ -311,7 +311,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                                     </div>
                                     <div className="flex items-center gap-2 text-xs">
                                         <span className="font-bold text-slate-900 text-base">4.0</span>
-                                        <a href="#reviews" className="text-slate-500 hover:text-orange-500 hover:underline transition-colors uppercase tracking-wider font-medium">Based on 500+ reviews</a>
+                                        <span className="text-slate-500 uppercase tracking-wider font-medium">Based on 500+ reviews</span>
                                     </div>
                                 </div>
                             </div>
@@ -344,7 +344,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                                     </div>
                                     <div className="flex items-center gap-2 text-xs">
                                         <span className="font-bold text-slate-900 text-base">4.5</span>
-                                        <a href="#reviews" className="text-slate-500 hover:text-orange-500 hover:underline transition-colors uppercase tracking-wider font-medium">Based on 300+ reviews</a>
+                                        <span className="text-slate-500 uppercase tracking-wider font-medium">Based on 300+ reviews</span>
                                     </div>
                                 </div>
                             </div>
@@ -372,7 +372,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                                     </div>
                                     <div className="flex items-center gap-2 text-xs">
                                         <span className="font-bold text-slate-900 text-base">4.5</span>
-                                        <a href="#reviews" className="text-slate-500 hover:text-orange-500 hover:underline transition-colors uppercase tracking-wider font-medium">Based on 400+ reviews</a>
+                                        <span className="text-slate-500 uppercase tracking-wider font-medium">Based on 400+ reviews</span>
                                     </div>
                                 </div>
                             </div>
@@ -400,7 +400,9 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                                     </div>
                                     <div className="flex items-center gap-2 text-xs">
                                         <span className="font-bold text-slate-900 text-base">4.9</span>
-                                        <span className="text-slate-500 font-medium">(5489 Reviews)</span>
+                                        <a href="#reviews" className="text-slate-500 hover:text-orange-500 hover:underline transition-colors font-medium">
+                                            (5489 Reviews)
+                                        </a>
                                     </div>
                                 </div>
                             </div>
