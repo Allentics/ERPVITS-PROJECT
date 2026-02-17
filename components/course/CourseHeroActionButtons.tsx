@@ -49,7 +49,7 @@ export default function CourseHeroActionButtons({
 
     return (
         <>
-            <div className="flex flex-col sm:flex-row gap-5 justify-center mb-16">
+            <div className="flex flex-col sm:flex-row gap-5 justify-center mb-10">
                 <button
                     onClick={handleEnrollClick}
                     className={`text-white px-8 py-4 rounded-lg font-bold shadow-lg transition-all flex items-center justify-center gap-2 text-base ${isPurple

@@ -217,7 +217,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
             })()}
 
             {/* Hero Section */}
-            <div className="bg-[#F2F6FD] text-slate-900 relative overflow-hidden pt-10 lg:pt-16 pb-24 lg:pb-32">
+            <div className="bg-[#F2F6FD] text-slate-900 relative overflow-hidden pt-10 lg:pt-16 pb-12 lg:pb-16">
                 <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-[0.03]"></div>
                 <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[500px] blur-[100px] rounded-full opacity-50 pointer-events-none ${mappedCourse.themeColor === 'purple' ? 'bg-purple-100/40' : 'bg-orange-100/40'}`}></div>
 
@@ -284,7 +284,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                     </div>
 
                     {/* Review Ratings - Integrated into Hero */}
-                    <div className="mt-12">
+                    <div className="mt-8">
                         <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12">
                             {/* Trustpilot Review Block */}
                             <div className="flex items-center gap-4">
@@ -379,7 +379,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-16">
                 {/* Main Content */}
                 <div className="space-y-8">
 
