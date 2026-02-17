@@ -13,6 +13,7 @@ interface CourseHeroActionButtonsProps {
     enrollHref: string;
     primaryLabel?: string;
     secondaryLabel?: string;
+    align?: 'left' | 'center';
 }
 
 export default function CourseHeroActionButtons({
@@ -21,7 +22,8 @@ export default function CourseHeroActionButtons({
     themeColor = 'purple',
     enrollHref,
     primaryLabel = "Book Free Demo Class",
-    secondaryLabel = "View Curriculum"
+    secondaryLabel = "View Curriculum",
+    align = 'center'
 }: CourseHeroActionButtonsProps) {
     const isPurple = themeColor === 'purple';
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -49,7 +51,7 @@ export default function CourseHeroActionButtons({
 
     return (
         <>
-            <div className="flex flex-col sm:flex-row gap-5 justify-center mb-10">
+            <div className={`flex flex-col sm:flex-row gap-5 ${align === 'left' ? 'justify-start' : 'justify-center'} mb-10`}>
                 <button
                     onClick={handleEnrollClick}
                     className={`text-white px-8 py-4 rounded-lg font-bold shadow-lg transition-all flex items-center justify-center gap-2 text-base ${isPurple

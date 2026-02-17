@@ -221,190 +221,188 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                 <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-[0.03]"></div>
                 <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[500px] blur-[100px] rounded-full opacity-50 pointer-events-none ${mappedCourse.themeColor === 'purple' ? 'bg-purple-100/40' : 'bg-orange-100/40'}`}></div>
 
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        {/* Left Content Side */}
+                        <div className="lg:col-span-7 text-left">
+                            {/* Heading */}
+                            <h1 className="text-4xl lg:text-5xl font-extrabold mb-8 leading-tight tracking-tight text-slate-900">
+                                {mappedCourse.heroHeading ? (
+                                    renderRichText(mappedCourse.heroHeading)
+                                ) : (
+                                    <>Transform Your Career with <span className={`text-transparent bg-clip-text bg-gradient-to-r ${mappedCourse.themeColor === 'purple' ? 'from-blue-700 to-purple-700' : 'from-orange-600 to-red-600'}`}>{mappedCourse.title}</span></>
+                                )}
+                            </h1>
 
-
-
-                    {/* Heading */}
-                    <h1 className="text-4xl lg:text-5xl font-extrabold mb-8 leading-tight tracking-tight text-slate-900">
-                        {mappedCourse.heroHeading ? (
-                            renderRichText(mappedCourse.heroHeading)
-                        ) : (
-                            <>Transform Your Career with <span className={`text-transparent bg-clip-text bg-gradient-to-r ${mappedCourse.themeColor === 'purple' ? 'from-blue-700 to-purple-700' : 'from-orange-600 to-red-600'}`}>{mappedCourse.title}</span></>
-                        )}
-                    </h1>
-
-                    {/* Subheading */}
-                    {/* Subheading */}
-                    <div className="text-lg text-slate-600 mb-12 leading-relaxed max-w-3xl mx-auto">
-                        {renderRichText(mappedCourse.heroSubheading || (mappedCourse.description ? (mappedCourse.description.length > 250 ? mappedCourse.description.substring(0, 250) + "..." : mappedCourse.description) : ""))}
-                    </div>
-
-                    {/* Buttons */}
-                    <CourseHeroActionButtons
-                        courseTitle={mappedCourse.title}
-                        syllabusUrl={mappedCourse.syllabusUrl || ''}
-                        themeColor={mappedCourse.themeColor}
-                        enrollHref={(isAriba || isFieldglass || isMM || isFICO || isTRM || isSD || isC4C || isABAP || isTM || isEWM || isIBP || isMDG || isC4CFunc || isABAPHana || isPython) ? "#detailed-demo-booking" : "#enroll"}
-                    />
-
-                    {/* Features/Trust Indicators */}
-                    <div className="flex flex-wrap justify-center gap-x-3 md:gap-x-4 lg:gap-x-6 gap-y-3 text-[13px] md:text-sm font-semibold text-slate-600">
-                        {mappedCourse.heroStats && mappedCourse.heroStats.length > 0 ? (
-                            mappedCourse.heroStats.map((stat: any, i: number) => (
-                                <div key={i} className="flex items-center gap-2 whitespace-nowrap">
-                                    <svg className={`w-5 h-5 ${mappedCourse.themeColor === 'purple' ? 'text-blue-500' : 'text-orange-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                    </svg>
-                                    {stat.label}
-                                </div>
-                            ))
-                        ) : (
-                            <>
-                                <div className="flex items-center gap-2 whitespace-nowrap">
-                                    <svg className="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                    SAP Certified Trainers
-                                </div>
-                                <div className="flex items-center gap-2 whitespace-nowrap">
-                                    <svg className={`w-5 h-5 ${mappedCourse.themeColor === 'purple' ? 'text-blue-500' : 'text-orange-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.956 11.956 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                                    100% Job Assistance
-                                </div>
-                                <div className="flex items-center gap-2 whitespace-nowrap">
-                                    <svg className={`w-5 h-5 ${mappedCourse.themeColor === 'purple' ? 'text-purple-500' : 'text-red-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                                    Lifetime Access
-                                </div>
-                            </>
-                        )}
-                        {mappedCourse.duration && (
-                            <div className="flex items-center gap-2 whitespace-nowrap">
-                                <svg className={`w-5 h-5 ${mappedCourse.themeColor === 'purple' ? 'text-blue-500' : 'text-orange-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                                {mappedCourse.duration}
+                            {/* Subheading */}
+                            <div className="text-lg text-slate-600 mb-10 leading-relaxed max-w-2xl">
+                                {renderRichText(mappedCourse.heroSubheading || (mappedCourse.description ? (mappedCourse.description.length > 250 ? mappedCourse.description.substring(0, 250) + "..." : mappedCourse.description) : ""))}
                             </div>
-                        )}
-                    </div>
 
-                    {/* Review Ratings - Integrated into Hero */}
-                    <div className="mt-8">
-                        <div className="flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-10">
-                            {/* Trustpilot Review Block */}
-                            <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center shrink-0 shadow-sm">
-                                    <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                                    </svg>
-                                </div>
-                                <div className="text-left">
-                                    <div className="flex items-center gap-2 mb-1">
-                                        <h4 className="font-bold text-slate-900 text-sm">Trustpilot</h4>
-                                        <div className="flex gap-0.5">
-                                            {[...Array(4)].map((_, i) => (
-                                                <svg key={i} className="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                                </svg>
-                                            ))}
-                                            <svg className="w-3.5 h-3.5 text-slate-300" fill="currentColor" viewBox="0 0 20 20">
-                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            {/* Buttons */}
+                            <CourseHeroActionButtons
+                                courseTitle={mappedCourse.title}
+                                syllabusUrl={mappedCourse.syllabusUrl || ''}
+                                themeColor={mappedCourse.themeColor}
+                                enrollHref={(isAriba || isFieldglass || isMM || isFICO || isTRM || isSD || isC4C || isABAP || isTM || isEWM || isIBP || isMDG || isC4CFunc || isABAPHana || isPython) ? "#detailed-demo-booking" : "#enroll"}
+                                align="left"
+                            />
+
+                            {/* Features/Trust Indicators */}
+                            <div className="flex flex-wrap justify-start gap-x-4 md:gap-x-6 gap-y-3 text-[13px] md:text-sm font-semibold text-slate-600 mb-8">
+                                {mappedCourse.heroStats && mappedCourse.heroStats.length > 0 ? (
+                                    mappedCourse.heroStats.map((stat: any, i: number) => (
+                                        <div key={i} className="flex items-center gap-2 whitespace-nowrap">
+                                            <svg className={`w-5 h-5 ${mappedCourse.themeColor === 'purple' ? 'text-blue-500' : 'text-orange-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            </svg>
+                                            {stat.label}
+                                        </div>
+                                    ))
+                                ) : (
+                                    <>
+                                        <div className="flex items-center gap-2 whitespace-nowrap">
+                                            <svg className="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                            SAP Certified Trainers
+                                        </div>
+                                        <div className="flex items-center gap-2 whitespace-nowrap">
+                                            <svg className={`w-5 h-5 ${mappedCourse.themeColor === 'purple' ? 'text-blue-500' : 'text-orange-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.956 11.956 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                                            100% Job Assistance
+                                        </div>
+                                        <div className="flex items-center gap-2 whitespace-nowrap">
+                                            <svg className={`w-5 h-5 ${mappedCourse.themeColor === 'purple' ? 'text-purple-500' : 'text-red-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                            Lifetime Access
+                                        </div>
+                                    </>
+                                )}
+                                {mappedCourse.duration && (
+                                    <div className="flex items-center gap-2 whitespace-nowrap">
+                                        <svg className={`w-5 h-5 ${mappedCourse.themeColor === 'purple' ? 'text-blue-500' : 'text-orange-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        {mappedCourse.duration}
+                                    </div>
+                                )}
+                            </div>
+
+                            {/* Review Ratings - Integrated into Hero */}
+                            <div className="mt-4">
+                                <div className="flex flex-wrap justify-start items-center gap-4 md:gap-8">
+                                    {/* Trustpilot Review Block */}
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center shrink-0 shadow-sm">
+                                            <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                                             </svg>
                                         </div>
+                                        <div className="text-left">
+                                            <div className="flex items-center gap-2 mb-0.5">
+                                                <h4 className="font-bold text-slate-900 text-xs">Trustpilot</h4>
+                                                <div className="flex gap-0.5">
+                                                    {[...Array(4)].map((_, i) => (
+                                                        <svg key={i} className="w-3 h-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                                        </svg>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                            <div className="flex items-center gap-1.5 text-xs">
+                                                <span className="font-bold text-slate-900">4.0</span>
+                                                <span className="text-slate-500 uppercase tracking-wider font-medium text-[10px]">Based on 500+ reviews</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="flex items-center gap-2 text-xs">
-                                        <span className="font-bold text-slate-900 text-base">4.0</span>
-                                        <span className="text-slate-500 uppercase tracking-wider font-medium">Based on 500+ reviews</span>
+
+                                    {/* SiteJabber Review Block */}
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-12 h-12 shrink-0 bg-white rounded-lg shadow-sm border border-slate-100 flex items-center justify-center p-1">
+                                            <img
+                                                src="/images/sitejabber-logo.png"
+                                                alt="SiteJabber"
+                                                className="w-full h-full object-contain"
+                                            />
+                                        </div>
+                                        <div className="text-left">
+                                            <div className="flex items-center gap-2 mb-0.5">
+                                                <h4 className="font-bold text-slate-900 text-xs">SiteJabber</h4>
+                                                <div className="flex gap-0.5">
+                                                    {[...Array(5)].map((_, i) => (
+                                                        <svg key={i} className="w-3 h-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                                        </svg>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                            <div className="flex items-center gap-1.5 text-xs">
+                                                <span className="font-bold text-slate-900">4.5</span>
+                                                <span className="text-slate-500 uppercase tracking-wider font-medium text-[10px]">Based on 300+ reviews</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
 
-                            {/* Divider */}
-                            <div className="hidden lg:block w-px h-12 bg-slate-200"></div>
-
-                            {/* SiteJabber Review Block */}
-                            <div className="flex items-center gap-4">
-                                <div className="w-14 h-14 shrink-0 bg-white rounded-lg shadow-sm border border-slate-100 flex items-center justify-center p-1">
-                                    <img
-                                        src="/images/sitejabber-logo.png"
-                                        alt="SiteJabber"
-                                        className="w-full h-full object-contain"
-                                    />
-                                </div>
-                                <div className="text-left">
-                                    <div className="flex items-center gap-2 mb-1">
-                                        <h4 className="font-bold text-slate-900 text-sm">SiteJabber</h4>
-                                        <div className="flex gap-0.5">
-                                            {[...Array(4)].map((_, i) => (
-                                                <svg key={i} className="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                                </svg>
-                                            ))}
-                                            <svg className="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    {/* Google Review Block */}
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center shrink-0 shadow-sm">
+                                            <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12.545,10.239v3.821h5.445c-0.712,2.315-2.647,3.972-5.445,3.972c-3.332,0-6.033-2.701-6.033-6.032s2.701-6.032,6.033-6.032c1.498,0,2.866,0.549,3.921,1.453l2.814-2.814C17.503,2.988,15.139,2,12.545,2C7.021,2,2.543,6.477,2.543,12s4.478,10,10.002,10c8.396,0,10.249-7.85,9.426-11.748L12.545,10.239z" />
                                             </svg>
                                         </div>
+                                        <div className="text-left">
+                                            <div className="flex items-center gap-2 mb-0.5">
+                                                <h4 className="font-bold text-slate-900 text-sm">Google</h4>
+                                                <div className="flex gap-0.5">
+                                                    {[...Array(5)].map((_, i) => (
+                                                        <svg key={i} className="w-3 h-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                                        </svg>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                            <div className="flex items-center gap-1.5 text-xs">
+                                                <span className="font-bold text-slate-900">4.5</span>
+                                                <span className="text-slate-500 uppercase tracking-wider font-medium text-[10px]">Based on 400+ reviews</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="flex items-center gap-2 text-xs">
-                                        <span className="font-bold text-slate-900 text-base">4.5</span>
-                                        <span className="text-slate-500 uppercase tracking-wider font-medium">Based on 300+ reviews</span>
+
+                                    {/* Overall Reviews Block */}
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center shrink-0 shadow-sm">
+                                            <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                            </svg>
+                                        </div>
+                                        <div className="text-left">
+                                            <div className="flex items-center gap-2 mb-0.5">
+                                                <h4 className="font-bold text-slate-900 text-xs text-nowrap">Overall Reviews</h4>
+                                                <div className="flex gap-0.5">
+                                                    {[...Array(5)].map((_, i) => (
+                                                        <svg key={i} className="w-3 h-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                                        </svg>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                            <div className="flex items-center gap-1.5 text-xs">
+                                                <span className="font-bold text-slate-900">4.9</span>
+                                                <a href="#reviews" className="text-slate-500 hover:text-orange-500 hover:underline transition-colors font-medium text-[10px]">
+                                                    ({isTRM ? '2894' : isMM ? '3018' : isSD ? '1118' : isFICO ? '1330' : isFieldglass ? '2665' : isCPI ? '885' : isC4C ? '946' : isABAP ? '421' : isEWM ? '1109' : isTM ? '945' : isMDG ? '1089' : isPPDS ? '896' : isC4CFunc ? '948' : isIBP ? '1069' : isABAPHana ? '865' : '5489'} Reviews)
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            {/* Divider */}
-                            <div className="hidden lg:block w-px h-12 bg-slate-200"></div>
-
-                            {/* Google Review Block */}
-                            <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center shrink-0 shadow-sm">
-                                    <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M12.545,10.239v3.821h5.445c-0.712,2.315-2.647,3.972-5.445,3.972c-3.332,0-6.033-2.701-6.033-6.032s2.701-6.032,6.033-6.032c1.498,0,2.866,0.549,3.921,1.453l2.814-2.814C17.503,2.988,15.139,2,12.545,2C7.021,2,2.543,6.477,2.543,12s4.478,10,10.002,10c8.396,0,10.249-7.85,9.426-11.748L12.545,10.239z" />
-                                    </svg>
-                                </div>
-                                <div className="text-left">
-                                    <div className="flex items-center gap-2 mb-1">
-                                        <h4 className="font-bold text-slate-900 text-sm">Google</h4>
-                                        <div className="flex gap-0.5">
-                                            {[...Array(5)].map((_, i) => (
-                                                <svg key={i} className="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                                </svg>
-                                            ))}
-                                        </div>
-                                    </div>
-                                    <div className="flex items-center gap-2 text-xs">
-                                        <span className="font-bold text-slate-900 text-base">4.5</span>
-                                        <span className="text-slate-500 uppercase tracking-wider font-medium">Based on 400+ reviews</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Divider */}
-                            <div className="hidden lg:block w-px h-12 bg-slate-200"></div>
-
-                            {/* Overall Reviews Block */}
-                            <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center shrink-0 shadow-sm">
-                                    <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                                    </svg>
-                                </div>
-                                <div className="text-left">
-                                    <div className="flex items-center gap-2 mb-1">
-                                        <h4 className="font-bold text-slate-900 text-sm">Overall Reviews</h4>
-                                        <div className="flex gap-0.5">
-                                            {[...Array(5)].map((_, i) => (
-                                                <svg key={i} className="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                                </svg>
-                                            ))}
-                                        </div>
-                                    </div>
-                                    <div className="flex items-center gap-2 text-xs">
-                                        <span className="font-bold text-slate-900 text-base">4.9</span>
-                                        <a href="#reviews" className="text-slate-500 hover:text-orange-500 hover:underline transition-colors font-medium">
-                                            ({isTRM ? '2894' : isMM ? '3018' : isSD ? '1118' : isFICO ? '1330' : isFieldglass ? '2665' : isCPI ? '885' : isC4C ? '946' : isABAP ? '421' : isEWM ? '1109' : isTM ? '945' : isMDG ? '1089' : isPPDS ? '896' : isC4CFunc ? '948' : isIBP ? '1069' : isABAPHana ? '865' : '5489'} Reviews)
-                                        </a>
-                                    </div>
-                                </div>
+                        {/* Right Form Side */}
+                        <div className="lg:col-span-5">
+                            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-xl border border-slate-100 relative overflow-hidden">
+                                <div className={`absolute top-0 left-0 w-full h-1.5 ${mappedCourse.themeColor === 'purple' ? 'bg-blue-600' : 'bg-orange-500'}`}></div>
+                                <h3 className="text-xl font-bold text-slate-900 mb-6">
+                                    Enquiry more about {mappedCourse.title} Training
+                                </h3>
+                                <ContactForm defaultCourse={mappedCourse.title} className="!space-y-4" showLabels={true} />
                             </div>
                         </div>
                     </div>
@@ -499,6 +497,6 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
             </div>
 
             <CourseEnrollmentCTA courseTitle={mappedCourse.title} />
-        </main>
+        </main >
     );
 }
