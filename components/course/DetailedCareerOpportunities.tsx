@@ -97,7 +97,7 @@ export default function DetailedCareerOpportunities({ items, courseName = "SAP A
                         const colors = getColorClasses(role.color);
                         const Icon = iconMap[role.icon] || Users;
                         return (
-                            <div key={idx} className={`bg-white rounded-xl p-6 border ${colors.border} shadow-sm hover:shadow-md transition-all`}>
+                            <div key={idx} className={`bg-white rounded-xl p-6 border ${colors.border} shadow-sm`}>
                                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
                                     {/* Title & Salary */}
                                     <div className="lg:col-span-4">

@@ -142,7 +142,7 @@ export default function DetailedPostTrainingJourney({ title, steps: propSteps, i
                                 </div>
 
                                 {/* Card content */}
-                                <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                                <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
                                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 border-b border-slate-100 pb-4">
                                         <div className="flex items-center gap-4">
                                             <div className={`md:hidden w-10 h-10 rounded-full flex items-center justify-center text-white
@@ -228,7 +228,7 @@ export default function DetailedPostTrainingJourney({ title, steps: propSteps, i
                     <p className="text-slate-500 text-sm mb-6">Ready to start your {courseName} career journey?</p>
                     <button
                         onClick={scrollToBooking}
-                        className="bg-[#ff4500] hover:bg-[#cc3700] text-white font-bold py-4 px-10 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
+                        className="bg-[#ff4500] hover:bg-[#cc3700] text-white font-bold py-4 px-10 rounded-xl shadow-lg transition-all"
                     >
                         Enroll in Next Batch
                     </button>

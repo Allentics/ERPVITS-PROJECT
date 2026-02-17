@@ -161,7 +161,7 @@ export default function DetailedTestimonials({ items, stats, courseName = "SAP" 
                 {/* Reviews Grid */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
                     {reviewsArray.map((review, idx) => (
-                        <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow relative">
+                        <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 relative">
                             <Quote className="w-8 h-8 text-[#ff4500]/20 absolute top-6 right-6 fill-orange-50" />
                             <div className="flex gap-1 mb-4">
                                 {[1, 2, 3, 4, 5].map((_, i) => (

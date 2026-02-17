@@ -72,7 +72,7 @@ export default function DetailedTargetAudience({ items, title, subtitle }: { ite
                     {audienceList.map((item: AudienceItem, idx: number) => {
                         const Icon = iconMap[item.icon] || Laptop;
                         return (
-                            <div key={idx} className="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                            <div key={idx} className="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm group">
                                 <div className={`w-14 h-14 rounded-xl ${item.bg || 'bg-[#ff4500]/10'} ${item.color || 'text-[#ff4500]'} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
                                     <Icon className="w-7 h-7" />
                                 </div>
@@ -98,7 +98,7 @@ export default function DetailedTargetAudience({ items, title, subtitle }: { ite
                     </p>
                     <button
                         onClick={scrollToBooking}
-                        className="bg-[#ff4500] hover:bg-[#ff4500]/90 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 w-full md:w-auto"
+                        className="bg-[#ff4500] hover:bg-[#ff4500]/90 text-white font-bold py-3 px-8 rounded-lg shadow-md transition-all active:translate-y-0 w-full md:w-auto"
                     >
                         Schedule Free Consultation
                     </button>

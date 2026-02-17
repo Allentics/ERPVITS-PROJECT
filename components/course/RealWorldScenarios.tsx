@@ -39,7 +39,7 @@ export default function RealWorldScenarios({ items, title, subtitle, portfolioNo
                     {scenarios.map((item: any, idx: number) => {
                         const Icon = iconMap[item.icon] || Factory;
                         return (
-                            <div key={idx} className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-lg transition-transform hover:-translate-y-1 flex flex-col h-full">
+                            <div key={idx} className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm flex flex-col h-full">
                                 <div className={`w-14 h-14 rounded-xl ${item.bg || 'bg-[#ff4500]/10'} ${item.iconColor || 'text-[#ff4500]'} flex items-center justify-center mb-6`}>
                                     <Icon className="w-7 h-7" />
                                 </div>

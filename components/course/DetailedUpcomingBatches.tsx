@@ -112,7 +112,7 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
                         const statusColor = batch.status === 'filling-fast' ? 'bg-red-100 text-red-600' : 'bg-[#ff4500]/10 text-[#ff4500]';
 
                         return (
-                            <div key={idx} className="bg-white rounded-2xl p-6 text-slate-900 shadow-xl border border-[#ff4500]/10 flex flex-col h-full hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                            <div key={idx} className="bg-white rounded-2xl p-6 text-slate-900 shadow-xl border border-[#ff4500]/10 flex flex-col h-full">
                                 <div className="flex justify-between items-start mb-4">
                                     <span className={`text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider ${batch.statusColor || statusColor}`}>
                                         {batch.status?.replace('-', ' ')}
@@ -167,7 +167,7 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
 
                                 <button
                                     onClick={scrollToBooking}
-                                    className="w-full bg-[#ff4500] hover:bg-[#cc3700] text-white font-bold py-3 rounded-lg shadow-md hover:shadow-lg transition-all text-sm uppercase tracking-wide"
+                                    className="w-full bg-[#ff4500] hover:bg-[#cc3700] text-white font-bold py-3 rounded-lg shadow-md transition-all text-sm uppercase tracking-wide"
                                 >
                                     Register Now
                                 </button>

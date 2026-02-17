@@ -32,7 +32,7 @@ export default function DetailedPrerequisites({ items, title, subtitle }: { item
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 max-w-5xl mx-auto">
 
                     {/* Minimum Requirements Card */}
-                    <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
                         <div className="w-12 h-12 rounded-full bg-[#ff4500]/10 flex items-center justify-center text-[#ff4500] mb-6">
                             <CheckCircle2 className="w-6 h-6" />
                         </div>
@@ -48,7 +48,7 @@ export default function DetailedPrerequisites({ items, title, subtitle }: { item
                     </div>
 
                     {/* Nice to Have Card */}
-                    <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
                         <div className="w-12 h-12 rounded-full bg-[#ff4500]/10 flex items-center justify-center text-[#ff4500] mb-6">
                             <Star className="w-6 h-6" />
                         </div>

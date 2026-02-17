@@ -117,7 +117,7 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
 
                         {/* Cert Cards */}
                         {certs.map((cert, idx) => (
-                            <div key={idx} className="bg-white rounded-xl p-6 border border-[#ff4500]/10 shadow-lg shadow-orange-500/5 hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-300">
+                            <div key={idx} className="bg-white rounded-xl p-6 border border-[#ff4500]/10 shadow-lg shadow-orange-500/5">
                                 <div className="flex items-start gap-4">
                                     <div className="mt-1 bg-[#ff4500]/10 p-3 rounded-xl border border-[#ff4500]/10">
                                         <Award className="w-6 h-6 text-[#ff4500]" />

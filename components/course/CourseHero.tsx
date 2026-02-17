@@ -53,7 +53,7 @@ const CourseHero = ({ course }: { course: Course }) => {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                         <Link
                             href="#enroll"
-                            className="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl transition-all transform hover:-translate-y-1 bg-[#ff4500] hover:bg-[#cc3700] text-white shadow-lg shadow-[#ff4500]/30"
+                            className="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl transition-all bg-[#ff4500] hover:bg-[#cc3700] text-white shadow-lg shadow-[#ff4500]/30"
                         >
                             {course.buttonLabels?.primary || "Book Free Demo Class"}
                         </Link>

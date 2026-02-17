@@ -102,7 +102,7 @@ export default function DetailedLearningOutcomes({ items, title, subtitle }: { i
                         const Icon = iconMap[inferredIcon] || CheckCircle2;
 
                         return (
-                            <div key={idx} className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+                            <div key={idx} className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm relative overflow-hidden group">
                                 <div className="absolute top-0 left-0 w-1 h-full bg-[#ff4500] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
                                 <h3 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-3">
                                     {/* Only show icon box if explicit icon provided or inferred implies a major section */}

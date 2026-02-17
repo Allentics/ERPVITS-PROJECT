@@ -22,7 +22,7 @@ export default function Curriculum({ modules }: { modules: Topic[] }) {
 
             <Accordion.Root type="single" collapsible className="space-y-4">
                 {modules.map((module, i) => (
-                    <Accordion.Item key={i} value={`item-${i}`} className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    <Accordion.Item key={i} value={`item-${i}`} className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
                         <Accordion.Header className="flex">
                             <Accordion.Trigger className="flex flex-1 items-center justify-between p-6 w-full text-left group bg-white hover:bg-gray-50 transition-colors">
                                 <div className="flex items-center gap-4">

@@ -80,7 +80,7 @@ export function DetailedFeatures({ badge, title, subtitle, items, textAlign = 'c
                     const ItemIcon = isObject ? getIconForTitle((item as FeatureItem).title) : CheckCircle2;
 
                     return (
-                        <div key={i} className="flex flex-col p-8 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full group">
+                        <div key={i} className="flex flex-col p-8 bg-white rounded-2xl border border-slate-100 shadow-sm h-full group">
                             <div className="w-14 h-14 rounded-xl bg-[#ff4500]/10 group-hover:bg-[#ff4500] transition-colors duration-300 flex items-center justify-center text-[#ff4500] group-hover:text-white mb-6">
                                 <ItemIcon className="w-7 h-7" />
                             </div>
