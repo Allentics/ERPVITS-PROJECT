@@ -9,7 +9,11 @@ export const fieldglassContent = {
     heroHeading: <>Become a Leader in Managing a Contingent Workforce with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">SAP Fieldglass Training</span></>,
     themeColor: "orange",
     heroSubheading: "This SAP Fieldglass training course is specifically tailored for HR professionals, procurement professionals, IT consultants, work program managers, and other professionals who aspire to work in global contingent workforce and services procurement consulting. This SAP Fieldglass course combines hands-on system training, expert instruction with real-world application, and a curriculum designed to a certification.",
-    badges: ["SAP Certified Trainers", "4.7 Learner Rating", "24/7 Team support"],
+    badges: ["Mode: Instructor Led/Self Paced", "Batches: Weekend/Weekday"],
+    heroStats: [
+        { icon: "Monitor", label: "Instructor Led/Self Paced" },
+        { icon: "Calendar", label: "Weekend/Weekday" }
+    ],
     description: "This SAP Fieldglass training course is specifically tailored for HR professionals, procurement professionals, IT consultants, work program managers, and other professionals who aspire to work in global contingent workforce and services procurement consulting. This SAP Fieldglass course combines hands-on system training, expert instruction with real-world application, and a curriculum designed to a certification.",
     metaTitle: "SAP Fieldglass Online Training | ERPVITS Certification",
     metaDescription: "Master SAP Fieldglass Online Training with ERPVITS. Learn VMS, Contingent Workforce, SOW modules, and integration with SAP S/4HANA. Get certification help.",
@@ -78,7 +82,7 @@ export const fieldglassContent = {
         {
             type: 'detailed_features',
             title: "Learn SAP Fieldglass from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            subtitle: "Unlike passive video courses or self-paced modules, our SAP Fieldglass Online Training offers direct training from a SAP certified trainer who has over 10 years of experience in contingent workforce management. Your training is interactive in real-time where trainers explain methodologies and work with you on complex workforce problems",
+            subtitle: "Our **SAP Fieldglass Online Training** curriculum is delivered exclusively by certified SAP professionals, each with 12+ years of direct hands-on experience in contingent workforce management. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex workforce management scenarios in a step-by-step manner.",
             items: [
                 {
                     title: "Certified Instructor Expertise",

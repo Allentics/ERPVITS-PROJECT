@@ -9,14 +9,18 @@ export const abapHanaContent = {
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Technical/sap-abap-on-hana.pdf",
     heroHeading: <>Master Modern ABAP Development with the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">#1 SAP ABAP on HANA Online Training Program</span></>,
     heroSubheading: "The SAP ABAP on HANA Online Training Program from ERPVITS represents a transformative learning pathway for professionals eager to excel in modern enterprise application development, cloud-native programming, and next-generation SAP technology. In today's digital transformation landscape, organizations urgently need certified SAP ABAP on HANA developers who can build robust applications, optimize database performance, leverage in-memory computing, and drive innovation through intelligent enterprise software. This comprehensive SAP ABAP on HANA training course combines interactive, instructor-led sessions, hands-on coding labs, real-time development projects, performance optimization simulations, and end-to-end certification support—designed specifically for software developers, SAP technicians, database developers, systems architects, and ambitious graduates targeting global ABAP development and SAP technology roles.",
-    badges: ["SAP Certified Trainers", "4.8 Learner Rating", "24/7 Team support", "15+ Years ABAP Development Experience"],
+    badges: ["Mode: Instructor Led/Self Paced", "Batches: Weekend/Weekday"],
+    heroStats: [
+        { icon: "Monitor", label: "Instructor Led/Self Paced" },
+        { icon: "Calendar", label: "Weekend/Weekday" }
+    ],
     description: "This comprehensive SAP ABAP on HANA training course combines interactive, instructor-led sessions, hands-on coding labs, real-time development projects, performance optimization simulations, and end-to-end certification support—designed specifically for software developers, SAP technicians, database developers, systems architects, and ambitious graduates targeting global ABAP development and SAP technology roles.",
 
     sections: [
         {
             type: 'detailed_features',
             title: "Learn SAP ABAP on HANA from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            subtitle: "Our SAP ABAP on HANA Online Training is delivered exclusively by certified SAP developers with 15+ years of direct ABAP development experience on S/4HANA, cloud platforms, and enterprise applications. Unlike passive video courses or self-paced modules, you receive interactive, real-time instruction where instructors share proven development methodologies, address your specific questions, and guide you through complex coding scenarios step-by-step.",
+            subtitle: "Our **SAP ABAP on HANA Online Training** curriculum is delivered exclusively by certified SAP professionals with 15+ years of direct hands-on experience on S/4HANA, cloud platforms, and enterprise applications. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex coding scenarios in a step-by-step manner.",
             items: [
                 {
                     title: "Certified Instructor Expertise",

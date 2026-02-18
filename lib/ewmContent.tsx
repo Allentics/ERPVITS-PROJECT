@@ -88,11 +88,10 @@ export const ewmContent = {
     metaTitle: "SAP EWM Training Online – Warehouse Management Course",
     metaDescription: "Advance your logistics career with SAP EWM training covering warehouse automation, order fulfillment, and S/4HANA integration. Get certification support.",
 
+    badges: ["Mode: Instructor Led/Self Paced", "Batches: Weekend/Weekday"],
     heroStats: [
-        { icon: "Award", label: "SAP Certified Trainers" },
-        { icon: "Star", label: "4.8 Learner Rating" },
-        { icon: "Headphones", label: "24/7 Team support" },
-        { icon: "Briefcase", label: "12+ Years Implementation Experience" }
+        { icon: "Monitor", label: "Instructor Led/Self Paced" },
+        { icon: "Calendar", label: "Weekend/Weekday" }
     ],
     buttonLabels: {
         primary: "Book Your Free Demo Class",
@@ -114,7 +113,7 @@ export const ewmContent = {
         {
             type: 'detailed_features',
             title: "Learn SAP EWM from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            subtitle: "Our SAP Extended Warehouse Management Online Training is delivered exclusively by certified SAP professionals with 12+ years of direct implementation experience in warehouse operations, logistics networks, and advanced inventory management. Unlike passive video courses or self-paced modules, you receive interactive, real-time instruction where instructors share proven methodologies, address your specific questions, and guide you through complex warehouse scenarios step-by-step.",
+            subtitle: "Our **SAP EWM Online Training** curriculum is delivered exclusively by certified SAP professionals with 12+ years of direct hands-on experience in warehouse operations, logistics networks, and advanced inventory management. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex warehouse scenarios in a step-by-step manner.",
             badge: "Why Choose Us",
             items: [
                 {

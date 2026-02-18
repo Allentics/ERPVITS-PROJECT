@@ -169,12 +169,10 @@ export const tmContent = {
 
     title: "SAP TM",
     description: "The SAP Transportation Management Online Training Program from ERPVITS represents a transformative learning pathway for professionals eager to excel in logistics optimization, supply chain coordination, and enterprise transportation planning.",
-    badges: [],
+    badges: ["Mode: Instructor Led/Self Paced", "Batches: Weekend/Weekday"],
     heroStats: [
-        { icon: "award", label: "SAP Certified Trainers" },
-        { icon: "star", label: "4.8 Learner Rating" },
-        { icon: "clock", label: "24/7 Team support" },
-        { icon: "briefcase", label: "10+ Years Implementation Experience" }
+        { icon: "Monitor", label: "Instructor Led/Self Paced" },
+        { icon: "Calendar", label: "Weekend/Weekday" }
     ],
     buttonLabels: {
         primary: "Book Your Free Demo Class →",
@@ -188,7 +186,7 @@ export const tmContent = {
         {
             type: 'detailed_features',
             title: "Learn SAP TM from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            subtitle: "Our SAP Transportation Management Online Training is delivered exclusively by certified SAP professionals with 12+ years of direct implementation experience in freight management, logistics networks, and global supply chain operations.",
+            subtitle: "Our **SAP TM Online Training** curriculum is delivered exclusively by certified SAP professionals with 12+ years of direct hands-on experience in freight management, logistics networks, and global supply chain operations. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex transportation management scenarios in a step-by-step manner.",
             badge: "Why Choose Us",
             items: [
                 {

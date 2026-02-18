@@ -4,10 +4,10 @@ export const trmContent = {
     heroHeading: <>Master the Future of Corporate Treasury with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">SAP TRM Online Training</span></>,
     heroSubheading: "Unlock premium treasury consulting careers with SAP TRM Online Training (Treasury and Risk Management), Cash Management, Foreign Exchange Operations, Trading of Securities, Derivative Hedging, Advanced Credit Risk Determination. Learn with hands-on training, work with real financial workflows and earn industry-recognized SAP TRM certification. For finance professionals and SAP consultants hoping to sharpen their skills in treasury operations, risk management, and enterprise financial systems, the SAP TRM Training Program from ERPVITS is a transformative learning pathway. Designed especially for treasury professionals, finance leaders and ERP consultants, our all encompassing SAP TRM course incorporates interactive, instructor-led components, practical exercises, real-world financial scenarios and certification support from start to finish.",
     heroLayout: "centered",
+    badges: ["Mode: Instructor Led/Self Paced", "Batches: Weekend/Weekday"],
     heroStats: [
-        { icon: "award", label: "SAP Certified Trainers" },
-        { icon: "star", label: "4.8 Learner Rating" },
-        { icon: "headphones", label: "24/7 Team support" }
+        { icon: "Monitor", label: "Instructor Led/Self Paced" },
+        { icon: "Calendar", label: "Weekend/Weekday" }
     ],
     buttonLabels: {
         primary: "Book Your Free Demo Class",
@@ -246,7 +246,7 @@ export const trmContent = {
         {
             type: 'detailed_features',
             title: "Learn SAP TRM from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            subtitle: "Our SAP TRM Online Training is executed by certified SAP experts and Treasury and financial systems implementation professionals with 10+ years of direct experience. Unlike self-paced modules or passive video courses, you receive interactive real-time instruction in which instructors share proven methods, answer your direct questions, and walk you through intricate financial scenarios.",
+            subtitle: "Our **SAP TRM Online Training** curriculum is delivered exclusively by certified SAP professionals, each with 12+ years of direct hands-on experience in treasury and financial systems implementation. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex financial and treasury scenarios in a step-by-step manner.",
             items: [
                 {
                     title: "Certified Instructor Expertise",

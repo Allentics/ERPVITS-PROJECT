@@ -2,9 +2,14 @@ import React from 'react';
 
 import { Section } from './courseData';
 
-export const pythonAimlContent: { price: string; duration: string; syllabusUrl: string; features: string[]; sections: Section[] } = {
+export const pythonAimlContent: any = {
     price: "45,000",
     duration: "45-50 Hours",
+    badges: ["Mode: Instructor Led/Self Paced", "Batches: Weekend/Weekday"],
+    heroStats: [
+        { icon: "Monitor", label: "Instructor Led/Self Paced" },
+        { icon: "Calendar", label: "Weekend/Weekday" }
+    ],
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/python-aiml-course-content.pdf",
     features: [
         "45 Hours of Instructor-led Training",
@@ -40,7 +45,8 @@ export const pythonAimlContent: { price: string; duration: string; syllabusUrl: 
         },
         {
             type: 'detailed_features',
-            title: 'Why Professionals Choose ERPVITS for Artificial Intelligence & Machine Learning with Python',
+            title: "Learn Python AI & ML from Certified Experts – 100% Hands-On, Job-Oriented Training",
+            subtitle: "Our **Python AI & ML Online Training** curriculum is delivered exclusively by certified industry experts, each with 12+ years of direct hands-on experience in artificial intelligence, machine learning, and data science. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex AI/ML implementation scenarios in a step-by-step manner.",
             items: [
                 {
                     title: "Expert-led Training",

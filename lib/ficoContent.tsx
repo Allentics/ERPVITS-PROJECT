@@ -13,11 +13,10 @@ export const ficoContent: Partial<Course> = {
         primary: "Book Your Free Demo Class",
         secondary: "View Curriculum"
     },
-    badges: ["SAP Certified Trainers", "4.7 Learner Rating", "24/7 Team support"],
+    badges: ["Mode: Instructor Led/Self Paced", "Batches: Weekend/Weekday"],
     heroStats: [
-        { icon: "CheckCircle2", label: "SAP Certified Trainers" },
-        { icon: "Star", label: "4.7 Learner Rating" },
-        { icon: "Headphones", label: "24/7 Team support" }
+        { icon: "Monitor", label: "Instructor Led/Self Paced" },
+        { icon: "Calendar", label: "Weekend/Weekday" }
     ],
     metaTitle: "SAP FICO Online Training | Finance & Controlling",
     metaDescription: "SAP FICO Online Training with ERPVITS through live instructor-led sessions, real-time projects, and certification support to boost your finance career.",
@@ -213,7 +212,7 @@ export const ficoContent: Partial<Course> = {
         {
             type: 'detailed_features',
             title: "Learn SAP FICO from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            subtitle: "Our SAP FICO Online Training is delivered exclusively by certified SAP professionals with 12+ years of direct implementation experience in financial accounting and controlling. Unlike passive video courses or self-paced modules, you receive interactive, real-time instruction where instructors share proven methodologies, address your specific questions, and guide you through complex accounting scenarios step-by-step.",
+            subtitle: "Our **SAP FICO Online Training** curriculum is delivered exclusively by certified SAP professionals with 12+ years of direct hands-on experience in financial accounting and controlling. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex accounting scenarios in a step-by-step manner.",
             badge: "Why Choose Us",
             textAlign: 'left',
             items: [

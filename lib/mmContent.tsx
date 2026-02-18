@@ -8,11 +8,10 @@ export const mmContent = {
 
     heroHeading: <>Transform Your Career with the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">#1 SAP MM Online Training Program</span></>,
     heroSubheading: "The ERPVITS SAP S/4HANA MM Online Training Program is a step toward a new career track for supply chain professionals and SAP consultants focusing on inventory management, procurement, and enterprise resource planning. Supply chain organizations today seek certified experts in the SAP S/4HANA MM module to help optimize the flow of materials, shrink costly inventory, streamline procurement, and improve overall supply chain management. This all-inclusive SAP MM course is aimed at supply chain professionals, inventory managers, procurement specialists, consultants in ERP, and highly motivated graduates looking for international careers in consulting and implementation. The SAP material management course is designed with interactive, live training, hands-on workshops, real-world supply chain exercises, and complete certification support.",
-    badges: ["SAP Certified Trainers", "4.8 Learner Rating", "24/7 Team support"],
+    badges: ["Mode: Instructor Led/Self Paced", "Batches: Weekend/Weekday"],
     heroStats: [
-        { icon: "award", label: "SAP Certified Trainers" },
-        { icon: "briefcase", label: "100% Job Assistance" },
-        { icon: "infinity", label: "Lifetime Access" }
+        { icon: "Monitor", label: "Instructor Led/Self Paced" },
+        { icon: "Calendar", label: "Weekend/Weekday" }
     ],
     buttonLabels: {
         primary: "Book Free Demo Class →",
@@ -245,7 +244,7 @@ export const mmContent = {
         {
             type: 'detailed_features',
             title: "Learn SAP S/4HANA MM from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            subtitle: "Our SAP MM Training is provided only by SAP certified and fully qualified professionals with over 12 years of hands-on materials management and supply chain systems direct implementation experience. All your questions will be answered, and instructors will guide you step by step through challenging inventory problems. This is not your typical, passive video course or self-paced course. We offer active, real-time instruction, and you will receive structured, real-time, interactive teaching. In addition, you will learn and be taught various approaches to problem-solving and step through your questions in real-time.",
+            subtitle: "Our **SAP MM Online Training** curriculum is delivered exclusively by certified SAP professionals, each with 12+ years of direct hands-on experience in materials management and supply chain systems implementation. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex inventory and procurement scenarios in a step-by-step manner.",
             textAlign: 'left',
             badge: "Why Choose Us",
             items: [

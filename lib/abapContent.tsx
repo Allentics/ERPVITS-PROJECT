@@ -8,7 +8,11 @@ export const abapContent = {
 
     heroHeading: <>Gain Expertise in Cloud Development with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">SAP ABAP Training</span></>,
     heroSubheading: "The **SAP ABAP Training** offered by **ERPVITS** is a game changer for ABAP developers and SAP consultants interested in advancing their skills in cloud application development, contemporary programming, and enterprise software. In a cutting-edge business era, organizations demand certified SAP ABAB on cloud experts as proficient in cloud-native application development, ABAP Cloud runtime application, implementing clean architecture patterns, and digital transformation initiatives. This fully-fledged and comprehensive **SAP ABAP on Cloud training** features live, interactive instructor training, hands-on labs, cloud development projects, and comprehensive certification geared towards development and implementation for ABAP developers, technical consultants, application architects, cloud specialists, and fresh graduates and is focused on global consulting and implementation positions.",
-    badges: ["SAP Certified Trainers", "4.7 Learner Rating", "24/7 Team support"],
+    badges: ["Mode: Instructor Led/Self Paced", "Batches: Weekend/Weekday"],
+    heroStats: [
+        { icon: "Monitor", label: "Instructor Led/Self Paced" },
+        { icon: "Calendar", label: "Weekend/Weekday" }
+    ],
 
     metaTitle: "Learn Cloud-Native ABAP Development with SAP ABAP Training",
     metaDescription: "Join SAP ABAP Training by ERPVITS. Learn RAP, OData, cloud architecture, and certification preparation through hands-on labs and live instructor sessions.",
@@ -209,7 +213,7 @@ export const abapContent = {
             type: 'detailed_features',
             badge: "Why Choose Us",
             title: "Learn SAP ABAP on Cloud from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            subtitle: "Our **SAP ABAP on Cloud online training** curriculum is delivered only by certified SAP professionals, each with 12+ years of direct hands-on **ABAP programming training** along with cloud application modernization experience. Instead of passive video courses with self-paced modules, you get live, real-time training with interactive sessions, hands-on approaches where trainers share industry-proven methodologies, answer your questions, and walk you through difficult cloud development steps in a rational manner.",
+            subtitle: "Our **SAP ABAP on Cloud Online Training** curriculum is delivered exclusively by certified SAP professionals, each with 12+ years of direct hands-on experience in cloud application modernization and ABAP development. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex cloud development steps in a step-by-step manner.",
             items: [
                 {
                     title: "Certified Instructor Expertise",

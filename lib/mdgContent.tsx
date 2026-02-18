@@ -282,12 +282,10 @@ export const mdgContent = {
 
     title: "SAP MDG",
     description: "The SAP Master Data Governance Online Training Program from ERPVITS represents a transformative learning pathway for professionals eager to excel in data quality management, organizational data governance, and enterprise information management.",
-    badges: ["Rated #1 SAP MDG Training Program 2025"],
+    badges: ["Mode: Instructor Led/Self Paced", "Batches: Weekend/Weekday"],
     heroStats: [
-        { icon: "award", label: "SAP Certified Trainers" },
-        { icon: "star", label: "4.8 Learner Rating" },
-        { icon: "clock", label: "24/7 Team support" },
-        { icon: "briefcase", label: "12+ Years Implementation Experience" }
+        { icon: "Monitor", label: "Instructor Led/Self Paced" },
+        { icon: "Calendar", label: "Weekend/Weekday" }
     ],
     buttonLabels: {
         primary: "Book Your Free Demo Class →",
@@ -301,7 +299,7 @@ export const mdgContent = {
         {
             type: 'detailed_features',
             title: "Learn SAP MDG from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            subtitle: "Our SAP Master Data Governance Online Training is delivered exclusively by certified SAP professionals with 12+ years of direct implementation experience in master data management, data governance frameworks, and enterprise information management. Unlike passive video courses or self-paced modules, you receive interactive, real-time instruction where instructors share proven methodologies, address your specific questions, and guide you through complex data governance scenarios step-by-step.",
+            subtitle: "Our **SAP MDG Online Training** curriculum is delivered exclusively by certified SAP professionals with 12+ years of direct hands-on experience in master data management, data governance frameworks, and enterprise information management. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex data governance scenarios in a step-by-step manner.",
             badge: "Why Choose Us",
             items: [
                 {

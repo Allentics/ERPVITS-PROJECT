@@ -219,7 +219,11 @@ export const c4cContent = {
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Technical/sap-c4c-technical.pdf",
     heroHeading: <>End-to-End <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">SAP C4C Technical Training</span> with Real-Time Implementation</>,
     heroSubheading: "For a cloud developer and SAP consultant working in customer relationship management, cloud application development, and enterprise software, the ERPVITS SAP C4C Technical Training Program is a transformative learning experience. Every organization is in great need of certified SAP C4C technical experts who can build cloud applications and customize customer solutions, integrate business objects, and lead digital transformation. This extensive SAP C4C Technical online training is designed for developers, technical consultants, cloud architects, ERP professionals, and aspiring graduates who are looking for global consulting and implementation positions and features instructor-led training, hands-on lab work, cloud development projects from the actual world, and complete certification support.",
-    badges: ["✅ SAP Certified Trainers", "✅ 4.7 Learner Rating", "✅ 24/7 Team support"],
+    badges: ["Mode: Instructor Led/Self Paced", "Batches: Weekend/Weekday"],
+    heroStats: [
+        { icon: "Monitor", label: "Instructor Led/Self Paced" },
+        { icon: "Calendar", label: "Weekend/Weekday" }
+    ],
     buttonLabels: {
         primary: "Book Your Free Demo Class",
         secondary: "View Curriculum"
@@ -437,7 +441,7 @@ export const c4cContent = {
         {
             type: 'detailed_features',
             title: "Learn SAP C4C Technical Development from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            subtitle: "Your SAP C4C Technical Online Training training courses and materials are designed specifically for you by certified SAP trainers and cloud application development professionals. They have over 12 years of experience in customer relationship management and live cloud applications. Instead of just watching passive training videos or self-paced modules, you can expect live training where instructors explain cloud development and walk you through complex scenarios. Trainers also use real-world examples, best and even worst cloud development practices, and case studies.",
+            subtitle: "Our **SAP C4C Technical Online Training** curriculum is delivered exclusively by certified SAP professionals, each with 12+ years of direct hands-on experience in cloud application development and CRM solutions. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex cloud development scenarios in a step-by-step manner.",
             items: [
                 {
                     title: "Certified Expert Trainers",

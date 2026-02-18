@@ -2094,20 +2094,17 @@
         "price": "45,000",
         "heroImage": "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP Python AI ML Infographic.webp",
         "badges": [
-            "Most Popular AI Course"
+            "Mode: Instructor Led/Self Paced",
+            "Batches: Weekend/Weekday"
         ],
         "heroStats": [
             {
-                "icon": "clock",
-                "label": "45+ Hours"
+                "icon": "Monitor",
+                "label": "Instructor Led/Self Paced"
             },
             {
-                "icon": "award",
-                "label": "Certified"
-            },
-            {
-                "icon": "users",
-                "label": "Placement"
+                "icon": "Calendar",
+                "label": "Weekend/Weekday"
             }
         ]
     }

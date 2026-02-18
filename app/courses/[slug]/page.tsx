@@ -16,6 +16,7 @@ import { courses, defaultFaqs, getDefaultDetailedFeatures, Section } from '@/lib
 import { getGenericPrerequisites, getGenericTargetAudience } from '@/lib/contentHelpers';
 import CourseHeroActionButtons from '@/components/course/CourseHeroActionButtons';
 import JsonLd from '@/components/JsonLd';
+import { Monitor, Calendar, Headphones, CheckCircle2, Star, ShieldCheck, Zap, Users, Clock } from 'lucide-react';
 
 // Dynamic rendering only to avoid build OOM
 export const dynamic = 'force-dynamic';
@@ -245,35 +246,43 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                             {/* Features/Trust Indicators */}
                             <div className="flex flex-wrap justify-start gap-x-4 md:gap-x-6 gap-y-3 text-[13px] md:text-sm font-semibold text-slate-600 mb-8">
                                 {mappedCourse.heroStats && mappedCourse.heroStats.length > 0 ? (
-                                    mappedCourse.heroStats.map((stat: any, i: number) => (
-                                        <div key={i} className="flex items-center gap-2 whitespace-nowrap">
-                                            <svg className={`w-5 h-5 ${mappedCourse.themeColor === 'purple' ? 'text-blue-500' : 'text-orange-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                            </svg>
-                                            {stat.label}
-                                        </div>
-                                    ))
+                                    mappedCourse.heroStats.map((stat: any, i: number) => {
+                                        const IconComponent = (() => {
+                                            switch (stat.icon?.toLowerCase()) {
+                                                case 'monitor': return Monitor;
+                                                case 'calendar': return Calendar;
+                                                case 'headphones': return Headphones;
+                                                case 'checkcircle2': return CheckCircle2;
+                                                case 'star': return Star;
+                                                case 'shieldcheck': return ShieldCheck;
+                                                case 'zap': return Zap;
+                                                case 'users': return Users;
+                                                case 'clock': return Clock;
+                                                default: return CheckCircle2;
+                                            }
+                                        })();
+                                        return (
+                                            <div key={i} className="flex items-center gap-2 whitespace-nowrap">
+                                                <IconComponent className={`w-5 h-5 ${mappedCourse.themeColor === 'purple' ? 'text-blue-500' : 'text-orange-500'}`} />
+                                                {stat.label}
+                                            </div>
+                                        );
+                                    })
                                 ) : (
                                     <>
                                         <div className="flex items-center gap-2 whitespace-nowrap">
-                                            <svg className="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                            SAP Certified Trainers
+                                            <Monitor className={`w-5 h-5 ${mappedCourse.themeColor === 'purple' ? 'text-blue-500' : 'text-orange-500'}`} />
+                                            Instructor Led/Self Paced
                                         </div>
                                         <div className="flex items-center gap-2 whitespace-nowrap">
-                                            <svg className={`w-5 h-5 ${mappedCourse.themeColor === 'purple' ? 'text-blue-500' : 'text-orange-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.956 11.956 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                                            100% Job Assistance
-                                        </div>
-                                        <div className="flex items-center gap-2 whitespace-nowrap">
-                                            <svg className={`w-5 h-5 ${mappedCourse.themeColor === 'purple' ? 'text-purple-500' : 'text-red-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                                            Lifetime Access
+                                            <Calendar className={`w-5 h-5 ${mappedCourse.themeColor === 'purple' ? 'text-blue-500' : 'text-orange-500'}`} />
+                                            Weekend/Weekday
                                         </div>
                                     </>
                                 )}
                                 {mappedCourse.duration && (
                                     <div className="flex items-center gap-2 whitespace-nowrap">
-                                        <svg className={`w-5 h-5 ${mappedCourse.themeColor === 'purple' ? 'text-blue-500' : 'text-orange-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                        </svg>
+                                        <Clock className={`w-5 h-5 ${mappedCourse.themeColor === 'purple' ? 'text-blue-500' : 'text-orange-500'}`} />
                                         {mappedCourse.duration}
                                     </div>
                                 )}

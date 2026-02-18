@@ -12,11 +12,10 @@ export const aribaContent = {
 
     title: "SAP Ariba",
     description: "Our comprehensive SAP Ariba training program covers the entire source-to-pay lifecycle. You will learn how to manage suppliers, contracts, buying, and invoicing using the Ariba Network. This course is designed to make you job-ready with real-world scenarios and hands-on practice.",
-    badges: ["Rated #1 SAP Ariba Training Program 2025"],
+    badges: ["Mode: Instructor Led/Self Paced", "Batches: Weekend/Weekday"],
     heroStats: [
-        { icon: "award", label: "SAP Certified Trainers" },
-        { icon: "briefcase", label: "100% Job Assistance" },
-        { icon: "infinity", label: "Lifetime Access" }
+        { icon: "Monitor", label: "Instructor Led/Self Paced" },
+        { icon: "Calendar", label: "Weekend/Weekday" }
     ],
     buttonLabels: {
         primary: "Book Free Demo Class →",
@@ -30,7 +29,7 @@ export const aribaContent = {
         {
             type: 'detailed_features',
             title: "Learn SAP Ariba from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            subtitle: "We provide industry **SAP Ariba Training** which includes interactive teaching, industry projects, and preparation for certification. The training is provided by experts and specialized instructors which ensure having industry knowledge and are certified by SAP with minimum industry experience of 12 years. We emphasize on real time knowledge and training to professionals. Thus, we do not provide SAP **Ariba Training** in the format of recorded training. Instruction is provided in real time by professionals with industry knowledge and tools to have step by step.",
+            subtitle: "Our **SAP Ariba Online Training** curriculum is delivered exclusively by certified SAP professionals, each with 12+ years of direct hands-on experience in procurement and supply chain management. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex procurement scenarios in a step-by-step manner.",
             textAlign: 'left',
             badge: "Why Choose Us",
             items: [

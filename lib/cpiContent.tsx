@@ -8,7 +8,11 @@ export const cpiContent = {
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Technical/sap-cpi.pdf",
     heroHeading: <>Master Cloud Integration Skills with Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">SAP CPI Training</span></>,
     heroSubheading: "The SAP CPI Training (Cloud Platform Integration) by ERPVITS enables professionals to master cloud integration, API management, and enterprise middleware technologies. As organizations increasingly adopt hybrid environments, the demand for certified SAP CPI experts who can connect cloud and on-premise systems, design integration flows, and enable real-time data exchange continues to rise. This comprehensive SAP CPI course combines instructor-led sessions, hands-on lab practice, and real-world integration projects to help developers, consultants, and cloud architects build the technical and practical skills required for global consulting and implementation careers.",
-    badges: ["SAP Certified Trainers", "4.6 Learner Rating", "24/7 Team support"],
+    badges: ["Mode: Instructor Led/Self Paced", "Batches: Weekend/Weekday"],
+    heroStats: [
+        { icon: "Monitor", label: "Instructor Led/Self Paced" },
+        { icon: "Calendar", label: "Weekend/Weekday" }
+    ],
     description: "The SAP CPI Training (Cloud Platform Integration) by ERPVITS enables professionals to master cloud integration, API management, and enterprise middleware technologies. As organizations increasingly adopt hybrid environments, the demand for certified SAP CPI experts who can connect cloud and on-premise systems, design integration flows, and enable real-time data exchange continues to rise. This comprehensive SAP CPI course combines instructor-led sessions, hands-on lab practice, and real-world integration projects to help developers, consultants, and cloud architects build the technical and practical skills required for global consulting and implementation careers.",
     metaTitle: "SAP CPI Training with Certification support | ERPVITS",
     metaDescription: "Master Cloud Integration with SAP CPI Training. Learn cloud connectivity, API management and real-world projects through live sessions & expert training.",
@@ -17,7 +21,7 @@ export const cpiContent = {
         {
             type: 'detailed_features',
             title: "Learn SAP CPI from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            subtitle: "Our SAP CPI Online Training is executed by certified SAP professionals who have 12+ years of direct implementation experience in cloud integration as well as in middleware platforms. You get real-time instruction. There is no recorded passive video course or self-paced module. Instructors provide interactive instruction using cloud integration certified methodologies, address your questions, and assist you in step-by-step implementation of challenging integration scenarios.",
+            subtitle: "Our **SAP CPI Online Training** curriculum is delivered exclusively by certified SAP professionals, each with 12+ years of direct hands-on experience in cloud integration and middleware technologies. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex integration scenarios in a step-by-step manner.",
             items: [
                 {
                     title: "Certified Instructor Expertise",

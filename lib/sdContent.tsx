@@ -214,11 +214,10 @@ export const sdContent = {
     title: "SAP SD",
     heroHeading: <>SAP SD Training with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">Real-Time Scenarios & Certified Trainers</span></>,
     heroSubheading: "The SAP SD Online Training Program (Sales & Distribution) from ERPVITS offers transformational learning opportunities to sales professionals and SAP consultants wishing to advance their skills in order management, billing, shipping, and enterprise resource planning. With the rapid advancements in the business world, there is an acute need for trained certified SAP SD professionals. Every business strives to streamline sales, optimize order picking and fulfillment, improve customer satisfaction, and increase profitability. The SAP SD course offers live training, real-world sales scenarios, hands-on lab exercises, and complete certification prep. SAP SD Training is designed for sales professionals in training, order management, and logistics, ERP consultants, and graduates aiming for global consulting and implementation jobs.",
-    badges: ["SAP Certified Trainers", "4.8 Learner Rating", "24/7 Team support"],
+    badges: ["Mode: Instructor Led/Self Paced", "Batches: Weekend/Weekday"],
     heroStats: [
-        { icon: "award", label: "SAP Certified Trainers" },
-        { icon: "briefcase", label: "4.8 Learner Rating" },
-        { icon: "clock", label: "24/7 Team support" }
+        { icon: "Monitor", label: "Instructor Led/Self Paced" },
+        { icon: "Calendar", label: "Weekend/Weekday" }
     ],
     buttonLabels: {
         primary: "Book Your Free Demo Class",
@@ -230,7 +229,7 @@ export const sdContent = {
         {
             type: 'detailed_features',
             title: "Learn SAP SD from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            subtitle: "Our SAP SD Online Training is delivered exclusively by certified SAP professionals with 12+ years of direct implementation experience in sales and distribution operations. Unlike passive video courses or self-paced modules, you receive interactive, real-time instruction where instructors share proven methodologies, address your specific questions, and guide you through complex sales scenarios step-by-step.",
+            subtitle: "Our **SAP SD Online Training** curriculum is delivered exclusively by certified SAP professionals with 12+ years of direct hands-on experience in sales and distribution operations. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex sales and distribution scenarios in a step-by-step manner.",
             badge: "Why Choose Us",
             items: [
                 {

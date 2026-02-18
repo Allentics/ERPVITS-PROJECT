@@ -10,11 +10,10 @@ export const ppdsContent = {
 
     title: "SAP PPDS",
     description: "The SAP PPDS (Production Planning and Detailed Scheduling) Online Training Program from ERPVITS represents a transformative learning pathway for production planning professionals and SAP consultants eager to excel in advanced production scheduling, demand planning, and manufacturing optimization.",
-    badges: ["Best Seller", "Job Oriented"],
+    badges: ["Mode: Instructor Led/Self Paced", "Batches: Weekend/Weekday"],
     heroStats: [
-        { icon: "Award", label: "SAP Certified Trainers" },
-        { icon: "Star", label: "4.8 Learner Rating" },
-        { icon: "Headphones", label: "24/7 Team support" }
+        { icon: "Monitor", label: "Instructor Led/Self Paced" },
+        { icon: "Calendar", label: "Weekend/Weekday" }
     ],
     buttonLabels: {
         primary: "Book Your Free Demo Class",
@@ -28,7 +27,7 @@ export const ppdsContent = {
         {
             type: 'detailed_features',
             title: "Learn SAP PPDS from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            subtitle: "Our SAP PPDS Online Training is delivered exclusively by certified SAP professionals with 12+ years of direct implementation experience in production planning, demand forecasting, and manufacturing scheduling. Unlike passive video courses or self-paced modules, you receive interactive, real-time instruction where instructors share proven methodologies, address your specific questions, and guide you through complex production scheduling scenarios step-by-step.",
+            subtitle: "Our **SAP PPDS Online Training** curriculum is delivered exclusively by certified SAP professionals with 12+ years of direct hands-on experience in production planning, demand forecasting, and manufacturing scheduling. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share proven methodologies, address your questions, and guide you through complex production scheduling scenarios in a step-by-step manner.",
             badge: "Why Choose Us",
             items: [
                 {

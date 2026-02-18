@@ -147,12 +147,10 @@ export const ibpContent = {
     heroHeading: <>Transform Your Supply Chain Strategy with the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">#1 SAP IBP Online Training Program</span></>,
     heroSubheading: "The SAP Integrated Business Planning Online Training Program from ERPVITS represents a transformative learning pathway for professionals eager to excel in demand planning, supply chain optimization, and data-driven business strategy. In today's hyper-competitive business landscape, organizations urgently need certified SAP IBP experts who can align sales, marketing, finance, and supply chain teams through integrated planning, reduce forecast errors, optimize inventory, and enable agile decision-making.",
 
-    badges: ["Rated #1 SAP IBP Training Program 2025"],
+    badges: ["Mode: Instructor Led/Self Paced", "Batches: Weekend/Weekday"],
     heroStats: [
-        { icon: "award", label: "SAP Certified Trainers" },
-        { icon: "star", label: "4.8 Learner Rating" },
-        { icon: "clock", label: "24/7 Team support" },
-        { icon: "briefcase", label: "12+ Years Exp." }
+        { icon: "Monitor", label: "Instructor Led/Self Paced" },
+        { icon: "Calendar", label: "Weekend/Weekday" }
     ],
     buttonLabels: {
         primary: "Book Your Free Demo Class",
@@ -168,7 +166,7 @@ export const ibpContent = {
         {
             type: 'detailed_features',
             title: "Learn SAP IBP from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            subtitle: "Our SAP Integrated Business Planning Online Training is delivered exclusively by certified SAP professionals with 12+ years of direct implementation experience in demand planning, supply chain strategy, and integrated business planning. Unlike passive video courses or self-paced modules, you receive interactive, real-time instruction where instructors share proven methodologies, address your specific questions, and guide you through complex planning scenarios step-by-step.",
+            subtitle: "Our **SAP IBP Online Training** curriculum is delivered exclusively by certified SAP professionals with 12+ years of direct hands-on experience in demand planning, supply chain strategy, and integrated business planning. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex planning scenarios in a step-by-step manner.",
             badge: "Why Choose Us",
             items: [
                 {
