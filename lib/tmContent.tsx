@@ -169,9 +169,9 @@ export const tmContent = {
 
     title: "SAP TM",
     description: "The SAP Transportation Management Online Training Program from ERPVITS represents a transformative learning pathway for professionals eager to excel in logistics optimization, supply chain coordination, and enterprise transportation planning.",
-    badges: ["Mode: Online/Instructor-Led/Self Paced", "Batches: Weekend/Weekday"],
+    badges: ["Mode: Online Instructor-Led/Self Paced", "Batches: Weekend/Weekday"],
     heroStats: [
-        { icon: "Monitor", label: "Online/Instructor-Led/Self Paced" },
+        { icon: "Monitor", label: "Online Instructor-Led/Self Paced" },
         { icon: "Calendar", label: "Weekend/Weekday" }
     ],
     buttonLabels: {

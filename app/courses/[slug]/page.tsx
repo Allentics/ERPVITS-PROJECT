@@ -287,7 +287,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                                     <>
                                         <div className="flex items-center gap-2 whitespace-nowrap">
                                             <Monitor className={`w-5 h-5 ${mappedCourse.themeColor === 'purple' ? 'text-blue-500' : 'text-orange-500'}`} />
-                                            Online/Instructor-Led/Self Paced
+                                            Online Instructor-Led/Self Paced
                                         </div>
                                         <div className="flex items-center gap-2 whitespace-nowrap">
                                             <Calendar className={`w-5 h-5 ${mappedCourse.themeColor === 'purple' ? 'text-blue-500' : 'text-orange-500'}`} />

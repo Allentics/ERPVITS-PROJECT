@@ -13,9 +13,9 @@ export const ficoContent: Partial<Course> = {
         primary: "Book Your Free Demo Class",
         secondary: "View Curriculum"
     },
-    badges: ["Mode: Online/Instructor-Led/Self Paced", "Batches: Weekend/Weekday"],
+    badges: ["Mode: Online Instructor-Led/Self Paced", "Batches: Weekend/Weekday"],
     heroStats: [
-        { icon: "Monitor", label: "Online/Instructor-Led/Self Paced" },
+        { icon: "Monitor", label: "Online Instructor-Led/Self Paced" },
         { icon: "Calendar", label: "Weekend/Weekday" }
     ],
     metaTitle: "SAP FICO Online Training | Finance & Controlling",
