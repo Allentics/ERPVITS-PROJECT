@@ -996,6 +996,56 @@ export const trmContent = {
             ]
         },
         {
+            type: 'detailed_career_roadmap',
+            items: [
+                {
+                    stage: "Start (1-3)",
+                    title: "Jr. TRM Consultant",
+                    description: "Support treasury operations, transaction manager configuration, basic risk analysis."
+                },
+                {
+                    stage: "Mid-Level (4-6)",
+                    title: "Sr. TRM Consultant / Architect",
+                    description: "Solution design, hedge management, cash liquidity planning, exposure management."
+                },
+                {
+                    stage: "Senior (7-10+)",
+                    title: "Principal Consultant / Manager",
+                    description: "Treasury strategy, financial risk framework, global cash management design."
+                }
+            ],
+            stats: [
+                { value: "200%+", label: "Increase in Job Earnings" },
+                { value: "500+", label: "Companies Hiring" },
+                { value: "$110K", label: "Average Starting Salary" }
+            ]
+        },
+        {
+            type: 'detailed_career_roadmap',
+            items: [
+                {
+                    stage: "Start (1-3)",
+                    title: "Jr. TRM Consultant",
+                    description: "Support treasury operations, transaction manager configuration, basic risk analysis."
+                },
+                {
+                    stage: "Mid-Level (4-6)",
+                    title: "Sr. TRM Consultant / Architect",
+                    description: "Solution design, hedge management, cash liquidity planning, exposure management."
+                },
+                {
+                    stage: "Senior (7-10+)",
+                    title: "Principal Consultant / Manager",
+                    description: "Treasury strategy, financial risk framework, global cash management design."
+                }
+            ],
+            stats: [
+                { value: "200%+", label: "Increase in Job Earnings" },
+                { value: "500+", label: "Companies Hiring" },
+                { value: "$110K", label: "Average Starting Salary" }
+            ]
+        },
+        {
             type: 'detailed_faq',
             title: "Frequently Asked Questions (FAQs)",
             items: [

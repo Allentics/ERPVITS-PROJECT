@@ -66,29 +66,6 @@ export default function DetailedCareerRoadmap({ items, stats }: { items?: any[],
 
 
                 {/* 3. Hiring Trends */}
-                <div className="mb-16">
-                    <div className="text-center mb-8">
-                        <h3 className="text-xl font-bold text-slate-900">Hiring Trends (2025)</h3>
-                    </div>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <div className="bg-blue-50 p-6 rounded-xl text-center border border-blue-100">
-                            <div className="text-xl font-bold text-blue-600 mb-1">200%+</div>
-                            <div className="text-xs text-slate-600">Increase in Consultant Earnings</div>
-                        </div>
-                        <div className="bg-[#ff4500]/10 p-6 rounded-xl text-center border border-[#ff4500]/10">
-                            <div className="text-xl font-bold text-[#ff4500] mb-1">High</div>
-                            <div className="text-xs text-slate-600">Demand for S-Market Innovation</div>
-                        </div>
-                        <div className="bg-purple-50 p-6 rounded-xl text-center border border-purple-100">
-                            <div className="text-xl font-bold text-purple-600 mb-1">Premium</div>
-                            <div className="text-xs text-slate-600">Salaries for Certified Pros</div>
-                        </div>
-                        <div className="bg-[#ff4500]/10 p-6 rounded-xl text-center border border-[#ff4500]/10">
-                            <div className="text-xl font-bold text-[#ff4500] mb-1">Global</div>
-                            <div className="text-xs text-slate-600">Remote Opportunities</div>
-                        </div>
-                    </div>
-                </div>
 
                 {/* 4. Alumni Network Banner */}
                 <div className="bg-gradient-to-r from-[#ff4500] to-red-600 rounded-2xl p-8 md:p-12 text-center text-white shadow-xl relative overflow-hidden">

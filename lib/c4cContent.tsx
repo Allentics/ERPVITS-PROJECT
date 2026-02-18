@@ -1012,6 +1012,56 @@ export const c4cContent = {
             ]
         },
         {
+            type: 'detailed_career_roadmap',
+            items: [
+                {
+                    stage: "Start (1-3)",
+                    title: "Jr. C4C Technical Consultant",
+                    description: "Support SDK development, custom object creation, UI designer basics."
+                },
+                {
+                    stage: "Mid-Level (4-6)",
+                    title: "Sr. C4C Technical Consultant / Architect",
+                    description: "Advanced SDK logic, integration flows, mashups, complex UI enhancements."
+                },
+                {
+                    stage: "Senior (7-10+)",
+                    title: "Principal Consultant / Manager",
+                    description: "Technical architecture, integration strategy, solution extension design."
+                }
+            ],
+            stats: [
+                { value: "200%+", label: "Increase in Job Earnings" },
+                { value: "500+", label: "Companies Hiring" },
+                { value: "$110K", label: "Average Starting Salary" }
+            ]
+        },
+        {
+            type: 'detailed_career_roadmap',
+            items: [
+                {
+                    stage: "Start (1-3)",
+                    title: "Jr. C4C Technical Consultant",
+                    description: "Support SDK development, custom object creation, UI designer basics."
+                },
+                {
+                    stage: "Mid-Level (4-6)",
+                    title: "Sr. C4C Technical Consultant / Architect",
+                    description: "Advanced SDK logic, integration flows, mashups, complex UI enhancements."
+                },
+                {
+                    stage: "Senior (7-10+)",
+                    title: "Principal Consultant / Manager",
+                    description: "Technical architecture, integration strategy, solution extension design."
+                }
+            ],
+            stats: [
+                { value: "200%+", label: "Increase in Job Earnings" },
+                { value: "500+", label: "Companies Hiring" },
+                { value: "$110K", label: "Average Starting Salary" }
+            ]
+        },
+        {
             type: 'detailed_faq',
             title: "Frequently Asked Questions (FAQs) – SAP C4C Technical Training at ERPVITS",
             items: [

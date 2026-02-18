@@ -857,6 +857,31 @@ export const tmContent = {
             ]
         },
         {
+            type: 'detailed_career_roadmap',
+            items: [
+                {
+                    stage: "Start (1-3)",
+                    title: "Jr. TM Consultant",
+                    description: "Support transportation planning, freight order management, basic route configuration."
+                },
+                {
+                    stage: "Mid-Level (4-6)",
+                    title: "Sr. TM Consultant / Architect",
+                    description: "Solution design, advanced planning optimization, carrier integration, charge calculation."
+                },
+                {
+                    stage: "Senior (7-10+)",
+                    title: "Principal Consultant / Manager",
+                    description: "Supply chain strategy, global logistics network design, program management."
+                }
+            ],
+            stats: [
+                { value: "200%+", label: "Increase in Job Earnings" },
+                { value: "500+", label: "Companies Hiring" },
+                { value: "$110K", label: "Average Starting Salary" }
+            ]
+        },
+        {
             type: 'detailed_faq',
             items: [
                 {

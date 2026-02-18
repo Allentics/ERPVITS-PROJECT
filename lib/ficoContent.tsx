@@ -701,6 +701,31 @@ export const ficoContent: Partial<Course> = {
             ]
         },
         {
+            type: 'detailed_career_roadmap',
+            items: [
+                {
+                    stage: "Start (1-3)",
+                    title: "Jr. FICO Consultant",
+                    description: "Support GL/AP/AR configuration, month-end closing support, basic reporting."
+                },
+                {
+                    stage: "Mid-Level (4-6)",
+                    title: "Sr. FICO Consultant / Architect",
+                    description: "Solution design, product costing, profitability analysis, S/4HANA migration."
+                },
+                {
+                    stage: "Senior (7-10+)",
+                    title: "Principal Consultant / Manager",
+                    description: "Financial transformation strategy, global template design, program management."
+                }
+            ],
+            stats: [
+                { value: "200%+", label: "Increase in Job Earnings" },
+                { value: "500+", label: "Companies Hiring" },
+                { value: "$110K", label: "Average Starting Salary" }
+            ]
+        },
+        {
             type: 'detailed_faq',
             items: [
                 { q: "What is SAP FICO and how does ERPVITS help me learn it?", a: "SAP FICO is a complete solution for financial accounting, controlling, and cost management. At ERPVITS, we train FICO by integrating comprehensive real-world accounting scenarios and guided projects so you can effectively practice and learn the financial accounting tools and workflows." },

@@ -145,17 +145,6 @@ export default function DetailedTestimonials({ items, stats, courseName = "SAP" 
                     </h2>
                     <p className="text-gray-600 text-sm">Real reviews, real results from professionals who transformed their careers</p>
 
-                    <div className="mt-8 flex justify-center">
-                        <div className="bg-white px-8 py-4 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center">
-                            <div className="flex gap-1 mb-2">
-                                {[1, 2, 3, 4, 5].map((_, i) => (
-                                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                                ))}
-                            </div>
-                            <div className="font-bold text-xl text-slate-900">{ratingValue}</div>
-                            <div className="text-[10px] text-slate-500">Based on {reviewsCountLabel}</div>
-                        </div>
-                    </div>
                 </div>
 
                 {/* Reviews Grid */}
