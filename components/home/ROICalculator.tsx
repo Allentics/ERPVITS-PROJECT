@@ -102,7 +102,7 @@ export default function ROICalculator() {
 
                     <button
                         onClick={calculateROI}
-                        className="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-5 rounded-xl shadow-xl text-lg uppercase tracking-widest transition-all hover:scale-[1.01] flex items-center justify-center gap-3"
+                        className="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-5 rounded-xl shadow-xl text-lg uppercase tracking-widest flex items-center justify-center gap-3"
                     >
                         <Calculator className="w-5 h-5" />
                         CALCULATE MY ROI
@@ -131,7 +131,7 @@ export default function ROICalculator() {
                             roi: "1,850% over 5 years", payback: "2.1 months"
                         }
                     ].map((scenario, i) => (
-                        <div key={i} className="bg-white rounded-2xl p-8 text-left shadow-xl transform hover:scale-105 transition-all duration-300">
+                        <div key={i} className="bg-white rounded-2xl p-8 text-left shadow-xl">
                             <div className="text-xs font-black text-slate-400 mb-4 uppercase tracking-[0.2em]">
                                 {scenario.from} <ArrowRight className="inline w-3 h-3 mx-1 text-orange-500" /> {scenario.to}
                             </div>
