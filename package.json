@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "sync-down": "npx tsx scripts/sync_db_to_files.ts",
+    "reseed": "npx tsx scripts/reseed_courses.tsx"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",

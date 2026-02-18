@@ -700,6 +700,31 @@ Governance Portals and Reporting (≤10%)
             ]
         },
         {
+            type: 'detailed_career_roadmap',
+            items: [
+                {
+                    stage: "Start (1-3)",
+                    title: "Jr. MDG Consultant",
+                    description: "Support master data projects, data quality checks, basic governance workflows."
+                },
+                {
+                    stage: "Mid-Level (4-6)",
+                    title: "Sr. MDG Consultant / Architect",
+                    description: "Lead governance workshops, solution design, data model enhancements."
+                },
+                {
+                    stage: "Senior (7-10+)",
+                    title: "Principal Consultant / Manager",
+                    description: "Enterprise data strategy, cross-platform governance, program management."
+                }
+            ],
+            stats: [
+                { value: "200%+", label: "Increase in Job Earnings" },
+                { value: "500+", label: "Companies Hiring" },
+                { value: "$110K", label: "Average Starting Salary" }
+            ]
+        },
+        {
             type: 'detailed_companies',
             items: [
                 "Accenture", "Capgemini", "Deloitte Consulting", "EY (Ernst & Young)", "KPMG", "PwC", "IBM Consulting",
@@ -851,31 +876,7 @@ Governance Portals and Reporting (≤10%)
                 { title: "Special Offer", desc: "Exclusive discount for demo attendees" }
             ]
         },
-        {
-            type: 'detailed_career_roadmap',
-            items: [
-                {
-                    stage: "Start (1-3)",
-                    title: "Jr. MDG Consultant",
-                    description: "Support master data projects, data quality checks, basic governance workflows."
-                },
-                {
-                    stage: "Mid-Level (4-6)",
-                    title: "Sr. MDG Consultant / Architect",
-                    description: "Lead governance workshops, solution design, data model enhancements."
-                },
-                {
-                    stage: "Senior (7-10+)",
-                    title: "Principal Consultant / Manager",
-                    description: "Enterprise data strategy, cross-platform governance, program management."
-                }
-            ],
-            stats: [
-                { value: "200%+", label: "Increase in Job Earnings" },
-                { value: "500+", label: "Companies Hiring" },
-                { value: "$110K", label: "Average Starting Salary" }
-            ]
-        },
+
         {
             type: 'detailed_faq',
             items: [

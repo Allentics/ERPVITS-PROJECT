@@ -792,6 +792,31 @@ Competitive Advantage: Stand out in technical interviews and project selections`
             ]
         },
         {
+            type: 'detailed_career_roadmap',
+            items: [
+                {
+                    stage: "Start (1-3)",
+                    title: "Jr. ABAP on HANA Consultant",
+                    description: "Support CDS view creation, AMDP procedures, code pushdown techniques."
+                },
+                {
+                    stage: "Mid-Level (4-6)",
+                    title: "Sr. ABAP on HANA Consultant / Architect",
+                    description: "Advanced performance optimization, Fiori elements, complex data modeling."
+                },
+                {
+                    stage: "Senior (7-10+)",
+                    title: "Principal Consultant / Manager",
+                    description: "Technical architecture, S/4HANA migration strategy, development standards definition."
+                }
+            ],
+            stats: [
+                { value: "200%+", label: "Increase in Job Earnings" },
+                { value: "500+", label: "Companies Hiring" },
+                { value: "$110K", label: "Average Starting Salary" }
+            ]
+        },
+        {
             type: 'detailed_post_training_journey',
             title: "What to Expect After Completing SAP ABAP on HANA Training – Your Growth Roadmap",
             items: [
@@ -946,31 +971,7 @@ Competitive Advantage: Stand out in technical interviews and project selections`
                 { icon: "Award", text: "Career-accelerated placement guarantee" }
             ]
         },
-        {
-            type: 'detailed_career_roadmap',
-            items: [
-                {
-                    stage: "Start (1-3)",
-                    title: "Jr. ABAP on HANA Consultant",
-                    description: "Support CDS view creation, AMDP procedures, code pushdown techniques."
-                },
-                {
-                    stage: "Mid-Level (4-6)",
-                    title: "Sr. ABAP on HANA Consultant / Architect",
-                    description: "Advanced performance optimization, Fiori elements, complex data modeling."
-                },
-                {
-                    stage: "Senior (7-10+)",
-                    title: "Principal Consultant / Manager",
-                    description: "Technical architecture, S/4HANA migration strategy, development standards definition."
-                }
-            ],
-            stats: [
-                { value: "200%+", label: "Increase in Job Earnings" },
-                { value: "500+", label: "Companies Hiring" },
-                { value: "$110K", label: "Average Starting Salary" }
-            ]
-        },
+
         {
             type: 'detailed_faq',
             title: "Frequently Asked Questions (FAQs) – SAP ABAP on HANA Training at ERPVITS",

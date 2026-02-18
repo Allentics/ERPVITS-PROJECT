@@ -554,6 +554,31 @@ export const ficoContent: Partial<Course> = {
             ]
         },
         {
+            type: 'detailed_career_roadmap',
+            items: [
+                {
+                    stage: "Start (1-3)",
+                    title: "Jr. FICO Consultant",
+                    description: "Support GL/AP/AR configuration, month-end closing support, basic reporting."
+                },
+                {
+                    stage: "Mid-Level (4-6)",
+                    title: "Sr. FICO Consultant / Architect",
+                    description: "Solution design, product costing, profitability analysis, S/4HANA migration."
+                },
+                {
+                    stage: "Senior (7-10+)",
+                    title: "Principal Consultant / Manager",
+                    description: "Financial transformation strategy, global template design, program management."
+                }
+            ],
+            stats: [
+                { value: "200%+", label: "Increase in Job Earnings" },
+                { value: "500+", label: "Companies Hiring" },
+                { value: "$110K", label: "Average Starting Salary" }
+            ]
+        },
+        {
             type: 'detailed_companies',
             courseName: "SAP FICO"
         },
@@ -700,31 +725,7 @@ export const ficoContent: Partial<Course> = {
                 { icon: "Users", text: "Guaranteed access to current curriculum and trainers" }
             ]
         },
-        {
-            type: 'detailed_career_roadmap',
-            items: [
-                {
-                    stage: "Start (1-3)",
-                    title: "Jr. FICO Consultant",
-                    description: "Support GL/AP/AR configuration, month-end closing support, basic reporting."
-                },
-                {
-                    stage: "Mid-Level (4-6)",
-                    title: "Sr. FICO Consultant / Architect",
-                    description: "Solution design, product costing, profitability analysis, S/4HANA migration."
-                },
-                {
-                    stage: "Senior (7-10+)",
-                    title: "Principal Consultant / Manager",
-                    description: "Financial transformation strategy, global template design, program management."
-                }
-            ],
-            stats: [
-                { value: "200%+", label: "Increase in Job Earnings" },
-                { value: "500+", label: "Companies Hiring" },
-                { value: "$110K", label: "Average Starting Salary" }
-            ]
-        },
+
         {
             type: 'detailed_faq',
             items: [
