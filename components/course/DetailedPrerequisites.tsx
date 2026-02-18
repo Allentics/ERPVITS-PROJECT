@@ -64,15 +64,7 @@ export default function DetailedPrerequisites({ items, title, subtitle }: { item
                     </div>
                 </div>
 
-                {/* Blue Info Banner -> Orange */}
-                <div className="max-w-5xl mx-auto bg-[#ff4500]/10 border border-[#ff4500]/10 rounded-xl p-6 flex items-start gap-4">
-                    <Info className="w-6 h-6 text-[#ff4500] flex-shrink-0 mt-1" />
-                    <div>
-                        <div className="text-orange-900 text-sm leading-relaxed">
-                            <span className="font-bold">Good to Know:</span> If you&apos;re completely new to SAP, we provide foundational modules to get you started. If you&apos;re transitioning from SAP ERP or MM, we can accelerate you to advanced topics faster. Our personalized pre-assessment ensures you get the right learning path.
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </section>
     );
