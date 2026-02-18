@@ -88,9 +88,9 @@ export const c4cFunctionalContent = {
     themeColor: "orange",
 
     badge: "Rated #1 SAP C4C Functional Training 2025",
-    badges: ["Mode: Instructor Led/Self Paced", "Batches: Weekend/Weekday"],
+    badges: ["Mode: Online/Instructor-Led/Self Paced", "Batches: Weekend/Weekday"],
     heroStats: [
-        { icon: "Monitor", label: "Instructor Led/Self Paced" },
+        { icon: "Monitor", label: "Online/Instructor-Led/Self Paced" },
         { icon: "Calendar", label: "Weekend/Weekday" }
     ],
 

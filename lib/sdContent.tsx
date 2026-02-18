@@ -214,9 +214,9 @@ export const sdContent = {
     title: "SAP SD",
     heroHeading: <>SAP SD Training with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">Real-Time Scenarios & Certified Trainers</span></>,
     heroSubheading: "The SAP SD Online Training Program (Sales & Distribution) from ERPVITS offers transformational learning opportunities to sales professionals and SAP consultants wishing to advance their skills in order management, billing, shipping, and enterprise resource planning. With the rapid advancements in the business world, there is an acute need for trained certified SAP SD professionals. Every business strives to streamline sales, optimize order picking and fulfillment, improve customer satisfaction, and increase profitability. The SAP SD course offers live training, real-world sales scenarios, hands-on lab exercises, and complete certification prep. SAP SD Training is designed for sales professionals in training, order management, and logistics, ERP consultants, and graduates aiming for global consulting and implementation jobs.",
-    badges: ["Mode: Instructor Led/Self Paced", "Batches: Weekend/Weekday"],
+    badges: ["Mode: Online/Instructor-Led/Self Paced", "Batches: Weekend/Weekday"],
     heroStats: [
-        { icon: "Monitor", label: "Instructor Led/Self Paced" },
+        { icon: "Monitor", label: "Online/Instructor-Led/Self Paced" },
         { icon: "Calendar", label: "Weekend/Weekday" }
     ],
     buttonLabels: {

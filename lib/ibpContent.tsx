@@ -147,9 +147,9 @@ export const ibpContent = {
     heroHeading: <>Transform Your Supply Chain Strategy with the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">#1 SAP IBP Online Training Program</span></>,
     heroSubheading: "The SAP Integrated Business Planning Online Training Program from ERPVITS represents a transformative learning pathway for professionals eager to excel in demand planning, supply chain optimization, and data-driven business strategy. In today's hyper-competitive business landscape, organizations urgently need certified SAP IBP experts who can align sales, marketing, finance, and supply chain teams through integrated planning, reduce forecast errors, optimize inventory, and enable agile decision-making.",
 
-    badges: ["Mode: Instructor Led/Self Paced", "Batches: Weekend/Weekday"],
+    badges: ["Mode: Online/Instructor-Led/Self Paced", "Batches: Weekend/Weekday"],
     heroStats: [
-        { icon: "Monitor", label: "Instructor Led/Self Paced" },
+        { icon: "Monitor", label: "Online/Instructor-Led/Self Paced" },
         { icon: "Calendar", label: "Weekend/Weekday" }
     ],
     buttonLabels: {

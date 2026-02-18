@@ -4,9 +4,9 @@ export const trmContent = {
     heroHeading: <>Master the Future of Corporate Treasury with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">SAP TRM Online Training</span></>,
     heroSubheading: "Unlock premium treasury consulting careers with SAP TRM Online Training (Treasury and Risk Management), Cash Management, Foreign Exchange Operations, Trading of Securities, Derivative Hedging, Advanced Credit Risk Determination. Learn with hands-on training, work with real financial workflows and earn industry-recognized SAP TRM certification. For finance professionals and SAP consultants hoping to sharpen their skills in treasury operations, risk management, and enterprise financial systems, the SAP TRM Training Program from ERPVITS is a transformative learning pathway. Designed especially for treasury professionals, finance leaders and ERP consultants, our all encompassing SAP TRM course incorporates interactive, instructor-led components, practical exercises, real-world financial scenarios and certification support from start to finish.",
     heroLayout: "centered",
-    badges: ["Mode: Instructor Led/Self Paced", "Batches: Weekend/Weekday"],
+    badges: ["Mode: Online/Instructor-Led/Self Paced", "Batches: Weekend/Weekday"],
     heroStats: [
-        { icon: "Monitor", label: "Instructor Led/Self Paced" },
+        { icon: "Monitor", label: "Online/Instructor-Led/Self Paced" },
         { icon: "Calendar", label: "Weekend/Weekday" }
     ],
     buttonLabels: {

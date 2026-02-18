@@ -8,9 +8,9 @@ export const mmContent = {
 
     heroHeading: <>Transform Your Career with the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">#1 SAP MM Online Training Program</span></>,
     heroSubheading: "The ERPVITS SAP S/4HANA MM Online Training Program is a step toward a new career track for supply chain professionals and SAP consultants focusing on inventory management, procurement, and enterprise resource planning. Supply chain organizations today seek certified experts in the SAP S/4HANA MM module to help optimize the flow of materials, shrink costly inventory, streamline procurement, and improve overall supply chain management. This all-inclusive SAP MM course is aimed at supply chain professionals, inventory managers, procurement specialists, consultants in ERP, and highly motivated graduates looking for international careers in consulting and implementation. The SAP material management course is designed with interactive, live training, hands-on workshops, real-world supply chain exercises, and complete certification support.",
-    badges: ["Mode: Instructor Led/Self Paced", "Batches: Weekend/Weekday"],
+    badges: ["Mode: Online/Instructor-Led/Self Paced", "Batches: Weekend/Weekday"],
     heroStats: [
-        { icon: "Monitor", label: "Instructor Led/Self Paced" },
+        { icon: "Monitor", label: "Online/Instructor-Led/Self Paced" },
         { icon: "Calendar", label: "Weekend/Weekday" }
     ],
     buttonLabels: {

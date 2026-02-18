@@ -8,9 +8,9 @@ export const abapContent = {
 
     heroHeading: <>Gain Expertise in Cloud Development with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">SAP ABAP Training</span></>,
     heroSubheading: "The **SAP ABAP Training** offered by **ERPVITS** is a game changer for ABAP developers and SAP consultants interested in advancing their skills in cloud application development, contemporary programming, and enterprise software. In a cutting-edge business era, organizations demand certified SAP ABAB on cloud experts as proficient in cloud-native application development, ABAP Cloud runtime application, implementing clean architecture patterns, and digital transformation initiatives. This fully-fledged and comprehensive **SAP ABAP on Cloud training** features live, interactive instructor training, hands-on labs, cloud development projects, and comprehensive certification geared towards development and implementation for ABAP developers, technical consultants, application architects, cloud specialists, and fresh graduates and is focused on global consulting and implementation positions.",
-    badges: ["Mode: Instructor Led/Self Paced", "Batches: Weekend/Weekday"],
+    badges: ["Mode: Online/Instructor-Led/Self Paced", "Batches: Weekend/Weekday"],
     heroStats: [
-        { icon: "Monitor", label: "Instructor Led/Self Paced" },
+        { icon: "Monitor", label: "Online/Instructor-Led/Self Paced" },
         { icon: "Calendar", label: "Weekend/Weekday" }
     ],
 

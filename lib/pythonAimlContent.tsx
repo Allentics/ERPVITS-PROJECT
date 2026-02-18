@@ -5,9 +5,9 @@ import { Section } from './courseData';
 export const pythonAimlContent: any = {
     price: "45,000",
     duration: "45-50 Hours",
-    badges: ["Mode: Instructor Led/Self Paced", "Batches: Weekend/Weekday"],
+    badges: ["Mode: Online/Instructor-Led/Self Paced", "Batches: Weekend/Weekday"],
     heroStats: [
-        { icon: "Monitor", label: "Instructor Led/Self Paced" },
+        { icon: "Monitor", label: "Online/Instructor-Led/Self Paced" },
         { icon: "Calendar", label: "Weekend/Weekday" }
     ],
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/python-aiml-course-content.pdf",

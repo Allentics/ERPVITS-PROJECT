@@ -12,9 +12,9 @@ export const aribaContent = {
 
     title: "SAP Ariba",
     description: "Our comprehensive SAP Ariba training program covers the entire source-to-pay lifecycle. You will learn how to manage suppliers, contracts, buying, and invoicing using the Ariba Network. This course is designed to make you job-ready with real-world scenarios and hands-on practice.",
-    badges: ["Mode: Instructor Led/Self Paced", "Batches: Weekend/Weekday"],
+    badges: ["Mode: Online/Instructor-Led/Self Paced", "Batches: Weekend/Weekday"],
     heroStats: [
-        { icon: "Monitor", label: "Instructor Led/Self Paced" },
+        { icon: "Monitor", label: "Online/Instructor-Led/Self Paced" },
         { icon: "Calendar", label: "Weekend/Weekday" }
     ],
     buttonLabels: {

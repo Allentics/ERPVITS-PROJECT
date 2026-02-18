@@ -10,9 +10,9 @@ export const ppdsContent = {
 
     title: "SAP PPDS",
     description: "The SAP PPDS (Production Planning and Detailed Scheduling) Online Training Program from ERPVITS represents a transformative learning pathway for production planning professionals and SAP consultants eager to excel in advanced production scheduling, demand planning, and manufacturing optimization.",
-    badges: ["Mode: Instructor Led/Self Paced", "Batches: Weekend/Weekday"],
+    badges: ["Mode: Online/Instructor-Led/Self Paced", "Batches: Weekend/Weekday"],
     heroStats: [
-        { icon: "Monitor", label: "Instructor Led/Self Paced" },
+        { icon: "Monitor", label: "Online/Instructor-Led/Self Paced" },
         { icon: "Calendar", label: "Weekend/Weekday" }
     ],
     buttonLabels: {

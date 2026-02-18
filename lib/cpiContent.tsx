@@ -8,9 +8,9 @@ export const cpiContent = {
     syllabusUrl: "/syllabus/ERPVITS Syllabus - Course Contents Pdf/SAP Technical/sap-cpi.pdf",
     heroHeading: <>Master Cloud Integration Skills with Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">SAP CPI Training</span></>,
     heroSubheading: "The SAP CPI Training (Cloud Platform Integration) by ERPVITS enables professionals to master cloud integration, API management, and enterprise middleware technologies. As organizations increasingly adopt hybrid environments, the demand for certified SAP CPI experts who can connect cloud and on-premise systems, design integration flows, and enable real-time data exchange continues to rise. This comprehensive SAP CPI course combines instructor-led sessions, hands-on lab practice, and real-world integration projects to help developers, consultants, and cloud architects build the technical and practical skills required for global consulting and implementation careers.",
-    badges: ["Mode: Instructor Led/Self Paced", "Batches: Weekend/Weekday"],
+    badges: ["Mode: Online/Instructor-Led/Self Paced", "Batches: Weekend/Weekday"],
     heroStats: [
-        { icon: "Monitor", label: "Instructor Led/Self Paced" },
+        { icon: "Monitor", label: "Online/Instructor-Led/Self Paced" },
         { icon: "Calendar", label: "Weekend/Weekday" }
     ],
     description: "The SAP CPI Training (Cloud Platform Integration) by ERPVITS enables professionals to master cloud integration, API management, and enterprise middleware technologies. As organizations increasingly adopt hybrid environments, the demand for certified SAP CPI experts who can connect cloud and on-premise systems, design integration flows, and enable real-time data exchange continues to rise. This comprehensive SAP CPI course combines instructor-led sessions, hands-on lab practice, and real-world integration projects to help developers, consultants, and cloud architects build the technical and practical skills required for global consulting and implementation careers.",

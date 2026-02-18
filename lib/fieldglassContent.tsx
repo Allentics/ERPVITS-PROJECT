@@ -9,9 +9,9 @@ export const fieldglassContent = {
     heroHeading: <>Become a Leader in Managing a Contingent Workforce with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone">SAP Fieldglass Training</span></>,
     themeColor: "orange",
     heroSubheading: "This SAP Fieldglass training course is specifically tailored for HR professionals, procurement professionals, IT consultants, work program managers, and other professionals who aspire to work in global contingent workforce and services procurement consulting. This SAP Fieldglass course combines hands-on system training, expert instruction with real-world application, and a curriculum designed to a certification.",
-    badges: ["Mode: Instructor Led/Self Paced", "Batches: Weekend/Weekday"],
+    badges: ["Mode: Online/Instructor-Led/Self Paced", "Batches: Weekend/Weekday"],
     heroStats: [
-        { icon: "Monitor", label: "Instructor Led/Self Paced" },
+        { icon: "Monitor", label: "Online/Instructor-Led/Self Paced" },
         { icon: "Calendar", label: "Weekend/Weekday" }
     ],
     description: "This SAP Fieldglass training course is specifically tailored for HR professionals, procurement professionals, IT consultants, work program managers, and other professionals who aspire to work in global contingent workforce and services procurement consulting. This SAP Fieldglass course combines hands-on system training, expert instruction with real-world application, and a curriculum designed to a certification.",

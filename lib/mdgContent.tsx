@@ -282,9 +282,9 @@ export const mdgContent = {
 
     title: "SAP MDG",
     description: "The SAP Master Data Governance Online Training Program from ERPVITS represents a transformative learning pathway for professionals eager to excel in data quality management, organizational data governance, and enterprise information management.",
-    badges: ["Mode: Instructor Led/Self Paced", "Batches: Weekend/Weekday"],
+    badges: ["Mode: Online/Instructor-Led/Self Paced", "Batches: Weekend/Weekday"],
     heroStats: [
-        { icon: "Monitor", label: "Instructor Led/Self Paced" },
+        { icon: "Monitor", label: "Online/Instructor-Led/Self Paced" },
         { icon: "Calendar", label: "Weekend/Weekday" }
     ],
     buttonLabels: {

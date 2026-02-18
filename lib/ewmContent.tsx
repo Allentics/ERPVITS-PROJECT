@@ -88,9 +88,9 @@ export const ewmContent = {
     metaTitle: "SAP EWM Training Online – Warehouse Management Course",
     metaDescription: "Advance your logistics career with SAP EWM training covering warehouse automation, order fulfillment, and S/4HANA integration. Get certification support.",
 
-    badges: ["Mode: Instructor Led/Self Paced", "Batches: Weekend/Weekday"],
+    badges: ["Mode: Online/Instructor-Led/Self Paced", "Batches: Weekend/Weekday"],
     heroStats: [
-        { icon: "Monitor", label: "Instructor Led/Self Paced" },
+        { icon: "Monitor", label: "Online/Instructor-Led/Self Paced" },
         { icon: "Calendar", label: "Weekend/Weekday" }
     ],
     buttonLabels: {
