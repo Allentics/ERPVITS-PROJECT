@@ -1561,32 +1561,128 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
     };
 
     const RealWorldProjectsTab = () => {
-        const section = getSection('real_world_scenarios', { items: [] });
+        const section = getSection('real_world_scenarios', { items: [], title: '', subtitle: '', portfolioNote: '' });
         const items = section.items || [];
         const updateItems = (newItems: any[]) => updateSection('real_world_scenarios', { ...section, items: newItems });
 
         return (
-            <div className="space-y-6">
-                <div className="flex justify-between items-center bg-gray-100 p-4 rounded-lg">
-                    <h4 className="font-bold text-gray-900">Section 10: Real-World Projects ({items.length})</h4>
-                    <button type="button" onClick={() => updateItems([...items, { title: 'New Project', scenario: '', role: '', outcome: '' }])} className="text-sm bg-black text-white px-3 py-1.5 rounded flex items-center gap-2">
+            <div className="space-y-8">
+                <div className="border-b pb-4 mb-6">
+                    <h3 className="text-xl font-bold text-slate-900">Section 10: Real-World Scenarios & Projects</h3>
+                    <p className="text-sm text-slate-500 italic">Showcase practical case studies and hands-on projects students will work on.</p>
+                </div>
+
+                <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-4">
+                    <h4 className="font-bold text-slate-800 flex items-center gap-2"><Layers size={18} /> Section Header & Note</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="space-y-2">
+                            <label className="text-xs font-bold text-gray-500 uppercase">Section Title</label>
+                            <input
+                                value={section.title || ''}
+                                onChange={(e) => updateSection('real_world_scenarios', { ...section, title: e.target.value })}
+                                className="w-full p-2 border rounded"
+                                placeholder="Experience Real-World Scenarios..."
+                            />
+                        </div>
+                        <div className="space-y-2">
+                            <label className="text-xs font-bold text-gray-500 uppercase">Section Subtitle</label>
+                            <input
+                                value={section.subtitle || ''}
+                                onChange={(e) => updateSection('real_world_scenarios', { ...section, subtitle: e.target.value })}
+                                className="w-full p-2 border rounded"
+                                placeholder="Work on authentic Fortune 500 projects..."
+                            />
+                        </div>
+                    </div>
+                    <div className="space-y-2">
+                        <label className="text-xs font-bold text-gray-500 uppercase">Portfolio Note (Bottom)</label>
+                        <textarea
+                            value={section.portfolioNote || ''}
+                            onChange={(e) => updateSection('real_world_scenarios', { ...section, portfolioNote: e.target.value })}
+                            className="w-full p-2 border rounded h-20"
+                            placeholder="These capstone projects ensure you graduate..."
+                        />
+                    </div>
+                </div>
+
+                <div className="flex justify-between items-center bg-gray-100 p-4 rounded-xl">
+                    <h4 className="font-bold text-gray-900">Project Cards ({items.length})</h4>
+                    <button type="button" onClick={() => updateItems([...items, { title: 'New Project', scenario: '', role: '', outcome: '', responsibilities: [], icon: 'Factory' }])} className="text-sm bg-black text-white px-3 py-1.5 rounded-lg flex items-center gap-2 shadow-sm hover:bg-zinc-800 transition-all">
                         <Plus size={16} /> Add Project
                     </button>
                 </div>
-                {items.map((item: any, idx: number) => (
-                    <div key={idx} className="bg-white p-6 border rounded-xl shadow-sm group relative space-y-3">
-                        <button type="button" onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))} className="absolute top-2 right-2 text-red-400 opacity-0 group-hover:opacity-100"><Trash2 size={16} /></button>
-                        <div><label className="text-xs font-bold text-gray-500">Project Title</label><input value={item.title || ''} onChange={(e) => { const n = [...items]; n[idx].title = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" /></div>
-                        <div><label className="text-xs font-bold text-gray-500">Scenario Description</label><textarea value={item.scenario || ''} onChange={(e) => { const n = [...items]; n[idx].scenario = e.target.value; updateItems(n); }} className="w-full p-2 border rounded h-20" /></div>
-                        <div className="grid md:grid-cols-2 gap-4">
-                            <div><label className="text-xs font-bold text-gray-500">Your Role</label><input value={item.role || ''} onChange={(e) => { const n = [...items]; n[idx].role = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" /></div>
-                            <div><label className="text-xs font-bold text-gray-500">Outcome</label><input value={item.outcome || ''} onChange={(e) => { const n = [...items]; n[idx].outcome = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" /></div>
+
+                <div className="space-y-6">
+                    {items.map((item: any, idx: number) => (
+                        <div key={idx} className="bg-white p-6 border rounded-2xl shadow-sm group relative space-y-4">
+                            <button
+                                type="button"
+                                onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))}
+                                className="absolute top-4 right-4 text-red-400 opacity-0 group-hover:opacity-100 hover:text-red-600 transition-all"
+                            >
+                                <Trash2 size={18} />
+                            </button>
+
+                            <div className="grid md:grid-cols-2 gap-4">
+                                <div className="space-y-2">
+                                    <label className="text-xs font-bold text-gray-500 uppercase">Project Title</label>
+                                    <input value={item.title || ''} onChange={(e) => { const n = [...items]; n[idx].title = e.target.value; updateItems(n); }} className="w-full p-2 border rounded font-bold" />
+                                </div>
+                                <div className="space-y-2">
+                                    <label className="text-xs font-bold text-gray-500 uppercase">Icon</label>
+                                    <select
+                                        value={item.icon || 'Factory'}
+                                        onChange={(e) => { const n = [...items]; n[idx].icon = e.target.value; updateItems(n); }}
+                                        className="w-full p-2 border rounded bg-white"
+                                    >
+                                        <option value="Factory">Factory (Manufacturing)</option>
+                                        <option value="ShoppingBag">ShoppingBag (Retail)</option>
+                                        <option value="Laptop">Laptop (Tech)</option>
+                                        <option value="Globe">Globe (Global)</option>
+                                        <option value="Database">Database (Data)</option>
+                                        <option value="Landmark">Landmark (Finance/Gov)</option>
+                                        <option value="TrendingUp">TrendingUp (Growth)</option>
+                                        <option value="Laptop2">Laptop 2</option>
+                                        <option value="Clock">Clock</option>
+                                    </select>
+                                </div>
+                                <div className="md:col-span-2 space-y-2">
+                                    <label className="text-xs font-bold text-gray-500 uppercase">Scenario Description</label>
+                                    <textarea value={item.scenario || ''} onChange={(e) => { const n = [...items]; n[idx].scenario = e.target.value; updateItems(n); }} className="w-full p-2 border rounded h-20 text-sm" />
+                                </div>
+                                <div className="space-y-2">
+                                    <label className="text-xs font-bold text-gray-500 uppercase">Your Role</label>
+                                    <input value={item.role || ''} onChange={(e) => { const n = [...items]; n[idx].role = e.target.value; updateItems(n); }} className="w-full p-2 border rounded text-orange-600 font-semibold" />
+                                </div>
+                                <div className="space-y-2">
+                                    <label className="text-xs font-bold text-gray-500 uppercase">Business Impact (Outcome)</label>
+                                    <input value={item.outcome || ''} onChange={(e) => { const n = [...items]; n[idx].outcome = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" placeholder="e.g. 20% cost reduction" />
+                                </div>
+                                <div className="md:col-span-2 space-y-2">
+                                    <label className="text-xs font-bold text-gray-500 uppercase">Key Responsibilities (One per line)</label>
+                                    <textarea
+                                        value={Array.isArray(item.responsibilities) ? item.responsibilities.join('\n') : (item.responsibilities || '')}
+                                        onChange={(e) => {
+                                            const n = [...items];
+                                            n[idx].responsibilities = e.target.value.split('\n');
+                                            updateItems(n);
+                                        }}
+                                        className="w-full p-3 border rounded font-mono text-xs h-32 bg-slate-50"
+                                        placeholder="- Requirement 1\n- Requirement 2"
+                                    />
+                                </div>
+                                <div className="md:col-span-2 space-y-2">
+                                    <label className="text-xs font-bold text-gray-500 uppercase">Deliverables (Optional)</label>
+                                    <input value={item.deliverables || ''} onChange={(e) => { const n = [...items]; n[idx].deliverables = e.target.value; updateItems(n); }} className="w-full p-2 border rounded text-xs" />
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
         );
     };
+
 
     const CourseOverviewTab = () => {
         const matchingSections = formData.sections.filter((s: any) => s.type === 'course_overview');
