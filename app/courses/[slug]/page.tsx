@@ -498,7 +498,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                     {(!(mappedCourse.sections as Section[]) || !(mappedCourse.sections as Section[]).some((s: Section) => s.type === 'features')) && (!isAriba && !isMM && !isFICO && !isFieldglass && !isTRM && !isSD && !isC4C && !isABAP && !isCPI && !isPPDS && !isTM && !isEWM && !isIBP && !isMDG && !isC4CFunc && !isABAPHana) && mappedCourse.features && mappedCourse.features.length > 0 && (
                         <section id="why-us" className="bg-orange-50 rounded-2xl p-8 border border-orange-100 scroll-mt-32">
                             <h2 className="text-2xl font-bold text-gray-900 mb-2">Why Professionals Choose ERPVITS for {mappedCourse.title}</h2>
-                            <p className="text-gray-600 mb-8">Trusted by 500+ successful SAP professionals worldwide.</p>
+                            <p className="text-gray-600 mb-8">Trusted by 3500+ successful SAP professionals worldwide.</p>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 {mappedCourse.features.map((feature: string, i: number) => (

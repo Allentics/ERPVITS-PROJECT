@@ -84,6 +84,25 @@ export const pythonAimlContent = {
             "textAlign": "left"
         },
         {
+            "type": "content_with_image",
+            "items": [
+                "Trusted by 500+ successful **Python AI & ML** professionals",
+                "Alumni at Google, Microsoft, Amazon, NVIDIA, IBM",
+                "Personalized pre-evaluation and AI learning path",
+                "Active alumni network and AI developer community forum",
+                "50+ guided lab exercises from basic to advanced AI/ML scenarios",
+                "Quarterly updated materials aligned with latest Python & AI libraries",
+                "Mock interviews simulating real AI engineer scenarios",
+                "Dedicated **Python AI & ML certification** prep and bootcamp sessions",
+                "Complete support Ecosystem"
+            ],
+            "title": "Why Professionals Choose ERPVITS for Python AI & ML Online Training",
+            "subtitle": "Success Guarantee & Credibility",
+            "description": "ERPVITS has proven to be a reliable training institute for AI & ML technologies, with many successful learners employed by leading tech giants. Our alumni network testimonials speak to the quality of instruction and the career acceleration our program delivers.",
+            "supportText": "We assist you on every part of your **Python AI & ML online training** learning and transition to a Data Science career, from pre-evaluation to after training.",
+            "supportTitle": "Complete support Ecosystem"
+        },
+        {
             "type": "table_curriculum",
             "items": [
                 {

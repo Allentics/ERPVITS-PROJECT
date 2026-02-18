@@ -13,7 +13,7 @@ export const cpiContent = {
     "metaTitle": "SAP CPI Training with Certification support | ERPVITS",
     "metaDescription": "Master Cloud Integration with SAP CPI Training. Learn cloud connectivity, API management and real-world projects through live sessions & expert training.",
     "features": [
-        "Trusted by over 450 SAP CPI certified integration specialists",
+        "Trusted by over 500 SAP CPI certified integration specialists",
         "Accenture, Capgemini, Deloitte, Infosys, Wipro Alumni",
         "Tailored pre-evaluation and integrated learning path",
         "Active alumni and cloud integration community forum",
@@ -70,7 +70,7 @@ export const cpiContent = {
         {
             "type": "content_with_image",
             "items": [
-                "Trusted by over 450 SAP CPI certified integration specialists",
+                "Trusted by over 600 SAP CPI certified integration specialists",
                 "Accenture, Capgemini, Deloitte, Infosys, Wipro Alumni",
                 "Tailored pre-evaluation and integrated learning path",
                 "Active alumni and cloud integration community forum",
@@ -686,7 +686,8 @@ export const cpiContent = {
             "courseName": "SAP CPI"
         },
         {
-            "type": "detailed_career_roadmap"
+            "type": "detailed_career_roadmap",
+            "alumniCount": "600+"
         },
         {
             "type": "detailed_post_training_journey",

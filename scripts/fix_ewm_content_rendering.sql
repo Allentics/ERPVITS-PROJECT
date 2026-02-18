@@ -27,7 +27,7 @@ SET
             "title": "Why Professionals Choose ERPVITS for <orange>SAP EWM Online Training</orange>",
             "description": "ERPVITS has established itself as a trusted training partner for SAP Modules, with hundreds of successful learners working at top consulting firms like Accenture, Capgemini, Deloitte, Infosys, and Wipro, as well as leading logistics and e-commerce companies like Amazon, Flipkart, DHL, and Blue Yonder. Our alumni network testimonials speak to the quality of instruction and the career acceleration our program delivers.",
             "items": [
-                "Trusted by 500+ successful SAP professionals",
+                "Trusted by 800+ successful SAP professionals",
                 "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro, and leading logistics organizations",
                 "Personalized pre-evaluation and learning path customization",
                 "Active alumni network and community forum for warehouse professionals",

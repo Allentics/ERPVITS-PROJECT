@@ -61,7 +61,7 @@ export const sdContent = {
         {
             "type": "content_with_image",
             "items": [
-                "Trusted by 500+ successful SAP SD professionals",
+                "Trusted by 800+ successful SAP SD professionals",
                 "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro",
                 "Personalized pre-evaluation and sales operations learning path",
                 "Active alumni network and order management community forum",
@@ -656,6 +656,7 @@ export const sdContent = {
         },
         {
             "type": "detailed_career_roadmap",
+            "alumniCount": "800+",
             "items": [
                 {
                     "year": "Years 1–2",

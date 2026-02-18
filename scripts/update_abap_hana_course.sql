@@ -55,7 +55,7 @@ Expert Code Review Sessions: Join weekly live sessions for code review, architec
 
 60-70 hours of expert-led training covering every aspect from basics to advanced HANA-optimized development',
   features = '[
-    "Trusted by 500+ successful SAP professionals",
+    "Trusted by 3500+ successful SAP professionals",
     "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro, SAP Labs, Microsoft",
     "Personalized pre-evaluation and coding skill assessment",
     "Active alumni network and community forum for ABAP developers",

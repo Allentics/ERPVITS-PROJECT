@@ -69,7 +69,7 @@ export const mmContent = {
         {
             "type": "content_with_image",
             "items": [
-                "Trusted by 500+ SAP MM Professionals",
+                "Trusted by 2500+ SAP MM Professionals",
                 "Accenture, Capgemini, Deloitte, Infosys, and Wipro alumni",
                 "Custom Pre-assessment and Supply Chain Learning Path",
                 "Active alumni network and community forum for materials management",
@@ -531,6 +531,7 @@ export const mmContent = {
         },
         {
             "type": "detailed_career_roadmap",
+            "alumniCount": "2500+",
             "items": [
                 {
                     "stage": "Years 1-2",

@@ -137,7 +137,7 @@ export const c4cFunctionalContent = {
         {
             "type": "content_with_image",
             "items": [
-                "Trusted by 500+ successful SAP professionals",
+                "Trusted by 600+ successful SAP professionals",
                 "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro",
                 "Personalized pre-evaluation and learning path customization",
                 "Active alumni network and community forum for cloud CRM professionals",
@@ -766,6 +766,7 @@ export const c4cFunctionalContent = {
         },
         {
             "type": "detailed_career_roadmap",
+            "alumniCount": "600+",
             "items": [
                 {
                     "stage": "Start (1-3)",

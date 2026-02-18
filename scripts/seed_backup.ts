@@ -19,7 +19,7 @@ export const coursesData = [
     "hero_image": "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP FICO Infographic.webp",
     "badges": [],
     "features": [
-      "Trusted by 500+ successful SAP FICO professionals",
+      "Trusted by 3500+ successful SAP FICO professionals",
       "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro",
       "Personalized pre-evaluation and accounting learning path",
       "Active alumni network and finance community forum",
@@ -79,7 +79,7 @@ export const coursesData = [
       {
         "type": "content_with_image",
         "items": [
-          "Trusted by 500+ successful SAP FICO professionals",
+          "Trusted by 3500+ successful SAP FICO professionals",
           "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro",
           "Personalized pre-evaluation and accounting learning path",
           "Active alumni network and finance community forum",
@@ -3913,7 +3913,7 @@ export const coursesData = [
       {
         "type": "content_with_image",
         "items": [
-          "Trusted by 500+ successful SAP professionals",
+          "Trusted by 3500+ successful SAP professionals",
           "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro, and leading logistics organizations",
           "Personalized pre-evaluation and learning path customization",
           "Active alumni network and community forum for warehouse professionals",
@@ -5994,7 +5994,7 @@ export const coursesData = [
       {
         "type": "content_with_image",
         "items": [
-          "Trusted by 500+ successful SAP professionals",
+          "Trusted by 3500+ successful SAP professionals",
           "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro, SAP Labs, and leading technology organizations",
           "Personalized pre-evaluation and coding skill assessment",
           "Active alumni network and community forum for ABAP developers",
@@ -7329,7 +7329,7 @@ export const coursesData = [
       {
         "type": "content_with_image",
         "items": [
-          "Trusted by 500+ SAP MM Professionals",
+          "Trusted by 3500+ SAP MM Professionals",
           "Accenture, Capgemini, Deloitte, Infosys, and Wipro alumni",
           "Custom Pre-assessment and Supply Chain Learning Path",
           "Active alumni network and community forum for materials management",
@@ -8141,7 +8141,7 @@ export const coursesData = [
       {
         "type": "content_with_image",
         "items": [
-          "Trusted by 500+ successful SAP professionals",
+          "Trusted by 3500+ successful SAP professionals",
           "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro",
           "Personalized pre-evaluation and learning path customization",
           "Active alumni network and community forum for cloud CRM professionals",
@@ -10111,7 +10111,7 @@ export const coursesData = [
       {
         "type": "content_with_image",
         "items": [
-          "Trusted by 500+ successful SAP professionals",
+          "Trusted by 3500+ successful SAP professionals",
           "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro, and leading LSP organizations",
           "Personalized pre-evaluation and learning path customization",
           "Active alumni network and community forum for freight professionals",
@@ -12462,7 +12462,7 @@ export const coursesData = [
       {
         "type": "content_with_image",
         "items": [
-          "Trusted by 500+ successful SAP professionals",
+          "Trusted by 3500+ successful SAP professionals",
           "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro, and leading consumer goods organizations",
           "Personalized pre-evaluation and learning path customization",
           "Active alumni network and community forum for supply chain planning professionals",
@@ -14194,7 +14194,7 @@ export const coursesData = [
       {
         "type": "content_with_image",
         "items": [
-          "Trusted by 500+ successful SAP professionals",
+          "Trusted by 3500+ successful SAP professionals",
           "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro, and leading organizations",
           "Personalized pre-evaluation and learning path customization",
           "Active alumni network and community forum for data governance professionals",
@@ -15286,7 +15286,7 @@ export const coursesData = [
       {
         "type": "content_with_image",
         "items": [
-          "Trusted by 500+ successful SAP professionals",
+          "Trusted by 3500+ successful SAP professionals",
           "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro",
           "Personalized pre-evaluation and learning path",
           "Active alumni network and community forum",
@@ -15844,7 +15844,7 @@ export const coursesData = [
       {
         "type": "content_with_image",
         "items": [
-          "Trusted by 500+ successful SAP SD professionals",
+          "Trusted by 3500+ successful SAP SD professionals",
           "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro",
           "Personalized pre-evaluation and sales operations learning path",
           "Active alumni network and order management community forum",

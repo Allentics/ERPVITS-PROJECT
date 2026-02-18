@@ -58,7 +58,7 @@ export const aribaContent = {
         {
             "type": "content_with_image",
             "items": [
-                "Trusted by 500+ successful SAP professionals",
+                "Trusted by 3500+ successful SAP professionals",
                 "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro",
                 "Personalized pre-evaluation and learning path",
                 "Active alumni network and community forum",
@@ -438,7 +438,8 @@ export const aribaContent = {
             "type": "detailed_career_opportunities"
         },
         {
-            "type": "detailed_career_roadmap"
+            "type": "detailed_career_roadmap",
+            "alumniCount": "3500+"
         },
         {
             "type": "detailed_post_training_journey",

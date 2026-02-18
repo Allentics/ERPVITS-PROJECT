@@ -60,7 +60,7 @@ export const ppdsContent = {
         {
             "type": "content_with_image",
             "items": [
-                "Trusted by 420+ successful SAP PPDS professionals",
+                "Trusted by 500+ successful SAP PPDS professionals",
                 "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro",
                 "Personalized pre-evaluation and production planning learning path",
                 "Active alumni network and production scheduling community forum",
@@ -573,6 +573,7 @@ export const ppdsContent = {
         },
         {
             "type": "detailed_career_roadmap",
+            "alumniCount": "500+",
             "items": [
                 {
                     "stage": "Start (1-2)",

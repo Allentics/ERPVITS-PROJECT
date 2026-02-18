@@ -215,7 +215,7 @@ export const ibpContent = {
             videoSrc: "https://www.youtube.com/embed/ERzLONcYo94",
             description: "ERPVITS has established itself as a trusted training partner for SAP Modules, with hundreds of successful learners working at top consulting firms like Accenture, Capgemini, Deloitte, Infosys, and Wipro, as well as leading consumer goods and technology companies. Our alumni network testimonials speak to the quality of instruction and the career acceleration our program delivers.",
             items: [
-                "Trusted by 500+ successful SAP professionals",
+                "Trusted by 800+ successful SAP professionals",
                 "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro, and leading consumer goods organizations",
                 "Personalized pre-evaluation and learning path customization",
                 "Active alumni network and community forum for supply chain planning professionals",
@@ -767,6 +767,7 @@ export const ibpContent = {
         },
         {
             type: 'detailed_career_roadmap',
+            alumniCount: "800+",
             items: [
                 {
                     year: "Years 1-2",

@@ -12,7 +12,7 @@ export const trmContent = {
     "metaTitle": "SAP TRM Online Training | Treasury & Risk Management",
     "metaDescription": "SAP TRM Online Training (Treasury and Risk Management) with ERPVITS. Learn cash management, financial instruments & risk analysis through live projects.",
     "features": [
-        "Trusted by 300+ successful SAP TRM professionals",
+        "Trusted by 1500+ successful SAP TRM professionals",
         "Alumni at Accenture, Capgemini, Deloitte, EY, KPMG, major banks",
         "Personalized pre-evaluation and TRM learning path",
         "Active alumni network and treasury finance community forum",
@@ -69,7 +69,7 @@ export const trmContent = {
         {
             "type": "content_with_image",
             "items": [
-                "Trusted by 300+ successful SAP TRM professionals",
+                "Trusted by 1500+ successful SAP TRM professionals",
                 "Alumni at Accenture, Capgemini, Deloitte, EY, KPMG, major banks",
                 "Personalized pre-evaluation and TRM learning path",
                 "Active alumni network and treasury finance community forum",
@@ -666,6 +666,7 @@ export const trmContent = {
         },
         {
             "type": "detailed_career_roadmap",
+            "alumniCount": "1500+",
             "items": [
                 {
                     "stage": "Start (1-3)",

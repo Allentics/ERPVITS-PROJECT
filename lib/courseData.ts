@@ -43,6 +43,7 @@ export interface Section {
     supportTitle?: string;
     supportText?: string;
     textAlign?: 'left' | 'center' | 'right';
+    alumniCount?: string;
 }
 
 export interface Course {

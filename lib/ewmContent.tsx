@@ -172,7 +172,7 @@ export const ewmContent = {
             imageSrc: "/images/sap-expert-trainers.jpg",
             layout: "left",
             items: [
-                "Trusted by 500+ successful SAP professionals",
+                "Trusted by 800+ successful SAP professionals",
                 "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro, and leading logistics organizations",
                 "Personalized pre-evaluation and learning path customization",
                 "Active alumni network and community forum for warehouse professionals",
@@ -776,6 +776,7 @@ export const ewmContent = {
         },
         {
             type: 'detailed_career_roadmap',
+            alumniCount: "800+",
             items: [
                 {
                     year: "Years 1-2",

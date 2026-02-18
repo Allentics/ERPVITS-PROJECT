@@ -85,6 +85,7 @@ export const abapHanaContent = {
         {
             type: 'content_with_image',
             title: "Why Professionals Choose ERPVITS for SAP ABAP on HANA Online Training",
+            subtitle: "Success Guarantee & Credibility",
             description: "ERPVITS has established itself as a trusted training partner for SAP Technical Modules, with hundreds of successful learners working at top technology companies, consulting firms, and SAP development centers like SAP Labs, Accenture, Capgemini, Infosys, Wipro, and Microsoft. Our alumni network testimonials speak to the quality of instruction and the career acceleration our program delivers.\n\n**Complete support Ecosystem**\nFrom pre-evaluation to post-training support, we guide you through every step of your SAP ABAP development learning journey and career transition.",
             items: [
                 "Trusted by 500+ successful SAP professionals",
@@ -793,6 +794,7 @@ Competitive Advantage: Stand out in technical interviews and project selections`
         },
         {
             type: 'detailed_career_roadmap',
+            alumniCount: "500+",
             items: [
                 {
                     stage: "Start (1-3)",

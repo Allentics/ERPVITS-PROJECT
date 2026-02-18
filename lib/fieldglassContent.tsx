@@ -14,7 +14,7 @@ export const fieldglassContent = {
     "metaTitle": "SAP Fieldglass Online Training | ERPVITS Certification",
     "metaDescription": "Master SAP Fieldglass Online Training with ERPVITS. Learn VMS, Contingent Workforce, SOW modules, and integration with SAP S/4HANA. Get certification help.",
     "features": [
-        "Over 450 SAP Fieldglass professionals have put their trust in us",
+        "Trusted by 1000+ successful SAP Fieldglass professionals",
         "Custom pre-evaluations and personalized VMS learning paths.",
         "Active alumni network and contingent workforce community.",
         "Over 40 guided lab exercises from basic worker setups to advanced analytics.",
@@ -71,7 +71,7 @@ export const fieldglassContent = {
         {
             "type": "content_with_image",
             "items": [
-                "Over 450 SAP Fieldglass professionals have put their trust in us",
+                "Trusted by 1000+ successful SAP Fieldglass professionals",
                 "Custom pre-evaluations and personalized VMS learning paths",
                 "Active alumni network and contingent workforce community",
                 "Over 40 guided lab exercises from basic worker setups to advanced analytics",
@@ -692,7 +692,30 @@ export const fieldglassContent = {
             "subtitle": "Step Into Global VMS and Contingent Workforce Consulting Roles"
         },
         {
-            "type": "detailed_career_roadmap"
+            "type": "detailed_career_roadmap",
+            "alumniCount": "1000+",
+            "items": [
+                {
+                    "stage": "Start (1-3)",
+                    "title": "Jr. Fieldglass Consultant",
+                    "description": "Support VMS configuration, contingent worker onboarding, basic reporting and operations."
+                },
+                {
+                    "stage": "Mid-Level (4-6)",
+                    "title": "Sr. Fieldglass Consultant / Architect",
+                    "description": "Solution design, SOW implementations, integration with S/4HANA, advanced VMS analytics."
+                },
+                {
+                    "stage": "Senior (7-10+)",
+                    "title": "Principal Consultant / VMS Manager",
+                    "description": "Workforce transformation strategy, global VMS template design, program management."
+                }
+            ],
+            "stats": [
+                { "value": "150%+", "label": "Increase in Job Earnings" },
+                { "value": "400+", "label": "Companies Hiring" },
+                { "value": "$115K", "label": "Average Starting Salary" }
+            ]
         },
         {
             "type": "detailed_post_training_journey",

@@ -75,7 +75,7 @@ SET
       "imageSrc": "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP ABAP on HANA Infographic.webp",
       "description": "ERPVITS has established itself as a trusted training partner for SAP Technical Modules, with hundreds of successful learners working at top technology companies, consulting firms, and SAP development centers like SAP Labs, Accenture, Capgemini, Infosys, Wipro, and Microsoft. Our alumni network testimonials speak to the quality of instruction and the career acceleration our program delivers.",
       "items": [
-        "Trusted by 500+ successful SAP professionals",
+        "Trusted by 3500+ successful SAP professionals",
         "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro, SAP Labs, and leading technology organizations",
         "Personalized pre-evaluation and coding skill assessment",
         "Active alumni network and community forum for ABAP developers",

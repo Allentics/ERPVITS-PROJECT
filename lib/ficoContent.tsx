@@ -261,7 +261,7 @@ export const ficoContent: Partial<Course> = {
             imageSrc: "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP FICO Infographic.webp",
             description: "ERPVITS is the first trusted training partner for SAP financial modules, positioned in the midst of the hundreds of successful learners who have reached prestigious consulting firms such as Accenture, Capgemini, Deloitte, Infosys, and Wipro. The trust and the testimonials of the alumni is the instructional quality and the career uplift provided through the alumni network.",
             items: [
-                "Trusted by 500+ successful SAP FICO professionals",
+                "Trusted by 900+ successful SAP FICO professionals",
                 "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro",
                 "Personalized pre-evaluation and accounting learning path",
                 "Active alumni network and finance community forum",
@@ -555,6 +555,7 @@ export const ficoContent: Partial<Course> = {
         },
         {
             type: 'detailed_career_roadmap',
+            alumniCount: "900+",
             items: [
                 {
                     stage: "Start (1-3)",

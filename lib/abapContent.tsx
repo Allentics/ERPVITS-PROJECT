@@ -12,7 +12,7 @@ export const abapContent = {
     "metaTitle": "Learn Cloud-Native ABAP Development with SAP ABAP Training",
     "metaDescription": "Join SAP ABAP Training by ERPVITS. Learn RAP, OData, cloud architecture, and certification preparation through hands-on labs and live instructor sessions.",
     "features": [
-        "Trusted by 480+ successful SAP ABAP certification developers",
+        "Trusted by 500+ successful SAP ABAP certification developers",
         "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro",
         "Personalized pre-evaluation and cloud ABAP learning path",
         "Active alumni network and cloud ABAP developer community forum",
@@ -70,7 +70,7 @@ export const abapContent = {
         {
             "type": "content_with_image",
             "items": [
-                "Trusted by 480+ successful **SAP ABAP certification** developers",
+                "Trusted by 500+ successful **SAP ABAP certification** developers",
                 "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro",
                 "Personalized pre-evaluation and cloud ABAP learning path",
                 "Active alumni network and cloud ABAP developer community forum",
@@ -81,6 +81,7 @@ export const abapContent = {
                 "Complete support Ecosystem"
             ],
             "title": "Why Professionals Choose ERPVITS for SAP ABAP on Cloud Online Training",
+            "subtitle": "Success Guarantee & Credibility",
             "description": "ERPVITS has proven to be a reliable **SAP ABAP training institute** for SAP cloud technologies, with many successful learners employed by leading consulting firms including Accenture, Capgemini, Deloitte, Infosys, and Wipro.",
             "supportText": "We assist you on every part of your **SAP ABAP on Cloud online training** learning and transition to a Cloud ABAP career, from pre-evaluation to after training.",
             "supportTitle": "Complete support Ecosystem"
@@ -652,6 +653,7 @@ export const abapContent = {
         },
         {
             "type": "detailed_career_roadmap",
+            "alumniCount": "500+",
             "items": [
                 {
                     "stage": "Years 1–2",
