@@ -87,6 +87,21 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
             if (typeof course.features === 'string') course.features = JSON.parse(course.features);
             if (typeof course.curriculum === 'string') course.curriculum = JSON.parse(course.curriculum);
             if (typeof course.faqs === 'string') course.faqs = JSON.parse(course.faqs);
+            if (typeof course.schema === 'string' && course.schema.trim()) {
+                let s = course.schema.trim();
+                // Handle script tags
+                if (s.includes('<script')) {
+                    const match = s.match(/<script[^>]*>([\s\S]*?)<\/script>/i);
+                    s = match?.[1]?.trim() || s;
+                }
+                if (s.startsWith('{')) {
+                    try {
+                        course.schema = JSON.parse(s);
+                    } catch (e) {
+                        // Stay as string if parse fails
+                    }
+                }
+            }
         } catch (e) {
             console.error("Error parsing JSON fields for course:", course.id, e);
         }
@@ -166,57 +181,56 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
         <main className="bg-white">
             {/* Schema Injection */}
             {(() => {
-                let schemaMarkup = "";
+                let schemaObj: any = null;
+
+                // 1. Try to use custom schema from DB/Local
                 if (mappedCourse.schema) {
-                    if (typeof mappedCourse.schema === 'string') {
-                        schemaMarkup = mappedCourse.schema;
-                    } else {
-                        schemaMarkup = JSON.stringify(mappedCourse.schema);
+                    if (typeof mappedCourse.schema === 'object' && mappedCourse.schema !== null) {
+                        schemaObj = mappedCourse.schema;
+                    } else if (typeof mappedCourse.schema === 'string' && mappedCourse.schema.trim()) {
+                        let rawSchema = mappedCourse.schema.trim();
+
+                        // Check if it's wrapped in <script> tags and extract content
+                        if (rawSchema.includes('<script')) {
+                            const match = rawSchema.match(/<script[^>]*>([\s\S]*?)<\/script>/i);
+                            if (match && match[1]) {
+                                rawSchema = match[1].trim();
+                            }
+                        }
+
+                        if (rawSchema.startsWith('{')) {
+                            try {
+                                schemaObj = JSON.parse(rawSchema);
+                            } catch (e) {
+                                console.error("Invalid custom schema JSON for:", mappedCourse.id, e);
+                            }
+                        }
                     }
-                } else {
-                    schemaMarkup = JSON.stringify({
+                }
+
+                // 2. Fallback to default Course schema if no valid custom schema exists
+                if (!schemaObj || Object.keys(schemaObj).length === 0) {
+                    schemaObj = {
                         "@context": "https://schema.org",
                         "@type": "Course",
                         "name": mappedCourse.title,
-                        "description": mappedCourse.metaDescription || mappedCourse.description,
+                        "description": mappedCourse.metaDescription || mappedCourse.description || `Expert-led ${mappedCourse.title} online training`,
                         "provider": {
                             "@type": "Organization",
                             "name": "ERPVITS",
                             "sameAs": "https://erpvits.com"
+                        },
+                        "image": mappedCourse.heroImage || "https://erpvits.com/logo.png",
+                        "offers": {
+                            "@type": "Offer",
+                            "category": "Education",
+                            "priceCurrency": "INR",
+                            "price": mappedCourse.price || "0"
                         }
-                    });
+                    };
                 }
 
-                // Clean schema: strip script tags if present (case-insensitive) - handled by dangerouslySetInnerHTML, but careful strip can be useful
-                let cleanSchema = schemaMarkup;
-                try {
-                    const parsed = JSON.parse(schemaMarkup);
-                    cleanSchema = parsed;
-                } catch (e) {
-                    // if it's not valid json, we might have issues
-                }
-
-                // If it's a string, we need to parse it back to object for JsonLd component
-                let schemaObj = {};
-                if (typeof cleanSchema === 'string') {
-                    try {
-                        schemaObj = JSON.parse(cleanSchema);
-                    } catch (e) {
-                        // fallback to basic object if string is invalid
-                        schemaObj = {
-                            "@context": "https://schema.org",
-                            "@type": "Course",
-                            "name": mappedCourse.title,
-                            "description": mappedCourse.metaDescription || mappedCourse.description
-                        };
-                    }
-                } else {
-                    schemaObj = cleanSchema;
-                }
-
-                return (
-                    <JsonLd data={schemaObj} />
-                );
+                return <JsonLd data={schemaObj} />;
             })()}
 
             {/* Hero Section */}

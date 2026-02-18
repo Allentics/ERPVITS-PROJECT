@@ -70,7 +70,8 @@ async function syncDbToFiles() {
             features: dbCourse.features,
             sections: dbCourse.sections,
             curriculum: dbCourse.curriculum,
-            faqs: dbCourse.faqs
+            faqs: dbCourse.faqs,
+            schema: dbCourse.schema
         };
 
         const fileContent = fs.readFileSync(filePath, 'utf8');
