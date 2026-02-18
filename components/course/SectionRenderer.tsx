@@ -62,7 +62,7 @@ interface FeatureItem {
     description: string;
 }
 
-export function DetailedFeatures({ badge, title, subtitle, items, textAlign = 'center' }: { badge?: string; title?: string | React.ReactNode; subtitle?: string | React.ReactNode; items: (string | FeatureItem)[]; textAlign?: 'center' | 'left' }) {
+export function DetailedFeatures({ badge, title, subtitle, items, textAlign = 'left' }: { badge?: string; title?: string | React.ReactNode; subtitle?: string | React.ReactNode; items: (string | FeatureItem)[]; textAlign?: 'center' | 'left' }) {
     return (
         <div className="py-8 detailed-features-section bg-white">
             <div className={`mb-6 max-w-7xl mx-auto px-4 ${textAlign === 'left' ? 'text-left' : 'text-center'}`}>

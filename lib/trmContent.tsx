@@ -246,6 +246,7 @@ export const trmContent = {
         {
             type: 'detailed_features',
             title: "Learn SAP TRM from Certified Experts – 100% Hands-On, Job-Oriented Training",
+            textAlign: 'left',
             subtitle: "Our **SAP TRM Online Training** curriculum is delivered exclusively by certified SAP professionals, each with 12+ years of direct hands-on experience in treasury and financial systems implementation. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex financial and treasury scenarios in a step-by-step manner.",
             items: [
                 {

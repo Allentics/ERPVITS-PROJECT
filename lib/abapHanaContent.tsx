@@ -20,6 +20,7 @@ export const abapHanaContent = {
         {
             type: 'detailed_features',
             title: "Learn SAP ABAP on HANA from Certified Experts – 100% Hands-On, Job-Oriented Training",
+            textAlign: 'left',
             subtitle: "Our **SAP ABAP on HANA Online Training** curriculum is delivered exclusively by certified SAP professionals with 15+ years of direct hands-on experience on S/4HANA, cloud platforms, and enterprise applications. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex coding scenarios in a step-by-step manner.",
             items: [
                 {

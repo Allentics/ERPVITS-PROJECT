@@ -82,6 +82,7 @@ export const fieldglassContent = {
         {
             type: 'detailed_features',
             title: "Learn SAP Fieldglass from Certified Experts – 100% Hands-On, Job-Oriented Training",
+            textAlign: 'left',
             subtitle: "Our **SAP Fieldglass Online Training** curriculum is delivered exclusively by certified SAP professionals, each with 12+ years of direct hands-on experience in contingent workforce management. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex workforce management scenarios in a step-by-step manner.",
             items: [
                 {

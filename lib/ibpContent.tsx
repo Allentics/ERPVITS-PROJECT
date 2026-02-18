@@ -166,6 +166,7 @@ export const ibpContent = {
         {
             type: 'detailed_features',
             title: "Learn SAP IBP from Certified Experts – 100% Hands-On, Job-Oriented Training",
+            textAlign: 'left',
             subtitle: "Our **SAP IBP Online Training** curriculum is delivered exclusively by certified SAP professionals with 12+ years of direct hands-on experience in demand planning, supply chain strategy, and integrated business planning. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex planning scenarios in a step-by-step manner.",
             badge: "Why Choose Us",
             items: [

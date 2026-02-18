@@ -229,6 +229,7 @@ export const sdContent = {
         {
             type: 'detailed_features',
             title: "Learn SAP SD from Certified Experts – 100% Hands-On, Job-Oriented Training",
+            textAlign: 'left',
             subtitle: "Our **SAP SD Online Training** curriculum is delivered exclusively by certified SAP professionals with 12+ years of direct hands-on experience in sales and distribution operations. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex sales and distribution scenarios in a step-by-step manner.",
             badge: "Why Choose Us",
             items: [

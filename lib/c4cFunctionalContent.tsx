@@ -111,9 +111,9 @@ export const c4cFunctionalContent = {
         {
             type: 'detailed_features',
             title: "Learn SAP C4C Functional from Certified Experts – 100% Hands-On, Job-Oriented Training",
+            textAlign: 'left',
             subtitle: "Our **SAP C4C Functional Online Training** curriculum is delivered exclusively by certified SAP professionals, each with 12+ years of direct hands-on experience in cloud CRM, sales cloud, and customer service engagement. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex functional CRM scenarios in a step-by-step manner.",
             badge: "Why Choose Us",
-            textAlign: 'left',
             items: [
                 {
                     title: "Certified Instructor Expertise",

@@ -244,8 +244,8 @@ export const mmContent = {
         {
             type: 'detailed_features',
             title: "Learn SAP S/4HANA MM from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            subtitle: "Our **SAP MM Online Training** curriculum is delivered exclusively by certified SAP professionals, each with 12+ years of direct hands-on experience in materials management and supply chain systems implementation. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex inventory and procurement scenarios in a step-by-step manner.",
             textAlign: 'left',
+            subtitle: "Our **SAP MM Online Training** curriculum is delivered exclusively by certified SAP professionals, each with 12+ years of direct hands-on experience in materials management and supply chain systems implementation. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex inventory and procurement scenarios in a step-by-step manner.",
             badge: "Why Choose Us",
             items: [
                 {

@@ -186,6 +186,7 @@ export const tmContent = {
         {
             type: 'detailed_features',
             title: "Learn SAP TM from Certified Experts – 100% Hands-On, Job-Oriented Training",
+            textAlign: 'left',
             subtitle: "Our **SAP TM Online Training** curriculum is delivered exclusively by certified SAP professionals with 12+ years of direct hands-on experience in freight management, logistics networks, and global supply chain operations. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex transportation management scenarios in a step-by-step manner.",
             badge: "Why Choose Us",
             items: [

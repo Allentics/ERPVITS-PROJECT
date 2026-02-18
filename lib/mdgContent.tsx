@@ -299,6 +299,7 @@ export const mdgContent = {
         {
             type: 'detailed_features',
             title: "Learn SAP MDG from Certified Experts – 100% Hands-On, Job-Oriented Training",
+            textAlign: 'left',
             subtitle: "Our **SAP MDG Online Training** curriculum is delivered exclusively by certified SAP professionals with 12+ years of direct hands-on experience in master data management, data governance frameworks, and enterprise information management. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex data governance scenarios in a step-by-step manner.",
             badge: "Why Choose Us",
             items: [

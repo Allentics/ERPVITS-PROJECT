@@ -213,6 +213,7 @@ export const abapContent = {
             type: 'detailed_features',
             badge: "Why Choose Us",
             title: "Learn SAP ABAP on Cloud from Certified Experts – 100% Hands-On, Job-Oriented Training",
+            textAlign: 'left',
             subtitle: "Our **SAP ABAP on Cloud Online Training** curriculum is delivered exclusively by certified SAP professionals, each with 12+ years of direct hands-on experience in cloud application modernization and ABAP development. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex cloud development steps in a step-by-step manner.",
             items: [
                 {

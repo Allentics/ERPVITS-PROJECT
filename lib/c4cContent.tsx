@@ -441,6 +441,7 @@ export const c4cContent = {
         {
             type: 'detailed_features',
             title: "Learn SAP C4C Technical Development from Certified Experts – 100% Hands-On, Job-Oriented Training",
+            textAlign: 'left',
             subtitle: "Our **SAP C4C Technical Online Training** curriculum is delivered exclusively by certified SAP professionals, each with 12+ years of direct hands-on experience in cloud application development and CRM solutions. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex cloud development scenarios in a step-by-step manner.",
             items: [
                 {

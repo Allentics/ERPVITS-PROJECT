@@ -46,6 +46,7 @@ export const pythonAimlContent: any = {
         {
             type: 'detailed_features',
             title: "Learn Python AI & ML from Certified Experts – 100% Hands-On, Job-Oriented Training",
+            textAlign: 'left',
             subtitle: "Our **Python AI & ML Online Training** curriculum is delivered exclusively by certified industry experts, each with 12+ years of direct hands-on experience in artificial intelligence, machine learning, and data science. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex AI/ML implementation scenarios in a step-by-step manner.",
             items: [
                 {
