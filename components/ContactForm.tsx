@@ -137,52 +137,52 @@ export default function ContactForm({ className = "", showLabels = true, success
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 <div>
-                    {showLabels && <label className="block text-[10px] font-bold text-gray-700 mb-0.5">First Name</label>}
+                    {showLabels && <label className="block text-[11px] font-bold text-slate-700 mb-0.5 ml-1">First Name</label>}
                     <input
                         type="text"
                         name="firstName"
                         value={formData.firstName}
                         onChange={handleChange}
                         required
-                        className="w-full px-3 py-1.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors text-sm"
+                        className="w-full px-4 py-1.5 rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:ring-2 focus:ring-slate-900/5 focus:border-slate-900 outline-none transition-all text-sm placeholder:text-slate-400"
                         placeholder="First Name"
                     />
                 </div>
                 <div>
-                    {showLabels && <label className="block text-[10px] font-bold text-gray-700 mb-0.5">Last Name</label>}
+                    {showLabels && <label className="block text-[11px] font-bold text-slate-700 mb-0.5 ml-1">Last Name</label>}
                     <input
                         type="text"
                         name="lastName"
                         value={formData.lastName}
                         onChange={handleChange}
                         required
-                        className="w-full px-3 py-1.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors text-sm"
+                        className="w-full px-4 py-1.5 rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:ring-2 focus:ring-slate-900/5 focus:border-slate-900 outline-none transition-all text-sm placeholder:text-slate-400"
                         placeholder="Last Name"
                     />
                 </div>
             </div>
 
             <div>
-                {showLabels && <label className="block text-[10px] font-bold text-gray-700 mb-0.5">Email Address</label>}
+                {showLabels && <label className="block text-[11px] font-bold text-slate-700 mb-0.5 ml-1">Email Address</label>}
                 <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-3 py-1.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors text-sm"
+                    className="w-full px-4 py-1.5 rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:ring-2 focus:ring-slate-900/5 focus:border-slate-900 outline-none transition-all text-sm placeholder:text-slate-400"
                     placeholder="Email Address"
                 />
             </div>
 
             <div>
-                {showLabels && <label className="block text-[10px] font-bold text-gray-700 mb-0.5">Phone Number</label>}
+                {showLabels && <label className="block text-[11px] font-bold text-slate-700 mb-0.5 ml-1">Phone Number</label>}
                 <div className="flex gap-2">
                     <select
                         name="countryCode"
                         value={formData.countryCode}
                         onChange={handleChange}
-                        className="w-[110px] px-2 py-1.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors bg-white text-gray-700 text-sm"
+                        className="w-[120px] px-3 py-1.5 rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white outline-none transition-all text-sm text-slate-700 appearance-none cursor-pointer"
                     >
                         {countryCodes.map((country) => (
                             <option key={country.name} value={country.code}>
@@ -196,20 +196,20 @@ export default function ContactForm({ className = "", showLabels = true, success
                         value={formData.phone}
                         onChange={handleChange}
                         required
-                        className="flex-1 px-3 py-1.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors text-sm"
+                        className="flex-1 px-4 py-1.5 rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:ring-2 focus:ring-slate-900/5 focus:border-slate-900 outline-none transition-all text-sm placeholder:text-slate-400"
                         placeholder="Phone Number"
                     />
                 </div>
             </div>
 
             <div>
-                {showLabels && <label className="block text-[10px] font-bold text-gray-700 mb-0.5">SAP Module *</label>}
+                {showLabels && <label className="block text-[11px] font-bold text-slate-700 mb-0.5 ml-1">SAP Module *</label>}
                 <select
                     name="course"
                     value={formData.course}
                     onChange={handleChange}
                     required
-                    className="w-full px-3 py-1.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors bg-white text-gray-900 text-sm"
+                    className="w-full px-4 py-1.5 rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:ring-2 focus:ring-slate-900/5 focus:border-slate-900 outline-none transition-all text-sm text-slate-900 appearance-none cursor-pointer"
                 >
                     <option value="">Select SAP Module</option>
                     {courses
@@ -223,13 +223,13 @@ export default function ContactForm({ className = "", showLabels = true, success
             </div>
 
             <div>
-                {showLabels && <label className="block text-[10px] font-bold text-gray-700 mb-0.5">Message (Optional)</label>}
+                {showLabels && <label className="block text-[11px] font-bold text-slate-700 mb-0.5 ml-1">Message (Optional)</label>}
                 <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     rows={2}
-                    className="w-full px-3 py-1.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors text-sm resize-none"
+                    className="w-full px-4 py-1.5 rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:ring-2 focus:ring-slate-900/5 focus:border-slate-900 outline-none transition-all text-sm resize-none placeholder:text-slate-400"
                     placeholder="Tell us about your requirements..."
                 ></textarea>
             </div>
@@ -237,7 +237,7 @@ export default function ContactForm({ className = "", showLabels = true, success
             <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="w-full flex items-center justify-center px-6 py-2.5 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors shadow-lg disabled:bg-orange-300 disabled:cursor-not-allowed text-sm"
+                className="w-full flex items-center justify-center px-6 py-2.5 bg-[#ff4500] hover:bg-[#e63e00] text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-orange-500/20 disabled:bg-orange-300 disabled:cursor-not-allowed text-sm group"
             >
                 {status === 'loading' ? (
                     <>
@@ -247,11 +247,11 @@ export default function ContactForm({ className = "", showLabels = true, success
                 ) : (
                     <>
                         Submit
-                        <Send className="ml-2 h-4 w-4" />
+                        <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                     </>
                 )}
             </button>
-            <p className="text-[10px] text-center text-gray-500 mt-2">By submitting this form, you agree to our privacy policy.</p>
+            <p className="text-[10px] text-center text-slate-400 mt-2">By submitting this form, you agree to our privacy policy.</p>
         </form>
     );
 }

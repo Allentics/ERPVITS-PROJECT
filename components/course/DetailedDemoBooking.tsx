@@ -8,75 +8,10 @@ import React, { useState, useEffect } from 'react';
 import { User, Mail, Phone, Briefcase, MessageSquare, ArrowRight, CheckCircle2, Video, Calendar, HelpCircle, Gift, MapPin, Loader2, AlertCircle } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { submitToGoogleSheets } from '@/app/actions/submitToGoogleSheets';
-import { courses } from '@/lib/courseData';
+import { courses, Section } from '@/lib/courseData';
+import ContactForm from '@/components/ContactForm';
 
 export default function DetailedDemoBooking({ title, subtitle, courseName = "this course", benefits, features, syllabusUrl }: { title?: string | React.ReactNode, subtitle?: string | React.ReactNode, courseName?: string, benefits?: any[], features?: any[], syllabusUrl?: string }) {
-    const [formData, setFormData] = useState({
-        fullName: '',
-        email: '',
-        phone: '',
-        course: courseName,
-        experience: '',
-        message: ''
-    });
-
-    const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-    const [errorMessage, setErrorMessage] = useState('');
-
-    // Update course when courseName prop changes
-    useEffect(() => {
-        if (courseName && courseName !== "this course") {
-            setFormData(prev => ({ ...prev, course: courseName }));
-        }
-    }, [courseName]);
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({ ...prev, [name]: value }));
-    };
-
-    // Compute the actual course value to use in the select
-    const getCourseValue = () => {
-        if (formData.course && formData.course !== "this course") {
-            return formData.course;
-        }
-        if (courseName && courseName !== "this course") {
-            return courseName;
-        }
-        return "";
-    };
-
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        const newTab = window.open('/thank-you', '_blank');
-        setStatus('loading');
-        setErrorMessage('');
-
-        try {
-            const names = formData.fullName.trim().split(' ');
-            const firstName = names[0] || '';
-            const lastName = names.slice(1).join(' ') || '';
-            const fullMessage = `Experience: ${formData.experience}\n\n${formData.message}`;
-            const courseValue = getCourseValue();
-
-            const { error } = await supabase.from('contacts').insert([{
-                name: formData.fullName, first_name: firstName, last_name: lastName,
-                email: formData.email, phone: formData.phone, course: courseValue, message: fullMessage
-            }]);
-
-            if (error) throw error;
-            submitToGoogleSheets({ firstName, lastName, email: formData.email, countryCode: '', phone: formData.phone, course: courseValue, message: fullMessage }).catch(console.error);
-
-            setStatus('success');
-            setFormData({ fullName: '', email: '', phone: '', course: courseName, experience: '', message: '' });
-        } catch (error: any) {
-            if (newTab) newTab.close();
-            console.error('Submission error:', error);
-            setStatus('error');
-            setErrorMessage(error.message || 'Something went wrong. Please try again.');
-        }
-    };
-
     const defaultBenefits = [
         { icon: Video, title: `Insightful Live ${courseName.includes('Consultant') ? 'SAP' : ''} Session`, desc: "Observe real training and instructor methodology" },
         { icon: Calendar, title: "30 Min Career Consultation", desc: "Personalized guidance based on your background" },
@@ -104,7 +39,7 @@ export default function DetailedDemoBooking({ title, subtitle, courseName = "thi
                     </p>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-6 items-start">
+                <div className="grid lg:grid-cols-2 gap-10 items-start">
                     <div className="space-y-4">
                         <div>
                             <h3 className="text-sm font-bold text-white mb-3">What You'll Get With Your Free Demo</h3>
@@ -134,159 +69,13 @@ export default function DetailedDemoBooking({ title, subtitle, courseName = "thi
                     {/* Right Column: Form */}
                     <div className="bg-white rounded-xl p-4 lg:p-5 shadow-2xl relative">
                         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-slate-700 to-slate-900 rounded-t-xl"></div>
-                        <h3 className="text-base font-bold text-slate-900 mb-3">Book Your <span className="text-slate-900 underline decoration-orange-500 decoration-2 underline-offset-2">Free Demo</span></h3>
+                        <h3 className="text-xl font-bold text-slate-900 mb-6 text-center">Book Your <span className="text-slate-900">Free Demo</span></h3>
 
-                        {status === 'success' ? (
-                            <div className="bg-green-50 border border-green-200 rounded-xl p-6 text-center animate-in fade-in zoom-in duration-300">
-                                <CheckCircle2 className="h-10 w-10 text-green-600 mx-auto mb-3" />
-                                <h3 className="text-base font-bold text-green-900 mb-1">Registration Confirmed!</h3>
-                                <p className="text-green-700 text-xs mb-4">
-                                    Our training coordinator will contact you shortly.
-                                </p>
-                                <div className="flex flex-col gap-2 items-center">
-                                    <button
-                                        onClick={() => setStatus('idle')}
-                                        className="text-slate-900 text-sm font-semibold hover:underline"
-                                    >
-                                        Book another demo
-                                    </button>
-                                </div>
-                            </div>
-                        ) : (
-                            <form onSubmit={handleSubmit} className="space-y-2">
-                                {status === 'error' && (
-                                    <div className="bg-red-50 border border-red-200 rounded p-1.5 flex items-center text-red-800 text-[10px]">
-                                        <AlertCircle className="h-3 w-3 mr-1.5 flex-shrink-0" />
-                                        {errorMessage}
-                                    </div>
-                                )}
-
-                                <div className="grid grid-cols-2 gap-2">
-                                    <div>
-                                        <label className="block text-[10px] font-bold text-slate-700 mb-0.5 ml-1">Full Name *</label>
-                                        <div className="relative">
-                                            <User className="w-3 h-3 text-slate-400 absolute left-2.5 top-2" />
-                                            <input
-                                                type="text"
-                                                name="fullName"
-                                                value={formData.fullName}
-                                                onChange={handleChange}
-                                                required
-                                                placeholder="Name"
-                                                className="w-full pl-7 pr-2 py-1.5 bg-slate-50 border border-slate-200 rounded-md text-xs focus:outline-none focus:border-slate-900 transition-colors"
-                                            />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <label className="block text-[10px] font-bold text-slate-700 mb-0.5 ml-1">Phone *</label>
-                                        <div className="relative">
-                                            <Phone className="w-3 h-3 text-slate-400 absolute left-2.5 top-2" />
-                                            <input
-                                                type="tel"
-                                                name="phone"
-                                                value={formData.phone}
-                                                onChange={handleChange}
-                                                required
-                                                placeholder="+91..."
-                                                className="w-full pl-7 pr-2 py-1.5 bg-slate-50 border border-slate-200 rounded-md text-xs focus:outline-none focus:border-slate-900 transition-colors"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <label className="block text-[10px] font-bold text-slate-700 mb-0.5 ml-1">Email *</label>
-                                    <div className="relative">
-                                        <Mail className="w-3 h-3 text-slate-400 absolute left-2.5 top-2" />
-                                        <input
-                                            type="email"
-                                            name="email"
-                                            value={formData.email}
-                                            onChange={handleChange}
-                                            required
-                                            placeholder="Email"
-                                            className="w-full pl-7 pr-2 py-1.5 bg-slate-50 border border-slate-200 rounded-md text-xs focus:outline-none focus:border-slate-900 transition-colors"
-                                        />
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <label className="block text-[10px] font-bold text-slate-700 mb-0.5 ml-1">Experience</label>
-                                    <div className="relative">
-                                        <Briefcase className="w-3 h-3 text-slate-400 absolute left-2.5 top-2" />
-                                        <select
-                                            name="experience"
-                                            value={formData.experience}
-                                            onChange={handleChange}
-                                            className="w-full pl-7 pr-2 py-1.5 bg-slate-50 border border-slate-200 rounded-md text-xs focus:outline-none focus:border-slate-900 transition-colors appearance-none text-slate-700"
-                                        >
-                                            <option value="">Select Level</option>
-                                            <option value="Student / Fresher">Student / Fresher</option>
-                                            <option value="1-3 Years">1-3 Years</option>
-                                            <option value="3-5 Years">3-5 Years</option>
-                                            <option value="5+ Years">5+ Years</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <label className="block text-[10px] font-bold text-slate-700 mb-0.5 ml-1">SAP Module *</label>
-                                    <select
-                                        key={`course-select-${courseName}`}
-                                        name="course"
-                                        value={getCourseValue()}
-                                        onChange={handleChange}
-                                        required
-                                        className="w-full px-2 py-1.5 bg-slate-50 border border-slate-200 rounded-md text-xs focus:outline-none focus:border-slate-900 transition-colors appearance-none text-slate-700"
-                                    >
-                                        <option value="">Select SAP Module</option>
-                                        {courses
-                                            .filter(c => c.title !== 'Other' && c.id !== 'other')
-                                            .filter((c, index, self) => index === self.findIndex((t) => t.title === c.title))
-                                            .map((course) => (
-                                                <option key={course.id} value={course.title}>{course.title}</option>
-                                            ))
-                                        }
-                                    </select>
-                                </div>
-
-                                <div>
-                                    <label className="block text-[10px] font-bold text-slate-700 mb-0.5 ml-1">Message</label>
-                                    <div className="relative">
-                                        <MessageSquare className="w-3 h-3 text-slate-400 absolute left-2.5 top-2.5" />
-                                        <textarea
-                                            name="message"
-                                            value={formData.message}
-                                            onChange={handleChange}
-                                            placeholder="Optional..."
-                                            rows={2}
-                                            className="w-full pl-7 pr-2 py-1.5 bg-slate-50 border border-slate-200 rounded-md text-xs focus:outline-none focus:border-slate-900 transition-colors resize-none"
-                                        ></textarea>
-                                    </div>
-                                </div>
-
-                                <button
-                                    type="submit"
-                                    disabled={status === 'loading'}
-                                    className="w-full bg-white hover:bg-slate-50 text-slate-900 border-2 border-slate-900/10 font-bold py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 mt-1 disabled:bg-slate-100 disabled:text-slate-400 text-xs"
-                                >
-                                    {status === 'loading' ? (
-                                        <>
-                                            <Loader2 className="w-3 h-3 animate-spin" />
-                                            Processing...
-                                        </>
-                                    ) : (
-                                        <>
-                                            Book Demo Now <ArrowRight className="w-3 h-3 text-[#ff4500]" />
-                                        </>
-                                    )}
-                                </button>
-
-                                <p className="text-[9px] text-center text-slate-400 mt-1 leading-tight">
-                                    By submitting, you agree to our privacy policy.
-                                </p>
-                            </form>
-                        )}
+                        <ContactForm
+                            defaultCourse={courseName !== "this course" ? courseName : ""}
+                            showLabels={true}
+                            className="text-slate-900"
+                        />
                     </div>
                 </div>
             </div>

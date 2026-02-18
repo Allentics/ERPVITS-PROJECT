@@ -77,6 +77,7 @@ async function reseedCourses() {
                     const [demoSection] = s.sections.splice(demoIndex, 1);
                     s.sections.splice(faqIndex, 0, demoSection);
                 }
+
             }
 
             const payload: any = {
