@@ -1188,5 +1188,6 @@ export const c4cContent = {
             "answer": "Yes, we provide 100% placement assistance including resume building, mock interviews, and job referrals.",
             "question": "Do you offer placement assistance?"
         }
-    ]
+    ],
+    "schema": "{\"test\": \"string\"}"
 };

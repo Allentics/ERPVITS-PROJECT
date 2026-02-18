@@ -927,5 +927,6 @@ export const ppdsContent = {
         }
     ],
     "curriculum": [],
-    "faqs": []
+    "faqs": [],
+    "schema": ""
 };

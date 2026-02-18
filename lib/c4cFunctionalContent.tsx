@@ -1170,5 +1170,6 @@ export const c4cFunctionalContent = {
         }
     ],
     "curriculum": [],
-    "faqs": []
+    "faqs": [],
+    "schema": ""
 };

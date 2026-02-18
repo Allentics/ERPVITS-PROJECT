@@ -469,5 +469,6 @@ export const pythonAimlContent = {
         }
     ],
     "curriculum": [],
-    "faqs": []
+    "faqs": [],
+    "schema": ""
 };

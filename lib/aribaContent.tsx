@@ -505,6 +505,35 @@ export const aribaContent = {
         },
         {
             "type": "detailed_upcoming_batches",
+            "items": [
+                {
+                    "date": "November 15, 2025",
+                    "name": "Batch 1: November 2025 (Weekdays)",
+                    "seats": "4/10",
+                    "status": "Filling Fast",
+                    "duration": "45-50 Hours",
+                    "schedule": "Mon-Fri | 07:00 AM | 08:00 PM IST",
+                    "statusColor": "bg-red-100 text-red-600"
+                },
+                {
+                    "date": "November 16, 2025",
+                    "name": "Batch 2: November 2025 (Weekends)",
+                    "seats": "6/10",
+                    "status": "Booking Open",
+                    "duration": "45-50 Hours",
+                    "schedule": "Sat-Sun | 07:30 AM | 07:00 PM IST",
+                    "statusColor": "bg-green-100 text-green-600"
+                },
+                {
+                    "date": "December 1, 2025",
+                    "name": "Batch 3: December 2025 (Flexible)",
+                    "seats": "7/10",
+                    "status": "Booking Open",
+                    "duration": "45-50 Hours (accelerated)",
+                    "schedule": "Flexible timings – customized per batch",
+                    "statusColor": "bg-blue-100 text-blue-600"
+                }
+            ],
             "batches": [
                 {
                     "date": "November 15, 2025",
@@ -563,38 +592,50 @@ export const aribaContent = {
                 {
                     "name": "Amit Kumar",
                     "role": "SAP Ariba Consultant at Accenture",
+                    "text": "Outstanding training and real project exposure. I landed a consulting role at Accenture within 8 weeks of completing the course. The hands-on approach and expert instructors made all the difference.",
                     "image": "/images/testimonials/amit.jpg",
-                    "quote": "Outstanding training and real project exposure. I landed a consulting role at Accenture within 8 weeks of completing the course. The hands-on approach and expert instructors made all the difference."
+                    "quote": "Outstanding training and real project exposure. I landed a consulting role at Accenture within 8 weeks of completing the course. The hands-on approach and expert instructors made all the difference.",
+                    "author": "Amit Kumar"
                 },
                 {
                     "name": "Priya Sharma",
                     "role": "Procurement Manager",
+                    "text": "The weekend flexibility allowed me to learn while working. My employer was so impressed with my skills that they promoted me to Procurement Manager. This course accelerated my career by 3 years.",
                     "image": "/images/testimonials/priya.jpg",
-                    "quote": "The weekend flexibility allowed me to learn while working. My employer was so impressed with my skills that they promoted me to Procurement Manager. This course accelerated my career by 3 years."
+                    "quote": "The weekend flexibility allowed me to learn while working. My employer was so impressed with my skills that they promoted me to Procurement Manager. This course accelerated my career by 3 years.",
+                    "author": "Priya Sharma"
                 },
                 {
                     "name": "Rajesh Patel",
                     "role": "Senior SAP Consultant",
+                    "text": "Best decision I made. The capstone projects were exactly like real client work. I walked into my first consulting role feeling confident, not intimidated. The certification support was exceptional.",
                     "image": "/images/testimonials/rajesh.jpg",
-                    "quote": "Best decision I made. The capstone projects were exactly like real client work. I walked into my first consulting role feeling confident, not intimidated. The certification support was exceptional."
+                    "quote": "Best decision I made. The capstone projects were exactly like real client work. I walked into my first consulting role feeling confident, not intimidated. The certification support was exceptional.",
+                    "author": "Rajesh Patel"
                 },
                 {
                     "name": "Ananya Singh",
                     "role": "Certified SAP Ariba Professional",
+                    "text": "Superb certification preparation. I passed all three SAP Ariba exams on my first attempt. The mock exams and study materials were spot-on. Highly recommended!",
                     "image": "/images/testimonials/ananya.jpg",
-                    "quote": "Superb certification preparation. I passed all three SAP Ariba exams on my first attempt. The mock exams and study materials were spot-on. Highly recommended!"
+                    "quote": "Superb certification preparation. I passed all three SAP Ariba exams on my first attempt. The mock exams and study materials were spot-on. Highly recommended!",
+                    "author": "Ananya Singh"
                 },
                 {
                     "name": "Vikram Desai",
                     "role": "Integration Consultant at Deloitte",
+                    "text": "The instructor's real-world insights were invaluable. I didn't just learn SAP Ariba; I learned how to apply it in complex enterprise environments. The alumni network has already brought consulting opportunities my way.",
                     "image": "/images/testimonials/vikram.jpg",
-                    "quote": "The instructor's real-world insights were invaluable. I didn't just learn SAP Ariba; I learned how to apply it in complex enterprise environments. The alumni network has already brought consulting opportunities my way."
+                    "quote": "The instructor's real-world insights were invaluable. I didn't just learn SAP Ariba; I learned how to apply it in complex enterprise environments. The alumni network has already brought consulting opportunities my way.",
+                    "author": "Vikram Desai"
                 },
                 {
                     "name": "Sneha Reddy",
                     "role": "Procurement Analyst at Infosys",
+                    "text": "From zero SAP knowledge to landing my dream job in 4 months! The instructors are patient, knowledgeable, and truly care about learner success. The lifetime recording access is a huge bonus.",
                     "image": "/images/testimonials/sneha.jpg",
-                    "quote": "From zero SAP knowledge to landing my dream job in 4 months! The instructors are patient, knowledgeable, and truly care about learner success. The lifetime recording access is a huge bonus."
+                    "quote": "From zero SAP knowledge to landing my dream job in 4 months! The instructors are patient, knowledgeable, and truly care about learner success. The lifetime recording access is a huge bonus.",
+                    "author": "Sneha Reddy"
                 }
             ],
             "stats": {
@@ -711,5 +752,6 @@ export const aribaContent = {
         }
     ],
     "curriculum": [],
-    "faqs": []
+    "faqs": [],
+    "schema": "<script type=\"application/ld+json\">\n        {\n          \"@context\": \"https://www.schema.org\",\n          \"@type\": \"Product\",\n          \"brand\": \"ERPVITS\",\n          \"name\": \"SAP Ariba Online Training Certification Course\",\n          \"image\": \"https://www.erpvits.com/images/erpvits-logo.webp\",\n          \"description\": \"SAP Ariba Training with ERPVITS covering procurement, sourcing, and supplier management. 50+ hours of live sessions, real-time projects, and placement support.\",\n          \"aggregateRating\": {\n            \"@type\": \"AggregateRating\",\n            \"ratingValue\": \"4.5\",\n            \"reviewCount\": \"5489\",\n            \"url\": \"https://www.erpvits.com/sap-ariba-training/\"\n          }\n        }\n        </script>"
 };

@@ -947,5 +947,6 @@ export const cpiContent = {
         }
     ],
     "curriculum": [],
-    "faqs": []
+    "faqs": [],
+    "schema": "<script type=\"application/ld+json\">\n        {\n          \"@context\": \"https://www.schema.org\",\n          \"@type\": \"Product\",\n          \"brand\": \"ERPVITS\",\n          \"name\": \"SAP Ariba Online Training Certification Course\",\n          \"image\": \"https://www.erpvits.com/images/erpvits-logo.webp\",\n          \"description\": \"SAP Ariba Training with ERPVITS covering procurement, sourcing, and supplier management. 50+ hours of live sessions, real-time projects, and placement support.\",\n          \"aggregateRating\": {\n            \"@type\": \"AggregateRating\",\n            \"ratingValue\": \"4.5\",\n            \"reviewCount\": \"5489\",\n            \"url\": \"https://www.erpvits.com/sap-ariba-training/\"\n          }\n        }\n        </script>"
 };
