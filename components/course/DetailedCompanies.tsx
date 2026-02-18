@@ -150,51 +150,6 @@ export default function DetailedCompanies({ courseName = "SAP", customData }: { 
                     )}
                 </div>
 
-                {/* Hiring Trends */}
-                {data.hiringTrends && (
-                    <div className="mt-20">
-                        <div className="text-center mb-10">
-                            <h3 className="text-2xl font-bold text-slate-900">{data.hiringTrends.title}</h3>
-                        </div>
-
-                        {data.hiringTrends.trends && (
-                            <ul className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 text-left">
-                                {data.hiringTrends.trends.map((trend, idx) => (
-                                    <li key={idx} className="flex items-start gap-2">
-                                        <span className="text-orange-600 mt-1">✓</span>
-                                        <span className="text-slate-700">{trend}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        )}
-
-                        {data.hiringTrends.stats && (
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                {data.hiringTrends.stats.map((stat, idx) => {
-                                    const colorClasses =
-                                        stat.color === 'blue' ? 'bg-blue-50 border-blue-100 text-blue-600' :
-                                            stat.color === 'green' ? 'bg-[#ff4500]/10 border-[#ff4500]/10 text-[#ff4500]' :
-                                                stat.color === 'purple' ? 'bg-purple-50 border-purple-100 text-purple-600' :
-                                                    'bg-[#ff4500]/10 border-[#ff4500]/10 text-[#ff4500]';
-
-                                    return (
-                                        <div key={idx} className={`${colorClasses} border p-6 rounded-2xl text-center hover:shadow-md transition-all`}>
-                                            <div className={`text-3xl font-bold mb-2 ${stat.color === 'blue' ? 'text-blue-600' :
-                                                stat.color === 'green' ? 'text-[#ff4500]' :
-                                                    stat.color === 'purple' ? 'text-purple-600' :
-                                                        'text-[#ff4500]'
-                                                }`}>
-                                                {stat.value}
-                                            </div>
-                                            <div className="font-bold text-slate-800 text-sm mb-1">{stat.label}</div>
-                                            {stat.subLabel && <div className="text-xs text-slate-500">{stat.subLabel}</div>}
-                                        </div>
-                                    );
-                                })}
-                            </div>
-                        )}
-                    </div>
-                )}
             </div>
         </section>
     );

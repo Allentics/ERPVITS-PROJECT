@@ -120,7 +120,7 @@ export default function DetailedTestimonials({ items, stats, courseName = "SAP" 
     const reviewsArray = rawReviews.map((r: any, i: number) => {
         const colors = ["bg-[#ff4500]", "bg-blue-500", "bg-[#ff4500]", "bg-purple-500", "bg-red-500", "bg-indigo-500"];
         return {
-            text: r.quote || r.text,
+            text: r.quote || r.text || r.content, // Fallback to r.content if quote/text are missing
             author: r.name || r.author,
             role: r.role,
             initial: r.initial || (r.name || r.author || "U").charAt(0).toUpperCase(),
@@ -147,29 +147,30 @@ export default function DetailedTestimonials({ items, stats, courseName = "SAP" 
 
                 </div>
 
-                {/* Reviews Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
-                    {reviewsArray.map((review, idx) => (
-                        <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 relative">
-                            <Quote className="w-8 h-8 text-[#ff4500]/20 absolute top-6 right-6 fill-orange-50" />
-                            <div className="flex gap-1 mb-4">
-                                {[1, 2, 3, 4, 5].map((_, i) => (
-                                    <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                                ))}
+            </div>
+
+            {/* Reviews Grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+                {reviewsArray.map((review, idx) => (
+                    <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 relative">
+                        <Quote className="w-8 h-8 text-[#ff4500]/20 absolute top-6 right-6 fill-orange-50" />
+                        <div className="flex gap-1 mb-4">
+                            {[1, 2, 3, 4, 5].map((_, i) => (
+                                <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                            ))}
+                        </div>
+                        <p className="text-slate-600 text-xs leading-relaxed mb-6 italic">&quot;{review.text}&quot;</p>
+                        <div className="flex items-center gap-4">
+                            <div className={`w-10 h-10 rounded-full ${review.color} text-white flex items-center justify-center font-bold text-xs`}>
+                                {review.initial}
                             </div>
-                            <p className="text-slate-600 text-xs leading-relaxed mb-6 italic">&quot;{review.text}&quot;</p>
-                            <div className="flex items-center gap-4">
-                                <div className={`w-10 h-10 rounded-full ${review.color} text-white flex items-center justify-center font-bold text-xs`}>
-                                    {review.initial}
-                                </div>
-                                <div>
-                                    <div className="font-bold text-slate-900 text-xs">{review.author}</div>
-                                    <div className="text-[10px] text-slate-500">{review.role}</div>
-                                </div>
+                            <div>
+                                <div className="font-bold text-slate-900 text-xs">{review.author}</div>
+                                <div className="text-[10px] text-slate-500">{review.role}</div>
                             </div>
                         </div>
-                    ))}
-                </div>
+                    </div>
+                ))}
             </div>
         </section>
     );
