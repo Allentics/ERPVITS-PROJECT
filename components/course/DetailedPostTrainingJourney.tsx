@@ -33,6 +33,13 @@ export default function DetailedPostTrainingJourney({ title, steps: propSteps, i
         }
     };
 
+    const scrollToBatches = () => {
+        const element = document.getElementById('upcoming-batches');
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     const iconMap: Record<string, any> = {
         "CheckCircle2": CheckCircle2,
         "Rocket": Rocket,
@@ -227,7 +234,7 @@ export default function DetailedPostTrainingJourney({ title, steps: propSteps, i
                 <div className="text-center">
                     <p className="text-slate-500 text-sm mb-6">Ready to start your {courseName} career journey?</p>
                     <button
-                        onClick={scrollToBooking}
+                        onClick={scrollToBatches}
                         className="bg-[#ff4500] hover:bg-[#cc3700] text-white font-bold py-4 px-10 rounded-xl shadow-lg transition-all"
                     >
                         Enroll in Next Batch

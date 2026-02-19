@@ -2,15 +2,18 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Calendar, Clock, AlertCircle, CheckCircle2, ShieldCheck, Users, Zap } from 'lucide-react';
+import ContactModal from '@/components/ContactModal';
 
 export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batches: propBatches, features: propFeatures }: { courseName?: string, batches?: any[], features?: any[] }) {
-    const scrollToBooking = () => {
-        const element = document.getElementById('detailed-demo-booking');
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [modalTitle, setModalTitle] = useState("");
+
+    const handleRegisterClick = () => {
+        const title = `Register for Next ${courseName} Batch`;
+        setModalTitle(title);
+        setIsModalOpen(true);
     };
 
     // Helper to get a date X days from now
@@ -84,7 +87,7 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
     const features = propFeatures || defaultFeatures;
 
     return (
-        <section className="py-12 bg-[#ff4500]/10 relative overflow-hidden">
+        <section id="upcoming-batches" className="py-12 bg-[#ff4500]/10 relative overflow-hidden">
             {/* Background Decorations */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-[#ff4500]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#ff4500]/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
@@ -166,7 +169,7 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
                                 </div>
 
                                 <button
-                                    onClick={scrollToBooking}
+                                    onClick={handleRegisterClick}
                                     className="w-full bg-[#ff4500] hover:bg-[#cc3700] text-white font-bold py-3 rounded-lg shadow-md transition-all text-sm uppercase tracking-wide"
                                 >
                                     Register Now
@@ -207,6 +210,13 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
                 </div>
 
             </div>
+
+            <ContactModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                title={modalTitle}
+                defaultCourse={courseName}
+            />
         </section>
     );
 }
