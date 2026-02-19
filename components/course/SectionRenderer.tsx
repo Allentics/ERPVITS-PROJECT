@@ -172,7 +172,7 @@ export default function SectionRenderer({ sections, courseName, syllabusUrl }: {
                     case 'detailed_features':
                         return <DetailedFeatures key={idx} {...section} badge={section.badge || "Why Choose Us"} items={section.items} />;
                     case 'target_audience':
-                        return <DetailedTargetAudience key={idx} items={section.items} />;
+                        return <DetailedTargetAudience key={idx} items={section.items} courseName={courseName || section.courseName} />;
                     case 'prerequisites':
                         return <DetailedPrerequisites key={idx} items={section.items} />;
                     case 'learning_outcomes':
@@ -188,7 +188,7 @@ export default function SectionRenderer({ sections, courseName, syllabusUrl }: {
                     case 'detailed_prerequisites':
                         return <DetailedPrerequisites key={idx} items={section.items} />;
                     case 'detailed_target_audience':
-                        return <DetailedTargetAudience key={idx} items={section.items} title={section.title} subtitle={section.subtitle} />;
+                        return <DetailedTargetAudience key={idx} items={section.items} title={section.title} subtitle={section.subtitle} courseName={courseName || section.courseName} />;
                     case 'detailed_learning_outcomes':
                         return <DetailedLearningOutcomes key={idx} items={section.items} title={section.title} subtitle={section.subtitle} />;
                     case 'real_world_scenarios':

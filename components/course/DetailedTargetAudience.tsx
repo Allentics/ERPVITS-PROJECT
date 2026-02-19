@@ -27,12 +27,11 @@ interface AudienceItem {
     description: (string | React.ReactNode)[];
 }
 
-export default function DetailedTargetAudience({ items, title, subtitle }: { items?: AudienceItem[], title?: string | React.ReactNode, subtitle?: string | React.ReactNode }) {
-    const scrollToBooking = () => {
-        const element = document.getElementById('detailed-demo-booking');
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
+export default function DetailedTargetAudience({ items, title, subtitle, courseName = "SAP" }: { items?: AudienceItem[], title?: string | React.ReactNode, subtitle?: string | React.ReactNode, courseName?: string }) {
+    const handleConsultationClick = () => {
+        const message = `Hello, I am interested in the ${courseName} Training. I would like to schedule a free consultation to know more about ${courseName}.`;
+        const encodedMessage = encodeURIComponent(message);
+        window.open(`https://api.whatsapp.com/send/?phone=918408878222&text=${encodedMessage}&type=phone_number&app_absent=0`, '_blank');
     };
 
     const audienceList = items || aribaTargetAudience;
@@ -97,7 +96,7 @@ export default function DetailedTargetAudience({ items, title, subtitle }: { ite
                         Book a free demo session and speak with our career counselors to get personalized guidance based on your background and goals.
                     </p>
                     <button
-                        onClick={scrollToBooking}
+                        onClick={handleConsultationClick}
                         className="bg-[#ff4500] hover:bg-[#ff4500]/90 text-white font-bold py-3 px-8 rounded-lg shadow-md transition-all active:translate-y-0 w-full md:w-auto"
                     >
                         Schedule Free Consultation
