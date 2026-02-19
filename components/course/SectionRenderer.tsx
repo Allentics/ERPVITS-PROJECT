@@ -216,7 +216,7 @@ export default function SectionRenderer({ sections, courseName, syllabusUrl }: {
                     case 'detailed_upcoming_batches':
                         return <DetailedUpcomingBatches key={idx} {...section} courseName={courseName || section.courseName} />;
                     case 'detailed_faq':
-                        return <DetailedFAQ key={idx} items={section.items} title={section.title} subtitle={section.subtitle} />;
+                        return <DetailedFAQ key={idx} items={section.items} title={section.title} subtitle={section.subtitle} courseName={courseName || section.courseName} />;
                     case 'detailed_demo_booking':
                         return <DetailedDemoBooking key={idx} courseName={courseName} {...section} />;
                     case 'features':

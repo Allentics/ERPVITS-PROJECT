@@ -3,17 +3,11 @@
 import React, { useState } from 'react';
 import { Plus, Minus, HelpCircle } from 'lucide-react';
 import { renderRichText } from '@/lib/richText';
+import CareerGuidanceModal from '../CareerGuidanceModal';
 
-export default function DetailedFAQ({ items, title, subtitle }: { items?: { question?: string | React.ReactNode, answer?: string | React.ReactNode, q?: string | React.ReactNode, a?: string | React.ReactNode }[], title?: string | React.ReactNode, subtitle?: string | React.ReactNode }) {
+export default function DetailedFAQ({ items, title, subtitle, courseName }: { items?: { question?: string | React.ReactNode, answer?: string | React.ReactNode, q?: string | React.ReactNode, a?: string | React.ReactNode }[], title?: string | React.ReactNode, subtitle?: string | React.ReactNode, courseName?: string }) {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
-
-
-    const scrollToBooking = () => {
-        const element = document.getElementById('detailed-demo-booking');
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const defaultFaqs = [
         // ... (Existing Ariba FAQs)
@@ -95,6 +89,7 @@ export default function DetailedFAQ({ items, title, subtitle }: { items?: { ques
         }
     ];
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const faqs = (items || defaultFaqs).map((item: any) => ({
         question: item.question || item.q,
         answer: item.answer || item.a
@@ -152,12 +147,18 @@ export default function DetailedFAQ({ items, title, subtitle }: { items?: { ques
                 <div className="mt-12 text-center">
                     <p className="text-slate-500 mb-4">Still have questions?</p>
                     <button
-                        onClick={scrollToBooking}
+                        onClick={() => setIsModalOpen(true)}
                         className="bg-[#ff4500] hover:bg-[#cc3700] text-white font-bold py-3 px-8 rounded-xl shadow-md hover:shadow-lg transition-all flex items-center gap-2 mx-auto"
                     >
                         <HelpCircle className="w-5 h-5" /> Get Free SAP Career Guidance
                     </button>
                 </div>
+
+                <CareerGuidanceModal
+                    isOpen={isModalOpen}
+                    onClose={() => setIsModalOpen(false)}
+                    defaultCourse={courseName}
+                />
 
             </div>
         </section>

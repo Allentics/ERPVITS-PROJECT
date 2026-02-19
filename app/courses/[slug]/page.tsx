@@ -529,7 +529,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
 
                     {(!(mappedCourse.sections as Section[])?.some((s: Section) => s.type === 'faq' || s.type === 'detailed_faq')) && (
                         <div id="faq" className="scroll-mt-32">
-                            <DetailedFAQ items={mappedCourse.faqs} />
+                            <DetailedFAQ items={mappedCourse.faqs} courseName={mappedCourse.title} />
                         </div>
                     )}
                 </div>
