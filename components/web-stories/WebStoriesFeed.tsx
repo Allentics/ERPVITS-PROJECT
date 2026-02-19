@@ -24,6 +24,8 @@ import {
     UserPlus
 } from 'lucide-react';
 
+import StoryViewer from './StoryViewer';
+
 // --- Mock Data ---
 
 const STORIES = [
@@ -163,10 +165,11 @@ function BriefcaseIcon(props: any) {
 
 // --- Components ---
 
-const StoryCard = ({ story, featured = false }: { story: any, featured?: boolean }) => {
+const StoryCard = ({ story, featured = false, onClick }: { story: any, featured?: boolean, onClick?: () => void }) => {
     return (
         <motion.div
             whileHover={{ y: -5, scale: 1.02 }}
+            onClick={onClick}
             className={`relative rounded-3xl overflow-hidden shadow-lg cursor-pointer group ${featured ? 'w-full h-[450px] md:h-[500px]' : 'w-full h-[350px]'}`}
         >
             {/* Background */}
@@ -232,6 +235,7 @@ const StoryCard = ({ story, featured = false }: { story: any, featured?: boolean
 
 const WebStoriesFeed = () => {
     const [activeCategory, setActiveCategory] = useState('all');
+    const [selectedStoryIndex, setSelectedStoryIndex] = useState<number | null>(null);
 
     const filteredStories = activeCategory === 'all'
         ? STORIES
@@ -239,8 +243,26 @@ const WebStoriesFeed = () => {
 
     const featuredStories = STORIES.filter(s => s.type === 'featured');
 
+    const handleStoryClick = (storyId: number) => {
+        const index = STORIES.findIndex(s => s.id === storyId);
+        if (index !== -1) {
+            setSelectedStoryIndex(index);
+        }
+    };
+
     return (
         <div className="bg-slate-50 min-h-screen">
+
+            {/* --- Story Viewer Modal --- */}
+            <AnimatePresence>
+                {selectedStoryIndex !== null && (
+                    <StoryViewer
+                        stories={STORIES}
+                        initialStoryIndex={selectedStoryIndex}
+                        onClose={() => setSelectedStoryIndex(null)}
+                    />
+                )}
+            </AnimatePresence>
 
             {/* --- Hero Section (Restored) --- */}
             <section className="relative bg-gradient-to-br from-orange-600 via-orange-500 to-orange-400 text-white py-24 px-4 overflow-hidden">
@@ -285,7 +307,12 @@ const WebStoriesFeed = () => {
 
                     {/* Button */}
                     <div className="flex justify-center mt-10">
-                        <button className="bg-white text-orange-600 hover:bg-orange-50 hover:text-orange-700 font-bold py-4 px-10 rounded-full flex items-center gap-3 transition-all transform hover:scale-105 shadow-[0_20px_50px_rgba(249,_115,_22,_0.4)] ring-4 ring-orange-500/20">
+                        <button
+                            onClick={() => {
+                                document.getElementById('featured-stories')?.scrollIntoView({ behavior: 'smooth' });
+                            }}
+                            className="bg-white text-orange-600 hover:bg-orange-50 hover:text-orange-700 font-bold py-4 px-10 rounded-full flex items-center gap-3 transition-all transform hover:scale-105 shadow-[0_20px_50px_rgba(249,_115,_22,_0.4)] ring-4 ring-orange-500/20"
+                        >
                             <div className="bg-orange-100 rounded-full p-1">
                                 <Play className="h-5 w-5 fill-orange-600" />
                             </div>
@@ -296,7 +323,7 @@ const WebStoriesFeed = () => {
             </section>
 
             {/* --- Featured Stories Section --- */}
-            <section className="py-20 px-4 max-w-7xl mx-auto">
+            <section id="featured-stories" className="py-20 px-4 max-w-7xl mx-auto">
                 <div className="text-center mb-12">
                     <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
                         <Star className="h-4 w-4 fill-orange-600" /> KEY HIGHLIGHTS
@@ -308,7 +335,12 @@ const WebStoriesFeed = () => {
                 {/* Featured Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
                     {featuredStories.map(story => (
-                        <StoryCard key={story.id} story={story} featured={true} />
+                        <StoryCard
+                            key={story.id}
+                            story={story}
+                            featured={true}
+                            onClick={() => handleStoryClick(story.id)}
+                        />
                     ))}
                 </div>
             </section>
@@ -390,7 +422,10 @@ const WebStoriesFeed = () => {
                                 exit={{ opacity: 0, scale: 0.95 }}
                                 transition={{ duration: 0.3 }}
                             >
-                                <StoryCard story={story} />
+                                <StoryCard
+                                    story={story}
+                                    onClick={() => handleStoryClick(story.id)}
+                                />
                             </motion.div>
                         ))}
                     </AnimatePresence>
@@ -422,14 +457,16 @@ const WebStoriesFeed = () => {
                     </p>
 
                     <div className="flex flex-col md:flex-row justify-center gap-4">
-                        <button className="bg-white text-orange-600 hover:bg-slate-50 font-bold py-4 px-10 rounded-full flex items-center justify-center gap-3 transition-all transform hover:scale-105 shadow-xl">
-                            <Smartphone className="h-5 w-5" />
-                            <span>SUBMIT YOUR STORY</span>
-                        </button>
-                        <button className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold py-4 px-10 rounded-full flex items-center justify-center gap-3 transition-all">
+
+                        <a
+                            href="https://www.linkedin.com/company/13357826/admin/dashboard/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold py-4 px-10 rounded-full flex items-center justify-center gap-3 transition-all"
+                        >
                             <Share2 className="h-5 w-5" />
                             <span>SHARE ON LINKEDIN</span>
-                        </button>
+                        </a>
                     </div>
 
                     <p className="mt-8 text-white/60 text-xs uppercase tracking-widest font-semibold">
