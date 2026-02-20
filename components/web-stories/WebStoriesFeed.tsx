@@ -265,7 +265,7 @@ const WebStoriesFeed = () => {
             </AnimatePresence>
 
             {/* --- Hero Section (Restored) --- */}
-            <section className="relative bg-gradient-to-br from-orange-600 via-orange-500 to-orange-400 text-white py-24 px-4 overflow-hidden">
+            <section className="relative bg-gradient-to-br from-orange-600 via-orange-500 to-orange-400 text-white py-12 px-4 overflow-hidden">
                 {/* Radial Gradient overlay for depth */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
 
@@ -283,30 +283,15 @@ const WebStoriesFeed = () => {
                     </h1>
 
                     {/* Description */}
-                    <p className="text-lg md:text-2xl text-white/90 max-w-2xl mx-auto mb-12 leading-relaxed font-medium drop-shadow-md">
+                    <p className="text-lg md:text-2xl text-white/90 max-w-2xl mx-auto mb-6 leading-relaxed font-medium drop-shadow-md">
                         Bite-sized success stories, tips, and insights from the SAP world. Swipe through inspiring journeys and quick learning moments.
                     </p>
 
                     {/* Stats */}
-                    <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 mb-4">
-                        <div className="text-center px-4">
-                            <div className="text-3xl md:text-5xl font-black tracking-tight">6</div>
-                            <div className="text-xs md:text-sm text-white/70 uppercase tracking-widest font-bold mt-2 font-sans">Stories</div>
-                        </div>
-                        <div className="text-center px-4">
-                            <div className="text-3xl md:text-5xl font-black tracking-tight">50K+</div>
-                            <div className="text-xs md:text-sm text-white/70 uppercase tracking-widest font-bold mt-2 font-sans">Views</div>
-                        </div>
-                        <div className="text-center px-4">
-                            <div className="text-3xl md:text-5xl font-black tracking-tight flex items-center justify-center gap-2">
-                                4.9
-                            </div>
-                            <div className="text-xs md:text-sm text-white/70 uppercase tracking-widest font-bold mt-2 font-sans">Rating</div>
-                        </div>
-                    </div>
+
 
                     {/* Button */}
-                    <div className="flex justify-center mt-10">
+                    <div className="flex justify-center mt-6">
                         <button
                             onClick={() => {
                                 document.getElementById('featured-stories')?.scrollIntoView({ behavior: 'smooth' });
