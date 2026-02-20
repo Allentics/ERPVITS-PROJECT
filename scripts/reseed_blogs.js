@@ -191,7 +191,7 @@ async function main() {
         };
 
         console.log(`Upserting ${id}...`);
-        const { error } = await supabase.from('blog_posts').upsert(payload, { onConflict: 'id' });
+        const { error } = await supabase.from('blog_posts').upsert(payload, { onConflict: 'id', ignoreDuplicates: true });
 
         if (error) {
             console.error(`❌ Failed to upsert ${id}: ${error.message}`);

@@ -96,10 +96,10 @@ async function reseedBlogs() {
         console.log(`  Original: ${originalLength} chars -> Cleaned: ${content.length} chars`);
 
         // Update the database
+        // Use upsert with ignoreDuplicates to preserve admin-modified data
         const { error } = await supabase
             .from('blog_posts')
-            .update({ content })
-            .eq('id', id);
+            .upsert({ id, content }, { onConflict: 'id', ignoreDuplicates: true });
 
         if (error) {
             console.log(`  ❌ Error: ${error.message}`);

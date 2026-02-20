@@ -105,11 +105,11 @@ async function reseedCourses() {
                 }
             });
 
-            // Use update instead of upsert to avoid RLS insert policy violations
+            // Use upsert with ignoreDuplicates to ensure we do NOT overwrite admin-modified data
+            // This satisfies the requirement: "Seed should only insert missing default records."
             const { error } = await supabase
                 .from('courses')
-                .update(payload)
-                .eq('id', s.id);
+                .upsert(payload, { onConflict: 'id', ignoreDuplicates: true });
 
             if (error) {
                 console.error(`Error updating ${s.id}:`, error.message);

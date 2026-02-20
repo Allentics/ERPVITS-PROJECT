@@ -80,12 +80,14 @@ export const renderRichText = (text: any) => {
         }
 
         // Bold (Markdown: ** or __, HTML: <b> or <strong>)
+        // Bold (Markdown: ** or __, HTML: <b> or <strong>)
+        // Modified to remove explicit styling so keywords inherit parent styles (blending in completely)
         if ((part.startsWith('**') && part.endsWith('**')) || (part.startsWith('__') && part.endsWith('__'))) {
-            return <strong key={index} className="font-bold text-slate-900">{part.slice(2, -2)}</strong>;
+            return <span key={index}>{part.slice(2, -2)}</span>;
         }
         if (part.toLowerCase().startsWith('<b>') || part.toLowerCase().startsWith('<strong>')) {
             const content = part.replace(/^<[^>]+>|<\/[^>]+>$/gi, '');
-            return <strong key={index} className="font-bold text-slate-900">{content}</strong>;
+            return <span key={index}>{content}</span>;
         }
 
         // Italic (HTML: <i> or <em>) - Markdown italic (_) not explicitly handled to avoid conflict with links/snake_case

@@ -17,7 +17,7 @@ INSERT INTO public.site_content (page_path, section_key, content, order_index) V
     "cta_primary": "RESERVE YOUR SEAT NOW - LIMITED SPOTS!",
     "cta_secondary": "SECURE SPOT WITH 30% Fees Now - PAY REST LATER"
 }'::jsonb, 1)
-ON CONFLICT (page_path, section_key) DO UPDATE SET content = EXCLUDED.content;
+ON CONFLICT (page_path, section_key) DO NOTHING;
 
 -- 2. Custom Training Plan Section
 INSERT INTO public.site_content (page_path, section_key, content, order_index) VALUES
@@ -41,7 +41,7 @@ INSERT INTO public.site_content (page_path, section_key, content, order_index) V
     "form_title": "Get Free Career Guidance",
     "cta_text": "Get My Free Career Roadmap"
 }'::jsonb, 3)
-ON CONFLICT (page_path, section_key) DO UPDATE SET content = EXCLUDED.content;
+ON CONFLICT (page_path, section_key) DO NOTHING;
 
 -- 3. Placement Section
 INSERT INTO public.site_content (page_path, section_key, content, order_index) VALUES
@@ -64,7 +64,7 @@ INSERT INTO public.site_content (page_path, section_key, content, order_index) V
         {"name": "Microsoft", "logo": "/images/partners/microsoft.png"}
     ]
 }'::jsonb, 5)
-ON CONFLICT (page_path, section_key) DO UPDATE SET content = EXCLUDED.content;
+ON CONFLICT (page_path, section_key) DO NOTHING;
 
 -- 4. Proven Results Section
 INSERT INTO public.site_content (page_path, section_key, content, order_index) VALUES
@@ -80,7 +80,7 @@ INSERT INTO public.site_content (page_path, section_key, content, order_index) V
         {"icon": "Clock", "value": "2 Weeks", "label": "2-4 Weeks to Placement", "color": "text-slate-500"}
     ]
 }'::jsonb, 6)
-ON CONFLICT (page_path, section_key) DO UPDATE SET content = EXCLUDED.content;
+ON CONFLICT (page_path, section_key) DO NOTHING;
 
 -- 5. Career Advisors Section
 INSERT INTO public.site_content (page_path, section_key, content, order_index) VALUES
@@ -107,7 +107,7 @@ INSERT INTO public.site_content (page_path, section_key, content, order_index) V
     ],
     "cta": "SPEAK WITH AN ADVISOR - BOOK NOW"
 }'::jsonb, 7)
-ON CONFLICT (page_path, section_key) DO UPDATE SET content = EXCLUDED.content;
+ON CONFLICT (page_path, section_key) DO NOTHING;
 
 -- 6. Success Stories
 INSERT INTO public.site_content (page_path, section_key, content, order_index) VALUES
@@ -127,7 +127,7 @@ INSERT INTO public.site_content (page_path, section_key, content, order_index) V
         }
     ]
 }'::jsonb, 8)
-ON CONFLICT (page_path, section_key) DO UPDATE SET content = EXCLUDED.content;
+ON CONFLICT (page_path, section_key) DO NOTHING;
 
 -- 7. Alumni Community
 INSERT INTO public.site_content (page_path, section_key, content, order_index) VALUES
@@ -142,7 +142,7 @@ INSERT INTO public.site_content (page_path, section_key, content, order_index) V
     "linkedin_url": "https://www.linkedin.com/company/13357826/",
     "whatsapp_url": "https://www.whatsapp.com/channel/0029Vb5u9luHwXb481Y1Dx1X"
 }'::jsonb, 12)
-ON CONFLICT (page_path, section_key) DO UPDATE SET content = EXCLUDED.content;
+ON CONFLICT (page_path, section_key) DO NOTHING;
 
 -- ABOUT PAGE
 -- 8. About Values
@@ -164,7 +164,7 @@ INSERT INTO public.site_content (page_path, section_key, content, order_index) V
         }
     ]
 }'::jsonb, 3)
-ON CONFLICT (page_path, section_key) DO UPDATE SET content = EXCLUDED.content;
+ON CONFLICT (page_path, section_key) DO NOTHING;
 
 -- CORPORATE TRAINING PAGE
 -- 9. Hero
@@ -175,7 +175,7 @@ INSERT INTO public.site_content (page_path, section_key, content, order_index) V
     "description": "Customized corporate training solutions designed to upskill your teams, optimize business processes, and drive digital transformation.",
     "cta": "Get a Corporate Quote"
 }'::jsonb, 1)
-ON CONFLICT (page_path, section_key) DO UPDATE SET content = EXCLUDED.content;
+ON CONFLICT (page_path, section_key) DO NOTHING;
 
 -- 10. Offerings
 INSERT INTO public.site_content (page_path, section_key, content, order_index) VALUES
@@ -205,7 +205,7 @@ INSERT INTO public.site_content (page_path, section_key, content, order_index) V
         }
     ]
 }'::jsonb, 2)
-ON CONFLICT (page_path, section_key) DO UPDATE SET content = EXCLUDED.content;
+ON CONFLICT (page_path, section_key) DO NOTHING;
 
 -- 11. CTA
 INSERT INTO public.site_content (page_path, section_key, content, order_index) VALUES
@@ -215,7 +215,7 @@ INSERT INTO public.site_content (page_path, section_key, content, order_index) V
     "primary_cta": "Contact Us",
     "secondary_cta": "View Catalog"
 }'::jsonb, 3)
-ON CONFLICT (page_path, section_key) DO UPDATE SET content = EXCLUDED.content;
+ON CONFLICT (page_path, section_key) DO NOTHING;
 
 -- SITE SETTINGS
 -- 12. Announcement Bar
@@ -223,4 +223,4 @@ INSERT INTO public.site_settings (key, value) VALUES
 ('announcement_text', '"Save 10% on all SAP Online Courses! (Limited Slots)"'),
 ('announcement_highlight', '"EARLY BIRD SPECIAL:"'),
 ('announcement_visible', 'true')
-ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value;
+ON CONFLICT (key) DO NOTHING;
