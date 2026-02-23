@@ -6,12 +6,12 @@ export const aribaContent = {
     "category": "Functional",
     "price": "45,000",
     "duration": "50+ Hours",
-    "heroHeading": "Transform Your Career with #1 SAP Ariba Training Program",
-    "heroSubheading": "The ERPVITS **SAP Ariba Online Training** Program is a new step for individuals to learn various skills within digital procurement, supply chain management, and enterprise resource planning. Organizations are looking for certified SAP Ariba professionals and experts for maintaining procurement efficiency, managing cost and efficiency within the supply chain. The advanced **SAP Ariba Training** program focuses on the training and skills development for the IT professionals, procurement especially for ERP specialists and ERP consultants, and for learners to develop their skills and prepare for global consulting and implementations in **SAP Ariba Career** paths.",
+    "heroHeading": "Transform Your Career with <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600\">#1 SAP Ariba</span> Training Program",
+    "heroSubheading": "The ERPVITS SAP Ariba Training Program is a new step for individuals to learn various skills in digital procurement, supply chain management, and enterprise resource planning. Organizations are looking for certified SAP Ariba professionals to maintain procurement efficiency and manage costs within the supply chain. Our advanced SAP Ariba training program focuses skill development for IT professionals, procurement specialists, ERP consultants and other learners who want to improve their knowledge in SAP Ariba. This SAP Ariba course helps them prepare for global consulting roles and SAP Ariba implementation career paths.",
     "heroImage": "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP Ariba Infographic.webp",
     "description": "Our comprehensive SAP Ariba training program covers the entire source-to-pay lifecycle. You will learn how to manage suppliers, contracts, buying, and invoicing using the Ariba Network. This course is designed to make you job-ready with real-world scenarios and hands-on practice.",
-    "metaTitle": "SAP Ariba Training | Certification & Job support",
-    "metaDescription": "Learn SAP Ariba from experts. comprehensive module covering Sourcing, Contracts, SLP, Buying & Invoicing. 100% Practical Training with Placement Assistance.",
+    "metaTitle": "SAP Ariba Training Online | Enroll, Learn & Get Certified",
+    "metaDescription": "Enroll in SAP Ariba Training Online by ERPVITS. Master sourcing, procurement, and supplier network with led-sessions, live projects & certification support.",
     "features": [],
     "sections": [
         {
@@ -23,54 +23,54 @@ export const aribaContent = {
                     "description": "Our sessions are led by **SAP Ariba certified instructors** with extensive industry and practical experience. They not only teach the concepts but also share real-world scenarios, tips, and best practices to ensure you gain both theoretical knowledge and practical expertise."
                 },
                 {
-                    "title": "100% Hands-On Learning Methodology",
-                    "description": "**SAP Ariba Course** traditionally uses slides and presentation tools to explain concepts. But our program goes further. In every session, you will see live demonstrations on **Ariba Software** systems, and then you will participate in guided lab exercises that allow you to practice what you learned to reinforce it. By the end of your course, you will have configured requisition workflows, set up supplier master data, managed approval cycles, and executed sourcing events on real systems."
+                    "title": "100% Hands-On Learning",
+                    "description": "Most other SAP Ariba courses use the old approach of just using PPTs and slides. Our training goes beyond that. Each session has live training on the actual SAP Ariba training systems and has guided labs. At the end of the course you will learn how to configure requisition workflows, manage approval cycles, run and manage SAP Ariba sourcing events in a real SAP Ariba system."
                 },
                 {
                     "title": "Interactive Q&A Sessions",
-                    "description": "Outside of the primary instruction in the classroom, you have additional dedicated Q&A forums and live office hours, where instructors further answer your questions and elaborate on complicated subjects as well as provide personalized instruction based on your pace and your professional objectives."
+                    "description": "Our interactive Q&A sessions are designed to ensure you never feel stuck during your learning journey. In addition to the core training, we hold question and answer forums and special hours where instructors will answer your questions, clarify complex topics and provide you with personal guidance to keep you on track and work with you on your own goals."
                 },
                 {
                     "title": "Flexible Batch Timings",
-                    "description": "Seeing as multiple civilians and overseas professionals have to manage multiple competing priorities; work, family, and education, we run weekday evening batches (6 PM – 9 PM IST) and also offer weekend (Saturday and Sunday) batches. All sessions are recorded, so you can catch up on a missed live session asynchronously to maintain your continuity."
+                    "description": "We understand that working professionals and international participants have conflicting priorities. We offer weekday morning & evening batches in between 7AM-10PM & 7PM - 9PM IS) and weekend Saturday & Sunday batches. All sessions are recorded so you can view any class you couldn't attend and keep progressing without interruptions."
                 },
                 {
                     "title": "Minimal Batch Size for Personal Attention",
-                    "description": "Different from massive online courses for which instructors cater to thousands of anonymous learners, we limit our batches to 8-10 attendees. This enables instructors to provide individualized support and understand what you need to help you improve."
+                    "description": "We limit each batch to 8 to 10 participants so that you won't be lost like in other SAP Ariba online training courses. This small cohort structure enables the trainers to give you personal attention, monitor your development and focus on the areas you need the most help."
                 },
                 {
                     "title": "Career support",
-                    "description": "Learning SAP Ariba is only part of the equation—getting placed is the other part. Our dedicated career support staff helps you craft an SAP-focused resume, prepares you with mock interviews, and walks you through real interview questions from current hiring trends for **SAP Ariba Consultant jobs**. You'll be coached on how to effectively present project experience to help you shine in **Ariba Careers** interviews."
+                    "description": "Completing the SAP Ariba course is only one part of the process - getting placed is equally challenging. Our career support team helps you build an SAP relevant resume, prepares you for mock interviews and gives you real <a href=\"https://www.erpvits.com/blog/sap-ariba-interview-questions-and-answers/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Ariba interview questions</a> based on the current hiring trends for <a href=\"https://www.erpvits.com/blog/sap-ariba-jobs-and-salary/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Ariba Jobs</a>. You will learn how to describe your project experience in SAP Ariba interviews."
                 },
                 {
                     "title": "Alumni Network & Community Forum",
-                    "description": "Become a part of a flourishing network of SAP Ariba practitioners. Provide and receive advice, job leads, and frameworks, ask for and provide help, and establish professional networks that can result in referrals and partnerships."
+                    "description": "Become part of the expanding community of SAP Ariba professionals. You can ask questions, share information and job leads and build relationships that can lead to referrals, partnerships, and new SAP Ariba career opportunities."
                 },
                 {
                     "title": "Post-Training support",
-                    "description": "Your learning experience does not end with the completion of **SAP Ariba Course**. For the six months after training, you will receive instructor support whether to help you troubleshoot a real project, clarify tough concepts or prepare for your initial consulting engagements."
+                    "description": "Our support continues even after course completion. For 6 months after the SAP Ariba course, you will have access to support from instructors if you have questions about troubleshooting a live project, clarifying complex subjects, or if you need guidance for your first consulting role."
                 }
             ],
             "title": "Learn SAP Ariba from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            "subtitle": "Our **SAP Ariba Online Training** curriculum is delivered exclusively by certified SAP professionals, each with 12+ years of direct hands-on experience in procurement and supply chain management. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex procurement scenarios in a step-by-step manner.",
+            "subtitle": "We provide industry-focused SAP Ariba training that includes interactive sessions, real-time industry projects and certification support. The training is delivered by expert instructors who are SAP-certified and have a minimum of 12 years of industry experience. We emphasize practical, real-time knowledge to help professionals gain hands-on expertise.",
             "textAlign": "left"
         },
         {
             "type": "content_with_image",
             "items": [
-                "Trusted by 3500+ successful SAP professionals",
+                "Trusted by 8000+ successful SAP professionals",
                 "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro",
                 "Personalized pre-evaluation and learning path",
                 "Active alumni network and community forum",
                 "50+ guided lab exercises from basic to advanced",
                 "Quarterly updated materials aligned with latest releases",
                 "Mock interviews simulating real consultant scenarios",
-                "Dedicated **SAP Ariba Certification** prep week before exams"
+                "Dedicated **SAP Ariba Certification** prep before exams"
             ],
             "title": "Why Professionals Choose ERPVITS for SAP Ariba Online Training",
             "subtitle": "Success Guarantee & Credibility",
             "videoSrc": "https://www.youtube.com/embed/LZO_UPw5nqM?si=N_tBzFgnPc6Iv3y3",
-            "description": "ERPVITS has been a trusted training partner for SAP Modules, having trained hundreds of successful learners, many of whom are employed in prominent consulting companies, such as Accenture, Capgemini, Deloitte, Infosys, and Wipro. The quality of **SAP Ariba Training and Placement** achieved by our program, as outlined in our alumni network testimonials, reinforces our standing as a reputable training partner.",
+            "description": "ERPVITS is a certified training partner for SAP modules. With the reputation for training the number of professionals who got recruited by top consulting firms like Accenture, Capgemini, Deloitte, Infosys, and Wipro, our SAP Ariba Training quality and placement results shown through alumni reviews, secure us as a reliable and highly-rated training provider.",
             "supportText": "From pre-evaluation to post-training support, we guide you through every step of your SAP learning journey and career transition.",
             "supportTitle": "Complete support Ecosystem"
         },
@@ -90,7 +90,7 @@ export const aribaContent = {
                         "Set up approval workflows and configure templates."
                     ],
                     "learning_points": [
-                        "Get acquainted with SAP Ariba Buying and its place in the **SAP Procurement** ecosystem.",
+                        "Understand SAP Ariba Buying and its role within the SAP Procurement ecosystem.",
                         "Recognize the key features and benefits like cost reduction, process automation, and compliance.",
                         "Understand user interface navigation and system architecture.",
                         "Sourcing and contract templates: creation, configuration, and customization.",
@@ -106,7 +106,7 @@ export const aribaContent = {
                         "Validate ERP integration for master data synchronization."
                     ],
                     "learning_points": [
-                        "Understand the role of MDM in **Ariba Procurement** operations.",
+                        "Understand the role of MDM in **SAP Ariba Procurement** operations.",
                         "Know user, supplier, and accounting data management.",
                         "Configuring plants, cost centers, and ERP integration points."
                     ]
@@ -117,11 +117,11 @@ export const aribaContent = {
                     "hands_on": [
                         "Create sourcing events (RFI/RFQ/RFP) using **SAP Ariba Sourcing**.",
                         "Build and execute contract templates with approval workflows.",
-                        "Negotiation Processes and Supplier Awards on **SAP Ariba Supplier Network**."
+                        "Negotiation Processes and Supplier Awards on  <a href=\"https://www.bestonlinecareer.com/blog/ariba-supplier-network-performance-metrics\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Ariba Supplier Network</a>"
                     ],
                     "learning_points": [
                         "Overview of **SAP Ariba Sourcing** suite and its business value.",
-                        "Sourcing Lifecycle: Event creation, bid evaluation, and award.",
+                        "Sourcing Lifecycle: Event creation, bid evaluation and award.",
                         "Contract Management: Template creation, clause library, versioning, and approvals."
                     ]
                 },
@@ -131,12 +131,12 @@ export const aribaContent = {
                     "hands_on": [
                         "Execute a complete requisition-to-invoice cycle",
                         "Set up approval configurations",
-                        "Identify and resolve invoice discrepancies, and conduct a spend analysis"
+                        "Identify and resolve invoice discrepancies and conduct a spend analysis"
                     ],
                     "learning_points": [
                         "Complete lifecycle of **SAP Ariba Procurement** Procure-to-Pay",
                         "Requisitioning, PO generation, and multi-tier approvals",
-                        "Receiving procured items, **SAP Ariba Invoice Management**, and exception handling",
+                        "Receiving procured items, **SAP Ariba Invoice Management** and exception handling",
                         "Procurement analytics and comprehensive reporting using **Ariba Spend Management**"
                     ]
                 },
@@ -170,7 +170,7 @@ export const aribaContent = {
                     "title": "Guided Buying Implementation",
                     "duration": "6 Hours",
                     "hands_on": [
-                        "Design a guided buying portal",
+                        "Design a <a href=\"https://www.erpvits.com/blog/sap-ariba-guided-buying-complete-guide/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Ariba Guided Buying</a> portal",
                         "Configure catalogs and user policies",
                         "Monitor adoption metrics and enhance user experience accordingly"
                     ],
@@ -191,7 +191,7 @@ export const aribaContent = {
                     ],
                     "learning_points": [
                         "Cloud Integration Gateway (CIG) for **SAP Ariba integration with S/4HANA** connectivity",
-                        "Advanced reporting and **Ariba Spend Management** analytics",
+                        "Advanced reporting and <a href=\"https://www.erpvits.com/blog/how-sap-ariba-is-powering-intelligent-spend-management/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Ariba Intelligent Spend Management</a> analytics",
                         "**SAP Ariba Supplier Management** performance and contract renewals",
                         "Troubleshooting, compliance, and system security"
                     ]
@@ -366,46 +366,46 @@ export const aribaContent = {
                 {
                     "bg": "bg-orange-50",
                     "icon": "Factory",
-                    "role": "Select Lead SAP Ariba Consultant",
-                    "title": "Global Manufacturing Company's Procurement Transformation",
-                    "outcome": "Unified process, cost savings visibility, global compliance audit trail.",
-                    "scenario": "A multinational manufacturer with operations in 15 countries wants to centralize procurement across regional entities.",
+                    "role": "Lead SAP Ariba Consultant",
+                    "title": "Procurement Transformation of Global Manufacturing Company",
+                    "outcome": "A unified SAP Ariba procurement process which enhanced the visibility of the procurement process related to cost savings and the compliance audit trail for the entire globe.",
+                    "scenario": "A multinational manufacturer with operations in 15 countries intends to streamline the SAP Ariba procurement process vertically in each of the regional business units.",
                     "iconColor": "text-orange-600",
                     "responsibilities": [
-                        "Map current procurement processes",
-                        "Configure user hierarchies for regional approval flows",
-                        "Set up approval workflows for capital equipment",
-                        "Implement compliance checks for hazardous materials"
+                        "Developing procurement process mappings to outline the identified areas",
+                        "Define regional approval flows by user hierarchy",
+                        "Establish approval workflow for tactical purchases of capital equipment",
+                        "Define procurement compliance checks for controlled substances"
                     ]
                 },
                 {
                     "bg": "bg-orange-50",
                     "icon": "ShoppingBag",
                     "role": "SAP Ariba Implementation Consultant",
-                    "title": "Retail Organization's Supplier Onboarding Automation",
-                    "outcome": "Reduced onboarding time by 60%, improved data accuracy, automated reminders.",
-                    "scenario": "A retail chain with 500+ suppliers wants to automate supplier onboarding and reduce manual data entry errors.",
+                    "title": "Automation of Supplier Onboarding for a Retail Organization",
+                    "outcome": "Onboarding process duration was reduced by 60%, improved accuracy of data, and automated a portion of the process for sending reminders.",
+                    "scenario": "A retail chain with over 500 suppliers wants to streamline the SAP Ariba supplier registration process and minimize cases of manual data entry using the SAP Ariba vendor portal.",
                     "iconColor": "text-orange-600",
                     "responsibilities": [
-                        "Design self-service supplier onboarding portal",
-                        "Configure automated qualification workflows",
-                        "Set up integration with ERP for vendor data",
-                        "Create expiration alerts for supplier certificates"
+                        "Develop a self-service supplier onboarding solution portal on the SAP Ariba vendor portal with SAP Ariba vendor login and SAP Ariba Supplier Network login capabilities",
+                        "Configure supplier qualification workflow automation",
+                        "Enable ERP integration for synchronization of the vendor master data",
+                        "Establish supplier certification expiration alerts"
                     ]
                 },
                 {
                     "bg": "bg-orange-50",
                     "icon": "Laptop2",
                     "role": "Solution Architect / Functional Lead",
-                    "title": "Enterprise Guided Buying for Tech Company",
-                    "outcome": "90% user adoption, compliant spend, reduced maverick spending.",
-                    "scenario": "A 5,000-employee tech company wants to streamline IT, office supplies, and professional services procurement.",
+                    "title": "Enterprise Guided Buying for Technology Company",
+                    "outcome": "90% user adoption, spend management compliance, and significant maverick spending reduction.",
+                    "scenario": "A 5,000-employee technology company needs to optimize procurement for IT equipment, office supplies, and professional services.",
                     "iconColor": "text-orange-600",
                     "responsibilities": [
-                        "Design intuitive Guided Buying landing pages",
-                        "Configure punched-out catalogs for laptops",
-                        "Implement policies for preferred vendors",
-                        "Set up tactical sourcing for non-catalog items"
+                        "Create user-friendly SAP Ariba Guided Buying landing pages",
+                        "Configure punchout catalogs for the purchase of laptops",
+                        "Configure policies of preferred vendors",
+                        "Create tactical sourcing processes for non-catalog items"
                     ]
                 }
             ]
@@ -439,7 +439,7 @@ export const aribaContent = {
         },
         {
             "type": "detailed_career_roadmap",
-            "alumniCount": "3500+"
+            "alumniCount": "2500+"
         },
         {
             "type": "detailed_post_training_journey",
@@ -449,10 +449,10 @@ export const aribaContent = {
                     "color": "orange",
                     "title": "Immediate Post-Training",
                     "points": [
-                        "The course completion certificate is at hand.",
+                        "You will receive ERPVITS <a href=\"https://www.erpvits.com/blog/sap-ariba-certification/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Ariba Certification</a>",
                         "All recorded and structured materials for the coursework are available and can be accessed at any time.",
-                        "The alumni network and community forum can be joined.",
-                        "Resume updates can begin, focusing on SAP Ariba expertise."
+                        "You will be able to join the alumni network and community forum.",
+                        "You can begin updating your resume with a focus on SAP Ariba expertise."
                     ],
                     "timeline": "Week 1-2"
                 },
@@ -461,10 +461,10 @@ export const aribaContent = {
                     "color": "slate",
                     "title": "Certification & Job Search",
                     "points": [
-                        "SAP Ariba Certification exams can be applied to.",
-                        "The job search can begin with the support of the career services.",
+                        "You can apply for SAP Ariba Certification exams.",
+                        "The job search journey will begin with complete support.",
                         "Alumni networking events can be attended.",
-                        "Interview coaching can be received, which is accompanied with constructive feedback on mock interviews for Ariba Consultant roles."
+                        "You will receive personalized interview coaching along with detailed and constructive feedback"
                     ],
                     "timeline": "Week 3-6"
                 },
@@ -473,9 +473,9 @@ export const aribaContent = {
                     "color": "orange",
                     "title": "First Role & Project support",
                     "points": [
-                        "The 1st SAP Ariba consulting opportunity can be secured.",
-                        "Experience the project that is designed to lend you practice for your new position.",
-                        "Instruction support that is designed for the time after training concludes."
+                        "Your first SAP Ariba consulting opportunity will be secured.",
+                        "You will gain real-time project experience and practical exposure.",
+                        "Continued instructor support will be available even after the training concludes."
                     ],
                     "timeline": "Month 2-3"
                 },
@@ -495,7 +495,7 @@ export const aribaContent = {
                     "color": "orange",
                     "title": "Long-Term Growth",
                     "points": [
-                        "For your sustained growth in the long term, you will have to acquire the SAP Ariba Procurement Certification in procurement, SAP Ariba Sourcing, and contracts for you to fully develop your certification.",
+                        "For your sustained growth in the long term, you will have to acquire the SAP Ariba Procurement Certification in procurement, <a href=\"https://www.erpvits.com/blog/sap-ariba-sourcing-configuration/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Ariba Sourcing</a> and contracts for you to fully develop your certification.",
                         "You will also have to develop your expertise in certain fields as well as your leading and project management skills to make the shift to advanced consulting or account management.",
                         "You can also pursue a specialization in other areas of your choice such as SAP Ariba integration, analytics, and risk management."
                     ],
@@ -593,49 +593,49 @@ export const aribaContent = {
                 {
                     "name": "Amit Kumar",
                     "role": "SAP Ariba Consultant at Accenture",
-                    "text": "Outstanding training and real project exposure. I landed a consulting role at Accenture within 8 weeks of completing the course. The hands-on approach and expert instructors made all the difference.",
+                    "text": "Excellent SAP Ariba training with real project exposure. Within 8 weeks of completing the course, I got a consulting job at Accenture. Hands on experience and excellent trainers made the difference.",
                     "image": "/images/testimonials/amit.jpg",
-                    "quote": "Outstanding training and real project exposure. I landed a consulting role at Accenture within 8 weeks of completing the course. The hands-on approach and expert instructors made all the difference.",
+                    "quote": "Excellent SAP Ariba training with real project exposure. Within 8 weeks of completing the course, I got a consulting job at Accenture. Hands on experience and excellent trainers made the difference.",
                     "author": "Amit Kumar"
                 },
                 {
-                    "name": "Priya Sharma",
+                    "name": "Puja Sharma",
                     "role": "Procurement Manager",
-                    "text": "The weekend flexibility allowed me to learn while working. My employer was so impressed with my skills that they promoted me to Procurement Manager. This course accelerated my career by 3 years.",
+                    "text": "Completing my SAP Ariba course while working was made possible because of the flexibility of the weekend batch. My employer promoted me to Procurement Manager because of my newly acquired skills. This course has advanced my career by a minimum of 2 years.",
                     "image": "/images/testimonials/priya.jpg",
-                    "quote": "The weekend flexibility allowed me to learn while working. My employer was so impressed with my skills that they promoted me to Procurement Manager. This course accelerated my career by 3 years.",
-                    "author": "Priya Sharma"
+                    "quote": "Completing my SAP Ariba course while working was made possible because of the flexibility of the weekend batch. My employer promoted me to Procurement Manager because of my newly acquired skills. This course has advanced my career by a minimum of 2 years.",
+                    "author": "Puja Sharma"
                 },
                 {
                     "name": "Rajesh Patel",
                     "role": "Senior SAP Consultant",
-                    "text": "Best decision I made. The capstone projects were exactly like real client work. I walked into my first consulting role feeling confident, not intimidated. The certification support was exceptional.",
+                    "text": "The best career investment I have made. The capstone projects were as real as it gets. As I entered my first position as an SAP Ariba consultant, I was optimistic and had great self-belief. Support for obtaining the SAP Ariba certification was great. Thanks ERPVITS full team for my career support.",
                     "image": "/images/testimonials/rajesh.jpg",
-                    "quote": "Best decision I made. The capstone projects were exactly like real client work. I walked into my first consulting role feeling confident, not intimidated. The certification support was exceptional.",
+                    "quote": "The best career investment I have made. The capstone projects were as real as it gets. As I entered my first position as an SAP Ariba consultant, I was optimistic and had great self-belief. Support for obtaining the SAP Ariba certification was great. Thanks ERPVITS full team for my career support.",
                     "author": "Rajesh Patel"
                 },
                 {
                     "name": "Ananya Singh",
                     "role": "Certified SAP Ariba Professional",
-                    "text": "Superb certification preparation. I passed all three SAP Ariba exams on my first attempt. The mock exams and study materials were spot-on. Highly recommended!",
+                    "text": "Support for the global SAP Ariba certification was superb. I passed all 2 exams on the first attempt. The study materials and practice exams were great for the actual exam. I recommend it.",
                     "image": "/images/testimonials/ananya.jpg",
-                    "quote": "Superb certification preparation. I passed all three SAP Ariba exams on my first attempt. The mock exams and study materials were spot-on. Highly recommended!",
+                    "quote": "Support for the global SAP Ariba certification was superb. I passed all 2 exams on the first attempt. The study materials and practice exams were great for the actual exam. I recommend it.",
                     "author": "Ananya Singh"
                 },
                 {
                     "name": "Vikram Desai",
                     "role": "Integration Consultant at Deloitte",
-                    "text": "The instructor's real-world insights were invaluable. I didn't just learn SAP Ariba; I learned how to apply it in complex enterprise environments. The alumni network has already brought consulting opportunities my way.",
+                    "text": "The instructor's real-world insights were invaluable. I didn't just learn SAP Ariba, I learned how to apply it in complex enterprise environments. The alumni network has already brought consulting opportunities my way.",
                     "image": "/images/testimonials/vikram.jpg",
-                    "quote": "The instructor's real-world insights were invaluable. I didn't just learn SAP Ariba; I learned how to apply it in complex enterprise environments. The alumni network has already brought consulting opportunities my way.",
+                    "quote": "The instructor's real-world insights were invaluable. I didn't just learn SAP Ariba, I learned how to apply it in complex enterprise environments. The alumni network has already brought consulting opportunities my way.",
                     "author": "Vikram Desai"
                 },
                 {
                     "name": "Sneha Reddy",
                     "role": "Procurement Analyst at Infosys",
-                    "text": "From zero SAP knowledge to landing my dream job in 4 months! The instructors are patient, knowledgeable, and truly care about learner success. The lifetime recording access is a huge bonus.",
+                    "text": "From zero SAP knowledge to landing my dream job in 4 months! The instructor is patient, knowledgeable and truly care about learner success. The lifetime recording access is a huge bonus.",
                     "image": "/images/testimonials/sneha.jpg",
-                    "quote": "From zero SAP knowledge to landing my dream job in 4 months! The instructors are patient, knowledgeable, and truly care about learner success. The lifetime recording access is a huge bonus.",
+                    "quote": "From zero SAP knowledge to landing my dream job in 4 months! The instructor is patient, knowledgeable and truly care about learner success. The lifetime recording access is a huge bonus.",
                     "author": "Sneha Reddy"
                 }
             ],
@@ -673,47 +673,60 @@ export const aribaContent = {
             "type": "detailed_faq",
             "items": [
                 {
-                    "answer": "SAP Ariba is an important Cloud based solution for your procurement, sourcing, and supplier collaboration. At ERPVITS we offer complete SAP Ariba Training with a focus on important business scenarios, practical sessions, and guided projects. Let us help you master Ariba Software tools and workflows.",
+                    "a": "SAP Ariba offers cloud-based solutions for SAP Ariba procurement, strategic sourcing, and supplier collaboration via the SAP Ariba Business Network login.\nAt ERPVITS, SAP Ariba Training is created covering all important facets from real business scenarios, to real life projects that provide practical experience. With our program, you will get to fully understand the SAP Ariba platform and the tools and workflows that SAP Ariba uses for real consulting work.",
+                    "answer": "SAP Ariba offers cloud-based solutions for SAP Ariba procurement, strategic sourcing, and supplier collaboration via the SAP Ariba Business Network login.\nAt ERPVITS, SAP Ariba Training is created covering all important facets from real business scenarios, to real life projects that provide practical experience. With our program, you will get to fully understand the SAP Ariba platform and the tools and workflows that SAP Ariba uses for real consulting work.",
                     "question": "What is SAP Ariba and how does ERPVITS help me learn it?"
                 },
                 {
-                    "answer": "In the SAP Ariba Sourcing module training at ERPVITS, you learn to configure various Ariba sourcing applications to create sourcing events, administer RFQs, analyze supplier bid proposals, refine negotiation tactics, and facilitate execution through the Ariba sourcing platform.",
-                    "question": "What can I expect to learn in the SAP Ariba Sourcing module?"
+                    "a": "The SAP Ariba Sourcing module will teach you how to manage and create sourcing events, administer RFPs and RFQs, manage the entirety of the sourcing cycle within the SAP Ariba Sourcing platform using SAP Ariba sourcing login and develop negotiation techniques to analyze and manage bids from SAP Ariba suppliers.",
+                    "q": "What will be covered in the SAP Ariba Sourcing module?",
+                    "answer": "The SAP Ariba Sourcing module will teach you how to manage and create sourcing events, administer RFPs and RFQs, manage the entirety of the sourcing cycle within the SAP Ariba Sourcing platform using SAP Ariba sourcing login and develop negotiation techniques to analyze and manage bids from SAP Ariba suppliers.",
+                    "question": "What will be covered in the SAP Ariba Sourcing module?"
                 },
                 {
-                    "answer": "SAP Ariba Supplier Network connects buyers and suppliers across the world. At ERPVITS, you learn the supplier registration process, catalog management, and the steps within the Ariba Supplier Management system pertaining to transaction processes.",
-                    "question": "What is SAP Ariba Supplier Network?"
+                    "a": "At ERPVITS, you will understand how to manage catalogs, the SAP Ariba supplier registration process and how the transaction flow works in the SAP Ariba Network. You will also get to learn how the SAP Ariba Business Network integrates suppliers and buyers worldwide and how to use the SAP Ariba supplier login and SAP Ariba network login.",
+                    "q": "What can I learn in SAP Ariba Supplier Network?",
+                    "answer": "At ERPVITS, you will understand how to manage catalogs, the SAP Ariba supplier registration process and how the transaction flow works in the SAP Ariba Network. You will also get to learn how the SAP Ariba Business Network integrates suppliers and buyers worldwide and how to use the SAP Ariba supplier login and SAP Ariba network login.",
+                    "question": "What can I learn in SAP Ariba Supplier Network?"
                 },
                 {
-                    "answer": "ERPVITS covers Ariba Services and Ariba Spend Management to help learners analyze company spend, automate procurement processes, and achieve cost control through intelligent spend analytics.",
+                    "a": "With ERPVITS, learners are able to understand company-wide spend, automate SAP Ariba procurement workflow and <a href=\"https://www.erpvits.com/blog/how-sap-ariba-is-powering-intelligent-spend-management/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Ariba Intelligent Spend Management</a> and reporting tools to control SAP Ariba cost on the SAP Ariba platform.",
+                    "answer": "With ERPVITS, learners are able to understand company-wide spend, automate SAP Ariba procurement workflow and <a href=\"https://www.erpvits.com/blog/how-sap-ariba-is-powering-intelligent-spend-management/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Ariba Intelligent Spend Management</a> and reporting tools to control SAP Ariba cost on the SAP Ariba platform.",
                     "question": "What are Ariba Services and Ariba Spend Management?"
                 },
                 {
-                    "answer": "SAP Procurement powered by Ariba Procurement simplifies sourcing, contract management, and supplier collaboration. ERPVITS provides practical exposure to SAP Ariba Procurement workflows to prepare you for real-world projects.",
+                    "a": "SAP Ariba Procurement enables the simplification of strategic sourcing, SAP Ariba contract management, and massive supplier collaboration. At ERPVITS, you learn to work on real SAP Ariba Procurement Process so that you can handle live project environments easily.",
+                    "answer": "SAP Ariba Procurement enables the simplification of strategic sourcing, SAP Ariba contract management, and massive supplier collaboration. At ERPVITS, you learn to work on real SAP Ariba Procurement Process so that you can handle live project environments easily.",
                     "question": "How does SAP Ariba support modern procurement?"
                 },
                 {
-                    "answer": "ERPVITS offers SAP Ariba Online Training with live sessions, industry-aligned projects, and placement support. You'll also receive guidance on SAP Ariba Certification, resume preparation, and interview success strategies.",
+                    "a": "Live sessions, industry-oriented projects and placement support are hallmarks of ERPVITS SAP Ariba Online Training. You will also receive thorough assistance on SAP Ariba Certification, guidance on resume building and best practices for interviews aimed at SAP Ariba Consultant jobs.",
+                    "answer": "Live sessions, industry-oriented projects and placement support are hallmarks of ERPVITS SAP Ariba Online Training. You will also receive thorough assistance on SAP Ariba Certification, guidance on resume building and best practices for interviews aimed at SAP Ariba Consultant jobs.",
                     "question": "Why should I join SAP Ariba Training at ERPVITS?"
                 },
                 {
-                    "answer": "Anyone interested in procurement, supply chain, or SAP technologies can join. Whether you're a fresher, working professional, or consultant—ERPVITS SAP Ariba Course is designed to help you build job-ready skills.",
+                    "a": "If you are interested in procurement, supply chain management, or SAP technologies, you can enroll. Our SAP Ariba Course helps working professionals and experienced consultants develop progressively job-ready skills.",
+                    "answer": "If you are interested in procurement, supply chain management, or SAP technologies, you can enroll. Our SAP Ariba Course helps working professionals and experienced consultants develop progressively job-ready skills.",
                     "question": "Who can enroll in the SAP Ariba Course?"
                 },
                 {
-                    "answer": "SAP Ariba Certification validates your expertise in procurement and supplier management. ERPVITS prepares you for the official certification exam and helps you become a certified SAP Ariba Consultant or Ariba Specialist.",
+                    "a": "An SAP Ariba Certification exam signifies you have specialized and detailed knowledge of SAP Ariba procurement, sourcing, and supplier management. With the help of ERPVITS, you will gain the needed skills to confidently take the SAP Ariba Certification exam and be well prepared to become an SAP Ariba Consultant or Ariba Specialist and compete in the global marketplace.",
+                    "answer": "An SAP Ariba Certification exam signifies you have specialized and detailed knowledge of SAP Ariba procurement, sourcing, and supplier management. With the help of ERPVITS, you will gain the needed skills to confidently take the SAP Ariba Certification exam and be well prepared to become an SAP Ariba Consultant or Ariba Specialist and compete in the global marketplace.",
                     "question": "What is the SAP Ariba Certification and why is it valuable?"
                 },
                 {
-                    "answer": "ERPVITS offers SAP Ariba courses at reasonable fees. The SAP Ariba Course Fees depend on the course module and the preferred training mode. Pricing at ERPVITS covers all the essentials: hands-on training, learning materials, placement guidance, and assistance with certification.",
+                    "a": "All the SAP Ariba courses offered by ERPVITS are of high quality and offered at reasonable and affordable prices. Costs of the SAP Ariba Course are based on the specifics of the module chosen and training methodology chosen. Each of the price options is inclusive of practical training, learning materials, guidance on placements, and training for SAP Ariba Certification.",
+                    "answer": "All the SAP Ariba courses offered by ERPVITS are of high quality and offered at reasonable and affordable prices. Costs of the SAP Ariba Course are based on the specifics of the module chosen and training methodology chosen. Each of the price options is inclusive of practical training, learning materials, guidance on placements, and training for SAP Ariba Certification.",
                     "question": "What are ERPVITS's SAP Ariba course fees?"
                 },
                 {
-                    "answer": "The SAP Ariba Certification Cost is set by SAP Education. At ERPVITS, we provide comprehensive guidance for the exam, along with practice tests and mentoring aimed at helping you to obtain the certification on the first attempt.",
+                    "a": "The SAP Ariba certification cost is determined by SAP Education based on each specific exam. At ERPVITS, we facilitate all the SAP Ariba exam preparation you need, including practice tests and individualized guidance, to ensure that you become SAP Ariba certified in your first attempt.",
+                    "answer": "The SAP Ariba certification cost is determined by SAP Education based on each specific exam. At ERPVITS, we facilitate all the SAP Ariba exam preparation you need, including practice tests and individualized guidance, to ensure that you become SAP Ariba certified in your first attempt.",
                     "question": "What is the cost for SAP Ariba Certification?"
                 },
                 {
-                    "answer": "ERPVITS provides comprehensive SAP Ariba Training with live project assignments which you are expected to complete and certification preparation. Career counseling and job assistance are also offered at ERPVITS to successfully become an SAP Ariba Consultant.",
+                    "a": "At ERPVITS, for SAP Ariba Training, you get guidance for your SAP Ariba certification, as well as your resume building, project assignments, career counseling and job placement assistance. After completing the program, you will be trained enough to apply for positions as SAP Ariba consultants in top tier companies.",
+                    "answer": "At ERPVITS, for SAP Ariba Training, you get guidance for your SAP Ariba certification, as well as your resume building, project assignments, career counseling and job placement assistance. After completing the program, you will be trained enough to apply for positions as SAP Ariba consultants in top tier companies.",
                     "question": "How to become an SAP Ariba Consultant through ERPVITS?"
                 },
                 {
@@ -721,32 +734,34 @@ export const aribaContent = {
                     "question": "What are the different career opportunities available after completing the Ariba course?"
                 },
                 {
-                    "answer": "ERPVITS explains the SAP Ariba integration with S4 HANA in intricate details. Sessions include data flow between Ariba and core SAP systems utilizing the Cloud Integration Gateway (CIG) along with API-driven connections.",
+                    "a": "At ERPVITS, you will be trained for SAP Ariba integration with SAP S/4HANA and how to manage data flow configuration via the Cloud Integration Gateway (CIG) and API-driven connections. You'll be taught to work with the SAP Ariba API documentation and the SAP Ariba developer portal.",
+                    "answer": "At ERPVITS, you will be trained for SAP Ariba integration with SAP S/4HANA and how to manage data flow configuration via the Cloud Integration Gateway (CIG) and API-driven connections. You'll be taught to work with the SAP Ariba API documentation and the SAP Ariba developer portal.",
                     "question": "How does SAP Ariba integrate with SAP S/4HANA?"
                 },
                 {
-                    "answer": "We include all primary SAP Ariba Solutions in our course, which are SAP Ariba Sourcing, Buying & Invoicing, Contract Management, SAP Ariba Supplier Management, and Joined with practical implementation of use cases.",
+                    "a": "All of the essential SAP Ariba modules are included in the curriculum. There are SAP Ariba Sourcing, SAP Ariba Buying and Invoicing, SAP Ariba Contract Management, SAP Ariba Supplier Management, SAP Ariba Guided Buying, SAP Ariba Supply Chain Collaboration and SAP Ariba Commerce Automation. All of their practical implementation use cases are included.",
+                    "answer": "All of the essential SAP Ariba modules are included in the curriculum. There are SAP Ariba Sourcing, SAP Ariba Buying and Invoicing, SAP Ariba Contract Management, SAP Ariba Supplier Management, SAP Ariba Guided Buying, SAP Ariba Supply Chain Collaboration and SAP Ariba Commerce Automation. All of their practical implementation use cases are included.",
                     "question": "What are the main SAP Ariba Solutions covered in the course?"
                 },
                 {
-                    "answer": "SAP Ariba Pricing is determined by the scale of the business and usage. In Ariba Software training, ERPVITS discusses the functional aspects of pricing frameworks, licenses, and the costs related to implementation.",
+                    "a": "SAP Ariba Pricing is based on many factors, like the size of the company, number of employees using the system, and the number of modules purchased. In the SAP Ariba training course at ERPVITS, you will be taught the working methodology of SAP Ariba pricing, licensing, SAP Ariba cost, and how it will affect you. You will also learn about the implementation of SAP Ariba Pricing.",
+                    "answer": "SAP Ariba Pricing is based on many factors, like the size of the company, number of employees using the system, and the number of modules purchased. In the SAP Ariba training course at ERPVITS, you will be taught the working methodology of SAP Ariba pricing, licensing, SAP Ariba cost, and how it will affect you. You will also learn about the implementation of SAP Ariba Pricing.",
                     "question": "What is SAP Ariba Pricing and how does it work for companies?"
                 },
                 {
-                    "answer": "Absolutely! ERPVITS provides SAP Ariba Training with Placement assistance. We aid in creating a strong resume, interview preparation, and offer connections with recruiters looking to fill positions related to SAP Ariba Consultant jobs.",
+                    "a": "Yes. SAP Ariba Training at ERPVITS comes with placement support. We assist you in creating an SAP-oriented resume, conducting mock technical interviews, and engaging with recruiters who are actively sourcing SAP Ariba consultant positions, SAP Ariba jobs and SAP Ariba jobs in India.",
+                    "answer": "Yes. SAP Ariba Training at ERPVITS comes with placement support. We assist you in creating an SAP-oriented resume, conducting mock technical interviews, and engaging with recruiters who are actively sourcing SAP Ariba consultant positions, SAP Ariba jobs and SAP Ariba jobs in India.",
                     "question": "Does ERPVITS provide SAP Ariba Training with Placement support?"
                 },
                 {
-                    "answer": "Absolutely. ERPVITS offers SAP Ariba Online Training obtainable from any place. Engage with live trainers, access recorded sessions, and engage in practical sessions on the Ariba Software system remotely with our Ariba Online Training program.",
+                    "a": "Yes. ERPVITS provides SAP Ariba Online Training for any location. Instructors can be interacted with live, sessions can be recorded, and labs can be accessed remotely for hands-on practice, which provides an opportunity for learners from India and other countries to learn.",
+                    "answer": "Yes. ERPVITS provides SAP Ariba Online Training for any location. Instructors can be interacted with live, sessions can be recorded, and labs can be accessed remotely for hands-on practice, which provides an opportunity for learners from India and other countries to learn.",
                     "question": "Can I take SAP Ariba Online Training from anywhere?"
                 },
                 {
-                    "answer": "ERPVITS offers SAP Ariba Online Training for learners across India. We provide SAP Ariba Training in Hyderabad, SAP Ariba Training in Pune, and SAP Ariba Training in Bangalore through live online sessions led by industry experts. Flexible weekend and weekday batches are available for working professionals looking for SAP Ariba Training near me.",
+                    "a": "SAP Ariba Training is available for participants from all over India and the other countries. We provide SAP Ariba Training in Hyderabad and SAP Ariba Training in Pune and Bangalore. Our trainers are industry professionals. We have weekend and weekday sessions for working professionals regarding SAP Ariba Training.",
+                    "answer": "SAP Ariba Training is available for participants from all over India and the other countries. We provide SAP Ariba Training in Hyderabad and SAP Ariba Training in Pune and Bangalore. Our trainers are industry professionals. We have weekend and weekday sessions for working professionals regarding SAP Ariba Training.",
                     "question": "Do you have SAP Ariba Training near me?"
-                },
-                {
-                    "answer": "At ERPVITS, we do provide technical training, but we also assist your SAP Ariba Career with resume preparation, interview coaching, and job placements in top SAP consulting firms for promising Ariba Careers.",
-                    "question": "How does ERPVITS help in Ariba Careers?"
                 }
             ],
             "title": "Frequently Asked Questions (FAQs) – SAP Ariba Training at ERPVITS"

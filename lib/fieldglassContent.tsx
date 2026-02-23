@@ -693,7 +693,6 @@ export const fieldglassContent = {
         },
         {
             "type": "detailed_career_roadmap",
-            "alumniCount": "1000+",
             "items": [
                 {
                     "stage": "Start (1-3)",
@@ -712,10 +711,20 @@ export const fieldglassContent = {
                 }
             ],
             "stats": [
-                { "value": "150%+", "label": "Increase in Job Earnings" },
-                { "value": "400+", "label": "Companies Hiring" },
-                { "value": "$115K", "label": "Average Starting Salary" }
-            ]
+                {
+                    "label": "Increase in Job Earnings",
+                    "value": "150%+"
+                },
+                {
+                    "label": "Companies Hiring",
+                    "value": "400+"
+                },
+                {
+                    "label": "Average Starting Salary",
+                    "value": "$115K"
+                }
+            ],
+            "alumniCount": "1000+"
         },
         {
             "type": "detailed_post_training_journey",

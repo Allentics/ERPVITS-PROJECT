@@ -653,7 +653,6 @@ export const abapContent = {
         },
         {
             "type": "detailed_career_roadmap",
-            "alumniCount": "500+",
             "items": [
                 {
                     "stage": "Years 1–2",
@@ -689,7 +688,8 @@ export const abapContent = {
                     "label": "Average Starting Salary",
                     "value": "$125K, ₹9.5 LPA"
                 }
-            ]
+            ],
+            "alumniCount": "500+"
         },
         {
             "type": "detailed_post_training_journey",

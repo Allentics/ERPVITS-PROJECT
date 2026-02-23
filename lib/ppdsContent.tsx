@@ -573,7 +573,6 @@ export const ppdsContent = {
         },
         {
             "type": "detailed_career_roadmap",
-            "alumniCount": "500+",
             "items": [
                 {
                     "stage": "Start (1-2)",
@@ -609,7 +608,8 @@ export const ppdsContent = {
                     "label": "Average Starting Salary",
                     "value": "$105K, ₹8 LPA"
                 }
-            ]
+            ],
+            "alumniCount": "500+"
         },
         {
             "type": "detailed_companies",

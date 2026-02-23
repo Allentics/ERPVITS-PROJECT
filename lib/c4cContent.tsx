@@ -277,7 +277,7 @@ export const c4cContent = {
         {
             "type": "content_with_image",
             "items": [
-                "Trusted by 600+ successful SAP C4C developers.",
+                "Trusted by 500+ successful SAP C4C developers.",
                 "Alumni at Accenture, Capgemini, Deloitte, Infosys and Wipro",
                 "Tailored pre-evaluation and cloud development learning path.",
                 "Active alumni network and cloud developer community forum.",
@@ -612,7 +612,6 @@ export const c4cContent = {
         },
         {
             "type": "detailed_career_roadmap",
-            "alumniCount": "600+",
             "items": [
                 {
                     "stage": "Start (1-3)",
@@ -643,7 +642,8 @@ export const c4cContent = {
                     "label": "Average Starting Salary",
                     "value": "$110K"
                 }
-            ]
+            ],
+            "alumniCount": "500+"
         },
         {
             "type": "detailed_companies",

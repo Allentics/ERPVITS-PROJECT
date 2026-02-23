@@ -118,7 +118,7 @@ export default function CareerGuidanceModal({ isOpen, onClose, defaultCourse = "
 
             <div
                 ref={modalRef}
-                className="relative bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto animate-in fade-in zoom-in duration-200"
+                className="relative bg-white rounded-2xl shadow-2xl w-full max-w-lg overflow-y-auto animate-in fade-in zoom-in duration-200"
             >
                 <div className="absolute top-4 right-4 z-10">
                     <button
@@ -129,7 +129,7 @@ export default function CareerGuidanceModal({ isOpen, onClose, defaultCourse = "
                     </button>
                 </div>
 
-                <div className="p-6 md:p-8">
+                <div className="p-4 md:p-5">
                     {status === 'success' ? (
                         <div className="text-center py-12">
                             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -151,37 +151,37 @@ export default function CareerGuidanceModal({ isOpen, onClose, defaultCourse = "
                         </div>
                     ) : (
                         <>
-                            <h3 className="text-2xl font-bold mb-6 text-center text-slate-900">{DEFAULT_CONTENT.form_title}</h3>
-                            <form className="space-y-4" onSubmit={handleSubmit}>
+                            <h3 className="text-xl font-bold mb-3 text-center text-slate-900">{DEFAULT_CONTENT.form_title}</h3>
+                            <form className="space-y-3" onSubmit={handleSubmit}>
                                 <div>
-                                    <label className="block text-sm font-semibold mb-1 text-slate-700">Full Name</label>
+                                    <label className="block text-xs font-semibold mb-0.5 text-slate-700">Full Name</label>
                                     <input
                                         type="text"
                                         required
                                         value={formData.fullName}
                                         onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                                        className="w-full px-3 py-2 text-sm rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                                         placeholder="John Doe"
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-semibold mb-1 text-slate-700">Email Address</label>
+                                    <label className="block text-xs font-semibold mb-0.5 text-slate-700">Email Address</label>
                                     <input
                                         type="email"
                                         required
                                         value={formData.email}
                                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                                        className="w-full px-3 py-2 text-sm rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                                         placeholder="john@example.com"
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-semibold mb-1 text-slate-700">Phone Number</label>
-                                    <div className="flex gap-3">
+                                    <label className="block text-xs font-semibold mb-0.5 text-slate-700">Phone Number</label>
+                                    <div className="flex gap-2">
                                         <select
                                             value={countryCode}
                                             onChange={(e) => setCountryCode(e.target.value)}
-                                            className="w-[120px] px-3 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none bg-white text-gray-700"
+                                            className="w-[110px] px-2 py-2 text-sm rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none bg-white text-gray-700"
                                         >
                                             {countryCodes.map((country) => (
                                                 <option key={country.name} value={country.code}>
@@ -194,18 +194,18 @@ export default function CareerGuidanceModal({ isOpen, onClose, defaultCourse = "
                                             required
                                             value={formData.phone}
                                             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                                            className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none"
+                                            className="flex-1 px-3 py-2 text-sm rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none"
                                             placeholder="98765 43210"
                                         />
                                     </div>
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-semibold mb-1 text-slate-700">Current Role / Background</label>
+                                    <label className="block text-xs font-semibold mb-0.5 text-slate-700">Current Role / Background</label>
                                     <select
                                         required
                                         value={formData.background}
                                         onChange={(e) => setFormData({ ...formData, background: e.target.value })}
-                                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-white"
+                                        className="w-full px-3 py-2 text-sm rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-white"
                                     >
                                         <option value="">Select your background...</option>
                                         <option value="Student / Fresher">Student / Fresher</option>
@@ -217,11 +217,11 @@ export default function CareerGuidanceModal({ isOpen, onClose, defaultCourse = "
                                     </select>
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-semibold mb-1 text-slate-700">SAP Module *</label>
+                                    <label className="block text-xs font-semibold mb-0.5 text-slate-700">SAP Module *</label>
                                     <select
                                         value={formData.interestedCourse}
                                         onChange={(e) => setFormData({ ...formData, interestedCourse: e.target.value })}
-                                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-white"
+                                        className="w-full px-3 py-2 text-sm rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-white"
                                     >
                                         <option value="">Select SAP Module</option>
                                         {uniqueCourses.map((course, index) => (
@@ -232,19 +232,19 @@ export default function CareerGuidanceModal({ isOpen, onClose, defaultCourse = "
                                     </select>
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-semibold mb-1 text-slate-700">Your Message</label>
+                                    <label className="block text-xs font-semibold mb-0.5 text-slate-700">Your Message</label>
                                     <textarea
                                         value={formData.message}
                                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                                        className="w-full px-3 py-2 text-sm rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                                         placeholder="Tell us about your goals or questions..."
-                                        rows={3}
+                                        rows={2}
                                     />
                                 </div>
                                 <button
                                     type="submit"
                                     disabled={status === 'loading'}
-                                    className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-lg shadow-lg hover:shadow-xl transition-all mt-4 disabled:bg-orange-300"
+                                    className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 text-sm rounded-lg shadow-lg hover:shadow-xl transition-all mt-2 disabled:bg-orange-300"
                                 >
                                     {status === 'loading' ? 'Submitting...' : DEFAULT_CONTENT.cta_text}
                                 </button>

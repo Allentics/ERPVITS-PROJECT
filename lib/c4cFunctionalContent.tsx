@@ -766,7 +766,6 @@ export const c4cFunctionalContent = {
         },
         {
             "type": "detailed_career_roadmap",
-            "alumniCount": "600+",
             "items": [
                 {
                     "stage": "Start (1-3)",
@@ -797,7 +796,8 @@ export const c4cFunctionalContent = {
                     "label": "Average Starting Salary",
                     "value": "$110K"
                 }
-            ]
+            ],
+            "alumniCount": "600+"
         },
         {
             "type": "detailed_companies",

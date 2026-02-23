@@ -656,7 +656,6 @@ export const sdContent = {
         },
         {
             "type": "detailed_career_roadmap",
-            "alumniCount": "800+",
             "items": [
                 {
                     "year": "Years 1–2",
@@ -692,7 +691,8 @@ export const sdContent = {
                     "label": "Avg Starting Salary",
                     "value": "$100K"
                 }
-            ]
+            ],
+            "alumniCount": "800+"
         },
         {
             "type": "detailed_post_training_journey",

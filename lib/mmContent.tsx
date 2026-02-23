@@ -531,7 +531,6 @@ export const mmContent = {
         },
         {
             "type": "detailed_career_roadmap",
-            "alumniCount": "2500+",
             "items": [
                 {
                     "stage": "Years 1-2",
@@ -554,7 +553,8 @@ export const mmContent = {
                     "description": "Lead high-value accounts, thought leadership, strategy"
                 }
             ],
-            "title": "Career Progression Roadmap (5–10 Years)"
+            "title": "Career Progression Roadmap (5–10 Years)",
+            "alumniCount": "2500+"
         },
         {
             "type": "detailed_post_training_journey",

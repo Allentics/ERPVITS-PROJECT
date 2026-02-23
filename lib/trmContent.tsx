@@ -666,7 +666,6 @@ export const trmContent = {
         },
         {
             "type": "detailed_career_roadmap",
-            "alumniCount": "1500+",
             "items": [
                 {
                     "stage": "Start (1-3)",
@@ -697,7 +696,8 @@ export const trmContent = {
                     "label": "Average Starting Salary",
                     "value": "$110K"
                 }
-            ]
+            ],
+            "alumniCount": "1500+"
         },
         {
             "type": "detailed_companies",
