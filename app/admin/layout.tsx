@@ -12,7 +12,8 @@ import {
     X,
     ChevronRight,
     Layers,
-    Globe
+    Globe,
+    Image
 } from 'lucide-react';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
@@ -29,6 +30,7 @@ const sidebarItems = [
     { name: 'Blog Posts', href: '/admin/blogs', icon: FileText },
     { name: 'Pages & SEO', href: '/admin/pages', icon: Globe },
     { name: 'Site Content', href: '/admin/content', icon: Layers },
+    { name: 'Media Library', href: '/admin/media', icon: Image },
 ];
 
 export default function AdminLayout({
