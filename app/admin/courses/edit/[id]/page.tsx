@@ -1023,81 +1023,219 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
         ];
 
         // Use existing items or defaults if empty
-        const itemsToDisplay = (section.items && section.items.length > 0) ? section.items : defaultCerts;
-        const supportFeaturesDisplay = (section.supportFeatures && section.supportFeatures.length > 0) ? section.supportFeatures : defaultsupportFeatures;
-        const benefitsDisplay = (section.benefits && section.benefits.length > 0) ? section.benefits : defaultBenefits;
+        const certs: any[] = (section.items && section.items.length > 0) ? section.items : defaultCerts;
+        const supportFeatures: any[] = (section.supportFeatures && section.supportFeatures.length > 0) ? section.supportFeatures : defaultsupportFeatures;
+        const benefits: any[] = (section.benefits && section.benefits.length > 0) ? section.benefits : defaultBenefits;
+
+        const updateCerts = (newCerts: any[]) => updateSection('detailed_certification', { ...section, items: newCerts });
+        const updateSupport = (newSupport: any[]) => updateSection('detailed_certification', { ...section, supportFeatures: newSupport });
+        const updateBenefits = (newBenefits: any[]) => updateSection('detailed_certification', { ...section, benefits: newBenefits });
 
         return (
-            <div className="space-y-6">
-                <div className="p-4 bg-blue-50 border border-blue-200 rounded text-sm text-blue-800 mb-4">
-                    Section 11: Professional Certification details below.
+            <div className="space-y-10">
+                <div className="border-b pb-4 mb-2">
+                    <h3 className="text-xl font-bold text-slate-900">Professional Certification</h3>
+                    <p className="text-sm text-slate-500 italic">Edit certification cards, exam support features, and benefits for this course.</p>
                 </div>
 
-                <div className="space-y-2">
-                    <label className="text-sm font-semibold text-gray-700">Section Title</label>
-                    <input
-                        value={section.title || ''}
-                        onChange={(e) => updateSection('detailed_certification', { ...section, title: e.target.value })}
-                        className="w-full p-2 border rounded"
-                        placeholder="SAP Certification – Your Global Career Credential"
-                    />
-                </div>
-
-                <div className="space-y-2">
-                    <label className="text-sm font-semibold text-gray-700">Certification Image URL</label>
-                    <input
-                        value={section.imageSrc || ''}
-                        onChange={(e) => updateSection('detailed_certification', { ...section, imageSrc: e.target.value })}
-                        className="w-full p-2 border rounded"
-                        placeholder="/images/..."
-                    />
-                    <p className="text-xs text-gray-500">URL to the side image (infographic)</p>
-                </div>
-
-                <div className="space-y-2">
-                    <label className="text-sm font-semibold text-gray-700">Certifications List (JSON)</label>
-                    <textarea
-                        rows={10}
-                        value={JSON.stringify(itemsToDisplay, null, 2)}
-                        onChange={(e) => {
-                            try {
-                                updateSection('detailed_certification', { ...section, items: JSON.parse(e.target.value) });
-                            } catch (err) { }
-                        }}
-                        className="w-full p-4 border rounded font-mono text-xs bg-slate-50"
-                    />
-                    <p className="text-xs text-gray-500">List of certification cards. Defaults shown if empty.</p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Section Header Fields */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                        <label className="text-sm font-semibold text-gray-700">Certification support Features (JSON)</label>
-                        <textarea
-                            rows={8}
-                            value={JSON.stringify(supportFeaturesDisplay, null, 2)}
-                            onChange={(e) => {
-                                try {
-                                    updateSection('detailed_certification', { ...section, supportFeatures: JSON.parse(e.target.value) });
-                                } catch (err) { }
-                            }}
-                            className="w-full p-4 border rounded font-mono text-xs bg-slate-50"
+                        <label className="text-sm font-semibold text-gray-700">Section Title</label>
+                        <input
+                            value={section.title || ''}
+                            onChange={(e) => updateSection('detailed_certification', { ...section, title: e.target.value })}
+                            className="w-full p-2 border rounded"
+                            placeholder="SAP Certification – Your Global Career Credential"
                         />
-                        <p className="text-xs text-gray-500">Features included in support (e.g., Practice Exams).</p>
+                    </div>
+                    <div className="space-y-2">
+                        <label className="text-sm font-semibold text-gray-700">Certification Image URL</label>
+                        <input
+                            value={section.imageSrc || ''}
+                            onChange={(e) => updateSection('detailed_certification', { ...section, imageSrc: e.target.value })}
+                            className="w-full p-2 border rounded"
+                            placeholder="/images/..."
+                        />
+                        <p className="text-xs text-gray-500">URL to the side image (infographic)</p>
+                    </div>
+                </div>
+
+                {/* ─── CERTIFICATION CARDS ─── */}
+                <div className="space-y-4">
+                    <div className="flex justify-between items-center bg-amber-50 border border-amber-200 p-4 rounded-xl">
+                        <div>
+                            <h4 className="font-bold text-amber-900 flex items-center gap-2"><Trophy size={18} /> Certification Cards ({certs.length})</h4>
+                            <p className="text-xs text-amber-700 mt-0.5">Each card appears as a certification option on the course page.</p>
+                        </div>
+                        <button
+                            type="button"
+                            onClick={() => updateCerts([...certs, { title: 'New Certification', code: '', focus: '', who: '', relevance: '' }])}
+                            className="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-colors"
+                        >
+                            <Plus size={16} /> Add Cert
+                        </button>
                     </div>
 
-                    <div className="space-y-2">
-                        <label className="text-sm font-semibold text-gray-700">Benefits / Why It Matters (JSON)</label>
-                        <textarea
-                            rows={8}
-                            value={JSON.stringify(benefitsDisplay, null, 2)}
-                            onChange={(e) => {
-                                try {
-                                    updateSection('detailed_certification', { ...section, benefits: JSON.parse(e.target.value) });
-                                } catch (err) { }
-                            }}
-                            className="w-full p-4 border rounded font-mono text-xs bg-slate-50"
-                        />
-                        <p className="text-xs text-gray-500">Benefits list (e.g., Global Recognition).</p>
+                    <div className="space-y-4">
+                        {certs.map((cert: any, idx: number) => (
+                            <div key={idx} className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm group relative space-y-3">
+                                <button
+                                    type="button"
+                                    onClick={() => updateCerts(certs.filter((_: any, i: number) => i !== idx))}
+                                    className="absolute top-3 right-3 text-slate-300 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity"
+                                >
+                                    <Trash2 size={16} />
+                                </button>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <div className="md:col-span-2 space-y-1">
+                                        <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Certification Title</label>
+                                        <input
+                                            value={cert.title || ''}
+                                            onChange={(e) => { const n = [...certs]; n[idx].title = e.target.value; updateCerts(n); }}
+                                            className="w-full p-2 border rounded font-bold text-sm"
+                                            placeholder="SAP Certified Application Associate - ..."
+                                        />
+                                    </div>
+                                    <div className="space-y-1">
+                                        <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Exam Code</label>
+                                        <input
+                                            value={cert.code || ''}
+                                            onChange={(e) => { const n = [...certs]; n[idx].code = e.target.value; updateCerts(n); }}
+                                            className="w-full p-2 border rounded text-sm font-mono"
+                                            placeholder="(C_ARP2P_2408)"
+                                        />
+                                    </div>
+                                    <div className="space-y-1">
+                                        <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Relevance / Role</label>
+                                        <input
+                                            value={cert.relevance || ''}
+                                            onChange={(e) => { const n = [...certs]; n[idx].relevance = e.target.value; updateCerts(n); }}
+                                            className="w-full p-2 border rounded text-sm"
+                                            placeholder="Entry to mid-level consultant positions"
+                                        />
+                                    </div>
+                                    <div className="space-y-1">
+                                        <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Focus Areas</label>
+                                        <textarea
+                                            value={cert.focus || ''}
+                                            onChange={(e) => { const n = [...certs]; n[idx].focus = e.target.value; updateCerts(n); }}
+                                            className="w-full p-2 border rounded text-sm h-16"
+                                            placeholder="Procurement processes, master data, ..."
+                                        />
+                                    </div>
+                                    <div className="space-y-1">
+                                        <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Who / What You Demonstrate</label>
+                                        <textarea
+                                            value={cert.who || ''}
+                                            onChange={(e) => { const n = [...certs]; n[idx].who = e.target.value; updateCerts(n); }}
+                                            className="w-full p-2 border rounded text-sm h-16"
+                                            placeholder="Demonstrates expertise in ..."
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* ─── SUPPORT FEATURES & BENEFITS ─── */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                    {/* Support Features */}
+                    <div className="space-y-4">
+                        <div className="flex justify-between items-center bg-blue-50 border border-blue-200 p-4 rounded-xl">
+                            <div>
+                                <h4 className="font-bold text-blue-900 text-sm">Support Features ({supportFeatures.length})</h4>
+                                <p className="text-xs text-blue-700 mt-0.5">Items in the exam support panel.</p>
+                            </div>
+                            <button
+                                type="button"
+                                onClick={() => updateSupport([...supportFeatures, { title: 'New Feature', subtitle: '' }])}
+                                className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1 transition-colors"
+                            >
+                                <Plus size={14} /> Add
+                            </button>
+                        </div>
+                        <div className="space-y-3">
+                            {supportFeatures.map((feat: any, idx: number) => (
+                                <div key={idx} className="bg-white border border-gray-200 rounded-lg p-3 group relative space-y-2">
+                                    <button
+                                        type="button"
+                                        onClick={() => updateSupport(supportFeatures.filter((_: any, i: number) => i !== idx))}
+                                        className="absolute top-2 right-2 text-slate-300 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity"
+                                    >
+                                        <Trash2 size={14} />
+                                    </button>
+                                    <div className="space-y-1">
+                                        <label className="text-[10px] font-bold text-gray-400 uppercase">Title</label>
+                                        <input
+                                            value={feat.title || ''}
+                                            onChange={(e) => { const n = [...supportFeatures]; n[idx].title = e.target.value; updateSupport(n); }}
+                                            className="w-full p-1.5 border rounded text-sm font-semibold"
+                                            placeholder="Practice Exams"
+                                        />
+                                    </div>
+                                    <div className="space-y-1">
+                                        <label className="text-[10px] font-bold text-gray-400 uppercase">Subtitle / Description</label>
+                                        <input
+                                            value={feat.subtitle || ''}
+                                            onChange={(e) => { const n = [...supportFeatures]; n[idx].subtitle = e.target.value; updateSupport(n); }}
+                                            className="w-full p-1.5 border rounded text-sm text-gray-600"
+                                            placeholder="Timed practice tests mirroring real exam..."
+                                        />
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Benefits */}
+                    <div className="space-y-4">
+                        <div className="flex justify-between items-center bg-green-50 border border-green-200 p-4 rounded-xl">
+                            <div>
+                                <h4 className="font-bold text-green-900 text-sm">Benefits / Why It Matters ({benefits.length})</h4>
+                                <p className="text-xs text-green-700 mt-0.5">Reasons why certification is valuable.</p>
+                            </div>
+                            <button
+                                type="button"
+                                onClick={() => updateBenefits([...benefits, { title: 'New Benefit', desc: '' }])}
+                                className="bg-green-600 hover:bg-green-700 text-white px-3 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1 transition-colors"
+                            >
+                                <Plus size={14} /> Add
+                            </button>
+                        </div>
+                        <div className="space-y-3">
+                            {benefits.map((benefit: any, idx: number) => (
+                                <div key={idx} className="bg-white border border-gray-200 rounded-lg p-3 group relative space-y-2">
+                                    <button
+                                        type="button"
+                                        onClick={() => updateBenefits(benefits.filter((_: any, i: number) => i !== idx))}
+                                        className="absolute top-2 right-2 text-slate-300 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity"
+                                    >
+                                        <Trash2 size={14} />
+                                    </button>
+                                    <div className="space-y-1">
+                                        <label className="text-[10px] font-bold text-gray-400 uppercase">Title</label>
+                                        <input
+                                            value={benefit.title || ''}
+                                            onChange={(e) => { const n = [...benefits]; n[idx].title = e.target.value; updateBenefits(n); }}
+                                            className="w-full p-1.5 border rounded text-sm font-semibold"
+                                            placeholder="Global Recognition"
+                                        />
+                                    </div>
+                                    <div className="space-y-1">
+                                        <label className="text-[10px] font-bold text-gray-400 uppercase">Description</label>
+                                        <input
+                                            value={benefit.desc || ''}
+                                            onChange={(e) => { const n = [...benefits]; n[idx].desc = e.target.value; updateBenefits(n); }}
+                                            className="w-full p-1.5 border rounded text-sm text-gray-600"
+                                            placeholder="SAP certifications recognized worldwide..."
+                                        />
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
 
