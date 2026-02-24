@@ -2,6 +2,16 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { supabase } from '@/lib/supabase';
 import { blogPosts as localPosts } from '@/lib/blogData';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'SAP Blog & Insights | ERPVITS',
+    description: 'Stay ahead in the SAP ecosystem with expert insights, technical tutorials, and career guidance from ERPVITS.',
+    alternates: {
+        canonical: 'https://www.erpvits.com/blog',
+    },
+};
+
 
 function formatDate(dateStr: string) {
     const date = new Date(dateStr);

@@ -6,7 +6,13 @@ import { Metadata } from 'next';
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
-    return fetchPageMetadata('/contact');
+    const meta = await fetchPageMetadata('/contact');
+    return {
+        ...meta,
+        alternates: {
+            canonical: 'https://www.erpvits.com/contact',
+        },
+    };
 }
 
 export default async function ContactPage() {

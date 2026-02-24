@@ -77,6 +77,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
         title: post.meta_title || `${post.title} | ERPVITS Blog`,
         description: post.meta_description || post.description,
+        alternates: {
+            canonical: `https://www.erpvits.com/blog/${slug}`,
+        },
     };
 }
 

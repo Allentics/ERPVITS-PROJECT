@@ -25,7 +25,10 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     ...meta,
     title: meta.title || 'ERPVITS - Best SAP Training Institute',
-    description: meta.description || 'Master SAP with ERPVITS. Expert-led training, hands-on projects, and certification guidance.'
+    description: meta.description || 'Master SAP with ERPVITS. Expert-led training, hands-on projects, and certification guidance.',
+    alternates: {
+      canonical: 'https://www.erpvits.com/',
+    },
   };
 }
 

@@ -8,7 +8,13 @@ import { Metadata } from 'next';
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
-    return fetchPageMetadata('/corporate-training');
+    const meta = await fetchPageMetadata('/corporate-training');
+    return {
+        ...meta,
+        alternates: {
+            canonical: 'https://www.erpvits.com/corporate-training',
+        },
+    };
 }
 
 const DEFAULT_HERO = {
