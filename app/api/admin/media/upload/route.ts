@@ -1,6 +1,8 @@
 import { createClient } from '@supabase/supabase-js';
 import { NextRequest, NextResponse } from 'next/server';
 
+export const runtime = 'nodejs';
+
 // Uses SERVICE ROLE KEY (server-only) so it can create buckets and bypass RLS
 const getAdminClient = () => {
     const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -17,7 +19,8 @@ const getAdminClient = () => {
 
 const BUCKET = 'media-library';
 
-async function ensureBucketExists(supabaseAdmin: ReturnType<typeof createClient>) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+async function ensureBucketExists(supabaseAdmin: any) {
     try {
         const { data: bucket } = await supabaseAdmin.storage.getBucket(BUCKET);
         if (!bucket) {
