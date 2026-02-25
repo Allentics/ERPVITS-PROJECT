@@ -51,7 +51,7 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
             status: "Registration Open",
             statusColor: "bg-green-100 text-green-600",
             date: formatDate(batch2Date),
-            schedule: "Sat-Sun | 07:30 AM | 07:00 PM IST",
+            schedule: "Sat-Sun | 08:30 AM | 07:00 PM IST",
             duration: "45-50 Hours",
             seatsFilled: 40,
             seatsText: "6/10 Seats Available"
