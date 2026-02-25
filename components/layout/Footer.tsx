@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Twitter, Linkedin, Instagram, Youtube, Mail, Phone, MapPin } from 'lucide-react';
 import React, { useState, useEffect } from 'react';
 import { courses as localCourses } from '@/lib/courseData';
 import { supabase } from '@/lib/supabase';
@@ -65,10 +65,21 @@ const Footer = () => {
                             Master SAP with confidence and transform your career.
                         </p>
                         <div className="flex space-x-4">
-                            <a href="#" className="hover:text-white transition-colors"><Linkedin className="h-5 w-5" /></a>
-                            <a href="#" className="hover:text-white transition-colors"><Twitter className="h-5 w-5" /></a>
-                            <a href="#" className="hover:text-white transition-colors"><Facebook className="h-5 w-5" /></a>
-                            <a href="#" className="hover:text-white transition-colors"><Instagram className="h-5 w-5" /></a>
+                            <a href="#" className="hover:text-white transition-colors">
+                                <Linkedin className="h-5 w-5" />
+                            </a>
+                            <a href="#" className="hover:text-white transition-colors">
+                                <Twitter className="h-5 w-5" />
+                            </a>
+                            <a href="#" className="hover:text-white transition-colors">
+                                <Facebook className="h-5 w-5" />
+                            </a>
+                            <a href="#" className="hover:text-white transition-colors">
+                                <Instagram className="h-5 w-5" />
+                            </a>
+                            <a href="#" className="hover:text-[#FF0000] transition-colors">
+                                <Youtube className="h-5 w-5" />
+                            </a>
                         </div>
                     </div>
 
