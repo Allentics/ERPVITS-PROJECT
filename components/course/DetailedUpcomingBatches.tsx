@@ -257,11 +257,7 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
                     </div>
                 </div>
 
-                <div className="mt-8 text-center">
-                    <p className="text-xs text-slate-500">
-                        * Limited intake ensuring personal mentoring. 45-day job support included with every batch.
-                    </p>
-                </div>
+
 
             </div>
 
