@@ -24,20 +24,23 @@ export default function ContentWithImage({ title, subtitle, description, items, 
             <div className={`flex flex-col ${layout === 'right' ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-start gap-12 p-8 lg:p-12`}>
                 <div className="w-full lg:w-1/2 flex flex-col gap-8">
                     {(imageSrc || videoSrc) ? (
-                        <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white w-full aspect-video">
+                        <div className="relative rounded-2xl overflow-hidden shadow-2xl w-full">
                             {videoSrc ? (
-                                <iframe
-                                    className="w-full h-full"
-                                    src={videoSrc}
-                                    title={typeof title === 'string' ? title : "Course Video"}
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                ></iframe>
+                                <div className="aspect-video">
+                                    <iframe
+                                        className="w-full h-full"
+                                        src={videoSrc}
+                                        title={typeof title === 'string' ? title : "Course Video"}
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowFullScreen
+                                    ></iframe>
+                                </div>
                             ) : (
                                 <img
                                     src={imageSrc}
                                     alt={imageAlt || (typeof title === 'string' ? title : "Course Overview")}
-                                    className="object-cover w-full h-full"
+                                    className="w-full h-auto object-contain block"
+                                    style={{ maxWidth: '100%' }}
                                 />
                             )}
                         </div>
