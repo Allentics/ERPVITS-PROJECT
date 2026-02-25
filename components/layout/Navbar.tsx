@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, ChevronDown, Phone, Mail, Globe } from 'lucide-react';
+import { Menu, X, ChevronDown, Phone, Mail, MessageCircle } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { courses as localCourses } from '@/lib/courseData';
@@ -142,9 +142,14 @@ const Navbar = () => {
                             </a>
                         </div>
                         <div className="flex items-center space-x-4">
-                            <div className="flex items-center cursor-default hover:text-orange-400 transition-all font-black text-[12px]">
-                                <Globe className="h-4 w-4 mr-1.5" /> EN
-                            </div>
+                            <a
+                                href="https://www.whatsapp.com/channel/0029Vb5u9luHwXb481Y1Dx1X"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-1.5 bg-[#25D366] hover:bg-[#1ebe5c] text-white font-bold text-[11px] px-3 py-1.5 rounded-md transition-all shadow-sm hover:shadow-green-500/30"
+                            >
+                                <MessageCircle className="h-3.5 w-3.5" /> Join Channel
+                            </a>
                         </div>
                     </div>
                 </div>
