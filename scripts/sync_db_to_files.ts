@@ -79,7 +79,7 @@ async function syncDbToFiles() {
 
         // Regex to find the export const ... = { ... } block
         // This is a simplified approach, might need adjustment for complex files
-        const regex = new RegExp(`export const ${variableName}\\s*[:\\s\\w]*\\s*=\\s*\\{[\\s\\S]*?\\};`, 'm');
+        const regex = new RegExp(`export const ${variableName}[^=]*=\\s*\\{[\\s\\S]*?\\};`, 'm');
 
         let newObjectString = JSON.stringify(content, null, 4);
 
