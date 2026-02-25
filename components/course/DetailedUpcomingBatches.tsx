@@ -3,17 +3,57 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Calendar, Clock, AlertCircle, CheckCircle2, ShieldCheck, Users, Zap } from 'lucide-react';
+import { Calendar, Clock, AlertCircle, CheckCircle2, ShieldCheck, Users, Zap, X, PlayCircle, Send, Loader2 } from 'lucide-react';
 import ContactModal from '@/components/ContactModal';
+import { supabase } from '@/lib/supabase';
+import { courses } from '@/lib/courseData';
+import { submitToGoogleSheets } from '@/app/actions/submitToGoogleSheets';
+import { countryCodes } from '@/lib/countryCodes';
 
 export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batches: propBatches, features: propFeatures }: { courseName?: string, batches?: any[], features?: any[] }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalTitle, setModalTitle] = useState("");
+    const [isSelfPacedOpen, setIsSelfPacedOpen] = useState(false);
+    const [selfPacedStatus, setSelfPacedStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+    const [selfPacedForm, setSelfPacedForm] = useState({ name: '', phone: '', email: '', course: courseName || '' });
+    const [selfPacedError, setSelfPacedError] = useState('');
 
     const handleRegisterClick = () => {
         const title = `Register for Next ${courseName} Batch`;
         setModalTitle(title);
         setIsModalOpen(true);
+    };
+
+    const handleSelfPacedChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+        const { name, value } = e.target;
+        setSelfPacedForm(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleSelfPacedSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        const newTab = window.open('/thank-you', '_blank');
+        setSelfPacedStatus('loading');
+        setSelfPacedError('');
+        try {
+            const { error } = await supabase.from('contacts').insert([{
+                name: selfPacedForm.name,
+                first_name: selfPacedForm.name,
+                email: selfPacedForm.email,
+                phone: selfPacedForm.phone,
+                course: selfPacedForm.course,
+                message: 'Self-Paced Learning Enrollment',
+            }]);
+            if (error) throw error;
+            submitToGoogleSheets({
+                firstName: selfPacedForm.name, lastName: '', email: selfPacedForm.email,
+                countryCode: '', phone: selfPacedForm.phone, course: selfPacedForm.course, message: 'Self-Paced'
+            }).catch(console.error);
+            setSelfPacedStatus('success');
+        } catch (err: any) {
+            if (newTab) newTab.close();
+            setSelfPacedStatus('error');
+            setSelfPacedError(err.message || 'Something went wrong. Please try again.');
+        }
     };
 
     // Helper to get a date X days from now
@@ -179,27 +219,41 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
                     })}
                 </div>
 
-                {/* Why Enroll Now Footer */}
-                <div className="bg-[#ff4500] text-white rounded-2xl p-8 border border-[#ff4500] shadow-2xl max-w-4xl mx-auto">
-                    <h3 className="text-center font-bold text-lg mb-8">Why Enroll Now?</h3>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {features.map((feature: any, idx) => {
-                            const Icon = typeof feature.icon === 'string' ? (
-                                feature.icon === 'Zap' ? Zap :
-                                    feature.icon === 'Users' ? Users :
-                                        feature.icon === 'ShieldCheck' ? ShieldCheck :
-                                            feature.icon === 'CheckCircle2' ? CheckCircle2 : ShieldCheck
-                            ) : (feature.icon || ShieldCheck);
+                {/* Self-Paced Learning Option Section */}
+                <div className="relative bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl overflow-hidden shadow-2xl max-w-5xl mx-auto">
+                    {/* Decorative glow */}
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-[#ff4500]/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
+                    <div className="absolute bottom-0 left-0 w-48 h-48 bg-orange-500/10 rounded-full blur-2xl translate-y-1/2 -translate-x-1/4 pointer-events-none"></div>
 
-                            return (
-                                <div key={idx} className="flex items-start gap-3">
-                                    <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-[#ff4500] flex-shrink-0 shadow-sm">
-                                        <Icon className="w-4 h-4" />
-                                    </div>
-                                    <span className="text-xs text-white font-bold">{feature.text}</span>
-                                </div>
-                            );
-                        })}
+                    <div className="relative z-10 p-8 md:p-12 flex flex-col md:flex-row items-center gap-8">
+                        {/* Icon */}
+                        <div className="flex-shrink-0 w-16 h-16 rounded-2xl bg-[#ff4500]/20 border border-[#ff4500]/30 flex items-center justify-center shadow-lg">
+                            <PlayCircle className="w-8 h-8 text-[#ff4500]" />
+                        </div>
+
+                        {/* Content */}
+                        <div className="flex-1 text-center md:text-left">
+                            <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-3 leading-tight">
+                                Self-Paced Learning Option
+                            </h3>
+                            <p className="text-slate-300 text-sm md:text-base leading-relaxed mb-2">
+                                Prefer flexibility? Choose our <span className="text-[#ff4500] font-semibold">Self-Paced Learning Program</span> and master SAP at your own speed. Get lifetime access to high-quality recorded sessions.
+                            </p>
+                            <p className="text-slate-400 text-sm italic">
+                                Start anytime. Learn anywhere. Upgrade your career on your schedule.
+                            </p>
+                        </div>
+
+                        {/* CTA Button */}
+                        <div className="flex-shrink-0">
+                            <button
+                                onClick={() => { setIsSelfPacedOpen(true); setSelfPacedStatus('idle'); setSelfPacedError(''); }}
+                                className="inline-flex items-center gap-2 px-7 py-4 bg-[#ff4500] hover:bg-[#cc3700] text-white font-bold rounded-xl shadow-lg shadow-[#ff4500]/30 transition-all hover:scale-105 active:scale-95 text-sm whitespace-nowrap"
+                            >
+                                <PlayCircle className="w-5 h-5" />
+                                Get Instant Access to Full Course
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -211,12 +265,144 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
 
             </div>
 
+            {/* Register Batch Modal */}
             <ContactModal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
                 title={modalTitle}
                 defaultCourse={courseName}
             />
+
+            {/* Self-Paced Enrollment Modal */}
+            {isSelfPacedOpen && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+                    <div className="bg-white rounded-3xl shadow-2xl w-full max-w-md relative overflow-hidden animate-in fade-in zoom-in duration-200">
+                        {/* Top accent */}
+                        <div className="h-1.5 w-full bg-gradient-to-r from-[#ff4500] to-orange-400"></div>
+
+                        {/* Close button */}
+                        <button
+                            onClick={() => setIsSelfPacedOpen(false)}
+                            className="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center transition-colors"
+                        >
+                            <X className="w-4 h-4 text-slate-600" />
+                        </button>
+
+                        <div className="p-7">
+                            {/* Form Header */}
+                            <div className="flex items-center gap-3 mb-6">
+                                <div className="w-10 h-10 rounded-xl bg-[#ff4500]/10 flex items-center justify-center">
+                                    <PlayCircle className="w-5 h-5 text-[#ff4500]" />
+                                </div>
+                                <div>
+                                    <h3 className="text-xl font-extrabold text-slate-900">Enroll for Self-Paced Learning</h3>
+                                    <p className="text-xs text-slate-500">Get instant lifetime access to all recorded sessions</p>
+                                </div>
+                            </div>
+
+                            {selfPacedStatus === 'success' ? (
+                                <div className="text-center py-8">
+                                    <CheckCircle2 className="w-14 h-14 text-green-500 mx-auto mb-4" />
+                                    <h4 className="text-xl font-bold text-slate-900 mb-2">You&apos;re Enrolled!</h4>
+                                    <p className="text-slate-600 text-sm mb-6">Our team will contact you shortly with your access details.</p>
+                                    <button
+                                        onClick={() => setIsSelfPacedOpen(false)}
+                                        className="px-6 py-2.5 bg-[#ff4500] text-white font-bold rounded-xl hover:bg-[#cc3700] transition-colors"
+                                    >
+                                        Close
+                                    </button>
+                                </div>
+                            ) : (
+                                <form onSubmit={handleSelfPacedSubmit} className="space-y-4">
+                                    {selfPacedStatus === 'error' && (
+                                        <div className="bg-red-50 border border-red-200 rounded-lg p-3 flex items-center gap-2 text-red-700 text-xs">
+                                            <AlertCircle className="w-4 h-4 flex-shrink-0" />
+                                            {selfPacedError}
+                                        </div>
+                                    )}
+
+                                    {/* Name */}
+                                    <div>
+                                        <label className="block text-xs font-bold text-slate-700 mb-1">Full Name <span className="text-[#ff4500]">*</span></label>
+                                        <input
+                                            type="text"
+                                            name="name"
+                                            value={selfPacedForm.name}
+                                            onChange={handleSelfPacedChange}
+                                            required
+                                            placeholder="Enter your full name"
+                                            className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-[#ff4500]/20 focus:border-[#ff4500] outline-none transition-all text-sm"
+                                        />
+                                    </div>
+
+                                    {/* Phone */}
+                                    <div>
+                                        <label className="block text-xs font-bold text-slate-700 mb-1">Phone Number <span className="text-[#ff4500]">*</span></label>
+                                        <input
+                                            type="tel"
+                                            name="phone"
+                                            value={selfPacedForm.phone}
+                                            onChange={handleSelfPacedChange}
+                                            required
+                                            placeholder="Enter your phone number"
+                                            className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-[#ff4500]/20 focus:border-[#ff4500] outline-none transition-all text-sm"
+                                        />
+                                    </div>
+
+                                    {/* Email */}
+                                    <div>
+                                        <label className="block text-xs font-bold text-slate-700 mb-1">Email Address <span className="text-[#ff4500]">*</span></label>
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            value={selfPacedForm.email}
+                                            onChange={handleSelfPacedChange}
+                                            required
+                                            placeholder="Enter your email address"
+                                            className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-[#ff4500]/20 focus:border-[#ff4500] outline-none transition-all text-sm"
+                                        />
+                                    </div>
+
+                                    {/* Select Module */}
+                                    <div>
+                                        <label className="block text-xs font-bold text-slate-700 mb-1">Select Module <span className="text-[#ff4500]">*</span></label>
+                                        <select
+                                            name="course"
+                                            value={selfPacedForm.course}
+                                            onChange={handleSelfPacedChange}
+                                            required
+                                            className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-[#ff4500]/20 focus:border-[#ff4500] outline-none transition-all text-sm appearance-none cursor-pointer"
+                                        >
+                                            <option value="">Select SAP Module</option>
+                                            {courses
+                                                .filter(c => c.title !== 'Other' && c.id !== 'other')
+                                                .filter((c, index, self) => index === self.findIndex((t) => t.title === c.title))
+                                                .map((course) => (
+                                                    <option key={course.id} value={course.title}>{course.title}</option>
+                                                ))
+                                            }
+                                        </select>
+                                    </div>
+
+                                    <button
+                                        type="submit"
+                                        disabled={selfPacedStatus === 'loading'}
+                                        className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#ff4500] hover:bg-[#cc3700] text-white font-bold rounded-xl shadow-lg shadow-[#ff4500]/20 transition-all disabled:opacity-60 disabled:cursor-not-allowed text-sm"
+                                    >
+                                        {selfPacedStatus === 'loading' ? (
+                                            <><Loader2 className="animate-spin w-4 h-4" /> Enrolling...</>
+                                        ) : (
+                                            <><Send className="w-4 h-4" /> Get Instant Access</>
+                                        )}
+                                    </button>
+                                    <p className="text-[10px] text-center text-slate-400">By submitting, you agree to our privacy policy.</p>
+                                </form>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            )}
         </section>
     );
 }
+
