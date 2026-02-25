@@ -65,19 +65,19 @@ const Footer = () => {
                             Master SAP with confidence and transform your career.
                         </p>
                         <div className="flex space-x-4">
-                            <a href="#" className="hover:text-white transition-colors">
+                            <a href="https://www.linkedin.com/company/erpvits" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                                 <Linkedin className="h-5 w-5" />
                             </a>
-                            <a href="#" className="hover:text-white transition-colors">
+                            <a href="https://x.com/Saperp_Vits" target="_blank" rel="noopener noreferrer" className="hover:text-[#1DA1F2] transition-colors">
                                 <Twitter className="h-5 w-5" />
                             </a>
-                            <a href="#" className="hover:text-white transition-colors">
+                            <a href="https://www.facebook.com/people/ERP-VITS/61573617403525/" target="_blank" rel="noopener noreferrer" className="hover:text-[#1877F2] transition-colors">
                                 <Facebook className="h-5 w-5" />
                             </a>
-                            <a href="#" className="hover:text-white transition-colors">
+                            <a href="https://www.instagram.com/erp_vits/" target="_blank" rel="noopener noreferrer" className="hover:text-[#E1306C] transition-colors">
                                 <Instagram className="h-5 w-5" />
                             </a>
-                            <a href="#" className="hover:text-[#FF0000] transition-colors">
+                            <a href="https://www.youtube.com/@ERPVITS" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF0000] transition-colors">
                                 <Youtube className="h-5 w-5" />
                             </a>
                         </div>
