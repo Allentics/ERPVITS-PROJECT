@@ -123,7 +123,7 @@ export default function DetailedTestimonials({ items, stats, courseName = "SAP" 
             text: r.quote || r.text || r.content, // Fallback to r.content if quote/text are missing
             author: r.name || r.author,
             role: r.role,
-            initial: r.initial || (r.name || r.author || "U").charAt(0).toUpperCase(),
+            initial: (r.name || r.author || "U").trim().charAt(0).toUpperCase(),
             color: r.color || colors[i % colors.length]
         };
     });
