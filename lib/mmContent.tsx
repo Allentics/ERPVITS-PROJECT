@@ -623,6 +623,35 @@ export const mmContent = {
         },
         {
             "type": "detailed_upcoming_batches",
+            "items": [
+                {
+                    "date": "November 15, 2025",
+                    "name": "Batch 1: November 2025 (Weekdays)",
+                    "time": "Weekdays – 7:00 AM | 8:00 PM IST",
+                    "seats": "6/10 Seats Left",
+                    "status": "Filling Fast",
+                    "duration": "40–45 Hours (SAP MM course duration)",
+                    "statusColor": "bg-orange-100 text-orange-600"
+                },
+                {
+                    "date": "November 16, 2025",
+                    "name": "Batch 2: November 2025 (Weekends)",
+                    "time": "Weekends – Saturday & Sunday, 7:00 AM | 7:00 PM IST",
+                    "seats": "3/10 Seats Left",
+                    "status": "Filling Fast",
+                    "duration": "40–45 Hours",
+                    "statusColor": "bg-orange-100 text-orange-600"
+                },
+                {
+                    "date": "December 1, 2025",
+                    "name": "Batch 3: December 2025 (Flexible)",
+                    "time": "Flexible timings – customized per batch",
+                    "seats": "7/10 Seats Left",
+                    "status": "Open",
+                    "duration": "40–45 Hours (accelerated)",
+                    "statusColor": "bg-green-100 text-green-600"
+                }
+            ],
             "title": "Join Our Next Live Batch – Limited Seats Available for SAP S/4HANA MM Training",
             "batches": [
                 {
@@ -681,45 +710,57 @@ export const mmContent = {
             "type": "detailed_testimonials",
             "items": [
                 {
-                    "name": "Amit Kumar",
+                    "name": "Ritu Arora",
                     "role": "SAP MM Consultant at Accenture",
+                    "text": "Outstanding training and real inventory project exposure. I landed a consulting role at Accenture within 8 weeks managing SAP MM implementations. The hands-on approach and expert instructors made all the difference.",
                     "color": "bg-blue-500",
                     "quote": "Outstanding training and real inventory project exposure. I landed a consulting role at Accenture within 8 weeks managing SAP MM implementations. The hands-on approach and expert instructors made all the difference.",
+                    "author": "Ritu Arora",
                     "initial": "A"
                 },
                 {
-                    "name": "Priya Sharma",
+                    "name": "Mukesh Tiwari",
                     "role": "Materials Manager",
+                    "text": "The weekend flexibility allowed me to learn while working. My employer was so impressed with my MM skills that they promoted me to Materials Manager. This course accelerated my career by 3 years.",
                     "color": "bg-green-500",
                     "quote": "The weekend flexibility allowed me to learn while working. My employer was so impressed with my MM skills that they promoted me to Materials Manager. This course accelerated my career by 3 years.",
+                    "author": "Mukesh Tiwari",
                     "initial": "P"
                 },
                 {
-                    "name": "Rajesh Patel",
+                    "name": "Bharti Kapoor",
                     "role": "Senior SAP Consultant",
+                    "text": "Best decision I made. The capstone projects were exactly like real client work. I walked into my first consulting role feeling confident, not intimidated. The certification support was exceptional.",
                     "color": "bg-[#ff4500]",
                     "quote": "Best decision I made. The capstone projects were exactly like real client work. I walked into my first consulting role feeling confident, not intimidated. The certification support was exceptional.",
+                    "author": "Bharti Kapoor",
                     "initial": "R"
                 },
                 {
-                    "name": "Ananya Singh",
+                    "name": "Gopal Krishnan",
                     "role": "Certified SAP MM Professional",
+                    "text": "Superb certification preparation. I passed the SAP MM exam on my first attempt. The mock exams and study materials were spot-on. Highly recommended!",
                     "color": "bg-purple-500",
                     "quote": "Superb certification preparation. I passed the SAP MM exam on my first attempt. The mock exams and study materials were spot-on. Highly recommended!",
+                    "author": "Gopal Krishnan",
                     "initial": "A"
                 },
                 {
-                    "name": "Vikram Desai",
+                    "name": "Seema Verghese",
                     "role": "Materials Consultant at Deloitte",
+                    "text": "The instructor's real-world insights were invaluable. I didn't just learn SAP MM; I learned how to apply it in complex supply chain environments. The alumni network has already brought consulting opportunities my way.",
                     "color": "bg-red-500",
                     "quote": "The instructor's real-world insights were invaluable. I didn't just learn SAP MM; I learned how to apply it in complex supply chain environments. The alumni network has already brought consulting opportunities my way.",
+                    "author": "Seema Verghese",
                     "initial": "V"
                 },
                 {
-                    "name": "Sneha Reddy",
+                    "name": "Lalit Saxena",
                     "role": "Supply Chain Analyst at Infosys",
+                    "text": "From zero SAP knowledge to landing my dream job in 4 months! The instructors are patient, knowledgeable, and truly care about learner success. The lifetime recording access is a huge bonus.",
                     "color": "bg-indigo-500",
                     "quote": "From zero SAP knowledge to landing my dream job in 4 months! The instructors are patient, knowledgeable, and truly care about learner success. The lifetime recording access is a huge bonus.",
+                    "author": "Lalit Saxena",
                     "initial": "S"
                 }
             ],
@@ -753,91 +794,135 @@ export const mmContent = {
             "items": [
                 {
                     "a": "SAP S/4HANA Materials Management is an integrated approach to managing inventory, procurement, and supply chain operations. ERPVITS builds your confidence through practical SAP MM module training that involves real-life supply chain scenarios, exercises, and comprehensive project guidance.",
-                    "q": "What is SAP S/4HANA MM and how does ERPVITS help me learn it?"
+                    "q": "What is SAP S/4HANA MM and how does ERPVITS help me learn it?",
+                    "answer": "SAP S/4HANA Materials Management is an integrated approach to managing inventory, procurement, and supply chain operations. ERPVITS builds your confidence through practical SAP MM module training that involves real-life supply chain scenarios, exercises, and comprehensive project guidance.",
+                    "question": "What is SAP S/4HANA MM and how does ERPVITS help me learn it?"
                 },
                 {
                     "a": "In the Material Master training, you will learn how to create and maintain the records of materials, configure the materials, organize and set data, and manage SAP S/4HANA MM master data consistency.",
-                    "q": "What will I learn in the Material Master module?"
+                    "q": "What will I learn in the Material Master module?",
+                    "answer": "In the Material Master training, you will learn how to create and maintain the records of materials, configure the materials, organize and set data, and manage SAP S/4HANA MM master data consistency.",
+                    "question": "What will I learn in the Material Master module?"
                 },
                 {
                     "a": "The PO life cycle in MM includes requisition, creation, purchase order, and approval workflows. It also includes the receipt of goods, the invoice, and the three-way match. ERPVITS helps you understand the complete PO workflows.",
-                    "q": "What is the Purchase Order Lifecycle in SAP MM?"
+                    "q": "What is the Purchase Order Lifecycle in SAP MM?",
+                    "answer": "The PO life cycle in MM includes requisition, creation, purchase order, and approval workflows. It also includes the receipt of goods, the invoice, and the three-way match. ERPVITS helps you understand the complete PO workflows.",
+                    "question": "What is the Purchase Order Lifecycle in SAP MM?"
                 },
                 {
                     "a": "ERPVITS teaches all the goods receipt processes, and inventory actions, including stock movement, physical inventory counting, inventory aging management in S/4HANA, and all the other frameworks.",
-                    "q": "What are Goods Receipt and Inventory Management?"
+                    "q": "What are Goods Receipt and Inventory Management?",
+                    "answer": "ERPVITS teaches all the goods receipt processes, and inventory actions, including stock movement, physical inventory counting, inventory aging management in S/4HANA, and all the other frameworks.",
+                    "question": "What are Goods Receipt and Inventory Management?"
                 },
                 {
                     "a": "SAP MM is complete materials management, that includes procurement, inventory, planning, and warehouse management. ERPVITS gives you MM workflows and practical exposure to real-life projects through our comprehensive SAP MM full course.",
-                    "q": "How does SAP MM support modern supply chain operations?"
+                    "q": "How does SAP MM support modern supply chain operations?",
+                    "answer": "SAP MM is complete materials management, that includes procurement, inventory, planning, and warehouse management. ERPVITS gives you MM workflows and practical exposure to real-life projects through our comprehensive SAP MM full course.",
+                    "question": "How does SAP MM support modern supply chain operations?"
                 },
                 {
                     "a": "At ERPVITS you can take SAP MM online classes on flexible schedules and with live SAP MM class sessions. You will also work on projects aligned with current industry standards and you will have help for your first job and interviews.",
-                    "q": "What is special about SAP MM Program from ERPVITS?"
+                    "q": "What is special about SAP MM Program from ERPVITS?",
+                    "answer": "At ERPVITS you can take SAP MM online classes on flexible schedules and with live SAP MM class sessions. You will also work on projects aligned with current industry standards and you will have help for your first job and interviews.",
+                    "question": "What is special about SAP MM Program from ERPVITS?"
                 },
                 {
                     "a": "Those with an interest in supply chain, materials management, or SAP tech will be interested. It is for freshers, professionals, and consultants. It is stackable training, SAP MM Course will make you job ready.",
-                    "q": "Who is eligible for the SAP MM Course?"
+                    "q": "Who is eligible for the SAP MM Course?",
+                    "answer": "Those with an interest in supply chain, materials management, or SAP tech will be interested. It is for freshers, professionals, and consultants. It is stackable training, SAP MM Course will make you job ready.",
+                    "question": "Who is eligible for the SAP MM Course?"
                 },
                 {
                     "a": "SAP MM Certification is proof that you have the ability for materials management. Validation is with ERPVITS training for advanced certification and you will be an SAP MM certified professional.",
-                    "q": "What is SAP S/4HANA MM Certification and its importance?"
+                    "q": "What is SAP S/4HANA MM Certification and its importance?",
+                    "answer": "SAP MM Certification is proof that you have the ability for materials management. Validation is with ERPVITS training for advanced certification and you will be an SAP MM certified professional.",
+                    "question": "What is SAP S/4HANA MM Certification and its importance?"
                 },
                 {
                     "a": "The SAP MM program fee is set at a reasonable price and it changes according to the training mode and program. SAP MM course fees and SAP MM fees vary based on the batch you choose.",
-                    "q": "What are the fees for SAP MM program at ERPVITS?"
+                    "q": "What are the fees for SAP MM program at ERPVITS?",
+                    "answer": "The SAP MM program fee is set at a reasonable price and it changes according to the training mode and program. SAP MM course fees and SAP MM fees vary based on the batch you choose.",
+                    "question": "What are the fees for SAP MM program at ERPVITS?"
                 },
                 {
                     "a": "The SAP MM certification cost is set by SAP Education. ERPVITS provides you with complete guidance for the exam with practice tests and mentoring, so you will pass it on your first try.",
-                    "q": "How much does the SAP MM Certification cost?"
+                    "q": "How much does the SAP MM Certification cost?",
+                    "answer": "The SAP MM certification cost is set by SAP Education. ERPVITS provides you with complete guidance for the exam with practice tests and mentoring, so you will pass it on your first try.",
+                    "question": "How much does the SAP MM Certification cost?"
                 },
                 {
                     "a": "You can enroll in SAP MM training, finish your inventory projects, and get certified. ERPVITS will also help you figure out your career path and assist you in getting a job.",
-                    "q": "How can I become an SAP MM Consultant through ERPVITS?"
+                    "q": "How can I become an SAP MM Consultant through ERPVITS?",
+                    "answer": "You can enroll in SAP MM training, finish your inventory projects, and get certified. ERPVITS will also help you figure out your career path and assist you in getting a job.",
+                    "question": "How can I become an SAP MM Consultant through ERPVITS?"
                 },
                 {
                     "a": "With the training in SAP MM, you can become an MM Consultant, Materials Manager, Supply Chain Analyst, Warehouse Manager, and Planning Specialist at top consulting companies.",
-                    "q": "What career options can I pursue after the MM course?"
+                    "q": "What career options can I pursue after the MM course?",
+                    "answer": "With the training in SAP MM, you can become an MM Consultant, Materials Manager, Supply Chain Analyst, Warehouse Manager, and Planning Specialist at top consulting companies.",
+                    "question": "What career options can I pursue after the MM course?"
                 },
                 {
                     "a": "ERPVITS has explained in detail how SAP MM module works with the other modules like FI (Finance), SD (Sales), PP (Production), and WM (Warehouse Management).",
-                    "q": "How does SAP MM work with the other S/4HANA modules?"
+                    "q": "How does SAP MM work with the other S/4HANA modules?",
+                    "answer": "ERPVITS has explained in detail how SAP MM module works with the other modules like FI (Finance), SD (Sales), PP (Production), and WM (Warehouse Management).",
+                    "question": "How does SAP MM work with the other S/4HANA modules?"
                 },
                 {
                     "a": "In our SAP MM classes we cover Material Master, Purchasing, Goods Receipt, Inventory Management, Valuation, Warehouse Integration, Planning, and Advanced topics in MM.",
-                    "q": "What are the key areas in the MM functional course?"
+                    "q": "What are the key areas in the MM functional course?",
+                    "answer": "In our SAP MM classes we cover Material Master, Purchasing, Goods Receipt, Inventory Management, Valuation, Warehouse Integration, Planning, and Advanced topics in MM.",
+                    "question": "What are the key areas in the MM functional course?"
                 },
                 {
                     "a": "Licensing for SAP MM is usually done per user or based on transaction volume. During the training, ERPVITS explains the functional part of MM, implementation cost, and return on investment.",
-                    "q": "How do companies price SAP MM?"
+                    "q": "How do companies price SAP MM?",
+                    "answer": "Licensing for SAP MM is usually done per user or based on transaction volume. During the training, ERPVITS explains the functional part of MM, implementation cost, and return on investment.",
+                    "question": "How do companies price SAP MM?"
                 },
                 {
                     "a": "Definitely! For SAP MM training with placement, ERPVITS provides placement help along with building your profile and coaching you for interviews. We also get you in touch with employers.",
-                    "q": "Does ERPVITS provide SAP MM Training with Placement Assistance?"
+                    "q": "Does ERPVITS provide SAP MM Training with Placement Assistance?",
+                    "answer": "Definitely! For SAP MM training with placement, ERPVITS provides placement help along with building your profile and coaching you for interviews. We also get you in touch with employers.",
+                    "question": "Does ERPVITS provide SAP MM Training with Placement Assistance?"
                 },
                 {
                     "a": "Yes, ERPVITS offers SAP MM online courses really anywhere. You'll be able to train with live instructors, receive recorded sessions, and practice from anywhere.",
-                    "q": "Can I take SAP MM Online Training from anywhere?"
+                    "q": "Can I take SAP MM Online Training from anywhere?",
+                    "answer": "Yes, ERPVITS offers SAP MM online courses really anywhere. You'll be able to train with live instructors, receive recorded sessions, and practice from anywhere.",
+                    "question": "Can I take SAP MM Online Training from anywhere?"
                 },
                 {
                     "a": "Yes, ERPVITS has online and onsite training options, with flexible weekend and weekday SAP MM classes designed for working professionals.",
-                    "q": "Is SAP MM Training available near me?"
+                    "q": "Is SAP MM Training available near me?",
+                    "answer": "Yes, ERPVITS has online and onsite training options, with flexible weekend and weekday SAP MM classes designed for working professionals.",
+                    "question": "Is SAP MM Training available near me?"
                 },
                 {
                     "a": "ERPVITS takes you through building your SAP MM career path with resume writing, interview practice, and job references to top SAP consulting firms.",
-                    "q": "How does ERPVITS help in SAP MM Careers?"
+                    "q": "How does ERPVITS help in SAP MM Careers?",
+                    "answer": "ERPVITS takes you through building your SAP MM career path with resume writing, interview practice, and job references to top SAP consulting firms.",
+                    "question": "How does ERPVITS help in SAP MM Careers?"
                 },
                 {
                     "a": "You'll receive comprehensive SAP S4 HANA MM study material including PDFs, presentations, configuration guides, SAP MM tutorials, and access to official SAP documentation.",
-                    "q": "What study materials are provided in the course?"
+                    "q": "What study materials are provided in the course?",
+                    "answer": "You'll receive comprehensive SAP S4 HANA MM study material including PDFs, presentations, configuration guides, SAP MM tutorials, and access to official SAP documentation.",
+                    "question": "What study materials are provided in the course?"
                 },
                 {
                     "a": "While our premium training is paid, we provide free resources including demo classes, interview guides, and introductory SAP material management course free resources to help you understand the basics before enrolling.",
-                    "q": "Do you offer any free SAP MM resources?"
+                    "q": "Do you offer any free SAP MM resources?",
+                    "answer": "While our premium training is paid, we provide free resources including demo classes, interview guides, and introductory SAP material management course free resources to help you understand the basics before enrolling.",
+                    "question": "Do you offer any free SAP MM resources?"
                 },
                 {
                     "a": "Our program combines live instruction, hands-on labs, real-world projects, and comprehensive placement support. Unlike SAP MM course free online videos, we provide personalized mentoring and career guidance throughout your journey.",
-                    "q": "What makes your SAP MM training different from others?"
+                    "q": "What makes your SAP MM training different from others?",
+                    "answer": "Our program combines live instruction, hands-on labs, real-world projects, and comprehensive placement support. Unlike SAP MM course free online videos, we provide personalized mentoring and career guidance throughout your journey.",
+                    "question": "What makes your SAP MM training different from others?"
                 }
             ],
             "title": "Frequently Asked Questions (FAQs) – SAP S/4HANA MM Training at ERPVITS"
@@ -1094,5 +1179,5 @@ export const mmContent = {
         }
     ],
     "faqs": [],
-    "schema": "{\"@context\":\"https://schema.org/\",\"@type\":\"Course\",\"name\":\"SAP S/4HANA MM Online Training\",\"description\":\"ERPVITS SAP S/4HANA MM Online Training helps learners master materials management, procurement, and supply chain operations through live sessions, projects, and certification support.\",\"provider\":{\"@type\":\"Organization\",\"name\":\"ERPVITS\",\"url\":\"https://www.erpvits.com/\",\"logo\":\"https://www.erpvits.com/images/erpvits-logo.webp\",\"sameAs\":[\"https://www.instagram.com/erp_vits/\",\"https://www.linkedin.com/company/erpvits/\",\"https://www.youtube.com/@ERPVITS\"]},\"hasCourseInstance\":{\"@type\":\"CourseInstance\",\"courseMode\":\"Online\",\"courseSchedule\":\"Flexible - Weekend & Weekday Batches\",\"duration\":\"PT45H\",\"location\":{\"@type\":\"Online\",\"url\":\"https://www.erpvits.com/sap-s4hana-mm-training/\"}},\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.8\",\"bestRating\":\"5\",\"ratingCount\":\"245\"},\"mainEntityOfPage\":\"https://www.erpvits.com/sap-s4hana-mm-training/\",\"mainEntity\":[{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"What is SAP S/4HANA MM and how does ERPVITS help me learn it?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"SAP S/4HANA Materials Management is an integrated approach to managing inventory, procurement, and supply chain operations. ERPVITS builds your confidence through practical SAP MM module training that involves real-life supply chain scenarios, exercises, and project guidance.\"}},{\"@type\":\"Question\",\"name\":\"What will I learn in the Material Master module?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"You will learn how to create and maintain material records, configure materials, organize and manage data, and ensure SAP S/4HANA MM master data consistency.\"}},{\"@type\":\"Question\",\"name\":\"What is the Purchase Order Lifecycle in SAP MM?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The PO lifecycle includes requisition, creation, approval workflows, goods receipt, invoice, and three-way match. ERPVITS helps you understand every stage of this process through hands-on training.\"}},{\"@type\":\"Question\",\"name\":\"What are Goods Receipt and Inventory Management?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"ERPVITS teaches all goods receipt processes and inventory actions including stock movement, physical inventory counting, and inventory aging management in S/4HANA.\"}},{\"@type\":\"Question\",\"name\":\"How does SAP MM support modern supply chain operations?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"SAP MM covers procurement, inventory, planning, and warehouse management. ERPVITS provides MM workflows and real-life project exposure through the comprehensive SAP MM full course.\"}},{\"@type\":\"Question\",\"name\":\"What is special about SAP MM Program from ERPVITS?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"ERPVITS offers flexible online SAP MM classes with live sessions, industry-aligned projects, job assistance, certification support, resume help, and interview preparation.\"}},{\"@type\":\"Question\",\"name\":\"Who is eligible for the SAP MM Course?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Anyone interested in supply chain, materials management, or SAP technology — including freshers, professionals, and consultants — can join. The SAP MM Course is job-oriented and stackable.\"}},{\"@type\":\"Question\",\"name\":\"What is SAP S/4HANA MM Certification and its importance?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"SAP MM Certification validates your expertise in materials management and boosts your career growth. ERPVITS provides complete preparation and guidance for certification success.\"}},{\"@type\":\"Question\",\"name\":\"What are the fees for SAP MM program at ERPVITS?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The SAP MM program fee varies by mode and batch. SAP MM course fees and SAP MM fees depend on your chosen schedule and include training, certification support, and placement assistance.\"}},{\"@type\":\"Question\",\"name\":\"How much does the SAP MM Certification cost?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The SAP MM Certification cost is determined by SAP Education. ERPVITS offers complete exam preparation, mock tests, and mentorship to help you pass on the first attempt.\"}},{\"@type\":\"Question\",\"name\":\"How can I become an SAP MM Consultant through ERPVITS?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Enroll in SAP MM training, complete real-time projects, and earn certification. ERPVITS assists with your career path, resume building, and job placement.\"}},{\"@type\":\"Question\",\"name\":\"What career options can I pursue after the MM course?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"After SAP MM training, you can become an MM Consultant, Materials Manager, Supply Chain Analyst, Warehouse Manager, or Planning Specialist in top companies.\"}},{\"@type\":\"Question\",\"name\":\"How does SAP MM work with the other S/4HANA modules?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"SAP MM integrates seamlessly with FI (Finance), SD (Sales), PP (Production), and WM (Warehouse Management) modules. ERPVITS explains these interconnections with practical examples.\"}},{\"@type\":\"Question\",\"name\":\"What are the key areas in the MM functional course?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Our SAP MM classes cover Material Master, Purchasing, Goods Receipt, Inventory Management, Valuation, Warehouse Integration, Planning, and Advanced topics.\"}},{\"@type\":\"Question\",\"name\":\"How do companies price SAP MM?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Licensing for SAP MM is typically based on users or transaction volume. ERPVITS explains functional implementation, cost factors, and ROI during training.\"}},{\"@type\":\"Question\",\"name\":\"Does ERPVITS provide SAP MM Training with Placement Assistance?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes, ERPVITS offers SAP MM training with placement support, interview coaching, and connections with hiring partners for SAP roles.\"}},{\"@type\":\"Question\",\"name\":\"Can I take SAP MM Online Training from anywhere?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes, ERPVITS provides SAP MM online courses accessible from anywhere with live instructor-led sessions and recorded classes.\"}},{\"@type\":\"Question\",\"name\":\"Is SAP MM Training available near me?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes, ERPVITS offers both online and onsite SAP MM training with flexible weekday and weekend class options for professionals.\"}},{\"@type\":\"Question\",\"name\":\"How does ERPVITS help in SAP MM Careers?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"ERPVITS supports career development with resume building, interview preparation, and referrals to top SAP consulting firms through its SAP MM training and placement program.\"}},{\"@type\":\"Question\",\"name\":\"What study materials are provided in the course?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"You'll receive comprehensive SAP S/4HANA MM study material, including PDFs, presentations, configuration guides, SAP MM tutorials, and official SAP documentation.\"}},{\"@type\":\"Question\",\"name\":\"Do you offer any free SAP MM resources?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes, ERPVITS provides free demo classes, interview guides, and introductory SAP material management course resources to help you get started before enrolling.\"}},{\"@type\":\"Question\",\"name\":\"What makes your SAP MM training different from others?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"ERPVITS combines live instruction, hands-on labs, real projects, personalized mentoring, and full placement support — going beyond free SAP MM videos to ensure real skill mastery.\"}}]}]}"
+    "schema": "<script type=\"application/ld+json\">\n        {\n          \"@context\": \"https://www.schema.org\",\n          \"@type\": \"Product\",\n          \"brand\": \"ERPVITS\",\n          \"name\": \"SAP S/4HANA MM (Materials Management) Online Training\",\n          \"image\": \"https://www.erpvits.com/images/erpvits-logo.webp\",\n          \"description\": \"Master SAP S/4HANA Materials Management (MM) with ERPVITS. Learn procurement automation, real-time inventory management, and MRP Live through hands-on projects.\",\n          \"aggregateRating\": {\n            \"@type\": \"AggregateRating\",\n            \"ratingValue\": \"4.5\",\n            \"reviewCount\": \"3018\",\n            \"url\": \"https://www.erpvits.com/sap-s4hana-mm-training/\"\n          }\n        }\n        </script>"
 };

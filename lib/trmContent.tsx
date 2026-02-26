@@ -5,12 +5,12 @@ export const trmContent = {
     "category": "Functional",
     "price": "45,000",
     "duration": "50+ Hours",
-    "heroHeading": "Master the Future of Corporate Treasury with <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone\">SAP TRM Online Training</span>",
-    "heroSubheading": "Unlock premium treasury consulting careers with SAP TRM Online Training (Treasury and Risk Management), Cash Management, Foreign Exchange Operations, Trading of Securities, Derivative Hedging, Advanced Credit Risk Determination. Learn with hands-on training, work with real financial workflows and earn industry-recognized SAP TRM certification. For finance professionals and SAP consultants hoping to sharpen their skills in treasury operations, risk management, and enterprise financial systems, the SAP TRM Training Program from ERPVITS is a transformative learning pathway. Designed especially for treasury professionals, finance leaders and ERP consultants, our all encompassing SAP TRM course incorporates interactive, instructor-led components, practical exercises, real-world financial scenarios and certification support from start to finish.",
+    "heroHeading": "Master the Future of Corporate Treasury with <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone\">SAP TRM Training</span>",
+    "heroSubheading": "Unlock premium treasury consulting careers with SAP TRM Training (Treasury and Risk Management) covering Cash Management, Foreign Exchange Operations, Trading of Securities, Derivative Hedging & Advanced Credit Risk Determination. Learn with hands-on training, work on real financial workflows and earn industry-recognized SAP TRM certification. For finance professionals and SAP consultants hoping to sharpen their skills in treasury operations, risk management, and enterprise financial systems, our SAP TRM course is a transformative learning pathway. Designed especially for treasury professionals, finance leaders and ERP consultants, our all encompassing SAP TRM training incorporates interactive, instructor-led components, practical exercises, real-world financial scenarios and certification support.",
     "heroImage": "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP TRM Infographic.webp",
     "description": "Unlock premium treasury consulting careers with SAP TRM Online Training (Treasury and Risk Management), Cash Management, Foreign Exchange Operations, Trading of Securities, Derivative Hedging, Advanced Credit Risk Determination. Learn with hands-on training, work with real financial workflows and earn industry-recognized SAP TRM certification. For finance professionals and SAP consultants hoping to sharpen their skills in treasury operations, risk management, and enterprise financial systems, the SAP TRM Training Program from ERPVITS is a transformative learning pathway. Designed especially for treasury professionals, finance leaders and ERP consultants, our all encompassing SAP TRM course incorporates interactive, instructor-led components, practical exercises, real-world financial scenarios and certification support from start to finish.\n\n[Book Your Free Demo Class] | [View Curriculum]\n\n✅ SAP Certified Trainers✅ 4.8 Learner Rating✅ 24/7 Team support\n\nOur SAP TRM Online Training is executed by certified SAP experts and Treasury and financial systems implementation professionals with 10+ years of direct experience. Unlike self-paced modules or passive video courses, you receive interactive real-time instruction in which instructors share proven methods, answer your direct questions, and walk you through intricate financial scenarios.\n\nCertified Instructor Expertise: Trainers are certified in SAP TRM and have substantial experience conducting enterprise-scale implementations of SAP TRM and overseeing corporate liquidity as the primary executor of corporate liquidity, ranging in the billions. They don’t teach just the theoretical aspects of the subject and instead describe transformative financial implementations in detail. Such an experience is priceless as you take your first SAP TRM consulting assignment.\n\n100% Hands-On Learning Methodology: Conventional training of SAP TRM teaches the concepts using slides and Powerpoint presentations. Our approach is different. Each SAP TRM training session incorporates the teaching of the concepts and later live demonstrations on the SAP S/4HANA TRM systems followed by the learners performing guided lab exercises to authentically recreate the session objectives. At the end of the program, you will have completed the configuration of money market instruments, performed foreign exchange transactions, managed a securities portfolio, set up derivatives to hedge, and assessed credit exposures on the real treasury systems and SAP TRM systems.\n\nJob-Oriented Curriculum Design: The course objectives have not been constructed in an academic manner as we centered it on the skills, duties and roles, and consultant level problem-solving that an SAP TRM consultant is expected to perform. Integrating cash management processes, configuring hedge accounting, setting up counter and managing credit limits, and even helping to resolve integrated disparate systems are common problems and our training gets our trainees to practical problem-solving competencies.\n\nInteractive Q&A Sessions: After instruction is concluded in the main class, we have dedicated forums and live Q&A sessions during which your instructors answer your questions, discuss complex treasury concepts, and guide you in a way that meets your learning needs and career objectives.\n\nFlexible Batch Timings: Understanding that several finance specialists have busy schedules along with family and learning responsibilities, we have flexible timings with sessions on weekday evenings (6 PM – 9 PM IST) and on weekends (Saturday & Sunday). If you miss a live class, you can catch up on the recorded sessions at your own pace.\n\nSmall Batch Sizes for Personalized Attention: Our participants get individual attention. Capped at 8-10 members, we ensure you each get to know the instructor, and they get to know you, your strengths and weaknesses, and provide you with individual attention on complex financial scenarios.\n\nPlacement & Career support: Learning SAP TRM is 50% of the work, and being placed is the other half. To get you ready for interviews, we have real treasury and banking interview questions, help you with mock interviews, and guide you in SAP-focused resume building. You also get support on how to effectively present your project experience during SAP TRM financial services interviews to help you stand out.\n\nActive Alumni Network & Community Forum: Active Alumni Network & Community Forum: Experience building a network within a community of SAP TRM and treasury technology specialists. Provide and receive career-related assistance, pose queries, and establish connections that can provide referrals and partnerships within global financial institutions.\n\nOngoing support Post-Training: Your learning journey doesn't end with SAP TRM course completion. For six months after training, you'll continue to receive instructor guidance—whether you need help clarifying treasury concepts, troubleshooting real-world financial project challenges, or seeking advice during your first TRM consulting engagements.\n\nSince our establishment as a training partner for SAP financial modules, ERPVITS has received positive referrals from learners that have gone on to work for top consulting companies such as Accenture, Capgemini, Deloitte, Infosys, Wipro, and leading financial institutions. Our treasury program alumni network testimonials highlight the program quality and the impact it has on our learners’ career development.\n\nLearning SAP TRM provides end to end learning support during your SAP TRM online traning process and transition to a career in treasury. This is a 100% complete support.\n\nIntegrate career-focused SAP TRM training with real banking and treasury modules. Our comprehensive program streamlines your TRM learning, covers certification guidance, and provides post-training support to help you become a job-ready SAP TRM consultant.\n\nLive Interactive Classes: 50 hours in 8–12 weeks over live video conferencing including Q&A sessions and treasuring discussions to perform real time step conference presentations.\n\nReal-World Projects: Work on derivative hedging, money market transactions and foreign exchange, SAP S/4HANA positioning, and real portfolio construction securities and hedging to prepare business and perform SAP S/4HANA integration and S/4HANA integration framework real case studies.\n\nHands-On Lab Environment: Access SAP TRM system for deal entry, FX transactions, securities trading, hedge management, credit risk analysis and month-end settlement procedures.\n\nCertification Exam Prep: Prepare for the SAP TRM certification (SAP Certified Application Associate – SAP Treasury and Risk Management) using study guides, practice exams and targeted bootcamp sessions.\n\nResume & Interview Coaching: Get one-on-one resume enhancement and revision to show TRM expertise, mock consulting interviews, and coaching for SAP TRM treasury banking interviews.\n\nComplete Study Materials: Access study materials such as pdfs, presentations, treasury configuration checklists, interview question bank, financial scenario templates, and links to official SAP documents.\n\nLifetime Recording Access: Live sessions are recorded and then transcribed and indexed. This provides you with materials for easy revision and access to complex treasury topics for a lifetime.\n\nExpert Q&A Sessions: Participants are able to join the live Q&A for 60 minutes each week to discuss treasury concepts, guidance on financial system projects, and mentorship for the financial system.",
-    "metaTitle": "SAP TRM Online Training | Treasury & Risk Management",
-    "metaDescription": "SAP TRM Online Training (Treasury and Risk Management) with ERPVITS. Learn cash management, financial instruments & risk analysis through live projects.",
+    "metaTitle": "SAP TRM Training Online | Treasury & Risk Management",
+    "metaDescription": "SAP TRM Training Online (Treasury and Risk Management) with ERPVITS. Learn cash management, financial instruments & risk analysis through live projects.",
     "features": [
         "Trusted by 1500+ successful SAP TRM professionals",
         "Alumni at Accenture, Capgemini, Deloitte, EY, KPMG, major banks",
@@ -27,49 +27,45 @@ export const trmContent = {
             "items": [
                 {
                     "title": "Certified Instructor Expertise",
-                    "description": "Trainers are certified in SAP TRM and have substantial experience conducting enterprise-scale implementations of SAP TRM and overseeing corporate liquidity as the primary executor of corporate liquidity, ranging in the billions. They don’t teach just the theoretical aspects of the subject and instead describe transformative financial implementations in detail."
+                    "description": "Our trainers are certified in SAP TRM and have substantial experience conducting enterprise-scale implementations of SAP TRM and overseeing corporate liquidity as the primary executor of corporate liquidity, ranging in the billions. They don’t teach just the theoretical aspects of the subject and instead they focus on real time scenarios and <a href=\"https://www.erpvits.com/blog/sap-trm-complementary-technologies/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP TRM complementary technologies</a> that enhance real-world treasury operations."
                 },
                 {
-                    "title": "100% Hands-On Learning Methodology",
-                    "description": "Conventional training of SAP TRM teaches the concepts using slides and Powerpoint presentations. Our approach is different. Each SAP TRM training session incorporates the teaching of the concepts and later live demonstrations on the SAP S/4HANA TRM systems followed by the learners performing guided lab exercises to authentically recreate the session objectives."
-                },
-                {
-                    "title": "Job-Oriented Curriculum Design",
-                    "description": "The course objectives have not been constructed in an academic manner as we centered it on the skills, duties and roles, and consultant level problem-solving that an SAP TRM consultant is expected to perform. Integrating cash management processes, configuring hedge accounting, and managing credit limits are typical components."
+                    "title": "100% Hands-On Learning ",
+                    "description": "Our training provides an entirely practical approach, giving you direct experience working within the SAP TRM system from day one. Each concept is reinforced through live system demonstrations, guided configuration exercises, and real-world business scenarios. Rather than just watching, you actively perform transactions, configure key modules, simulate project environments and develop the confidence and expertise required for real treasury consulting roles."
                 },
                 {
                     "title": "Interactive Q&A Sessions",
-                    "description": "After instruction is concluded in the main class, we have dedicated forums and live Q&A sessions during which your instructors answer your questions, discuss complex treasury concepts, and guide you in a way that meets your learning needs."
+                    "description": "SAP TRM live sessions feature open discussions and real-time interactions with expert trainers. You are free to ask any question at any point during class and instantly clarify complex Treasury concepts and gain further insights through practical examples! Our Q&A discussions ensure stronger conceptual clarity, better problem-solving abilities and the confidence needed for real world SAP TRM scenarios."
                 },
                 {
                     "title": "Flexible Batch Timings",
-                    "description": "Understanding that several finance specialists have busy schedules along with family and learning responsibilities, we have flexible timings with sessions on weekday evenings (6 PM – 9 PM IST) and on weekends (Saturday & Sunday)."
+                    "description": "ERPVITS offers flexible batch schedules which are tailored to accommodate working professionals, students and career switchers. You can choose weekday or weekend batches at convenient timing options to fit into your busy lifestyle - this ensures that upgrading your SAP TRM skills won't interfere with work, studies or any other personal commitments."
                 },
                 {
-                    "title": "Small Batch Sizes for Personalized Attention",
-                    "description": "Capped at 8-10 members, we ensure you each get to know the instructor, and they get to know you, your strengths and weaknesses, and provide you with individual attention on complex financial scenarios."
+                    "title": "Small Batch Sizes",
+                    "description": "Our limited batch sizes ensure every participant receives personalized guidance and support, enabling trainers to address individual participant queries, monitor your progress closely and offer tailored feedback. With more one-on-one interaction and feedback provided directly by trainers, participants gain greater knowledge and practical expertise regarding SAP TRM concepts."
                 },
                 {
                     "title": "Placement & Career support",
-                    "description": "To get you ready for interviews, we have real treasury and banking interview questions, help you with mock interviews, and guide you in SAP-focused resume building. You also get support on how to effectively present your project experience."
+                    "description": "We provide tailored assistance to ensure you make a confident entry into SAP TRM consulting roles. This support includes SAP TRM interview questions resume writing, LinkedIn profile optimization, mock interviews, real-time project guidance and interview preparation specific to Treasury & Finance domains. In addition, we share relevant job opportunities while supporting you throughout the career transition process."
                 },
                 {
                     "title": "Active Alumni Network & Community Forum",
-                    "description": "Experience building a network within a community of SAP TRM and treasury technology specialists. Provide and receive career-related assistance, pose queries, and establish connections."
+                    "description": "Get lifetime access to our growing alumni network and exclusive community forum, featuring experienced SAP professionals, industry experts and fellow learners - ideal for exchanging knowledge, discussing real-time project challenges and uncovering job opportunities. This strong professional network ensures your continued learning and long-term career growth within SAP TRM."
                 },
                 {
                     "title": "Ongoing support Post-Training",
-                    "description": "For six months after training, you'll continue to receive instructor guidance—whether you need help clarifying treasury concepts, troubleshooting real-world financial project challenges, or seeking advice during your first TRM consulting engagements."
+                    "description": "Our commitment does not end at the completion of SAP TRM course; you will continue receiving mentorship and guidance for up to 6 months after finishing it. If you require any assistance with interview preparation, project-related queries, configuration challenges or concept clarification our experts remain available as resources to aid your transition and professional growth."
                 }
             ],
             "title": "Learn SAP TRM from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            "subtitle": "Our **SAP TRM Online Training** curriculum is delivered exclusively by certified SAP professionals, each with 12+ years of direct hands-on experience in treasury and financial systems implementation. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex financial and treasury scenarios in a step-by-step manner.",
+            "subtitle": "Our **SAP TRM Online Training** is delivered by certified SAP professionals with 12+ years of hands-on experience in treasury and financial systems implementation. Instead of pre-recorded sessions, our SAP TRM course offers interactive sessions where instructors share industry-proven methodologies, address your questions and guide you through complex financial and treasury scenarios step-by-step.",
             "textAlign": "left"
         },
         {
             "type": "content_with_image",
             "items": [
-                "Trusted by 1500+ successful SAP TRM professionals",
+                "Trusted by 3000+ successful SAP TRM professionals",
                 "Alumni at Accenture, Capgemini, Deloitte, EY, KPMG, major banks",
                 "Personalized pre-evaluation and TRM learning path",
                 "Active alumni network and treasury finance community forum",
@@ -78,9 +74,10 @@ export const trmContent = {
                 "Mock interviews simulating real TRM consultant scenarios",
                 "Dedicated certification prep week before official SAP exams"
             ],
-            "title": "Why Professionals Choose ERPVITS for SAP TRM Online Training",
+            "title": "Why Professionals Choose ERPVITS for SAP TRM Training",
             "subtitle": "Success Guarantee & Credibility",
-            "description": "Since our establishment as a training partner for SAP financial modules, ERPVITS has received positive referrals from learners that have gone on to work for top consulting companies such as Accenture, Capgemini, Deloitte, Infosys, Wipro, and leading financial institutions. Our treasury program alumni network testimonials highlight the program quality and the impact it has on our learners’ career development.",
+            "videoSrc": "https://youtube.com/embed/u6GCE8eAOAc",
+            "description": "ERPVITS stands out among best SAP TRM Training provider with our practical, career-centric approach and expert-led instruction. Led by certified trainers with extensive real-world Treasury implementation experience, our hands-on system learning approach emphasizes real-time business scenarios as well as step-by-step configuration guidance. Our flexible batch timings, small class sizes, interactive Q&A sessions, placement assistance services and extended post-training support services ensure learners not only gain knowledge but also develop confidence and skills necessary for SAP TRM consulting roles.",
             "supportText": "Learning SAP TRM provides end to end learning support during your SAP TRM online traning process and transition to a career in treasury. This is a 100% complete support.",
             "supportTitle": "Complete support Ecosystem"
         },
@@ -103,7 +100,7 @@ export const trmContent = {
                     "value": "24/7"
                 }
             ],
-            "title": "What's Included in the SAP TRM Training – Complete Learning Package",
+            "title": "What's Included in the SAP TRM Training",
             "features": [
                 {
                     "title": "Live Interactive Classes",
@@ -154,7 +151,7 @@ export const trmContent = {
                         "Accrual, settlement, and month-end closing procedures"
                     ],
                     "hands_on": [
-                        "Navigate SAP TRM Money Market module",
+                        "<a href=\"https://www.erpvits.com/blog/sap-trm-setup-essentials/\" target=\"_blank\" rel=\"noopener noreferrer\">Setup SAP TRM Essentials</a>, Navigate SAP TRM Money Market module",
                         "Create your first money market deal",
                         "Set up interest accrual and settlement workflows",
                         "Configure collective processing for multiple transactions"
@@ -375,7 +372,7 @@ export const trmContent = {
                 }
             ],
             "title": "Who Can Learn SAP TRM? – Perfect for Diverse Career Paths",
-            "subtitle": "This SAP TRM training is for those in various fields who are interested in global consulting and consulting implementation in treasury and financial systems."
+            "subtitle": "This SAP TRM training is for those in fields who are interested in global consulting and consulting implementation in treasury and financial systems."
         },
         {
             "type": "detailed_prerequisites",
@@ -519,7 +516,7 @@ export const trmContent = {
                     }
                 ]
             },
-            "title": "What You'll Master in This SAP TRM Online Course – Core Competencies"
+            "title": "What You'll Master in This SAP TRM Course – Core Competencies"
         },
         {
             "type": "real_world_scenarios",
@@ -581,6 +578,20 @@ export const trmContent = {
                     "focus": "Treasury operations, risk management, financial instruments, system configuration",
                     "title": "SAP Certified Application Associate – SAP Treasury and Risk Management",
                     "relevance": "Demonstrates expertise in end-to-end SAP TRM implementation"
+                },
+                {
+                    "who": "Mid-to-senior level consultant positions in corporate treasury and financial risk management.",
+                    "code": "C_S4FTR_2023 (or the latest delta C_S4FTR_2025)",
+                    "focus": "Foreign Exchange, Money Market, Derivatives, Financial Risk Analytics, Hedge Management",
+                    "title": "SAP Certified Application Associate – Treasury with SAP S/4HANA",
+                    "relevance": "Demonstrates expertise in end-to-end SAP TRM implementation"
+                },
+                {
+                    "who": "Entry to mid-level consultant positions in treasury and financial systems implementation.",
+                    "code": "C_S4FTR_2023 (Integrated Focus)",
+                    "focus": "<a href=\"https://www.bestonlinecareer.com/sap-bank-and-cash-management\" target=\"_blank\" rel=\"noopener noreferrer\">Bank Cash Management</a> (BCM), Cash Operations, Liquidity Management",
+                    "title": "SAP Certified Associate – S/4HANA Cash Management",
+                    "relevance": "Demonstrates expertise in the foundation of liquidity and bank"
                 }
             ],
             "title": "SAP TRM Certification – Your Global Career Credential",
@@ -611,7 +622,29 @@ export const trmContent = {
                     "description": "It indicates to clients and banks that you have accomplished tough treasury requirements."
                 }
             ],
-            "imageSrc": "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP TRM Infographic.webp"
+            "imageSrc": "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP TRM Infographic.webp",
+            "supportFeatures": [
+                {
+                    "title": "Targeted Exam Preparation",
+                    "subtitle": "Study guides aligned to official exam blueprints"
+                },
+                {
+                    "title": "Practice Exams",
+                    "subtitle": "Timed practice tests mirroring real exam conditions"
+                },
+                {
+                    "title": "Exam Strategies",
+                    "subtitle": "Time management tips and common pitfalls to avoid"
+                },
+                {
+                    "title": "Registration Guidance",
+                    "subtitle": "Assistance with exam registration and scheduling"
+                },
+                {
+                    "title": "Retake support",
+                    "subtitle": "Additional support if you don't pass on first attempt"
+                }
+            ]
         },
         {
             "type": "detailed_career_opportunities",
@@ -774,7 +807,7 @@ export const trmContent = {
                     "color": "orange",
                     "title": "Certification & Job Readiness",
                     "points": [
-                        "Receive certificate",
+                        "Receive SAP TRM certification",
                         "Access lifetime materials",
                         "Apply for certification",
                         "Start job search with support",
@@ -822,6 +855,35 @@ export const trmContent = {
         },
         {
             "type": "detailed_upcoming_batches",
+            "items": [
+                {
+                    "date": "November 15, 2025",
+                    "name": "Batch 1: November 2025 (Weekdays)",
+                    "time": "Weekdays – 7:00 AM | 8:00 PM IST",
+                    "seats": "5/10 Seats Left",
+                    "status": "Filling Fast",
+                    "duration": "50 Hours (SAP TRM course duration)",
+                    "statusColor": "bg-orange-100 text-orange-600"
+                },
+                {
+                    "date": "November 16, 2025",
+                    "name": "Batch 2: November 2025 (Weekends)",
+                    "time": "Weekends – Saturday & Sunday, 8:00 AM | 7:00 PM IST",
+                    "seats": "4/10 Seats Left",
+                    "status": "Filling Fast",
+                    "duration": "50 Hours",
+                    "statusColor": "bg-orange-100 text-orange-600"
+                },
+                {
+                    "date": "December 1, 2025",
+                    "name": "Batch 3: December 2025 (Flexible)",
+                    "time": "Flexible timings – customized per batch",
+                    "seats": "8/10 Seats Left",
+                    "status": "Open",
+                    "duration": "50 Hours (accelerated schedule)",
+                    "statusColor": "bg-green-100 text-green-600"
+                }
+            ],
             "title": "Join Our Next Live Batch – Limited Seats Available for SAP TRM Training",
             "batches": [
                 {
@@ -880,38 +942,50 @@ export const trmContent = {
             "type": "detailed_testimonials",
             "items": [
                 {
-                    "name": "Rajesh Kumar",
+                    "name": "Rachna Tripathi",
                     "role": "SAP TRM Consultant at Deloitte",
+                    "text": "",
+                    "author": "Rachna Tripathi",
                     "content": "Outstanding treasury systems training with real financial scenarios. I landed a consulting role at Deloitte within 10 weeks managing TRM implementations for a major bank. The hands-on approach and expert instructors made all the difference.",
                     "initial": "RK"
                 },
                 {
-                    "name": "Priya Desai",
+                    "name": "Yogesh Parmar",
                     "role": "Treasury Operations Manager",
+                    "text": "",
+                    "author": "Yogesh Parmar",
                     "content": "The flexible evening schedule allowed me to complete training while working in the corporate treasury. My employer was so impressed with my SAP TRM skills that they promoted me to Treasury Operations Manager. This course accelerated my career by 4 years.",
                     "initial": "PD"
                 },
                 {
-                    "name": "Vikram Mishra",
+                    "name": "Anuradha ",
                     "role": "Senior Treasury Consultant",
+                    "text": "",
+                    "author": "Anuradha ",
                     "content": "Best decision I made for my finance career. The capstone projects were exactly like real client treasury implementations. I walked into my first consulting engagement feeling confident in both finance and SAP expertise.",
                     "initial": "VM"
                 },
                 {
-                    "name": "Ananya Singh",
+                    "name": "Chetan Nayak",
                     "role": "Certified SAP TRM Professional",
+                    "text": "",
+                    "author": "Chetan Nayak",
                     "content": "Superb TRM certification preparation. I passed the SAP Treasury certification on my first attempt. The mock exams and financial scenario materials were spot-on. Now managing treasury transformations for major corporations.",
                     "initial": "AS"
                 },
                 {
-                    "name": "Vikram Desai",
+                    "name": "Varsha Kulshrestha",
                     "role": "Integration Consultant at Capgemini",
+                    "text": "",
+                    "author": "Varsha Kulshrestha",
                     "content": "The instructor's real-world banking and treasury insights were invaluable. I didn't just learn SAP TRM; I learned how to think like a treasury professional managing complex financial operations. The alumni network has already brought several implementation opportunities my way.",
                     "initial": "VD"
                 },
                 {
-                    "name": "Sneha Reddy",
+                    "name": "Hemant Purohit",
                     "role": "Treasury Analyst at JPMorgan Chase",
+                    "text": "",
+                    "author": "Hemant Purohit",
                     "content": "From corporate accounting to leading SAP TRM implementations in 5 months! The instructors are patient, highly knowledgeable finance experts, and truly care about learner success in banking careers. Lifetime recording access is a huge bonus.",
                     "initial": "SR"
                 }
@@ -967,11 +1041,14 @@ export const trmContent = {
                     "question": "What are the features of SAP TRM in the context of modern treasury operations?"
                 },
                 {
-                    "answer": "With live online training and session integration, financial projects aligned with the industry, and banking and finance placement support, ERPVITS gives you SAP TRM Training. They provide support on TRM certification, resume workshops, and interview coaching.",
-                    "question": "What are the training features of ERPVITS for SAP TRM?"
+                    "a": "With live online training and session integration, financial projects aligned with the industry, and banking and finance placement support, ERPVITS gives you SAP TRM Training. They provide support on TRM certification, resume workshops and interview coaching.",
+                    "q": "What are the features of SAP TRM training ?",
+                    "answer": "With live online training and session integration, financial projects aligned with the industry, and banking and finance placement support, ERPVITS gives you SAP TRM Training. They provide support on TRM certification, resume workshops and interview coaching.",
+                    "question": "What are the features of SAP TRM training ?"
                 },
                 {
-                    "answer": "ERPVITS SAP TRM Course is aimed at anyone who wants to develop practical skills in treasury, finance, risk management, and SAP financial systems. This is true of newcomers, working finance professionals, or ERP consultants.",
+                    "a": "ERPVITS SAP TRM Course is aimed at anyone who wants to develop practical skills in treasury, finance, risk management, and SAP financial systems. This is true of newcomers, working finance professionals or ERP consultants.",
+                    "answer": "ERPVITS SAP TRM Course is aimed at anyone who wants to develop practical skills in treasury, finance, risk management, and SAP financial systems. This is true of newcomers, working finance professionals or ERP consultants.",
                     "question": "Who is the intended audience for the SAP TRM Course?"
                 },
                 {
@@ -979,19 +1056,24 @@ export const trmContent = {
                     "question": "What is SAP TRM Certification and why is it important?"
                 },
                 {
-                    "answer": "ERPVITS offers competitively priced SAP TRM courses. The fees vary depending on the program and the training mode chosen. Each program combines experiential training with value-driven pricing for learning, placement support, certification assistance, and hands-on learning.",
+                    "a": "ERPVITS offers competitively priced SAP TRM courses. The fees vary depending on the program and the training mode chosen. Each program combines experiential training with value-driven pricing for learning, placement support, certification assistance and hands-on learning.",
+                    "answer": "ERPVITS offers competitively priced SAP TRM courses. The fees vary depending on the program and the training mode chosen. Each program combines experiential training with value-driven pricing for learning, placement support, certification assistance and hands-on learning.",
                     "question": "What are the fees for the SAP TRM courses at ERPVITS?"
                 },
                 {
-                    "answer": "ERPVITS does not determine the TRM certification cost since it is regulated by SAP Education. However, ERPVITS offers comprehensive support such as exam training, practice tests, and mentorship, ensuring you clear the exam on the first attempt.",
+                    "a": "ERPVITS does not determine the SAP TRM certification cost since it is regulated by SAP Education. However, ERPVITS offers comprehensive support such as exam training, practice tests, and mentorship, ensuring you clear the exam on the first attempt.",
+                    "answer": "ERPVITS does not determine the SAP TRM certification cost since it is regulated by SAP Education. However, ERPVITS offers comprehensive support such as exam training, practice tests, and mentorship, ensuring you clear the exam on the first attempt.",
                     "question": "What is the cost for the SAP TRM Certification?"
                 },
                 {
-                    "answer": "To become an ERPVITS SAP TRM Consultant, you need to enroll in the SAP TRM Training Program and complete the financial project assignments, and certification preparation. As you finish the course, ERPVITS provides career counseling and job assistance geared toward achieving a TRM Consultant position.",
-                    "question": "How can I become an ERPVITS SAP TRM Consultant?"
+                    "a": "To become an SAP TRM Consultant, you need to enroll in the SAP TRM Training Program and complete the financial project assignments and certification preparation. As you finish the SAP TRM course, ERPVITS provides career counseling and job assistance geared toward achieving a SAP TRM Consultant position.",
+                    "q": "How can I become an SAP TRM Consultant?",
+                    "answer": "To become an SAP TRM Consultant, you need to enroll in the SAP TRM Training Program and complete the financial project assignments and certification preparation. As you finish the SAP TRM course, ERPVITS provides career counseling and job assistance geared toward achieving a SAP TRM Consultant position.",
+                    "question": "How can I become an SAP TRM Consultant?"
                 },
                 {
-                    "answer": "After SAP TRM training, you can pursue careers as a TRM Consultant, Treasury Operations Manager, Risk Analyst, SAP Treasury Architect, or Finance Systems Specialist. TRM consultants job offers and placement opportunities are communicated to our learners.",
+                    "a": "After SAP TRM training, you can pursue careers as a SAP TRM Consultant, Treasury Operations Manager, Risk Analyst, SAP Treasury Architect, or Finance Systems Specialist. TRM consultants job offers and placement opportunities are communicated to our learners.",
+                    "answer": "After SAP TRM training, you can pursue careers as a SAP TRM Consultant, Treasury Operations Manager, Risk Analyst, SAP Treasury Architect, or Finance Systems Specialist. TRM consultants job offers and placement opportunities are communicated to our learners.",
                     "question": "What can you do after completing the TRM course?"
                 },
                 {
@@ -1032,5 +1114,5 @@ export const trmContent = {
     ],
     "curriculum": [],
     "faqs": [],
-    "schema": "{\"@context\":\"https://schema.org\",\"@type\":\"Course\",\"name\":\"SAP TRM (Treasury and Risk Management) Online Training\",\"url\":\"https://www.erpvits.com/sap-treasury-and-risk-management-online-training/\",\"description\":\"Master SAP Treasury and Risk Management (TRM) with ERPVITS. Learn cash management, financial instruments, and risk analysis through real-time projects and become a job-ready SAP TRM Consultant.\",\"provider\":{\"@type\":\"Organization\",\"name\":\"ERPVITS\",\"url\":\"https://www.erpvits.com\",\"logo\":\"https://www.erpvits.com/images/erpvits-logo.webp\",\"sameAs\":[\"https://www.instagram.com/erp_vits/\",\"https://www.linkedin.com/company/erpvits/\",\"https://www.youtube.com/@ERPVITS\"]},\"courseMode\":\"Online\",\"educationalCredentialAwarded\":\"SAP TRM Certification\",\"timeRequired\":\"PT50H\",\"offers\":{\"@type\":\"Offer\",\"price\":\"45000\",\"priceCurrency\":\"INR\",\"availability\":\"https://schema.org/InStock\",\"url\":\"https://www.erpvits.com/sap-treasury-and-risk-management-online-training/\"},\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.8\",\"bestRating\":\"5\",\"ratingCount\":\"233\"},\"review\":[{\"@type\":\"Review\",\"author\":{\"@type\":\"Person\",\"name\":\"Priya Sharma\"},\"reviewBody\":\"The SAP TRM course at ERPVITS gave me complete clarity on money market and forex modules. The trainer used real-time banking case studies that made learning easy and practical.\",\"reviewRating\":{\"@type\":\"Rating\",\"ratingValue\":\"5\",\"bestRating\":\"5\"}},{\"@type\":\"Review\",\"author\":{\"@type\":\"Person\",\"name\":\"Ravi Kumar\"},\"reviewBody\":\"Excellent online SAP TRM Training with guided projects and placement support. ERPVITS helped me prepare for certification and job interviews effectively.\",\"reviewRating\":{\"@type\":\"Rating\",\"ratingValue\":\"4.8\",\"bestRating\":\"5\"}}],\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"How is ERPVITS helping you to understand what SAP TRM is?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"SAP TRM is an enterprise solution handling treasury, risk management, and financial instruments. ERPVITS offers integrated training with practical treasury lessons, financial workflows, hands-on practice, and guided projects to help learners master TRM systems.\"}},{\"@type\":\"Question\",\"name\":\"What will I learn in the SAP TRM Money Market module?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The Money Market module covers SAP TRM systems for processing money market deals, interest accruals, settlements, month-end activities, and management of deposits, loans, and commercial papers.\"}},{\"@type\":\"Question\",\"name\":\"What is the SAP TRM Foreign Exchange module?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The Forex module includes SAP TRM systems for managing spot transactions, forwards, netting, and overall currency exposure. ERPVITS guides you through FIN FX configuration, settlements, and real-time currency risk handling.\"}},{\"@type\":\"Question\",\"name\":\"What are SAP TRM Credit Risk and Derivatives capabilities?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"ERPVITS covers Credit Risk, exposure and limit monitoring, counterparty management, derivative instruments, hedge accounting, and risk analysis for enterprise financial risk management.\"}},{\"@type\":\"Question\",\"name\":\"What are the features of SAP TRM in the context of modern treasury operations?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"SAP TRM offers deal processing, cash management, risk monitoring, and compliance. ERPVITS provides hands-on financial implementation exposure with real TRM workflows.\"}},{\"@type\":\"Question\",\"name\":\"What are the training features of ERPVITS for SAP TRM?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"ERPVITS offers live online sessions, industry-aligned financial projects, and placement support. Learners also receive certification support, resume workshops, and interview coaching.\"}},{\"@type\":\"Question\",\"name\":\"Who is the intended audience for the SAP TRM Course?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The SAP TRM Course at ERPVITS is ideal for finance professionals, ERP consultants, and newcomers aiming to build expertise in treasury, risk management, and SAP financial systems.\"}},{\"@type\":\"Question\",\"name\":\"What is SAP TRM Certification and why is it important?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"SAP TRM Certification validates your skills in treasury operations and risk management. ERPVITS prepares learners to successfully achieve SAP TRM certification through guided training and mock exams.\"}},{\"@type\":\"Question\",\"name\":\"What are the fees for the SAP TRM courses at ERPVITS?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"ERPVITS offers competitively priced SAP TRM courses at ₹45,000. Pricing may vary by program mode, including online and live instructor-led sessions, with added benefits like placement and certification support.\"}},{\"@type\":\"Question\",\"name\":\"What is the cost for the SAP TRM Certification?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The SAP TRM Certification cost is set by SAP Education. ERPVITS assists learners with exam preparation, mock tests, and mentorship to help them clear the certification exam on the first attempt.\"}},{\"@type\":\"Question\",\"name\":\"How can I become an ERPVITS SAP TRM Consultant?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"To become an SAP TRM Consultant, enroll in ERPVITS’s SAP TRM Training Program, complete real-time projects, and prepare for certification. ERPVITS provides job assistance and career guidance to secure TRM Consultant roles.\"}},{\"@type\":\"Question\",\"name\":\"What can you do after completing the TRM course?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"After completing SAP TRM training, you can pursue roles like TRM Consultant, Treasury Operations Manager, Risk Analyst, or Finance Systems Specialist. ERPVITS supports learners with placement and job referrals.\"}},{\"@type\":\"Question\",\"name\":\"How does SAP TRM integrate with SAP S/4HANA?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"ERPVITS provides in-depth training on integrating SAP TRM with SAP S/4HANA FICO and other modules using modern cloud-based techniques and real financial data flow demonstrations.\"}},{\"@type\":\"Question\",\"name\":\"What are the main SAP TRM functional areas covered in the course?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The course covers all key SAP TRM areas — Money Market, Foreign Exchange, Securities, Derivatives, Credit Risk, Cash Management, and Hedge Accounting — with real financial use cases.\"}},{\"@type\":\"Question\",\"name\":\"What is SAP TRM pricing and how does it work for organizations?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"SAP TRM pricing depends on implementation scope and transaction volume. ERPVITS provides training on TRM licensing, pricing structure, and ROI estimation for organizations.\"}},{\"@type\":\"Question\",\"name\":\"Does ERPVITS provide SAP TRM Training with Placement Support?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes, ERPVITS provides SAP TRM Training with full placement support, helping you prepare resumes, develop consulting profiles, and connect with top finance recruiters.\"}},{\"@type\":\"Question\",\"name\":\"Can I take SAP TRM Online Training from anywhere?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes, ERPVITS offers SAP TRM Online Training that you can attend from anywhere. Sessions are live, recorded, and supported by remote system access for hands-on practice.\"}},{\"@type\":\"Question\",\"name\":\"Can I find SAP TRM Training close to my location?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes, ERPVITS offers both online and offline SAP TRM training. You can attend virtual classes or in-person sessions conducted for working professionals on weekdays and weekends.\"}},{\"@type\":\"Question\",\"name\":\"How does ERPVITS assist in advancing a career in Treasury & TRM?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"ERPVITS supports career advancement by offering resume-building, interview preparation, and job referrals to top financial consulting firms and banks for SAP TRM roles.\"}},{\"@type\":\"Question\",\"name\":\"What is the SAP TRM Full Form?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The full form of SAP TRM is SAP Treasury and Risk Management. It is a module within SAP that helps organizations manage financial transactions, liquidity, investments, and risks efficiently.\"}}]}"
+    "schema": "<script type=\"application/ld+json\">\n        {\n          \"@context\": \"https://www.schema.org\",\n          \"@type\": \"Product\",\n          \"brand\": \"ERPVITS\",\n          \"name\": \"SAP TRM Training Online & Certification\",\n          \"image\": \"https://www.erpvits.com/images/erpvits-logo.webp\",\n          \"description\": \"Master SAP Treasury and Risk Management (TRM) with comprehensive SAP TRM training online by ERPVITS. Learn cash management, transaction management, market risk analysis, and treasury operations with expert-led sessions, real-time practice, and certification-oriented curriculum.\",\n          \"aggregateRating\": {\n            \"@type\": \"AggregateRating\",\n            \"ratingValue\": \"4.5\",\n            \"reviewCount\": \"2894\",\n            \"url\": \"https://www.erpvits.com/sap-treasury-and-risk-management-online-training/\"\n          }\n        }\n        </script>"
 };

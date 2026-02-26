@@ -522,7 +522,7 @@ export const aribaContent = {
                     "seats": "6/10",
                     "status": "Booking Open",
                     "duration": "45-50 Hours",
-                    "schedule": "Sat-Sun | 08:30 AM | 07:00 PM IST",
+                    "schedule": "Sat-Sun | 07:30 AM | 07:00 PM IST",
                     "statusColor": "bg-green-100 text-green-600"
                 },
                 {
@@ -551,7 +551,7 @@ export const aribaContent = {
                     "seats": "6/10",
                     "status": "Booking Open",
                     "duration": "45-50 Hours",
-                    "schedule": "Sat-Sun | 08:30 AM | 07:00 PM IST",
+                    "schedule": "Sat-Sun | 07:30 AM | 07:00 PM IST",
                     "statusColor": "bg-green-100 text-green-600"
                 },
                 {

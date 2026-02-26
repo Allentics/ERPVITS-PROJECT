@@ -4,8 +4,8 @@ export const ppdsContent = {
     "category": "Functional",
     "price": "45,000",
     "duration": "40+ Hours",
-    "heroHeading": "Transform Your Career with the <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone\">#1 SAP PPDS Online Training Program</span>",
-    "heroSubheading": "The SAP PPDS (Production Planning and Detailed Scheduling) Online Training Program from ERPVITS represents a transformative learning pathway for production planning professionals and SAP consultants eager to excel in advanced production scheduling, demand planning, and manufacturing optimization. In today's hyper-competitive manufacturing landscape, organizations urgently need certified SAP PPDS experts who can optimize production schedules, reduce lead times, minimize inventory costs, and drive operational excellence. This comprehensive SAP PPDS training course combines interactive, instructor-led sessions, hands-on lab exercises, real-world production planning projects, and end-to-end certification support—designed specifically for production planners, scheduling specialists, supply chain professionals, ERP consultants, and ambitious graduates targeting global consulting and implementation roles.",
+    "heroHeading": "SAP PP/DS Training Online – Production Planning & Detailed Scheduling",
+    "heroSubheading": "Designed for professionals seeking to specialize in advanced production planning, this SAP PPDS training equips participants with an in-depth understanding of planning strategies, detailed scheduling, capacity leveling techniques and optimization within SAP S/4HANA. Live interactive sessions combine with hands-on system practice and real world industry scenarios to give learners a practical education beyond theory.\n\nParticipants gain implementation insights, configuration knowledge, and integration knowledge with <a href=\"https://www.erpvits.com/blog/sap-modules-list/\" target=\"_blank\" rel=\"noopener noreferrer\">Other SAP modules</a>, giving them confidence to manage complex manufacturing and supply chain environments. In addition, participants receive interview preparation, resume guidance, and career support assistance that will enable them to secure high-demand roles within the SAP ecosystem.",
     "heroImage": "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP PPDS Infographic.webp",
     "description": "The SAP PPDS (Production Planning and Detailed Scheduling) Online Training Program from ERPVITS represents a transformative learning pathway for production planning professionals and SAP consultants eager to excel in advanced production scheduling, demand planning, and manufacturing optimization.",
     "metaTitle": "SAP PPDS Training Online | Production Planning Course",
@@ -21,7 +21,7 @@ export const ppdsContent = {
                     "description": "Each trainer holds official SAP PPDS certifications and has successfully led multiple enterprise-scale PPDS implementations across automotive, pharmaceutical, consumer goods, and manufacturing sectors. They don't just teach theory; they share war stories, common pitfalls, and industry best practices from actual production optimization deployments. This real-world perspective is invaluable when you enter your first SAP PPDS consulting engagement."
                 },
                 {
-                    "title": "100% Hands-On Learning Methodology",
+                    "title": "100% Hands-On Learning",
                     "description": "Traditional training teaches SAP PPDS concepts through slides and presentations. Our program goes further. Every session includes live demonstrations directly on SAP S/4HANA systems, followed by guided lab exercises where you replicate what you've learned. By the end of the course, you've created demand forecasts, developed production schedules, optimized resource allocation, executed what-if scenarios, and configured planning parameters—all on real production systems."
                 },
                 {
@@ -34,7 +34,7 @@ export const ppdsContent = {
                 },
                 {
                     "title": "Flexible Batch Timings",
-                    "description": "Recognizing that many production professionals juggle demanding schedules, families, and learning, we offer both weekday evening batches (6 PM – 9 PM IST) and weekend batches (Saturday & Sunday). Sessions are recorded, so if you miss a live class, you can catch up asynchronously without losing continuity."
+                    "description": "Recognizing that many production professionals juggle demanding schedules, families, and learning, we offer both weekday and weekend batches (Saturday & Sunday). Sessions are recorded, so if you miss a live class, you can catch up asynchronously without losing continuity."
                 },
                 {
                     "title": "Small Batch Sizes for Personalized Attention",
@@ -60,7 +60,7 @@ export const ppdsContent = {
         {
             "type": "content_with_image",
             "items": [
-                "Trusted by 500+ successful SAP PPDS professionals",
+                "Trusted by 3200+ successful SAP PPDS professionals",
                 "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro",
                 "Personalized pre-evaluation and production planning learning path",
                 "Active alumni network and production scheduling community forum",
@@ -686,7 +686,7 @@ export const ppdsContent = {
                     "color": "orange",
                     "title": "Immediate Post-Training",
                     "points": [
-                        "Receive course completion certificate",
+                        "Receive SAP PPDS course completion certificate",
                         "Access lifetime course materials and PPDS recordings",
                         "Join alumni network and production planning community forum",
                         "Begin resume updates highlighting SAP PPDS expertise"
@@ -710,7 +710,7 @@ export const ppdsContent = {
                     "color": "orange",
                     "title": "First Year in Role",
                     "points": [
-                        "Learn planning processes, understand demand patterns",
+                        "Learn <a href=\"https://www.bestonlinecareer.com/blog/sap-ppds-process-flow\" target=\"_blank\" rel=\"noopener noreferrer\">SAP PPDS process flow</a>, understand demand patterns",
                         "Lead planning tasks, optimize scheduling parameters",
                         "Lead planning initiatives, design solutions"
                     ],
@@ -733,6 +733,35 @@ export const ppdsContent = {
         },
         {
             "type": "detailed_upcoming_batches",
+            "items": [
+                {
+                    "date": "November 15, 2025",
+                    "name": "Batch 1: November 2025 (Weekdays)",
+                    "time": "Weekdays – 6:00 PM – 9:00 PM IST",
+                    "seats": "5/10 Seats Left",
+                    "status": "Filling Fast",
+                    "duration": "35–40 Hours",
+                    "statusColor": "bg-orange-100 text-orange-600"
+                },
+                {
+                    "date": "November 16, 2025",
+                    "name": "Batch 2: November 2025 (Weekends)",
+                    "time": "Weekends – Saturday & Sunday, 10:00 AM – 1:00 PM IST",
+                    "seats": "6/10 Seats Left",
+                    "status": "Filling Fast",
+                    "duration": "35–40 Hours",
+                    "statusColor": "bg-orange-100 text-orange-600"
+                },
+                {
+                    "date": "December 1, 2025",
+                    "name": "Batch 3: December 2025 (Flexible)",
+                    "time": "Flexible timings – customized per batch",
+                    "seats": "7/10 Seats Left",
+                    "status": "Open",
+                    "duration": "35–40 Hours (accelerated)",
+                    "statusColor": "bg-green-100 text-green-600"
+                }
+            ],
             "title": "Join Our Next Live Batch – Limited Seats Available for SAP PPDS Training",
             "batches": [
                 {
@@ -791,34 +820,46 @@ export const ppdsContent = {
             "type": "detailed_testimonials",
             "items": [
                 {
-                    "name": "Amit Kumar",
+                    "name": "Priti Singh",
                     "role": "SAP PPDS Consultant at Siemens",
-                    "quote": "Outstanding PPDS training with real production planning project exposure. I landed a planning role at Siemens within 8 weeks managing PPDS implementations. The hands-on labs and expert instructors made all the difference."
+                    "text": "Outstanding PPDS training with real production planning project exposure. I landed a planning role at Siemens within 8 weeks managing PPDS implementations. The hands-on labs and expert instructors made all the difference.",
+                    "quote": "Outstanding PPDS training with real production planning project exposure. I landed a planning role at Siemens within 8 weeks managing PPDS implementations. The hands-on labs and expert instructors made all the difference.",
+                    "author": "Priti Singh"
                 },
                 {
-                    "name": "Priya Singh",
+                    "name": "Sukesh Patel",
                     "role": "Senior Planning Manager",
-                    "quote": "The weekend flexibility allowed me to upskill in production planning while working. My employer promoted me to Senior Planning Manager recognizing my new PPDS skills. This course accelerated my career by 4 years."
+                    "text": "The weekend flexibility allowed me to upskill in production planning while working. My employer promoted me to Senior Planning Manager recognizing my new PPDS skills. This course accelerated my career by 4 years.",
+                    "quote": "The weekend flexibility allowed me to upskill in production planning while working. My employer promoted me to Senior Planning Manager recognizing my new PPDS skills. This course accelerated my career by 4 years.",
+                    "author": "Sukesh Patel"
                 },
                 {
-                    "name": "Vikram Patel",
+                    "name": "Asha Nair",
                     "role": "PPDS Consultant",
-                    "quote": "Best decision for my supply chain career. The capstone projects mirrored real planning scenarios. I walked in confident in scheduling and forecasting. The certification support was exceptional."
+                    "text": "Best decision for my supply chain career. The capstone projects mirrored real planning scenarios. I walked in confident in scheduling and forecasting. The certification support was exceptional.",
+                    "quote": "Best decision for my supply chain career. The capstone projects mirrored real planning scenarios. I walked in confident in scheduling and forecasting. The certification support was exceptional.",
+                    "author": "Asha Nair"
                 },
                 {
-                    "name": "Ananya Desai",
+                    "name": "Deepak Mishra",
                     "role": "Certified PPDS Professional",
-                    "quote": "Superb technical training and certification prep. I passed the SAP PPDS exam on first attempt. The mock exams and planning case studies were spot-on. Now leading PPDS implementations."
+                    "text": "Superb technical training and certification prep. I passed the SAP PPDS exam on first attempt. The mock exams and planning case studies were spot-on. Now leading PPDS implementations.",
+                    "quote": "Superb technical training and certification prep. I passed the SAP PPDS exam on first attempt. The mock exams and planning case studies were spot-on. Now leading PPDS implementations.",
+                    "author": "Deepak Mishra"
                 },
                 {
-                    "name": "Sanjay Verma",
+                    "name": "Rekha Yadav",
                     "role": "Supply Chain Architect",
-                    "quote": "The instructor's insights on capacity planning and optimization were invaluable. Learned not just PPDS but supply chain thinking. The alumni network brought several consulting opportunities."
+                    "text": "The instructor's insights on capacity planning and optimization were invaluable. Learned not just PPDS but supply chain thinking. The alumni network brought several consulting opportunities.",
+                    "quote": "The instructor's insights on capacity planning and optimization were invaluable. Learned not just PPDS but supply chain thinking. The alumni network brought several consulting opportunities.",
+                    "author": "Rekha Yadav"
                 },
                 {
-                    "name": "Sneha Reddy",
+                    "name": "Vijay Rao",
                     "role": "PPDS Analyst at Infosys",
-                    "quote": "From junior planner to PPDS specialist in 5 months! Patient instructors providing detailed guidance. Lifetime recording access is invaluable for reference."
+                    "text": "From junior planner to PPDS specialist in 5 months! Patient instructors providing detailed guidance. Lifetime recording access is invaluable for reference.",
+                    "quote": "From junior planner to PPDS specialist in 5 months! Patient instructors providing detailed guidance. Lifetime recording access is invaluable for reference.",
+                    "author": "Vijay Rao"
                 }
             ]
         },
@@ -850,79 +891,117 @@ export const ppdsContent = {
             "items": [
                 {
                     "a": "SAP PPDS is the production planning and detailed scheduling module in SAP S/4HANA for optimizing manufacturing processes. ERPVITS provides comprehensive training covering demand forecasting, master scheduling, and capacity planning with real-world scenarios.",
-                    "q": "What is SAP PPDS and how does ERPVITS help me learn it?"
+                    "q": "What is SAP PPDS and how does ERPVITS help me learn it?",
+                    "answer": "SAP PPDS is the production planning and detailed scheduling module in SAP S/4HANA for optimizing manufacturing processes. ERPVITS provides comprehensive training covering demand forecasting, master scheduling, and capacity planning with real-world scenarios.",
+                    "question": "What is SAP PPDS and how does ERPVITS help me learn it?"
                 },
                 {
                     "a": "Demand planning involves forecasting future product demand using statistical methods. ERPVITS teaches demand forecasting models, forecast accuracy monitoring, and collaborative demand planning processes.",
-                    "q": "What is demand planning in SAP PPDS?"
+                    "q": "What is demand planning in SAP PPDS?",
+                    "answer": "Demand planning involves forecasting future product demand using statistical methods. ERPVITS teaches demand forecasting models, forecast accuracy monitoring, and collaborative demand planning processes.",
+                    "question": "What is demand planning in SAP PPDS?"
                 },
                 {
                     "a": "The Master Production Schedule (MPS) plans production quantities and timing. ERPVITS covers MPS creation, lot sizing strategies, safety stock configuration, and planned order generation.",
-                    "q": "What is master production scheduling?"
+                    "q": "What is master production scheduling?",
+                    "answer": "The Master Production Schedule (MPS) plans production quantities and timing. ERPVITS covers MPS creation, lot sizing strategies, safety stock configuration, and planned order generation.",
+                    "question": "What is master production scheduling?"
                 },
                 {
                     "a": "ERPVITS covers capacity planning, bottleneck identification, load leveling, and resource management strategies for optimizing production within capacity limitations.",
-                    "q": "How do I handle capacity constraints in PPDS?"
+                    "q": "How do I handle capacity constraints in PPDS?",
+                    "answer": "ERPVITS covers capacity planning, bottleneck identification, load leveling, and resource management strategies for optimizing production within capacity limitations.",
+                    "question": "How do I handle capacity constraints in PPDS?"
                 },
                 {
                     "a": "PPDS provides demand-driven planning, multi-site coordination, and optimization capabilities. ERPVITS provides practical exposure to PPDS workflows for real-world implementations.",
-                    "q": "How does SAP PPDS support modern supply chain operations?"
+                    "q": "How does SAP PPDS support modern supply chain operations?",
+                    "answer": "PPDS provides demand-driven planning, multi-site coordination, and optimization capabilities. ERPVITS provides practical exposure to PPDS workflows for real-world implementations.",
+                    "question": "How does SAP PPDS support modern supply chain operations?"
                 },
                 {
                     "a": "ERPVITS offers SAP PPDS training with live sessions, industry-aligned projects, and placement support. You'll receive guidance on PPDS certification, resume preparation, and interview success strategies.",
-                    "q": "Why should I join SAP PPDS Training at ERPVITS?"
+                    "q": "Why should I join SAP PPDS Training at ERPVITS?",
+                    "answer": "ERPVITS offers SAP PPDS training with live sessions, industry-aligned projects, and placement support. You'll receive guidance on PPDS certification, resume preparation, and interview success strategies.",
+                    "question": "Why should I join SAP PPDS Training at ERPVITS?"
                 },
                 {
                     "a": "Production planners, supply chain professionals, or anyone interested in manufacturing planning can join. ERPVITS builds job-ready PPDS skills for diverse backgrounds.",
-                    "q": "Who can enroll in the SAP PPDS Course?"
+                    "q": "Who can enroll in the SAP PPDS Course?",
+                    "answer": "Production planners, supply chain professionals, or anyone interested in manufacturing planning can join. ERPVITS builds job-ready PPDS skills for diverse backgrounds.",
+                    "question": "Who can enroll in the SAP PPDS Course?"
                 },
                 {
                     "a": "SAP PPDS Certification validates expertise in production planning. ERPVITS prepares you for official certification exams helping you become a certified PPDS professional.",
-                    "q": "What is the SAP PPDS Certification and why is it valuable?"
+                    "q": "What is the SAP PPDS Certification and why is it valuable?",
+                    "answer": "SAP PPDS Certification validates expertise in production planning. ERPVITS prepares you for official certification exams helping you become a certified PPDS professional.",
+                    "question": "What is the SAP PPDS Certification and why is it valuable?"
                 },
                 {
                     "a": "PPDS course fees are competitive and depend on the program and training mode. Our pricing ensures maximum value with hands-on learning, placement, and certification support.",
-                    "q": "What are the SAP PPDS course fees at ERPVITS?"
+                    "q": "What are the SAP PPDS course fees at ERPVITS?",
+                    "answer": "PPDS course fees are competitive and depend on the program and training mode. Our pricing ensures maximum value with hands-on learning, placement, and certification support.",
+                    "question": "What are the SAP PPDS course fees at ERPVITS?"
                 },
                 {
                     "a": "Certification cost is determined by SAP Education. ERPVITS provides complete exam guidance, practice tests, and mentoring to help you pass on first attempt.",
-                    "q": "How much does SAP PPDS Certification cost?"
+                    "q": "How much does SAP PPDS Certification cost?",
+                    "answer": "Certification cost is determined by SAP Education. ERPVITS provides complete exam guidance, practice tests, and mentoring to help you pass on first attempt.",
+                    "question": "How much does SAP PPDS Certification cost?"
                 },
                 {
                     "a": "Join our structured PPDS training program, complete planning projects, and prepare for certification. ERPVITS offers career counseling and job assistance.",
-                    "q": "How can I become an SAP PPDS Consultant through ERPVITS?"
+                    "q": "How can I become an SAP PPDS Consultant through ERPVITS?",
+                    "answer": "Join our structured PPDS training program, complete planning projects, and prepare for certification. ERPVITS offers career counseling and job assistance.",
+                    "question": "How can I become an SAP PPDS Consultant through ERPVITS?"
                 },
                 {
                     "a": "After PPDS training, you can pursue roles like PPDS Consultant, Production Planner, Demand Planning Specialist, or Supply Chain Architect at consulting firms and enterprises.",
-                    "q": "What career options are available after completing PPDS training?"
+                    "q": "What career options are available after completing PPDS training?",
+                    "answer": "After PPDS training, you can pursue roles like PPDS Consultant, Production Planner, Demand Planning Specialist, or Supply Chain Architect at consulting firms and enterprises.",
+                    "question": "What career options are available after completing PPDS training?"
                 },
                 {
                     "a": "Master Production Schedule (MPS) plans what to produce, while detailed scheduling determines when and how to produce it. ERPVITS covers both aspects comprehensively.",
-                    "q": "What is the difference between MPS and detailed scheduling?"
+                    "q": "What is the difference between MPS and detailed scheduling?",
+                    "answer": "Master Production Schedule (MPS) plans what to produce, while detailed scheduling determines when and how to produce it. ERPVITS covers both aspects comprehensively.",
+                    "question": "What is the difference between MPS and detailed scheduling?"
                 },
                 {
                     "a": "ERPVITS covers integration with Materials Management (MM), Sales & Distribution (SD), and Financial Accounting (FI) modules, demonstrating end-to-end planning.",
-                    "q": "How does PPDS integrate with other SAP modules?"
+                    "q": "How does PPDS integrate with other SAP modules?",
+                    "answer": "ERPVITS covers integration with Materials Management (MM), Sales & Distribution (SD), and Financial Accounting (FI) modules, demonstrating end-to-end planning.",
+                    "question": "How does PPDS integrate with other SAP modules?"
                 },
                 {
                     "a": "Our course covers demand planning, master scheduling, detailed scheduling, capacity planning, supply chain optimization, and advanced planning techniques with hands-on practice.",
-                    "q": "What are the main PPDS areas covered?"
+                    "q": "What are the main PPDS areas covered?",
+                    "answer": "Our course covers demand planning, master scheduling, detailed scheduling, capacity planning, supply chain optimization, and advanced planning techniques with hands-on practice.",
+                    "question": "What are the main PPDS areas covered?"
                 },
                 {
                     "a": "Yes! ERPVITS offers PPDS training with placement assistance helping build impressive planning profiles and connect with recruiters.",
-                    "q": "Does ERPVITS provide SAP PPDS Training with Placement support?"
+                    "q": "Does ERPVITS provide SAP PPDS Training with Placement support?",
+                    "answer": "Yes! ERPVITS offers PPDS training with placement assistance helping build impressive planning profiles and connect with recruiters.",
+                    "question": "Does ERPVITS provide SAP PPDS Training with Placement support?"
                 },
                 {
                     "a": "Absolutely. ERPVITS provides online PPDS training accessible from any location with live instructors and recorded sessions.",
-                    "q": "Can I take SAP PPDS Online Training from anywhere?"
+                    "q": "Can I take SAP PPDS Online Training from anywhere?",
+                    "answer": "Absolutely. ERPVITS provides online PPDS training accessible from any location with live instructors and recorded sessions.",
+                    "question": "Can I take SAP PPDS Online Training from anywhere?"
                 },
                 {
                     "a": "Yes, ERPVITS offers online and classroom options with flexible weekend and weekday batches for working professionals.",
-                    "q": "Is SAP PPDS Training available near me?"
+                    "q": "Is SAP PPDS Training available near me?",
+                    "answer": "Yes, ERPVITS offers online and classroom options with flexible weekend and weekday batches for working professionals.",
+                    "question": "Is SAP PPDS Training available near me?"
                 },
                 {
                     "a": "ERPVITS guides your PPDS career with resume building, interview preparation, and job referrals across leading consulting companies and manufacturing enterprises.",
-                    "q": "How does ERPVITS help in SAP PPDS Careers?"
+                    "q": "How does ERPVITS help in SAP PPDS Careers?",
+                    "answer": "ERPVITS guides your PPDS career with resume building, interview preparation, and job referrals across leading consulting companies and manufacturing enterprises.",
+                    "question": "How does ERPVITS help in SAP PPDS Careers?"
                 }
             ]
         }

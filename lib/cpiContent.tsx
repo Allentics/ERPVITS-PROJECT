@@ -746,6 +746,35 @@ export const cpiContent = {
         },
         {
             "type": "detailed_upcoming_batches",
+            "items": [
+                {
+                    "date": "November 15, 2025",
+                    "name": "Batch 1: November 2025 (Weekdays – 7:30 AM – 8:00 PM IST)",
+                    "time": "Weekdays – 7:30 AM – 8:00 PM IST",
+                    "seats": "8/10 Seats Left",
+                    "status": "Filling Fast",
+                    "duration": "30–35 Hours",
+                    "statusColor": "bg-orange-100 text-orange-600"
+                },
+                {
+                    "date": "November 16, 2025",
+                    "name": "Batch 2: November 2025 (Weekends – Saturday & Sunday, 10:00 AM – 7:00 PM IST)",
+                    "time": "Weekends – Saturday & Sunday, 10:00 AM – 7:00 PM IST",
+                    "seats": "6/10 Seats Left",
+                    "status": "Filling Fast",
+                    "duration": "30–35 Hours",
+                    "statusColor": "bg-orange-100 text-orange-600"
+                },
+                {
+                    "date": "December 1, 2025",
+                    "name": "Batch 3: December 2025 (Flexible timings – customized per batch)",
+                    "time": "Flexible timings – customized per batch",
+                    "seats": "10/10 Seats Left",
+                    "status": "Open",
+                    "duration": "30–35 Hours (accelerated)",
+                    "statusColor": "bg-green-100 text-green-600"
+                }
+            ],
             "title": "Join Our Next Live Batch – Limited Seats Available for SAP CPI Training",
             "batches": [
                 {
@@ -804,40 +833,52 @@ export const cpiContent = {
             "type": "detailed_testimonials",
             "items": [
                 {
-                    "name": "Amit Kumar",
+                    "name": "Komal Ahuja",
                     "role": "SAP CPI Consultant at Deloitte",
+                    "text": "Outstanding integration training with real cloud project exposure. I landed an integration role at Deloitte within 9 weeks managing CPI implementations. The hands-on labs and expert instructors made all the difference.",
                     "image": "/images/testimonials/amit-cpi.webp",
-                    "quote": "Outstanding integration training with real cloud project exposure. I landed an integration role at Deloitte within 9 weeks managing CPI implementations. The hands-on labs and expert instructors made all the difference."
+                    "quote": "Outstanding integration training with real cloud project exposure. I landed an integration role at Deloitte within 9 weeks managing CPI implementations. The hands-on labs and expert instructors made all the difference.",
+                    "author": "Komal Ahuja"
                 },
                 {
-                    "name": "Priya Sharma",
+                    "name": "Mohan Chandran",
                     "role": "Integration Lead",
+                    "text": "The weekend flexibility allowed me to upskill while working. My employer promoted me to Integration Lead after seeing my CPI expertise. This course accelerated my career by 3 years.",
                     "image": "/images/testimonials/priya-cpi.webp",
-                    "quote": "The weekend flexibility allowed me to upskill while working. My employer promoted me to Integration Lead after seeing my CPI expertise. This course accelerated my career by 3 years."
+                    "quote": "The weekend flexibility allowed me to upskill while working. My employer promoted me to Integration Lead after seeing my CPI expertise. This course accelerated my career by 3 years.",
+                    "author": "Mohan Chandran"
                 },
                 {
-                    "name": "Rajesh Patel",
+                    "name": "Padmini Iqbal",
                     "role": "Senior Integration Consultant",
+                    "text": "Best decision for my integration career. The capstone projects mirrored real client scenarios. I walked in confident in both design and development. The certification support was exceptional.",
                     "image": "/images/testimonials/rajesh-cpi.webp",
-                    "quote": "Best decision for my integration career. The capstone projects mirrored real client scenarios. I walked in confident in both design and development. The certification support was exceptional."
+                    "quote": "Best decision for my integration career. The capstone projects mirrored real client scenarios. I walked in confident in both design and development. The certification support was exceptional.",
+                    "author": "Padmini Iqbal"
                 },
                 {
-                    "name": "Ananya Singh",
+                    "name": "Ramesh Hegde",
                     "role": "Certified CPI Professional",
+                    "text": "Superb technical training and certification prep. I passed the SAP CPI exam on first attempt. The mock exams and integration scenarios were spot-on. Now leading CPI projects.",
                     "image": "/images/testimonials/ananya-cpi.webp",
-                    "quote": "Superb technical training and certification prep. I passed the SAP CPI exam on first attempt. The mock exams and integration scenarios were spot-on. Now leading CPI projects."
+                    "quote": "Superb technical training and certification prep. I passed the SAP CPI exam on first attempt. The mock exams and integration scenarios were spot-on. Now leading CPI projects.",
+                    "author": "Ramesh Hegde"
                 },
                 {
-                    "name": "Vikram Desai",
+                    "name": "Sonal Dwivedi",
                     "role": "Integration Architect at Capgemini",
+                    "text": "The instructor's real-world insights on architecture and error handling were invaluable. I learned not just CPI but enterprise integration patterns. The alumni network brought several opportunities.",
                     "image": "/images/testimonials/vikram-cpi.webp",
-                    "quote": "The instructor's real-world insights on architecture and error handling were invaluable. I learned not just CPI but enterprise integration patterns. The alumni network brought several opportunities."
+                    "quote": "The instructor's real-world insights on architecture and error handling were invaluable. I learned not just CPI but enterprise integration patterns. The alumni network brought several opportunities.",
+                    "author": "Sonal Dwivedi"
                 },
                 {
-                    "name": "Sneha Reddy",
+                    "name": "Umesh Shinde",
                     "role": "CPI Developer at Infosys",
+                    "text": "From junior developer to integration specialist in 5 months! Patient instructors with deep expertise. Lifetime recording access is invaluable for reference.",
                     "image": "/images/testimonials/sneha-cpi.webp",
-                    "quote": "From junior developer to integration specialist in 5 months! Patient instructors with deep expertise. Lifetime recording access is invaluable for reference."
+                    "quote": "From junior developer to integration specialist in 5 months! Patient instructors with deep expertise. Lifetime recording access is invaluable for reference.",
+                    "author": "Umesh Shinde"
                 }
             ],
             "title": "Hear from Our Successful SAP CPI Learners"
@@ -870,84 +911,122 @@ export const cpiContent = {
             "items": [
                 {
                     "a": "SAP CPI is cloud integration for establishing linkage between cloud and on-premise systems. ERPVITS teaches you CPI more comprehensively and details on how integration flows, adapters, transforms and real-time scenarios work.",
-                    "q": "What is SAP CPI and how does ERPVITS help me learn it?"
+                    "q": "What is SAP CPI and how does ERPVITS help me learn it?",
+                    "answer": "SAP CPI is cloud integration for establishing linkage between cloud and on-premise systems. ERPVITS teaches you CPI more comprehensively and details on how integration flows, adapters, transforms and real-time scenarios work.",
+                    "question": "What is SAP CPI and how does ERPVITS help me learn it?"
                 },
                 {
                     "a": "ERPVITS teaches all major adapters with real-time hands on configuration experience, adapters which include SOAP, OData, HTTP, SFTP, IDoc, SuccessFactors, Ariba, AS2/AS4, JMS, RFC.",
-                    "q": "What adapters will I learn in SAP CPI training?"
+                    "q": "What adapters will I learn in SAP CPI training?",
+                    "answer": "ERPVITS teaches all major adapters with real-time hands on configuration experience, adapters which include SOAP, OData, HTTP, SFTP, IDoc, SuccessFactors, Ariba, AS2/AS4, JMS, RFC.",
+                    "question": "What adapters will I learn in SAP CPI training?"
                 },
                 {
                     "a": "Integration flow is the design artifact, it defines how messages are processed, transformed and routed between systems. ERPVITS goes beyond the basics and teaches you how to build complete integration flows.",
-                    "q": "What is an integration flow in SAP CPI?"
+                    "q": "What is an integration flow in SAP CPI?",
+                    "answer": "Integration flow is the design artifact, it defines how messages are processed, transformed and routed between systems. ERPVITS goes beyond the basics and teaches you how to build complete integration flows.",
+                    "question": "What is an integration flow in SAP CPI?"
                 },
                 {
                     "a": "No, CPI training will suit people with no experience on PI/PO and even professionals. ERPVITS is designed to cover the training fundamentals to ensure comprehension across all levels.",
-                    "q": "Do I need SAP PI/PO experience for CPI?"
+                    "q": "Do I need SAP PI/PO experience for CPI?",
+                    "answer": "No, CPI training will suit people with no experience on PI/PO and even professionals. ERPVITS is designed to cover the training fundamentals to ensure comprehension across all levels.",
+                    "question": "Do I need SAP PI/PO experience for CPI?"
                 },
                 {
                     "a": "SAP CPI provides cloud-native integration for SaaS applications, APIs and hybrid landscapes. ERPVITS covers practical cloud integration patterns and assists you to best implement hybrid landscapes.",
-                    "q": "How does SAP CPI support cloud integration?"
+                    "q": "How does SAP CPI support cloud integration?",
+                    "answer": "SAP CPI provides cloud-native integration for SaaS applications, APIs and hybrid landscapes. ERPVITS covers practical cloud integration patterns and assists you to best implement hybrid landscapes.",
+                    "question": "How does SAP CPI support cloud integration?"
                 },
                 {
                     "a": "ERPVITS offers SAP CPI training with live sessions, real-world aligned projects and provides support for placements. You'll be mentored on CPI certification, resume building and techniques to clear interviews and be job-ready.",
-                    "q": "Why should I join SAP CPI Training at ERPVITS?"
+                    "q": "Why should I join SAP CPI Training at ERPVITS?",
+                    "answer": "ERPVITS offers SAP CPI training with live sessions, real-world aligned projects and provides support for placements. You'll be mentored on CPI certification, resume building and techniques to clear interviews and be job-ready.",
+                    "question": "Why should I join SAP CPI Training at ERPVITS?"
                 },
                 {
                     "a": "Any IT professional/ experts concentrating in the area of cloud integration, integration developers, SAP technical consultants, and middleware specialists can include the course in their practice. ERPVITS builds integration skills that are job-ready.",
-                    "q": "Who Can Enroll in the SAP CPI Course?"
+                    "q": "Who Can Enroll in the SAP CPI Course?",
+                    "answer": "Any IT professional/ experts concentrating in the area of cloud integration, integration developers, SAP technical consultants, and middleware specialists can include the course in their practice. ERPVITS builds integration skills that are job-ready.",
+                    "question": "Who Can Enroll in the SAP CPI Course?"
                 },
                 {
                     "a": "Cloud integration development expertise is SAP CPI Certification. ERPVITS gets you ready for the official certification exams, and will aid you toward becoming a certified CPI professional.",
-                    "q": "Why Is SAP CPI Certification Valuable?"
+                    "q": "Why Is SAP CPI Certification Valuable?",
+                    "answer": "Cloud integration development expertise is SAP CPI Certification. ERPVITS gets you ready for the official certification exams, and will aid you toward becoming a certified CPI professional.",
+                    "question": "Why Is SAP CPI Certification Valuable?"
                 },
                 {
                     "a": "SAP CPI course fees are available at a competitive rate, depending on the program and the mode of training. It encompasses hands-on learning, job placement and certification assistance is provided. All in all, our pricing is aimed at delivering extreme value.",
-                    "q": "What Are the SAP CPI Course Fees at ERPVITS?"
+                    "q": "What Are the SAP CPI Course Fees at ERPVITS?",
+                    "answer": "SAP CPI course fees are available at a competitive rate, depending on the program and the mode of training. It encompasses hands-on learning, job placement and certification assistance is provided. All in all, our pricing is aimed at delivering extreme value.",
+                    "question": "What Are the SAP CPI Course Fees at ERPVITS?"
                 },
                 {
                     "a": "SAP CPI Certification cost is determined by SAP Education. To help you pass on the first attempt, ERPVITS provides exam guidance, practice tests, and mentoring.",
-                    "q": "What Is the Cost of the SAP CPI Certification?"
+                    "q": "What Is the Cost of the SAP CPI Certification?",
+                    "answer": "SAP CPI Certification cost is determined by SAP Education. To help you pass on the first attempt, ERPVITS provides exam guidance, practice tests, and mentoring.",
+                    "question": "What Is the Cost of the SAP CPI Certification?"
                 },
                 {
                     "a": "Enroll in our defined SAP CPI training course, handle practical integration projects in training, and clear cert. ERPVITS provides career guidance and job support.",
-                    "q": "How Can I Become an SAP CPI Consultant through ERPVITS?"
+                    "q": "How Can I Become an SAP CPI Consultant through ERPVITS?",
+                    "answer": "Enroll in our defined SAP CPI training course, handle practical integration projects in training, and clear cert. ERPVITS provides career guidance and job support.",
+                    "question": "How Can I Become an SAP CPI Consultant through ERPVITS?"
                 },
                 {
                     "a": "Post SAP CPI training, your career could include working as CPI Developer, Integration Consultant, Cloud Architect, or Middleware Specialist in consulting companies and enterprises.",
-                    "q": "What Are My Career Options After CPI Training?"
+                    "q": "What Are My Career Options After CPI Training?",
+                    "answer": "Post SAP CPI training, your career could include working as CPI Developer, Integration Consultant, Cloud Architect, or Middleware Specialist in consulting companies and enterprises.",
+                    "question": "What Are My Career Options After CPI Training?"
                 },
                 {
                     "a": "Groovy is the scripting language for custom logic within CPI. ERPVITS teaches Groovy basics and advanced scripting for transformations and business logic.",
-                    "q": "What is Groovy scripting in SAP CPI?"
+                    "q": "What is Groovy scripting in SAP CPI?",
+                    "answer": "Groovy is the scripting language for custom logic within CPI. ERPVITS teaches Groovy basics and advanced scripting for transformations and business logic.",
+                    "question": "What is Groovy scripting in SAP CPI?"
                 },
                 {
                     "a": "CPI uses Cloud Connector for secure on-premise connectivity. ERPVITS covers hybrid integration scenarios and Cloud Connector configuration.",
-                    "q": "How does SAP CPI integrate with on-premise systems?"
+                    "q": "How does SAP CPI integrate with on-premise systems?",
+                    "answer": "CPI uses Cloud Connector for secure on-premise connectivity. ERPVITS covers hybrid integration scenarios and Cloud Connector configuration.",
+                    "question": "How does SAP CPI integrate with on-premise systems?"
                 },
                 {
                     "a": "Our course encompasses the integration flows, adapters, mappings, routing, security, monitoring, and operational facets, all with hands-on development practice.",
-                    "q": "What are the main CPI components covered?"
+                    "q": "What are the main CPI components covered?",
+                    "answer": "Our course encompasses the integration flows, adapters, mappings, routing, security, monitoring, and operational facets, all with hands-on development practice.",
+                    "question": "What are the main CPI components covered?"
                 },
                 {
                     "a": "Yes! ERPVITS delivers SAP CPI training coupled with placement support, focusing on integration profile development and recruiter connections.",
-                    "q": "Does ERPVITS offer SAP CPI Training with Placement support?"
+                    "q": "Does ERPVITS offer SAP CPI Training with Placement support?",
+                    "answer": "Yes! ERPVITS delivers SAP CPI training coupled with placement support, focusing on integration profile development and recruiter connections.",
+                    "question": "Does ERPVITS offer SAP CPI Training with Placement support?"
                 },
                 {
                     "a": "Definitely. ERPVITS has remote access SAP CPI online training where you can attend live classes, access recorded sessions, and develop from anywhere.",
-                    "q": "Can I take SAP CPI Online Training from anywhere?"
+                    "q": "Can I take SAP CPI Online Training from anywhere?",
+                    "answer": "Definitely. ERPVITS has remote access SAP CPI online training where you can attend live classes, access recorded sessions, and develop from anywhere.",
+                    "question": "Can I take SAP CPI Online Training from anywhere?"
                 },
                 {
                     "a": "Yes, ERPVITS provides training in both formats, tailoring flexible weekend and weekday batches to accommodate working professionals.",
-                    "q": "Is SAP CPI Training available near me?"
+                    "q": "Is SAP CPI Training available near me?",
+                    "answer": "Yes, ERPVITS provides training in both formats, tailoring flexible weekend and weekday batches to accommodate working professionals.",
+                    "question": "Is SAP CPI Training available near me?"
                 },
                 {
                     "a": "ERPVITS supports your CPI career path through resume building, mock interviews, and job referrals with top SAP consulting and tech companies.",
-                    "q": "How does ERPVITS assist in SAP CPI Careers?"
+                    "q": "How does ERPVITS assist in SAP CPI Careers?",
+                    "answer": "ERPVITS supports your CPI career path through resume building, mock interviews, and job referrals with top SAP consulting and tech companies.",
+                    "question": "How does ERPVITS assist in SAP CPI Careers?"
                 }
             ]
         }
     ],
     "curriculum": [],
     "faqs": [],
-    "schema": "<script type=\"application/ld+json\">\n        {\n          \"@context\": \"https://www.schema.org\",\n          \"@type\": \"Product\",\n          \"brand\": \"ERPVITS\",\n          \"name\": \"SAP Ariba Online Training Certification Course\",\n          \"image\": \"https://www.erpvits.com/images/erpvits-logo.webp\",\n          \"description\": \"SAP Ariba Training with ERPVITS covering procurement, sourcing, and supplier management. 50+ hours of live sessions, real-time projects, and placement support.\",\n          \"aggregateRating\": {\n            \"@type\": \"AggregateRating\",\n            \"ratingValue\": \"4.5\",\n            \"reviewCount\": \"5489\",\n            \"url\": \"https://www.erpvits.com/sap-ariba-training/\"\n          }\n        }\n        </script>"
+    "schema": " <script type=\"application/ld+json\">\n        {\n          \"@context\": \"https://www.schema.org\",\n          \"@type\": \"Product\",\n          \"brand\": \"ERPVITS\",\n          \"name\": \"SAP CPI (Cloud Platform Integration) Online Training\",\n          \"image\": \"https://www.erpvits.com/images/erpvits-logo.webp\",\n          \"description\": \"Master SAP CPI (Cloud Platform Integration) with ERPVITS. Learn iFlows, adapters, data mapping, and security configuration for seamless cloud and on-premise system connectivity.\",\n          \"aggregateRating\": {\n            \"@type\": \"AggregateRating\",\n            \"ratingValue\": \"4.5\",\n            \"reviewCount\": \"885\",\n            \"url\": \"https://www.erpvits.com/sap-cpi-training/\"\n          }\n        }\n        </script>"
 };

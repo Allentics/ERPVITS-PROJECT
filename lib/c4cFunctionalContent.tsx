@@ -81,8 +81,8 @@ export const c4cFunctionalContent = {
     "category": "Functional",
     "price": "45,000",
     "duration": "40+ Hours",
-    "heroHeading": "Master Cloud-Based Customer Relationship Management with the <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone\">#1 SAP C4C Functional Online Training Program</span>",
-    "heroSubheading": "The SAP Cloud for Customer Online Functional Training Program from ERPVITS represents a transformative learning pathway for professionals eager to excel in cloud-based customer relationship management, sales operations, and customer service transformation. In today's cloud-first business landscape, organizations urgently need certified SAP C4C functional experts who can streamline sales processes, enhance customer service operations, improve customer collaboration, and drive digital transformation through modern cloud CRM solutions.",
+    "heroHeading": "Master Cloud-Based Customer Relationship Management with the <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone\">SAP C4C Functional Training</span>",
+    "heroSubheading": "Our SAP C4C Functional Training Program is a career-oriented course that is designed to prepare professionals for real world implementation and support roles within cloud CRM environments. This program equips participants with extensive knowledge of SAP C4C configuration, business processes, integrations and practical use cases in sales and service domains.\n\nAs businesses increasingly turn to cloud solutions to boost agility and customer experience, demand for skilled SAP C4C functional consultants continues to skyrocket. The training provided through this program, learners can learn to manage end-to-end sales cycles, streamline service operations, configure business workflows and develop data-driven customer engagement strategies through SAP's cloud platform.",
     "heroImage": "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP C4C Func Infographic.webp",
     "description": "The SAP Cloud for Customer functional training program combines interactive, instructor-led sessions, hands-on lab exercises, and real-time industry projects designed specifically for sales professionals, customer service specialists, and SAP consultants.",
     "metaTitle": "SAP C4C Functional Training Online | Cloud CRM Course",
@@ -95,49 +95,49 @@ export const c4cFunctionalContent = {
             "items": [
                 {
                     "title": "Certified Instructor Expertise",
-                    "description": "Each trainer holds official SAP certifications and has successfully led multiple enterprise-scale SAP C4C implementations. They don't just teach theory; they share real-world war stories, common CRM implementation pitfalls, and industry best practices."
+                    "description": "Our trainers are SAP-certified professionals with extensive experience implementing and supporting SAP C4C across various industries. They offer insight into real-time project execution, requirement analysis, configuration strategies, testing cycles and post go live support activities - so that you understand how C4C operates in real business environments."
                 },
                 {
-                    "title": "100% Hands-On Learning Methodology",
-                    "description": "Every session includes live demonstrations directly on SAP C4C cloud systems, followed by guided lab exercises where you replicate what you've learned. You'll configure sales pipelines, manage customer accounts, and execute workflows on real cloud systems."
+                    "title": "100% Hands-On Learning ",
+                    "description": "Every module in SAP C4C includes live system practice. You will actively configure organizational structures, sales cycles, service processes, workflows and reports in this environment. Practical assignments and guided exercises help build confidence when handling system configuration independently."
                 },
                 {
                     "title": "Job-Oriented Curriculum Design",
-                    "description": "Designed around the exact skills, responsibilities, and problem-solving scenarios you'll face as an SAP C4C functional consultant, whether implementing sales process transformation or troubleshooting cloud CRM issues."
+                    "description": "The curriculum for SAP C4C functional consultants is organized around their real responsibilities. This course addresses business process mapping, system customization, integration fundamentals, data management basics, troubleshooting scenarios aligned with current market expectations and troubleshooting scenarios that meet them."
                 },
                 {
                     "title": "Interactive Q&A Sessions",
-                    "description": "Dedicated Q&A forums and live office hours where instructors address your doubts, clarify complex topics, and provide personalized guidance tailored to your learning pace."
+                    "description": "Regular interactive sessions are held to clarify concepts, resolve functional confusions and examine real-life case studies. Trainers also encourage scenario-based learning techniques in order to help you think like a consultant and address business problems effectively."
                 },
                 {
                     "title": "Flexible Batch Timings",
-                    "description": "We offer both weekday evening batches (6 PM – 9 PM IST) and weekend batches (Saturday & Sunday). Sessions are recorded for asynchronous learning."
+                    "description": "Our flexible scheduling options accommodate both working professionals alike, offering weekday and weekend batches and recorded sessions so you won't miss any crucial topics."
                 },
                 {
                     "title": "Small Batch Sizes",
-                    "description": "Batches are capped at 8-10 participants to ensure personalized attention, allowing instructors to provide targeted feedback on your CRM configurations."
+                    "description": "Our limited batch sizes enable more focused mentoring and increased engagement during sessions. Trainers provide personalized feedback and advice designed to broaden functional understanding."
                 },
                 {
                     "title": "Placement & Career support",
-                    "description": "Our dedicated career support team helps you build an impactful SAP C4C-focused resume, prepare through mock interviews, and practice with real-world interview questions from recent hiring trends."
+                    "description": "Our comprehensive career assistance includes SAP-focused resume building, mock interviews, real-life scenario discussions and advice on how to present C4C expertise confidently in interviews."
                 },
                 {
                     "title": "Active Alumni Network",
-                    "description": "Join a thriving community of SAP C4C professionals. Exchange tips, share CRM best practices, and build professional relationships that can lead to referrals."
+                    "description": "By becoming part of an SAP C4C learning and alumni community, learners and alumni share job updates, project experiences and industry insight - helping support long-term career growth."
                 },
                 {
                     "title": "Ongoing support Post-Training",
-                    "description": "For six months after training, you'll continue to receive instructor guidance for clarifying concepts or troubleshooting real-world CRM challenges."
+                    "description": "Once the SAP C4C course is over, you'll continue receiving mentorship and advice to address project challenges, prepare for <a href=\"https://www.bestonlinecareer.com/blog/sap-c4c-certification\" target=\"_blank\" rel=\"noopener noreferrer\">SAP C4C certification</a> and advance within the SAP ecosystem."
                 }
             ],
             "title": "Learn SAP C4C Functional from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            "subtitle": "Our **SAP C4C Functional Online Training** curriculum is delivered exclusively by certified SAP professionals, each with 12+ years of direct hands-on experience in cloud CRM, sales cloud, and customer service engagement. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex functional CRM scenarios in a step-by-step manner.",
+            "subtitle": "Our SAP C4C Functional Training program aims to develop strong functional expertise through practical exposure, structured learning, and real-time business scenarios. Training sessions are led by experienced SAP C4C consultants with vast implementation knowledge from numerous industry projects; our course emphasizes real system configuration, business process understanding, and consultant-level thinking required in real environments instead of only theoretical approaches.",
             "textAlign": "left"
         },
         {
             "type": "content_with_image",
             "items": [
-                "Trusted by 600+ successful SAP professionals",
+                "Trusted by 2000+ successful SAP professionals",
                 "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro",
                 "Personalized pre-evaluation and learning path customization",
                 "Active alumni network and community forum for cloud CRM professionals",
@@ -149,7 +149,7 @@ export const c4cFunctionalContent = {
             "title": "Why Professionals Choose ERPVITS for SAP C4C Functional Online Training",
             "subtitle": "Success Guarantee & Credibility",
             "videoSrc": "https://www.youtube.com/embed/X8NW74XjShI",
-            "description": "ERPVITS has established itself as a trusted training partner for SAP Modules, with hundreds of successful learners working at top consulting firms like Accenture, Capgemini, Deloitte, Infosys, and Wipro.",
+            "description": "Professionals choose ERPVITS training because it goes beyond basic theory to develop real, job-ready SAP C4C functional expertise. The program simulates real project environments to help learners gain an understanding of how <a href=\"https://www.bestonlinecareer.com/blog/sap-c4c-crm\" target=\"_blank\" rel=\"noopener noreferrer\">SAP C4C CRM</a> implementations operate from requirements gathering to system configuration and post go live support.",
             "supportText": "From pre-evaluation to post-training support, we guide you through every step of your SAP C4C functional learning journey and career transition.",
             "supportTitle": "Complete support Ecosystem"
         },
@@ -452,7 +452,7 @@ export const c4cFunctionalContent = {
                     "icon": "Settings",
                     "title": "SAP and ERP Professionals",
                     "description": [
-                        "SAP consultants from CRM, SD, MM modules seeking cloud specialization",
+                        "SAP consultants from CRM, <a href=\"https://www.erpvits.com/sap-sd-training/\" target=\"_blank\" rel=\"noopener noreferrer\">SD</a>, <a href=\"https://www.erpvits.com/sap-s4hana-mm-training/\" target=\"_blank\" rel=\"noopener noreferrer\">MM</a> modules seeking cloud specialization",
                         "ERP system administrators expanding into cloud CRM domain",
                         "SAP architects designing enterprise customer engagement solutions",
                         "Business analysts supporting CRM implementations",
@@ -710,7 +710,7 @@ export const c4cFunctionalContent = {
                     "relevance": "Demonstrates expertise in SAP C4C functional configuration and operations."
                 }
             ],
-            "title": "SAP C4C Functional Certification – Your Global Career Credential",
+            "title": "SAP C4C Certification – Your Global Career Credential",
             "imageSrc": "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP C4C Func Infographic.webp",
             "description": "We Provide support for SAP Certified Application Associate – SAP C4C (C_C4C14_2404)"
         },
@@ -917,7 +917,7 @@ export const c4cFunctionalContent = {
                 {
                     "title": "Immediate Post-Training",
                     "points": [
-                        "Receive course completion certificate",
+                        "Receive SAP C4C Certification ",
                         "Access lifetime course materials/recordings",
                         "Join alumni network and forum",
                         "Begin resume updates with C4C expertise"
@@ -949,6 +949,35 @@ export const c4cFunctionalContent = {
         },
         {
             "type": "detailed_upcoming_batches",
+            "items": [
+                {
+                    "date": "November 15, 2025",
+                    "name": "Batch 1: November 2025 (Weekdays)",
+                    "time": "Weekdays – 7:00 AM | 8:00 PM IST",
+                    "seats": "4/10 Seats Left",
+                    "status": "Filling Fast",
+                    "duration": "50-60 Hours",
+                    "statusColor": "bg-orange-100 text-orange-600"
+                },
+                {
+                    "date": "November 16, 2025",
+                    "name": "Batch 2: November 2025 (Weekends)",
+                    "time": "Weekends – Saturday & Sunday, 7:30 AM | 7:00 PM IST",
+                    "seats": "5/10 Seats Left",
+                    "status": "Filling Fast",
+                    "duration": "50-60 Hours",
+                    "statusColor": "bg-orange-100 text-orange-600"
+                },
+                {
+                    "date": "December 1, 2025",
+                    "name": "Batch 3: December 2025 (Flexible)",
+                    "time": "Flexible timings – customized per batch",
+                    "seats": "6/10 Seats Left",
+                    "status": "Open",
+                    "duration": "50-60 Hours (accelerated)",
+                    "statusColor": "bg-green-100 text-green-600"
+                }
+            ],
             "title": "Join Our Next Live Batch – Limited Seats Available for SAP C4C Functional Training",
             "batches": [
                 {
@@ -1015,40 +1044,52 @@ export const c4cFunctionalContent = {
             "type": "detailed_testimonials",
             "items": [
                 {
-                    "name": "Priya Sharma",
+                    "name": "Ishvika Talwar",
                     "role": "SAP C4C Functional Consultant at Deloitte",
+                    "text": "Outstanding training on cloud CRM. I landed a consulting role at Deloitte within 10 weeks. The hands-on sales pipeline and service ticket labs made all the difference.",
                     "image": "/images/testimonials/priya-c4c.webp",
-                    "quote": "Outstanding training on cloud CRM. I landed a consulting role at Deloitte within 10 weeks. The hands-on sales pipeline and service ticket labs made all the difference."
+                    "quote": "Outstanding training on cloud CRM. I landed a consulting role at Deloitte within 10 weeks. The hands-on sales pipeline and service ticket labs made all the difference.",
+                    "author": "Ishvika Talwar"
                 },
                 {
-                    "name": "Rajesh Kumar",
+                    "name": "Aaryan Devraj",
                     "role": "Sales Operations Manager",
+                    "text": "The weekend flexibility allowed me to learn while working. My employer promoted me to Sales Ops Manager after seeing my C4C expertise. Accelerated my career by 4 years.",
                     "image": "/images/testimonials/rajesh-c4c.webp",
-                    "quote": "The weekend flexibility allowed me to learn while working. My employer promoted me to Sales Ops Manager after seeing my C4C expertise. Accelerated my career by 4 years."
+                    "quote": "The weekend flexibility allowed me to learn while working. My employer promoted me to Sales Ops Manager after seeing my C4C expertise. Accelerated my career by 4 years.",
+                    "author": "Aaryan Devraj"
                 },
                 {
-                    "name": "Amit Patel",
+                    "name": "Aadhira Bhonsle",
                     "role": "Senior C4C Functional Consultant",
+                    "text": "Best investment. The capstone projects were exactly like real CRM work. I walked into my first consulting role feeling confident. Certification support was exceptional.",
                     "image": "/images/testimonials/amit-c4c.webp",
-                    "quote": "Best investment. The capstone projects were exactly like real CRM work. I walked into my first consulting role feeling confident. Certification support was exceptional."
+                    "quote": "Best investment. The capstone projects were exactly like real CRM work. I walked into my first consulting role feeling confident. Certification support was exceptional.",
+                    "author": "Aadhira Bhonsle"
                 },
                 {
-                    "name": "Sneha Reddy",
+                    "name": "Tanirika Venkatesan",
                     "role": "Certified SAP C4C Professional",
+                    "text": "Superb certification preparation. I passed the C_C4C14_2404 exam on my first attempt with 84%. The mock exams and CRM scenario practice were thorough.",
                     "image": "/images/testimonials/sneha-c4c.webp",
-                    "quote": "Superb certification preparation. I passed the C_C4C14_2404 exam on my first attempt with 84%. The mock exams and CRM scenario practice were thorough."
+                    "quote": "Superb certification preparation. I passed the C_C4C14_2404 exam on my first attempt with 84%. The mock exams and CRM scenario practice were thorough.",
+                    "author": "Tanirika Venkatesan"
                 },
                 {
-                    "name": "Vikram Desai",
+                    "name": "Dhruvansh Rathod",
                     "role": "Cloud CRM Consultant at Accenture",
+                    "text": "The instructor's real-world insights were invaluable. I learned how to transform customer engagement, not just C4C. The alumni network brought CRM opportunities my way.",
                     "image": "/images/testimonials/vikram-c4c.webp",
-                    "quote": "The instructor's real-world insights were invaluable. I learned how to transform customer engagement, not just C4C. The alumni network brought CRM opportunities my way."
+                    "quote": "The instructor's real-world insights were invaluable. I learned how to transform customer engagement, not just C4C. The alumni network brought CRM opportunities my way.",
+                    "author": "Dhruvansh Rathod"
                 },
                 {
-                    "name": "Ananya Singh",
+                    "name": "Vihana Chakrabarti",
                     "role": "CRM Analyst at Microsoft",
+                    "text": "From zero SAP C4C knowledge to landing my dream role in 4 months! The instructors cares about student success. Lifetime recording access is invaluable.",
                     "image": "/images/testimonials/ananya-c4c.webp",
-                    "quote": "From zero SAP C4C knowledge to landing my dream role in 4 months! The instructors cares about student success. Lifetime recording access is invaluable."
+                    "quote": "From zero SAP C4C knowledge to landing my dream role in 4 months! The instructors cares about student success. Lifetime recording access is invaluable.",
+                    "author": "Vihana Chakrabarti"
                 }
             ],
             "title": "Hear from Our Successful SAP C4C Functional Learners"
@@ -1081,91 +1122,135 @@ export const c4cFunctionalContent = {
             "items": [
                 {
                     "a": "SAP Cloud for Customer (C4C) Functional training focuses on configuration and business processes of Sales, Service, and Marketing clouds. ERPVITS provides comprehensive training with real-world scenarios, hands-on practice, and guided projects to help you master functional configuration.",
-                    "q": "What is SAP C4C Functional and how does ERPVITS help me learn it?"
+                    "q": "What is SAP C4C Functional and how does ERPVITS help me learn it?",
+                    "answer": "SAP Cloud for Customer (C4C) Functional training focuses on configuration and business processes of Sales, Service, and Marketing clouds. ERPVITS provides comprehensive training with real-world scenarios, hands-on practice, and guided projects to help you master functional configuration.",
+                    "question": "What is SAP C4C Functional and how does ERPVITS help me learn it?"
                 },
                 {
                     "a": "You will learn to configure sales processes, manage customer accounts, set up service operations, create customer campaigns, manage activities, execute team collaboration, and implement real-time CRM dashboards using the SAP C4C platform.",
-                    "q": "What will I learn in the SAP C4C Functional course?"
+                    "q": "What will I learn in the SAP C4C Functional course?",
+                    "answer": "You will learn to configure sales processes, manage customer accounts, set up service operations, create customer campaigns, manage activities, execute team collaboration, and implement real-time CRM dashboards using the SAP C4C platform.",
+                    "question": "What will I learn in the SAP C4C Functional course?"
                 },
                 {
                     "a": "Sales Cloud in SAP C4C is the sales module that enables sales teams to manage opportunities, track accounts, execute pipelines, perform forecasting, and optimize sales processes. ERPVITS training covers practical sales cloud implementation.",
-                    "q": "What is Sales Cloud in SAP C4C?"
+                    "q": "What is Sales Cloud in SAP C4C?",
+                    "answer": "Sales Cloud in SAP C4C is the sales module that enables sales teams to manage opportunities, track accounts, execute pipelines, perform forecasting, and optimize sales processes. ERPVITS training covers practical sales cloud implementation.",
+                    "question": "What is Sales Cloud in SAP C4C?"
                 },
                 {
                     "a": "Service Cloud in SAP C4C is the customer service module that enables service teams to manage tickets, track customer issues, manage knowledge base, optimize SLAs, and improve customer satisfaction. We provide hands-on service cloud implementation training.",
-                    "q": "What is Service Cloud in SAP C4C?"
+                    "q": "What is Service Cloud in SAP C4C?",
+                    "answer": "Service Cloud in SAP C4C is the customer service module that enables service teams to manage tickets, track customer issues, manage knowledge base, optimize SLAs, and improve customer satisfaction. We provide hands-on service cloud implementation training.",
+                    "question": "What is Service Cloud in SAP C4C?"
                 },
                 {
                     "a": "SAP C4C enables businesses to engage customers through modern cloud-based interfaces, real-time collaboration, mobile access, AI-powered insights, omnichannel support, and seamless integration—all critical for competitive customer relationships.",
-                    "q": "How does SAP C4C support cloud-based customer engagement?"
+                    "q": "How does SAP C4C support cloud-based customer engagement?",
+                    "answer": "SAP C4C enables businesses to engage customers through modern cloud-based interfaces, real-time collaboration, mobile access, AI-powered insights, omnichannel support, and seamless integration—all critical for competitive customer relationships.",
+                    "question": "How does SAP C4C support cloud-based customer engagement?"
                 },
                 {
                     "a": "ERPVITS offers live sessions from certified cloud CRM experts, industry-aligned projects, hands-on CRM labs, certification support, and comprehensive placement assistance including resume preparation and interview strategies.",
-                    "q": "Why should I join SAP C4C Functional Training at ERPVITS?"
+                    "q": "Why should I join SAP C4C Functional Training at ERPVITS?",
+                    "answer": "ERPVITS offers live sessions from certified cloud CRM experts, industry-aligned projects, hands-on CRM labs, certification support, and comprehensive placement assistance including resume preparation and interview strategies.",
+                    "question": "Why should I join SAP C4C Functional Training at ERPVITS?"
                 },
                 {
                     "a": "Anyone interested in cloud CRM, sales operations, customer service, or SAP technologies can join. Whether you're a fresher, working professional, or sales manager, our course is designed to help you build job-ready CRM skills.",
-                    "q": "Who can enroll in the SAP C4C Functional Course?"
+                    "q": "Who can enroll in the SAP C4C Functional Course?",
+                    "answer": "Anyone interested in cloud CRM, sales operations, customer service, or SAP technologies can join. Whether you're a fresher, working professional, or sales manager, our course is designed to help you build job-ready CRM skills.",
+                    "question": "Who can enroll in the SAP C4C Functional Course?"
                 },
                 {
                     "a": "The SAP Certified Application Associate – SAP C4C (C_C4C14_2404) validates your expertise in cloud CRM configuration and operations. ERPVITS prepares you for the official certification, helping you become a recognized professional.",
-                    "q": "What is the SAP C4C Functional Certification and why is it valuable?"
+                    "q": "What is the SAP C4C Functional Certification and why is it valuable?",
+                    "answer": "The SAP Certified Application Associate – SAP C4C (C_C4C14_2404) validates your expertise in cloud CRM configuration and operations. ERPVITS prepares you for the official certification, helping you become a recognized professional.",
+                    "question": "What is the SAP C4C Functional Certification and why is it valuable?"
                 },
                 {
                     "a": "Our course fees are competitive and offer maximum value with hands-on learning, live instruction, lab access, placement assistance, and certification support. Contact us for specific pricing on current batches.",
-                    "q": "What are the SAP C4C Functional course fees at ERPVITS?"
+                    "q": "What are the SAP C4C Functional course fees at ERPVITS?",
+                    "answer": "Our course fees are competitive and offer maximum value with hands-on learning, live instruction, lab access, placement assistance, and certification support. Contact us for specific pricing on current batches.",
+                    "question": "What are the SAP C4C Functional course fees at ERPVITS?"
                 },
                 {
                     "a": "The exam cost is determined by SAP Education (approx. $560 USD or ₹46,000 in India). ERPVITS provides complete exam guidance, practice tests, and mentoring to help you pass on your first attempt.",
-                    "q": "How much does SAP C4C Functional Certification cost?"
+                    "q": "How much does SAP C4C Functional Certification cost?",
+                    "answer": "The exam cost is determined by SAP Education (approx. $560 USD or ₹46,000 in India). ERPVITS provides complete exam guidance, practice tests, and mentoring to help you pass on your first attempt.",
+                    "question": "How much does SAP C4C Functional Certification cost?"
                 },
                 {
                     "a": "Join our structured training, complete live CRM projects, prepare for certification, and gain hands-on experience. ERPVITS provides career counseling and job assistance to support your transition.",
-                    "q": "How can I become an SAP C4C Functional Consultant through ERPVITS?"
+                    "q": "How can I become an SAP C4C Functional Consultant through ERPVITS?",
+                    "answer": "Join our structured training, complete live CRM projects, prepare for certification, and gain hands-on experience. ERPVITS provides career counseling and job assistance to support your transition.",
+                    "question": "How can I become an SAP C4C Functional Consultant through ERPVITS?"
                 },
                 {
                     "a": "You can apply for roles like C4C Functional Consultant, Sales Operations Manager, Customer Service Manager, CRM Analyst, or Cloud CRM Architect. We also share job openings with our learners.",
-                    "q": "What career options are available after completing the SAP C4C Functional course?"
+                    "q": "What career options are available after completing the SAP C4C Functional course?",
+                    "answer": "You can apply for roles like C4C Functional Consultant, Sales Operations Manager, Customer Service Manager, CRM Analyst, or Cloud CRM Architect. We also share job openings with our learners.",
+                    "question": "What career options are available after completing the SAP C4C Functional course?"
                 },
                 {
                     "a": "Functional focuses on business processes, configuration, and user experience (for consultants/business users). Technical focuses on programming, customization, and SDK development (for developers).",
-                    "q": "How does SAP C4C Functional differ from SAP C4C Technical?"
+                    "q": "How does SAP C4C Functional differ from SAP C4C Technical?",
+                    "answer": "Functional focuses on business processes, configuration, and user experience (for consultants/business users). Technical focuses on programming, customization, and SDK development (for developers).",
+                    "question": "How does SAP C4C Functional differ from SAP C4C Technical?"
                 },
                 {
                     "a": "We cover Sales Cloud, Service Cloud, Marketing Cloud, Activity Management, Account Management, Analytics, and integration with SAP S/4HANA, with hands-on practice.",
-                    "q": "What are the main SAP C4C Functional modules covered?"
+                    "q": "What are the main SAP C4C Functional modules covered?",
+                    "answer": "We cover Sales Cloud, Service Cloud, Marketing Cloud, Activity Management, Account Management, Analytics, and integration with SAP S/4HANA, with hands-on practice.",
+                    "question": "What are the main SAP C4C Functional modules covered?"
                 },
                 {
                     "a": "These jobs involve managing sales/service operations, customer engagement, and CRM implementations—specifically process design, system configuration, user training, and consulting.",
-                    "q": "What do SAP C4C Functional jobs entail?"
+                    "q": "What do SAP C4C Functional jobs entail?",
+                    "answer": "These jobs involve managing sales/service operations, customer engagement, and CRM implementations—specifically process design, system configuration, user training, and consulting.",
+                    "question": "What do SAP C4C Functional jobs entail?"
                 },
                 {
                     "a": "Yes, we offer comprehensive placement assistance including resume building, mock interviews, and job referrals to connect you with leading SAP consulting companies and organizations.",
-                    "q": "Does ERPVITS provide placement support?"
+                    "q": "Does ERPVITS provide placement support?",
+                    "answer": "Yes, we offer comprehensive placement assistance including resume building, mock interviews, and job referrals to connect you with leading SAP consulting companies and organizations.",
+                    "question": "Does ERPVITS provide placement support?"
                 },
                 {
                     "a": "Absolutely. Our online training is accessible globally. You can learn with live instructors, access recorded sessions, and practice on C4C systems remotely with 24/7 lab access.",
-                    "q": "Can I take SAP C4C Functional Online Training from anywhere?"
+                    "q": "Can I take SAP C4C Functional Online Training from anywhere?",
+                    "answer": "Absolutely. Our online training is accessible globally. You can learn with live instructors, access recorded sessions, and practice on C4C systems remotely with 24/7 lab access.",
+                    "question": "Can I take SAP C4C Functional Online Training from anywhere?"
                 },
                 {
                     "a": "Yes, we offer online options globally and classroom options in select cities like Hyderabad, Pune, and Bangalore, with flexible schedules for working professionals.",
-                    "q": "Is SAP C4C Functional Training available in multiple cities?"
+                    "q": "Is SAP C4C Functional Training available in multiple cities?",
+                    "answer": "Yes, we offer online options globally and classroom options in select cities like Hyderabad, Pune, and Bangalore, with flexible schedules for working professionals.",
+                    "question": "Is SAP C4C Functional Training available in multiple cities?"
                 },
                 {
                     "a": "We guide your career journey with technical training, resume building, interview prep, mock consultations, and job referrals across leading SAP consulting and cloud CRM companies.",
-                    "q": "How does ERPVITS help in SAP C4C Functional Careers?"
+                    "q": "How does ERPVITS help in SAP C4C Functional Careers?",
+                    "answer": "We guide your career journey with technical training, resume building, interview prep, mock consultations, and job referrals across leading SAP consulting and cloud CRM companies.",
+                    "question": "How does ERPVITS help in SAP C4C Functional Careers?"
                 },
                 {
                     "a": "It's a high-demand skill with 350%+ growth in job openings, a shortage of qualified professionals, premium salaries (15-30% higher), and expanding opportunities across major industries.",
-                    "q": "What makes SAP C4C Functional a lucrative career in 2025?"
+                    "q": "What makes SAP C4C Functional a lucrative career?",
+                    "answer": "It's a high-demand skill with 350%+ growth in job openings, a shortage of qualified professionals, premium salaries (15-30% higher), and expanding opportunities across major industries.",
+                    "question": "What makes SAP C4C Functional a lucrative career?"
                 },
                 {
                     "a": "The average timeline is 2-3 months with active job search and our career support. Many learners secure roles within 4-8 weeks of certification.",
-                    "q": "How long does it take to get a job after training?"
+                    "q": "How long does it take to get a job after training?",
+                    "answer": "The average timeline is 2-3 months with active job search and our career support. Many learners secure roles within 4-8 weeks of certification.",
+                    "question": "How long does it take to get a job after training?"
                 },
                 {
                     "a": "The outlook is very positive with strong demand from enterprises adopting cloud CRM, 350%+ growth in openings, and increasing strategic importance of customer engagement expertise.",
-                    "q": "What is the job outlook for 2025?"
+                    "q": "What is the job outlook for future?",
+                    "answer": "The outlook is very positive with strong demand from enterprises adopting cloud CRM, 350%+ growth in openings, and increasing strategic importance of customer engagement expertise.",
+                    "question": "What is the job outlook for future?"
                 }
             ]
         }

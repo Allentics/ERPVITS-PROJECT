@@ -760,6 +760,35 @@ export const sdContent = {
         },
         {
             "type": "detailed_upcoming_batches",
+            "items": [
+                {
+                    "date": "November 15, 2025",
+                    "name": "Batch 1: November 2025 (Weekdays)",
+                    "time": "Weekdays – 7:00 AM – 8:00 PM IST",
+                    "seats": "6/10 Seats Left",
+                    "status": "Filling Fast",
+                    "duration": "30–35 Hours",
+                    "statusColor": "bg-orange-100 text-orange-600"
+                },
+                {
+                    "date": "November 16, 2025",
+                    "name": "Batch 2: November 2025 (Weekends)",
+                    "time": "Weekends – Saturday & Sunday, 10:00 AM – 7:00 PM IST",
+                    "seats": "3/10 Seats Left",
+                    "status": "Filling Fast",
+                    "duration": "30–35 Hours",
+                    "statusColor": "bg-orange-100 text-orange-600"
+                },
+                {
+                    "date": "December 1, 2025",
+                    "name": "Batch 3: December 2025 (Flexible)",
+                    "time": "Flexible timings – customized per batch",
+                    "seats": "7/10 Seats Left",
+                    "status": "Open",
+                    "duration": "30–35 Hours (accelerated)",
+                    "statusColor": "bg-green-100 text-green-600"
+                }
+            ],
             "title": "Join Our Next Live Batch – Limited Seats Available for SAP SD Training",
             "batches": [
                 {
@@ -818,45 +847,57 @@ export const sdContent = {
             "type": "detailed_testimonials",
             "items": [
                 {
-                    "name": "Amit Kumar",
+                    "name": "Hema Prasad",
                     "role": "SAP SD Consultant at Accenture",
+                    "text": "Outstanding sales operations training with real order-to-cash project exposure. I landed a consulting role at Accenture within 9 weeks managing SD implementations.",
                     "color": "bg-blue-500",
                     "quote": "Outstanding sales operations training with real order-to-cash project exposure. I landed a consulting role at Accenture within 9 weeks managing SD implementations.",
+                    "author": "Hema Prasad",
                     "initial": "A"
                 },
                 {
-                    "name": "Priya Sharma",
+                    "name": "Ajay Thakur",
                     "role": "Sales Operations Manager",
+                    "text": "The weekend flexibility allowed me to learn while working in sales. My employer was so impressed with my SAP SD skills that they promoted me. This course accelerated my career by 3 years.",
                     "color": "bg-green-500",
                     "quote": "The weekend flexibility allowed me to learn while working in sales. My employer was so impressed with my SAP SD skills that they promoted me. This course accelerated my career by 3 years.",
+                    "author": "Ajay Thakur",
                     "initial": "P"
                 },
                 {
-                    "name": "Rajesh Patel",
+                    "name": "Monika Mehra",
                     "role": "Senior SD Consultant",
+                    "text": "Best decision I made. The capstone projects were exactly like real client work. I walked into my first consulting role feeling confident, not intimidated.",
                     "color": "bg-[#ff4500]",
                     "quote": "Best decision I made. The capstone projects were exactly like real client work. I walked into my first consulting role feeling confident, not intimidated.",
+                    "author": "Monika Mehra",
                     "initial": "R"
                 },
                 {
-                    "name": "Ananya Singh",
+                    "name": "Nitin Choudhary",
                     "role": "Certified SAP SD Professional",
+                    "text": "Superb certification preparation. I passed the SAP SD exam on my first attempt. The mock exams and study materials were spot-on.",
                     "color": "bg-purple-500",
                     "quote": "Superb certification preparation. I passed the SAP SD exam on my first attempt. The mock exams and study materials were spot-on.",
+                    "author": "Nitin Choudhary",
                     "initial": "A"
                 },
                 {
-                    "name": "Vikram Desai",
+                    "name": "Shilpa Sood",
                     "role": "Integration Consultant at Deloitte",
+                    "text": "The instructor's real-world insights on order management and billing were invaluable. I didn't just learn SAP SD; I learned how to optimize sales processes.",
                     "color": "bg-red-500",
                     "quote": "The instructor's real-world insights on order management and billing were invaluable. I didn't just learn SAP SD; I learned how to optimize sales processes.",
+                    "author": "Shilpa Sood",
                     "initial": "V"
                 },
                 {
-                    "name": "Sneha Reddy",
+                    "name": "Pankaj Srivastava",
                     "role": "Order Management Analyst at Infosys",
+                    "text": "From sales coordinator to leading SD implementations in 4 months! Patient instructors who care about success. Lifetime recording access is invaluable.",
                     "color": "bg-indigo-500",
                     "quote": "From sales coordinator to leading SD implementations in 4 months! Patient instructors who care about success. Lifetime recording access is invaluable.",
+                    "author": "Pankaj Srivastava",
                     "initial": "S"
                 }
             ],
@@ -969,5 +1010,5 @@ export const sdContent = {
     ],
     "curriculum": [],
     "faqs": [],
-    "schema": "{\"@context\":\"https://schema.org\",\"@type\":\"Course\",\"name\":\"SAP SD Online Training\",\"description\":\"The SAP Sales & Distribution Online Training Program from ERPVITS provides in-depth learning in order management, billing, shipping, and ERP integration with live sessions, real-world projects, and certification preparation.\",\"provider\":{\"@type\":\"Organization\",\"name\":\"ERPVITS\",\"url\":\"https://www.erpvits.com/\",\"logo\":\"https://www.erpvits.com/images/erpvits-logo.webp\",\"sameAs\":[\"https://www.instagram.com/erp_vits/\",\"https://www.linkedin.com/company/erpvits/\",\"https://www.youtube.com/@ERPVITS\"]},\"url\":\"https://www.erpvits.com/sap-sd-training/\",\"image\":\"https://www.erpvits.com/images/erpvits-logo.webp\",\"courseMode\":\"Online\",\"educationalCredentialAwarded\":\"SAP SD Certification\",\"timeRequired\":\"PT35H\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.8\",\"bestRating\":\"5\",\"ratingCount\":\"327\"},\"hasCourseInstance\":{\"@type\":\"CourseInstance\",\"courseMode\":\"Online\",\"instructor\":{\"@type\":\"Person\",\"name\":\"Certified SAP SD Trainer\",\"description\":\"SAP Certified Professional with 10+ years of experience in Sales & Distribution implementation and consulting.\"},\"duration\":\"35 Hours\"},\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://www.erpvits.com/sap-sd-training/\"},\"hasPart\":{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"What does SAP SD cover, and how does ERPVITS facilitate its acquisition?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Sales and Distribution (SAP SD) is SAP’s most global and complete solution for order management, shipping, and billing. At ERPVITS, we also cover comprehensive SD training with real-life sales scenarios and order-to-cash workflows, hands-on training, and guidance on relevant projects.\"}},{\"@type\":\"Question\",\"name\":\"What will I learn in the Sales Order module?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"In our Sales Order training, we teach how to create a quotation and sales order, manage inquiry and sales order, convert inquiry to sales order, configure item category, and perform availability check in SAP SD.\"}},{\"@type\":\"Question\",\"name\":\"What is the Delivery & Shipping process in SAP SD?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"In ERPVITS, SAP SD training also covers all outbound delivery processes, picking and packing, goods issue, and shipping point management.\"}},{\"@type\":\"Question\",\"name\":\"What is Billing & Invoicing in SAP SD?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Invoicing in SD covers the complete billing cycle, especially in different scenarios including down payments, controls in billing and processing, and managing billing documents.\"}},{\"@type\":\"Question\",\"name\":\"How does SAP SD support current sales operations?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"SAP SD covers all order-to-cash processes including sales order, delivery, billing, and customer management. At ERPVITS, we get practical for SD workflows in real-life implementations.\"}},{\"@type\":\"Question\",\"name\":\"Why Join SAP SD Training at ERPVITS?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"ERPVITS provides SAP SD Online Training that includes live sessions, industry-aligned sales projects, and placement assistance. You will be coached on target SD certification, resume crafting, and interview preparation strategies.\"}},{\"@type\":\"Question\",\"name\":\"Who Can Take SAP SD Course?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Anyone with an interest in sales operations, order management, or SAP technologies qualifies. ERPVITS SAP SD Course develops job-ready skills for freshers, professionals, and consultants alike.\"}},{\"@type\":\"Question\",\"name\":\"What is the SAP SD Certification and Why is it Important?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"SAP SD Certification validates your ability in sales and distribution. ERPVITS helps you prepare for the official certification exams and guides you to become a certified SAP SD professional.\"}},{\"@type\":\"Question\",\"name\":\"What Are the Fees for SAP SD Course at ERPVITS?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"SAP SD course fees are based on the program and training mode, yet remain competitive. This ensures outstanding value alongside hands-on training, guaranteed placement, and certification support.\"}},{\"@type\":\"Question\",\"name\":\"What is the Cost of SAP SD Certification?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"SAP Education sets the price for SAP SD Certification. To help you pass SAP SD certification on your first attempt, ERPVITS provides complete exam support, mentoring, and practice tests.\"}},{\"@type\":\"Question\",\"name\":\"How do I become an SAP SD Consultant via ERPVITS?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"To become an SAP SD Consultant via ERPVITS , you will have to register for their SAP SD training program, complete all the specified sales project assignments, and undertake the necessary certification assessment. ERPVITS also provides career guidance and job assistance.\"}},{\"@type\":\"Question\",\"name\":\"What job prospects do I have after the SD course?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Following the SD course, you will attain qualifications to become an SD Consultant, Order Management Manager, Billing Specialist, Sales Analyst, or even an SAP Sales Architect.\"}},{\"@type\":\"Question\",\"name\":\"How does SAP SD collaborate with your other modules?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Detailed sessions on the integration of SAP SD and the other modules such as Materials Management (MM), Financial Accounting (FI), and Warehouse Management (WM) will be offered by ERPVITS.\"}},{\"@type\":\"Question\",\"name\":\"What are the main functions in the SD area?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Expected knowledge areas and functions in SAP SD will include Sales Orders, Deliveries, Billing, Master Data, Pricing, and the Order-to-Cash cycle.\"}},{\"@type\":\"Question\",\"name\":\"What are the SAP SD corporate pricing options?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Corporate pricing will depend on how the company wants to be charged for the license. The licenses can be structured as per user licenses or an enterprise agreement. Functional licensing and implementation cost insights will be offered by ERPVITS.\"}},{\"@type\":\"Question\",\"name\":\"Does ERPVITS provide SAP SD Training with Placement Support?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"ERPVITS does provide training with placement support and assistance for SAP SD Training. We also assist in profile development, interview preparations, and recruiter outreach.\"}},{\"@type\":\"Question\",\"name\":\"Is it possible to register for SAP SD Online Training from any location?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Of course. SAP SD Online training from ERPVITS is reachable from any location. Learning occurs with real-time trainers, where recorded sessions are available afterward for remote practice\"}},{\"@type\":\"Question\",\"name\":\"Is there SAP SD Training offered close to my location?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Indeed, ERPVITS has both online and in-person training with convenient scheduling for working professionals on weekends or weekdays.\"}},{\"@type\":\"Question\",\"name\":\"In what ways does ERPVITS assist with SAP SD Careers\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"For every stage of your SAP SD career, ERPVITS supports every aspect, which includes, but is not limited to, resume crafting, mock interviews, and job referrals for positions at top SAP consulting firms and companies.\"}}]}}"
+    "schema": " <script type=\"application/ld+json\">\n        {\n          \"@context\": \"https://www.schema.org\",\n          \"@type\": \"Product\",\n          \"brand\": \"ERPVITS\",\n          \"name\": \"SAP SD (Sales and Distribution) Online Training\",\n          \"image\": \"https://www.erpvits.com/images/erpvits-logo.webp\",\n          \"description\": \"Master SAP SD (Sales and Distribution) with ERPVITS. Learn the entire sales cycle, including order fulfillment, shipping, billing, and integration with FICO and MM through real-time projects.\",\n          \"aggregateRating\": {\n            \"@type\": \"AggregateRating\",\n            \"ratingValue\": \"4.5\",\n            \"reviewCount\": \"1118\",\n            \"url\": \"https://www.erpvits.com/sap-sd-training/\"\n          }\n        }\n        </script>"
 };

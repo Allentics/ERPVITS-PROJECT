@@ -787,6 +787,35 @@ export const c4cContent = {
         },
         {
             "type": "detailed_upcoming_batches",
+            "items": [
+                {
+                    "date": "November 15, 2025",
+                    "name": "Batch 1: November 2025 (Weekdays – 7:00 AM – 8:00 PM IST)",
+                    "time": "Weekdays – 7:00 AM – 8:00 PM IST",
+                    "seats": "7/10 Seats Left",
+                    "status": "Filling Fast",
+                    "duration": "30 - 35 Hours",
+                    "statusColor": "bg-orange-100 text-orange-600"
+                },
+                {
+                    "date": "November 16, 2025",
+                    "name": "Batch 2: November 2025 (Weekends – Saturday & Sunday, 8:30 AM – 7:00 PM IST)",
+                    "time": "Weekends – Saturday & Sunday, 8:30 AM – 7:00 PM IST",
+                    "seats": "3/10 Seats Left",
+                    "status": "Filling Fast",
+                    "duration": "30 - 35 Hours",
+                    "statusColor": "bg-orange-100 text-orange-600"
+                },
+                {
+                    "date": "December 1, 2025",
+                    "name": "Batch 3: December 2025 (Flexible timings – customized per batch)",
+                    "time": "Flexible timings – customized per batch",
+                    "seats": "8/10 Seats Left",
+                    "status": "Open",
+                    "duration": "30 - 35 Hours (accelerated)",
+                    "statusColor": "bg-green-100 text-green-600"
+                }
+            ],
             "title": "Join Our Next Live Batch – Limited Seats Available for SAP C4C Technical Training",
             "batches": [
                 {
@@ -845,34 +874,46 @@ export const c4cContent = {
             "type": "detailed_testimonials",
             "items": [
                 {
-                    "name": "Raj Patel",
+                    "name": "Kunal Saran",
                     "role": "SAP C4C Developer at Capgemini",
-                    "quote": "Outstanding cloud development training with real project exposure. I landed a developer role at Capgemini within 8 weeks managing C4C implementations. The hands-on coding approach and expert instructors made all the difference."
+                    "text": "Outstanding cloud development training with real project exposure. I landed a developer role at Capgemini within 8 weeks managing C4C implementations. The hands-on coding approach and expert instructors made all the difference.",
+                    "quote": "Outstanding cloud development training with real project exposure. I landed a developer role at Capgemini within 8 weeks managing C4C implementations. The hands-on coding approach and expert instructors made all the difference.",
+                    "author": "Kunal Saran"
                 },
                 {
-                    "name": "Priya Misra",
+                    "name": "Deepa Balakrishnan",
                     "role": "Senior Developer",
-                    "quote": "The weekend flexibility allowed me to upskill in cloud development while working. My employer was impressed with my C4C skills and promoted me to Senior Developer. This course accelerated my career by 3 years."
+                    "text": "The weekend flexibility allowed me to upskill in cloud development while working. My employer was impressed with my C4C skills and promoted me to Senior Developer. This course accelerated my career by 3 years.",
+                    "quote": "The weekend flexibility allowed me to upskill in cloud development while working. My employer was impressed with my C4C skills and promoted me to Senior Developer. This course accelerated my career by 3 years.",
+                    "author": "Deepa Balakrishnan"
                 },
                 {
-                    "name": "Vikram Singh",
+                    "name": "Manohar Lal",
                     "role": "Technical Consultant",
-                    "quote": "Best decision for my tech career. The capstone projects were exactly like real enterprise development. I walked in confident in both design and coding. The certification support was excellent."
+                    "text": "Best decision for my tech career. The capstone projects were exactly like real enterprise development. I walked in confident in both design and coding. The certification support was excellent.",
+                    "quote": "Best decision for my tech career. The capstone projects were exactly like real enterprise development. I walked in confident in both design and coding. The certification support was excellent.",
+                    "author": "Manohar Lal"
                 },
                 {
-                    "name": "Ananya Gupta",
+                    "name": "Raghav Bedi",
                     "role": "C4C Lead Developer",
-                    "quote": "Superb technical training and certification prep. I passed the SAP C4C exam on my first attempt. The mock exams and code samples were spot-on. Now leading C4C implementations."
+                    "text": "Superb technical training and certification prep. I passed the SAP C4C exam on my first attempt. The mock exams and code samples were spot-on. Now leading C4C implementations.",
+                    "quote": "Superb technical training and certification prep. I passed the SAP C4C exam on my first attempt. The mock exams and code samples were spot-on. Now leading C4C implementations.",
+                    "author": "Raghav Bedi"
                 },
                 {
-                    "name": "Vikram Desai",
+                    "name": "Pallavi Shenoy",
                     "role": "Solutions Architect",
-                    "quote": "The instructor's real-world insights on architecture and debugging were invaluable. I learned not just C4C but cloud development patterns. The alumni network brought several opportunities."
+                    "text": "The instructor's real-world insights on architecture and debugging were invaluable. I learned not just C4C but cloud development patterns. The alumni network brought several opportunities.",
+                    "quote": "The instructor's real-world insights on architecture and debugging were invaluable. I learned not just C4C but cloud development patterns. The alumni network brought several opportunities.",
+                    "author": "Pallavi Shenoy"
                 },
                 {
-                    "name": "Sneha Sharma",
+                    "name": "Sandeep Arvind",
                     "role": "C4C Developer at Infosys",
-                    "quote": "From junior programmer to cloud developer in 5 months! Patient instructors who provide detailed feedback. Lifetime recording access is invaluable for reference."
+                    "text": "From junior programmer to cloud developer in 5 months! Patient instructors who provide detailed feedback. Lifetime recording access is invaluable for reference.",
+                    "quote": "From junior programmer to cloud developer in 5 months! Patient instructors who provide detailed feedback. Lifetime recording access is invaluable for reference.",
+                    "author": "Sandeep Arvind"
                 }
             ],
             "title": "Hear from Our Successful SAP C4C Developer Learners – Real Reviews, Real Results",
@@ -941,79 +982,117 @@ export const c4cContent = {
             "items": [
                 {
                     "a": "SAP C4C (Customer Cloud) is a cloud-based CRM and ERP solution. At ERPVITS we provide in-depth C4C technical training that includes custom development, API integration, and cloud application design to help you become an expert in enterprise cloud programming.",
-                    "q": "What is SAP C4C and how does ERPVITS help me learn it?"
+                    "q": "What is SAP C4C and how does ERPVITS help me learn it?",
+                    "answer": "SAP C4C (Customer Cloud) is a cloud-based CRM and ERP solution. At ERPVITS we provide in-depth C4C technical training that includes custom development, API integration, and cloud application design to help you become an expert in enterprise cloud programming.",
+                    "question": "What is SAP C4C and how does ERPVITS help me learn it?"
                 },
                 {
                     "a": "ABSL or ABAP Simple Logic is the scripting language for the business logic of SAP C4C. ERPVITS teaches you the syntax of ABSL, how to handle events, and the intricate logic for constructing robust applications in the cloud.",
-                    "q": "What is ABSL, and why is it important in C4C?"
+                    "q": "What is ABSL, and why is it important in C4C?",
+                    "answer": "ABSL or ABAP Simple Logic is the scripting language for the business logic of SAP C4C. ERPVITS teaches you the syntax of ABSL, how to handle events, and the intricate logic for constructing robust applications in the cloud.",
+                    "question": "What is ABSL, and why is it important in C4C?"
                 },
                 {
                     "a": "As for the UI Designer, it is SAP C4C's instrument to visually develop user interfaces. In ERPVITS training, you learn form design, how to bind data, handle events, and other UI Designer functionalities.",
-                    "q": "What is the UI Designer, and how do I use it?"
+                    "q": "What is the UI Designer, and how do I use it?",
+                    "answer": "As for the UI Designer, it is SAP C4C's instrument to visually develop user interfaces. In ERPVITS training, you learn form design, how to bind data, handle events, and other UI Designer functionalities.",
+                    "question": "What is the UI Designer, and how do I use it?"
                 },
                 {
                     "a": "To integrate external systems with SAP C4C, ERPVITS teaches the development of web services, designing APIs, and different integration patterns for secure and reliable connection of external systems to SAP C4C.",
-                    "q": "How do I integrate external systems with SAP C4C?"
+                    "q": "How do I integrate external systems with SAP C4C?",
+                    "answer": "To integrate external systems with SAP C4C, ERPVITS teaches the development of web services, designing APIs, and different integration patterns for secure and reliable connection of external systems to SAP C4C.",
+                    "question": "How do I integrate external systems with SAP C4C?"
                 },
                 {
                     "a": "With extensibility, APIs, and analytics, along with other features, SAP C4C offers complete cloud CRM. ERPVITS teaches practical development with exposure to real cloud scenarios.",
-                    "q": "How does SAP C4C support modern cloud development?"
+                    "q": "How does SAP C4C support modern cloud development?",
+                    "answer": "With extensibility, APIs, and analytics, along with other features, SAP C4C offers complete cloud CRM. ERPVITS teaches practical development with exposure to real cloud scenarios.",
+                    "question": "How does SAP C4C support modern cloud development?"
                 },
                 {
                     "a": "With ERPVITS, you get SAP C4C training in a blended format with live sessions, industry-aligned projects, and placement assistance. Guidance on C4C certification is provided along with resume building, interview preparation, and training.",
-                    "q": "Why should I join SAP C4C Technical Training at ERPVITS?"
+                    "q": "Why should I join SAP C4C Technical Training at ERPVITS?",
+                    "answer": "With ERPVITS, you get SAP C4C training in a blended format with live sessions, industry-aligned projects, and placement assistance. Guidance on C4C certification is provided along with resume building, interview preparation, and training.",
+                    "question": "Why should I join SAP C4C Technical Training at ERPVITS?"
                 },
                 {
                     "a": "Those who can code and are interested in developing cloud CRMs can enroll. If you're new to SAP or coming from a different platform, ERPVITS builds job-ready cloud development skills.",
-                    "q": "Who can enroll in the SAP C4C Technical Course?"
+                    "q": "Who can enroll in the SAP C4C Technical Course?",
+                    "answer": "Those who can code and are interested in developing cloud CRMs can enroll. If you're new to SAP or coming from a different platform, ERPVITS builds job-ready cloud development skills.",
+                    "question": "Who can enroll in the SAP C4C Technical Course?"
                 },
                 {
                     "a": "SAP C4C Certification proves one is skilled in developing the cloud. ERPVITS gets you ready for the certified SAP C4C developer official certification exams.",
-                    "q": "What is SAP C4C Certification and what is its importance?"
+                    "q": "What is SAP C4C Certification and what is its importance?",
+                    "answer": "SAP C4C Certification proves one is skilled in developing the cloud. ERPVITS gets you ready for the certified SAP C4C developer official certification exams.",
+                    "question": "What is SAP C4C Certification and what is its importance?"
                 },
                 {
                     "a": "The course fee for SAP C4C is based on the program length and training mode. The training pricing is competitive with the development, placement, certification, and support that we offer.",
-                    "q": "What is the course fee for SAP C4C at ERPVITS?"
+                    "q": "What is the course fee for SAP C4C at ERPVITS?",
+                    "answer": "The course fee for SAP C4C is based on the program length and training mode. The training pricing is competitive with the development, placement, certification, and support that we offer.",
+                    "question": "What is the course fee for SAP C4C at ERPVITS?"
                 },
                 {
                     "a": "The cost of the SAP C4C Certification is set by SAP Education. ERPVITS helps with complete exam prep, practice exams, and mentoring to help you pass on the first attempt.",
-                    "q": "What is the cost of SAP C4C Certification?"
+                    "q": "What is the cost of SAP C4C Certification?",
+                    "answer": "The cost of the SAP C4C Certification is set by SAP Education. ERPVITS helps with complete exam prep, practice exams, and mentoring to help you pass on the first attempt.",
+                    "question": "What is the cost of SAP C4C Certification?"
                 },
                 {
                     "a": "You complete development projects under our structured SAP C4C Technical training program, and prepare for certification. ERPVITS also provides job assistance and career counseling.",
-                    "q": "How can I be an SAP C4C Developer through ERPVITS?"
+                    "q": "How can I be an SAP C4C Developer through ERPVITS?",
+                    "answer": "You complete development projects under our structured SAP C4C Technical training program, and prepare for certification. ERPVITS also provides job assistance and career counseling.",
+                    "question": "How can I be an SAP C4C Developer through ERPVITS?"
                 },
                 {
                     "a": "After you complete training in C4C, you can work as a C4C Developer, Cloud Solutions Architect, Technical Consultant, or Solutions Engineer at various consulting firms and companies.",
-                    "q": "What jobs can I get after C4C training?"
+                    "q": "What jobs can I get after C4C training?",
+                    "answer": "After you complete training in C4C, you can work as a C4C Developer, Cloud Solutions Architect, Technical Consultant, or Solutions Engineer at various consulting firms and companies.",
+                    "question": "What jobs can I get after C4C training?"
                 },
                 {
                     "a": "The main coding language you’ll be using is ABSL. Having a simple understanding of object-oriented programming and JavaScript will be useful too. ERPVITS teaches all the needed languages and concepts.",
-                    "q": "What coding languages should I know?"
+                    "q": "What coding languages should I know?",
+                    "answer": "The main coding language you’ll be using is ABSL. Having a simple understanding of object-oriented programming and JavaScript will be useful too. ERPVITS teaches all the needed languages and concepts.",
+                    "question": "What coding languages should I know?"
                 },
                 {
                     "a": "ERPVITS teaches all the integration lessons using integration patterns like APIs, web services, and middleware connections to ERP systems, cloud databases, and third-party software applications.",
-                    "q": "In what ways does SAP C4C work with business systems?"
+                    "q": "In what ways does SAP C4C work with business systems?",
+                    "answer": "ERPVITS teaches all the integration lessons using integration patterns like APIs, web services, and middleware connections to ERP systems, cloud databases, and third-party software applications.",
+                    "question": "In what ways does SAP C4C work with business systems?"
                 },
                 {
                     "a": "ERPVITS teaches C4C development using ABSL, UI Designer, business configuration, web services, analytics, workflows, and extensions. All of these are accompanied by hands-on development experience.",
-                    "q": "What main C4C development sections are included?"
+                    "q": "What main C4C development sections are included?",
+                    "answer": "ERPVITS teaches C4C development using ABSL, UI Designer, business configuration, web services, analytics, workflows, and extensions. All of these are accompanied by hands-on development experience.",
+                    "question": "What main C4C development sections are included?"
                 },
                 {
                     "a": "Yes! ERPVITS provides SAP C4C training and placement support. We prepare wonderful profiles as developers and help you get in touch with employers.",
-                    "q": "Does ERPVITS offer SAP C4C Training with Placement support?"
+                    "q": "Does ERPVITS offer SAP C4C Training with Placement support?",
+                    "answer": "Yes! ERPVITS provides SAP C4C training and placement support. We prepare wonderful profiles as developers and help you get in touch with employers.",
+                    "question": "Does ERPVITS offer SAP C4C Training with Placement support?"
                 },
                 {
                     "a": "No problem at all! The SAP C4C online training offered by ERPVITS can be done from any place in the world. You learn alongside a live teacher, get recorded lessons, and can work on projects from home.",
-                    "q": "Can I do SAP C4C Online Training from anywhere?"
+                    "q": "Can I do SAP C4C Online Training from anywhere?",
+                    "answer": "No problem at all! The SAP C4C online training offered by ERPVITS can be done from any place in the world. You learn alongside a live teacher, get recorded lessons, and can work on projects from home.",
+                    "question": "Can I do SAP C4C Online Training from anywhere?"
                 },
                 {
                     "a": "Of course! ERPVITS has both online and in-person training and has adapted some of their classes for working professionals to be able to attend on the weekends or during the week.",
-                    "q": "Is there SAP C4C Training near me?"
+                    "q": "Is there SAP C4C Training near me?",
+                    "answer": "Of course! ERPVITS has both online and in-person training and has adapted some of their classes for working professionals to be able to attend on the weekends or during the week.",
+                    "question": "Is there SAP C4C Training near me?"
                 },
                 {
                     "a": "ERPVITS helps your C4C career by showing you how to build your resume, preparing you for a technical interview, and referring you to jobs at top SAP consulting and tech companies.",
-                    "q": "How does ERPVITS assist in SAP C4C Developer Careers?"
+                    "q": "How does ERPVITS assist in SAP C4C Developer Careers?",
+                    "answer": "ERPVITS helps your C4C career by showing you how to build your resume, preparing you for a technical interview, and referring you to jobs at top SAP consulting and tech companies.",
+                    "question": "How does ERPVITS assist in SAP C4C Developer Careers?"
                 }
             ],
             "title": "Frequently Asked Questions (FAQs) – SAP C4C Technical Training at ERPVITS"
@@ -1190,5 +1269,5 @@ export const c4cContent = {
             "question": "Do you offer placement assistance?"
         }
     ],
-    "schema": "{\"test\": \"string\"}"
+    "schema": "<script type=\"application/ld+json\">\n        {\n          \"@context\": \"https://www.schema.org\",\n          \"@type\": \"Product\",\n          \"brand\": \"ERPVITS\",\n          \"name\": \"SAP C4C Technical Online Training\",\n          \"image\": \"https://www.erpvits.com/images/erpvits-logo.webp\",\n          \"description\": \"Master SAP Cloud for Customer (C4C) Technical skills. Learn C4C customization, APIs, data migration, and integration with SAP S/4HANA through real-time projects.\",\n          \"aggregateRating\": {\n            \"@type\": \"AggregateRating\",\n            \"ratingValue\": \"4.0\",\n            \"reviewCount\": \"946\",\n            \"url\": \"https://www.erpvits.com/sap-c4c-technical-online-training/\"\n          }\n        }\n        </script>"
 };

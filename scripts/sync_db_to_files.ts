@@ -17,6 +17,7 @@ const fileMapping: Record<string, string> = {
     'ariba': 'aribaContent.tsx',
     'c4c-technical': 'c4cContent.tsx',
     'sap-c4c-functional': 'c4cFunctionalContent.tsx',
+    'c4c-functional': 'c4cFunctionalContent.tsx',       // alternate ID
     'cpi': 'cpiContent.tsx',
     'fico': 'ficoContent.tsx',
     'fieldglass': 'fieldglassContent.tsx',
@@ -25,9 +26,15 @@ const fileMapping: Record<string, string> = {
     'sd': 'sdContent.tsx',
     'trm': 'trmContent.tsx',
     'tm': 'tmContent.tsx',
+    'sap-tm': 'tmContent.tsx',                          // alternate ID
     'ewm': 'ewmContent.tsx',
+    'sap-ewm': 'ewmContent.tsx',                        // alternate ID
     'ibp': 'ibpContent.tsx',
+    'sap-ibp': 'ibpContent.tsx',                        // alternate ID
     'mdg': 'mdgContent.tsx',
+    'sap-mdg': 'mdgContent.tsx',                        // alternate ID
+    'sap-abap': 'abapContent.tsx',                      // alternate ID for abap-cloud
+    'sap-abap-on-hana': 'abapHanaContent.tsx',          // alternate ID for abap-hana
     'python-aiml': 'pythonAimlContent.tsx'
 };
 

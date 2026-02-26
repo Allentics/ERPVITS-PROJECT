@@ -81,6 +81,7 @@ export const abapContent = {
                 "Complete support Ecosystem"
             ],
             "title": "Why Professionals Choose ERPVITS for SAP ABAP on Cloud Online Training",
+            "imageSrc": "https://xwcpxwjxqllfwferproi.supabase.co/storage/v1/object/public/media-library/general/sap-abap-on-cloud-training-1771993009958.png",
             "subtitle": "Success Guarantee & Credibility",
             "description": "ERPVITS has proven to be a reliable **SAP ABAP training institute** for SAP cloud technologies, with many successful learners employed by leading consulting firms including Accenture, Capgemini, Deloitte, Infosys, and Wipro.",
             "supportText": "We assist you on every part of your **SAP ABAP on Cloud online training** learning and transition to a Cloud ABAP career, from pre-evaluation to after training.",
@@ -758,6 +759,35 @@ export const abapContent = {
         },
         {
             "type": "detailed_upcoming_batches",
+            "items": [
+                {
+                    "date": "November 15, 2025",
+                    "name": "Batch 1: November 2025 (Weekdays)",
+                    "time": "Weekdays – 7:00 AM – 8:00 PM IST",
+                    "seats": "8/10 Seats Left",
+                    "status": "Filling Fast",
+                    "duration": "30-35 Hours",
+                    "statusColor": "bg-orange-100 text-orange-600"
+                },
+                {
+                    "date": "November 16, 2025",
+                    "name": "Batch 2: November 2025 (Weekends)",
+                    "time": "Weekends – Saturday & Sunday, 10:00 AM – 7:00 PM IST",
+                    "seats": "7/10 Seats Left",
+                    "status": "Filling Fast",
+                    "duration": "30-35 Hours",
+                    "statusColor": "bg-orange-100 text-orange-600"
+                },
+                {
+                    "date": "December 1, 2025",
+                    "name": "Batch 3: December 2025 (Flexible)",
+                    "time": "Flexible timings – customized per batch",
+                    "seats": "8/10 Seats Left",
+                    "status": "Open",
+                    "duration": "30-35 Hours",
+                    "statusColor": "bg-green-100 text-green-600"
+                }
+            ],
             "title": "Join Our Next Live Batch – Limited Seats Available for SAP ABAP on Cloud Training",
             "batches": [
                 {
@@ -816,34 +846,46 @@ export const abapContent = {
             "type": "detailed_testimonials",
             "items": [
                 {
-                    "name": "Rajesh Kumar",
+                    "name": "Jyoti Rawat",
                     "role": "SAP ABAP Cloud Developer at Capgemini",
-                    "quote": "Outstanding cloud ABAP training with real modernization project experience. I landed a cloud developer role at Capgemini within 9 weeks managing ABAP Cloud implementations. The hands-on labs and expert guidance made the difference."
+                    "text": "Outstanding cloud ABAP training with real modernization project experience. I landed a cloud developer role at Capgemini within 9 weeks managing ABAP Cloud implementations. The hands-on labs and expert guidance made the difference.",
+                    "quote": "Outstanding cloud ABAP training with real modernization project experience. I landed a cloud developer role at Capgemini within 9 weeks managing ABAP Cloud implementations. The hands-on labs and expert guidance made the difference.",
+                    "author": "Jyoti Rawat"
                 },
                 {
-                    "name": "Priya Singh",
+                    "name": "Rajiv Khandelwal",
                     "role": "Senior Cloud Developer",
-                    "quote": "The weekend flexibility allowed me to upskill while working in ABAP. My employer promoted me to Senior Cloud Developer recognizing my new cloud skills. This course accelerated my career by 4 years."
+                    "text": "The weekend flexibility allowed me to upskill while working in ABAP. My employer promoted me to Senior Cloud Developer recognizing my new cloud skills. This course accelerated my career by 4 years.",
+                    "quote": "The weekend flexibility allowed me to upskill while working in ABAP. My employer promoted me to Senior Cloud Developer recognizing my new cloud skills. This course accelerated my career by 4 years.",
+                    "author": "Rajiv Khandelwal"
                 },
                 {
-                    "name": "Vikram Patel",
+                    "name": "Smita Patwardhan",
                     "role": "ABAP Cloud Architect",
-                    "quote": "Best decision for transitioning to cloud. The capstone projects mirrored real cloud scenarios. I walked in confident in design and RAP development. The certification support was excellent."
+                    "text": "Best decision for transitioning to cloud. The capstone projects mirrored real cloud scenarios. I walked in confident in design and RAP development. The certification support was excellent.",
+                    "quote": "Best decision for transitioning to cloud. The capstone projects mirrored real cloud scenarios. I walked in confident in design and RAP development. The certification support was excellent.",
+                    "author": "Smita Patwardhan"
                 },
                 {
-                    "name": "Ananya Desai",
+                    "name": "Tushar Vaidya",
                     "role": "Certified ABAP Cloud Professional",
-                    "quote": "Superb technical training and certification prep. I passed the SAP ABAP Cloud exam on my first attempt. The mock exams and code samples were spot-on. Now leading cloud transformations."
+                    "text": "Superb technical training and certification prep. I passed the SAP ABAP Cloud exam on my first attempt. The mock exams and code samples were spot-on. Now leading cloud transformations.",
+                    "quote": "Superb technical training and certification prep. I passed the SAP ABAP Cloud exam on my first attempt. The mock exams and code samples were spot-on. Now leading cloud transformations.",
+                    "author": "Tushar Vaidya"
                 },
                 {
-                    "name": "Sanjay Verma",
+                    "name": "Preeti Solanki",
                     "role": "Cloud Solutions Architect",
-                    "quote": "The instructor's insights on clean architecture and cloud patterns were invaluable. Learned both ABAP Cloud and enterprise design thinking. The alumni network brought several opportunities."
+                    "text": "The instructor's insights on clean architecture and cloud patterns were invaluable. Learned both ABAP Cloud and enterprise design thinking. The alumni network brought several opportunities.",
+                    "quote": "The instructor's insights on clean architecture and cloud patterns were invaluable. Learned both ABAP Cloud and enterprise design thinking. The alumni network brought several opportunities.",
+                    "author": "Preeti Solanki"
                 },
                 {
-                    "name": "Sneha Reddy",
+                    "name": "Vinod Mathew",
                     "role": "ABAP Cloud Developer at Infosys",
-                    "quote": "From on-premise ABAP to cloud expert in 5 months! Patient instructors providing detailed code reviews. Lifetime recording access is invaluable for staying current."
+                    "text": "From on-premise ABAP to cloud expert in 5 months! Patient instructors providing detailed code reviews. Lifetime recording access is invaluable for staying current.",
+                    "quote": "From on-premise ABAP to cloud expert in 5 months! Patient instructors providing detailed code reviews. Lifetime recording access is invaluable for staying current.",
+                    "author": "Vinod Mathew"
                 }
             ],
             "title": "Hear from Our Successful SAP ABAP on Cloud Learners – Real Reviews, Real Results"
@@ -1226,5 +1268,5 @@ export const abapContent = {
         }
     ],
     "faqs": [],
-    "schema": "{\"@context\":\"https://schema.org/\",\"@type\":\"Course\",\"name\":\"SAP ABAP on Cloud Online Training\",\"description\":\"Master SAP ABAP on Cloud with ERPVITS through hands-on learning in RAP, OData, Fiori, and cloud integration. Gain job-ready skills, certification prep, and placement support.\",\"provider\":{\"@type\":\"Organization\",\"name\":\"ERPVITS\",\"sameAs\":\"https://www.erpvits.com/\",\"logo\":\"https://www.erpvits.com/images/erpvits-logo.webp\"},\"url\":\"https://www.erpvits.com/sap-abap-on-cloud-online-training/\",\"educationalCredentialAwarded\":\"SAP ABAP on Cloud Certification\",\"timeRequired\":\"PT35H\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.7\",\"bestRating\":\"5\",\"ratingCount\":\"248\"},\"hasCourseInstance\":{\"@type\":\"CourseInstance\",\"courseMode\":\"Online\",\"location\":{\"@type\":\"VirtualLocation\",\"url\":\"https://www.erpvits.com/sap-abap-on-cloud-online-training/\"}},\"mainEntityOfPage\":\"https://www.erpvits.com/sap-abap-on-cloud-online-training/\",\"faq\":[{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"What is SAP ABAP on Cloud and how does ERPVITS help me learn it?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"SAP ABAP on Cloud is SAP’s cloud-native ABAP runtime on SAP Business Technology Platform (BTP) for modern enterprise applications. ERPVITS provides hands-on training in RAP development, cloud architecture, and modernization best practices.\"}},{\"@type\":\"Question\",\"name\":\"What is RAP (Restful Application Programming)?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"RAP is SAP’s programming model for building RESTful applications in the ABAP Cloud environment. ERPVITS teaches RAP concepts, implementation techniques, and best practices for developing cloud-ready applications.\"}},{\"@type\":\"Question\",\"name\":\"How do I develop OData services in ABAP Cloud?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"ERPVITS covers the creation of OData services using business objects, queries, and performance optimization techniques within ABAP Cloud.\"}},{\"@type\":\"Question\",\"name\":\"What’s the difference between classic ABAP and ABAP on Cloud?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"ABAP on Cloud offers a clean, cloud-native architecture with enhanced modularization and restricted syntax. ERPVITS helps you transition smoothly from classic ABAP to ABAP Cloud.\"}},{\"@type\":\"Question\",\"name\":\"How does SAP ABAP on Cloud support modern cloud development?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"ABAP on Cloud supports microservices, event-driven architecture, and API-based integrations. ERPVITS provides hands-on experience with these modern cloud principles.\"}},{\"@type\":\"Question\",\"name\":\"Why should I join SAP ABAP on Cloud Training at ERPVITS?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"ERPVITS offers live sessions, hands-on projects, and placement support. You’ll also get help with certification preparation, resume building, and interview readiness.\"}},{\"@type\":\"Question\",\"name\":\"Who can enroll in the SAP ABAP on Cloud course?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"This course is ideal for ABAP developers, technical consultants, cloud engineers, and professionals interested in modernizing their SAP skills.\"}},{\"@type\":\"Question\",\"name\":\"What is the SAP ABAP on Cloud Certification and why is it valuable?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The SAP ABAP on Cloud certification validates your expertise in cloud-based ABAP development. ERPVITS helps you prepare through mock tests and mentoring sessions.\"}},{\"@type\":\"Question\",\"name\":\"What are the SAP ABAP on Cloud course fees at ERPVITS?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The fees are competitively priced based on the learning mode. It includes live projects, practical sessions, certification assistance, and placement support.\"}},{\"@type\":\"Question\",\"name\":\"How much does SAP ABAP on Cloud Certification cost?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The certification fee is set by SAP Education. ERPVITS supports you with preparation materials, mock exams, and complete guidance.\"}},{\"@type\":\"Question\",\"name\":\"How can I become an SAP ABAP on Cloud Developer through ERPVITS?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Enroll in ERPVITS’s training program, complete cloud-based development projects, and prepare for certification. Career counseling and job assistance are also provided.\"}},{\"@type\":\"Question\",\"name\":\"What career opportunities are available after completing this course?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"You can pursue roles such as ABAP Cloud Developer, Cloud Architect, Modernization Consultant, or Solutions Architect in leading SAP consulting firms.\"}},{\"@type\":\"Question\",\"name\":\"What is business object development in ABAP Cloud?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"ERPVITS teaches how to design and implement business objects, behaviors, validations, and authorizations within ABAP Cloud.\"}},{\"@type\":\"Question\",\"name\":\"How does SAP ABAP on Cloud integrate with other SAP systems?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"You’ll learn to integrate ABAP Cloud with other SAP systems using APIs, OData services, event handling, and secure connectivity.\"}},{\"@type\":\"Question\",\"name\":\"What are the main ABAP Cloud development areas covered in the course?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The course includes RAP, OData, Fiori UI, integration, business objects, security, DevOps, and modernization—reinforced through practical exercises.\"}},{\"@type\":\"Question\",\"name\":\"Does ERPVITS provide placement support after training?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. ERPVITS offers resume support, mock interviews, and connects students with SAP consulting and hiring partners.\"}},{\"@type\":\"Question\",\"name\":\"Can I take the SAP ABAP on Cloud Online Training from anywhere?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes, ERPVITS provides fully online training accessible globally with live instructor sessions and recorded classes.\"}},{\"@type\":\"Question\",\"name\":\"Is SAP ABAP on Cloud Training available near me?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes, ERPVITS offers both online and offline training options with flexible weekday and weekend batches.\"}},{\"@type\":\"Question\",\"name\":\"How does ERPVITS support my SAP ABAP on Cloud career journey?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"ERPVITS supports your career with guided certification, resume building, mock interviews, and job referrals to top SAP consulting firms.\"}}]}]}"
+    "schema": "<script type=\"application/ld+json\">\n        {\n          \"@context\": \"https://www.schema.org\",\n          \"@type\": \"Product\",\n          \"brand\": \"ERPVITS\",\n          \"name\": \"SAP ABAP on Cloud Online Training\",\n          \"image\": \"https://www.erpvits.com/images/erpvits-logo.webp\",\n          \"description\": \"Master ABAP Cloud development on SAP BTP. Learn SAP ABAP HANA integration, RESTful APIs, and cloud-native application development with hands-on projects and certification prep.\",\n          \"aggregateRating\": {\n            \"@type\": \"AggregateRating\",\n            \"ratingValue\": \"4.0\",\n            \"reviewCount\": \"421\",\n            \"url\": \"https://www.erpvits.com/sap-abap-on-cloud-online-training/\"\n          }\n        }\n        </script>"
 };
