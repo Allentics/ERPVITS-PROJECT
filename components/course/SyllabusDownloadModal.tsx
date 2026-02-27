@@ -5,6 +5,7 @@ import { createPortal } from 'react-dom';
 import { X, Loader2, Download, CheckCircle, AlertCircle } from 'lucide-react';
 import { sendSyllabusEmail } from '@/app/actions/sendSyllabus';
 import { submitCurriculumDownload } from '@/app/actions/submitToGoogleSheets';
+import { countryCodes } from '@/lib/countryCodes';
 
 
 interface SyllabusDownloadModalProps {
@@ -167,12 +168,13 @@ export default function SyllabusDownloadModal({ isOpen, onClose, courseTitle, sy
                                             name="countryCode"
                                             value={formData.countryCode}
                                             onChange={handleChange}
-                                            className="px-2 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#ff4500] focus:border-[#ff4500] outline-none bg-white text-sm"
+                                            className="w-[120px] px-2 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#ff4500] focus:border-[#ff4500] outline-none bg-white text-sm"
                                         >
-                                            <option value="+91">+91</option>
-                                            <option value="+1">+1</option>
-                                            <option value="+44">+44</option>
-                                            <option value="+971">+971</option>
+                                            {countryCodes.map((country) => (
+                                                <option key={country.name} value={country.code}>
+                                                    {country.name} ({country.code})
+                                                </option>
+                                            ))}
                                         </select>
                                         <input
                                             type="tel"

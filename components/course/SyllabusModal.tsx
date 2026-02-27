@@ -4,6 +4,8 @@ import { useState, useRef, useEffect } from 'react';
 import { X, Download, Loader2, CheckCircle } from 'lucide-react';
 import { submitToGoogleSheets } from '@/app/actions/submitToGoogleSheets';
 import { sendSyllabusEmail } from '@/app/actions/sendSyllabus';
+import { countryCodes } from '@/lib/countryCodes';
+
 
 interface SyllabusModalProps {
     isOpen: boolean;
@@ -179,14 +181,15 @@ export default function SyllabusModal({ isOpen, onClose, courseTitle, pdfUrl }: 
                                     <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
                                     <div className="flex gap-2">
                                         <select
-                                            className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ff4500] outline-none bg-gray-50"
+                                            className="w-[120px] px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ff4500] outline-none bg-gray-50"
                                             value={formData.countryCode}
                                             onChange={(e) => setFormData({ ...formData, countryCode: e.target.value })}
                                         >
-                                            <option value="+91">+91</option>
-                                            <option value="+1">+1</option>
-                                            <option value="+44">+44</option>
-                                            <option value="+971">+971</option>
+                                            {countryCodes.map((country) => (
+                                                <option key={country.name} value={country.code}>
+                                                    {country.name} ({country.code})
+                                                </option>
+                                            ))}
                                         </select>
                                         <input
                                             type="tel"
