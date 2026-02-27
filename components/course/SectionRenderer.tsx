@@ -235,7 +235,7 @@ export default function SectionRenderer({ sections, courseName, syllabusUrl }: {
                     case 'content_with_image':
                         return <ContentWithImage key={idx} {...section} courseName={courseName || section.courseName} />;
                     case 'whats_included':
-                        return <WhatsIncluded key={idx} {...section} />;
+                        return <WhatsIncluded key={idx} {...section} courseName={courseName as string || section.courseName} />;
                     case 'faq':
                         return <DetailedFAQ key={idx} items={section.items} />;
                     case 'video':

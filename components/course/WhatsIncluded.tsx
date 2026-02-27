@@ -21,9 +21,11 @@ interface WhatsIncludedProps {
     badge?: string;
     description?: string;
     subtitle?: string | React.ReactNode;
+    courseName?: string | React.ReactNode;
 }
 
-export default function WhatsIncluded({ features: customFeatures, stats: customStats, title, badge, description, subtitle }: WhatsIncludedProps) {
+export default function WhatsIncluded({ features: customFeatures, stats: customStats, title, badge, description, subtitle, courseName }: WhatsIncludedProps) {
+    const courseNameStr = typeof courseName === 'string' ? courseName : (courseName ? 'SAP' : 'SAP Ariba');
     const defaultFeatures = [
         {
             title: "Live Interactive Classes",
@@ -31,15 +33,15 @@ export default function WhatsIncluded({ features: customFeatures, stats: customS
         },
         {
             title: "Real-World Projects",
-            description: "Fortune 500 case studies: supplier onboarding, approval workflows, guided buying, S/4HANA integration"
+            description: `Fortune 500 case studies and practical implementations tailored to ${courseNameStr} requirements`
         },
         {
             title: "Hands-On Lab Environment",
-            description: "Full access to SAP Ariba systems for requisitions, master data, workflows, sourcing, and contracts"
+            description: `Full access to ${courseNameStr} systems for hands-on practice, guided exercises, and real-world scenarios`
         },
         {
             title: "Certification Exam Prep",
-            description: "Practice exams, study guides, and bootcamp for all three SAP Ariba certification tracks"
+            description: `Practice exams, study guides, and bootcamp for ${courseNameStr} certification tracks`
         },
         {
             title: "Resume & Interview Coaching",
@@ -62,7 +64,7 @@ export default function WhatsIncluded({ features: customFeatures, stats: customS
     const defaultStats: Stat[] = [
         { value: "45-50", label: "Hours of Live Training", color: "orange" },
         { value: "50+", label: "Hands On Lab Exercises", color: "orange" },
-        { value: "24/7", label: "SAP Ariba Lab Access", color: "orange" }
+        { value: "24/7", label: `${courseNameStr} Lab Access`, color: "orange" }
     ];
 
     const features = customFeatures || defaultFeatures;
