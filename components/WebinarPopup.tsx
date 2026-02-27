@@ -214,13 +214,13 @@ const WebinarPopup = () => {
                                         <Phone className="w-4.5 h-4.5 text-gray-400 mr-2.5" />
                                         <select
                                             required
-                                            className="py-2 outline-none text-gray-800 text-sm font-medium bg-transparent cursor-pointer border-r border-gray-200 pr-2 mr-2"
+                                            className="w-[110px] py-2 outline-none text-gray-800 text-sm font-medium bg-transparent cursor-pointer border-r border-gray-200 pr-2 mr-2"
                                             value={formData.countryCode}
                                             onChange={(e) => setFormData({ ...formData, countryCode: e.target.value })}
                                         >
                                             {countryCodes.map((country) => (
                                                 <option key={country.name} value={country.code}>
-                                                    {country.code}
+                                                    {country.name} ({country.code})
                                                 </option>
                                             ))}
                                         </select>
