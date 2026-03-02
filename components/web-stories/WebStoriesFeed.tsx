@@ -424,41 +424,6 @@ const WebStoriesFeed = () => {
                 )}
             </section>
 
-            {/* --- Share Your Story CTA --- */}
-            <section className="relative bg-gradient-to-br from-orange-600 via-orange-500 to-orange-400 text-white py-24 px-4 overflow-hidden mt-12">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-
-                <div className="max-w-4xl mx-auto text-center relative z-10">
-                    <div className="inline-block p-4 rounded-full bg-white/10 mb-6 backdrop-blur-md border border-white/20">
-                        <Smartphone className="h-10 w-10 text-white" />
-                    </div>
-
-                    <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tight drop-shadow-md">
-                        Share Your SAP Success Story
-                    </h2>
-
-                    <p className="text-lg md:text-2xl text-white/90 max-w-2xl mx-auto mb-10 leading-relaxed font-medium">
-                        Inspire others with your SAP journey. Create your own web story and help the community grow.
-                    </p>
-
-                    <div className="flex flex-col md:flex-row justify-center gap-4">
-
-                        <a
-                            href="https://www.linkedin.com/company/13357826/admin/dashboard/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold py-4 px-10 rounded-full flex items-center justify-center gap-3 transition-all"
-                        >
-                            <Share2 className="h-5 w-5" />
-                            <span>SHARE ON LINKEDIN</span>
-                        </a>
-                    </div>
-
-                    <p className="mt-8 text-white/60 text-xs uppercase tracking-widest font-semibold">
-                        Join 500+ professionals who shared their stories
-                    </p>
-                </div>
-            </section>
         </div>
     );
 };
