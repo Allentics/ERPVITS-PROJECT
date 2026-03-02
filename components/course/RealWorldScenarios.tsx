@@ -80,7 +80,7 @@ export default function RealWorldScenarios({ items, title, subtitle, portfolioNo
 
                                 <div className="mt-6 pt-4 border-t border-slate-100">
                                     <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Business Impact</h4>
-                                    <p className="text-sm text-[#ff4500] font-medium bg-[#ff4500]/10 p-2 rounded-lg inline-block w-full">
+                                    <p className="text-sm text-green-600 font-medium bg-green-50 p-2 rounded-lg inline-block w-full">
                                         {item.outcome}
                                     </p>
                                 </div>
