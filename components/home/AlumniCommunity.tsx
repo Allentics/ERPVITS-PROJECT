@@ -59,7 +59,7 @@ export default function AlumniCommunity() {
     }, []);
 
     return (
-        <section className="py-14 bg-orange-500 text-white">
+        <section className="py-14 bg-orange-100 text-slate-900">
             <ContactModal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
@@ -68,10 +68,10 @@ export default function AlumniCommunity() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold mb-4 flex items-center justify-center gap-3">
-                        <HeartHandshake className="w-8 h-8 text-white" />
+                        <HeartHandshake className="w-8 h-8 text-[#ff4500]" />
                         {content.title}
                     </h2>
-                    <p className="text-orange-100 max-w-2xl mx-auto font-medium">
+                    <p className="text-slate-600 max-w-2xl mx-auto font-medium">
                         {content.subtitle}
                     </p>
                 </div>
@@ -94,7 +94,7 @@ export default function AlumniCommunity() {
                 </div>
 
                 <div className="text-center">
-                    <h3 className="text-xl font-bold mb-8 text-white">Connect With Us</h3>
+                    <h3 className="text-xl font-bold mb-8 text-slate-900">Connect With Us</h3>
                     <div className="flex flex-col sm:flex-row justify-center gap-6 mb-12">
                         <a
                             href="https://www.linkedin.com/company/13357826/"
