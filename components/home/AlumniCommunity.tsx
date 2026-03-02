@@ -59,7 +59,7 @@ export default function AlumniCommunity() {
     }, []);
 
     return (
-        <section className="py-14 bg-orange-600 text-white">
+        <section className="py-14 bg-orange-500 text-white">
             <ContactModal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
