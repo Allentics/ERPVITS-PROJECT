@@ -28,7 +28,7 @@ export default function ROICalculator() {
     };
 
     return (
-        <section className="py-14 bg-orange-600 text-white">
+        <section className="py-14 bg-orange-100 text-slate-900">
             <ContactModal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
@@ -39,7 +39,7 @@ export default function ROICalculator() {
                     <h2 className="text-3xl font-bold mb-4">
                         Calculate Your Personal ROI - See Your Return on Investment
                     </h2>
-                    <p className="text-orange-100 font-medium">
+                    <p className="text-slate-600 font-medium">
                         Discover how SAP training can transform your earning potential
                     </p>
                 </div>
@@ -110,7 +110,7 @@ export default function ROICalculator() {
                 </div>
 
                 <div className="text-center mb-8">
-                    <h3 className="text-2xl font-bold text-white">Example ROI Scenarios</h3>
+                    <h3 className="text-2xl font-bold text-slate-900">Example ROI Scenarios</h3>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
