@@ -137,12 +137,12 @@ export default function ROICalculator() {
                             </div>
                             <div className="space-y-1 mb-6">
                                 <div className="text-slate-400 text-sm font-medium">From: <span className="line-through">{scenario.start}</span></div>
-                                <div className="text-orange-600 text-3xl font-black italic">To: {scenario.end}</div>
+                                <div className="text-green-600 text-3xl font-black italic">To: {scenario.end}</div>
                             </div>
                             <div className="space-y-2 text-sm font-bold text-slate-600 border-t border-slate-100 pt-6">
                                 <div className="flex justify-between items-center">
                                     <span className="text-slate-400 uppercase tracking-tighter text-xs">ROI:</span>
-                                    <span className="text-orange-600 bg-orange-50 px-2 py-1 rounded text-xs">{scenario.roi}</span>
+                                    <span className="text-green-600 bg-green-50 px-2 py-1 rounded text-xs">{scenario.roi}</span>
                                 </div>
                                 <div className="flex justify-between items-center">
                                     <span className="text-slate-400 uppercase tracking-tighter text-xs">Payback:</span>
