@@ -12,8 +12,8 @@ const companiesData: CompaniesData = {
     tier2: {
         title: "Tier 2 - Enterprise SAP Implementation Partners",
         companies: ["Infosys", "Wipro", "Capgemini", "TCS", "HCL Tech", "Tech Mahindra"],
-        color: "bg-[#ff4500]",
-        lightColor: "bg-[#ff4500]/10"
+        color: "bg-orange-500",
+        lightColor: "bg-orange-50"
     },
     tier3: {
         title: "Tier 3 - Fortune 500 Enterprises",
@@ -24,8 +24,8 @@ const companiesData: CompaniesData = {
     tier4: {
         title: "Tier 4 - Mid-Market & Regional Leaders",
         companies: ["Regional consulting firms", "Industry specific service providers", "In-house procurement teams", "SAP system integrators"],
-        color: "bg-[#ff4500]",
-        lightColor: "bg-[#ff4500]/10"
+        color: "bg-orange-500",
+        lightColor: "bg-orange-50"
     },
     tier5: {
         title: "Tier 5 - Niche Players",
