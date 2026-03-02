@@ -173,9 +173,9 @@ export const c4cTechnicalLearningOutcomes = {
 export const c4cTechnicalRealWorldScenarios = [
     {
         title: "Case Study 1: Global Enterprise's Customer Engagement Platform",
-        description: "A multinational enterprise needs custom customer engagement applications in SAP C4C extending standard functionalities. There is complex business logic that needs to be addressed, along with custom UIs and integrations with external systems.",
-        role: "Lead SAP C4C Developer",
-        outcome: "Delivered a comprehensive engagement platform with custom objects and real-time integrations.",
+        scenario: "A multinational enterprise needs your assistance to build custom customer engagement applications in SAP C4C extending standard functionalities. There is complex business logic that needs to be addressed, along with custom UIs and integrations with external systems.",
+        role: "As the lead SAP C4C developer, you will:",
+        outcome: "Source code repository, technical documentation, testing instructions, and a deployment guide.",
         responsibilities: [
             "Design custom business objects for customer needs",
             "Develop complex ABSL logic and validations",
@@ -186,9 +186,9 @@ export const c4cTechnicalRealWorldScenarios = [
     },
     {
         title: "Case Study 2: Technology Company's Cloud API Platform",
-        description: "A technology company is implementing SAP C4C and needs extensive integrations with external systems, where you will need to do some solid API development and web service connections.",
-        role: "Integration Engineer",
-        outcome: "Seamless connectivity with external legacy systems and real-time data sync.",
+        scenario: "A technology company is implementing SAP C4C and needs extensive integrations with external systems, where you will need to do some solid API development and web service connections.",
+        role: "You will:",
+        outcome: "Integration specs, API docs, testing results, and a performance report.",
         responsibilities: [
             "Develop extensive web service integrations",
             "Implement external system connectivity",
@@ -199,15 +199,15 @@ export const c4cTechnicalRealWorldScenarios = [
     },
     {
         title: "Case Study 3: SaaS Provider's Multi-Tenant Application",
-        description: "A SaaS provider developing multi-tenant cloud applications in SAP C4C and needs sub applications for client specific customizations.",
-        role: "Cloud Solution Architect",
-        outcome: "Scalable multi-tenant architecture with isolated client configurations.",
+        scenario: "A SaaS provider developing multi-tenant cloud applications in SAP C4C and needs sub applications for client specific customizations.",
+        role: "You will:",
+        outcome: "Application architecture documentation, customization guide, and performance tuning recommendations.",
         responsibilities: [
-            "Create business objects that can be expanded",
-            "Create configurations for individual tenants",
-            "Build end-user customization user interfaces",
-            "Optimize applications for performance",
-            "Enforce security and maintain data isolation"
+            "Create business objects that can be expanded.",
+            "Create configurations for individual tenants.",
+            "Build end-user customization user interfaces.",
+            "Optimize applications for performance.",
+            "Enforce security and maintain data isolation."
         ]
     }
 ];
