@@ -75,15 +75,15 @@ export default function DetailedCareerRoadmap({ items, stats, alumniCount = "800
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto border-t border-white/20 pt-8 mt-4">
                             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/10 shadow-lg">
-                                <div className="text-3xl md:text-4xl font-bold mb-1 text-green-400">{alumniCount}</div>
+                                <div className="text-3xl md:text-4xl font-bold mb-1 text-white">{alumniCount}</div>
                                 <div className="text-xs md:text-sm text-orange-50/90 font-medium">Alumni Placed</div>
                             </div>
                             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/10 shadow-lg">
-                                <div className="text-3xl md:text-4xl font-bold mb-1 text-green-400">98%</div>
+                                <div className="text-3xl md:text-4xl font-bold mb-1 text-white">98%</div>
                                 <div className="text-xs md:text-sm text-orange-50/90 font-medium">Success Rate</div>
                             </div>
                             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/10 shadow-lg">
-                                <div className="text-3xl md:text-4xl font-bold mb-1 text-green-400">3 Months</div>
+                                <div className="text-3xl md:text-4xl font-bold mb-1 text-white">3 Months</div>
                                 <div className="text-xs md:text-sm text-orange-50/90 font-medium">Average Job Time</div>
                             </div>
                         </div>
