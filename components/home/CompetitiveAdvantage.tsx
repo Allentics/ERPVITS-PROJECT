@@ -22,7 +22,7 @@ export default function CompetitiveAdvantage() {
         if (typeof value === 'boolean') {
             return value ? <Check className="w-5 h-5 text-green-600 mx-auto" /> : <X className="w-5 h-5 text-red-500 mx-auto" />;
         }
-        return <span className={value === "95%+" || value === "15+ Years" || value === "6 Options" ? "font-bold text-orange-600" : "text-slate-600"}>{value}</span>;
+        return <span className={value === "95%+" || value === "15+ Years" || value === "6 Options" ? "font-bold text-green-600" : "text-slate-600"}>{value}</span>;
     };
 
     return (
