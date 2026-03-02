@@ -176,7 +176,7 @@ export default function PricingPlans() {
 
                             <button
                                 onClick={() => openModal(plan.name)}
-                                className={`block w-full text-center py-4 rounded-lg font-bold transition-colors ${plan.popular ? 'bg-orange-500 hover:bg-orange-600 text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-900'}`}
+                                className={`block w-full text-center py-4 rounded-lg font-bold transition-colors ${plan.popular ? 'bg-orange-500 hover:bg-orange-600 text-white' : 'bg-blue-900 hover:bg-blue-800 text-white'}`}
                             >
                                 {plan.cta}
                             </button>
