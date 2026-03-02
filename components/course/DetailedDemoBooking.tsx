@@ -22,7 +22,7 @@ export default function DetailedDemoBooking({ title, subtitle, courseName = "thi
     const displayBenefits = (benefits || features || []) as any[];
 
     return (
-        <section id="detailed-demo-booking" className="py-8 bg-[#ff4500] relative overflow-hidden">
+        <section id="detailed-demo-booking" className="py-8 bg-orange-500 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
             <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-slate-900/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2"></div>
 
