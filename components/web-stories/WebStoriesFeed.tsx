@@ -265,10 +265,7 @@ const WebStoriesFeed = () => {
             </AnimatePresence>
 
             {/* --- Hero Section (Restored) --- */}
-            <section className="relative bg-gradient-to-br from-orange-600 via-orange-500 to-orange-400 text-white py-12 px-4 overflow-hidden">
-                {/* Radial Gradient overlay for depth */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-
+            <section className="relative bg-orange-500 text-white py-12 px-4 overflow-hidden">
                 <div className="max-w-4xl mx-auto text-center relative z-10">
                     {/* Icon */}
                     <div className="flex justify-center mb-8">
