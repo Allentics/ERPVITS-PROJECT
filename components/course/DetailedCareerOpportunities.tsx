@@ -108,7 +108,7 @@ export default function DetailedCareerOpportunities({ items, courseName = "SAP A
                                             <h3 className="font-bold text-slate-900">{role.title || role.role}</h3>
                                         </div>
                                         <div className="pl-14">
-                                            <div className="text-xs font-semibold text-[#ff4500] flex items-center gap-1">
+                                            <div className="text-xs font-semibold text-green-600 flex items-center gap-1">
                                                 <span className="text-slate-400 text-[10px] font-normal uppercase tracking-wider">Salary:</span>
                                                 {role.salary}
                                             </div>
