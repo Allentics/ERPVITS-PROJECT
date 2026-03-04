@@ -5,12 +5,12 @@ export const mmContent = {
     "category": "Functional",
     "price": "45,000",
     "duration": "45+ Hours",
-    "heroHeading": "Transform Your Career with the <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone\">#1 SAP MM Online Training Program</span>",
-    "heroSubheading": "The ERPVITS SAP S/4HANA MM Online Training Program is a step toward a new career track for supply chain professionals and SAP consultants focusing on inventory management, procurement, and enterprise resource planning. Supply chain organizations today seek certified experts in the SAP S/4HANA MM module to help optimize the flow of materials, shrink costly inventory, streamline procurement, and improve overall supply chain management. This all-inclusive SAP MM course is aimed at supply chain professionals, inventory managers, procurement specialists, consultants in ERP, and highly motivated graduates looking for international careers in consulting and implementation. The SAP material management course is designed with interactive, live training, hands-on workshops, real-world supply chain exercises, and complete certification support.",
+    "heroHeading": "End-to-End SAP MM Training with Live Project Exposure",
+    "heroSubheading": "The ERPVITS SAP S/4HANA MM Online Training Program is a step toward a new career track for supply chain professionals and SAP consultants focusing on inventory management, procurement, and enterprise resource planning. Supply chain organizations today seek certified experts in the SAP S/4HANA MM module to help optimize the flow of materials, shrink costly inventory, streamline procurement, and improve overall supply chain management. This all-inclusive SAP MM training is aimed at supply chain professionals, inventory managers, procurement specialists, consultants in ERP and highly motivated graduates looking for international careers in consulting and implementation. The SAP material management course is designed with interactive, live training, hands-on workshops, real-world supply chain exercises and complete certification support.",
     "heroImage": "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP MM Infographic.webp",
     "description": "The ERPVITS SAP S/4HANA MM Online Training Program is a step toward a new career track for supply chain professionals and SAP consultants focusing on inventory management, procurement, and enterprise resource planning.",
-    "metaTitle": "SAP S/4HANA MM Online Training | Latest Curriculum",
-    "metaDescription": "Join ERPVITS SAP S/4HANA MM Online Training to master procurement, inventory, and supply chain management with real-time projects & certification support.",
+    "metaTitle": "SAP MM Training | Materials Management Course Online",
+    "metaDescription": "Join SAP MM Training (Materials Management Course) to master procurement, inventory and supply chain management with real-time projects & certification support.",
     "features": [
         "Accenture, Capgemini, Deloitte, Infosys, and Wipro alumni",
         "Custom Pre-assessment and Supply Chain Learning Path",
@@ -27,61 +27,61 @@ export const mmContent = {
             "items": [
                 {
                     "title": "Certified Instructor Expertise",
-                    "description": "All trainers have official SAP S/4HANA MM certifications and have carried out many large scale SAP S/4HANA MM implementations in manufacturing, retail, and distribution sectors. They will not only teach you the theory, but also tell you 'stories from the trenches.' They will teach you about common pitfalls and best practices from deployments where SAP MM systems manage multi-million dollar inventories. This real-world training is critical for you on your very first SAP MM consultant engagement."
+                    "description": "Our trainers are expert SAP MM functional consultants with decades of experience implementing full-cycle SAP implementations across manufacturing, retail, pharmaceutical and logistics industries. They share practical insight into procurement lifecycles, vendor negotiations, pricing procedures release strategies and integration challenges - providing insight into how real SAP MM consultants manage real business requirements and client expectations in real projects."
                 },
                 {
-                    "title": "100% Hands-On Learning Methodology",
-                    "description": "Instead of boring training with slides and presentations, every training session is complete with live demonstrations and guided lab exercises using SAP S/4 HANA. All of the exercises focus on what was taught in the session. You will learn how to create and manage purchase orders, process goods receipts, perform inventory transactions and cash valuation and configuration on the system. By the end of the SAP MM module course, all of these actions will be done on real systems."
+                    "title": "100% Hands-On Learning",
+                    "description": "For SAP MM training our emphasis is on complete hands-on practice. Every topic is presented directly within SAP system before guided exercises where you will configure enterprise structures, create material masters, manage purchase requisitions, generate purchase orders & monitor stock movements. You will also have ample opportunities to practice important SAP MM T-codes while understanding integration points between Finance and Warehouse processes for strong functional knowledge development."
                 },
                 {
                     "title": "Job-Oriented Curriculum Design",
-                    "description": "The SAP MM course curriculum is dedicated to tailoring training around the skills and tasks given to SAP MM consultants. Troubleshooting, material management module operations, and other topics will be covered with the tools you need to solve practical issues."
+                    "description": "The SAP MM syllabus is tailored to current industry hiring requirements, covering organizational structure setup, procurement cycle setup, pricing configurations, account determination procedures, release procedures subcontracting stock transfer subcontracting stock transfer physical inventory reporting. Real-life case studies help demonstrate how SAP MM supports business operations from requisition to payment as it prepares you for both fresher roles as well as consultant-level responsibilities within this process."
                 },
                 {
                     "title": "Interactive Q&A Sessions",
-                    "description": "You will get complete access to forums created for all the supplied training and lessons and live instructor hours. All of the complex topics in the lessons will be addressed and planning catered to you and your goals."
+                    "description": "Each module of SAP MM includes business case studies and Q&A sessions that replicate real implementation challenges. Your trainers will walk you through common SAP MM interview questions, real client scenarios and troubleshooting strategies used in live projects to give you confidence when facing interviews, project meetings or stakeholder meetings."
                 },
                 {
                     "title": "Flexible Batch Timings",
-                    "description": "We provide flexibility with training in the evenings on weekdays and on weekends to fit your busy schedule. We know most of our learners are working, so each session is recorded. If a live session is missed, it is easy to catch up."
+                    "description": "Our schedule is designed for convenient and consistent learning experiences for working professionals, offering weekday and weekend batches for flexible learning solutions. All sessions are recorded, so that important concepts can be revisited at any time. Whether upgrading existing skills or changing careers into SAP MM, the schedule has been planned with you in mind."
                 },
                 {
                     "title": "Small Batch Sizes for Personalized Attention",
-                    "description": "Our batches are not huge, anonymous, and impersonal on-line classes. We keep it small, between 8-10 participants, so that the instructors are able to attend to each one of you, learn your specifics and offer you quality and constructive criticism."
+                    "description": "To ensure high-quality training, each batch is limited to a small group of learners for optimal learning. This ensures individual attention, personalized doubt resolution, and consistent feedback from trainers who monitor your progress and offer assistance by assigning additional practice tasks or scenario-based assignments."
                 },
                 {
                     "title": "Placement & Career support",
-                    "description": "SAP MM learning is not the end of the process—it is learning to get placed afterwards. Our dedicated career support team will build an SAP focused resume with you, prepare you with mock interviews and during practices, you will go through real and current interview questions to prepare you for the job. You will get coached on presenting your project experience to help you in SAP MM interviews."
+                    "description": "Our SAP MM training includes structured career support services like resume rewriting, mock interviews, real-time project explanation techniques and job guidance. You will gain insights into <a href=\"https://www.erpvits.com/blog/sap-s4-hana-mm-career-opportunities/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP S/4HANA MM Career</a> paths, salary trends and current hiring demands in both domestic and international markets."
                 },
                 {
                     "title": "Active Alumni Network & Community Forum",
-                    "description": "You will have the SAP MM and supply chain professionals community. You will have the opportunity to exchange valuable insights and job leads, and build relationships that will help you get referrals and work together on projects."
+                    "description": "After enrolling, you will become part of an engaged SAP MM learner community. Engage with peers, discuss configuration issues, exchange job updates and form professional connections that support long-term growth within SAP ecosystem."
                 },
                 {
                     "title": "Ongoing support Post-Training",
-                    "description": "After finishing the SAP MM certification course, your learning has just begun. Six months after training, you will still receive support from your instructors to help with understanding the supply chain concepts, working on real world projects, and guiding you through your first consulting projects."
+                    "description": "Even after you complete the SAP MM course, guidance continues for several months post-graduation. Trainers provide assistance in clearing doubts, preparing for certification exams and handling real project responsibilities - this ensures your SAP MM knowledge remains practical, up-to-date and industry relevant."
                 }
             ],
             "title": "Learn SAP S/4HANA MM from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            "subtitle": "Our **SAP MM Online Training** curriculum is delivered exclusively by certified SAP professionals, each with 12+ years of direct hands-on experience in materials management and supply chain systems implementation. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex inventory and procurement scenarios in a step-by-step manner.",
+            "subtitle": "Our <a href=\"https://www.erpvits.com/blog/sap-mm-course-complete-guide/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP MM Course</a> is developed and led by experienced SAP MM consultants with decades of real-time implementation experience in procurement, inventory management and supply chain operations. You'll participate in live, instructor-led sessions where trainers guide you through real procurement cycles while showing configuration steps - all designed to show how SAP MM supports end-to-end materials management in global organizations.",
             "textAlign": "left"
         },
         {
             "type": "content_with_image",
             "items": [
-                "Trusted by 2500+ SAP MM Professionals",
-                "Accenture, Capgemini, Deloitte, Infosys, and Wipro alumni",
+                "Trusted by 5500+ SAP MM Professionals",
+                "Accenture, Capgemini, Deloitte, Infosys and Wipro alumni",
                 "Custom Pre-assessment and Supply Chain Learning Path",
                 "Active alumni network and community forum for materials management",
                 "50+ guided instructional labs from basic to advanced inventory exercises",
                 "Quarterly updated materials reflecting the most recent SAP S/4HANA MM changes",
                 "Mock interviews replicating real MM consultant situations",
-                "One-week focused prep for certification right before the exams"
+                "One-week focused prep for SAP MM certification right before the exams"
             ],
             "title": "Why Professionals Choose ERPVITS for SAP S/4HANA MM Online Training",
             "subtitle": "Success Guarantee & Credibility",
             "videoSrc": "https://www.youtube.com/embed/IGc_ICHK5W0",
-            "description": "Based on ERPVITS' quality training and instruction, we have established numerous training partnerships and have hundreds of successful alumni at top consulting firms, such as Accenture, Capgemini, Deloitte, Infosys, and Wipro. Valuable testimonials from our alumni network showcase the pace of career growth that our program offers.",
+            "description": "ERPVITS stands out in <a href=\"https://www.linkedin.com/pulse/sap-mm-training-your-gateway-thriving-career-materials-3xtxf/?trackingId=IhiZnOX1uIeTot29bzMZ1g%3D%3D\" target=\"_blank\" rel=\"noopener noreferrer\">SAP MM Training</a> with its robust mentorship model, implementation-based assignments, and performance-driven evaluation system. This SAP MM training has been specifically tailored to help improve procurement strategy understanding, material lifecycle management and inventory optimization within an S/4HANA environment.",
             "supportText": "We provide guidance from pre-evaluation steps to post-training assistance, showing how to access SAP MM training and how to transition into a supply chain career.",
             "supportTitle": "Complete support Ecosystem"
         },
@@ -399,7 +399,7 @@ export const mmContent = {
                     }
                 ]
             },
-            "title": "What You'll Master in This SAP S/4HANA MM Online Course – Core Competencies"
+            "title": "What You'll Master in This SAP MM Course – Core Competencies"
         },
         {
             "type": "real_world_scenarios",
@@ -457,6 +457,29 @@ export const mmContent = {
         },
         {
             "type": "detailed_certification",
+            "items": [
+                {
+                    "who": "Demonstrates expertise in end-to-end SAP MM implement",
+                    "code": "C_TS4FI_2020",
+                    "focus": "Materials management, procurement, inventory, valuation, planning",
+                    "title": "SAP Certified Associate – SAP S/4HANA Materials Management",
+                    "relevance": "Entry to mid-level consultant positions"
+                },
+                {
+                    "who": "Validates practical knowledge in configuring and managing sourcing & procurement in SAP S/4HANA",
+                    "code": "C_TS452_2022",
+                    "focus": "Procurement processes, enterprise structure, master data, pricing, special procurement scenarios, integration with Finance\n",
+                    "title": "SAP Certified Application Associate – SAP S/4HANA Sourcing and Procurement",
+                    "relevance": "Suitable for SAP MM consultants, procurement analysts, and implementation team members"
+                },
+                {
+                    "who": "Confirms ability to support end-to-end supply chain processes within SAP S/4HANA",
+                    "code": "Latest S/4HANA Supply Chain Associate Certification",
+                    "focus": "Inventory management, material valuation, batch management, physical inventory, cross-module integration",
+                    "title": "SAP Certified Associate – SAP S/4HANA Supply Chain",
+                    "relevance": "Ideal for professionals targeting SAP MM functional consultant and supply chain roles"
+                }
+            ],
             "stats": [
                 {
                     "label": "Exam Code",
@@ -564,7 +587,7 @@ export const mmContent = {
                     "color": "blue",
                     "title": "Immediate Post-Training",
                     "points": [
-                        "Receive course completion certificate",
+                        "Receive SAP MM Certification",
                         "Access lifetime course materials and MM recordings",
                         "Join alumni network and supply chain community forum",
                         "Begin resume updates highlighting SAP MM expertise"

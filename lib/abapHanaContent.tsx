@@ -5,12 +5,12 @@ export const abapHanaContent = {
     "category": "Technical",
     "price": "45,000",
     "duration": "30+ Hrs",
-    "heroHeading": "Master Modern ABAP Development with the <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone\">#1 SAP ABAP on HANA Online Training Program</span>",
-    "heroSubheading": "The SAP ABAP on HANA Online Training Program from ERPVITS represents a transformative learning pathway for professionals eager to excel in modern enterprise application development, cloud-native programming, and next-generation SAP technology. In today's digital transformation landscape, organizations urgently need certified SAP ABAP on HANA developers who can build robust applications, optimize database performance, leverage in-memory computing, and drive innovation through intelligent enterprise software. This comprehensive SAP ABAP on HANA training course combines interactive, instructor-led sessions, hands-on coding labs, real-time development projects, performance optimization simulations, and end-to-end certification support—designed specifically for software developers, SAP technicians, database developers, systems architects, and ambitious graduates targeting global ABAP development and SAP technology roles.",
+    "heroHeading": "Master Modern ABAP Development with the <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone\">#1 SAP ABAP on HANA Training</span>",
+    "heroSubheading": "Unlock modern ABAP development with our industry-leading SAP ABAP on HANA Training Program. This course is designed to develop advanced skills in HANA-optimized programming, CDS views, AMDP performance tuning and real-time data processing within S/4HANA environments.\n\nThrough live instructor-led sessions and hands-on system practice, you will work on real-world development scenarios, enhancements, reports, interfaces and integrations tailored for modern SAP landscapes. The curriculum emphasizes practical implementation to give you job-ready expertise rather than theoretical knowledge alone. With expert mentorship, certification guidance and dedicated career support - this program equips you to confidently step into high-demand SAP ABAP on HANA roles to accelerate professional growth.",
     "heroImage": "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP ABAP on HANA Infographic.webp",
     "description": "This comprehensive SAP ABAP on HANA training course combines interactive, instructor-led sessions, hands-on coding labs, real-time development projects, performance optimization simulations, and end-to-end certification support—designed specifically for software developers, SAP technicians, database developers, systems architects, and ambitious graduates targeting global ABAP development and SAP technology roles.",
     "metaTitle": "SAP ABAP on HANA Training - Certification Course | ERPVITS",
-    "metaDescription": "Master SAP ABAP on HANA with our expert-led online training. Gain hands-on experience, certification guidance, and 100% placement support. Enroll now!",
+    "metaDescription": "SAP ABAP on HANA training with hands-on projects, certification guidance and placement support. Enroll now to boost your SAP developer career.",
     "features": [
         "Trusted by 3500+ successful SAP professionals",
         "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro, SAP Labs, Microsoft",
@@ -28,12 +28,12 @@ export const abapHanaContent = {
                 {
                     "icon": "Award",
                     "title": "Certified Instructor Expertise",
-                    "description": "Each trainer holds official SAP certifications and has successfully developed multiple enterprise-scale ABAP applications on HANA, managing millions of database operations daily. They don't just teach syntax; they share real-world development war stories, performance optimization techniques learned through production implementations, and industry best practices from actual client deployments. This real-world perspective is invaluable when you enter your first ABAP development role building mission-critical business applications."
+                    "description": "Each trainer holds official SAP certifications and has successfully developed multiple enterprise-scale ABAP applications on HANA, managing millions of database operations daily. They don't just teach syntax; they share real-world development war stories, performance optimization techniques learned through production implementations, and industry best practices from actual client deployments. "
                 },
                 {
                     "icon": "Terminal",
-                    "title": "100% Hands-On Learning Methodology",
-                    "description": "Traditional training teaches ABAP through theory and presentations. Our program goes further. Every session includes live coding demonstrations on SAP HANA environments, followed by guided coding labs where you replicate what you've learned. By the end of the course, you've developed complete applications, optimized database queries, created FIORI interfaces, implemented web services, managed debugging, and executed end-to-end development workflows—all on real systems with production-grade code."
+                    "title": "100% Hands-On Learning",
+                    "description": "Traditional training teaches ABAP through theory and presentations. Our program goes further. Every session includes live coding demonstrations on SAP HANA environments, followed by guided coding labs where you replicate what you've learned. By the end of the course, you've developed complete applications, optimized database queries, created FIORI interfaces, implemented web services, managed debugging, and executed end-to-end development workflows."
                 },
                 {
                     "icon": "Briefcase",
@@ -48,11 +48,11 @@ export const abapHanaContent = {
                 {
                     "icon": "Clock",
                     "title": "Flexible Batch Timings",
-                    "description": "Recognizing that many professionals juggle jobs, families, and learning, we offer both weekday evening batches (6 PM – 9 PM IST) and weekend batches (Saturday & Sunday). Sessions are recorded, so if you miss a live class, you can catch up asynchronously without losing continuity."
+                    "description": "Recognizing that many professionals juggle jobs, families & learning, we offer both weekday and weekend batches. Sessions are recorded, so if you miss a live class, you can catch up asynchronously without losing continuity."
                 },
                 {
                     "icon": "Users",
-                    "title": "Small Batch Sizes for Personalized Attention",
+                    "title": "Small Batch Sizes",
                     "description": "Unlike massive online courses with thousands of anonymous learners, our batches are capped at 8-10 participants. This ensures instructors can provide individualized attention, review your code, and offer targeted feedback on your development practices."
                 },
                 {
@@ -72,7 +72,7 @@ export const abapHanaContent = {
                 }
             ],
             "title": "Learn SAP ABAP on HANA from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            "subtitle": "Our **SAP ABAP on HANA Online Training** curriculum is delivered exclusively by certified SAP professionals with 15+ years of direct hands-on experience on S/4HANA, cloud platforms, and enterprise applications. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex coding scenarios in a step-by-step manner.",
+            "subtitle": "Our **SAP ABAP on HANA Training**is delivered exclusively by certified SAP professionals with 15+ years of direct hands-on experience on S/4HANA, cloud platforms, and enterprise applications. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex coding scenarios in a step-by-step manner.",
             "textAlign": "left",
             "col_1_features": [
                 {
@@ -90,8 +90,8 @@ export const abapHanaContent = {
         {
             "type": "content_with_image",
             "items": [
-                "Trusted by 500+ successful SAP professionals",
-                "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro, SAP Labs, and leading technology organizations",
+                "Trusted by 1200+ successful SAP professionals",
+                "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro & SAP Labs",
                 "Personalized pre-evaluation and coding skill assessment",
                 "Active alumni network and community forum for ABAP developers",
                 "100+ guided coding labs from basic to advanced ABAP scenarios",
@@ -99,7 +99,7 @@ export const abapHanaContent = {
                 "Mock technical interviews with coding challenges",
                 "Dedicated code review and architecture feedback sessions"
             ],
-            "title": "Why Professionals Choose ERPVITS for SAP ABAP on HANA Online Training",
+            "title": "Why Professionals Choose ERPVITS for SAP ABAP on HANA Training",
             "imageSrc": "https://xwcpxwjxqllfwferproi.supabase.co/storage/v1/object/public/media-library/general/sap-abap-on-hana-training-1771993020837.png",
             "subtitle": "Success Guarantee & Credibility",
             "description": "ERPVITS has established itself as a trusted training partner for SAP Technical Modules, with hundreds of successful learners working at top technology companies, consulting firms, and SAP development centers like SAP Labs, Accenture, Capgemini, Infosys, Wipro, and Microsoft. Our alumni network testimonials speak to the quality of instruction and the career acceleration our program delivers.\n\n**Complete support Ecosystem**\nFrom pre-evaluation to post-training support, we guide you through every step of your SAP ABAP development learning journey and career transition.",
@@ -125,7 +125,7 @@ export const abapHanaContent = {
                     "value": "24/7"
                 }
             ],
-            "title": "What's Included in the SAP ABAP on HANA Training – Complete Learning Package",
+            "title": "What's Included in the SAP ABAP on HANA Training",
             "features": [
                 {
                     "title": "Live Interactive Classes",
@@ -149,7 +149,7 @@ export const abapHanaContent = {
                 },
                 {
                     "title": "Complete Study Materials",
-                    "description": "Access PDFs, code examples, development templates, interview question banks, design patterns, debugging guides, and official SAP documentation links."
+                    "description": "Access PDFs, code examples, development templates, <a href=\"https://www.erpvits.com/blog/sap-abap-interview-questions-and-answers/\" target=\"_blank\">SAP ABAP interview questions and answers</a>, design patterns, debugging guides, and official SAP documentation links."
                 },
                 {
                     "title": "Lifetime Recording Access",
@@ -320,7 +320,7 @@ export const abapHanaContent = {
                     ]
                 },
                 {
-                    "title": "Module 8: Performance Optimization on HANA (7 Hours)",
+                    "title": "Module 8: <a href=\"https://www.linkedin.com/pulse/abap-performance-optimization-techniques-hana-comprehensive-swpxf\" target=\"_blank\">ABAP Performance Optimization on HANA</a> (7 Hours)",
                     "topics": [
                         "HANA database optimization",
                         "Query performance analysis",
@@ -614,7 +614,7 @@ export const abapHanaContent = {
                 {
                     "bg": "bg-blue-100",
                     "icon": "ShoppingCart",
-                    "role": "Lead ABAP Developer \n Design database schema optimized for HANA \n Develop sales order management module \n Create order fulfillment workflows \n Implement billing and invoicing logic \n Build comprehensive reporting interfaces \n Optimize queries for HANA performance \n Implement security and audit trails \n Create mobile-friendly interfaces using FIORI",
+                    "role": "Lead ABAP Developer ",
                     "title": "Case Study 1: Order-to-Cash Application Development",
                     "outcome": "Order processing time reduced 60%, system handles 50,000+ daily transactions, 99.9% uptime achieved, users report 80% faster order processing.",
                     "scenario": "An enterprise manufacturer needs a complete order-to-cash ABAP application on HANA handling sales orders, order fulfillment, billing, and revenue recognition for 100+ concurrent users processing 10,000+ daily transactions.",

@@ -28,56 +28,56 @@ export const cpiContent = {
             "items": [
                 {
                     "title": "Certified Instructor Expertise",
-                    "description": "Every instructor has official SAP CPI certification, and has performed several large scale integration implementations, integrating SAP and non-SAP systems. They transcend mere instruction by integrating their experience—challenges, industry integration deployment best practices and other insights are provided from non-SAP and SAP systems. This experience is extremely important as you embark on your first SAP CPI consulting assignment."
+                    "description": "All trainers are experienced SAP CPI consultants with vast knowledge in enterprise-level integration landscapes involving SAP and non-SAP systems, from middleware architecture and API integrations, through cloud connectivity and real-time data exchange processes to real-time data exchange processes and real-time data exchange processes. In addition to theory, trainers explain how integrations are designed in live projects - including requirement analysis, interface documentation and performance optimization."
                 },
                 {
-                    "title": "100% Hands-On Learning Methodology",
-                    "description": "While most traditional training programs teach SAP CPI concepts using PowerPoints and lectures, our program takes it a step further. We conduct live demonstrations on the SAP Cloud Platform and then guide you through the hands-on labs where you perform the tasks yourself. You graduate the program having built not just any integration flows, but those that involve configuring adapters, implementing content-based routing, developing mappings, and monitoring message processing on real cloud systems."
+                    "title": "100% Hands-On Learning",
+                    "description": "This SAP CPI course places a strong emphasis on system-based practice. Each session begins with live demos within the SAP CPI tenant, followed by guided lab exercises. You will create and configure iFlows; work with adapters such as SFTP, IDoc, SOAP, OData and REST; implement message mappings, value mappings; manage exceptions as they arise and monitor integration processes with ease - practical experience ensures you gain the confidence required to successfully meet real integration requirements."
                 },
                 {
                     "title": "Job-Oriented Curriculum Design",
-                    "description": "We do not design the course curriculum around academics. Instead, it is centered on the skills and functions of the role of an SAP CPI consultant, including real-world problem scenarios. Whether you are tasked with implementing API integrations, configuring and transforming messages, securing credentials, or setting up and troubleshooting message flows, we will make sure you leave training with the confidence to tackle practical challenges."
+                    "description": "The SAP CPI syllabus is tailored to meet current industry demand. Topics covered in the curriculum include integration fundamentals, cloud-to-cloud connectivity and on-premise connectivity, security configurations such as OAuth authentication and content modifiers as well as API management basics and monitoring tools. Real world business scenarios help demonstrate how SAP CPI connects systems like SAP S/4HANA, SuccessFactors Ariba as well as third party applications preparing students for roles as integration consultant or integrator roles."
                 },
                 {
                     "title": "Interactive Q&A Sessions",
-                    "description": "In addition to the primary classroom instruction, you will have dedicated Q&A forums and live office hours where the instructors will answer your questions, help you work through difficult integration issues, and guide you on the best path to work and achieve your goals."
+                    "description": "Live classes encourage active participation and discussion among attendees. Trainers address technical doubts, explain complex integration flows, review common error scenarios, and address interview-based questions to provide clarity on architecture-level concepts and troubleshooting strategies used in real-time support environments."
                 },
                 {
                     "title": "Flexible Batch Timings",
-                    "description": "Understanding that developers and consultants balance tough schedules, families, and learning, we have arranged weekday evening classes (6 PM – 9 PM IST) and weekend batches (Saturday & Sunday). All sessions are recorded, so if you miss a live class, you can catch up asynchronously without losing continuity."
+                    "description": "Our flexible batch times accommodate working professionals and students of any background; weekday and weekend batches are offered for your convenience. Each session is recorded and shared for review purposes so you can return to key topics at your own pace without missing important concepts."
                 },
                 {
-                    "title": "Small Batch Sizes for Personalized Attention",
-                    "description": "Unlike massive online courses with thousands of anonymous learners, our batches are capped at 8-10 participants. This ensures instructors can provide individualized attention, get to know your strengths and challenges, and offer targeted feedback on complex integration scenarios."
+                    "title": "Small Batch Sizes",
+                    "description": "Batch sizes are kept small (8-10 participants) to provide more individualized focus and feedback from trainers on assignments, mapping logic improvements, and help with challenging integration cases - so that you can improve your technical problem-solving skills and strengthen them as you go along."
                 },
                 {
                     "title": "Placement & Career support",
-                    "description": "Learning SAP CPI is only half the journey—getting placed is the goal. Our dedicated career support team helps you craft an SAP-focused resume, prepares you for mock interviews, and helps you practice with real interview questions based on recent trends to increase your chances on the job market. You'll also receive guidance on presenting project experience in a compelling way that distinguishes you during SAP CPI integration job interviews."
+                    "description": "Our SAP CPI training includes resume guidance, mock interviews and career mentoring. You will learn to present integration projects effectively, explain architecture diagrams confidently and prepare for SAP CPI technical interviews with ease. Furthermore, we provide insights into market demand, role expectations and career growth pathways within cloud integration."
                 },
                 {
                     "title": "Active Alumni Network & Community Forum",
-                    "description": "You'll join a community of SAP CPI and integration professionals. You'll be able to exchange tips, share job leads, post questions, and develop professional ties that can lead to referrals and collaboration."
+                    "description": "Join a growing community of SAP integration professionals! Learners connect to share real-time issues, job openings and integration tips as well as collaborate on technical challenges - supporting long-term professional growth."
                 },
                 {
                     "title": "Ongoing Post-Training support",
-                    "description": "Your learning journey doesn't stop after you've completed the SAP CPI course. For the subsequent six months after training, you will still have instructor support, whether you need clarification on concepts, assistance with troubleshooting the challenges of a real-world integration project, or whether you need guidance during your first consulting starts."
+                    "description": "Learning does not stop once a course ends; trainers remain available post-course completion to answer questions, prepare certification exams, and assist with any real project challenges that may arise. This extended mentorship ensures you remain confident, up-to-date, and capable of handling SAP CPI responsibilities in professional environments."
                 }
             ],
             "title": "Learn SAP CPI from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            "subtitle": "Our **SAP CPI Online Training** curriculum is delivered exclusively by certified SAP professionals, each with 12+ years of direct hands-on experience in cloud integration and middleware technologies. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex integration scenarios in a step-by-step manner.",
+            "subtitle": "Our SAP CPI training is taught by certified integration consultants with extensive experience in <a href=\"https://www.bestonlinecareer.com/blog/role-of-sap-cpi-in-s4-hana-cloud-and-hybrid-integration-strategy\" target=\"_blank\" rel=\"noopener noreferrer\">cloud and hybrid integration projects.</a> Ideal for IT professionals as well as aspiring integration specialists, this program includes live instructor-led sessions where participants learn to design, construct, deploy and monitor real-time integration scenarios using SAP Integration Suite.",
             "textAlign": "left"
         },
         {
             "type": "content_with_image",
             "items": [
-                "Trusted by over 500 SAP CPI certified integration specialists",
+                "Trusted by over 2000+ SAP CPI certified integration specialists",
                 "Accenture, Capgemini, Deloitte, Infosys, Wipro Alumni",
                 "Tailored pre-evaluation and integrated learning path",
                 "Active alumni and cloud integration community forum",
                 "45+ guided integrated labs from beginner to advanced integration sagas",
                 "Materials updated every quarter in accordance with CPI standards",
                 "Mock interviews to practice as a real CPI consultant",
-                "Certification prep week offered pre-exams"
+                "SAP CPI Certification prep week offered pre-exams"
             ],
             "title": "Why Professionals Choose ERPVITS for SAP CPI Online Training",
             "subtitle": "Success Guarantee & Credibility",
@@ -130,7 +130,7 @@ export const cpiContent = {
                 },
                 {
                     "title": "Complete Study Materials",
-                    "description": "Manage your documents and study your interview question bank, along with the integration and code samples, presentations, official SAP documentation links, and other resources."
+                    "description": "Complete Study Materials including comprehensive <a href=\"https://www.erpvits.com/blog/sap-cpi-interview-questions/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP CPI interview questions</a> to help you confidently prepare for real-time scenarios, technical rounds, and certification exams.\n"
                 },
                 {
                     "title": "Lifetime Recording Access",
@@ -695,7 +695,7 @@ export const cpiContent = {
                 {
                     "title": "Immediate Post-Training",
                     "points": [
-                        "Receive course completion certificate",
+                        "Receive SAP CPI certification",
                         "Access lifetime course materials and CPI recordings",
                         "Join alumni network and integration community forum",
                         "Begin resume updates highlighting SAP CPI expertise"
@@ -715,7 +715,7 @@ export const cpiContent = {
                 {
                     "title": "First Role & Projects",
                     "points": [
-                        "Secure first SAP CPI integration opportunity (typical timeline)",
+                        "Secure first <a href=\"https://www.erpvits.com/blog/advanced-sap-cpi-integration/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP CPI integration</a> opportunity",
                         "Begin real-world integration project experience",
                         "Continue post-training support from instructors"
                     ],

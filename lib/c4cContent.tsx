@@ -218,7 +218,7 @@ export const c4cContent = {
     "price": "45,000",
     "duration": "35+ Hours",
     "heroHeading": "End-to-End <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone\">SAP C4C Technical Training</span> with Real-Time Implementation",
-    "heroSubheading": "For a cloud developer and SAP consultant working in customer relationship management, cloud application development, and enterprise software, the ERPVITS SAP C4C Technical Training Program is a transformative learning experience. Every organization is in great need of certified SAP C4C technical experts who can build cloud applications and customize customer solutions, integrate business objects, and lead digital transformation. This extensive SAP C4C Technical online training is designed for developers, technical consultants, cloud architects, ERP professionals, and aspiring graduates who are looking for global consulting and implementation positions and features instructor-led training, hands-on lab work, cloud development projects from the actual world, and complete certification support.",
+    "heroSubheading": "For a cloud developer and SAP consultant working in customer relationship management, cloud application development, and enterprise software, the ERPVITS SAP C4C Technical Training Program is a transformative learning experience. Every organization is in great need of certified SAP C4C technical experts who can build cloud applications and customize customer solutions, integrate business objects, and lead digital transformation. This extensive SAP C4C Technical online training is designed for developers, technical consultants, cloud architects & ERP professionals who are looking for global consulting and implementation positions and features instructor-led training, hands-on lab work, cloud development projects from the actual world, and complete certification support.",
     "heroImage": "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP C4C Tech Infographic.webp",
     "description": "For a cloud developer and SAP consultant working in customer relationship management, cloud application development, and enterprise software, the ERPVITS SAP C4C Technical Training Program is a transformative learning experience. Every organization is in great need of certified SAP C4C technical experts who can build cloud applications and customize customer solutions, integrate business objects, and lead digital transformation. This extensive SAP C4C Technical online training is designed for developers, technical consultants, cloud architects, ERP professionals, and aspiring graduates who are looking for global consulting and implementation positions and features instructor-led training, hands-on lab work, cloud development projects from the actual world, and complete certification support.",
     "metaTitle": "SAP C4C Technical Training with Live Projects | Join Now",
@@ -242,8 +242,8 @@ export const c4cContent = {
                     "description": "Each certified SAP C4C trainer has executed and managed multiple enterprise-scale SAP C4C implementations and cloud development projects. They share with you the theory, and real-world industry cloud deployment best and worst practices. The theory is enlightening, but the best and worst practices are priceless when you land on your first SAP C4C development consulting engagement."
                 },
                 {
-                    "title": "100% Hands-On Learning Methodology",
-                    "description": "While most traditional training practices teach SAP C4C concepts using PowerPoint slides and presentations, our program goes beyond that. Every session incorporates live presentations on the SAP C4C systems and subsequent guided lab exercises, and you practice what you just learned. By the time the course is completed, you will have built custom applications, developed UI components, integrated web services, configured business objects, and created backend and front analytics reports—all on real live cloud systems."
+                    "title": "100% Hands-On Learning",
+                    "description": "Every session of SAP C4C Technical training incorporates live presentations on the SAP C4C systems and subsequent guided lab exercises & you practice what you just learned. By the time course is completed, you will have built custom applications, developed UI components, integrated web services, configured business objects, and created backend and front analytics reports—all on real live cloud systems."
                 },
                 {
                     "title": "Job-Oriented Curriculum Design",
@@ -255,41 +255,41 @@ export const c4cContent = {
                 },
                 {
                     "title": "Flexible Batch Timings",
-                    "description": "Developers have to deal with learning, and managing families and work, so we understand the developer's perspective and provide flexibility by offering weekday evening batches (6 PM – 9 PM IST) and weekend batches (Saturday & Sunday). Sessions are recorded, so if you miss a live class, you can catch up asynchronously without losing continuity."
+                    "description": "Developers have to deal with learning, and managing families and work, so we understand the developer's perspective and provide flexibility by offering weekday and weekend batches. Sessions are recorded, so if you miss a live class, you can catch up asynchronously without losing continuity."
                 },
                 {
-                    "title": "Fewer Students For Personalized Attention",
+                    "title": "Small Batch Size",
                     "description": "We are not one of those massive online courses where you are just one of a number of people in a class of thousands. We cap our classes at 8 to 10 people so that your instructor can focus on you. This helps them understand what your strengths are, what your difficulties are, and where they need to focus their attention."
                 },
                 {
-                    "title": "Getting a Job",
+                    "title": "Placement & Career Support",
                     "description": "Learning SAP C4C is a key part of what we do, but getting placed is what we are aiming for. Getting a SAP C4C Job is not easy and our supportive career staff are here to help you prepare an SAP geared resume, handle mock interviews and practice the latest interview questions asked in SAP C4C jobs. This will help you during your interview to effectively present your project and you will definitely stand out."
                 },
                 {
-                    "title": "Jobs, Ongoing support After Training",
+                    "title": "Post-Training Support",
                     "description": "Training is not the end of your learning journey when the SAP C4C course is complete. For six months, the instructor will still be your mentor. You will be able to clarify any concepts that may still not be clear to you, help you during the challenging, real-world, cloud-related projects you are working on, and guide you when you are about to start your first development consulting."
                 }
             ],
-            "title": "Learn SAP C4C Technical Development from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            "subtitle": "Our **SAP C4C Technical Online Training** curriculum is delivered exclusively by certified SAP professionals, each with 12+ years of direct hands-on experience in cloud application development and CRM solutions. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex cloud development scenarios in a step-by-step manner.",
+            "title": "Learn SAP C4C Technical Development from Experts – 100% Hands-On, Job-Oriented Training",
+            "subtitle": "Our **SAP C4C Technical Online Training** is delivered exclusively by certified SAP professionals, each with 12+ years of direct hands-on experience in cloud application development and <a href=\"https://www.bestonlinecareer.com/blog/sap-c4c-crm\" target=\"_blank\">SAP C4C CRM</a> solutions. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex cloud development scenarios in a step-by-step manner.",
             "textAlign": "left"
         },
         {
             "type": "content_with_image",
             "items": [
-                "Trusted by 500+ successful SAP C4C developers.",
+                "Trusted by 2000+ successful SAP C4C developers.",
                 "Alumni at Accenture, Capgemini, Deloitte, Infosys and Wipro",
                 "Tailored pre-evaluation and cloud development learning path.",
                 "Active alumni network and cloud developer community forum.",
                 "Over 40 guided lab exercises from intro to advanced cloud development scenarios.",
                 "Materials revised every quarter to align with the latest C4C releases.",
-                "Mock interviews simulating C4C developer real world scenarios.",
+                "Mock interviews simulating <a href=\"https://www.erpvits.com/blog/sap-c4c-technical-scenarios/\" target=\"_blank\">SAP C4C Technical Scenarios</a>",
                 "Focused bootcamp sessions for cert preparation and advanced training."
             ],
             "title": "Why Professionals Choose ERPVITS for SAP C4C Technical Online Training",
             "subtitle": "Success Guarantee & Credibility",
             "videoSrc": "https://www.youtube.com/embed/EtlUBjNMsbM",
-            "description": "ERPVITS is known as a training partner for SAP Cloud technologies because thousands of learners started working with leading consulting firms like Accenture, Capgemini, Deloitte, Infosys, and Wipro. The testimonies from our alumni network show what value our instruction brought them and what leap forward it gave them in their careers.",
+            "description": "ERPVITS is known as a training partner for SAP Cloud technologies because thousands of learners started working with leading consulting firms like Accenture, Capgemini, Deloitte, Infosys, and Wipro. The testimonials from our alumni network show what value our instruction brought them and what leap forward it gave them in their careers.",
             "supportText": "From pre-evaluation to post-training support, we support you at every stage of SAP C4C technical learning and the cloud development career transition.",
             "supportTitle": "Complete support Ecosystem"
         },
@@ -312,7 +312,7 @@ export const c4cContent = {
                     "value": "24/7"
                 }
             ],
-            "title": "What's Included in the SAP C4C Technical Training – Complete Learning Package",
+            "title": "What's Included in the SAP C4C Technical Training",
             "features": [
                 {
                     "title": "Live Interactive Classes",
@@ -508,14 +508,237 @@ export const c4cContent = {
             "subtitle": "30-35 hours of expert-led training covering every aspect from basics to advanced cloud application development"
         },
         {
+            "type": "detailed_target_audience",
+            "items": [
+                {
+                    "icon": "Code",
+                    "title": "Developers & Technical Professionals",
+                    "description": [
+                        "SAP ABAP developers converting to cloud development",
+                        "Full-stack developers wanting cloud skills",
+                        "Technical architects creating cloud solutions",
+                        "Enterprise systems developers"
+                    ]
+                },
+                {
+                    "icon": "Briefcase",
+                    "title": "SAP & Cloud Consultants",
+                    "description": [
+                        "SAP functional consultants needing technical skills",
+                        "Cloud consultants wanting SAP C4C",
+                        "Business analysts wanting to develop",
+                        "C4C technical consultants"
+                    ]
+                },
+                {
+                    "icon": "Settings",
+                    "title": "IT & Systems Leaders",
+                    "description": [
+                        "IT managers updating systems design",
+                        "Systems admins wanting to level up their skills",
+                        "Project managers handling cloud tech projects",
+                        "Infrastructure teams going cloud-first"
+                    ]
+                },
+                {
+                    "icon": "GraduationCap",
+                    "title": "Fresh Graduates & Career Changers",
+                    "description": [
+                        "Engineering grads wanting to go into cloud SAP jobs",
+                        "Computer science grads looking to work on enterprise software",
+                        "IT professionals transforming to SAP",
+                        "Career changers with solid coding skills"
+                    ]
+                },
+                {
+                    "icon": "Users",
+                    "title": "Existing SAP C4C Users & Project Teams",
+                    "description": [
+                        "People at companies working with SAP C4C systems",
+                        "Super users wanting to know more about systems development",
+                        "IT teams working on the C4C SAP cloud implementations",
+                        "Project teams doing custom C4C cloud changes"
+                    ]
+                }
+            ],
+            "title": "Who Should Enroll in SAP C4C Technical Training?",
+            "subtitle": "Aimed at developers and IT professionals looking to build complex cloud solutions"
+        },
+        {
+            "type": "detailed_prerequisites",
+            "items": {
+                "minimum": [
+                    "Basic coding skills (Java, ABAP, or other languages)",
+                    "Knows about object-oriented programming",
+                    "Basic knowledge of CRM or other business software",
+                    "Worked on cloud technology",
+                    "Analytical, logical, and problem-solving skills"
+                ],
+                "nicetohave": [
+                    "Worked with SAP (any module)",
+                    "Used cloud development tools",
+                    "Knowledge of data base design",
+                    "Web services integration",
+                    "Knowledge of SQL for data queries"
+                ]
+            }
+        },
+        {
+            "type": "detailed_learning_outcomes",
+            "items": {
+                "tabs": [
+                    {
+                        "name": "Development Mastery",
+                        "items": [
+                            {
+                                "icon": "Box",
+                                "title": "Custom Business Object Development",
+                                "points": [
+                                    "Create and extend business objects using BODL",
+                                    "Implement complex business logic with ABSL",
+                                    "Design object relationships and hierarchies",
+                                    "Handle data validation and error scenarios"
+                                ]
+                            },
+                            {
+                                "icon": "Cloud",
+                                "title": "Cloud Application Development",
+                                "points": [
+                                    "Design and develop cloud applications with UI Designer",
+                                    "Implement responsive and interactive UIs",
+                                    "Create forms, tables, and dashboard visualizations",
+                                    "Implement complex user interactions and workflows"
+                                ]
+                            },
+                            {
+                                "icon": "Link",
+                                "title": "Service Integration & Web Services",
+                                "points": [
+                                    "Develop and consume web services",
+                                    "Integrate external systems and APIs",
+                                    "Implement asynchronous messaging patterns",
+                                    "Handle integration errors and retries"
+                                ]
+                            },
+                            {
+                                "icon": "Puzzle",
+                                "title": "Extensibility & Customization",
+                                "points": [
+                                    "Extend standard SAP C4C objects",
+                                    "Add custom fields and embedded components",
+                                    "Implement custom business logic",
+                                    "Follow best practices for extensions"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Technical Skills",
+                        "items": [
+                            {
+                                "icon": "BarChart",
+                                "title": "Analytics & Reporting",
+                                "points": [
+                                    "Design analytical data sources and cubes",
+                                    "Develop reports and dashboards",
+                                    "Implement performance optimization",
+                                    "Configure advanced analytics"
+                                ]
+                            },
+                            {
+                                "icon": "Settings",
+                                "title": "Business Configuration & Workflows",
+                                "points": [
+                                    "Configure business settings and rules",
+                                    "Create business configurations for end-users",
+                                    "Implement approval workflows",
+                                    "Set up notifications and escalations"
+                                ]
+                            },
+                            {
+                                "icon": "CheckCircle",
+                                "title": "Testing, Debugging & Performance",
+                                "points": [
+                                    "Execute comprehensive testing strategies",
+                                    "Debug applications and troubleshoot issues",
+                                    "Optimize application performance",
+                                    "Monitor and analyze system metrics"
+                                ]
+                            },
+                            {
+                                "icon": "ShieldCheck",
+                                "title": "Cloud Development Best Practices",
+                                "points": [
+                                    "Follow SAP C4C development standards",
+                                    "Implement security and access controls",
+                                    "Manage application lifecycle and versioning",
+                                    "Document code and configurations"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "title": "What You'll Master in This SAP C4C Technical Online Course",
+            "subtitle": "Comprehensive technical competencies you'll acquire to excel as an SAP C4C Developer"
+        },
+        {
+            "type": "real_world_scenarios",
+            "items": [
+                {
+                    "role": "As the lead SAP C4C developer, you will:",
+                    "title": "Case Study 1: Global Enterprise's Customer Engagement Platform",
+                    "outcome": "Source code repository, technical documentation, testing instructions, and a deployment guide.",
+                    "scenario": "A multinational enterprise needs your assistance to build custom customer engagement applications in SAP C4C extending standard functionalities. There is complex business logic that needs to be addressed, along with custom UIs and integrations with external systems.",
+                    "responsibilities": [
+                        "Design custom business objects for customer needs",
+                        "Develop complex ABSL logic and validations",
+                        "Create engaging UI experiences",
+                        "Integrate external data sources and services",
+                        "Build analytics and reporting dashboards"
+                    ]
+                },
+                {
+                    "role": "You will:",
+                    "title": "Case Study 2: Technology Company's Cloud API Platform",
+                    "outcome": "Integration specs, API docs, testing results, and a performance report.",
+                    "scenario": "A technology company is implementing SAP C4C and needs extensive integrations with external systems, where you will need to do some solid API development and web service connections.",
+                    "responsibilities": [
+                        "Develop extensive web service integrations",
+                        "Implement external system connectivity",
+                        "Create API adapters and middleware",
+                        "Set up error handling and retry circulation",
+                        "Build integration monitoring dashboards"
+                    ]
+                },
+                {
+                    "role": "You will:",
+                    "title": "Case Study 3: SaaS Provider's Multi-Tenant Application",
+                    "outcome": "Application architecture documentation, customization guide, and performance tuning recommendations.",
+                    "scenario": "A SaaS provider developing multi-tenant cloud applications in SAP C4C and needs sub applications for client specific customizations.",
+                    "responsibilities": [
+                        "Create business objects that can be expanded.",
+                        "Create configurations for individual tenants.",
+                        "Build end-user customization user interfaces.",
+                        "Optimize applications for performance.",
+                        "Enforce security and maintain data isolation."
+                    ]
+                }
+            ],
+            "title": "Experience Real-World SAP C4C Scenarios & Business Case Studies",
+            "subtitle": "Our capstone projects immerse you in realistic cloud development scenarios. Here are representative examples:",
+            "portfolioNote": "These projects ensure you graduate with portfolio pieces and real-world problem-solving experience invaluable for your first C4C development engagement."
+        },
+        {
             "type": "detailed_certification",
             "items": [
                 {
-                    "who": "Developer, technical consultant, solutions architect roles",
-                    "code": "C_C4C_90 (or equivalent)",
+                    "who": "Demonstrates expertise in end-to-end SAP C4C development",
+                    "code": "C_C4C_90 or equivalent C4C certification",
                     "focus": "Custom development, ABSL programming, UI design, integration",
                     "title": "SAP Certified Development Associate – SAP C4C (Customer Cloud)",
-                    "relevance": "Demonstrates expertise in end-to-end SAP C4C development"
+                    "value": "Demonstrates expertise in end-to-end SAP C4C development",
+                    "relevance": "Developer, technical consultant, solutions architect roles"
                 }
             ],
             "title": "SAP C4C Technical Certification – Your Global Career Credential",
@@ -542,7 +765,29 @@ export const c4cContent = {
                 }
             ],
             "imageSrc": "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP C4C Tech Infographic.webp",
-            "description": "We Provide support for Below SAP Certification List"
+            "description": "We Provide Support for Below SAP Certification List",
+            "supportFeatures": [
+                {
+                    "title": "Focused Studying",
+                    "subtitle": "Study guides aimed at the official exam outlines."
+                },
+                {
+                    "title": "Practice Tests",
+                    "subtitle": "Timed tests that replicate the actual exam."
+                },
+                {
+                    "title": "Exam Strategies",
+                    "subtitle": "Time management tips, coding questions, identifying pitfalls, etc."
+                },
+                {
+                    "title": "Exam Registration Guidance",
+                    "subtitle": "We help you to register and schedule the exam."
+                },
+                {
+                    "title": "Retake Support",
+                    "subtitle": "If you don’t pass the exam, we will help you with the additional support and next steps."
+                }
+            ]
         },
         {
             "type": "detailed_career_opportunities",
@@ -736,7 +981,7 @@ export const c4cContent = {
                 {
                     "title": "Immediate Post-Training",
                     "points": [
-                        "Receive course completion certificate",
+                        "Receive <a href=\"https://www.bestonlinecareer.com/blog/sap-c4c-certification\" target=\"_blank\">SAP C4C Technical Certification</a>",
                         "Access lifetime course materials and C4C recordings",
                         "Join alumni network and developer community forum",
                         "Begin resume updates highlighting SAP C4C expertise"
@@ -756,7 +1001,7 @@ export const c4cContent = {
                 {
                     "title": "First Role & Projects",
                     "points": [
-                        "Secure first SAP C4C development opportunity (typical timeline)",
+                        "Secure first SAP C4C development opportunity ",
                         "Begin real-world cloud project experience",
                         "Continue post-training support from instructors"
                     ],

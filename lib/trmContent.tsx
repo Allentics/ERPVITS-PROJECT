@@ -59,20 +59,20 @@ export const trmContent = {
                 }
             ],
             "title": "Learn SAP TRM from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            "subtitle": "Our **SAP TRM Online Training** is delivered by certified SAP professionals with 12+ years of hands-on experience in treasury and financial systems implementation. Instead of pre-recorded sessions, our SAP TRM course offers interactive sessions where instructors share industry-proven methodologies, address your questions and guide you through complex financial and treasury scenarios step-by-step.",
+            "subtitle": "Our <a href=\"https://www.bestonlinecareer.com/blog/Benefits-of-Online-SAP-TRM-Training\" target=\"_blank\">SAP TRM online training</a> is delivered by certified SAP professionals with 12+ years of hands-on experience in treasury and financial systems implementation. Instead of pre-recorded sessions, our SAP TRM course offers interactive sessions where instructors share industry-proven methodologies, address your questions and guide you through complex financial and treasury scenarios step-by-step.",
             "textAlign": "left"
         },
         {
             "type": "content_with_image",
             "items": [
-                "Trusted by 3000+ successful SAP TRM professionals",
+                "Trusted by 5000+ successful SAP TRM professionals",
                 "Alumni at Accenture, Capgemini, Deloitte, EY, KPMG, major banks",
                 "Personalized pre-evaluation and TRM learning path",
                 "Active alumni network and treasury finance community forum",
                 "50+ guided financial lab exercises from basic to advanced scenarios",
                 "Quarterly updated materials aligned with latest SAP releases and regulatory requirements",
                 "Mock interviews simulating real TRM consultant scenarios",
-                "Dedicated certification prep week before official SAP exams"
+                "Dedicated SAP TRM certification prep week before official SAP exams"
             ],
             "title": "Why Professionals Choose ERPVITS for SAP TRM Training",
             "subtitle": "Success Guarantee & Credibility",
@@ -104,7 +104,7 @@ export const trmContent = {
             "features": [
                 {
                     "title": "Live Interactive Classes",
-                    "description": "50 hours in 8–12 weeks over live video conferencing including Q&A sessions and treasuring discussions."
+                    "description": "50 hours of SAP TRM course delivered over 8–12 weeks through live video conferencing, including interactive Q&A sessions and engaging discussions."
                 },
                 {
                     "title": "Real-World Projects",

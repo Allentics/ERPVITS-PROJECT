@@ -5,12 +5,12 @@ export const sdContent = {
     "category": "Functional",
     "price": "45,000",
     "duration": "35+ Hours",
-    "heroHeading": "SAP SD Training with <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone\">Real-Time Scenarios &amp; Certified Trainers</span>",
-    "heroSubheading": "The SAP SD Online Training Program (Sales & Distribution) from ERPVITS offers transformational learning opportunities to sales professionals and SAP consultants wishing to advance their skills in order management, billing, shipping, and enterprise resource planning. With the rapid advancements in the business world, there is an acute need for trained certified SAP SD professionals. Every business strives to streamline sales, optimize order picking and fulfillment, improve customer satisfaction, and increase profitability. The SAP SD course offers live training, real-world sales scenarios, hands-on lab exercises, and complete certification prep. SAP SD Training is designed for sales professionals in training, order management, and logistics, ERP consultants, and graduates aiming for global consulting and implementation jobs.",
+    "heroHeading": "SAP SD Training with End-to-End Project Exposure",
+    "heroSubheading": "Our SAP SD Training provides in-depth, hands-on knowledge of the Sales and Distribution module with real-world implementation experience. This SAP SD course covers the Order-to-Cash (O2C) cycle including master data configuration, order processing, pricing, billing delivery credit management as well as integration with MM and FI modules.\n\nWhat sets this SAP SD training apart is its comprehensive project exposure. You will take part in real-life business scenarios that simulate client implementation environments - from requirement gathering and configuration through testing and go-live support - giving you not just theoretical knowledge but the confidence needed for real SAP projects.\n\nLed by certified and experienced industry professionals, this course equips students for SAP SD certification exams while equipping them with job-ready skills that global organizations require for success.",
     "heroImage": "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP SD Infographic.webp",
     "description": "The SAP SD Online Training Program (Sales & Distribution) from ERPVITS offers transformational learning opportunities to sales professionals and SAP consultants wishing to advance their skills in order management, billing, shipping, and enterprise resource planning. With the rapid advancements in the business world, there is an acute need for trained certified SAP SD professionals. Every business strives to streamline sales, optimize order picking and fulfillment, improve customer satisfaction, and increase profitability. The SAP SD course offers live training, real-world sales scenarios, hands-on lab exercises, and complete certification prep. SAP SD Training is designed for sales professionals in training, order management, and logistics, ERP consultants, and graduates aiming for global consulting and implementation jobs.\n\n[Book Your Free Demo Class] | [View Curriculum]\n\n✅ SAP Certified Trainers✅ 4.8 Learner Rating✅ 24/7 Team support\n\nOur SAP SD Online Training is delivered exclusively by certified SAP professionals with 12+ years of direct implementation experience in sales and distribution operations. Unlike passive video courses or self-paced modules, you receive interactive, real-time instruction where instructors share proven methodologies, address your specific questions, and guide you through complex sales scenarios step-by-step.\n\nCertified Instructor Expertise: Each trainer holds official SAP SD certifications and has successfully led multiple enterprise-scale SAP SD implementations across manufacturing, retail, and distribution sectors. They don't just teach theory; they share war stories, common pitfalls, and industry best practices from actual client deployments. This real-world perspective is invaluable when you enter your first SAP SD consulting engagement.\n\n100% Hands-On Learning Methodology: Traditional SAP SD training involves teaching fundamentals with training wheels provided in the form of slides and presentations. That approach fails to deliver the value that our program provides. SAP Systems are made available for each training session and each participant completes the corresponding hands-on lab exercises in SAP Systems after each live demonstration. At the conclusion of the program, each participant will be confident in completing all the steps necessary to create a customer sales order, configure a pricing strategy, process a shipment, execute a billing prompt, manage customer relations, and all the customer sales order scenarios taught with real enterprise software.\n\nJob-Oriented Curriculum Design: This approach to design and deliver the curriculum is based on real life situations and not academic theory. SAP SD consultants touch on multiple aspects of the billing and sales process. This course will teach each participant process sales order implementation, order fulfillment configuration, billing automation, diagnostic troubleshooting, and billing system integration as well as all the SAP SD billing and sales process inversion taught during the course.\n\nInstructor Availability for Each Session: In addition to the classroom time, each instructor is absolutely and organized available with office time structured to the course provided for each taught module as well as outlined in the course for the sales module to answer questions and provide deep dives into complex topics in sales and customer order management as well as their problem solving and goal alignment.\n\nConsideration to participants: In addition to considerate session time, course documents are made available to all participants. For those that have live sessions integrated into their training schedule, as well as all other students, ASP SD training will be made available for recorded sessions.\n\nSmall Batch Sizes for Personalized Attention: Unlike online courses that cater to large audiences with thousands of anonymous learners, we limit each class size to 8-10 participants so we can offer individualized attention. We can understand your strengths and challenges and provide personalized feedback.\n\nPlacement & Career support: Learning SAP SD is half the journey, and we understand that getting placed is the end goal. Our dedicated career support team assists you in developing SAP-centric resumes, guides you with mock interviews, and prepares you with relevant interview questions that reflect current hiring trends. You will also get tips to effectively communicate your project experience in SAP SD interviews to help you get noticed during the interviews.\n\nActive Alumni Network & Community Forum: You will become part of a strong professional community of SAP SD and sales operations colleagues. We help you cultivate professional ties for collaboration, job posting and referrals.\n\nOngoing support Post-Training: Your learning journey doesn’t end with the SAP SD course. You will get six months of instructor support after training to help you with any questions, real world sales project challenges and first time consulting project advice.\n\nOver the years, ERPVITS has become a reliable training partner for SAP modules. Hundreds of our successful learners work at prominent consulting firms—like Accenture, Capgemini, Deloitte, Infosys, and Wipro. Testimonials from our alumni network corroborates the quality of instruction we offer and the value our training program brings to one's career.\n\nFrom pre-evaluation to post-training support, we guide you through every step of your SAP SD learning journey and sales career transition.\n\nA complete career-focused SAP SD training program which blends live expert sessions with real-world sales projects, hands-on labs, certification preparation, and continuous career support, to help you prepare for employment as an SAP SD consultant.\n\nLive Interactive Classes: Over the course of 8 to 10 weeks, participate in 30 to 35 hours of live interactive classes delivered via video conferencing, where you may engage in real-time Q&A sessions and discussions.\n\nReal-World Projects: Work on case studies inspired by Fortune 500 companies, focusing on customer master setups, sales order processing, shipping, billing, and order to cash integration.\n\nHands-On Lab Environment: Practice and execute sales orders, quotations, deliveries, billing, and customer management workflows in the SAP SD systems, which you may access full-time.\n\nCertification Exam Prep: Make your final preparation for the SAP Certified Associate—Sales and Distribution exam by utilizing preparatory materials, including study guides, practice exams, and bootcamp sessions.\n\nResume & Interview Coaching: Get personalized guidance on SAP SD technical interviews, including mock consulting interviews, resume preparation, and interview focus.\n\nComplete Study Materials: Study and prepare with complete materials which include PDFs, presentations, sales configuration checklists, interview question banks, and links to official SAP documentation.\n\nLifetime Recording Access: All live sessions are recorded and transcriptions are made so you may access them anytime.\n\nExpert Q&A Sessions: For your questions regarding concepts, projects, or career you may participate in the 1-hour weekly Q&A.",
-    "metaTitle": "SAP SD Online Training with Certification | Enroll Now",
-    "metaDescription": "Join ERPVITS SAP SD Online Training to master order management, billing, and ERP integration with live projects, hands-on labs, and certification support.",
+    "metaTitle": "SAP SD Training Online with Certification | Enroll Now",
+    "metaDescription": "Join ERPVITS SAP SD Training Online to master order management, billing, and ERP integration with live projects, hands-on labs & certification support.",
     "features": [],
     "sections": [
         {
@@ -19,62 +19,57 @@ export const sdContent = {
             "items": [
                 {
                     "title": "Certified Instructor Expertise",
-                    "description": "Each trainer holds official SAP SD certifications and has successfully led multiple enterprise-scale SAP SD implementations across manufacturing, retail, and distribution sectors. They don't just teach theory; they share war stories, common pitfalls, and industry best practices from actual client deployments."
+                    "description": "This SAP SD training program is led by experienced SAP SD Functional Consultants with years of implementation and support experience. They guide you through real project environments, discussing SAP SD roles and responsibilities, client communication strategies, configuration best practices, deployment management techniques and aligned solutions that meet business objectives."
                 },
                 {
-                    "title": "100% Hands-On Learning Methodology",
-                    "description": "Traditional SAP SD training involves teaching fundamentals with training wheels provided in the form of slides and presentations. That approach fails to deliver the value that our program provides. SAP Systems are made available for each training session and each participant completes the corresponding hands-on lab exercises in SAP Systems after each live demonstration."
+                    "title": "100% Hands-On Learning ",
+                    "description": "SAP SD course emphasizes active learning within the SAP system. You will configure SAP SD master data, explore SAP SD pricing procedure, set up SAP SD item categories, route determiners and output determiners and determine output determinations. Key SAP SD determinations such as tables or <a href=\"https://www.bestonlinecareer.com/blog/sap-transaction-codes-tcodes-list\" target=\"_blank\">TCodes</a> will be practiced extensively so as to build confidence when using system navigation; concepts like document flow, workflow configuration step by step explained."
                 },
                 {
                     "title": "Job-Oriented Curriculum Design",
-                    "description": "This approach to design and deliver the curriculum is based on real life situations and not academic theory. SAP SD consultants touch on multiple aspects of the billing and sales process. This course will teach each participant process sales order implementation, order fulfillment configuration, billing automation, diagnostic troubleshooting, and billing system integration."
+                    "description": "The SAP SD syllabus has been carefully tailored to reflect the complete list of modules necessary for real-life projects and interviews, from fundamentals through variant configuration, integration touchpoints and documentation practices. You will learn structured techniques that prepare you for real world implementation projects as well as support assignments in growing markets such as SAP SD S/4HANA jobs."
                 },
                 {
-                    "title": "Instructor Availability for Each Session",
-                    "description": "In addition to the classroom time, each instructor is absolutely and organized available with office time structured to the course provided for each taught module as well as outlined in the course for the sales module to answer questions and provide deep dives into complex topics in sales and customer order management."
+                    "title": "Flexible Batch Timings",
+                    "description": "Our SAP SD Training understands that learners may have competing commitments. That is why our classes feature flexible batch timings - both weekday and weekend options so you can find a schedule that best fits into your lifestyle without compromising learning quality. Even if you miss a session, recorded access and backup support ensure your SAP SD learning continues uninterrupted."
                 },
                 {
-                    "title": "Consideration to participants",
-                    "description": "In addition to considerate session time, course documents are made available to all participants. For those that have live sessions integrated into their training schedule, as well as all other students, ASP SD training will be made available for recorded sessions."
+                    "title": "Small Batch Sizes",
+                    "description": "To ensure quality learning, we maintain a small batch size for every SAP SD course. This enables our trainers to focus on every participant individually, track progress closely, and address doubts with precision. This personalized approach can help you gain clarity in complex topics such as SAP SD pricing procedure, configuration step by step & overall process flow without feeling rushed."
                 },
                 {
-                    "title": "Small Batch Sizes for Personalized Attention",
-                    "description": "Unlike online courses that cater to large audiences with thousands of anonymous learners, we limit each class size to 8-10 participants so we can offer individualized attention. We can understand your strengths and challenges and provide personalized feedback."
+                    "title": "Career & Placement Support ",
+                    "description": "Completing SAP SD training is only part of the journey; finding the ideal opportunity is of equal importance. Our career support team assists you in creating a profile aligned with current SAP SD job openings, with resume guidance, mock interviews, and practical SAP SD interview questions and answers to help build confidence when facing recruiters."
                 },
                 {
-                    "title": "Placement & Career support",
-                    "description": "Learning SAP SD is half the journey, and we understand that getting placed is the end goal. Our dedicated career support team assists you in developing SAP-centric resumes, guides you with mock interviews, and prepares you with relevant interview questions that reflect current hiring trends."
+                    "title": "Alumni Network and Community Forum.",
+                    "description": "As soon as you enroll, you become part of an engaged professional network of SAP SD learners and consultants. Our alumni network and community forum facilitate knowledge sharing, job referrals, peer collaboration, as well as regular discussions of SAP SD business process challenges, project experiences and emerging SAP SD S/4HANA jobs; helping you stay abreast of industry developments even after having completed our course."
                 },
                 {
-                    "title": "Active Alumni Network & Community Forum",
-                    "description": "You will become part of a strong professional community of SAP SD and sales operations colleagues. We help you cultivate professional ties for collaboration, job posting and referrals."
-                },
-                {
-                    "title": "Ongoing support Post-Training",
-                    "description": "Your learning journey doesn’t end with the SAP SD course. You will get six months of instructor support after training to help you with any questions, real world sales project challenges and first time consulting project advice."
+                    "title": "Post-Training Support",
+                    "description": "Your learning journey does not end after classroom sessions are complete; we offer structured post-training support to help you apply your newfound knowledge in real-life scenarios. From helping to understand SAP SD documentation to clarify configuration queries or prepare for your first SAP SD Functional Consultant role, expert guidance remains readily available so that a smooth transition occurs from training to real project execution."
                 }
             ],
             "title": "Learn SAP SD from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            "subtitle": "Our **SAP SD Online Training** curriculum is delivered exclusively by certified SAP professionals with 12+ years of direct hands-on experience in sales and distribution operations. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex sales and distribution scenarios in a step-by-step manner.",
+            "subtitle": "Our SAP SD Training course is designed to give participants both deep functional understanding and real-time system experience. The focus of the program is to help participants gain a full grasp of how the SAP SD process operates within actual organizations - from order creation through billing and revenue recognition. Instead of learning theory in isolation, participants gain insight into how SAP SD business process connects departments, increases efficiency, and supports enterprise-wide decision-making processes.",
             "textAlign": "left"
         },
         {
             "type": "content_with_image",
             "items": [
-                "Trusted by 800+ successful SAP SD professionals",
+                "Trusted by 4000+ successful SAP SD professionals",
                 "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro",
                 "Personalized pre-evaluation and sales operations learning path",
                 "Active alumni network and order management community forum",
                 "50+ guided lab exercises from basic to advanced sales scenarios",
                 "Quarterly updated materials aligned with latest SAP releases",
                 "Mock interviews simulating real SD consultant scenarios",
-                "Dedicated certification prep week before exams",
-                "Complete support Ecosystem"
+                "Dedicated SAP SD certification prep week before exams"
             ],
-            "title": "Why Professionals Choose ERPVITS for SAP SD Online Training",
+            "title": "Why Professionals Choose ERPVITS for SAP SD Training",
             "subtitle": "Success Guarantee & Credibility",
             "videoSrc": "https://www.youtube.com/embed/NWsGtCBaX5Q",
-            "description": "Over the years, ERPVITS has become a reliable training partner for SAP modules. Hundreds of our successful learners work at prominent consulting firms—like Accenture, Capgemini, Deloitte, Infosys, and Wipro. Testimonials from our alumni network corroborates the quality of instruction we offer and the value our training program brings to one's career.",
+            "description": "Over the years, ERPVITS has become a reliable training partner for SAP SD module. Hundreds of our successful learners work at prominent consulting firms—like Accenture, Capgemini, Deloitte, Infosys, and Wipro. Testimonials from our alumni network corroborates the quality of instruction we offer and the value our training program brings to one's career.",
             "supportText": "From pre-evaluation to post-training support, we guide you through every step of your SAP SD learning journey and sales career transition.",
             "supportTitle": "Complete support Ecosystem"
         },
@@ -94,11 +89,11 @@ export const sdContent = {
                     "value": "24/7"
                 }
             ],
-            "title": "What's Included in the SAP SD Training – Complete Learning Package",
+            "title": "What's Included in the SAP SD Training",
             "features": [
                 {
                     "title": "Live Interactive Classes",
-                    "description": "Over the course of 8 to 10 weeks, participate in 30 to 35 hours of live interactive classes."
+                    "description": "SAP SD course of 8 to 10 weeks, participate in 30 to 35 hours of live interactive classes."
                 },
                 {
                     "title": "Real-World Projects",
@@ -106,7 +101,7 @@ export const sdContent = {
                 },
                 {
                     "title": "Hands-On Lab Environment",
-                    "description": "Practice and execute sales orders, quotations, deliveries, billing, and customer management workflows in SAP SD systems."
+                    "description": "Practice and execute sales orders, quotations, deliveries, billing, and customer management <a href=\"https://www.erpvits.com/blog/sap-sd-workflow/\" target=\"_blank\">workflows in SAP SD systems.</a>"
                 },
                 {
                     "title": "Certification Exam Prep",
@@ -218,7 +213,7 @@ export const sdContent = {
                     "learning_points": [
                         "General outbound delivery process.",
                         "Picking, packing, and posting goods.",
-                        "Determining and configuring Shipping Points.",
+                        "<a href=\"https://www.erpvits.com/blog/sap-sd-shipping-point-determination/\" target=\"_blank\">Determining and configuring SAP SD Shipping Points.</a>",
                         "Managing transport integration.",
                         "Various delivery document types and their statuses.",
                         "Managing freight costs and shipping conditions."
@@ -451,6 +446,7 @@ export const sdContent = {
                     "role": "Lead SAP SD Consultant",
                     "title": "Global Retail Organization's Order-to-Cash Optimization",
                     "outcome": "Configuration documentation, sales procedure manuals, training materials, and go-live checklist.",
+                    "scenario": "A multinational retail company with operations in 15 countries needs to consolidate sales processes and implement centralized order management. They're implementing SAP SD to achieve order accuracy, faster fulfillment, and improved customer experience.",
                     "description": "A multinational retail company with operations in 15 countries needs to consolidate sales processes and implement centralized order management. They're implementing SAP SD to achieve order accuracy, faster fulfillment, and improved customer experience.",
                     "responsibilities": [
                         "Design the organizational structure for sales operations",
@@ -464,6 +460,7 @@ export const sdContent = {
                     "role": "Lead Consultant",
                     "title": "Manufacturing Company's Sales Process Automation",
                     "outcome": "Documentation of the processes, specifications of the configurations, and training materials for the users, as well as the dashboards of analytics.",
+                    "scenario": "A manufacturing organization implementing SAP SD to automate order processing, improve order fulfillment speed, and enhance billing accuracy.",
                     "description": "A manufacturing organization implementing SAP SD to automate order processing, improve order fulfillment speed, and enhance billing accuracy.",
                     "responsibilities": [
                         "Design sales order processing workflows.",
@@ -477,6 +474,7 @@ export const sdContent = {
                     "role": "SD Consultant",
                     "title": "E-Commerce Platform's Special Sales Scenarios",
                     "outcome": "Documentation of special scenarios, specifications of workflows, training materials for users, and procedures for oversight.",
+                    "scenario": "An e-commerce company implementing SAP SD, particularly the special sales scenarios of rush orders, cash sales, and returns management.",
                     "description": "An e-commerce company implementing SAP SD, particularly the special sales scenarios of rush orders, cash sales, and returns management.",
                     "responsibilities": [
                         "Configure the special sales order types.",
@@ -491,6 +489,15 @@ export const sdContent = {
         },
         {
             "type": "detailed_certification",
+            "items": [
+                {
+                    "who": "Demonstrates expertise in end-to-end SAP SD implementation",
+                    "code": "C_TS462_2023",
+                    "focus": "Sales orders, deliveries, billing, master data, pricing",
+                    "title": "SAP Certified Associate – Sales and Distribution",
+                    "relevance": "Entry to mid-level consultant positions"
+                }
+            ],
             "stats": [
                 {
                     "label": "Exam Code",
@@ -702,7 +709,7 @@ export const sdContent = {
                     "color": "orange",
                     "title": "Immediate Post-Training",
                     "points": [
-                        "Receive course completion certificate",
+                        "Receive SAP SD certification",
                         "Access lifetime course materials and SD recordings",
                         "Join alumni network and sales operations community forum",
                         "Begin resume updates highlighting SAP SD expertise"

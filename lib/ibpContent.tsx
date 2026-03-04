@@ -139,8 +139,8 @@ export const ibpContent = {
     "category": "Functional",
     "price": "45,000",
     "duration": "35+ Hrs",
-    "heroHeading": "Transform Your Supply Chain Strategy with <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone\">SAP IBP Training</span>",
-    "heroSubheading": "The SAP Integrated Business Planning Online Training Program from ERPVITS represents a transformative learning pathway for professionals eager to excel in demand planning, supply chain optimization, and data-driven business strategy. In today's hyper-competitive business landscape, organizations urgently need certified SAP IBP experts who can align sales, marketing, finance, and supply chain teams through integrated planning, reduce forecast errors, optimize inventory, and enable agile decision-making.",
+    "heroHeading": "<span class=\"text-transparent bg-clip-text bg-gradient-to-r from-[#ff4500] to-red-600 box-decoration-clone\">SAP IBP Training</span> for End-to-End Supply Chain Management",
+    "heroSubheading": "Our SAP IBP Training aims to equip professionals with the skills to effectively and efficiently optimize end-to-end supply chain processes with SAP Integrated Business Planning (IBP). Through hands-on, live sessions, you will acquire skills in demand planning, supply planning, inventory optimization and sales and operations planning (S&OP) using IBP.\n\nThis SAP IBP course covers real-world scenarios and practical exercises, providing the essential knowledge you need to configure planning models, generate forecasts, manage alerts and generate actionable insights that facilitate effective decision-making. Perfect for supply chain professionals, planners and consultants seeking SAP IBP certification as well as those looking to increase efficiency, collaboration and performance within their organizations' supply chains, this training equips learners to drive efficiency, collaboration and performance across their supply chains.",
     "heroImage": "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP IBP Infographic.webp",
     "description": "This comprehensive SAP IBP training course combines interactive, instructor-led sessions, hands-on lab exercises, real-time industry projects, demand forecasting simulations, and end-to-end certification support.",
     "metaTitle": "SAP IBP Training | Integrated Business Planning Course",
@@ -153,61 +153,61 @@ export const ibpContent = {
             "items": [
                 {
                     "title": "Certified Instructor Expertise",
-                    "description": "Each trainer holds official SAP certifications and has successfully led multiple enterprise-scale SAP IBP implementations. They share real-world war stories, common planning pitfalls, and industry best practices from actual client deployments managing billions in supply chain optimization."
+                    "description": "Our trainers are expert SAP IBP consultants with years of experience working on global demand planning, supply planning and S&OP transformation projects. They share real client case studies as well as implementation best practices, configuration mistakes and performance optimization techniques which will enable you to fully grasp how SAP IBP functions within complex business environments."
                 },
                 {
                     "title": "100% Hands-On Learning Methodology",
-                    "description": "Every session includes live demonstrations directly on SAP IBP systems, followed by guided lab exercises. You'll configure demand plans, execute supply simulations, manage inventory optimization, and perform what-if analysis on real systems."
+                    "description": "Our SAP IBP training focusses mainly on practical system exposure. Each session includes live demonstrations in SAP IBP, followed by guided exercises where you'll build planning models, configure key figures, create forecasts, manage supply plans and analyze dashboards - giving you experience in Demand Planning, Supply Planning, Inventory Optimization and Sales & Operations Planning (S&OP). "
                 },
                 {
                     "title": "Job-Oriented Curriculum Design",
-                    "description": "The curriculum is designed around the exact skills, responsibilities, and problem-solving scenarios you'll face as an SAP IBP consultant, from demand forecasting strategies to finance integration."
+                    "description": "The SAP IBP curriculum is structured around real consultant responsibilities. You will gain experience in requirement gathering, solution design, configuration of planning areas, integration concepts, exception management and reporting strategies - everything necessary to be an SAP IBP consultant in manufacturing, retail, FMCG or global supply chains."
                 },
                 {
                     "title": "Interactive Q&A Sessions",
-                    "description": "Dedicated Q&A forums and live office hours where instructors address doubts, clarify complex topics like statistical forecasting algorithms and supply-demand balancing, and provide personalized guidance."
+                    "description": "To facilitate conceptual clarity, we host regular discussion forums and live doubt-clearing sessions led by trainers. They address complex supply chain planning challenges, real-life business cases, and SAP IBP interview questions so you can confidently approach client interactions or job interviews."
                 },
                 {
                     "title": "Flexible Batch Timings",
-                    "description": "We offer both weekday evening batches (6 PM – 9 PM IST) and weekend batches (Saturday & Sunday). Sessions are recorded for asynchronous catch-up without losing continuity."
+                    "description": "Our flexible weekday and weekend batches provide convenient options for working professionals. All sessions can be recorded and shared for future reference - making sure you can revisit advanced planning concepts at any time without losing continuity."
                 },
                 {
                     "title": "Small Batch Sizes",
-                    "description": "Batches are capped at 8-10 participants to ensure instructors can provide individualized attention, get to know your strengths, and offer targeted feedback on your planning configurations."
+                    "description": "Each batch is kept limited participants to provide personalized mentoring from trainers who track your progress, provide personalized feedback on configuration exercises, and help develop analytical and planning abilities in the SAP IBP environment."
                 },
                 {
                     "title": "Placement & Career support",
-                    "description": "Our dedicated career support team helps you build an impactful SAP IBP-focused resume, prepare through mock interviews, and practice with real-world interview questions."
+                    "description": "Our career assistance services for SAP IBP consultants include resume preparation tailored specifically for IBP roles, mock interviews and scenario-based interview practice to prepare you for supply chain planning jobs, guidance in positioning yourself to secure supply chain planning jobs as well as insight into current market demand, salary trends and global opportunities available for SAP IBP consultants."
                 },
                 {
                     "title": "Active Alumni Network",
-                    "description": "Join a thriving community of SAP IBP professionals. Exchange tips, share demand planning strategies, discuss forecasting challenges, and build professional relationships."
+                    "description": "Join an engaged SAP IBP professional network where learners and alumni share project insights, planning strategies, job updates, industry knowledge, and long-term career advancement strategies to further your career success."
                 },
                 {
                     "title": "Ongoing support Post-Training",
-                    "description": "For six months after training, receive instructor guidance for clarifying concepts, troubleshooting real-world project challenges, or seeking advice during your first consulting engagements."
+                    "description": "After SAP IBP course completion, our instructors remain available for extended mentorship for several months to assist you with SAP IBP certification preparation, project implementation challenges or understanding advanced planning concepts. They remain on hand to guide and support your professional growth within SAP IBP."
                 }
             ],
             "title": "Learn SAP IBP from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            "subtitle": "Our **SAP IBP Online Training** curriculum is delivered exclusively by certified SAP professionals with 12+ years of direct hands-on experience in demand planning, supply chain strategy, and integrated business planning. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex planning scenarios in a step-by-step manner.",
+            "subtitle": "Our SAP IBP Online Training is designed and provided by certified SAP supply chain consultants with 10+ years of experience implementing SAP Integrated Business Planning within global enterprises. Rather than engaging in prerecorded lessons, live instructor-led sessions allow experts to take you through real-time planning scenarios, business forecasting challenges and end-to-end <a href=\"https://www.linkedin.com/pulse/real-time-supply-chain-insights-role-sap-ibp-online-uzxqf/?trackingId=vYdAHClOjAvsfZ6WKigpDg%3D%3D\" target=\"_blank\" rel=\"noopener noreferrer\">supply chain transformation strategies using SAP IBP.</a>",
             "textAlign": "left"
         },
         {
             "type": "content_with_image",
             "items": [
-                "Trusted by 800+ successful SAP professionals",
-                "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro, and leading consumer goods organizations",
+                "Trusted by 3800+ successful SAP professionals",
+                "Alumni at Accenture, Capgemini, Deloitte, Infosys, Wipro & leading organizations",
                 "Personalized pre-evaluation and learning path customization",
                 "Active alumni network and community forum for supply chain planning professionals",
                 "65+ guided lab exercises from basic to advanced demand planning scenarios",
                 "Quarterly updated materials aligned with latest SAP IBP releases and S/4HANA updates",
                 "Mock interviews simulating real consultant scenarios in integrated planning",
-                "Dedicated certification prep week before exams"
+                "Dedicated SAP IBP certification prep week before exams"
             ],
             "title": "Why Professionals Choose ERPVITS for SAP IBP Online Training",
             "subtitle": "Success Guarantee & Credibility",
             "videoSrc": "https://www.youtube.com/embed/ERzLONcYo94",
-            "description": "ERPVITS has established itself as a trusted training partner for SAP Modules, with hundreds of successful learners working at top consulting firms like Accenture, Capgemini, Deloitte, Infosys, and Wipro, as well as leading consumer goods and technology companies. Our alumni network testimonials speak to the quality of instruction and the career acceleration our program delivers.",
+            "description": "ERPVITS stands out as the premier source for SAP IBP training because we provide a practical learning experience designed by certified supply chain experts with real project experience. Our training goes beyond theoretical concepts to offer hands-on exposure to SAP IBP application configuration, demand & supply planning processes and real business forecasting scenarios. Furthermore, our career support services, mock interviews, and placement guidance assist aspiring consultants transition smoothly into supply chain roles while accelerating their SAP IBP careers.",
             "supportText": "From pre-evaluation to post-training support, we guide you through every step of your SAP IBP learning journey and career transition.",
             "supportTitle": "Complete support Ecosystem"
         },
@@ -503,7 +503,7 @@ export const ibpContent = {
                     "icon": "Database",
                     "title": "SAP & ERP Professionals",
                     "description": [
-                        "SAP consultants from MM, SD, DP, PP modules seeking specialization",
+                        "SAP consultants from <a href=\"https://www.erpvits.com/sap-sd-training/\" target=\"_blank\" rel=\"noopener noreferrer\">SD</a>, <a href=\"https://www.erpvits.com/sap-s4hana-mm-training/\" target=\"_blank\" rel=\"noopener noreferrer\">MM</a>, PP modules seeking specialization",
                         "ERP system administrators expanding into planning domain",
                         "SAP architects designing enterprise planning solutions",
                         "Technical consultants supporting SAP implementations",
@@ -691,6 +691,7 @@ export const ibpContent = {
                     "role": "Lead SAP IBP Consultant",
                     "title": "Consumer Goods Company's S&OP Transformation",
                     "outcome": "95%+ forecast accuracy, 22% inventory reduction, 98% on-shelf availability, $50M+ value realization.",
+                    "scenario": "An international consumer goods manufacturer with 50+ product lines and 30 manufacturing plants across 6 continents needs SAP IBP to integrate their fragmented planning processes. They want to increase demand forecast accuracy from 78% to 95%, reduce inventory by 20% and improve on-shelf availability through integrated planning.",
                     "description": "A global consumer goods manufacturer with 50+ product lines needs SAP IBP to transform fragmented planning processes.",
                     "responsibilities": [
                         "Design integrated S&OP process spanning demand, supply, and finance",
@@ -705,6 +706,7 @@ export const ibpContent = {
                     "role": "SAP IBP Consultant",
                     "title": "Retail Company's Demand Sensing and Real-Time Planning",
                     "outcome": "Demand forecast accuracy improved to 92%, markdown reduction of 25%, 30% reduction in excess inventory.",
+                    "scenario": "A fast-fashion retail company with 500+ stores and complex seasonal demand patterns requires SAP IBP to accurately anticipate real-time demand from point-of-sale data, adjust production and procurement in real-time, and minimize markdowns through accurate demand forecasting.",
                     "description": "A fast-fashion retail company needs SAP IBP to sense real-time demand from point-of-sale data and adjust production/procurement.",
                     "responsibilities": [
                         "Integrate real-time POS data into demand planning",
@@ -719,6 +721,7 @@ export const ibpContent = {
                     "role": "Supply Chain Consultant",
                     "title": "Manufacturing Company's Production Optimization",
                     "outcome": "On-time delivery improved from 85% to 98%, production lead time reduced by 30%, inventory reduction of 15%.",
+                    "scenario": "An assembly company with complex bill of materials and capacity constraints needs SAP IBP to optimize production planning, manage raw material procurement, and minimize production delays through better demand visibility and constraint-based planning.",
                     "description": "A discrete manufacturing company needs SAP IBP to optimize production planning and manage capacity constraints.",
                     "responsibilities": [
                         "Design demand forecasting with product mix analysis",
@@ -733,6 +736,7 @@ export const ibpContent = {
                     "role": "Solution Architect",
                     "title": "Pharmaceutical Company's Regulatory-Compliant Planning",
                     "outcome": "94% forecast accuracy, 20% reduction in expired inventory, 100% regulatory compliance, 99% schedule adherence.",
+                    "scenario": "An innovative pharmaceutical manufacturer with multiple product portfolios, lengthy lead times and stringent regulatory requirements requires SAP IBP to improve demand forecasting accuracy, optimize production schedules while meeting regulatory compliance, and manage expiry-based inventory effectively.",
                     "description": "A pharma manufacturer needs SAP IBP to improve forecast accuracy while maintaining compliance and managing expiry-based inventory.",
                     "responsibilities": [
                         "Design forecasting incorporating regulatory requirements",
@@ -747,6 +751,29 @@ export const ibpContent = {
         },
         {
             "type": "detailed_certification",
+            "items": [
+                {
+                    "who": "Validates expertise in implementing and managing end-to-end planning processes using SAP IBP",
+                    "code": "C_IBP_2402",
+                    "focus": "Demand planning, supply planning, inventory optimization, S&OP, planning areas & key figures",
+                    "title": "SAP Certified Application Associate – SAP IBP for Supply Chain",
+                    "relevance": "Supply chain planners and SAP IBP functional consultants"
+                },
+                {
+                    "who": "Demonstrates capability to configure and optimize demand planning solutions within SAP IBP",
+                    "code": "C_IBP_2311",
+                    "focus": "Forecast models, demand sensing, statistical forecasting, alerts, analytics & dashboards\n",
+                    "title": "SAP Certified Application Associate – SAP IBP for Demand Planning",
+                    "relevance": "Demand planners, forecasting analysts, and SAP IBP consultants"
+                },
+                {
+                    "who": "Confirms skills required to manage supply network planning and real-time response processes in SAP IBP",
+                    "code": "C_IBP_2305",
+                    "focus": "Supply planning operator, heuristics, deployment, order-based planning, scenario simulation",
+                    "title": "SAP Certified Application Associate – SAP IBP for Response & Supply Planning",
+                    "relevance": "Supply chain professionals and SAP IBP implementation consultants"
+                }
+            ],
             "stats": [
                 {
                     "label": "Exam Code",
@@ -975,8 +1002,8 @@ export const ibpContent = {
                     "color": "orange",
                     "title": "Immediate Post-Training",
                     "points": [
-                        "Receive course completion certificate",
-                        "Access lifetime course materials/recordings",
+                        "Receive SAP IBP certification",
+                        "Access lifetime SAP IBP course materials/recordings",
                         "Join alumni network and forum",
                         "Start building planning project portfolio"
                     ],
@@ -1012,7 +1039,7 @@ export const ibpContent = {
                     "points": [
                         "Learn client business/planning processes",
                         "Lead demand/supply configurations",
-                        "support S&OP cycle setup",
+                        "Support S&OP cycle setup",
                         "Drive process improvements"
                     ],
                     "timeline": "Year 1"
@@ -1276,9 +1303,9 @@ export const ibpContent = {
                 },
                 {
                     "a": "SAP IBP is a high-demand strategic planning tool with significant market adoption—300%+ increase in job openings, fewer qualified professionals, premium salaries (15-30% higher than traditional supply chain roles), and expanding opportunities across all industries.",
-                    "q": "What makes SAP IBP a lucrative career choice in 2025?",
+                    "q": "What makes SAP IBP a lucrative career choice?",
                     "answer": "SAP IBP is a high-demand strategic planning tool with significant market adoption—300%+ increase in job openings, fewer qualified professionals, premium salaries (15-30% higher than traditional supply chain roles), and expanding opportunities across all industries.",
-                    "question": "What makes SAP IBP a lucrative career choice in 2025?"
+                    "question": "What makes SAP IBP a lucrative career choice?"
                 },
                 {
                     "a": "The average timeline from course completion to first SAP IBP role is 2-3 months with active job search and career support from ERPVITS. Many learners secure opportunities within 4-8 weeks of certification completion.",
