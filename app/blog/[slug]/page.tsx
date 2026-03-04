@@ -236,7 +236,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                             {/* Content Rendering */}
                             <div className="prose prose-lg prose-slate max-w-none 
                                 prose-headings:text-slate-900 prose-headings:font-bold 
-                                prose-a:text-orange-600 hover:prose-a:text-orange-700 
+                                [&_a]:!text-[#F58220] [&_a]:!font-semibold [&_a]:!no-underline hover:[&_a]:!text-[#e57a1e] 
                                 prose-img:rounded-2xl prose-img:shadow-lg prose-img:my-10
                                 prose-p:leading-relaxed prose-p:text-slate-600
                                 prose-li:text-slate-600 prose-strong:text-slate-900 blog-content-area

@@ -221,6 +221,10 @@ export const ibpContent = {
                 {
                     "label": "Hands-On Lab Exercises",
                     "value": "65+"
+                },
+                {
+                    "label": "SAP IBP Lab Access",
+                    "value": "24/7"
                 }
             ],
             "title": "What's Included in the SAP IBP Training",

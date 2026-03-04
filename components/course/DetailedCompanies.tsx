@@ -79,7 +79,7 @@ export default function DetailedCompanies({ courseName = "SAP", customData }: { 
                 <div className="space-y-4">
                     {/* Tier 1 */}
                     <div className="flex flex-col md:flex-row gap-4">
-                        <div className={`${data.tier1.color} text-white p-6 md:w-80 rounded-lg flex items-center justify-center md:justify-start font-bold text-lg shadow-sm`}>
+                        <div className={`bg-slate-600 text-white p-6 md:w-80 rounded-lg flex items-center justify-center md:justify-start font-bold text-lg shadow-sm`}>
                             {data.tier1.title}
                         </div>
                         <div className="flex-1 flex flex-wrap gap-3 items-center bg-white border border-slate-100 p-4 rounded-lg shadow-sm">
@@ -93,7 +93,7 @@ export default function DetailedCompanies({ courseName = "SAP", customData }: { 
 
                     {/* Tier 2 */}
                     <div className="flex flex-col md:flex-row gap-4">
-                        <div className={`${data.tier2.color} text-white p-6 md:w-80 rounded-lg flex items-center justify-center md:justify-start font-bold text-lg shadow-sm`}>
+                        <div className={`bg-orange-500 text-white p-6 md:w-80 rounded-lg flex items-center justify-center md:justify-start font-bold text-lg shadow-sm`}>
                             {data.tier2.title}
                         </div>
                         <div className="flex-1 flex flex-wrap gap-3 items-center bg-white border border-slate-100 p-4 rounded-lg shadow-sm">
@@ -107,7 +107,7 @@ export default function DetailedCompanies({ courseName = "SAP", customData }: { 
 
                     {/* Tier 3 */}
                     <div className="flex flex-col md:flex-row gap-4">
-                        <div className={`${data.tier3.color} text-white p-6 md:w-80 rounded-lg flex items-center justify-center md:justify-start font-bold text-lg shadow-sm`}>
+                        <div className={`bg-slate-600 text-white p-6 md:w-80 rounded-lg flex items-center justify-center md:justify-start font-bold text-lg shadow-sm`}>
                             {data.tier3.title}
                         </div>
                         <div className="flex-1 flex flex-wrap gap-3 items-center bg-white border border-slate-100 p-4 rounded-lg shadow-sm">
@@ -121,7 +121,7 @@ export default function DetailedCompanies({ courseName = "SAP", customData }: { 
 
                     {/* Tier 4 */}
                     <div className="flex flex-col md:flex-row gap-4">
-                        <div className={`${data.tier4.color} text-white p-6 md:w-80 rounded-lg flex items-center justify-center md:justify-start font-bold text-lg shadow-sm`}>
+                        <div className={`bg-orange-500 text-white p-6 md:w-80 rounded-lg flex items-center justify-center md:justify-start font-bold text-lg shadow-sm`}>
                             {data.tier4.title}
                         </div>
                         <div className="flex-1 flex flex-wrap gap-3 items-center bg-white border border-slate-100 p-4 rounded-lg shadow-sm">
@@ -136,7 +136,7 @@ export default function DetailedCompanies({ courseName = "SAP", customData }: { 
                     {/* Tier 5 */}
                     {data.tier5 && (
                         <div className="flex flex-col md:flex-row gap-4">
-                            <div className={`${data.tier5.color} text-white p-6 md:w-80 rounded-lg flex items-center justify-center md:justify-start font-bold text-lg shadow-sm`}>
+                            <div className={`bg-slate-600 text-white p-6 md:w-80 rounded-lg flex items-center justify-center md:justify-start font-bold text-lg shadow-sm`}>
                                 {data.tier5.title}
                             </div>
                             <div className="flex-1 flex flex-wrap gap-3 items-center bg-white border border-slate-100 p-4 rounded-lg shadow-sm">
