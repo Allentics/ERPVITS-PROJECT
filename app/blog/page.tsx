@@ -14,13 +14,18 @@ export const metadata: Metadata = {
 
 
 function formatDate(dateStr: string) {
-    const date = new Date(dateStr);
+    const isISODate = dateStr.includes('T');
+    const parseableStr = isISODate ? dateStr : `${dateStr} UTC`;
+    const date = new Date(parseableStr);
+
     if (isNaN(date.getTime())) {
         return { day: '00', month: 'JAN', weekday: 'MONDAY' };
     }
-    const day = date.getDate().toString().padStart(2, '0');
-    const month = date.toLocaleDateString('en-US', { month: 'long' }).toUpperCase();
-    const weekday = date.toLocaleDateString('en-US', { weekday: 'long' }).toUpperCase();
+
+    const day = date.getUTCDate().toString().padStart(2, '0');
+    const month = date.toLocaleDateString('en-US', { month: 'long', timeZone: 'UTC' }).toUpperCase();
+    const weekday = date.toLocaleDateString('en-US', { weekday: 'long', timeZone: 'UTC' }).toUpperCase();
+
     return { day, month, weekday };
 }
 
