@@ -52,7 +52,7 @@ export default async function ContactPage() {
                                 </div>
                                 <div>
                                     <h3 className="font-semibold text-gray-900">Phone & WhatsApp</h3>
-                                    <p className="text-gray-600">+91 8600 5600 70</p>
+                                    <a href="tel:+918408878222" className="text-orange-600 hover:text-orange-700 font-medium block mb-1">+91 84088 78222</a>
                                     <p className="text-sm text-gray-500">Available 9 AM - 9 PM IST</p>
                                 </div>
                             </div>
@@ -63,7 +63,7 @@ export default async function ContactPage() {
                                 </div>
                                 <div>
                                     <h3 className="font-semibold text-gray-900">Email</h3>
-                                    <a href="mailto:info@erpvits.com" className="text-gray-600 hover:text-blue-600">info@erpvits.com</a>
+                                    <a href="mailto:info@erpvits.com" className="text-orange-600 hover:text-orange-700 font-medium block mb-1">info@erpvits.com</a>
                                     <p className="text-sm text-gray-500">We reply within 2 hours.</p>
                                 </div>
                             </div>
@@ -75,9 +75,9 @@ export default async function ContactPage() {
                                 <div>
                                     <h3 className="font-semibold text-gray-900">Training Center</h3>
                                     <p className="text-gray-600">
-                                        ERPVITS Global Headquarters<br />
-                                        Hitech City, Hyderabad,<br />
-                                        India - 500081
+                                        Vintage IT Solutions,<br />
+                                        Wakad, Pune.<br />
+                                        411057
                                     </p>
                                 </div>
                             </div>

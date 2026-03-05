@@ -254,8 +254,55 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     </div>
 
                     {/* Sidebar (Right) */}
-                    <div className="lg:col-span-4 relative">
-                        <div className="sticky top-32 h-fit mb-12">
+                    <div className="lg:col-span-4 space-y-8">
+                        {/* CATEGORIES / Related Blogs Section */}
+                        {relatedPosts && relatedPosts.length > 0 && (
+                            <div className="bg-white rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-slate-100 p-8">
+                                <h3 className="text-lg font-bold text-slate-900 uppercase tracking-wider mb-6 relative inline-block">
+                                    CATEGORIES
+                                    <span className="absolute -bottom-2 left-0 w-12 h-1 bg-orange-500 rounded-full"></span>
+                                </h3>
+                                <ul className="space-y-4 mt-4">
+                                    {relatedPosts.map((related: any) => (
+                                        <li key={related.id} className="border-b border-slate-50 last:border-0 pb-3 last:pb-0">
+                                            <Link 
+                                                href={`/blog/${related.id}`}
+                                                className="text-slate-600 hover:text-orange-500 font-medium transition-colors leading-tight block"
+                                            >
+                                                {related.title}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+
+                            {/* All Categories Section (Optional Fallback) */}
+                            {(!relatedPosts || relatedPosts.length === 0) && categories && categories.length > 0 && (
+                            <div className="bg-white rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-slate-100 p-8">
+                                <h3 className="text-lg font-bold text-slate-900 uppercase tracking-wider mb-6 relative inline-block">
+                                    ALL CATEGORIES
+                                    <span className="absolute -bottom-2 left-0 w-12 h-1 bg-orange-500 rounded-full"></span>
+                                </h3>
+                                <ul className="space-y-4 mt-4">
+                                    {categories.slice(0, 5).map((category: any) => (
+                                        <li key={category.name} className="flex justify-between items-center border-b border-slate-50 last:border-0 pb-3 last:pb-0">
+                                            <Link 
+                                                href={`/blog?category=${encodeURIComponent(category.name)}`}
+                                                className="text-slate-600 hover:text-orange-500 font-medium transition-colors"
+                                            >
+                                                {category.name}
+                                            </Link>
+                                            <span className="bg-slate-100 text-slate-500 text-xs px-2 py-1 rounded-full font-bold">
+                                                {category.count}
+                                            </span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+
+                        <div className="sticky top-32">
                             <BlogContactForm slug={slug} />
                         </div>
                     </div>
