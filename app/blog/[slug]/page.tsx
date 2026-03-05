@@ -33,6 +33,7 @@ import SapConsultantSalaryGuideContent from '@/components/blog/SapConsultantSala
 import SapFioriAppsLibraryContent from '@/components/blog/SapFioriAppsLibraryContent';
 import SapBtpCockpitContent from '@/components/blog/SapBtpCockpitContent';
 import { Metadata } from 'next';
+import InteractiveBlogContent from '@/components/blog/InteractiveBlogContent';
 
 export const dynamic = 'force-dynamic';
 
@@ -245,7 +246,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                                 {LegacyComponent ? (
                                     <LegacyComponent />
                                 ) : (
-                                    <div dangerouslySetInnerHTML={{ __html: post.content }} />
+                                    <InteractiveBlogContent content={post.content} title={post.title} />
                                 )}
                             </div>
                         </article>
