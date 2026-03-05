@@ -98,7 +98,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
     if (dbPost) {
         const localPost = localPosts.find((p: any) => p.id === slug);
-        post = localPost ? { ...dbPost, ...localPost } : dbPost;
+        const validDbProps = Object.fromEntries(Object.entries(dbPost).filter(([_, v]) => v !== null && v !== ''));
+        post = localPost ? { ...localPost, ...validDbProps } : dbPost;
     } else {
         // Fallback to local posts
         post = localPosts.find((p: any) => p.id === slug);

@@ -57,10 +57,10 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
     if (dbPosts) {
         dbPosts.forEach((post: any) => {
             const localPost = mergedPostsMap.get(post.id);
-            // If local post exists, prioritize local properties (image, date, description, etc.)
-            // to ensure consistency when DB updates are restricted
+            // If local post exists, prioritize DB properties (like date) but fallback to local properties for missing data
             if (localPost) {
-                mergedPostsMap.set(post.id, { ...post, ...localPost });
+                const validDbProps = Object.fromEntries(Object.entries(post).filter(([_, v]) => v !== null && v !== ''));
+                mergedPostsMap.set(post.id, { ...localPost, ...validDbProps });
             } else {
                 mergedPostsMap.set(post.id, post);
             }
