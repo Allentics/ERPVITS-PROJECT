@@ -130,6 +130,26 @@ const STORY_CONTENT: Record<number, any[]> = {
         { id: 701, image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", title: "Resume that Hires", content: "Recruiters spend 6 seconds on a resume. Make yours count with clear formatting.", duration: 5000 },
         { id: 702, image: "https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", title: "Keywords are Key", content: "Use standard SAP terminology. 'Order to Cash', not 'Sales Process'.", duration: 5000 },
         { id: 703, image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", title: "Project Highlights", content: "List your specific contributions. 'Configured APP' is better than 'Worked in FICO'.", duration: 5000 },
+    ],
+    8: [ // Cloud vs On-Premise
+        { id: 801, image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop", title: "Cloud Deployment", content: "SAP Cloud brings faster innovation cycles and lower total cost of ownership.", duration: 5000 },
+        { id: 802, image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop", title: "On-Premise Flexibility", content: "For heavy customizations or strict data privacy regulations, On-Premise still reigns.", duration: 5000 },
+        { id: 803, image: "https://images.unsplash.com/photo-1504384308090-c54be3855833?q=80&w=1974&auto=format&fit=crop", title: "Hybrid Solutions", content: "The reality for most large enterprises: A mix of both worlds connected via BTP.", duration: 5000 },
+    ],
+    9: [ // SAP Certification Path
+        { id: 901, image: "https://images.unsplash.com/photo-1523289333742-be1143f6b766?q=80&w=2070&auto=format&fit=crop", title: "Start With the Basics", content: "Understand the end-to-end business processes before diving into specific modules.", duration: 5000 },
+        { id: 902, image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop", title: "Choose Your Track", content: "Pick a module that aligns with your background: Finance for FICO, Supply Chain for MM.", duration: 5000 },
+        { id: 903, image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop", title: "Get Certified", content: "Leverage SAP Learning Hub and book your C_TS4FI or C_TS452 exam today.", duration: 5000 },
+    ],
+    10: [ // Future of SAP: AI & BTP
+        { id: 1001, image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop", title: "Joule AI", content: "SAP's new generative AI copilot is changing how users interact with ERP data.", duration: 5000 },
+        { id: 1002, image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop", title: "Clean Core Strategy", content: "Use SAP BTP for extensions to ensure smooth, seamless upgrades in the future.", duration: 5000 },
+        { id: 1003, image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop", title: "Predictive Analytics", content: "Machine Learning models inside S/4HANA are automating routine decision making.", duration: 5000 },
+    ],
+    11: [ // Resume Tips for SAP Freshers
+        { id: 1101, image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=2070&auto=format&fit=crop", title: "Highlight Training", content: "No project experience? Detail the capstone projects and server practice from your training.", duration: 5000 },
+        { id: 1102, image: "https://images.unsplash.com/photo-1507206130118-b5907f817163?q=80&w=2070&auto=format&fit=crop", title: "Focus on Integration", content: "Explain how your module interacts with others. Show you understand the big picture.", duration: 5000 },
+        { id: 1103, image: "https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=2070&auto=format&fit=crop", title: "Soft Skills Matter", content: "Consulting is about communication. Highlight your client-facing or presentation skills.", duration: 5000 },
     ]
 };
 
@@ -398,19 +418,13 @@ export default function StoryViewer({ stories, initialStoryIndex, onClose }: Sto
                 </div>
 
                 {/* Footer Engagement (Bottom) */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 pb-8 z-20 bg-gradient-to-t from-black/90 to-transparent flex items-center gap-4">
-                    <div className="flex-1 bg-white/10 backdrop-blur-sm rounded-full h-12 flex items-center px-4 border border-white/20">
-                        <input
-                            type="text"
-                            placeholder="Send a message..."
-                            className="bg-transparent text-white placeholder-white/50 text-sm w-full outline-none"
-                            onFocus={() => setIsPaused(true)}
-                            onBlur={() => setIsPaused(false)}
-                        />
-                    </div>
-                    <button className="text-white hover:text-pink-500 transition-colors">
-                        <Heart size={28} />
-                    </button>
+                <div className="absolute bottom-0 left-0 right-0 p-4 pb-8 z-20 bg-gradient-to-t from-black/90 to-transparent flex items-center justify-between gap-4">
+                    <a
+                        href="/" 
+                        className="flex-1 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full h-12 flex items-center justify-center px-4 border border-white/20 text-white font-bold transition-colors"
+                    >
+                        Visit Website
+                    </a>
                     <button className="text-white hover:text-blue-400 transition-colors">
                         <Send size={28} />
                     </button>
