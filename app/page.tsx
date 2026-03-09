@@ -3,22 +3,25 @@ import UrgencySection from '@/components/home/UrgencySection';
 import WhyChooseUs from '@/components/home/WhyChooseUs';
 import CustomTrainingPlan from '@/components/home/CustomTrainingPlan';
 import FeaturedCourses from '@/components/home/FeaturedCourses';
-import PlacementSection from '@/components/home/PlacementSection';
-import ProvenResults from '@/components/home/ProvenResults';
-import CareerAdvisors from '@/components/home/CareerAdvisors';
-import ROICalculator from '@/components/home/ROICalculator';
-import CompetitiveAdvantage from '@/components/home/CompetitiveAdvantage';
-import LatestInsights from '@/components/home/LatestInsights';
-import UpcomingWebinars from '@/components/home/UpcomingWebinars';
-import AlumniCommunity from '@/components/home/AlumniCommunity';
-import SuccessStories from '@/components/home/SuccessStories';
-import PricingPlans from '@/components/home/PricingPlans';
-import HomeFAQ from '@/components/home/HomeFAQ';
+import dynamic from 'next/dynamic';
 import { fetchPageMetadata, fetchPageSchema } from '@/lib/metadata';
 import { Metadata } from 'next';
 
-export const dynamic = 'force-dynamic';
-export const revalidate = 0;
+// Lazy load below-the-fold sections to reduce initial bundle
+const PlacementSection = dynamic(() => import('@/components/home/PlacementSection'));
+const ProvenResults = dynamic(() => import('@/components/home/ProvenResults'));
+const CareerAdvisors = dynamic(() => import('@/components/home/CareerAdvisors'));
+const ROICalculator = dynamic(() => import('@/components/home/ROICalculator'));
+const CompetitiveAdvantage = dynamic(() => import('@/components/home/CompetitiveAdvantage'));
+const LatestInsights = dynamic(() => import('@/components/home/LatestInsights'));
+const UpcomingWebinars = dynamic(() => import('@/components/home/UpcomingWebinars'));
+const AlumniCommunity = dynamic(() => import('@/components/home/AlumniCommunity'));
+const SuccessStories = dynamic(() => import('@/components/home/SuccessStories'));
+const PricingPlans = dynamic(() => import('@/components/home/PricingPlans'));
+const HomeFAQ = dynamic(() => import('@/components/home/HomeFAQ'));
+
+// ISR: Revalidate every hour instead of re-rendering on every request
+export const revalidate = 3600;
 
 export async function generateMetadata(): Promise<Metadata> {
   const meta = await fetchPageMetadata('/');

@@ -6,7 +6,11 @@ import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import WebinarPopup from '@/components/WebinarPopup'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+})
 
 export const metadata: Metadata = {
   title: 'ERPVITS - Expert SAP Online Training Institute',
@@ -20,6 +24,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Preconnect to external origins for faster resource loading */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://xhomvyelpggegzxapbiy.supabase.co" />
+      </head>
       <body className={inter.className} suppressHydrationWarning>
         <AnnouncementBar />
         <Navbar />
@@ -32,3 +42,4 @@ export default function RootLayout({
     </html>
   )
 }
+

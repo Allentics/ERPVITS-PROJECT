@@ -29,7 +29,7 @@ function formatDate(dateStr: string) {
     return { day, month, weekday };
 }
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 3600; // Revalidate every 1 hour (ISR)
 
 export default async function BlogPage({ searchParams }: { searchParams: Promise<{ category?: string }> }) {
     const { category: filterCategory } = await searchParams;

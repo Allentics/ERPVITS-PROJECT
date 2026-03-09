@@ -12,7 +12,7 @@ const companiesData: CompaniesData = {
     tier2: {
         title: "Tier 2 - Enterprise SAP Implementation Partners",
         companies: ["Infosys", "Wipro", "Capgemini", "TCS", "HCL Tech", "Tech Mahindra"],
-        color: "bg-orange-500",
+        color: "bg-orange-400",
         lightColor: "bg-orange-50"
     },
     tier3: {
@@ -24,7 +24,7 @@ const companiesData: CompaniesData = {
     tier4: {
         title: "Tier 4 - Mid-Market & Regional Leaders",
         companies: ["Regional consulting firms", "Industry specific service providers", "In-house procurement teams", "SAP system integrators"],
-        color: "bg-orange-500",
+        color: "bg-orange-100",
         lightColor: "bg-orange-50"
     },
     tier5: {
@@ -93,7 +93,7 @@ export default function DetailedCompanies({ courseName = "SAP", customData }: { 
 
                     {/* Tier 2 */}
                     <div className="flex flex-col md:flex-row gap-4">
-                        <div className={`bg-orange-500 text-white p-6 md:w-80 rounded-lg flex items-center justify-center md:justify-start font-bold text-lg shadow-sm`}>
+                        <div className={`bg-orange-400 text-white p-6 md:w-80 rounded-lg flex items-center justify-center md:justify-start font-bold text-lg`}>
                             {data.tier2.title}
                         </div>
                         <div className="flex-1 flex flex-wrap gap-3 items-center bg-white border border-slate-100 p-4 rounded-lg shadow-sm">
@@ -121,7 +121,7 @@ export default function DetailedCompanies({ courseName = "SAP", customData }: { 
 
                     {/* Tier 4 */}
                     <div className="flex flex-col md:flex-row gap-4">
-                        <div className={`bg-orange-500 text-white p-6 md:w-80 rounded-lg flex items-center justify-center md:justify-start font-bold text-lg shadow-sm`}>
+                        <div className={`bg-orange-400 text-white p-6 md:w-80 rounded-lg flex items-center justify-center md:justify-start font-bold text-lg`}>
                             {data.tier4.title}
                         </div>
                         <div className="flex-1 flex flex-wrap gap-3 items-center bg-white border border-slate-100 p-4 rounded-lg shadow-sm">

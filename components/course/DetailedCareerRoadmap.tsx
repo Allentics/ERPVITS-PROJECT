@@ -56,7 +56,7 @@ export default function DetailedCareerRoadmap({ items, stats, alumniCount = "800
                     <div className="grid grid-cols-3 gap-6 max-w-4xl mx-auto">
                         {currentStats.map((stat: any, idx: number) => (
                             <div key={idx} className="bg-gray-50 p-6 rounded-xl text-center">
-                                <div className={`text-2xl font-bold mb-1 ${idx === 0 ? 'text-[#ff4500]' : idx === 1 ? 'text-blue-600' : 'text-purple-600'}`}>{stat.value}</div>
+                                <div className={`text-2xl font-bold mb-1 ${idx === 0 ? 'text-orange-500' : idx === 1 ? 'text-blue-600' : 'text-purple-600'}`}>{stat.value}</div>
                                 <div className="text-xs text-slate-500 font-medium">{stat.label}</div>
                             </div>
                         ))}
@@ -68,23 +68,23 @@ export default function DetailedCareerRoadmap({ items, stats, alumniCount = "800
                 {/* 3. Hiring Trends */}
 
                 {/* 4. Alumni Network Banner */}
-                <div className="bg-orange-500 rounded-2xl p-8 md:p-12 text-center text-white shadow-xl relative overflow-hidden">
+                <div className="bg-orange-50 border border-orange-200 rounded-2xl p-8 md:p-12 text-center relative overflow-hidden">
                     <div className="relative z-10">
-                        <h3 className="text-2xl md:text-3xl font-bold mb-2">Join Our Successful Alumni Network</h3>
-                        <p className="text-orange-50 mb-8 max-w-2xl mx-auto text-sm">Our graduates are working at top companies worldwide. Fast-track your career with ERPVITS training and join this elite network of professionals.</p>
+                        <h3 className="text-2xl md:text-3xl font-bold mb-2 text-slate-900">Join Our Successful Alumni Network</h3>
+                        <p className="text-slate-600 mb-8 max-w-2xl mx-auto text-sm">Our graduates are working at top companies worldwide. Fast-track your career with ERPVITS training and join this elite network of professionals.</p>
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto border-t border-white/20 pt-8 mt-4">
-                            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/10 shadow-lg">
-                                <div className="text-3xl md:text-4xl font-bold mb-1 text-white">{alumniCount}</div>
-                                <div className="text-xs md:text-sm text-orange-50/90 font-medium">Alumni Placed</div>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto border-t border-orange-200 pt-8 mt-4">
+                            <div className="bg-white p-6 rounded-2xl border border-orange-100 shadow-sm">
+                                <div className="text-3xl md:text-4xl font-bold mb-1 text-orange-500">{alumniCount}</div>
+                                <div className="text-xs md:text-sm text-slate-600 font-medium">Alumni Placed</div>
                             </div>
-                            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/10 shadow-lg">
-                                <div className="text-3xl md:text-4xl font-bold mb-1 text-white">98%</div>
-                                <div className="text-xs md:text-sm text-orange-50/90 font-medium">Success Rate</div>
+                            <div className="bg-white p-6 rounded-2xl border border-orange-100 shadow-sm">
+                                <div className="text-3xl md:text-4xl font-bold mb-1 text-orange-500">98%</div>
+                                <div className="text-xs md:text-sm text-slate-600 font-medium">Success Rate</div>
                             </div>
-                            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/10 shadow-lg">
-                                <div className="text-3xl md:text-4xl font-bold mb-1 text-white">3 Months</div>
-                                <div className="text-xs md:text-sm text-orange-50/90 font-medium">Average Job Time</div>
+                            <div className="bg-white p-6 rounded-2xl border border-orange-100 shadow-sm">
+                                <div className="text-3xl md:text-4xl font-bold mb-1 text-orange-500">3 Months</div>
+                                <div className="text-xs md:text-sm text-slate-600 font-medium">Average Job Time</div>
                             </div>
                         </div>
                     </div>

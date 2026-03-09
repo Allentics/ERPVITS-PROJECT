@@ -117,7 +117,7 @@ export default function DetailedPostTrainingJourney({ title, steps: propSteps, i
             <div className="max-w-5xl mx-auto px-4">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <span className="bg-[#ff4500]/10 text-[#ff4500] px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block">
+                    <span className="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block">
                         Your Career Journey
                     </span>
                     <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
@@ -144,7 +144,7 @@ export default function DetailedPostTrainingJourney({ title, steps: propSteps, i
                             <div key={idx} className="relative pl-0 md:pl-20">
                                 {/* Icon Marker */}
                                 <div className={`hidden md:flex absolute left-0 w-12 h-12 rounded-full border-4 border-white shadow-sm items-center justify-center z-10 
-                                    ${step.color === 'orange' ? 'bg-[#ff4500] text-white' : 'bg-slate-800 text-white'}`}>
+                                    ${step.color === 'orange' ? 'bg-orange-500 text-white' : 'bg-slate-800 text-white'}`}>
                                     <Icon className="w-6 h-6" />
                                 </div>
 
@@ -153,13 +153,13 @@ export default function DetailedPostTrainingJourney({ title, steps: propSteps, i
                                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 border-b border-slate-100 pb-4">
                                         <div className="flex items-center gap-4">
                                             <div className={`md:hidden w-10 h-10 rounded-full flex items-center justify-center text-white
-                                                ${step.color === 'orange' ? 'bg-[#ff4500]' : 'bg-slate-800'}`}>
+                                                ${step.color === 'orange' ? 'bg-orange-500' : 'bg-slate-800'}`}>
                                                 <Icon className="w-5 h-5" />
                                             </div>
                                             <h3 className="text-lg font-bold text-slate-900">{step.title}</h3>
                                         </div>
                                         {step.timeline && (
-                                            <span className="text-xs font-bold text-[#ff4500] bg-[#ff4500]/10 px-3 py-1 rounded-full border border-[#ff4500]/10 inline-block w-fit">
+                                            <span className="text-xs font-bold text-orange-500 bg-orange-100 px-3 py-1 rounded-full border border-orange-200 inline-block w-fit">
                                                 {step.timeline}
                                             </span>
                                         )}
@@ -235,7 +235,7 @@ export default function DetailedPostTrainingJourney({ title, steps: propSteps, i
                     <p className="text-slate-500 text-sm mb-6">Ready to start your {courseName} career journey?</p>
                     <button
                         onClick={scrollToBatches}
-                        className="bg-[#ff4500] hover:bg-[#cc3700] text-white font-bold py-4 px-10 rounded-xl shadow-lg transition-all"
+                        className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-10 rounded-xl shadow-lg transition-all"
                     >
                         Enroll in Next Batch
                     </button>

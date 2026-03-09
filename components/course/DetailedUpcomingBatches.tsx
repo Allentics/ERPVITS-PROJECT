@@ -127,20 +127,20 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
     const features = propFeatures || defaultFeatures;
 
     return (
-        <section id="upcoming-batches" className="py-12 bg-[#ff4500]/10 relative overflow-hidden">
+        <section id="upcoming-batches" className="py-12 bg-white relative overflow-hidden">
             {/* Background Decorations */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-[#ff4500]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#ff4500]/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+            <div className="absolute top-0 right-0 w-96 h-96 bg-orange-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-50 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
 
             <div className="max-w-7xl mx-auto px-4 relative z-10">
 
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <span className="bg-[#ff4500] text-white px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block shadow-lg shadow-orange-600/20">
+                    <span className="bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block">
                         Limited Seats Available
                     </span>
                     <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
-                        Join Our Next Live Batch – <span className="text-[#ff4500]">
+                        Join Our Next Live Batch – <span className="text-orange-500">
                             {courseName.toLowerCase().includes('training') ? courseName : `${courseName} Training`}
                         </span>
                     </h2>
@@ -152,10 +152,10 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
                 {/* Batches Grid */}
                 <div className="grid md:grid-cols-3 gap-6 mb-16">
                     {batches.map((batch, idx) => {
-                        const statusColor = batch.status === 'filling-fast' ? 'bg-red-100 text-red-600' : 'bg-[#ff4500]/10 text-[#ff4500]';
+                        const statusColor = batch.status === 'filling-fast' ? 'bg-red-100 text-red-600' : 'bg-orange-100 text-orange-600';
 
                         return (
-                            <div key={idx} className="bg-white rounded-2xl p-6 text-slate-900 shadow-xl border border-[#ff4500]/10 flex flex-col h-full">
+                            <div key={idx} className="bg-white rounded-2xl p-6 text-slate-900 shadow-xl border border-orange-100 flex flex-col h-full">
                                 <div className="flex justify-between items-start mb-4">
                                     <span className={`text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider ${batch.statusColor || statusColor}`}>
                                         {batch.status?.replace('-', ' ')}
@@ -171,21 +171,21 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
 
                                 <div className="space-y-4 mb-8 flex-grow">
                                     <div className="flex items-start gap-3">
-                                        <Calendar className="w-5 h-5 text-[#ff4500] flex-shrink-0 mt-0.5" />
+                                        <Calendar className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
                                         <div>
                                             <div className="text-[10px] font-bold text-slate-400 uppercase">Start Date</div>
                                             <div className="font-medium text-xs">{batch.date}</div>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-3">
-                                        <Clock className="w-5 h-5 text-[#ff4500] flex-shrink-0 mt-0.5" />
+                                        <Clock className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
                                         <div>
                                             <div className="text-[10px] font-bold text-slate-400 uppercase">Schedule</div>
                                             <div className="font-medium text-xs">{batch.schedule}</div>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-3">
-                                        <ShieldCheck className="w-5 h-5 text-[#ff4500] flex-shrink-0 mt-0.5" />
+                                        <ShieldCheck className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
                                         <div>
                                             <div className="text-[10px] font-bold text-slate-400 uppercase">Duration</div>
                                             <div className="font-medium text-xs">{batch.duration}</div>
@@ -196,13 +196,13 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
                                 <div className="mb-6">
                                     <div className="flex justify-between text-[10px] font-medium text-slate-500 mb-2">
                                         <span>Seats Available</span>
-                                        <span className={batch.status === 'filling-fast' ? 'text-red-500 font-bold' : 'text-[#ff4500]'}>
+                                        <span className={batch.status === 'filling-fast' ? 'text-red-500 font-bold' : 'text-orange-500'}>
                                             {batch.seatsText}
                                         </span>
                                     </div>
                                     <div className="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
                                         <div
-                                            className={`h-full rounded-full ${batch.status === 'filling-fast' ? 'bg-red-500' : 'bg-[#ff4500]'}`}
+                                            className={`h-full rounded-full ${batch.status === 'filling-fast' ? 'bg-red-500' : 'bg-orange-500'}`}
                                             style={{ width: `${batch.seatsFilledNormalized}%` }}
                                         ></div>
                                     </div>
@@ -210,7 +210,7 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
 
                                 <button
                                     onClick={handleRegisterClick}
-                                    className="w-full bg-[#ff4500] hover:bg-[#cc3700] text-white font-bold py-3 rounded-lg shadow-md transition-all text-sm uppercase tracking-wide"
+                                    className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-lg shadow-md transition-all text-sm uppercase tracking-wide"
                                 >
                                     Register Now
                                 </button>
@@ -222,13 +222,13 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
                 {/* Self-Paced Learning Option Section */}
                 <div className="relative bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl overflow-hidden shadow-2xl max-w-5xl mx-auto">
                     {/* Decorative glow */}
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-[#ff4500]/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
                     <div className="absolute bottom-0 left-0 w-48 h-48 bg-orange-500/10 rounded-full blur-2xl translate-y-1/2 -translate-x-1/4 pointer-events-none"></div>
 
                     <div className="relative z-10 p-8 md:p-12 flex flex-col md:flex-row items-center gap-8">
                         {/* Icon */}
-                        <div className="flex-shrink-0 w-16 h-16 rounded-2xl bg-[#ff4500]/20 border border-[#ff4500]/30 flex items-center justify-center shadow-lg">
-                            <PlayCircle className="w-8 h-8 text-[#ff4500]" />
+                        <div className="flex-shrink-0 w-16 h-16 rounded-2xl bg-orange-500/20 border border-orange-300/30 flex items-center justify-center shadow-lg">
+                            <PlayCircle className="w-8 h-8 text-orange-500" />
                         </div>
 
                         {/* Content */}
@@ -237,7 +237,7 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
                                 Self-Paced Learning Option
                             </h3>
                             <p className="text-slate-300 text-sm md:text-base leading-relaxed mb-2">
-                                Prefer flexibility? Choose our <span className="text-[#ff4500] font-semibold">Self-Paced Learning Program</span> and master SAP at your own speed. Get lifetime access to high-quality recorded sessions.
+                                Prefer flexibility? Choose our <span className="text-orange-500 font-semibold">Self-Paced Learning Program</span> and master SAP at your own speed. Get lifetime access to high-quality recorded sessions.
                             </p>
                             <p className="text-slate-400 text-sm italic">
                                 Start anytime. Learn anywhere. Upgrade your career on your schedule.
@@ -248,7 +248,7 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
                         <div className="flex-shrink-0">
                             <button
                                 onClick={() => { setIsSelfPacedOpen(true); setSelfPacedStatus('idle'); setSelfPacedError(''); }}
-                                className="inline-flex items-center gap-2 px-7 py-4 bg-[#ff4500] hover:bg-[#cc3700] text-white font-bold rounded-xl shadow-lg shadow-[#ff4500]/30 transition-all hover:scale-105 active:scale-95 text-sm whitespace-nowrap"
+                                className="inline-flex items-center gap-2 px-7 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl shadow-lg transition-all hover:scale-105 active:scale-95 text-sm whitespace-nowrap"
                             >
                                 <PlayCircle className="w-5 h-5" />
                                 Get Instant Access to Full Course
@@ -274,7 +274,7 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
                 <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
                     <div className="bg-white rounded-3xl shadow-2xl w-full max-w-md relative overflow-hidden animate-in fade-in zoom-in duration-200">
                         {/* Top accent */}
-                        <div className="h-1.5 w-full bg-gradient-to-r from-[#ff4500] to-orange-400"></div>
+                        <div className="h-1.5 w-full bg-gradient-to-r from-orange-500 to-orange-400"></div>
 
                         {/* Close button */}
                         <button
@@ -287,8 +287,8 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
                         <div className="p-7">
                             {/* Form Header */}
                             <div className="flex items-center gap-3 mb-6">
-                                <div className="w-10 h-10 rounded-xl bg-[#ff4500]/10 flex items-center justify-center">
-                                    <PlayCircle className="w-5 h-5 text-[#ff4500]" />
+                                <div className="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center">
+                                    <PlayCircle className="w-5 h-5 text-orange-500" />
                                 </div>
                                 <div>
                                     <h3 className="text-xl font-extrabold text-slate-900">Enroll for Self-Paced Learning</h3>
@@ -303,7 +303,7 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
                                     <p className="text-slate-600 text-sm mb-6">Our team will contact you shortly with your access details.</p>
                                     <button
                                         onClick={() => setIsSelfPacedOpen(false)}
-                                        className="px-6 py-2.5 bg-[#ff4500] text-white font-bold rounded-xl hover:bg-[#cc3700] transition-colors"
+                                        className="px-6 py-2.5 bg-orange-500 text-white font-bold rounded-xl hover:bg-orange-600 transition-colors"
                                     >
                                         Close
                                     </button>
@@ -319,7 +319,7 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
 
                                     {/* Name */}
                                     <div>
-                                        <label className="block text-xs font-bold text-slate-700 mb-1">Full Name <span className="text-[#ff4500]">*</span></label>
+                                        <label className="block text-xs font-bold text-slate-700 mb-1">Full Name <span className="text-orange-500">*</span></label>
                                         <input
                                             type="text"
                                             name="name"
@@ -327,13 +327,13 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
                                             onChange={handleSelfPacedChange}
                                             required
                                             placeholder="Enter your full name"
-                                            className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-[#ff4500]/20 focus:border-[#ff4500] outline-none transition-all text-sm"
+                                            className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-orange-200 focus:border-orange-400 outline-none transition-all text-sm"
                                         />
                                     </div>
 
                                     {/* Phone */}
                                     <div>
-                                        <label className="block text-xs font-bold text-slate-700 mb-1">Phone Number <span className="text-[#ff4500]">*</span></label>
+                                        <label className="block text-xs font-bold text-slate-700 mb-1">Phone Number <span className="text-orange-500">*</span></label>
                                         <input
                                             type="tel"
                                             name="phone"
@@ -341,13 +341,13 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
                                             onChange={handleSelfPacedChange}
                                             required
                                             placeholder="Enter your phone number"
-                                            className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-[#ff4500]/20 focus:border-[#ff4500] outline-none transition-all text-sm"
+                                            className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-orange-200 focus:border-orange-400 outline-none transition-all text-sm"
                                         />
                                     </div>
 
                                     {/* Email */}
                                     <div>
-                                        <label className="block text-xs font-bold text-slate-700 mb-1">Email Address <span className="text-[#ff4500]">*</span></label>
+                                        <label className="block text-xs font-bold text-slate-700 mb-1">Email Address <span className="text-orange-500">*</span></label>
                                         <input
                                             type="email"
                                             name="email"
@@ -355,19 +355,19 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
                                             onChange={handleSelfPacedChange}
                                             required
                                             placeholder="Enter your email address"
-                                            className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-[#ff4500]/20 focus:border-[#ff4500] outline-none transition-all text-sm"
+                                            className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-orange-200 focus:border-orange-400 outline-none transition-all text-sm"
                                         />
                                     </div>
 
                                     {/* Select Module */}
                                     <div>
-                                        <label className="block text-xs font-bold text-slate-700 mb-1">Select Module <span className="text-[#ff4500]">*</span></label>
+                                        <label className="block text-xs font-bold text-slate-700 mb-1">Select Module <span className="text-orange-500">*</span></label>
                                         <select
                                             name="course"
                                             value={selfPacedForm.course}
                                             onChange={handleSelfPacedChange}
                                             required
-                                            className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-[#ff4500]/20 focus:border-[#ff4500] outline-none transition-all text-sm appearance-none cursor-pointer"
+                                            className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-orange-200 focus:border-orange-400 outline-none transition-all text-sm appearance-none cursor-pointer"
                                         >
                                             <option value="">Select SAP Module</option>
                                             {courses
@@ -383,7 +383,7 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
                                     <button
                                         type="submit"
                                         disabled={selfPacedStatus === 'loading'}
-                                        className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#ff4500] hover:bg-[#cc3700] text-white font-bold rounded-xl shadow-lg shadow-[#ff4500]/20 transition-all disabled:opacity-60 disabled:cursor-not-allowed text-sm"
+                                        className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl shadow-lg transition-all disabled:opacity-60 disabled:cursor-not-allowed text-sm"
                                     >
                                         {selfPacedStatus === 'loading' ? (
                                             <><Loader2 className="animate-spin w-4 h-4" /> Enrolling...</>

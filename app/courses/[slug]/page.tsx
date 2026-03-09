@@ -18,9 +18,8 @@ import CourseHeroActionButtons from '@/components/course/CourseHeroActionButtons
 import JsonLd from '@/components/JsonLd';
 import { Monitor, Calendar, Headphones, CheckCircle2, Star, ShieldCheck, Zap, Users, Clock } from 'lucide-react';
 
-// Dynamic rendering only to avoid build OOM
-export const dynamic = 'force-dynamic';
-export const revalidate = 0; // Disable caching - always fetch fresh data
+// ISR: Cache course pages for 30 minutes, refresh in background
+export const revalidate = 1800;
 
 // Helper to map URL slugs to Database IDs
 const getDbId = (slug: string) => {
