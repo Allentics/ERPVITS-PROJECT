@@ -106,22 +106,60 @@ const WebinarPopup = () => {
                     transition={{ type: 'spring', damping: 28, stiffness: 300 }}
                     className="relative w-full max-w-[850px] bg-[#222222] rounded-t-3xl sm:rounded-3xl shadow-2xl flex flex-col md:flex-row max-h-[95vh] overflow-hidden"
                 >
-                    {/* ===== MOBILE CLOSE BAR (always visible, top of sheet) ===== */}
-                    <div className="md:hidden flex items-center justify-between px-5 py-3 bg-[#1a1a1a] flex-shrink-0">
-                        <span className="text-white font-black text-sm uppercase tracking-wider">Book Your Slot</span>
+                    {/* ===== MOBILE BRANDING BANNER (compact, visible only on mobile) ===== */}
+                    <div className="md:hidden flex-shrink-0 bg-[#f39c12] relative overflow-hidden">
+                        {/* Close button — top right */}
                         <button
                             onClick={() => {
                                 setIsVisible(false);
                                 sessionStorage.setItem(`webinar_popup_closed_${pathname}`, 'true');
                             }}
-                            className="p-2 text-gray-300 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-colors"
+                            className="absolute top-2.5 right-3 z-20 p-1.5 bg-black/20 hover:bg-black/40 rounded-full transition-colors"
                             aria-label="Close popup"
                         >
-                            <X className="w-5 h-5" />
+                            <X className="w-5 h-5 text-white" />
                         </button>
+
+                        <div className="flex items-stretch">
+                            {/* Left: Text content */}
+                            <div className="flex-1 p-4 pr-2 flex flex-col justify-center gap-1.5 z-10">
+                                <div className="flex items-center gap-1 mb-0.5">
+                                    <svg className="w-3 h-3 text-white/70 fill-current flex-shrink-0" viewBox="0 0 24 24">
+                                        <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C14.9124 8 14.017 7.10457 14.017 6V3L11.017 3L11.017 21H14.017ZM5.017 21L5.017 18C5.017 16.8954 5.91243 16 7.017 16H10.017C10.5693 16 11.017 15.5523 11.017 15V9C11.017 8.44772 10.5693 8 10.017 8H7.017C5.91243 8 5.017 7.10457 5.017 6V3L2.017 3L2.017 21H5.017Z" />
+                                    </svg>
+                                    <span className="text-white/80 text-[9px] font-black uppercase tracking-widest">SAP Training Since 2008</span>
+                                </div>
+                                <h3 className="text-white font-black text-[17px] uppercase leading-tight tracking-tight">Attend Demo &amp; Get 10% OFF!</h3>
+                                <div className="grid grid-cols-2 gap-x-2 gap-y-1 mt-1">
+                                    {["Live Demo", "Expert Guidance", "Q&A Included", "Course Roadmap"].map((item, idx) => (
+                                        <div key={idx} className="flex items-center gap-1">
+                                            <div className="bg-white/30 p-0.5 rounded-full flex-shrink-0">
+                                                <svg className="w-2 h-2 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M5 13l4 4L19 7" />
+                                                </svg>
+                                            </div>
+                                            <span className="text-white text-[10px] font-bold uppercase leading-tight">{item}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                                <span className="text-black/70 text-[9px] font-bold uppercase bg-white/30 px-2 py-0.5 rounded-full w-fit mt-1">Offer: First 10 Candidates Only</span>
+                            </div>
+
+                            {/* Right: Woman image */}
+                            <div className="relative w-[110px] flex-shrink-0 self-end">
+                                <Image
+                                    src="/images/webinar_woman.png"
+                                    alt="Professional"
+                                    width={110}
+                                    height={150}
+                                    className="object-contain object-bottom w-full h-[140px]"
+                                    priority
+                                />
+                            </div>
+                        </div>
                     </div>
 
-                    {/* Left Panel — hidden on mobile to save vertical space */}
+                    {/* Left Panel — desktop only (full height side panel) */}
                     <div className="hidden md:flex w-full md:w-1/2 bg-[#222222] p-2 md:p-3 flex-col gap-2 relative border-r-2 border-dashed border-white/10">
                         {/* Top Branding Card */}
                         <div className="bg-white rounded-[28px] p-3 flex-1 relative flex flex-col justify-end overflow-hidden">
@@ -208,13 +246,16 @@ const WebinarPopup = () => {
                                 </div>
                             ) : (
                                 <div className="w-full">
-                                    {/* Header — hidden on mobile since close bar already shows it */}
+                                    {/* Header — desktop only */}
                                     <div className="hidden md:block text-center mb-6">
                                         <h2 className="text-2xl md:text-3xl font-black text-black uppercase leading-tight mb-0.5">Book Your Slot</h2>
                                         <p className="text-red-600 font-bold text-base">Few slots are left!</p>
                                     </div>
-                                    {/* Mobile subtitle */}
-                                    <p className="md:hidden text-red-600 font-bold text-sm text-center mb-4">Few slots left — register now!</p>
+                                    {/* Mobile: compact header */}
+                                    <div className="md:hidden text-center mb-4">
+                                        <h2 className="text-xl font-black text-black uppercase leading-tight">Book Your Slot</h2>
+                                        <p className="text-red-600 font-bold text-sm">Few slots are left!</p>
+                                    </div>
 
                                     <form onSubmit={handleSubmit} className="space-y-3">
                                         <div className="flex items-center border border-gray-200 rounded-[12px] px-3.5 py-0.5 bg-white shadow-sm focus-within:border-orange-500 transition-colors">
