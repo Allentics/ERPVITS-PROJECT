@@ -4,38 +4,42 @@ import Image from 'next/image';
 import { supabase } from '@/lib/supabase';
 import { blogPosts as localPosts } from '@/lib/blogData';
 import BlogContactForm from '@/components/blog/BlogContactForm';
-import SapTCodesContent from '@/components/blog/SapTCodesContent';
-import SapSdProcessFlowContent from '@/components/blog/SapSdProcessFlowContent';
-import SapFicoCashJournalContent from '@/components/blog/SapFicoCashJournalContent';
-import SapS4HanaMmCareerContent from '@/components/blog/SapS4HanaMmCareerContent';
-import HighPayingSapFicoJobsContent from '@/components/blog/HighPayingSapFicoJobsContent';
-import SapAribaSupplierLoginContent from '@/components/blog/SapAribaSupplierLoginContent';
-import SapFieldglassVmsContent from '@/components/blog/SapFieldglassVmsContent';
-import SapCpiInterviewQuestionsContent from '@/components/blog/SapCpiInterviewQuestionsContent';
-import SapC4cTechnicalScenariosContent from '@/components/blog/SapC4cTechnicalScenariosContent';
-import Top7SapTrainingInstitutesContent from '@/components/blog/Top7SapTrainingInstitutesContent';
-import SapAribaSourcingConfigContent from '@/components/blog/SapAribaSourcingConfigContent';
-import SapMmCourseCompleteContent from '@/components/blog/SapMmCourseCompleteContent';
-import HowSapAribaPoweringContent from '@/components/blog/HowSapAribaPoweringContent';
-import TopTenAbapCloudToolsContent from '@/components/blog/TopTenAbapCloudToolsContent';
-import HowSapFieldglassTransformingContent from '@/components/blog/HowSapFieldglassTransformingContent';
-import SapSdShippingPointContent from '@/components/blog/SapSdShippingPointContent';
-import SapTrainingMalaysiaContent from '@/components/blog/SapTrainingMalaysiaContent';
-import SapHanaMasterclassContent from '@/components/blog/SapHanaMasterclassContent';
-import AribaGuidedBuyingContent from '@/components/blog/AribaGuidedBuyingContent';
-
-import MtoAndStoProcessContent from '@/components/blog/MtoAndStoProcessContent';
-import MasterSapAribaIndustryContent from '@/components/blog/MasterSapAribaIndustryContent';
-import SapTrmMasterDataContent from '@/components/blog/SapTrmMasterDataContent';
-import SapTrmComplementaryContent from '@/components/blog/SapTrmComplementaryContent';
-import SapFieldglassLoginGuideContent from '@/components/blog/SapFieldglassLoginGuideContent';
-import SapConsultantSalaryGuideContent from '@/components/blog/SapConsultantSalaryGuideContent';
-import SapFioriAppsLibraryContent from '@/components/blog/SapFioriAppsLibraryContent';
-import SapBtpCockpitContent from '@/components/blog/SapBtpCockpitContent';
+import dynamic from 'next/dynamic';
 import { Metadata } from 'next';
 import InteractiveBlogContent from '@/components/blog/InteractiveBlogContent';
 
-export const dynamic = 'force-dynamic';
+// ISR: Cache blog posts for 1 hour
+export const revalidate = 3600;
+
+// Lazy-load all legacy blog components — only the one matching the slug is ever loaded
+const SapTCodesContent = dynamic(() => import('@/components/blog/SapTCodesContent'));
+const SapSdProcessFlowContent = dynamic(() => import('@/components/blog/SapSdProcessFlowContent'));
+const SapFicoCashJournalContent = dynamic(() => import('@/components/blog/SapFicoCashJournalContent'));
+const SapS4HanaMmCareerContent = dynamic(() => import('@/components/blog/SapS4HanaMmCareerContent'));
+const HighPayingSapFicoJobsContent = dynamic(() => import('@/components/blog/HighPayingSapFicoJobsContent'));
+const SapAribaSupplierLoginContent = dynamic(() => import('@/components/blog/SapAribaSupplierLoginContent'));
+const SapFieldglassVmsContent = dynamic(() => import('@/components/blog/SapFieldglassVmsContent'));
+const SapCpiInterviewQuestionsContent = dynamic(() => import('@/components/blog/SapCpiInterviewQuestionsContent'));
+const SapC4cTechnicalScenariosContent = dynamic(() => import('@/components/blog/SapC4cTechnicalScenariosContent'));
+const Top7SapTrainingInstitutesContent = dynamic(() => import('@/components/blog/Top7SapTrainingInstitutesContent'));
+const SapAribaSourcingConfigContent = dynamic(() => import('@/components/blog/SapAribaSourcingConfigContent'));
+const SapMmCourseCompleteContent = dynamic(() => import('@/components/blog/SapMmCourseCompleteContent'));
+const HowSapAribaPoweringContent = dynamic(() => import('@/components/blog/HowSapAribaPoweringContent'));
+const TopTenAbapCloudToolsContent = dynamic(() => import('@/components/blog/TopTenAbapCloudToolsContent'));
+const HowSapFieldglassTransformingContent = dynamic(() => import('@/components/blog/HowSapFieldglassTransformingContent'));
+const SapSdShippingPointContent = dynamic(() => import('@/components/blog/SapSdShippingPointContent'));
+const SapTrainingMalaysiaContent = dynamic(() => import('@/components/blog/SapTrainingMalaysiaContent'));
+const SapHanaMasterclassContent = dynamic(() => import('@/components/blog/SapHanaMasterclassContent'));
+const AribaGuidedBuyingContent = dynamic(() => import('@/components/blog/AribaGuidedBuyingContent'));
+const MtoAndStoProcessContent = dynamic(() => import('@/components/blog/MtoAndStoProcessContent'));
+const MasterSapAribaIndustryContent = dynamic(() => import('@/components/blog/MasterSapAribaIndustryContent'));
+const SapTrmMasterDataContent = dynamic(() => import('@/components/blog/SapTrmMasterDataContent'));
+const SapTrmComplementaryContent = dynamic(() => import('@/components/blog/SapTrmComplementaryContent'));
+const SapFieldglassLoginGuideContent = dynamic(() => import('@/components/blog/SapFieldglassLoginGuideContent'));
+const SapConsultantSalaryGuideContent = dynamic(() => import('@/components/blog/SapConsultantSalaryGuideContent'));
+const SapFioriAppsLibraryContent = dynamic(() => import('@/components/blog/SapFioriAppsLibraryContent'));
+const SapBtpCockpitContent = dynamic(() => import('@/components/blog/SapBtpCockpitContent'));
+
 
 // Blog hero images mapping
 const blogHeroImages: Record<string, string> = {
@@ -87,33 +91,22 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
 
+    // Run both DB queries in parallel instead of sequentially
+    const [{ data: dbPost }, { data: allPosts }] = await Promise.all([
+        supabase.from('blog_posts').select('*').eq('id', slug).single(),
+        supabase.from('blog_posts').select('id, title, category, date, image').order('date', { ascending: false }),
+    ]);
+
     let post = null;
-
-    // Try fetching from Supabase first
-    const { data: dbPost } = await supabase
-        .from('blog_posts')
-        .select('*')
-        .eq('id', slug)
-        .single();
-
     if (dbPost) {
         const localPost = localPosts.find((p: any) => p.id === slug);
         const validDbProps = Object.fromEntries(Object.entries(dbPost).filter(([_, v]) => v !== null && v !== ''));
         post = localPost ? { ...localPost, ...validDbProps } : dbPost;
     } else {
-        // Fallback to local posts
         post = localPosts.find((p: any) => p.id === slug);
     }
 
-    if (!post) {
-        notFound();
-    }
-
-    // Fetch all posts for sidebar (related and recent)
-    const { data: allPosts } = await supabase
-        .from('blog_posts')
-        .select('id, title, category, date, image')
-        .order('date', { ascending: false });
+    if (!post) notFound();
 
     const mergedPosts = allPosts || localPosts;
     const recentPosts = mergedPosts.filter((p: any) => p.id !== slug).slice(0, 5);
@@ -126,8 +119,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     });
     const categories = Object.entries(categoryCounts).map(([name, count]) => ({ name, count }));
 
-    // Decide whether to use DB content or Component
-    // If DB content is substantial (>50 chars), prefer it. Otherwise check legacy components.
     const useDbContent = post.content && post.content.length > 50;
 
     // Check if it's one of the legacy component paths
