@@ -77,7 +77,7 @@ export default function CourseContactForm({ courseName }: { courseName?: string 
                 </div>
             )}
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1">
                     <label className="text-[9px] font-bold text-slate-500 uppercase ml-0.5 tracking-wider">First Name</label>
                     <input
@@ -108,7 +108,7 @@ export default function CourseContactForm({ courseName }: { courseName?: string 
             <div className="space-y-1">
                 <label className="text-[9px] font-bold text-slate-500 uppercase ml-0.5 tracking-wider">Phone Number</label>
                 <div className="flex gap-2">
-                    <div className="relative w-1/3">
+                    <div className="relative w-[90px] flex-shrink-0">
                         <select
                             name="countryCode" value={formData.countryCode} onChange={handleChange}
                             className="w-full px-2 py-2 text-[13px] rounded-lg border border-slate-200 bg-white outline-none focus:border-slate-400"

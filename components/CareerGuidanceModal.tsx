@@ -118,18 +118,18 @@ export default function CareerGuidanceModal({ isOpen, onClose, defaultCourse = "
 
             <div
                 ref={modalRef}
-                className="relative bg-white rounded-2xl shadow-2xl w-full max-w-lg overflow-y-auto animate-in fade-in zoom-in duration-200"
+                className="relative bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto animate-in fade-in zoom-in duration-200"
             >
-                <div className="absolute top-4 right-4 z-10">
+                <div className="sticky top-0 right-0 z-10 flex justify-end p-2 bg-white/80 backdrop-blur-sm">
                     <button
                         onClick={onClose}
-                        className="p-1 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-full transition-colors"
+                        className="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-full transition-colors"
                     >
                         <X className="h-6 w-6" />
                     </button>
                 </div>
 
-                <div className="p-4 md:p-5">
+                <div className="px-4 pb-5 md:px-5 md:pb-5 pt-0">
                     {status === 'success' ? (
                         <div className="text-center py-12">
                             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">

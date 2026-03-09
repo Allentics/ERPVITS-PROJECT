@@ -256,9 +256,15 @@ export default function StoryViewer({ stories, initialStoryIndex, onClose }: Sto
         }
     }, [currentSlideIndex, prevStory]);
 
-    // Timer Logic
+    // A ref to signal that the current slide has finished and we should advance.
+    // Using a ref avoids triggering re-renders and prevents setState-during-render errors.
+    const shouldAdvanceRef = React.useRef(false);
+
+    // Timer Logic — only updates progress; sets a flag when the slide is complete.
     useEffect(() => {
         if (isPaused || !currentSlide) return;
+
+        shouldAdvanceRef.current = false; // reset on each slide/story change
 
         const timer = setInterval(() => {
             setProgress(prev => {
@@ -266,15 +272,26 @@ export default function StoryViewer({ stories, initialStoryIndex, onClose }: Sto
                 const step = (PROGRESS_INTERVAL / effectiveDuration) * 100;
                 const newProgress = prev + step;
                 if (newProgress >= 100) {
-                    nextSlide();
-                    return 0;
+                    // Signal that we need to advance — do NOT call nextSlide() here,
+                    // as that would be a setState call inside another setState updater.
+                    shouldAdvanceRef.current = true;
+                    return 100; // clamp at 100
                 }
                 return newProgress;
             });
         }, PROGRESS_INTERVAL);
 
         return () => clearInterval(timer);
-    }, [currentSlideIndex, currentStoryIndex, isPaused, nextSlide, currentSlide]);
+    }, [currentSlideIndex, currentStoryIndex, isPaused, currentSlide]);
+
+    // Navigation trigger — watches the shouldAdvance flag and advances the slide
+    // outside the setState updater to avoid the "update during render" React error.
+    useEffect(() => {
+        if (progress >= 100 && shouldAdvanceRef.current) {
+            shouldAdvanceRef.current = false;
+            nextSlide();
+        }
+    }, [progress, nextSlide]);
 
     // Reset progress when slide changes
     useEffect(() => {
@@ -420,7 +437,7 @@ export default function StoryViewer({ stories, initialStoryIndex, onClose }: Sto
                 {/* Footer Engagement (Bottom) */}
                 <div className="absolute bottom-0 left-0 right-0 p-4 pb-8 z-20 bg-gradient-to-t from-black/90 to-transparent flex items-center justify-between gap-4">
                     <a
-                        href="/" 
+                        href="/"
                         className="flex-1 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full h-12 flex items-center justify-center px-4 border border-white/20 text-white font-bold transition-colors"
                     >
                         Visit Website

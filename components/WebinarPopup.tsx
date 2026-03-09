@@ -88,27 +88,41 @@ const WebinarPopup = () => {
 
     return (
         <AnimatePresence>
-            <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
+            {/* Backdrop — clicking it closes the popup */}
+            <div
+                className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center sm:p-4 bg-black/70 backdrop-blur-sm"
+                onClick={(e) => {
+                    // Only close if the backdrop itself was clicked (not the card)
+                    if (e.target === e.currentTarget) {
+                        setIsVisible(false);
+                        sessionStorage.setItem(`webinar_popup_closed_${pathname}`, 'true');
+                    }
+                }}
+            >
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.9 }}
-                    className="relative w-full max-w-[850px] bg-[#222222] rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row h-auto md:h-[480px]"
+                    initial={{ opacity: 0, y: 60 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 60 }}
+                    transition={{ type: 'spring', damping: 28, stiffness: 300 }}
+                    className="relative w-full max-w-[850px] bg-[#222222] rounded-t-3xl sm:rounded-3xl shadow-2xl flex flex-col md:flex-row max-h-[95vh] overflow-hidden"
                 >
-                    {/* Close Button */}
-                    <button
-                        onClick={() => {
-                            setIsVisible(false);
-                            // Store that popup was closed for this specific page
-                            sessionStorage.setItem(`webinar_popup_closed_${pathname}`, 'true');
-                        }}
-                        className="absolute top-3 right-3 z-[110] p-1 text-gray-400 hover:text-white transition-colors"
-                    >
-                        <X className="w-8 h-8 md:text-gray-300" />
-                    </button>
+                    {/* ===== MOBILE CLOSE BAR (always visible, top of sheet) ===== */}
+                    <div className="md:hidden flex items-center justify-between px-5 py-3 bg-[#1a1a1a] flex-shrink-0">
+                        <span className="text-white font-black text-sm uppercase tracking-wider">Book Your Slot</span>
+                        <button
+                            onClick={() => {
+                                setIsVisible(false);
+                                sessionStorage.setItem(`webinar_popup_closed_${pathname}`, 'true');
+                            }}
+                            className="p-2 text-gray-300 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-colors"
+                            aria-label="Close popup"
+                        >
+                            <X className="w-5 h-5" />
+                        </button>
+                    </div>
 
-                    {/* Left Panel - 50% split */}
-                    <div className="w-full md:w-1/2 bg-[#222222] p-2 md:p-3 flex flex-col gap-2 relative border-r-2 border-dashed border-white/10">
+                    {/* Left Panel — hidden on mobile to save vertical space */}
+                    <div className="hidden md:flex w-full md:w-1/2 bg-[#222222] p-2 md:p-3 flex-col gap-2 relative border-r-2 border-dashed border-white/10">
                         {/* Top Branding Card */}
                         <div className="bg-white rounded-[28px] p-3 flex-1 relative flex flex-col justify-end overflow-hidden">
                             <div className="flex flex-row h-full">
@@ -170,135 +184,141 @@ const WebinarPopup = () => {
                         </div>
                     </div>
 
-                    {/* Right Panel - 50% split */}
-                    <div className="w-full md:w-1/2 bg-[#F8F8F8] p-5 md:p-8 flex flex-col justify-center relative">
-                        {/* Close Button Desktop */}
+                    {/* Right Panel — full width on mobile */}
+                    <div className="w-full md:w-1/2 bg-[#F8F8F8] flex flex-col relative">
+                        {/* Desktop close button */}
                         <button
                             onClick={() => {
                                 setIsVisible(false);
-                                // Store that popup was closed for this specific page
                                 sessionStorage.setItem(`webinar_popup_closed_${pathname}`, 'true');
                             }}
                             className="absolute top-4 right-4 z-50 p-1.5 hover:bg-gray-100 rounded-full text-gray-400 hover:text-black transition-all hidden md:block"
                         >
                             <X className="w-5 h-5" />
                         </button>
-                        {isSubmitted ? (
-                            <div className="text-center py-6">
-                                <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M5 13l4 4L19 7" /></svg>
-                                </motion.div>
-                                <h3 className="text-2xl font-black text-gray-900 uppercase">You're Registered!</h3>
-                            </div>
-                        ) : (
-                            <div className="w-full">
-                                <div className="text-center mb-6">
-                                    <h2 className="text-2xl md:text-3xl font-black text-black uppercase leading-tight mb-0.5">Book Your Slot</h2>
-                                    <p className="text-red-600 font-bold text-base">Few slots are left!</p>
+
+                        {/* Scrollable form area */}
+                        <div className="overflow-y-auto overscroll-contain flex-1 p-5 md:p-8 flex flex-col justify-center">
+                            {isSubmitted ? (
+                                <div className="text-center py-6">
+                                    <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M5 13l4 4L19 7" /></svg>
+                                    </motion.div>
+                                    <h3 className="text-2xl font-black text-gray-900 uppercase">You're Registered!</h3>
                                 </div>
-
-                                <form onSubmit={handleSubmit} className="space-y-3">
-                                    <div className="flex items-center border border-gray-200 rounded-[12px] px-3.5 py-0.5 bg-white shadow-sm focus-within:border-orange-500 transition-colors">
-                                        <User className="w-4.5 h-4.5 text-gray-400 mr-2.5" />
-                                        <input
-                                            required
-                                            type="text"
-                                            placeholder="Enter your name *"
-                                            className="w-full py-2 outline-none text-gray-800 text-sm font-medium placeholder:text-gray-400 bg-transparent"
-                                            value={formData.name}
-                                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                        />
+                            ) : (
+                                <div className="w-full">
+                                    {/* Header — hidden on mobile since close bar already shows it */}
+                                    <div className="hidden md:block text-center mb-6">
+                                        <h2 className="text-2xl md:text-3xl font-black text-black uppercase leading-tight mb-0.5">Book Your Slot</h2>
+                                        <p className="text-red-600 font-bold text-base">Few slots are left!</p>
                                     </div>
+                                    {/* Mobile subtitle */}
+                                    <p className="md:hidden text-red-600 font-bold text-sm text-center mb-4">Few slots left — register now!</p>
 
-                                    <div className="flex items-center border border-gray-200 rounded-[12px] px-3.5 py-0.5 bg-white shadow-sm focus-within:border-orange-500 transition-colors">
-                                        <Phone className="w-4.5 h-4.5 text-gray-400 mr-2.5" />
-                                        <select
-                                            required
-                                            className="w-[110px] py-2 outline-none text-gray-800 text-sm font-medium bg-transparent cursor-pointer border-r border-gray-200 pr-2 mr-2"
-                                            value={formData.countryCode}
-                                            onChange={(e) => setFormData({ ...formData, countryCode: e.target.value })}
-                                        >
-                                            {countryCodes.map((country) => (
-                                                <option key={country.name} value={country.code}>
-                                                    {country.name} ({country.code})
-                                                </option>
-                                            ))}
-                                        </select>
-                                        <input
-                                            required
-                                            type="tel"
-                                            placeholder="Enter your contact number *"
-                                            className="flex-1 py-2 outline-none text-gray-800 text-sm font-medium placeholder:text-gray-400 bg-transparent"
-                                            value={formData.phone}
-                                            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                                        />
-                                    </div>
-
-                                    <div className="flex items-center border border-gray-200 rounded-[12px] px-3.5 py-0.5 bg-white shadow-sm focus-within:border-orange-500 transition-colors">
-                                        <Send className="w-4.5 h-4.5 text-gray-400 mr-2.5" />
-                                        <input
-                                            required
-                                            type="email"
-                                            placeholder="Enter your email *"
-                                            className="w-full py-2 outline-none text-gray-800 text-sm font-medium placeholder:text-gray-400 bg-transparent"
-                                            value={formData.email}
-                                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                        />
-                                    </div>
-
-                                    {/* Module Selection */}
-                                    <div className="flex items-center border border-gray-200 rounded-[12px] px-3.5 py-0.5 bg-white shadow-sm focus-within:border-orange-500 transition-colors relative">
-                                        <Monitor className="w-4.5 h-4.5 text-gray-400 mr-2.5" />
-                                        <select
-                                            required
-                                            className="w-full py-2 outline-none text-gray-800 text-sm font-medium appearance-none bg-transparent cursor-pointer"
-                                            value={formData.module}
-                                            onChange={(e) => setFormData({ ...formData, module: e.target.value })}
-                                        >
-                                            <option value="">Choose Module</option>
-                                            {courses.map((course) => (
-                                                <option key={course.id} value={course.title}>{course.title}</option>
-                                            ))}
-                                        </select>
-                                        <div className="absolute right-3.5 pointer-events-none text-gray-400">
-                                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                                    <form onSubmit={handleSubmit} className="space-y-3">
+                                        <div className="flex items-center border border-gray-200 rounded-[12px] px-3.5 py-0.5 bg-white shadow-sm focus-within:border-orange-500 transition-colors">
+                                            <User className="w-4 h-4 text-gray-400 mr-2.5 flex-shrink-0" />
+                                            <input
+                                                required
+                                                type="text"
+                                                placeholder="Enter your name *"
+                                                className="w-full py-3 outline-none text-gray-800 text-sm font-medium placeholder:text-gray-400 bg-transparent"
+                                                value={formData.name}
+                                                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                                            />
                                         </div>
-                                    </div>
 
-                                    {/* Timing Selection */}
-                                    <div className="flex items-center border border-gray-200 rounded-[12px] px-3.5 py-0.5 bg-white shadow-sm focus-within:border-orange-500 transition-colors relative">
-                                        <Clock className="w-4.5 h-4.5 text-gray-400 mr-2.5" />
-                                        <select
-                                            required
-                                            className="w-full py-2 outline-none text-gray-800 text-sm font-medium appearance-none bg-transparent cursor-pointer"
-                                            value={formData.preferredTiming}
-                                            onChange={(e) => setFormData({ ...formData, preferredTiming: e.target.value })}
-                                        >
-                                            <option value="">Choose Your Preferred Timing</option>
-                                            <option value="Weekend Morning Session">Weekend Morning Session</option>
-                                            <option value="Weekend Evening Session">Weekend Evening Session</option>
-                                            <option value="Weekday Morning Session">Weekday Morning Session</option>
-                                            <option value="Weekday Evening Session">Weekday Evening Session</option>
-                                        </select>
-                                        <div className="absolute right-3.5 pointer-events-none text-gray-400">
-                                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                                        <div className="flex items-center border border-gray-200 rounded-[12px] px-3.5 py-0.5 bg-white shadow-sm focus-within:border-orange-500 transition-colors">
+                                            <Phone className="w-4 h-4 text-gray-400 mr-2 flex-shrink-0" />
+                                            <select
+                                                required
+                                                className="w-[85px] py-3 outline-none text-gray-800 text-sm font-medium bg-transparent cursor-pointer border-r border-gray-200 pr-2 mr-2 flex-shrink-0"
+                                                value={formData.countryCode}
+                                                onChange={(e) => setFormData({ ...formData, countryCode: e.target.value })}
+                                            >
+                                                {countryCodes.map((country) => (
+                                                    <option key={country.name} value={country.code}>
+                                                        {country.name} ({country.code})
+                                                    </option>
+                                                ))}
+                                            </select>
+                                            <input
+                                                required
+                                                type="tel"
+                                                placeholder="Contact number *"
+                                                className="flex-1 min-w-0 py-3 outline-none text-gray-800 text-sm font-medium placeholder:text-gray-400 bg-transparent"
+                                                value={formData.phone}
+                                                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                                            />
                                         </div>
-                                    </div>
 
-                                    <button
-                                        type="submit"
-                                        className="w-full bg-[#f4511e] hover:bg-orange-600 text-white font-black py-3 rounded-full text-base shadow-md transition-all flex items-center justify-center gap-2.5 mt-2"
-                                    >
-                                        <Monitor className="w-5 h-5" />
-                                        Register for Demo
-                                    </button>
-                                </form>
-                            </div>
-                        )}
+                                        <div className="flex items-center border border-gray-200 rounded-[12px] px-3.5 py-0.5 bg-white shadow-sm focus-within:border-orange-500 transition-colors">
+                                            <Send className="w-4 h-4 text-gray-400 mr-2.5 flex-shrink-0" />
+                                            <input
+                                                required
+                                                type="email"
+                                                placeholder="Enter your email *"
+                                                className="w-full py-3 outline-none text-gray-800 text-sm font-medium placeholder:text-gray-400 bg-transparent"
+                                                value={formData.email}
+                                                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                            />
+                                        </div>
+
+                                        {/* Module Selection */}
+                                        <div className="flex items-center border border-gray-200 rounded-[12px] px-3.5 py-0.5 bg-white shadow-sm focus-within:border-orange-500 transition-colors relative">
+                                            <Monitor className="w-4 h-4 text-gray-400 mr-2.5 flex-shrink-0" />
+                                            <select
+                                                required
+                                                className="w-full py-3 outline-none text-gray-800 text-sm font-medium appearance-none bg-transparent cursor-pointer pr-6"
+                                                value={formData.module}
+                                                onChange={(e) => setFormData({ ...formData, module: e.target.value })}
+                                            >
+                                                <option value="">Choose Module</option>
+                                                {courses.map((course) => (
+                                                    <option key={course.id} value={course.title}>{course.title}</option>
+                                                ))}
+                                            </select>
+                                            <div className="absolute right-3.5 pointer-events-none text-gray-400">
+                                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                                            </div>
+                                        </div>
+
+                                        {/* Timing Selection */}
+                                        <div className="flex items-center border border-gray-200 rounded-[12px] px-3.5 py-0.5 bg-white shadow-sm focus-within:border-orange-500 transition-colors relative">
+                                            <Clock className="w-4 h-4 text-gray-400 mr-2.5 flex-shrink-0" />
+                                            <select
+                                                required
+                                                className="w-full py-3 outline-none text-gray-800 text-sm font-medium appearance-none bg-transparent cursor-pointer pr-6"
+                                                value={formData.preferredTiming}
+                                                onChange={(e) => setFormData({ ...formData, preferredTiming: e.target.value })}
+                                            >
+                                                <option value="">Choose Preferred Timing</option>
+                                                <option value="Weekend Morning Session">Weekend Morning Session</option>
+                                                <option value="Weekend Evening Session">Weekend Evening Session</option>
+                                                <option value="Weekday Morning Session">Weekday Morning Session</option>
+                                                <option value="Weekday Evening Session">Weekday Evening Session</option>
+                                            </select>
+                                            <div className="absolute right-3.5 pointer-events-none text-gray-400">
+                                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                                            </div>
+                                        </div>
+
+                                        <button
+                                            type="submit"
+                                            className="w-full bg-[#f4511e] hover:bg-orange-600 text-white font-black py-3.5 rounded-full text-base shadow-md transition-all flex items-center justify-center gap-2.5 mt-2"
+                                        >
+                                            <Monitor className="w-5 h-5" />
+                                            Register for Demo
+                                        </button>
+                                    </form>
+                                </div>
+                            )}
+                        </div>
                     </div>
                 </motion.div>
-            </div >
-        </AnimatePresence >
+            </div>
+        </AnimatePresence>
     );
 };
 
