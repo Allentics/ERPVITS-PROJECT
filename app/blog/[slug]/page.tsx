@@ -117,7 +117,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
     const mergedPosts = allPosts || localPosts;
     const recentPosts = mergedPosts.filter((p: any) => p.id !== slug).slice(0, 5);
-    const relatedPosts = mergedPosts.filter((p: any) => p.id !== slug && p.category === post.category).slice(0, 3);
+    const relatedPosts = mergedPosts.filter((p: any) => p.id !== slug && p.category === post.category).slice(0, 4);
 
     // Calculate category counts
     const categoryCounts: Record<string, number> = {};
@@ -169,7 +169,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     })();
 
     return (
-        <div className="bg-white min-h-screen">
+        <div className="bg-white dark:bg-gray-900 min-h-screen">
             {/* Inject Schema Markup */}
             {post.schema_markup && (
                 <script
@@ -179,16 +179,16 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             )}
 
             {/* Header / Breadcrumb Section */}
-            <div className="bg-white border-b border-gray-100 py-6">
+            <div className="bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-700 py-6">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <nav className="flex items-center text-sm font-medium text-gray-500 mb-4 overflow-x-auto whitespace-nowrap scrollbar-hide">
+                    <nav className="flex items-center text-sm font-medium text-gray-500 dark:text-gray-400 mb-4 overflow-x-auto whitespace-nowrap scrollbar-hide">
                         <Link href="/" className="hover:text-orange-500 transition-colors">Home</Link>
-                        <span className="mx-2 text-gray-400">›</span>
+                        <span className="mx-2 text-gray-400 dark:text-gray-600">›</span>
                         <Link href="/blog" className="hover:text-orange-500 transition-colors">Blogs</Link>
-                        <span className="mx-2 text-gray-400">›</span>
-                        <span className="text-gray-900 truncate max-w-[200px] sm:max-w-md">{post.title}</span>
+                        <span className="mx-2 text-gray-400 dark:text-gray-600">›</span>
+                        <span className="text-gray-900 dark:text-gray-100 truncate max-w-[200px] sm:max-w-md">{post.title}</span>
                     </nav>
-                    <h1 className="text-2xl lg:text-3xl font-extrabold text-gray-900 leading-tight mb-4">
+                    <h1 className="text-2xl lg:text-3xl font-extrabold text-gray-900 dark:text-gray-100 leading-tight mb-4">
                         {post.title}
                     </h1>
                 </div>
@@ -202,17 +202,17 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     <div className="lg:col-span-8">
                         <article className="blog-container">
                             {/* Meta Info */}
-                            <div className="flex flex-wrap items-center justify-between gap-6 pb-10 border-b border-gray-100 mb-10">
+                            <div className="flex flex-wrap items-center justify-between gap-6 pb-10 border-b border-gray-100 dark:border-gray-700 mb-10">
                                 <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 font-bold text-xl shadow-inner">
+                                    <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center text-orange-600 dark:text-orange-400 font-bold text-xl shadow-inner">
                                         {post.author?.[0] || 'E'}
                                     </div>
                                     <div>
-                                        <div className="text-gray-900 font-bold">{post.author || 'ERPVITS Expert'}</div>
-                                        <div className="text-xs text-gray-400 font-medium uppercase tracking-wider">Author</div>
+                                        <div className="text-gray-900 dark:text-gray-100 font-bold">{post.author || 'ERPVITS Expert'}</div>
+                                        <div className="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wider">Author</div>
                                     </div>
                                 </div>
-                                <div className="flex items-center gap-8 text-gray-500 text-sm">
+                                <div className="flex items-center gap-8 text-gray-500 dark:text-gray-400 text-sm">
                                     <div className="flex items-center gap-2">
                                         <svg className="w-5 h-5 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
                                         <span className="font-medium">{post.date}</span>
@@ -237,12 +237,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
                             {/* Content Rendering */}
                             <div className="prose prose-lg prose-slate max-w-none 
-                                prose-headings:text-slate-900 prose-headings:font-bold 
+                                prose-headings:text-slate-900 dark:prose-headings:text-slate-100 prose-headings:font-bold 
                                 [&_a]:!text-[#F58220] [&_a]:!font-semibold [&_a]:!no-underline hover:[&_a]:!text-[#e57a1e] 
                                 prose-img:rounded-2xl prose-img:shadow-lg prose-img:my-10
-                                prose-p:leading-relaxed prose-p:text-slate-600
-                                prose-li:text-slate-600 prose-strong:text-slate-900 blog-content-area
-                                [&_iframe]:w-full [&_iframe]:aspect-video [&_iframe]:rounded-xl">
+                                prose-p:leading-relaxed prose-p:text-slate-600 dark:prose-p:text-slate-300
+                                prose-li:text-slate-600 dark:prose-li:text-slate-300 prose-strong:text-slate-900 dark:prose-strong:text-slate-100 blog-content-area
+                                [&_iframe]:w-full [&_iframe]:aspect-video [&_iframe]:rounded-xl
+                                dark:prose-invert">
 
                                 {LegacyComponent ? (
                                     <LegacyComponent />
@@ -255,47 +256,48 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
                     {/* Sidebar (Right) */}
                     <div className="lg:col-span-4 space-y-8">
-                        {/* CATEGORIES / Related Blogs Section */}
-                        {relatedPosts && relatedPosts.length > 0 && (
-                            <div className="bg-white rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-slate-100 p-8">
-                                <h3 className="text-lg font-bold text-slate-900 uppercase tracking-wider mb-6 relative inline-block">
-                                    CATEGORIES
+
+                        {/* All Categories Section */}
+                        {categories && categories.length > 0 && (
+                            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] dark:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.3)] border border-slate-100 dark:border-gray-700 p-8">
+                                <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider mb-6 relative inline-block">
+                                    ALL CATEGORIES
                                     <span className="absolute -bottom-2 left-0 w-12 h-1 bg-orange-500 rounded-full"></span>
                                 </h3>
                                 <ul className="space-y-4 mt-4">
-                                    {relatedPosts.map((related: any) => (
-                                        <li key={related.id} className="border-b border-slate-50 last:border-0 pb-3 last:pb-0">
-                                            <Link 
-                                                href={`/blog/${related.id}`}
-                                                className="text-slate-600 hover:text-orange-500 font-medium transition-colors leading-tight block"
+                                    {categories.slice(0, 8).map((category: any) => (
+                                        <li key={category.name} className="flex justify-between items-center border-b border-slate-50 dark:border-gray-700 last:border-0 pb-3 last:pb-0">
+                                            <Link
+                                                href={`/blog?category=${encodeURIComponent(category.name)}`}
+                                                className="text-slate-600 dark:text-slate-300 hover:text-orange-500 dark:hover:text-orange-400 font-medium transition-colors"
                                             >
-                                                {related.title}
+                                                {category.name}
                                             </Link>
+                                            <span className="bg-slate-100 dark:bg-gray-700 text-slate-500 dark:text-slate-300 text-xs px-2 py-1 rounded-full font-bold">
+                                                {category.count}
+                                            </span>
                                         </li>
                                     ))}
                                 </ul>
                             </div>
                         )}
 
-                            {/* All Categories Section (Optional Fallback) */}
-                            {(!relatedPosts || relatedPosts.length === 0) && categories && categories.length > 0 && (
-                            <div className="bg-white rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-slate-100 p-8">
-                                <h3 className="text-lg font-bold text-slate-900 uppercase tracking-wider mb-6 relative inline-block">
-                                    ALL CATEGORIES
+                        {/* RELATED BLOGS Section */}
+                        {relatedPosts && relatedPosts.length > 0 && (
+                            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] dark:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.3)] border border-slate-100 dark:border-gray-700 p-8">
+                                <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider mb-6 relative inline-block">
+                                    RELATED BLOGS
                                     <span className="absolute -bottom-2 left-0 w-12 h-1 bg-orange-500 rounded-full"></span>
                                 </h3>
                                 <ul className="space-y-4 mt-4">
-                                    {categories.slice(0, 5).map((category: any) => (
-                                        <li key={category.name} className="flex justify-between items-center border-b border-slate-50 last:border-0 pb-3 last:pb-0">
-                                            <Link 
-                                                href={`/blog?category=${encodeURIComponent(category.name)}`}
-                                                className="text-slate-600 hover:text-orange-500 font-medium transition-colors"
+                                    {relatedPosts.map((related: any) => (
+                                        <li key={related.id} className="border-b border-slate-50 dark:border-gray-700 last:border-0 pb-3 last:pb-0">
+                                            <Link
+                                                href={`/blog/${related.id}`}
+                                                className="text-slate-600 dark:text-slate-300 hover:text-orange-500 dark:hover:text-orange-400 font-medium transition-colors leading-tight block"
                                             >
-                                                {category.name}
+                                                {related.title}
                                             </Link>
-                                            <span className="bg-slate-100 text-slate-500 text-xs px-2 py-1 rounded-full font-bold">
-                                                {category.count}
-                                            </span>
                                         </li>
                                     ))}
                                 </ul>
