@@ -11,6 +11,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
     {
+        id: "how-to-get-an-sap-fieldglass-job-in-2026",
+        title: "How to Get an SAP Fieldglass Job in 2026 – Complete Career Guide",
+        description: "Looking for SAP Fieldglass jobs in 2026? Explore key roles, salary ranges, certification paths, job openings, and expert tips to launch or grow your SAP Fieldglass career globally.",
+        image: "/images/blog/sap-fieldglass-jobs-2026.png",
+        date: "Mar 10, 2026",
+        category: "SAP Fieldglass",
+        author: "ERPVITS Expert"
+    },
+    {
         id: "ariba-guided-buying-guide",
         title: "The Ultimate End-to-End Guide to Ariba Guided Buying Configuration in SAP Ariba Solutions: From Login to Set Up",
         description: "A comprehensive administration guide covering everything about Ariba Guided Buying, from basic login to sophisticated configuration and best practices.",
