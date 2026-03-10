@@ -6,7 +6,9 @@ import { blogPosts as localPosts } from '@/lib/blogData';
 import BlogContactForm from '@/components/blog/BlogContactForm';
 import dynamic from 'next/dynamic';
 import { Metadata } from 'next';
+import { Suspense } from 'react';
 import InteractiveBlogContent from '@/components/blog/InteractiveBlogContent';
+import '../blog.css';
 
 // ISR: Cache blog posts for 1 hour
 export const revalidate = 3600;

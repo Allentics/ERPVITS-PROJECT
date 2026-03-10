@@ -3,8 +3,11 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import AnnouncementBar from '@/components/layout/AnnouncementBar'
 import Navbar from '@/components/layout/Navbar'
-import Footer from '@/components/layout/Footer'
-import WebinarPopup from '@/components/WebinarPopup'
+import dynamic from 'next/dynamic'
+
+// Lazy load below-the-fold components
+const Footer = dynamic(() => import('@/components/layout/Footer'));
+const WebinarPopup = dynamic(() => import('@/components/WebinarPopup'));
 
 const inter = Inter({
   subsets: ['latin'],
@@ -25,10 +28,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Preconnect to external origins for faster resource loading */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://xhomvyelpggegzxapbiy.supabase.co" />
+        {/* Preload critical assets */}
+        <link rel="preload" href="/images/logo.webp" as="image" />
+        <link rel="preload" href="/images/home_hero_bg_v11.jpg" as="image" />
       </head>
       <body className={inter.className} suppressHydrationWarning>
         <AnnouncementBar />

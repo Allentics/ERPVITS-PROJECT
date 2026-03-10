@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { supabase } from '@/lib/supabase';
 import { blogPosts as localPosts } from '@/lib/blogData';
 import { Metadata } from 'next';
+import './blog.css';
 
 export const metadata: Metadata = {
     title: 'SAP Blog & Insights | ERPVITS',
