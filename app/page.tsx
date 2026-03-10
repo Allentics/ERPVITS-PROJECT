@@ -1,13 +1,13 @@
 import Hero from '@/components/home/Hero';
 import UrgencySection from '@/components/home/UrgencySection';
-import WhyChooseUs from '@/components/home/WhyChooseUs';
-import CustomTrainingPlan from '@/components/home/CustomTrainingPlan';
-import FeaturedCourses from '@/components/home/FeaturedCourses';
 import dynamic from 'next/dynamic';
 import { fetchPageMetadata, fetchPageSchema } from '@/lib/metadata';
 import { Metadata } from 'next';
 
 // Lazy load below-the-fold sections to reduce initial bundle
+const WhyChooseUs = dynamic(() => import('@/components/home/WhyChooseUs'));
+const CustomTrainingPlan = dynamic(() => import('@/components/home/CustomTrainingPlan'));
+const FeaturedCourses = dynamic(() => import('@/components/home/FeaturedCourses'));
 const PlacementSection = dynamic(() => import('@/components/home/PlacementSection'));
 const ProvenResults = dynamic(() => import('@/components/home/ProvenResults'));
 const CareerAdvisors = dynamic(() => import('@/components/home/CareerAdvisors'));
