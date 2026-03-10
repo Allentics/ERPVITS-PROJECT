@@ -29,8 +29,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         {/* Preload critical assets */}
-        <link rel="preload" href="/images/logo.webp" as="image" />
-        <link rel="preload" href="/images/home_hero_bg_v11.jpg" as="image" />
+        <link rel="preload" href="/images/logo.webp" as="image" fetchPriority="high" />
       </head>
       <body className={inter.className} suppressHydrationWarning>
         <AnnouncementBar />
