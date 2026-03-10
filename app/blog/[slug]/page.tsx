@@ -229,7 +229,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                             {/* Content Rendering */}
                             <div className="prose prose-lg prose-slate max-w-none 
                                 prose-headings:text-slate-900 dark:prose-headings:text-slate-100 prose-headings:font-bold 
-                                [&_a]:!text-[#F58220] [&_a]:!font-semibold [&_a]:!no-underline hover:[&_a]:!text-[#e57a1e] 
+                                [&_a]:!text-[#F58220] [&_a_strong]:!text-[#F58220] [&_a]:!font-semibold [&_a]:!no-underline hover:[&_a]:!text-[#e57a1e] hover:[&_a_strong]:!text-[#e57a1e]
                                 prose-img:rounded-2xl prose-img:shadow-lg prose-img:my-10
                                 prose-p:leading-relaxed prose-p:text-slate-600 dark:prose-p:text-slate-300
                                 prose-li:text-slate-600 dark:prose-li:text-slate-300 prose-strong:text-slate-900 dark:prose-strong:text-slate-100 blog-content-area
