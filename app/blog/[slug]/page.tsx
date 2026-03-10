@@ -67,6 +67,7 @@ const blogHeroImages: Record<string, string> = {
     'sap-trm-master-data-essentials': '/images/SAP TRM Blog Image ERPVITS.webp',
     'sap-trm-complementary-technologies': '/images/blog/sap-trm-complementary.webp',
     'ultimate-guide-to-sap-fieldglass-login-access-setup': '/images/blog/sap-fieldglass-login-guide.png',
+    'how-to-get-an-sap-fieldglass-job-in-2026': '/images/blog/sap-fieldglass-jobs-2026.png',
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
