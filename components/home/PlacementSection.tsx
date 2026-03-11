@@ -66,7 +66,7 @@ export default function PlacementSection() {
                             key={i}
                             className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center justify-center gap-4 transition-all hover:shadow-md hover:-translate-y-1 min-h-[120px]"
                         >
-                            <div className="h-14 w-full flex items-center justify-center relative">
+                            <div className="h-14 w-full flex items-center justify-center">
                                 <Image
                                     src={company.logo}
                                     alt={`${company.name} logo`}
