@@ -19,6 +19,7 @@ export default function InteractiveBlogContent({ content, title }: { content: st
     return (
         <>
             <div 
+                className="blog-content blog-content-area"
                 dangerouslySetInnerHTML={{ __html: content }} 
                 onClick={handleClick}
             />

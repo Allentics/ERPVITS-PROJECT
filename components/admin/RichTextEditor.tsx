@@ -11,7 +11,8 @@ import {
     Heading2,
     List,
     Code,
-    Loader2
+    Loader2,
+    Wand2
 } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 
@@ -119,6 +120,36 @@ export default function RichTextEditor({ value, onChange, label, previewContext 
             e.target.value = '';
         }
     };
+    
+    /**
+     * Helper to auto-format text into clean HTML
+     */
+    const handleAutoFormat = () => {
+        if (!confirm('This will attempt to wrap your text in <p> tags and clean up common issues. Continue?')) return;
+        
+        let content = value;
+        
+        // 1. If it doesn't look like HTML (missing major tags), wrap paragraphs
+        if (!content.includes('<p>') && !content.includes('<div') && !content.includes('<section')) {
+            // Split by double newlines to find paragraphs
+            content = content
+                .split(/\n\s*\n/)
+                .map(p => p.trim())
+                .filter(p => p.length > 0)
+                .map(p => `<p>${p}</p>`)
+                .join('\n\n');
+        }
+        
+        // 2. Wrap loose text lines in <p> if they're not inside tags
+        // This is a bit complex for a textarea, but let's do a basic version
+        
+        // 3. Ensure a <header> or <h1> at the start if missing? No, user might prefer manual.
+        
+        // 4. Basic cleanup: replace multiple newlines
+        content = content.replace(/\n{3,}/g, '\n\n');
+        
+        onChange(content);
+    };
 
     return (
         <div className="space-y-2">
@@ -223,6 +254,16 @@ export default function RichTextEditor({ value, onChange, label, previewContext 
 
                                 <button type="button" onClick={handleYoutube} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="Insert YouTube Video">
                                     <Youtube size={18} />
+                                </button>
+                                <div className="w-px h-6 bg-gray-300 mx-1"></div>
+                                <button
+                                    type="button"
+                                    onClick={handleAutoFormat}
+                                    className="p-2 hover:bg-orange-50 text-orange-600 hover:text-orange-700 rounded transition-colors flex items-center gap-1 font-bold text-[10px] uppercase"
+                                    title="Auto-Format Content (Wrap in tags, Clean-up)"
+                                >
+                                    <Wand2 size={16} />
+                                    <span>Fix Structure</span>
                                 </button>
                             </div>
                         )}

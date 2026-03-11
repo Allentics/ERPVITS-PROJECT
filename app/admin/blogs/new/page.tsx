@@ -14,7 +14,7 @@ export default function NewBlogPage() {
         id: '',
         title: '',
         description: '',
-        content: '',
+        content: '<section>\n  <h1>Enter Main Title Here</h1>\n\n  <p>Start your introductory paragraph here. This paragraph should provide a brief overview of the blog topic.</p>\n\n  <h2>Subheading One</h2>\n  <p>Write your detailed content for the first section here. Use relevant keywords and provide valuable insights.</p>\n\n  <h2>Subheading Two</h2>\n  <p>Continue with your next section. You can add more paragraphs, lists, or images as needed.</p>\n</section>\n',
         image: '',
         date: (() => {
             const d = new Date();

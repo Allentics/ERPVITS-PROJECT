@@ -102,7 +102,7 @@ export default function BlogPreview({ data }: BlogPreviewProps) {
                                 prose-li:text-slate-600 prose-strong:text-slate-900 blog-content-area
                                 [&_iframe]:w-full [&_iframe]:aspect-video [&_iframe]:rounded-xl">
 
-                                <div dangerouslySetInnerHTML={{ __html: content }} />
+                                <div className="blog-content" dangerouslySetInnerHTML={{ __html: content }} />
                             </div>
                         </article>
                     </div>
