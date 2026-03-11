@@ -28,6 +28,17 @@ export default function EditBlogPage({ params }: { params: Promise<{ id: string 
                 .single();
 
             if (error) throw error;
+            
+            // Format date for the HTML5 date input (must be YYYY-MM-DD)
+            if (data.date) {
+                try {
+                    const formattedDate = new Date(data.date).toISOString().split('T')[0];
+                    data.date = formattedDate;
+                } catch (e) {
+                    console.error("Error formatting date:", e);
+                }
+            }
+            
             setFormData(data);
         } catch (err: any) {
             alert('Error fetching blog post: ' + err.message);

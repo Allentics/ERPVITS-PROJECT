@@ -81,8 +81,8 @@ export default function BlogsPage() {
             let count = 0;
             let errors = [];
             for (const post of localPosts) {
-                // Check if blog already exists in our current state (which represents the DB)
-                const exists = blogs.some(b => b.id === post.id);
+                // Check if blog already exists in DB by ID OR Title
+                const exists = blogs.some(b => b.id === post.id || b.title === post.title);
 
                 if (!exists) {
                     console.log(`Syncing missing blog: ${post.id}`);
@@ -93,10 +93,10 @@ export default function BlogsPage() {
                             title: post.title,
                             description: post.description,
                             image: post.image,
-                            date: new Date(post.date).toISOString().split('T')[0],
+                            date: post.date ? new Date(post.date).toISOString().split('T')[0] : new Date().toISOString().split('T')[0],
                             category: post.category,
                             author: post.author,
-                            content: "" // Website uses fallback to React component if content is empty
+                            content: ""
                         }, { onConflict: 'id' });
 
                     if (error) {

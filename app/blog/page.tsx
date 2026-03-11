@@ -45,30 +45,37 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
     }
 
     // Merge DB posts with local posts, prioritizing DB posts if they exist
-    const mergedPostsMap = new Map();
+    // Deduplicate by both ID (slug) and Title to prevent duplicates when slugs are changed in CMS
+    const idMap = new Map();
+    const titleMap = new Map();
 
-    // Add local posts first
-    localPosts.forEach(post => {
-        mergedPostsMap.set(post.id, {
-            ...post,
-        });
-    });
-
-    // Overwrite with DB posts if they exist
+    // 1. First, process DB posts as they are the source of truth
     if (dbPosts) {
         dbPosts.forEach((post: any) => {
-            const localPost = mergedPostsMap.get(post.id);
-            // If local post exists, prioritize DB properties (like date) but fallback to local properties for missing data
-            if (localPost) {
-                const validDbProps = Object.fromEntries(Object.entries(post).filter(([_, v]) => v !== null && v !== ''));
-                mergedPostsMap.set(post.id, { ...localPost, ...validDbProps });
-            } else {
-                mergedPostsMap.set(post.id, post);
-            }
+            idMap.set(post.id, post);
+            if (post.title) titleMap.set(post.title, post.id);
         });
     }
 
-    let allPosts = Array.from(mergedPostsMap.values()).sort((a, b) => {
+    // 2. Add local posts only if they don't conflict with DB by ID or Title
+    localPosts.forEach(post => {
+        const idConflict = idMap.has(post.id);
+        const titleConflict = titleMap.has(post.title);
+
+        if (!idConflict && !titleConflict) {
+            idMap.set(post.id, post);
+            titleMap.set(post.title, post.id);
+        } else if (idConflict) {
+            // If ID matches, merge local data as fallback for missing fields in DB
+            const dbPost = idMap.get(post.id);
+            const validDbProps = Object.fromEntries(Object.entries(dbPost).filter(([_, v]) => v !== null && v !== ''));
+            idMap.set(post.id, { ...post, ...validDbProps });
+        }
+        // If Title conflicts but ID is different, we skip the local post because 
+        // it likely means the slug was renamed in the CMS (DB) but remains unchanged in local code.
+    });
+
+    let allPosts = Array.from(idMap.values()).sort((a, b) => {
         const dateA = new Date(a.date).getTime() || 0;
         const dateB = new Date(b.date).getTime() || 0;
         return dateB - dateA;
