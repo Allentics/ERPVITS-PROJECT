@@ -220,53 +220,51 @@ export default function RichTextEditor({ value, onChange, label, previewContext 
                 ) : (
                     /* View: Write */
                     <>
-                        {/* Toolbar - Only visible in Simple Mode */}
-                        {mode === 'simple' && (
-                            <div className="flex flex-wrap items-center gap-1 p-2 bg-gray-50 border-b border-gray-200 sticky top-0 z-10">
-                                <button type="button" onClick={() => insertTag('<b>', '</b>')} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="Bold">
-                                    <Bold size={18} />
-                                </button>
-                                <button type="button" onClick={() => insertTag('<i>', '</i>')} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="Italic">
-                                    <Italic size={18} />
-                                </button>
-                                <div className="w-px h-6 bg-gray-300 mx-1"></div>
-                                <button type="button" onClick={() => insertTag('<h2>', '</h2>')} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="Heading 2">
-                                    <Heading1 size={18} />
-                                </button>
-                                <button type="button" onClick={() => insertTag('<h3>', '</h3>')} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="Heading 3">
-                                    <Heading2 size={18} />
-                                </button>
-                                <button type="button" onClick={() => insertTag('<ul>\n<li>', '</li>\n</ul>')} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="List">
-                                    <List size={18} />
-                                </button>
-                                <button type="button" onClick={() => insertTag('<pre><code>', '</code></pre>')} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="Code Block">
-                                    <Code size={18} />
-                                </button>
-                                <div className="w-px h-6 bg-gray-300 mx-1"></div>
-                                <button type="button" onClick={handleLink} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="Link">
-                                    <LinkIcon size={18} />
-                                </button>
+                        {/* Toolbar - Visible in both modes */}
+                        <div className="flex flex-wrap items-center gap-1 p-2 bg-gray-50 border-b border-gray-200 sticky top-0 z-10">
+                            <button type="button" onClick={() => insertTag('<b>', '</b>')} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="Bold">
+                                <Bold size={18} />
+                            </button>
+                            <button type="button" onClick={() => insertTag('<i>', '</i>')} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="Italic">
+                                <Italic size={18} />
+                            </button>
+                            <div className="w-px h-6 bg-gray-300 mx-1"></div>
+                            <button type="button" onClick={() => insertTag('<h2>', '</h2>')} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="Heading 2">
+                                <Heading1 size={18} />
+                            </button>
+                            <button type="button" onClick={() => insertTag('<h3>', '</h3>')} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="Heading 3">
+                                <Heading2 size={18} />
+                            </button>
+                            <button type="button" onClick={() => insertTag('<ul>\n<li>', '</li>\n</ul>')} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="List">
+                                <List size={18} />
+                            </button>
+                            <button type="button" onClick={() => insertTag('<pre><code>', '</code></pre>')} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="Code Block">
+                                <Code size={18} />
+                            </button>
+                            <div className="w-px h-6 bg-gray-300 mx-1"></div>
+                            <button type="button" onClick={handleLink} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="Link">
+                                <LinkIcon size={18} />
+                            </button>
 
-                                <label className={`p-2 hover:bg-gray-200 rounded text-gray-700 cursor-pointer ${uploading ? 'opacity-50' : ''}`} title="Insert Image">
-                                    {uploading ? <Loader2 size={18} className="animate-spin" /> : <ImageIcon size={18} />}
-                                    <input type="file" accept="image/*" className="hidden" onChange={handleImageUpload} disabled={uploading} />
-                                </label>
+                            <label className={`p-2 hover:bg-gray-200 rounded text-gray-700 cursor-pointer ${uploading ? 'opacity-50' : ''}`} title="Insert Image">
+                                {uploading ? <Loader2 size={18} className="animate-spin" /> : <ImageIcon size={18} />}
+                                <input type="file" accept="image/*" className="hidden" onChange={handleImageUpload} disabled={uploading} />
+                            </label>
 
-                                <button type="button" onClick={handleYoutube} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="Insert YouTube Video">
-                                    <Youtube size={18} />
-                                </button>
-                                <div className="w-px h-6 bg-gray-300 mx-1"></div>
-                                <button
-                                    type="button"
-                                    onClick={handleAutoFormat}
-                                    className="p-2 hover:bg-orange-50 text-orange-600 hover:text-orange-700 rounded transition-colors flex items-center gap-1 font-bold text-[10px] uppercase"
-                                    title="Auto-Format Content (Wrap in tags, Clean-up)"
-                                >
-                                    <Wand2 size={16} />
-                                    <span>Fix Structure</span>
-                                </button>
-                            </div>
-                        )}
+                            <button type="button" onClick={handleYoutube} className="p-2 hover:bg-gray-200 rounded text-gray-700" title="Insert YouTube Video">
+                                <Youtube size={18} />
+                            </button>
+                            <div className="w-px h-6 bg-gray-300 mx-1"></div>
+                            <button
+                                type="button"
+                                onClick={handleAutoFormat}
+                                className="p-2 hover:bg-orange-50 text-orange-600 hover:text-orange-700 rounded transition-colors flex items-center gap-1 font-bold text-[10px] uppercase"
+                                title="Auto-Format Content (Wrap in tags, Clean-up)"
+                            >
+                                <Wand2 size={16} />
+                                <span>Fix Structure</span>
+                            </button>
+                        </div>
 
                         {/* Editor Area */}
                         <textarea
