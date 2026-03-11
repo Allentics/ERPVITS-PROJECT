@@ -16,11 +16,25 @@ export default function InteractiveBlogContent({ content, title }: { content: st
         }
     };
 
+    const formattedContent = (() => {
+        if (!content) return '';
+        // If it already has HTML tags, respect them
+        if (/<[a-z][\s\S]*>/i.test(content)) return content;
+        
+        // Otherwise, convert newlines to paragraphs for plain text
+        return content
+            .split(/\n\s*\n/)
+            .map(p => p.trim())
+            .filter(p => p.length > 0)
+            .map(p => `<p>${p}</p>`)
+            .join('\n');
+    })();
+
     return (
         <>
             <div 
                 className="blog-content blog-content-area"
-                dangerouslySetInnerHTML={{ __html: content }} 
+                dangerouslySetInnerHTML={{ __html: formattedContent }} 
                 onClick={handleClick}
             />
             <ContactModal 

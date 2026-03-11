@@ -102,7 +102,20 @@ export default function BlogPreview({ data }: BlogPreviewProps) {
                                 prose-li:text-slate-600 prose-strong:text-slate-900 blog-content-area
                                 [&_iframe]:w-full [&_iframe]:aspect-video [&_iframe]:rounded-xl">
 
-                                <div className="blog-content" dangerouslySetInnerHTML={{ __html: content }} />
+                                <div className="blog-content">
+                                    <div dangerouslySetInnerHTML={{ 
+                                        __html: (() => {
+                                            if (!content) return '';
+                                            if (/<[a-z][\s\S]*>/i.test(content)) return content;
+                                            return content
+                                                .split(/\n\s*\n/)
+                                                .map(p => p.trim())
+                                                .filter(p => p.length > 0)
+                                                .map(p => `<p>${p}</p>`)
+                                                .join('\n');
+                                        })() 
+                                    }} />
+                                </div>
                             </div>
                         </article>
                     </div>
