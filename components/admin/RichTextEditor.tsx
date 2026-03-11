@@ -129,15 +129,26 @@ export default function RichTextEditor({ value, onChange, label, previewContext 
         
         let content = value;
         
-        // 1. If it doesn't look like HTML (missing major tags), wrap paragraphs
+        // 1. If it doesn't look like HTML (missing major tags), wrap paragraphs and detect headings
         if (!content.includes('<p>') && !content.includes('<div') && !content.includes('<section')) {
-            // Split by double newlines to find paragraphs
-            content = content
-                .split(/\n\s*\n/)
-                .map(p => p.trim())
-                .filter(p => p.length > 0)
-                .map(p => `<p>${p}</p>`)
-                .join('\n\n');
+            // Split by newlines (potentially multiple)
+            const blocks = content.split(/\n\s*\n/).map(b => b.trim()).filter(b => b.length > 0);
+            
+            content = blocks.map((block, index) => {
+                // Heuristic for Heading:
+                // - First block is often a title
+                // - Shorter than 100 chars
+                // - Doesn't end in a period (usually)
+                // - Ends in a question mark
+                const isShort = block.length < 100;
+                const noPeriod = !block.endsWith('.');
+                const isQuestion = block.endsWith('?');
+                
+                if (index === 0 || (isShort && (noPeriod || isQuestion))) {
+                    return `<h2>${block}</h2>`;
+                }
+                return `<p>${block}</p>`;
+            }).join('\n\n');
         }
         
         // 2. Wrap loose text lines in <p> if they're not inside tags
