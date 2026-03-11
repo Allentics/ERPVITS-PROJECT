@@ -53,18 +53,19 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
     if (dbPosts) {
         dbPosts.forEach((post: any) => {
             idMap.set(post.id, post);
-            if (post.title) titleMap.set(post.title, post.id);
+            if (post.title) titleMap.set(post.title.toLowerCase().trim(), post.id);
         });
     }
 
     // 2. Add local posts only if they don't conflict with DB by ID or Title
     localPosts.forEach(post => {
         const idConflict = idMap.has(post.id);
-        const titleConflict = titleMap.has(post.title);
+        const titleKey = post.title.toLowerCase().trim();
+        const titleConflict = titleMap.has(titleKey);
 
         if (!idConflict && !titleConflict) {
             idMap.set(post.id, post);
-            titleMap.set(post.title, post.id);
+            titleMap.set(titleKey, post.id);
         } else if (idConflict) {
             // If ID matches, merge local data as fallback for missing fields in DB
             const dbPost = idMap.get(post.id);
