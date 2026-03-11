@@ -1,0 +1,41 @@
+# Specific AI Bots
+# Perplexity AI's primary crawler for search indexing
+User-agent: PerplexityBot
+Allow: /
+
+# Perplexity AI's user-triggered fetcher (often ignores robots.txt by design for user requests)
+# Including it here for completeness, but it's often ignored by the bot due to its nature.
+User-agent: Perplexity-User
+Allow: /
+
+# OpenAI's primary crawler for training AI models (e.g., ChatGPT, GPT-4)
+User-agent: GPTBot
+Allow: /
+
+# OpenAI's bot for search features within AI products
+User-agent: OAI-SearchBot
+Allow: /
+
+# OpenAI's bot for user-triggered fetches within ChatGPT
+User-agent: ChatGPT-User
+Allow: /
+
+# Google's User-Agent for generative AI and large language models (includes Bard/Gemini data)
+User-agent: Google-Extended
+Allow: /
+
+# Other common AI/LLM related bots you might consider allowing (optional, but good practice for wider AI visibility)
+# Anthropic's Claude bot
+User-agent: anthropic-ai
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+
+# Common Crawl (dataset for many AI models)
+User-agent: CCBot
+Allow: /
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.erpvits.com/sitemap.xml
