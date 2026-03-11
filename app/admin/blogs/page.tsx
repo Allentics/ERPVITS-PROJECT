@@ -93,7 +93,13 @@ export default function BlogsPage() {
                             title: post.title,
                             description: post.description,
                             image: post.image,
-                            date: post.date ? new Date(post.date).toISOString().split('T')[0] : new Date().toISOString().split('T')[0],
+                            date: (() => {
+                                const d = post.date ? new Date(post.date.includes('T') ? post.date : `${post.date} UTC`) : new Date();
+                                const yyyy = d.getUTCFullYear();
+                                const mm = String(d.getUTCMonth() + 1).padStart(2, '0');
+                                const dd = String(d.getUTCDate()).padStart(2, '0');
+                                return `${yyyy}-${mm}-${dd}`;
+                            })(),
                             category: post.category,
                             author: post.author,
                             content: ""

@@ -30,10 +30,16 @@ export default function EditBlogPage({ params }: { params: Promise<{ id: string 
             if (error) throw error;
             
             // Format date for the HTML5 date input (must be YYYY-MM-DD)
+            // Using UTC methods to prevent timezone shifts (matches website logic)
             if (data.date) {
                 try {
-                    const formattedDate = new Date(data.date).toISOString().split('T')[0];
-                    data.date = formattedDate;
+                    const date = new Date(data.date.includes('T') ? data.date : `${data.date} UTC`);
+                    if (!isNaN(date.getTime())) {
+                        const yyyy = date.getUTCFullYear();
+                        const mm = String(date.getUTCMonth() + 1).padStart(2, '0');
+                        const dd = String(date.getUTCDate()).padStart(2, '0');
+                        data.date = `${yyyy}-${mm}-${dd}`;
+                    }
                 } catch (e) {
                     console.error("Error formatting date:", e);
                 }
