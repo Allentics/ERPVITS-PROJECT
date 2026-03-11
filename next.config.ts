@@ -75,6 +75,15 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: "/courses/ariba",
+        destination: "/sap-ariba-training",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
