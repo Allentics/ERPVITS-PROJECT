@@ -19,6 +19,7 @@ import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
 import { supabase } from '@/lib/supabase';
+import '../blog/blog.css';
 
 function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
