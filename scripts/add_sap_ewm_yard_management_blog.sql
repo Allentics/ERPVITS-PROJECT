@@ -194,7 +194,7 @@ VALUES ('understanding-the-process-flow-of-sap-ewm-yard-management', 'Understand
                 Investing in the right SAP EWM yard management configuration and understanding the SAP EWM process flow for yard management creates a solid foundation for operational success. With the right implementation partner, the operational success built on yard management SAP EWM is achievable in a short period of time.
             </p>
             <p>
-                For <a href="http://localhost:3000/courses/sap-ewm" target="_blank" rel="noopener noreferrer" class="text-cyan-500 hover:text-cyan-600 font-semibold no-underline">SAP EWM Training</a>, visit the ERPVITS website or contact our team for further assistance.
+                For <a href="/courses/sap-ewm" target="_blank" rel="noopener noreferrer" class="text-cyan-500 hover:text-cyan-600 font-semibold no-underline">SAP EWM Training</a>, visit the ERPVITS website or contact our team for further assistance.
             </p>
         </div>', '/images/blog/sap-ewm-yard-management.png', '19 February, 2026', 'SAP EWM', 'ERPVITS Expert')
 ON CONFLICT (id) DO UPDATE SET 

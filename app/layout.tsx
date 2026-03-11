@@ -58,6 +58,12 @@ export default function RootLayout({
           `}
         </Script>
 
+        {/* Preconnect to external services */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.clarity.ms" />
+        <link rel="dns-prefetch" href="https://www.clarity.ms" />
+
         {/* Next.js Image priority in Navbar handles logo preloading optimally */}
       </head>
       <body className={inter.className} suppressHydrationWarning>

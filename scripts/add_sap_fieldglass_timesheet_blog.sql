@@ -123,7 +123,7 @@ VALUES ('sap-fieldglass-timesheet-workflow-guide', 'SAP Fieldglass Timesheet: En
                 To be a serious VMS practitioner, mastering timesheets in Fieldglass is a prerequisite. It is essential.
             </p>
             <p>
-                Looking to advance your SAP Fieldglass expertise? <a href="https://www.erpvits.com/" target="_blank" rel="noopener noreferrer" class="text-cyan-500 hover:text-cyan-600 font-semibold no-underline">ERPVITS</a> is here to help you take the next step. Our <a href="http://localhost:3000/courses/sap-fieldglass" target="_blank" rel="noopener noreferrer" class="text-cyan-500 hover:text-cyan-600 font-semibold no-underline">training and certification support</a>, along with expert career counseling, is designed to help you succeed. Get in touch today!
+                Looking to advance your SAP Fieldglass expertise? <a href="https://www.erpvits.com/" target="_blank" rel="noopener noreferrer" class="text-cyan-500 hover:text-cyan-600 font-semibold no-underline">ERPVITS</a> is here to help you take the next step. Our <a href="/courses/sap-fieldglass" target="_blank" rel="noopener noreferrer" class="text-cyan-500 hover:text-cyan-600 font-semibold no-underline">training and certification support</a>, along with expert career counseling, is designed to help you succeed. Get in touch today!
             </p>
         </div>', '/images/blog/sap-fieldglass-timesheet-workflow-guide.png', '17 February, 2026', 'SAP Fieldglass', 'ERPVITS Expert')
 ON CONFLICT (id) DO UPDATE SET 

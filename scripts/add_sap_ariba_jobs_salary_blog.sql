@@ -231,7 +231,7 @@ VALUES ('sap-ariba-jobs-salary-guide', 'SAP Ariba Jobs & Salary Guide: Career Op
             </p>
 
             <p>
-                Looking to grow your SAP Ariba career further? <a href="https://www.erpvits.com/" target="_blank" rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 font-semibold no-underline">ERPVITS</a> is here for you to take the next step. Our <a href="http://localhost:3000/courses/ariba" target="_blank" rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 font-semibold no-underline">training and certification support</a>, along career counseling, is aimed to help you succeed. Our goal is to help you become an SAP Ariba professional as quickly as possible. Get in touch!
+                Looking to grow your SAP Ariba career further? <a href="https://www.erpvits.com/" target="_blank" rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 font-semibold no-underline">ERPVITS</a> is here for you to take the next step. Our <a href="/courses/ariba" target="_blank" rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 font-semibold no-underline">training and certification support</a>, along career counseling, is aimed to help you succeed. Our goal is to help you become an SAP Ariba professional as quickly as possible. Get in touch!
             </p>
         </div>', '/images/blog/sap-ariba-jobs-salary.png', '14 February, 2026', 'SAP Ariba', 'ERPVITS Expert')
 ON CONFLICT (id) DO UPDATE SET 

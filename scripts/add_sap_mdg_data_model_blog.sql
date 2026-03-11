@@ -203,7 +203,7 @@ VALUES ('sap-mdg-data-model-overview-architecture-framework-configuration', 'SAP
                 The difference between developing a successful master data governance program and one that suffers from poor data quality and inefficient processes lies in understanding data modeling in SAP MDG and getting it right from the beginning. With the right expert advice and clear architectural guidance, the SAP MDG data model will allow your organization to drive significant business change.
             </p>
             <p>
-                Do you want to create a strong SAP MDG data model for your business? Join our <a href="http://localhost:3000/courses/sap-mdg" target="_blank" rel="noopener noreferrer" class="text-cyan-500 hover:text-cyan-600 font-semibold no-underline">SAP MDG Training Today</a>.
+                Do you want to create a strong SAP MDG data model for your business? Join our <a href="/courses/sap-mdg" target="_blank" rel="noopener noreferrer" class="text-cyan-500 hover:text-cyan-600 font-semibold no-underline">SAP MDG Training Today</a>.
             </p>
 
             <h2 class="text-2xl font-bold mt-10 mb-4 pb-2 border-b border-slate-200 dark:border-slate-700">FAQs</h2>

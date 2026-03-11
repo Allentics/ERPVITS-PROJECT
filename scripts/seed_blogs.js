@@ -215,7 +215,7 @@ const sap_mdg_content = `<div class="prose prose-lg prose-slate max-w-none
                 The difference between developing a successful master data governance program and one that suffers from poor data quality and inefficient processes lies in understanding data modeling in SAP MDG and getting it right from the beginning. With the right expert advice and clear architectural guidance, the SAP MDG data model will allow your organization to drive significant business change.
             </p>
             <p>
-                Do you want to create a strong SAP MDG data model for your business? Join our <a href="http://localhost:3000/courses/sap-mdg" target="_blank" rel="noopener noreferrer" class="text-cyan-500 hover:text-cyan-600 font-semibold no-underline">SAP MDG Training Today</a>.
+                Do you want to create a strong SAP MDG data model for your business? Join our <a href="/courses/sap-mdg" target="_blank" rel="noopener noreferrer" class="text-cyan-500 hover:text-cyan-600 font-semibold no-underline">SAP MDG Training Today</a>.
             </p>
 
             <h2 class="text-2xl font-bold mt-10 mb-4 pb-2 border-b border-slate-200 dark:border-slate-700">FAQs</h2>
@@ -441,7 +441,7 @@ const sap_ewm_content = `<div class="prose prose-lg prose-slate max-w-none
                 Investing in the right SAP EWM yard management configuration and understanding the SAP EWM process flow for yard management creates a solid foundation for operational success. With the right implementation partner, the operational success built on yard management SAP EWM is achievable in a short period of time.
             </p>
             <p>
-                For <a href="http://localhost:3000/courses/sap-ewm" target="_blank" rel="noopener noreferrer" class="text-cyan-500 hover:text-cyan-600 font-semibold no-underline">SAP EWM Training</a>, visit the ERPVITS website or contact our team for further assistance.
+                For <a href="/courses/sap-ewm" target="_blank" rel="noopener noreferrer" class="text-cyan-500 hover:text-cyan-600 font-semibold no-underline">SAP EWM Training</a>, visit the ERPVITS website or contact our team for further assistance.
             </p>
         </div>`;
 
