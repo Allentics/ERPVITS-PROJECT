@@ -58,8 +58,7 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Preload critical assets */}
-        <link rel="preload" href="/images/logo.webp" as="image" fetchPriority="high" />
+        {/* Next.js Image priority in Navbar handles logo preloading optimally */}
       </head>
       <body className={inter.className} suppressHydrationWarning>
         <AnnouncementBar />

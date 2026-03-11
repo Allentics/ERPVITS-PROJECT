@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X, ChevronDown, Phone, Mail, MessageCircle } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -160,10 +161,13 @@ const Navbar = () => {
                         <div className="flex justify-between h-20 items-center">
                             {/* Logo */}
                             <Link href="/" className="flex-shrink-0 flex items-center">
-                                <img
+                                <Image
                                     src="/images/logo.webp"
                                     alt="ERPVITS"
+                                    width={230}
+                                    height={84}
                                     className="h-12 w-auto"
+                                    priority
                                 />
                             </Link>
 
