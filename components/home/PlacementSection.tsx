@@ -3,6 +3,7 @@
 
 import { useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase';
+import Image from 'next/image';
 
 const DEFAULT_CONTENT = {
     title: "OUR LEARNERS PLACED IN TOP COMPANIES",
@@ -16,17 +17,17 @@ const DEFAULT_CONTENT = {
     ],
     companies: [
         { name: "Deloitte", logo: "/images/partners/deloitte.png" },
-        { name: "Accenture", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Accenture.svg/1200px-Accenture.svg.png" },
-        { name: "PwC", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/PricewaterhouseCoopers_Logo.svg/1200px-PricewaterhouseCoopers_Logo.svg.png" },
+        { name: "Accenture", logo: "/images/partners/accenture.png" },
+        { name: "PwC", logo: "/images/partners/pwc.png" },
         { name: "EY", logo: "/images/partners/ey.png" },
-        { name: "SAP SE", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/SAP_2011_logo.svg/1200px-SAP_2011_logo.svg.png" },
+        { name: "SAP SE", logo: "/images/partners/sap.png" },
         { name: "Microsoft", logo: "/images/partners/microsoft.png" },
         { name: "Google", logo: "/images/partners/google.png" },
-        { name: "Amazon", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1200px-Amazon_logo.svg.png" },
-        { name: "Goldman Sachs", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Goldman_Sachs.svg/1200px-Goldman_Sachs.svg.png" },
+        { name: "Amazon", logo: "/images/partners/amazon.png" },
+        { name: "Goldman Sachs", logo: "/images/partners/goldman-sachs.png" },
         { name: "Morgan Stanley", logo: "/images/partners/morgan-stanley.png" },
-        { name: "Bosch", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Bosch-logo.svg/1200px-Bosch-logo.svg.png" },
-        { name: "Siemens", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Siemens-logo.svg/1200px-Siemens-logo.svg.png" }
+        { name: "Bosch", logo: "/images/partners/bosch.png" },
+        { name: "Siemens", logo: "/images/partners/siemens.png" }
     ]
 };
 
@@ -65,14 +66,13 @@ export default function PlacementSection() {
                             key={i}
                             className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center justify-center gap-4 transition-all hover:shadow-md hover:-translate-y-1 min-h-[120px]"
                         >
-                            <div className="h-14 w-full flex items-center justify-center">
-                                <img
+                            <div className="h-14 w-full flex items-center justify-center relative">
+                                <Image
                                     src={company.logo}
                                     alt={`${company.name} logo`}
+                                    width={120}
+                                    height={56}
                                     className="max-h-full max-w-full object-contain transition-all duration-300"
-                                    onError={(e) => {
-                                        (e.target as HTMLImageElement).style.opacity = '0';
-                                    }}
                                 />
                             </div>
                         </div>
