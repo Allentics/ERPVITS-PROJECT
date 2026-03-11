@@ -1,12 +1,10 @@
-
 import CoursePage from '../courses/[slug]/page';
 import { Metadata } from 'next';
 import { courses } from '@/lib/courseData';
 import { supabase } from '@/lib/supabase';
 
-// Helper to get metadata directly since we know the slug
 export async function generateMetadata(): Promise<Metadata> {
-    const slug = 'sap-fieldglass';
+    const slug = 'fieldglass';
     const { data: course } = await supabase.from('courses').select('title, meta_title, meta_description').eq('id', slug).single();
     const local = courses.find(c => c.id === 'fieldglass' || c.id === 'sap-fieldglass');
 
@@ -20,5 +18,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function Page() {
-    return <CoursePage params={Promise.resolve({ slug: 'sap-fieldglass' })} />;
+    return <CoursePage params={Promise.resolve({ slug: 'fieldglass' })} />;
 }

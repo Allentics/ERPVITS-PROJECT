@@ -4,7 +4,7 @@ import { courses } from '@/lib/courseData';
 import { supabase } from '@/lib/supabase';
 
 export async function generateMetadata(): Promise<Metadata> {
-    const slug = 'sap-abap-on-cloud';
+    const slug = 'abap-cloud';
     const { data: course } = await supabase.from('courses').select('title, meta_title, meta_description').eq('id', slug).single();
     const local = courses.find(c => c.id === 'abap-cloud');
 
@@ -18,5 +18,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function Page() {
-    return <CoursePage params={Promise.resolve({ slug: 'sap-abap-on-cloud' })} />;
+    return <CoursePage params={Promise.resolve({ slug: 'abap-cloud' })} />;
 }

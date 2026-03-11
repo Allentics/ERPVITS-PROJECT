@@ -82,6 +82,36 @@ const nextConfig: NextConfig = {
         destination: "/sap-ariba-training",
         permanent: true,
       },
+      {
+        source: "/courses/cpi",
+        destination: "/sap-cpi-training",
+        permanent: true,
+      },
+      {
+        source: "/courses/abap-cloud",
+        destination: "/sap-abap-on-cloud-online-training",
+        permanent: true,
+      },
+      {
+        source: "/courses/c4c-technical",
+        destination: "/sap-c4c-technical-online-training",
+        permanent: true,
+      },
+      {
+        source: "/courses/fieldglass",
+        destination: "/sap-fieldglass-training",
+        permanent: true,
+      },
+      {
+        source: "/courses/fico",
+        destination: "/sap-fico-course",
+        permanent: true,
+      },
+      {
+        source: "/courses/sd",
+        destination: "/sap-sd-training",
+        permanent: true,
+      },
     ];
   },
 };
