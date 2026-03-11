@@ -203,7 +203,7 @@ export default function SapFieldglassVmsContent() {
                 title="Start Your SAP Fieldglass Online Training"
                 description="If you are looking to be future-ready with a workforce management career, and want to distinguish yourself in the SAP community, this is the time to learn new skills."
                 buttonText="Enroll Now"
-                buttonLink="/course/sap-fieldglass-training"
+                buttonLink="/sap-fieldglass-training"
             />
         </div>
     );

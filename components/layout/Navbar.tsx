@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X, ChevronDown, Phone, Mail, MessageCircle } from 'lucide-react';
 import { usePathname } from 'next/navigation';
-import { cn } from '@/lib/utils';
+import { cn, getCourseUrl } from '@/lib/utils';
 import { courses as localCourses } from '@/lib/courseData';
 import { supabase } from '@/lib/supabase';
 import ContactModal from '../ContactModal';
@@ -193,7 +193,7 @@ const Navbar = () => {
                                     <div className="absolute left-0 top-full w-[600px] bg-white border-t-4 border-orange-500 rounded-b-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left translate-y-2 group-hover:translate-y-0 z-50">
                                         <div className="py-2 max-h-[60vh] overflow-y-auto custom-scrollbar grid grid-cols-2 gap-x-2">
                                             {functionalCourses.map((course) => (
-                                                <Link key={course.id} href={`/courses/${course.id}`} className="block px-4 py-3 text-sm text-slate-900 hover:bg-orange-50 hover:text-orange-600 transition-colors border-l-4 border-transparent hover:border-orange-500">
+                                                <Link key={course.id} href={getCourseUrl(course.id)} className="block px-4 py-3 text-sm text-slate-900 hover:bg-orange-50 hover:text-orange-600 transition-colors border-l-4 border-transparent hover:border-orange-500">
                                                     {course.title}
                                                 </Link>
                                             ))}
@@ -209,7 +209,7 @@ const Navbar = () => {
                                     <div className="absolute left-0 top-full w-64 bg-white border-t-4 border-orange-500 rounded-b-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left translate-y-2 group-hover:translate-y-0 z-50">
                                         <div className="py-2 max-h-[60vh] overflow-y-auto custom-scrollbar">
                                             {technicalCourses.map((course) => (
-                                                <Link key={course.id} href={`/courses/${course.id}`} className="block px-4 py-3 text-sm text-slate-900 hover:bg-orange-50 hover:text-orange-600 transition-colors border-l-4 border-transparent hover:border-orange-500">
+                                                <Link key={course.id} href={getCourseUrl(course.id)} className="block px-4 py-3 text-sm text-slate-900 hover:bg-orange-50 hover:text-orange-600 transition-colors border-l-4 border-transparent hover:border-orange-500">
                                                     {course.title}
                                                 </Link>
                                             ))}
@@ -225,7 +225,7 @@ const Navbar = () => {
                                     <div className="absolute left-0 top-full w-64 bg-white border-t-4 border-orange-500 rounded-b-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left translate-y-2 group-hover:translate-y-0 z-50">
                                         <div className="py-2 max-h-[60vh] overflow-y-auto custom-scrollbar">
                                             {otherCourses.map((course) => (
-                                                <Link key={course.id} href={`/courses/${course.id}`} className="block px-4 py-3 text-sm text-slate-900 hover:bg-orange-50 hover:text-orange-600 transition-colors border-l-4 border-transparent hover:border-orange-500">
+                                                <Link key={course.id} href={getCourseUrl(course.id)} className="block px-4 py-3 text-sm text-slate-900 hover:bg-orange-50 hover:text-orange-600 transition-colors border-l-4 border-transparent hover:border-orange-500">
                                                     {course.title}
                                                 </Link>
                                             ))}
@@ -285,7 +285,7 @@ const Navbar = () => {
                             </button>
                             <div className={cn("pl-4 space-y-1 overflow-hidden transition-all duration-300", activeDropdown === 'func' ? "max-h-[500px]" : "max-h-0")}>
                                 {functionalCourses.map(course => (
-                                    <Link key={course.id} href={`/courses/${course.id}`} className="block px-4 py-2 rounded-lg text-sm text-slate-300 hover:text-orange-500 hover:bg-white/5" onClick={() => setIsOpen(false)}>
+                                    <Link key={course.id} href={getCourseUrl(course.id)} className="block px-4 py-2 rounded-lg text-sm text-slate-300 hover:text-orange-500 hover:bg-white/5" onClick={() => setIsOpen(false)}>
                                         {course.title}
                                     </Link>
                                 ))}
@@ -298,7 +298,7 @@ const Navbar = () => {
                             </button>
                             <div className={cn("pl-4 space-y-1 overflow-hidden transition-all duration-300", activeDropdown === 'tech' ? "max-h-[500px]" : "max-h-0")}>
                                 {technicalCourses.map(course => (
-                                    <Link key={course.id} href={`/courses/${course.id}`} className="block px-4 py-2 rounded-lg text-sm text-slate-300 hover:text-orange-500 hover:bg-white/5" onClick={() => setIsOpen(false)}>
+                                    <Link key={course.id} href={getCourseUrl(course.id)} className="block px-4 py-2 rounded-lg text-sm text-slate-300 hover:text-orange-500 hover:bg-white/5" onClick={() => setIsOpen(false)}>
                                         {course.title}
                                     </Link>
                                 ))}
@@ -311,7 +311,7 @@ const Navbar = () => {
                             </button>
                             <div className={cn("pl-4 space-y-1 overflow-hidden transition-all duration-300", activeDropdown === 'other' ? "max-h-[500px]" : "max-h-0")}>
                                 {otherCourses.map(course => (
-                                    <Link key={course.id} href={`/courses/${course.id}`} className="block px-4 py-2 rounded-lg text-sm text-slate-300 hover:text-orange-500 hover:bg-white/5" onClick={() => setIsOpen(false)}>
+                                    <Link key={course.id} href={getCourseUrl(course.id)} className="block px-4 py-2 rounded-lg text-sm text-slate-300 hover:text-orange-500 hover:bg-white/5" onClick={() => setIsOpen(false)}>
                                         {course.title}
                                     </Link>
                                 ))}

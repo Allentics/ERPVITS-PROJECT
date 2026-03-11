@@ -221,7 +221,7 @@ const SapFieldglassLoginGuideContent = () => {
                 title="Ready to Master SAP Fieldglass?"
                 description="Enroll now in our expert-led SAP Fieldglass training and gain the practical skills needed to optimize external workforce management."
                 buttonText="Explore Fieldglass Course"
-                buttonLink="/courses/sap-fieldglass-training"
+                buttonLink="/sap-fieldglass-training"
             />
         </div>
     );

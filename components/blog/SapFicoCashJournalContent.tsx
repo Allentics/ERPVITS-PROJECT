@@ -443,7 +443,7 @@ const SapFicoCashJournalContent = () => {
 
             <BlogCallout title="Start Your SAP FICO Journey">
                 <p className="mb-4">Master Cash Journal and other essential SAP FICO configurations with our expert-led training.</p>
-                <Link href="/courses/sap-fico" className="font-bold text-orange-600 hover:text-orange-700">
+                <Link href="/sap-fico-course" className="font-bold text-orange-600 hover:text-orange-700">
                     View SAP FICO Course →
                 </Link>
             </BlogCallout>

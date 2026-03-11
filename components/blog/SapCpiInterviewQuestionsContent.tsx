@@ -295,7 +295,7 @@ def Message processData(Message message) {
                 title="Ready to advance your SAP CPI skills?"
                 description="Consider enrolling in comprehensive SAP CPI training to gain hands-on experience and industry-recognized certification."
                 buttonText="View SAP CPI Training"
-                buttonLink="/courses/sap-cpi-course"
+                buttonLink="/sap-cpi-training"
             />
         </div>
     );

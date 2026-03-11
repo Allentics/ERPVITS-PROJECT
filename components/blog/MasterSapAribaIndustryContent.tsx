@@ -207,7 +207,7 @@ const MasterSapAribaIndustryContent = () => {
                 title="Ready to Upskill with SAP Ariba?"
                 description="Register now and take the first step towards becoming a certified SAP Ariba professional! Don’t miss this opportunity to learn from industry experts."
                 buttonText="Register for Free Demo"
-                buttonLink="/courses/sap-ariba-training"
+                buttonLink="/sap-ariba-training"
             />
 
             <h2 className="text-2xl font-bold mt-8 mb-4">Flexible Learning for Working Professionals</h2>

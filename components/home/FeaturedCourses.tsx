@@ -6,6 +6,7 @@ import { Clock, IndianRupee, ArrowRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase';
 import ContactModal from '../ContactModal';
+import { getCourseUrl } from '@/lib/utils';
 
 export default function FeaturedCourses() {
     const [featuredCourses, setFeaturedCourses] = useState<any[]>(courses);
@@ -95,7 +96,7 @@ export default function FeaturedCourses() {
 
                                 <div className="space-y-3 mt-auto">
                                     <Link
-                                        href={`/courses/${course.id}`}
+                                        href={getCourseUrl(course.id)}
                                         className="w-full flex items-center justify-center px-4 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl transition-all shadow-lg shadow-orange-500/20 hover:shadow-orange-500/40"
                                     >
                                         Learn More <ArrowRight className="ml-2 h-5 w-5" />

@@ -74,7 +74,7 @@ export default function TopTenAbapCloudToolsContent() {
                 title="Master ABAP on Cloud & BTP"
                 description="Our comprehensive ABAP on Cloud course covers RAP, CDS, and BTP integration with real-time projects. Stay ahead of the curve."
                 buttonText="Join ABAP Cloud Course"
-                buttonLink="/courses/sap-abap-on-cloud"
+                buttonLink="/sap-abap-on-cloud-online-training"
             />
         </div>
     );

@@ -24,7 +24,7 @@ export default function SapSdProcessFlowContent() {
                 SAP SD is the SAP ERP's core functional module responsible for all sales and distribution activities accomplished from the first customer contact to order processing, fulfillment, shipment, billing, and payment collection.
             </p>
             <p>
-                This module integrates with several other SAP modules like <a href="https://erpvites-project.vercel.app/courses/mm" style={{ color: '#ea580c', fontWeight: 'bold' }}>SAP MM</a> (Materials Management), SAP FI (Financial Accounting), <a href="https://www.bestonlinecareer.com/sap-pp-module" style={{ color: '#ea580c', fontWeight: 'bold' }}>SAP PP</a> (Production Planning), and SAP QM (Quality Management), enhancing cross departmental co-ordination and visibility within the system in the sales and customer contact activities.
+                This module integrates with several other SAP modules like <a href="https://erpvites-project.vercel.app/sap-s4hana-mm-training" style={{ color: '#ea580c', fontWeight: 'bold' }}>SAP MM</a> (Materials Management), SAP FI (Financial Accounting), <a href="https://www.bestonlinecareer.com/sap-pp-module" style={{ color: '#ea580c', fontWeight: 'bold' }}>SAP PP</a> (Production Planning), and SAP QM (Quality Management), enhancing cross departmental co-ordination and visibility within the system in the sales and customer contact activities.
             </p>
 
             <h2>Complete SAP Sales and Distribution Process Flow</h2>
@@ -239,7 +239,7 @@ export default function SapSdProcessFlowContent() {
                     Get in touch with ERPVITS to discover how we can assist in optimizing your sales and distribution processes. We provide SAP SD training, process optimization consulting, customized training with live SAP server, 24/7 support, and S/4HANA migration services.
                 </p>
                 <p className="mb-6 text-white">
-                    With ERPVITS, transform your sales operations. <a href="https://erpvites-project.vercel.app/courses/sd" className="underline font-bold text-white hover:text-orange-100 transition-colors">Learn more about our SAP SD training programs</a> and become a certified SAP SD consultant.
+                    With ERPVITS, transform your sales operations. <a href="https://erpvites-project.vercel.app/sap-sd-training" className="underline font-bold text-white hover:text-orange-100 transition-colors">Learn more about our SAP SD training programs</a> and become a certified SAP SD consultant.
                 </p>
                 <a href="/contact" className="inline-block bg-white text-orange-600 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors no-underline">
                     Contact ERPVITS Today

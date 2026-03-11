@@ -6,6 +6,7 @@ import { Facebook, Twitter, Linkedin, Instagram, Youtube, Mail, Phone, MapPin } 
 import React, { useState, useEffect } from 'react';
 import { courses as localCourses } from '@/lib/courseData';
 import { supabase } from '@/lib/supabase';
+import { getCourseUrl } from '@/lib/utils';
 
 const Footer = () => {
     const pathname = usePathname();
@@ -88,13 +89,13 @@ const Footer = () => {
                         <h3 className="text-white font-semibold mb-4 text-lg">Popular Courses</h3>
                         <ul className="space-y-2">
                             <li>
-                                <Link href="/courses/ariba" className="hover:text-white text-sm transition-colors">
+                                <Link href={getCourseUrl('ariba')} className="hover:text-white text-sm transition-colors">
                                     SAP Ariba
                                 </Link>
                             </li>
                             {popularCourses.filter(course => course.id !== 'ariba' && course.id !== 'c4c-functional').slice(0, 5).map(course => (
                                 <li key={course.id}>
-                                    <Link href={`/courses/${course.id}`} className="hover:text-white text-sm transition-colors">
+                                    <Link href={getCourseUrl(course.id)} className="hover:text-white text-sm transition-colors">
                                         {course.title}
                                     </Link>
                                 </li>

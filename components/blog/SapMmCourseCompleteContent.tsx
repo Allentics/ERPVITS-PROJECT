@@ -155,7 +155,7 @@ const SapMmCourseCompleteContent = () => {
                 title="Enroll Now in Our Comprehensive SAP MM Course Online!"
                 description="Take the first step toward a rewarding career in Materials Management."
                 buttonText="Join Today"
-                buttonLink="/courses/sap-mm"
+                buttonLink="/sap-s4hana-mm-training"
             />
         </div>
     );

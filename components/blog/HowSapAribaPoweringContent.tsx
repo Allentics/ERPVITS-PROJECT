@@ -130,7 +130,7 @@ const HowSapAribaPoweringContent = () => {
                 title="Join our SAP Ariba certification course"
                 description="Take the leap in your SAP career! Enroll now in our SAP Ariba training, and gain hands-on experience that will make you industry-ready."
                 buttonText="Join Now"
-                buttonLink="/courses/sap-ariba-training"
+                buttonLink="/sap-ariba-training"
             />
         </div>
     );

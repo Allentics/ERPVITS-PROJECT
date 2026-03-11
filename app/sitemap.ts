@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { supabase } from '@/lib/supabase';
 import { blogPosts as localBlogs } from '@/lib/blogData';
+import { getCourseUrl } from '@/lib/utils';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://www.erpvits.com';
@@ -41,25 +42,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // 4. Process Course Pages
-  // Map course database IDs to their new dedicated SEO-friendly routes if applicable
-  const courseMappings: Record<string, string> = {
-    'ariba': '/sap-ariba-training',
-    'sap-ariba': '/sap-ariba-training',
-    'cpi': '/sap-cpi-training',
-    'sap-cpi': '/sap-cpi-training',
-    'abap-cloud': '/sap-abap-on-cloud-online-training',
-    'c4c-technical': '/sap-c4c-technical-online-training',
-    'fieldglass': '/sap-fieldglass-training',
-    'fico': '/sap-fico-course',
-    'sd': '/sap-sd-training',
-    'mm': '/sap-s4hana-mm-training',
-    'trm': '/sap-treasury-and-risk-management-online-training',
-    'python-aiml': '/ai-and-machine-learning-with-python',
-    'abap-hana': '/sap-abap-on-hana',
-  };
 
   const courseEntries = dbCourses?.map((course: { id: string }) => {
-    const route = courseMappings[course.id] || `/courses/${course.id}`;
+    const route = getCourseUrl(course.id);
     return {
       url: `${baseUrl}${route}`,
       lastModified: new Date(),
