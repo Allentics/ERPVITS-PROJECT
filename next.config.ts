@@ -112,6 +112,26 @@ const nextConfig: NextConfig = {
         destination: "/sap-sd-training",
         permanent: true,
       },
+      {
+        source: "/courses/mm",
+        destination: "/sap-s4hana-mm-training",
+        permanent: true,
+      },
+      {
+        source: "/courses/trm",
+        destination: "/sap-treasury-and-risk-management-online-training",
+        permanent: true,
+      },
+      {
+        source: "/courses/python-aiml",
+        destination: "/ai-and-machine-learning-with-python",
+        permanent: true,
+      },
+      {
+        source: "/courses/python-ai-ml",
+        destination: "/ai-and-machine-learning-with-python",
+        permanent: true,
+      },
     ];
   },
 };
