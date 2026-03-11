@@ -276,7 +276,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                     <label className="text-sm font-semibold text-gray-700">Module ID</label>
-                    <input name="id" disabled value={formData.id} className="w-full p-2 border rounded bg-gray-50" />
+                    <input name="id" value={formData.id} onChange={handleChange} className="w-full p-2 border rounded" />
                 </div>
                 <div className="space-y-2">
                     <label className="text-sm font-semibold text-gray-700">Course Title</label>

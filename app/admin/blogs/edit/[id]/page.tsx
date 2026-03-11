@@ -98,9 +98,9 @@ export default function EditBlogPage({ params }: { params: Promise<{ id: string 
                             <input
                                 name="id"
                                 required
-                                disabled
                                 value={formData.id}
-                                className="w-full px-4 py-2 border border-gray-200 rounded-lg bg-gray-50 text-gray-500 cursor-not-allowed outline-none"
+                                onChange={handleChange}
+                                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500/20 outline-none"
                             />
                         </div>
                         <div className="space-y-1">
