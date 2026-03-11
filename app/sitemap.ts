@@ -33,7 +33,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 3. Process Blog Posts (Local + DB)
   const blogIds = new Set<string>();
   localBlogs.forEach(b => blogIds.add(b.id));
-  dbBlogs?.forEach(b => blogIds.add(b.id));
+  dbBlogs?.forEach((b: { id: string }) => blogIds.add(b.id));
 
   const blogEntries = Array.from(blogIds).map(id => ({
     url: `${baseUrl}/blog/${id}`,
@@ -60,7 +60,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'abap-hana': '/sap-abap-on-hana',
   };
 
-  const courseEntries = dbCourses?.map(course => {
+  const courseEntries = dbCourses?.map((course: { id: string }) => {
     const route = courseMappings[course.id] || `/courses/${course.id}`;
     return {
       url: `${baseUrl}${route}`,
