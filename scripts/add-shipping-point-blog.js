@@ -220,11 +220,15 @@ const blogPost = {
                 <ul class="space-y-3 list-none pl-0">
                     <li class="flex items-start gap-3 text-slate-700">
                         <span class="text-emerald-500 mt-1">✅</span>
-                        <span>Connect with us on <a href="https://linkedin.com/company/erpvits" class="text-cyan-600 hover:underline font-medium">LinkedIn</a> for expert guidance</span>
+                        <span>Connect with us on <a href="https://linkedin.com/company/erpvits" class="text-orange-500 hover:underline font-medium">LinkedIn</a> for expert guidance and industry trends</span>
                     </li>
                     <li class="flex items-start gap-3 text-slate-700">
                         <span class="text-emerald-500 mt-1">✅</span>
-                        <span>Join our <a href="/whatsapp" class="text-cyan-600 hover:underline font-medium">WhatsApp Channel</a> for instant updates</span>
+                        <span>Join our <a href="https://www.whatsapp.com/channel/0029Vb5u9luHwXb481Y1Dx1X" class="text-orange-500 hover:underline font-medium">WhatsApp Channel</a> for instant updates</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-700">
+                        <span class="text-emerald-500 mt-1">✅</span>
+                        <span>Subscribe to our <span class="font-medium text-slate-700">newsletter</span> for exclusive SAP SD content</span>
                     </li>
                 </ul>
             </div>
