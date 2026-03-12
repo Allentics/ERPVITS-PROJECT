@@ -452,7 +452,7 @@ const SapFicoCashJournalContent = () => {
                 title="Ready to Master SAP FICO?"
                 description="Enroll in ERPVITS SAP FICO online training today and gain the expertise needed to excel in real-world SAP implementations."
                 buttonText="Book Free Demo"
-                buttonLink="/contact"
+                buttonLink="https://www.erpvits.com/contact/"
             />
 
         </article>

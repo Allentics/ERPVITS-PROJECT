@@ -241,7 +241,7 @@ export default function SapSdProcessFlowContent() {
                 <p className="mb-6 text-white">
                     With ERPVITS, transform your sales operations. <a href="https://erpvites-project.vercel.app/sap-sd-training" className="underline font-bold text-white hover:text-orange-100 transition-colors">Learn more about our SAP SD training programs</a> and become a certified SAP SD consultant.
                 </p>
-                <a href="/contact/" className="inline-block bg-white text-orange-600 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors no-underline">
+                <a href="https://www.erpvits.com/contact/" className="inline-block bg-white text-orange-600 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors no-underline">
                     Contact ERPVITS Today
                 </a>
             </div>

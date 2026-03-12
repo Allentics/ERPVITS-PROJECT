@@ -287,7 +287,7 @@ export default function SapAribaSupplierLoginContent() {
                 title="Seeking professional assistance with SAP Ariba?"
                 description="ERPVITS provides expertise to help firms navigate the SAP Ecosystem with consulting, training, and support services. Contact our professionals to improve your Ariba supplier network experience and maximize digital procurement efficiencies."
                 buttonText="Contact ERPVITS"
-                buttonLink="/contact"
+                buttonLink="https://www.erpvits.com/contact/"
             />
         </div>
     );

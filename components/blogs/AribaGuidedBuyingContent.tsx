@@ -153,7 +153,7 @@ export default function AribaGuidedBuyingContent() {
                     <div className="flex items-center gap-2 font-bold"><span>📞</span> +91 8408878222</div>
                     <div className="flex items-center gap-2 font-bold"><span>📧</span> info@erpvits.com</div>
                 </div>
-                <Link href="/contact/" className="inline-block bg-white text-orange-600 hover:bg-orange-50 font-black py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-lg">
+                <Link href="https://www.erpvits.com/contact/" className="inline-block bg-white text-orange-600 hover:bg-orange-50 font-black py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-lg">
                     Contact ERPVITS Today
                 </Link>
             </div>

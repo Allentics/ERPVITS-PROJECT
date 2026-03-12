@@ -149,7 +149,7 @@ const newContent = `<div class="prose prose-lg prose-slate max-w-none
                 <h3 class="text-2xl font-bold mb-4 text-white !mt-0">Ready to Upskill with SAP Ariba?</h3>
                 <p class="mb-4 opacity-90 text-white">Register now and take the first step towards becoming a certified SAP Ariba professional!</p>
                 <p class="mb-6 opacity-90 text-white">Don’t miss this opportunity to learn from industry experts, gain practical skills, and boost your career prospects in procurement and supply chain.</p>
-                <a href="/contact-us" class="inline-block bg-white text-orange-600 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors no-underline">
+                <a href="https://www.erpvits.com/contact/" class="inline-block bg-white text-orange-600 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors no-underline">
                     Register for Free Demo Session
                 </a>
             </div>

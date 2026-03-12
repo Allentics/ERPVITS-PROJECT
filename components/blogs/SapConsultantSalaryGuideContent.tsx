@@ -180,7 +180,7 @@ const SapConsultantSalaryGuideContent = () => {
             <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl p-8 my-8 text-center">
                 <h3 className="text-2xl font-bold text-white mb-4">🚀 Ready to Start Your High-Paying SAP Career?</h3>
                 <p className="text-white text-lg mb-6">Contact ERPVITS today to learn about our training programs and placement assistance.</p>
-                <Link href="/contact/" className="inline-block bg-white text-orange-600 font-bold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors">Get Started Now</Link>
+                <Link href="https://www.erpvits.com/contact/" className="inline-block bg-white text-orange-600 font-bold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors">Get Started Now</Link>
             </div>
 
             <h2>Frequently Asked Questions About SAP Consultant Salary</h2>

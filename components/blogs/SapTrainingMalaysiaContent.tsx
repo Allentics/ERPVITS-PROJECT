@@ -325,7 +325,7 @@ export default function SapTrainingMalaysiaContent() {
             <div className="mt-12 mb-8 text-center bg-slate-900 text-white p-8 rounded-2xl shadow-xl">
                 <h3 className="text-2xl font-bold mb-4 text-white">Start Your Career Transformation Today!</h3>
                 <p className="text-slate-300 mb-6">Reach out to ERPVITS to find out about upcoming batches and special offers.</p>
-                <Link href="/contact/" className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full transition-colors">
+                <Link href="https://www.erpvits.com/contact/" className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full transition-colors">
                     Contact ERPVITS Today
                 </Link>
             </div>

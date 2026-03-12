@@ -150,7 +150,7 @@ export default function HighPayingSapFicoJobsContent() {
                 <p className="text-orange-900 mb-6">
                     Start your journey with ERPVITS. We provide real-time, scenario-based <strong>SAP FICO Online Training</strong> with 100% placement assistance.
                 </p>
-                <Link href="/contact/" className="inline-block bg-orange-600 text-white px-8 py-3 rounded-full font-bold hover:bg-orange-700 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                <Link href="https://www.erpvits.com/contact/" className="inline-block bg-orange-600 text-white px-8 py-3 rounded-full font-bold hover:bg-orange-700 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
                     Book a Free Demo Class
                 </Link>
             </div>

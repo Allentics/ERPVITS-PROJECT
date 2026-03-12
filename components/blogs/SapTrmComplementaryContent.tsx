@@ -174,7 +174,7 @@ export default function SapTrmComplementaryContent() {
                 title="Ready to transform your treasury operations?"
                 description="ERPVITS offers expert consulting, implementation, and training services to help you maximize the value of your SAP treasury ecosystem."
                 buttonText="Contact Our Team"
-                buttonLink="/contact"
+                buttonLink="https://www.erpvits.com/contact/"
             />
         </div>
     );

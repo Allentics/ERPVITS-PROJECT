@@ -118,7 +118,7 @@ const SapFioriAppsLibraryContent = () => {
 
             <div className="bg-slate-100 rounded-xl p-6 mt-8">
                 <p className="text-sm text-slate-600">
-                    <strong>Seeking professional guidance with SAP Fiori implementation or application selection?</strong> ERPVITS provides expertise to help organizations navigate the SAP ecosystem with comprehensive consulting, SAP training, and support services. <Link href="/contact/" className="text-primary hover:text-primary-dark font-medium underline">Contact our professionals</Link> to enhance your Fiori Apps Library experience and maximize the benefits of modern enterprise application design.
+                    <strong>Seeking professional guidance with SAP Fiori implementation or application selection?</strong> ERPVITS provides expertise to help organizations navigate the SAP ecosystem with comprehensive consulting, SAP training, and support services. <Link href="https://www.erpvits.com/contact/" className="text-primary hover:text-primary-dark font-medium underline">Contact our professionals</Link> to enhance your Fiori Apps Library experience and maximize the benefits of modern enterprise application design.
                 </p>
             </div>
         </div>

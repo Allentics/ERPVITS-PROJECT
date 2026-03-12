@@ -173,7 +173,7 @@ const SapAribaSourcingConfigContent = () => {
                 title="Optimize Your SAP Ariba Sourcing"
                 description="Ready to optimize your SAP Ariba Sourcing configuration? Contact ERPVITS today to learn how we can help transform your procurement operations."
                 buttonText="Contact ERPVITS"
-                buttonLink="/contact-us"
+                buttonLink="https://www.erpvits.com/contact/"
             />
 
             <h2 className="text-2xl font-bold mt-8 mb-4">Frequently Asked Questions</h2>
