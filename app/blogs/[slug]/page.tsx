@@ -3,44 +3,44 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { supabase } from '@/lib/supabase';
 import { blogPosts as localPosts } from '@/lib/blogData';
-import BlogContactForm from '@/components/blog/BlogContactForm';
+import BlogContactForm from '@/components/blogs/BlogContactForm';
 import dynamic from 'next/dynamic';
 import { Metadata } from 'next';
 import { Suspense } from 'react';
-import InteractiveBlogContent from '@/components/blog/InteractiveBlogContent';
-import '../blog.css';
+import InteractiveBlogContent from '@/components/blogs/InteractiveBlogContent';
+import '../blogs.css';
 
 // ISR: Cache blog posts for 1 hour
 export const revalidate = 3600;
 
 // Lazy-load all legacy blog components — only the one matching the slug is ever loaded
-const SapTCodesContent = dynamic(() => import('@/components/blog/SapTCodesContent'));
-const SapSdProcessFlowContent = dynamic(() => import('@/components/blog/SapSdProcessFlowContent'));
-const SapFicoCashJournalContent = dynamic(() => import('@/components/blog/SapFicoCashJournalContent'));
-const SapS4HanaMmCareerContent = dynamic(() => import('@/components/blog/SapS4HanaMmCareerContent'));
-const HighPayingSapFicoJobsContent = dynamic(() => import('@/components/blog/HighPayingSapFicoJobsContent'));
-const SapAribaSupplierLoginContent = dynamic(() => import('@/components/blog/SapAribaSupplierLoginContent'));
-const SapFieldglassVmsContent = dynamic(() => import('@/components/blog/SapFieldglassVmsContent'));
-const SapCpiInterviewQuestionsContent = dynamic(() => import('@/components/blog/SapCpiInterviewQuestionsContent'));
-const SapC4cTechnicalScenariosContent = dynamic(() => import('@/components/blog/SapC4cTechnicalScenariosContent'));
-const Top7SapTrainingInstitutesContent = dynamic(() => import('@/components/blog/Top7SapTrainingInstitutesContent'));
-const SapAribaSourcingConfigContent = dynamic(() => import('@/components/blog/SapAribaSourcingConfigContent'));
-const SapMmCourseCompleteContent = dynamic(() => import('@/components/blog/SapMmCourseCompleteContent'));
-const HowSapAribaPoweringContent = dynamic(() => import('@/components/blog/HowSapAribaPoweringContent'));
-const TopTenAbapCloudToolsContent = dynamic(() => import('@/components/blog/TopTenAbapCloudToolsContent'));
-const HowSapFieldglassTransformingContent = dynamic(() => import('@/components/blog/HowSapFieldglassTransformingContent'));
-const SapSdShippingPointContent = dynamic(() => import('@/components/blog/SapSdShippingPointContent'));
-const SapTrainingMalaysiaContent = dynamic(() => import('@/components/blog/SapTrainingMalaysiaContent'));
-const SapHanaMasterclassContent = dynamic(() => import('@/components/blog/SapHanaMasterclassContent'));
-const AribaGuidedBuyingContent = dynamic(() => import('@/components/blog/AribaGuidedBuyingContent'));
-const MtoAndStoProcessContent = dynamic(() => import('@/components/blog/MtoAndStoProcessContent'));
-const MasterSapAribaIndustryContent = dynamic(() => import('@/components/blog/MasterSapAribaIndustryContent'));
-const SapTrmMasterDataContent = dynamic(() => import('@/components/blog/SapTrmMasterDataContent'));
-const SapTrmComplementaryContent = dynamic(() => import('@/components/blog/SapTrmComplementaryContent'));
-const SapFieldglassLoginGuideContent = dynamic(() => import('@/components/blog/SapFieldglassLoginGuideContent'));
-const SapConsultantSalaryGuideContent = dynamic(() => import('@/components/blog/SapConsultantSalaryGuideContent'));
-const SapFioriAppsLibraryContent = dynamic(() => import('@/components/blog/SapFioriAppsLibraryContent'));
-const SapBtpCockpitContent = dynamic(() => import('@/components/blog/SapBtpCockpitContent'));
+const SapTCodesContent = dynamic(() => import('@/components/blogs/SapTCodesContent'));
+const SapSdProcessFlowContent = dynamic(() => import('@/components/blogs/SapSdProcessFlowContent'));
+const SapFicoCashJournalContent = dynamic(() => import('@/components/blogs/SapFicoCashJournalContent'));
+const SapS4HanaMmCareerContent = dynamic(() => import('@/components/blogs/SapS4HanaMmCareerContent'));
+const HighPayingSapFicoJobsContent = dynamic(() => import('@/components/blogs/HighPayingSapFicoJobsContent'));
+const SapAribaSupplierLoginContent = dynamic(() => import('@/components/blogs/SapAribaSupplierLoginContent'));
+const SapFieldglassVmsContent = dynamic(() => import('@/components/blogs/SapFieldglassVmsContent'));
+const SapCpiInterviewQuestionsContent = dynamic(() => import('@/components/blogs/SapCpiInterviewQuestionsContent'));
+const SapC4cTechnicalScenariosContent = dynamic(() => import('@/components/blogs/SapC4cTechnicalScenariosContent'));
+const Top7SapTrainingInstitutesContent = dynamic(() => import('@/components/blogs/Top7SapTrainingInstitutesContent'));
+const SapAribaSourcingConfigContent = dynamic(() => import('@/components/blogs/SapAribaSourcingConfigContent'));
+const SapMmCourseCompleteContent = dynamic(() => import('@/components/blogs/SapMmCourseCompleteContent'));
+const HowSapAribaPoweringContent = dynamic(() => import('@/components/blogs/HowSapAribaPoweringContent'));
+const TopTenAbapCloudToolsContent = dynamic(() => import('@/components/blogs/TopTenAbapCloudToolsContent'));
+const HowSapFieldglassTransformingContent = dynamic(() => import('@/components/blogs/HowSapFieldglassTransformingContent'));
+const SapSdShippingPointContent = dynamic(() => import('@/components/blogs/SapSdShippingPointContent'));
+const SapTrainingMalaysiaContent = dynamic(() => import('@/components/blogs/SapTrainingMalaysiaContent'));
+const SapHanaMasterclassContent = dynamic(() => import('@/components/blogs/SapHanaMasterclassContent'));
+const AribaGuidedBuyingContent = dynamic(() => import('@/components/blogs/AribaGuidedBuyingContent'));
+const MtoAndStoProcessContent = dynamic(() => import('@/components/blogs/MtoAndStoProcessContent'));
+const MasterSapAribaIndustryContent = dynamic(() => import('@/components/blogs/MasterSapAribaIndustryContent'));
+const SapTrmMasterDataContent = dynamic(() => import('@/components/blogs/SapTrmMasterDataContent'));
+const SapTrmComplementaryContent = dynamic(() => import('@/components/blogs/SapTrmComplementaryContent'));
+const SapFieldglassLoginGuideContent = dynamic(() => import('@/components/blogs/SapFieldglassLoginGuideContent'));
+const SapConsultantSalaryGuideContent = dynamic(() => import('@/components/blogs/SapConsultantSalaryGuideContent'));
+const SapFioriAppsLibraryContent = dynamic(() => import('@/components/blogs/SapFioriAppsLibraryContent'));
+const SapBtpCockpitContent = dynamic(() => import('@/components/blogs/SapBtpCockpitContent'));
 
 
 // Blog hero images mapping
@@ -48,7 +48,7 @@ const blogHeroImages: Record<string, string> = {
     'sap-ariba-sourcing-configuration': '/images/sap-ariba-sourcing.webp',
 
 
-    'sap-fico-cash-journal-configuration': '/assets/blog/sap-fico-cash-journal-header.png',
+    'sap-fico-cash-journal-configuration': '/assets/blogs/sap-fico-cash-journal-header.png',
     'sap-tcodes-list-pdf': '/images/sap-tcodes-list-hero.webp',
     'sap-sd-process-flow': '/images/sap-sd-workflow.webp',
     'sap-s4hana-mm-career-opportunities': '/images/sap-s4hana-mm.webp',
@@ -59,17 +59,17 @@ const blogHeroImages: Record<string, string> = {
     'top-7-sap-training-institutes': '/images/sap-training-institutes.webp',
 
 
-    'sap-mm-course-complete-guide': '/images/blog/master-sap-mm-materials-management.webp',
-    'how-sap-ariba-is-powering-intelligent-spend-management': '/images/blog/sap-ariba-spend-management.webp',
-    'top-ten-tools-techniques-for-efficient-abap-on-cloud-programming': '/images/blog/top-10-tools-abap-cloud.webp',
-    'how-sap-fieldglass-transforming-global-contingent-workforce-market': '/images/blog/sap-fieldglass-transformation.webp',
+    'sap-mm-course-complete-guide': '/images/blogs/master-sap-mm-materials-management.webp',
+    'how-sap-ariba-is-powering-intelligent-spend-management': '/images/blogs/sap-ariba-spend-management.webp',
+    'top-ten-tools-techniques-for-efficient-abap-on-cloud-programming': '/images/blogs/top-10-tools-abap-cloud.webp',
+    'how-sap-fieldglass-transforming-global-contingent-workforce-market': '/images/blogs/sap-fieldglass-transformation.webp',
 
-    'mto-and-sto-process-in-sap': '/images/blog/mto-sto-process.webp',
-    'master-sap-ariba-with-industry-leading-online-training': '/images/blog/master-sap-ariba.webp',
+    'mto-and-sto-process-in-sap': '/images/blogs/mto-sto-process.webp',
+    'master-sap-ariba-with-industry-leading-online-training': '/images/blogs/master-sap-ariba.webp',
     'sap-trm-master-data-essentials': '/images/SAP TRM Blog Image ERPVITS.webp',
-    'sap-trm-complementary-technologies': '/images/blog/sap-trm-complementary.webp',
-    'ultimate-guide-to-sap-fieldglass-login-access-setup': '/images/blog/sap-fieldglass-login-guide.png',
-    'how-to-get-an-sap-fieldglass-job-in-2026': '/images/blog/sap-fieldglass-jobs-2026.png',
+    'sap-trm-complementary-technologies': '/images/blogs/sap-trm-complementary.webp',
+    'ultimate-guide-to-sap-fieldglass-login-access-setup': '/images/blogs/sap-fieldglass-login-guide.png',
+    'how-to-get-an-sap-fieldglass-job-in-2026': '/images/blogs/sap-fieldglass-jobs-2026.png',
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -86,7 +86,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         title: post.meta_title || `${post.title} | ERPVITS Blog`,
         description: post.meta_description || post.description,
         alternates: {
-            canonical: `https://www.erpvits.com/blog/${slug}`,
+            canonical: `https://www.erpvits.com/blogs/${slug}/`,
         },
     };
 }
@@ -178,7 +178,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     <nav className="flex items-center text-sm font-medium text-gray-500 dark:text-gray-400 mb-4 overflow-x-auto whitespace-nowrap scrollbar-hide">
                         <Link href="/" className="hover:text-orange-500 transition-colors">Home</Link>
                         <span className="mx-2 text-gray-400 dark:text-gray-600">›</span>
-                        <Link href="/blog" className="hover:text-orange-500 transition-colors">Blogs</Link>
+                        <Link href="/blogs/" className="hover:text-orange-500 transition-colors">Blogs</Link>
                         <span className="mx-2 text-gray-400 dark:text-gray-600">›</span>
                         <span className="text-gray-900 dark:text-gray-100 truncate max-w-[200px] sm:max-w-md">{post.title}</span>
                     </nav>
@@ -262,7 +262,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                                     {categories.slice(0, 8).map((category: any) => (
                                         <li key={category.name} className="flex justify-between items-center border-b border-slate-50 dark:border-gray-700 last:border-0 pb-3 last:pb-0">
                                             <Link
-                                                href={`/blog?category=${encodeURIComponent(category.name)}`}
+                                                href={`/blogs/?category=${encodeURIComponent(category.name)}`}
                                                 className="text-slate-600 dark:text-slate-300 hover:text-orange-500 dark:hover:text-orange-400 font-medium transition-colors"
                                             >
                                                 {category.name}
@@ -287,7 +287,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                                     {relatedPosts.map((related: any) => (
                                         <li key={related.id} className="border-b border-slate-50 dark:border-gray-700 last:border-0 pb-3 last:pb-0">
                                             <Link
-                                                href={`/blog/${related.id}`}
+                                                href={`/blogs/${related.id}/`}
                                                 className="text-slate-600 dark:text-slate-300 hover:text-orange-500 dark:hover:text-orange-400 font-medium transition-colors leading-tight block"
                                             >
                                                 {related.title}

@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
     return {
         ...meta,
         alternates: {
-            canonical: 'https://www.erpvits.com/contact',
+            canonical: 'https://www.erpvits.com/contact/',
         },
     };
 }

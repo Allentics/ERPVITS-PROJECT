@@ -65,7 +65,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         title: course?.meta_title ?? local?.metaTitle ?? `${course?.title ?? local?.title ?? ''} Online Training | ERPVITS`,
         description: course?.meta_description ?? local?.metaDescription ?? `Master ${course?.title ?? local?.title ?? ''} with ERPVITS - Live online training, real projects, and placement assistance.`,
         alternates: {
-            canonical: `https://www.erpvits.com/courses/${slug}`,
+            canonical: `https://www.erpvits.com/courses/${slug}/`,
         },
     };
 }

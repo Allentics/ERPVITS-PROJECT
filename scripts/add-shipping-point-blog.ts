@@ -12,7 +12,7 @@ const blogPost = {
     id: "sap-sd-shipping-point-determination",
     title: "End-to-End SAP SD Shipping Point Determination Process",
     description: "Master SAP SD Shipping Point Determination, Route Determination, and Storage Location Determination. Complete guide to configuration, optimization, and best practices for logistics execution in SAP S/4HANA.",
-    image: "/images/blog/sap-sd-shipping-point.png",
+    image: "/images/blogs/sap-sd-shipping-point.png",
     date: "Jan 28, 2026",
     category: "SAP Functional",
     author: "ERPVITS Expert",

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     title: 'Thank You | ERPVITS',
     description: 'Thank you for reaching out to ERPVITS. We have received your request and will get back to you shortly.',
     alternates: {
-        canonical: 'https://www.erpvits.com/thank-you',
+        canonical: 'https://www.erpvits.com/thank-you/',
     },
 };
 

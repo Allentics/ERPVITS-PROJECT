@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Enable trailing slash on all URLs
+  trailingSlash: true,
+
   // Enable compression for all responses
   compress: true,
 
@@ -78,58 +81,68 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/blog",
+        destination: "/blogs/",
+        permanent: true,
+      },
+      {
+        source: "/blog/:slug*",
+        destination: "/blogs/:slug*/",
+        permanent: true,
+      },
+      {
         source: "/courses/ariba",
-        destination: "/sap-ariba-training",
+        destination: "/sap-ariba-training/",
         permanent: true,
       },
       {
         source: "/courses/cpi",
-        destination: "/sap-cpi-training",
+        destination: "/sap-cpi-training/",
         permanent: true,
       },
       {
         source: "/courses/abap-cloud",
-        destination: "/sap-abap-on-cloud-online-training",
+        destination: "/sap-abap-on-cloud-online-training/",
         permanent: true,
       },
       {
         source: "/courses/c4c-technical",
-        destination: "/sap-c4c-technical-online-training",
+        destination: "/sap-c4c-technical-online-training/",
         permanent: true,
       },
       {
         source: "/courses/fieldglass",
-        destination: "/sap-fieldglass-training",
+        destination: "/sap-fieldglass-training/",
         permanent: true,
       },
       {
         source: "/courses/fico",
-        destination: "/sap-fico-course",
+        destination: "/sap-fico-course/",
         permanent: true,
       },
       {
         source: "/courses/sd",
-        destination: "/sap-sd-training",
+        destination: "/sap-sd-training/",
         permanent: true,
       },
       {
         source: "/courses/mm",
-        destination: "/sap-s4hana-mm-training",
+        destination: "/sap-s4hana-mm-training/",
         permanent: true,
       },
       {
         source: "/courses/trm",
-        destination: "/sap-treasury-and-risk-management-online-training",
+        destination: "/sap-treasury-and-risk-management-online-training/",
         permanent: true,
       },
       {
         source: "/courses/python-aiml",
-        destination: "/ai-and-machine-learning-with-python",
+        destination: "/ai-and-machine-learning-with-python/",
         permanent: true,
       },
       {
         source: "/courses/python-ai-ml",
-        destination: "/ai-and-machine-learning-with-python",
+        destination: "/ai-and-machine-learning-with-python/",
         permanent: true,
       },
     ];

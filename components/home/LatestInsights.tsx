@@ -98,7 +98,7 @@ export default function LatestInsights() {
 
                             return (
                                 <div key={post.id} className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow group flex flex-col h-full">
-                                    <Link href={`/blog/${post.id}`} className="block h-48 overflow-hidden relative">
+                                    <Link href={`/blogs/${post.id}/`} className="block h-48 overflow-hidden relative">
                                         {post.image ? (
                                             /* eslint-disable-next-line @next/next/no-img-element */
                                             <img
@@ -117,7 +117,7 @@ export default function LatestInsights() {
                                             <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold mb-4 ${tagColors[index % tagColors.length]}`}>
                                                 {post.category || "SAP Insights"}
                                             </span>
-                                            <Link href={`/blog/${post.id}`}>
+                                            <Link href={`/blogs/${post.id}/`}>
                                                 <h3 className="text-lg font-bold text-slate-900 mb-3 line-clamp-2 hover:text-orange-600 transition-colors">
                                                     {post.title}
                                                 </h3>
@@ -143,7 +143,7 @@ export default function LatestInsights() {
 
                 <div className="text-center">
                     <Link
-                        href="/blog"
+                        href="/blogs/"
                         className="inline-block px-8 py-3 border-2 border-slate-900 text-slate-900 font-bold rounded-lg hover:bg-slate-50 transition-colors"
                     >
                         Read All Articles

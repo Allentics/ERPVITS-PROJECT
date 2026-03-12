@@ -12,13 +12,13 @@ const blogPost = {
     id: "sap-consultant-salary-guide-2026",
     title: "SAP Consultant Salary Guide 2026: Complete Breakdown by Module and Experience",
     description: "Comprehensive SAP consultant salary guide for 2026 covering all modules including FICO, MM, SD, ABAP, Basis, and HCM. Learn about fresher salaries, senior consultant pay, and company-specific compensation at Deloitte, PwC, and Infosys.",
-    image: "/images/blog/sap-consultant-salary-guide-2026.png",
+    image: "/images/blogs/sap-consultant-salary-guide-2026.png",
     date: "2026-01-13",
     category: "SAP Career",
     author: "ERPVITS Expert",
     content: `
                 <div class="blog-content prose prose-lg max-w-none">
-                    <img src="/images/blog/sap-consultant-salary-guide-2026.png" alt="SAP Consultant Salary Guide 2026" class="w-full rounded-lg mb-8" />
+                    <img src="/images/blogs/sap-consultant-salary-guide-2026.png" alt="SAP Consultant Salary Guide 2026" class="w-full rounded-lg mb-8" />
                     
                     <h2>Introduction</h2>
                     <p>As companies around the world continue their digital transformation journeys, the need for SAP consultants is growing rapidly. If you're thinking about starting a career in SAP, or if you're already working in SAP and want to know how to get better paid, it is important to learn how SAP consultant salary differs based on the various SAP modules and how much experience an individual has. This guide will assist you in mapping your career in the US and Indian markets, focusing on the SAP consultant pay prediction for the year 2026.</p>
@@ -194,7 +194,7 @@ const blogPost = {
                     <div class="bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl p-8 my-8 text-center">
                         <h3 class="text-2xl font-bold text-white mb-4">🚀 Ready to Start Your High-Paying SAP Career?</h3>
                         <p class="text-white text-lg mb-6">Contact ERPVITS today to learn about our training programs and placement assistance.</p>
-                        <a href="/contact" class="inline-block bg-white text-orange-600 font-bold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors">Get Started Now</a>
+                        <a href="/contact/" class="inline-block bg-white text-orange-600 font-bold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors">Get Started Now</a>
                     </div>
 
                     <h2>Frequently Asked Questions About SAP Consultant Salary</h2>
@@ -275,3 +275,4 @@ async function addBlog() {
 }
 
 addBlog();
+

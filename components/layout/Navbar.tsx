@@ -177,11 +177,11 @@ const Navbar = () => {
                                     Home
                                 </Link>
 
-                                <Link href="/about" className="px-2 py-2 text-white hover:text-orange-500 font-bold transition-colors rounded-lg hover:bg-white/10 text-[13px] xl:text-sm whitespace-nowrap">
+                                <Link href="/about/" className="px-2 py-2 text-white hover:text-orange-500 font-bold transition-colors rounded-lg hover:bg-white/10 text-[13px] xl:text-sm whitespace-nowrap">
                                     About Us
                                 </Link>
 
-                                <Link href="/courses" className="px-2 py-2 text-white hover:text-orange-500 font-bold transition-colors rounded-lg hover:bg-white/10 text-[13px] xl:text-sm whitespace-nowrap">
+                                <Link href="/courses/" className="px-2 py-2 text-white hover:text-orange-500 font-bold transition-colors rounded-lg hover:bg-white/10 text-[13px] xl:text-sm whitespace-nowrap">
                                     Courses
                                 </Link>
 
@@ -240,17 +240,17 @@ const Navbar = () => {
                                     </button>
                                     <div className="absolute left-0 top-full w-48 bg-white border-t-4 border-orange-500 rounded-b-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left translate-y-2 group-hover:translate-y-0 z-50">
                                         <div className="py-2">
-                                            <Link href="/blog" className="block px-4 py-3 text-sm text-slate-900 hover:bg-orange-50 hover:text-orange-600 transition-colors border-l-4 border-transparent hover:border-orange-500">
+                                            <Link href="/blogs/" className="block px-4 py-3 text-sm text-slate-900 hover:bg-orange-50 hover:text-orange-600 transition-colors border-l-4 border-transparent hover:border-orange-500">
                                                 Blogs
                                             </Link>
-                                            <Link href="/web-stories" className="block px-4 py-3 text-sm text-slate-900 hover:bg-orange-50 hover:text-orange-600 transition-colors border-l-4 border-transparent hover:border-orange-500">
+                                            <Link href="/web-stories/" className="block px-4 py-3 text-sm text-slate-900 hover:bg-orange-50 hover:text-orange-600 transition-colors border-l-4 border-transparent hover:border-orange-500">
                                                 Web Stories
                                             </Link>
                                         </div>
                                     </div>
                                 </div>
 
-                                <Link href="/contact" className="px-2 py-2 text-white hover:text-orange-500 font-bold transition-colors rounded-lg hover:bg-white/10 text-[13px] xl:text-sm whitespace-nowrap">
+                                <Link href="/contact/" className="px-2 py-2 text-white hover:text-orange-500 font-bold transition-colors rounded-lg hover:bg-white/10 text-[13px] xl:text-sm whitespace-nowrap">
                                     Contact
                                 </Link>
 
@@ -276,8 +276,8 @@ const Navbar = () => {
                 <div className={cn("lg:hidden bg-slate-900 border-t border-white/10 fixed inset-x-0 bottom-0 top-[6rem] z-40 transition-transform duration-300 ease-in-out transform overflow-y-auto", isOpen ? "translate-x-0" : "translate-x-full")}>
                     <div className="p-4 space-y-2 pb-20">
                         <Link href="/" className="block px-4 py-3 rounded-xl text-base font-semibold text-white hover:text-orange-500 hover:bg-white/5" onClick={() => setIsOpen(false)}>Home</Link>
-                        <Link href="/about" className="block px-4 py-3 rounded-xl text-base font-semibold text-white hover:text-orange-500 hover:bg-white/5" onClick={() => setIsOpen(false)}>About Us</Link>
-                        <Link href="/courses" className="block px-4 py-3 rounded-xl text-base font-semibold text-white hover:text-orange-500 hover:bg-white/5" onClick={() => setIsOpen(false)}>Courses</Link>
+                        <Link href="/about/" className="block px-4 py-3 rounded-xl text-base font-semibold text-white hover:text-orange-500 hover:bg-white/5" onClick={() => setIsOpen(false)}>About Us</Link>
+                        <Link href="/courses/" className="block px-4 py-3 rounded-xl text-base font-semibold text-white hover:text-orange-500 hover:bg-white/5" onClick={() => setIsOpen(false)}>Courses</Link>
 
                         <div>
                             <button onClick={() => toggleDropdown('func')} className="w-full flex justify-between items-center px-4 py-3 rounded-xl text-base font-semibold text-white hover:text-orange-500 hover:bg-white/5">
@@ -323,16 +323,16 @@ const Navbar = () => {
                                 More Resources <ChevronDown className={cn("h-5 w-5 transition-transform", activeDropdown === 'resources' && "rotate-180")} />
                             </button>
                             <div className={cn("pl-4 space-y-1 overflow-hidden transition-all duration-300", activeDropdown === 'resources' ? "max-h-[500px]" : "max-h-0")}>
-                                <Link href="/blog" className="block px-4 py-2 rounded-lg text-sm text-slate-300 hover:text-orange-500 hover:bg-white/5" onClick={() => setIsOpen(false)}>
+                                <Link href="/blogs/" className="block px-4 py-2 rounded-lg text-sm text-slate-300 hover:text-orange-500 hover:bg-white/5" onClick={() => setIsOpen(false)}>
                                     Blogs
                                 </Link>
-                                <Link href="/web-stories" className="block px-4 py-2 rounded-lg text-sm text-slate-300 hover:text-orange-500 hover:bg-white/5" onClick={() => setIsOpen(false)}>
+                                <Link href="/web-stories/" className="block px-4 py-2 rounded-lg text-sm text-slate-300 hover:text-orange-500 hover:bg-white/5" onClick={() => setIsOpen(false)}>
                                     Web Stories
                                 </Link>
                             </div>
                         </div>
 
-                        <Link href="/contact" className="block px-4 py-3 rounded-xl text-base font-semibold text-white hover:text-orange-500 hover:bg-white/5" onClick={() => setIsOpen(false)}>Contact</Link>
+                        <Link href="/contact/" className="block px-4 py-3 rounded-xl text-base font-semibold text-white hover:text-orange-500 hover:bg-white/5" onClick={() => setIsOpen(false)}>Contact</Link>
 
                         <div className="pt-4">
                             <button

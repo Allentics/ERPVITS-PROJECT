@@ -452,7 +452,7 @@ const sap_ewm_content = `<div class="prose prose-lg prose-slate max-w-none
             title: 'SAP MDG Data Model: Overview of Architecture, Framework and Configuration',
             description: 'Explore SAP MDG data modelling concepts including Business Partner and Material Data Models. Learn how to configure custom data models with real-time project scenarios.',
             content: sap_mdg_content,
-            image: '/images/blog/sap-mdg-data-model.png',
+            image: '/images/blogs/sap-mdg-data-model.png',
             date: '18 February, 2026',
             category: 'SAP MDG',
             author: 'ERPVITS Expert'
@@ -464,7 +464,7 @@ const sap_ewm_content = `<div class="prose prose-lg prose-slate max-w-none
             title: 'Understanding the Process Flow of SAP EWM Yard Management',
             description: 'A comprehensive guide covering the key components, process flow, and configuration of SAP EWM yard management to optimize your logistics network.',
             content: sap_ewm_content,
-            image: '/images/blog/sap-ewm-yard-management.png',
+            image: '/images/blogs/sap-ewm-yard-management.png',
             date: '19 February, 2026',
             category: 'SAP EWM',
             author: 'ERPVITS Expert'

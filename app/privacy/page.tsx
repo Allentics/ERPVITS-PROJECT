@@ -4,7 +4,7 @@ export const metadata: Metadata = {
     title: 'Privacy Policy | ERPVITS',
     description: 'Read the ERPVITS privacy policy to understand how we collect, use, and protect your personal data.',
     alternates: {
-        canonical: 'https://www.erpvits.com/privacy',
+        canonical: 'https://www.erpvits.com/privacy/',
     },
 };
 

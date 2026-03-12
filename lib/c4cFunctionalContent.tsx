@@ -127,7 +127,7 @@ export const c4cFunctionalContent = {
                 },
                 {
                     "title": "Ongoing support Post-Training",
-                    "description": "Once the SAP C4C course is over, you'll continue receiving mentorship and advice to address project challenges, prepare for <a href=\"https://www.bestonlinecareer.com/blog/sap-c4c-certification\" target=\"_blank\" rel=\"noopener noreferrer\">SAP C4C certification</a> and advance within the SAP ecosystem."
+                    "description": "Once the SAP C4C course is over, you'll continue receiving mentorship and advice to address project challenges, prepare for <a href=\"https://www.erpvits.com/blogs/sap-c4c-certification\" target=\"_blank\" rel=\"noopener noreferrer\">SAP C4C certification</a> and advance within the SAP ecosystem."
                 }
             ],
             "title": "Learn SAP C4C Functional from Certified Experts – 100% Hands-On, Job-Oriented Training",
@@ -149,7 +149,7 @@ export const c4cFunctionalContent = {
             "title": "Why Professionals Choose ERPVITS for SAP C4C Functional Online Training",
             "subtitle": "Success Guarantee & Credibility",
             "videoSrc": "https://www.youtube.com/embed/X8NW74XjShI",
-            "description": "Professionals choose ERPVITS training because it goes beyond basic theory to develop real, job-ready SAP C4C functional expertise. The program simulates real project environments to help learners gain an understanding of how <a href=\"https://www.bestonlinecareer.com/blog/sap-c4c-crm\" target=\"_blank\" rel=\"noopener noreferrer\">SAP C4C CRM</a> implementations operate from requirements gathering to system configuration and post go live support.",
+            "description": "Professionals choose ERPVITS training because it goes beyond basic theory to develop real, job-ready SAP C4C functional expertise. The program simulates real project environments to help learners gain an understanding of how <a href=\"https://www.erpvits.com/blogs/sap-c4c-crm\" target=\"_blank\" rel=\"noopener noreferrer\">SAP C4C CRM</a> implementations operate from requirements gathering to system configuration and post go live support.",
             "supportText": "From pre-evaluation to post-training support, we guide you through every step of your SAP C4C functional learning journey and career transition.",
             "supportTitle": "Complete support Ecosystem"
         },

@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const filePath = path.join(process.cwd(), 'app/blog/[slug]/page.tsx');
+const filePath = path.join(process.cwd(), 'app/blogs/[slug]/page.tsx');
 const content = fs.readFileSync(filePath, 'utf8');
 const lines = content.split('\n');
 

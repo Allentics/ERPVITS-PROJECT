@@ -372,7 +372,7 @@ const SapBtpCockpitContent = () => {
                     <strong>At ERPVITS, we help clients realize the full potential of their SAP Business Technology Platform investments.</strong> Our seasoned consultants deliver a full cycle service from BTP implementation, SAP BTP integration suite development, and Application Development to comprehensive SAP BTP training. Whether you are just starting your BTP journey with an SAP BTP trial account, or want to enhance your existing implementations and prepare for SAP BTP certification, we are your partners for success.
                 </p>
                 <p className="text-sm text-slate-600 mt-4">
-                    Is your organization ready to unlock the potential of SAP Business Technology Platform and Transform your business with SAP BTP? <Link href="/contact" className="text-primary hover:text-primary-dark font-medium underline">Get in touch with ERPVITS</Link>
+                    Is your organization ready to unlock the potential of SAP Business Technology Platform and Transform your business with SAP BTP? <Link href="/contact/" className="text-primary hover:text-primary-dark font-medium underline">Get in touch with ERPVITS</Link>
                 </p>
             </div>
 
@@ -383,3 +383,4 @@ const SapBtpCockpitContent = () => {
 };
 
 export default SapBtpCockpitContent;
+

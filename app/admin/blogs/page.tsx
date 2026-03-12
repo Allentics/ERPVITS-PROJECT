@@ -255,7 +255,7 @@ export default function BlogsPage() {
                                                     <Trash2 size={18} />
                                                 </button>
                                                 <Link
-                                                    href={`/blog/${blog.id}`}
+                                                    href={`/blogs/${blog.id}/`}
                                                     target="_blank"
                                                     className="p-2 text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all"
                                                     title="View Live"

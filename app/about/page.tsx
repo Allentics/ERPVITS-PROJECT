@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     title: 'About ERPVITS | Empowering Careers with SAP Training',
     description: 'Learn about ERPVITS, a global leader in SAP online training. Our mission is to empower professionals with expert-led courses and real-world project experience.',
     alternates: {
-        canonical: 'https://www.erpvits.com/about',
+        canonical: 'https://www.erpvits.com/about/',
     },
 };
 

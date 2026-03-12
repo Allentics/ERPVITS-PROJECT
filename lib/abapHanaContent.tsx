@@ -149,7 +149,7 @@ export const abapHanaContent = {
                 },
                 {
                     "title": "Complete Study Materials",
-                    "description": "Access PDFs, code examples, development templates, <a href=\"https://www.erpvits.com/blog/sap-abap-interview-questions-and-answers/\" target=\"_blank\">SAP ABAP interview questions and answers</a>, design patterns, debugging guides, and official SAP documentation links."
+                    "description": "Access PDFs, code examples, development templates, <a href=\"https://www.erpvits.com/blogs/sap-abap-interview-questions-and-answers/\" target=\"_blank\">SAP ABAP interview questions and answers</a>, design patterns, debugging guides, and official SAP documentation links."
                 },
                 {
                     "title": "Lifetime Recording Access",

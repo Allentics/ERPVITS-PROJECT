@@ -9,19 +9,26 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 1. Static Pages
   const staticPages = [
     '',
-    '/about-us',
+    '/about',
     '/contact',
     '/privacy',
     '/refund-policy',
-    '/blog',
+    '/blogs',
     '/courses',
     '/web-stories',
-  ].map(route => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: route === '' ? 1.0 : 0.8,
-  }));
+  ].map(route => {
+    // Ensure trailing slash, but handle root spécialement if needed
+    // Actually `${baseUrl}${route}/` works for all:
+    // "" -> baseUrl/
+    // "/contact" -> baseUrl/contact/
+    const path = route.endsWith('/') ? route : `${route}/`;
+    return {
+      url: `${baseUrl}${path}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: route === '' ? 1.0 : 0.8,
+    };
+  });
 
   // 2. Fetch Dynamic Data from Supabase
   const [{ data: dbBlogs }, { data: dbCourses }] = await Promise.all([
@@ -35,7 +42,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   dbBlogs?.forEach((b: { id: string }) => blogIds.add(b.id));
 
   const blogEntries = Array.from(blogIds).map(id => ({
-    url: `${baseUrl}/blog/${id}`,
+    url: `${baseUrl}/blogs/${id}/`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.7,
@@ -45,8 +52,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const courseEntries = dbCourses?.map((course: { id: string }) => {
     const route = getCourseUrl(course.id);
+    // Ensure trailing slash
+    const path = route.endsWith('/') ? route : `${route}/`;
     return {
-      url: `${baseUrl}${route}`,
+      url: `${baseUrl}${path}`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.9,

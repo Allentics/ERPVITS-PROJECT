@@ -274,7 +274,7 @@ const apocontent = `<div class="prose prose-lg prose-slate max-w-none
             title: 'What is PPDS in SAP APO? Features, Benefits & Real-Time Business Scenarios',
             description: 'A comprehensive guide to SAP APO PPDS bridging the gaps between high-level demand planning and shop floor execution, with real-time scenarios.',
             content: apocontent,
-            image: '/images/blog/sap-apo-ppds.png',
+            image: '/images/blogs/sap-apo-ppds.png',
             date: '20 February, 2026',
             category: 'SAP APO',
             author: 'ERPVITS Expert'

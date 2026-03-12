@@ -80,7 +80,7 @@ const Hero = () => {
                             {content.cta_primary}
                         </button>
                         <Link
-                            href="/courses"
+                            href="/courses/"
                             className="bg-white text-slate-900 border-2 border-slate-200 hover:border-[#FF5722] hover:text-[#FF5722] px-8 py-4 rounded-md font-bold text-lg transition-all"
                         >
                             {content.cta_secondary}

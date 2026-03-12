@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
     return {
         ...meta,
         alternates: {
-            canonical: 'https://www.erpvits.com/corporate-training',
+            canonical: 'https://www.erpvits.com/corporate-training/',
         },
     };
 }
@@ -112,7 +112,7 @@ export default async function CorporateTrainingPage() {
                             {hero.description}
                         </p>
                         <Link
-                            href="/contact"
+                            href="/contact/"
                             className="inline-block px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors"
                         >
                             {hero.cta}
@@ -155,13 +155,13 @@ export default async function CorporateTrainingPage() {
                     </p>
                     <div className="flex justify-center gap-4">
                         <Link
-                            href="/contact"
+                            href="/contact/"
                             className="px-8 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors"
                         >
                             {ctaSection.primary_cta}
                         </Link>
                         <Link
-                            href="/courses"
+                            href="/courses/"
                             className="px-8 py-3 bg-white text-blue-600 font-bold border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors"
                         >
                             {ctaSection.secondary_cta}

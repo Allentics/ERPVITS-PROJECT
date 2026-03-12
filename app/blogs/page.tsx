@@ -3,13 +3,13 @@ import Image from 'next/image';
 import { supabase } from '@/lib/supabase';
 import { blogPosts as localPosts } from '@/lib/blogData';
 import { Metadata } from 'next';
-import './blog.css';
+import './blogs.css';
 
 export const metadata: Metadata = {
     title: 'SAP Blog & Insights | ERPVITS',
     description: 'Stay ahead in the SAP ecosystem with expert insights, technical tutorials, and career guidance from ERPVITS.',
     alternates: {
-        canonical: 'https://www.erpvits.com/blog',
+        canonical: 'https://www.erpvits.com/blogs/',
     },
 };
 
@@ -155,7 +155,7 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
                                             <span className="text-xs text-gray-400 uppercase" suppressHydrationWarning>| {weekday}</span>
                                         </div>
 
-                                        <Link href={`/blog/${post.id}`} className="group-hover:text-orange-600 transition-colors">
+                                        <Link href={`/blogs/${post.id}/`} className="group-hover:text-orange-600 transition-colors">
                                             <h2 className="text-[24px] lg:text-[28px] font-bold text-gray-900 mb-4 leading-snug group-hover:text-[#F58220] transition-colors">
                                                 {post.title}
                                             </h2>
@@ -166,7 +166,7 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
                                         </p>
 
                                         <Link
-                                            href={`/blog/${post.id}`}
+                                            href={`/blogs/${post.id}/`}
                                             className="inline-block bg-white text-[#222222] border-2 border-[#e8e8e8] text-[12px] font-bold px-4 py-[8px] rounded-none uppercase transition-all hover:bg-[#e6e6e6] hover:border-[#c9c9c9]"
                                         >
                                             View Blog
@@ -176,7 +176,7 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
                                     {/* Featured Image - Right side on desktop, Bottom on mobile */}
                                     {(post.image || post.featured_image) && (
                                         <div className="w-full md:w-64 lg:w-72 flex-shrink-0 order-2 md:order-2 overflow-hidden rounded-none shadow-sm group-hover:shadow-md transition-all duration-300">
-                                            <Link href={`/blog/${post.id}`}>
+                                            <Link href={`/blogs/${post.id}/`}>
                                                 <div className="relative">
                                                     <img
                                                         src={post.image || post.featured_image}
@@ -196,4 +196,5 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
         </div>
     );
 }
+
 

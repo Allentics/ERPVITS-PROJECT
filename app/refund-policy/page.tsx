@@ -5,7 +5,7 @@ export const metadata: Metadata = {
     description:
         "Read the ERPVITS refund policy. We offer non-tangible, irrevocable digital goods and do not provide refunds after purchase.",
     alternates: {
-        canonical: 'https://www.erpvits.com/refund-policy',
+        canonical: 'https://www.erpvits.com/refund-policy/',
     },
 };
 

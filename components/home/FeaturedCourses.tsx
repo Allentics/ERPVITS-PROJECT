@@ -115,7 +115,7 @@ export default function FeaturedCourses() {
 
                 <div className="mt-16 flex flex-col md:flex-row justify-center gap-4">
                     <Link
-                        href="/courses"
+                        href="/courses/"
                         className="px-8 py-3 bg-white border-2 border-slate-900 text-slate-900 font-bold rounded-lg hover:bg-slate-50 transition-colors shadow-sm text-center"
                     >
                         View All {featuredCourses.length} Courses

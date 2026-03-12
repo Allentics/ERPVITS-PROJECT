@@ -23,7 +23,7 @@ const WebinarPopup = () => {
         preferredTiming: ''
     });
 
-    const excludedPaths = ['/privacy', '/terms-conditions', '/refund-policy', '/privacy-policy'];
+    const excludedPaths = ['/privacy/', '/terms-conditions/', '/refund-policy/', '/privacy-policy/'];
 
     useEffect(() => {
         // Reset state on path change
