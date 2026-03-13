@@ -148,13 +148,20 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         }
     });
 
+    const resolveImagePath = (img: string | null | undefined) => {
+        if (!img) return '/images/logo.webp';
+        if (img.startsWith('http')) return img;
+        const fileName = img.split('/').pop();
+        return `/images/${fileName}`;
+    };
+
     const mergedPosts = Array.from(idMap.values()).map((p: any) => ({
         ...p,
-        image: p.image?.replace(/\/images\/(blog|blogs)\//i, '/images/').replace(/\/assets\/(blog|blogs)\//i, '/assets/')
+        image: resolveImagePath(p.image)
     }));
 
     if (post) {
-        post.image = post.image?.replace(/\/images\/(blog|blogs)\//i, '/images/').replace(/\/assets\/(blog|blogs)\//i, '/assets/');
+        post.image = resolveImagePath(post.image);
     }
 
     if (!post) {
@@ -268,14 +275,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
                             {/* Hero Image */}
                             {(blogHeroImages[slug] || post.image) && (
-                                <div className="mb-12 rounded-2xl overflow-hidden shadow-2xl shadow-slate-200/50 group relative aspect-[16/9]">
-                                    <Image
+                                <div className="mb-12 rounded-2xl overflow-hidden shadow-2xl shadow-slate-200/50 group">
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    <img
                                         src={blogHeroImages[slug] || post.image}
                                         alt={post.title}
-                                        fill
-                                        priority
-                                        className="object-cover group-hover:scale-[1.02] transition-transform duration-700"
-                                        unoptimized={true}
+                                        className="w-full h-auto max-h-[500px] object-cover group-hover:scale-[1.02] transition-transform duration-700"
                                     />
                                 </div>
                             )}

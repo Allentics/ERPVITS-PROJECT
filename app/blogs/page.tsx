@@ -60,29 +60,36 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
     // 2. Add local posts only if they don't conflict with DB by ID or Title
     localPosts.forEach(post => {
         const idConflict = idMap.has(post.id);
-        const titleKey = post.title.toLowerCase().trim();
+        const titleKey = post.title?.toLowerCase().trim();
         const titleConflict = titleMap.has(titleKey);
 
         if (!idConflict && !titleConflict) {
             idMap.set(post.id, post);
-            titleMap.set(titleKey, post.id);
+            if (titleKey) titleMap.set(titleKey, post.id);
         } else if (idConflict) {
-            // If ID matches, merge local data as fallback for missing fields in DB
             const dbPost = idMap.get(post.id);
             const validDbProps = Object.fromEntries(Object.entries(dbPost).filter(([_, v]) => v !== null && v !== ''));
             idMap.set(post.id, { ...post, ...validDbProps });
         }
-        // If Title conflicts but ID is different, we skip the local post because 
-        // it likely means the slug was renamed in the CMS (DB) but remains unchanged in local code.
     });
 
     let allPosts = Array.from(idMap.values()).map((post: any) => {
-        const rawImage = post.image;
-        const normalizedImage = rawImage?.replace(/\/images\/(blog|blogs)\//i, '/images/').replace(/\/assets\/(blog|blogs)\//i, '/assets/');
+        let rawImage = post.image || post.featured_image || post.displayImage;
+        let displayImage = '/images/logo.webp';
+
+        if (rawImage) {
+            if (rawImage.startsWith('http')) {
+                displayImage = rawImage;
+            } else {
+                // For local paths, extract the filename and ensure it points to the /images/ root
+                const fileName = rawImage.split('/').pop();
+                displayImage = `/images/${fileName}`;
+            }
+        }
+
         return {
             ...post,
-            // Normalize image paths to use the root /images/ folder for reliability
-            image: normalizedImage
+            displayImage
         };
     }).sort((a, b) => {
         const dateA = new Date(a.date).getTime() || 0;
@@ -181,23 +188,22 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
                                         </Link>
                                     </div>
 
-                                     {/* Featured Image - Right side on desktop, Bottom on mobile */}
-                                     {(post.image || post.featured_image) && (
-                                         <div className="w-full md:w-64 lg:w-72 flex-shrink-0 order-2 md:order-2">
-                                             <Link href={`/blog/${post.id}/`} className="block group">
-                                                 <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-gray-100 shadow-sm group-hover:shadow-md transition-all duration-300">
-                                                     <Image
-                                                         src={post.image || post.featured_image || '/images/logo.webp'}
-                                                         alt={post.title}
-                                                         fill
-                                                         className="object-cover transition-transform duration-500 group-hover:scale-105"
-                                                         sizes="(max-width: 768px) 100vw, 320px"
-                                                         unoptimized={true}
-                                                     />
-                                                 </div>
-                                             </Link>
-                                         </div>
-                                     )}
+                                    {/* Featured Image - Right side on desktop, Bottom on mobile */}
+                                    {post.displayImage && (
+                                        <div className="w-full md:w-64 lg:w-72 flex-shrink-0 order-2 md:order-2">
+                                            <Link href={`/blog/${post.id}/`} className="block group">
+                                                <div className="overflow-hidden rounded-xl border border-gray-100 shadow-sm group-hover:shadow-md transition-all duration-300">
+                                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                                    <img
+                                                        src={post.displayImage}
+                                                        alt={post.title}
+                                                        className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+                                                        loading="lazy"
+                                                    />
+                                                </div>
+                                            </Link>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         );
