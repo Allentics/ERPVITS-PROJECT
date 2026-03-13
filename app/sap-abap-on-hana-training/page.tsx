@@ -14,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
         title: course?.meta_title || local?.metaTitle || `${course?.title || local?.title} Online Training | ERPVITS`,
         description: course?.meta_description || local?.metaDescription || `Master ${course?.title || local?.title} with ERPVITS - Live online training, real projects, and placement assistance.`,
         alternates: {
-            canonical: 'https://www.erpvits.com/sap-abap-on-hana/',
+            canonical: 'https://www.erpvits.com/sap-abap-on-hana-training/',
         },
     };
 }

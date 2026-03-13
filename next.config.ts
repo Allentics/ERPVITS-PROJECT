@@ -145,6 +145,51 @@ const nextConfig: NextConfig = {
         destination: "/ai-and-machine-learning-with-python/",
         permanent: true,
       },
+      {
+        source: "/about",
+        destination: "/about-us/",
+        permanent: true,
+      },
+      {
+        source: "/contact",
+        destination: "/contact-us/",
+        permanent: true,
+      },
+      {
+        source: "/sap-abap-on-hana",
+        destination: "/sap-abap-on-hana-training/",
+        permanent: true,
+      },
+      {
+        source: "/courses/mdg",
+        destination: "/sap-mdg-training/",
+        permanent: true,
+      },
+      {
+        source: "/courses/ppds",
+        destination: "/sap-ppds-training/",
+        permanent: true,
+      },
+      {
+        source: "/courses/tm",
+        destination: "/sap-tm-training/",
+        permanent: true,
+      },
+      {
+        source: "/courses/ibp",
+        destination: "/sap-ibp-training/",
+        permanent: true,
+      },
+      {
+        source: "/courses/ewm",
+        destination: "/sap-ewm-training/",
+        permanent: true,
+      },
+      {
+        source: "/courses/c4c-functional",
+        destination: "/sap-c4c-functional-training/",
+        permanent: true,
+      },
     ];
   },
 };

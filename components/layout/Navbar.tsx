@@ -177,7 +177,7 @@ const Navbar = () => {
                                     Home
                                 </Link>
 
-                                <Link href="/about/" className="px-2 py-2 text-white hover:text-orange-500 font-bold transition-colors rounded-lg hover:bg-white/10 text-[13px] xl:text-sm whitespace-nowrap">
+                                <Link href="/about-us/" className="px-2 py-2 text-white hover:text-orange-500 font-bold transition-colors rounded-lg hover:bg-white/10 text-[13px] xl:text-sm whitespace-nowrap">
                                     About Us
                                 </Link>
 
@@ -250,7 +250,7 @@ const Navbar = () => {
                                     </div>
                                 </div>
 
-                                <Link href="/contact/" className="px-2 py-2 text-white hover:text-orange-500 font-bold transition-colors rounded-lg hover:bg-white/10 text-[13px] xl:text-sm whitespace-nowrap">
+                                <Link href="/contact-us/" className="px-2 py-2 text-white hover:text-orange-500 font-bold transition-colors rounded-lg hover:bg-white/10 text-[13px] xl:text-sm whitespace-nowrap">
                                     Contact
                                 </Link>
 
@@ -276,7 +276,7 @@ const Navbar = () => {
                 <div className={cn("lg:hidden bg-slate-900 border-t border-white/10 fixed inset-x-0 bottom-0 top-[6rem] z-40 transition-transform duration-300 ease-in-out transform overflow-y-auto", isOpen ? "translate-x-0" : "translate-x-full")}>
                     <div className="p-4 space-y-2 pb-20">
                         <Link href="/" className="block px-4 py-3 rounded-xl text-base font-semibold text-white hover:text-orange-500 hover:bg-white/5" onClick={() => setIsOpen(false)}>Home</Link>
-                        <Link href="/about/" className="block px-4 py-3 rounded-xl text-base font-semibold text-white hover:text-orange-500 hover:bg-white/5" onClick={() => setIsOpen(false)}>About Us</Link>
+                        <Link href="/about-us/" className="block px-4 py-3 rounded-xl text-base font-semibold text-white hover:text-orange-500 hover:bg-white/5" onClick={() => setIsOpen(false)}>About Us</Link>
                         <Link href="/courses/" className="block px-4 py-3 rounded-xl text-base font-semibold text-white hover:text-orange-500 hover:bg-white/5" onClick={() => setIsOpen(false)}>Courses</Link>
 
                         <div>
@@ -332,7 +332,7 @@ const Navbar = () => {
                             </div>
                         </div>
 
-                        <Link href="/contact/" className="block px-4 py-3 rounded-xl text-base font-semibold text-white hover:text-orange-500 hover:bg-white/5" onClick={() => setIsOpen(false)}>Contact</Link>
+                        <Link href="/contact-us/" className="block px-4 py-3 rounded-xl text-base font-semibold text-white hover:text-orange-500 hover:bg-white/5" onClick={() => setIsOpen(false)}>Contact</Link>
 
                         <div className="pt-4">
                             <button
