@@ -9,13 +9,15 @@ export default function InteractiveBlogContent({ content, title }: { content: st
     const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
         const target = e.target as HTMLElement;
         const link = target.closest('a');
-        
+
         if (link && link.getAttribute('href') === '#open-enquiry-modal') {
             e.preventDefault();
             setIsModalOpen(true);
         }
     };
 
+    const formattedContent = (() => {
+        if (!content) return '';
         // Fix image paths in HTML content (normalize /images/blog/ to /images/)
         let processed = content;
         processed = processed.replace(/src=["']([^"']+)["']/g, (match, src) => {
@@ -25,7 +27,7 @@ export default function InteractiveBlogContent({ content, title }: { content: st
 
         // If it already has HTML tags, respect them
         if (/<[a-z][\s\S]*>/i.test(processed)) return processed;
-        
+
         // Otherwise, convert newlines to paragraphs for plain text
         return processed
             .split(/\n\s*\n/)
@@ -37,14 +39,14 @@ export default function InteractiveBlogContent({ content, title }: { content: st
 
     return (
         <>
-            <div 
+            <div
                 className="blog-content blog-content-area"
-                dangerouslySetInnerHTML={{ __html: formattedContent }} 
+                dangerouslySetInnerHTML={{ __html: formattedContent }}
                 onClick={handleClick}
             />
-            <ContactModal 
-                isOpen={isModalOpen} 
-                onClose={() => setIsModalOpen(false)} 
+            <ContactModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
                 title={title ? `Enquire about: ${title}` : "Course Enquiry Form"}
                 subtitle="Fill out the form below and our experts will get back to you shortly."
             />
