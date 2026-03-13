@@ -5,7 +5,6 @@
 import React, { useState } from 'react';
 import { Star, Quote, CheckCircle2, Download, User, Mail, Briefcase, Calendar, AlertCircle } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
-import { submitToGoogleSheets } from '@/app/actions/submitToGoogleSheets';
 
 interface TestimonialItem {
     name: string;
@@ -21,72 +20,10 @@ interface TestimonialStats {
 }
 
 export default function DetailedTestimonials({ items, stats, courseName = "SAP" }: { items?: TestimonialItem[], stats?: TestimonialStats, courseName?: string }) {
-    const [formData, setFormData] = useState({
-        fullName: '',
-        email: '',
-        role: '',
-        experience: ''
-    });
-    const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-    const [errorMessage, setErrorMessage] = useState('');
-
     const scrollToBooking = () => {
         const element = document.getElementById('detailed-demo-booking');
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({ ...prev, [name]: value }));
-    };
-
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setStatus('loading');
-        setErrorMessage('');
-
-        try {
-            const names = formData.fullName.trim().split(' ');
-            const firstName = names[0] || '';
-            const lastName = names.slice(1).join(' ') || '';
-
-            const fullMessage = `Desired Role: ${formData.role}\nYears Experience: ${formData.experience}\n\n(Requested Interview Guide)`;
-
-            const { error } = await supabase
-                .from('contacts')
-                .insert([
-                    {
-                        name: formData.fullName,
-                        first_name: firstName,
-                        last_name: lastName,
-                        email: formData.email,
-                        phone: '', // Not collected in this form
-                        course: `${courseName} - Interview Guide`,
-                        message: fullMessage,
-                    }
-                ]);
-
-            if (error) throw error;
-
-            await submitToGoogleSheets({
-                firstName,
-                lastName,
-                email: formData.email,
-                countryCode: '',
-                phone: '',
-                course: `${courseName} - Interview Guide`,
-                message: fullMessage
-            });
-
-            setStatus('success');
-            setFormData({ fullName: '', email: '', role: '', experience: '' });
-
-        } catch (error: any) {
-            console.error(error);
-            setStatus('error');
-            setErrorMessage(error.message || 'Submission failed.');
         }
     };
 

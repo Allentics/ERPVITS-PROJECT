@@ -3,7 +3,6 @@
 import { X, ClipboardList } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 import { supabase } from '@/lib/supabase';
-import { submitToGoogleSheets } from '@/app/actions/submitToGoogleSheets';
 import { courses } from '@/lib/courseData';
 import { countryCodes } from '@/lib/countryCodes';
 
@@ -93,8 +92,12 @@ export default function CareerGuidanceModal({ isOpen, onClose, defaultCourse = "
                 countryCode: countryCode,
                 course: formData.interestedCourse
             };
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            submitToGoogleSheets(googleSheetData).catch((err: any) => console.error('Google Sheet Error:', err));
+            // Send to Google Sheets via API route (more stable for HMR)
+            fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(googleSheetData)
+            }).catch(err => console.error('Google Sheet Error:', err));
 
             setStatus('success');
             setFormData({ fullName: '', email: '', phone: '', background: '', interestedCourse: '', message: '' });

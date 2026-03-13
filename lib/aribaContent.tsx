@@ -40,7 +40,7 @@ export const aribaContent = {
                 },
                 {
                     "title": "Career support",
-                    "description": "Completing the SAP Ariba course is only one part of the process - getting placed is equally challenging. Our career support team helps you build an SAP relevant resume, prepares you for mock interviews and gives you real <a href=\"https://www.erpvits.com/blogs/sap-ariba-interview-questions-and-answers/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Ariba interview questions</a> based on the current hiring trends for <a href=\"https://www.erpvits.com/blogs/sap-ariba-jobs-and-salary/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Ariba Jobs</a>. You will learn how to describe your project experience in SAP Ariba interviews."
+                    "description": "Completing the SAP Ariba course is only one part of the process - getting placed is equally challenging. Our career support team helps you build an SAP relevant resume, prepares you for mock interviews and gives you real <a href=\"https://www.erpvits.com/blog/sap-ariba-interview-questions-and-answers/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Ariba interview questions</a> based on the current hiring trends for <a href=\"https://www.erpvits.com/blog/sap-ariba-jobs-and-salary/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Ariba Jobs</a>. You will learn how to describe your project experience in SAP Ariba interviews."
                 },
                 {
                     "title": "Alumni Network & Community Forum",
@@ -117,7 +117,7 @@ export const aribaContent = {
                     "hands_on": [
                         "Create sourcing events (RFI/RFQ/RFP) using **SAP Ariba Sourcing**.",
                         "Build and execute contract templates with approval workflows.",
-                        "Negotiation Processes and Supplier Awards on  <a href=\"https://www.erpvits.com/blogs/ariba-supplier-network-performance-metrics\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Ariba Supplier Network</a>"
+                        "Negotiation Processes and Supplier Awards on  <a href=\"https://www.erpvits.com/blog/ariba-supplier-network-performance-metrics\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Ariba Supplier Network</a>"
                     ],
                     "learning_points": [
                         "Overview of **SAP Ariba Sourcing** suite and its business value.",
@@ -170,7 +170,7 @@ export const aribaContent = {
                     "title": "Guided Buying Implementation",
                     "duration": "6 Hours",
                     "hands_on": [
-                        "Design a <a href=\"https://www.erpvits.com/blogs/sap-ariba-guided-buying-complete-guide/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Ariba Guided Buying</a> portal",
+                        "Design a <a href=\"https://www.erpvits.com/blog/sap-ariba-guided-buying-complete-guide/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Ariba Guided Buying</a> portal",
                         "Configure catalogs and user policies",
                         "Monitor adoption metrics and enhance user experience accordingly"
                     ],
@@ -191,7 +191,7 @@ export const aribaContent = {
                     ],
                     "learning_points": [
                         "Cloud Integration Gateway (CIG) for **SAP Ariba integration with S/4HANA** connectivity",
-                        "Advanced reporting and <a href=\"https://www.erpvits.com/blogs/how-sap-ariba-is-powering-intelligent-spend-management/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Ariba Intelligent Spend Management</a> analytics",
+                        "Advanced reporting and <a href=\"https://www.erpvits.com/blog/how-sap-ariba-is-powering-intelligent-spend-management/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Ariba Intelligent Spend Management</a> analytics",
                         "**SAP Ariba Supplier Management** performance and contract renewals",
                         "Troubleshooting, compliance, and system security"
                     ]
@@ -449,7 +449,7 @@ export const aribaContent = {
                     "color": "orange",
                     "title": "Immediate Post-Training",
                     "points": [
-                        "You will receive ERPVITS <a href=\"https://www.erpvits.com/blogs/sap-ariba-certification/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Ariba Certification</a>",
+                        "You will receive ERPVITS <a href=\"https://www.erpvits.com/blog/sap-ariba-certification/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Ariba Certification</a>",
                         "All recorded and structured materials for the coursework are available and can be accessed at any time.",
                         "You will be able to join the alumni network and community forum.",
                         "You can begin updating your resume with a focus on SAP Ariba expertise."
@@ -495,7 +495,7 @@ export const aribaContent = {
                     "color": "orange",
                     "title": "Long-Term Growth",
                     "points": [
-                        "For your sustained growth in the long term, you will have to acquire the SAP Ariba Procurement Certification in procurement, <a href=\"https://www.erpvits.com/blogs/sap-ariba-sourcing-configuration/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Ariba Sourcing</a> and contracts for you to fully develop your certification.",
+                        "For your sustained growth in the long term, you will have to acquire the SAP Ariba Procurement Certification in procurement, <a href=\"https://www.erpvits.com/blog/sap-ariba-sourcing-configuration/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Ariba Sourcing</a> and contracts for you to fully develop your certification.",
                         "You will also have to develop your expertise in certain fields as well as your leading and project management skills to make the shift to advanced consulting or account management.",
                         "You can also pursue a specialization in other areas of your choice such as SAP Ariba integration, analytics, and risk management."
                     ],
@@ -690,8 +690,8 @@ export const aribaContent = {
                     "question": "What can I learn in SAP Ariba Supplier Network?"
                 },
                 {
-                    "a": "With ERPVITS, learners are able to understand company-wide spend, automate SAP Ariba procurement workflow and <a href=\"https://www.erpvits.com/blogs/how-sap-ariba-is-powering-intelligent-spend-management/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Ariba Intelligent Spend Management</a> and reporting tools to control SAP Ariba cost on the SAP Ariba platform.",
-                    "answer": "With ERPVITS, learners are able to understand company-wide spend, automate SAP Ariba procurement workflow and <a href=\"https://www.erpvits.com/blogs/how-sap-ariba-is-powering-intelligent-spend-management/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Ariba Intelligent Spend Management</a> and reporting tools to control SAP Ariba cost on the SAP Ariba platform.",
+                    "a": "With ERPVITS, learners are able to understand company-wide spend, automate SAP Ariba procurement workflow and <a href=\"https://www.erpvits.com/blog/how-sap-ariba-is-powering-intelligent-spend-management/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Ariba Intelligent Spend Management</a> and reporting tools to control SAP Ariba cost on the SAP Ariba platform.",
+                    "answer": "With ERPVITS, learners are able to understand company-wide spend, automate SAP Ariba procurement workflow and <a href=\"https://www.erpvits.com/blog/how-sap-ariba-is-powering-intelligent-spend-management/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Ariba Intelligent Spend Management</a> and reporting tools to control SAP Ariba cost on the SAP Ariba platform.",
                     "question": "What are Ariba Services and Ariba Spend Management?"
                 },
                 {

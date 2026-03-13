@@ -81,7 +81,7 @@ export const ewmContent = {
     "price": "45,000",
     "duration": "40+ Hours",
     "heroHeading": "Master Modern Warehouse Operations with the <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600\">SAP EWM Training</span>",
-    "heroSubheading": "Our SAP EWM training is designed to help SAP Consultants, Supply Chain Professionals, Warehouse Operations Managers and Logistics Professionals excel in their careers. Our training helps participants develop implementation-ready skills in the SAP EWM module. Global companies in Automotive, Pharma, Consumer Goods, Retail, Hi-Tech Manufacturing & 3rd Party Logistics are moving to SAP S/4HANA Embedded EWM. The need for SAP EWM consultants is increasing as we are in an undersupplied market for consultants that can configure, implement and optimize complex warehouse operations. Our SAP EWM course focuses on the full project life cycle, including the complete SAP EWM process flow and SAP EWM configuration as well as advanced subjects like SAP EWM wave management, <a href=\"https://www.erpvits.com/blogs/sap-ewm-yard-management/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP EWM yard management</a>, SAP EWM MFS & SAP EWM QM integration. This course prepares participants to compete for SAP EWM consultant jobs as well as senior implementation positions globally.",
+    "heroSubheading": "Our SAP EWM training is designed to help SAP Consultants, Supply Chain Professionals, Warehouse Operations Managers and Logistics Professionals excel in their careers. Our training helps participants develop implementation-ready skills in the SAP EWM module. Global companies in Automotive, Pharma, Consumer Goods, Retail, Hi-Tech Manufacturing & 3rd Party Logistics are moving to SAP S/4HANA Embedded EWM. The need for SAP EWM consultants is increasing as we are in an undersupplied market for consultants that can configure, implement and optimize complex warehouse operations. Our SAP EWM course focuses on the full project life cycle, including the complete SAP EWM process flow and SAP EWM configuration as well as advanced subjects like SAP EWM wave management, <a href=\"https://www.erpvits.com/blog/sap-ewm-yard-management/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP EWM yard management</a>, SAP EWM MFS & SAP EWM QM integration. This course prepares participants to compete for SAP EWM consultant jobs as well as senior implementation positions globally.",
     "heroImage": "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP EWM Infographic.webp",
     "description": "Master modern warehouse operations with SAP EWM training online. Learn warehouse optimization, inventory management, RF operations, and S/4HANA integration.",
     "metaTitle": "SAP EWM Course – Warehouse Management Training Online",
@@ -127,7 +127,7 @@ export const ewmContent = {
                 {
                     "icon": "TrendingUp",
                     "title": "Placement & Career support",
-                    "description": "After gaining the necessary technical skills and turning that technical competency into a job offer is a matter of strategic career positioning. This is where the career support service comes into play. We will remodel your resume to align with the expectations of SAP EWM consultant jobs. We will also prepare you to answer the <a href=\"https://www.erpvits.com/blogs/sap-ewm-interview-questions-and-answers\" target=\"_blank\" rel=\"noopener noreferrer\">SAP EWM interview questions</a> based on real-time recruitment trends & customize your readiness to the market requirements for SAP EWM jobs"
+                    "description": "After gaining the necessary technical skills and turning that technical competency into a job offer is a matter of strategic career positioning. This is where the career support service comes into play. We will remodel your resume to align with the expectations of SAP EWM consultant jobs. We will also prepare you to answer the <a href=\"https://www.erpvits.com/blog/sap-ewm-interview-questions-and-answers\" target=\"_blank\" rel=\"noopener noreferrer\">SAP EWM interview questions</a> based on real-time recruitment trends & customize your readiness to the market requirements for SAP EWM jobs"
                 },
                 {
                     "icon": "Globe",
@@ -1020,7 +1020,7 @@ export const ewmContent = {
                         "Build domain expertise in specific industries (Manufacturing, E-commerce, Pharma, Logistics)",
                         "Develop leadership and project management capabilities",
                         "Transition to senior consulting roles or warehouse management",
-                        "Explore specializations (<a href=\"https://www.erpvits.com/blogs/sap-ewm-and-automation-tools\" target=\"_blank\" rel=\"noopener noreferrer\">warehouse automation</a>, advanced analytics, optimization)",
+                        "Explore specializations (<a href=\"https://www.erpvits.com/blog/sap-ewm-and-automation-tools\" target=\"_blank\" rel=\"noopener noreferrer\">warehouse automation</a>, advanced analytics, optimization)",
                         "Pursue SAP partnership or independent consulting opportunities"
                     ],
                     "timeline": "1-5 Years"

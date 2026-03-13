@@ -51,7 +51,7 @@ export const mmContent = {
                 },
                 {
                     "title": "Placement & Career support",
-                    "description": "Our SAP MM training includes structured career support services like resume rewriting, mock interviews, real-time project explanation techniques and job guidance. You will gain insights into <a href=\"https://www.erpvits.com/blogs/sap-s4-hana-mm-career-opportunities/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP S/4HANA MM Career</a> paths, salary trends and current hiring demands in both domestic and international markets."
+                    "description": "Our SAP MM training includes structured career support services like resume rewriting, mock interviews, real-time project explanation techniques and job guidance. You will gain insights into <a href=\"https://www.erpvits.com/blog/sap-s4-hana-mm-career-opportunities/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP S/4HANA MM Career</a> paths, salary trends and current hiring demands in both domestic and international markets."
                 },
                 {
                     "title": "Active Alumni Network & Community Forum",
@@ -63,7 +63,7 @@ export const mmContent = {
                 }
             ],
             "title": "Learn SAP S/4HANA MM from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            "subtitle": "Our <a href=\"https://www.erpvits.com/blogs/sap-mm-course-complete-guide/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP MM Course</a> is developed and led by experienced SAP MM consultants with decades of real-time implementation experience in procurement, inventory management and supply chain operations. You'll participate in live, instructor-led sessions where trainers guide you through real procurement cycles while showing configuration steps - all designed to show how SAP MM supports end-to-end materials management in global organizations.",
+            "subtitle": "Our <a href=\"https://www.erpvits.com/blog/sap-mm-course-complete-guide/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP MM Course</a> is developed and led by experienced SAP MM consultants with decades of real-time implementation experience in procurement, inventory management and supply chain operations. You'll participate in live, instructor-led sessions where trainers guide you through real procurement cycles while showing configuration steps - all designed to show how SAP MM supports end-to-end materials management in global organizations.",
             "textAlign": "left"
         },
         {

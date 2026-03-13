@@ -7,7 +7,6 @@ import { Calendar, Clock, AlertCircle, CheckCircle2, ShieldCheck, Users, Zap, X,
 import ContactModal from '@/components/ContactModal';
 import { supabase } from '@/lib/supabase';
 import { courses } from '@/lib/courseData';
-import { submitToGoogleSheets } from '@/app/actions/submitToGoogleSheets';
 import { countryCodes } from '@/lib/countryCodes';
 
 export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batches: propBatches, features: propFeatures }: { courseName?: string, batches?: any[], features?: any[] }) {
@@ -44,10 +43,15 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
                 message: 'Self-Paced Learning Enrollment',
             }]);
             if (error) throw error;
-            submitToGoogleSheets({
-                firstName: selfPacedForm.name, lastName: '', email: selfPacedForm.email,
-                countryCode: '', phone: selfPacedForm.phone, course: selfPacedForm.course, message: 'Self-Paced'
-            }).catch(console.error);
+            // Send to Google Sheets via API route (more stable for HMR)
+            fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    firstName: selfPacedForm.name, lastName: '', email: selfPacedForm.email,
+                    countryCode: '', phone: selfPacedForm.phone, course: selfPacedForm.course, message: 'Self-Paced'
+                })
+            }).catch(err => console.error('Google Sheet Error:', err));
             setSelfPacedStatus('success');
         } catch (err: any) {
             if (newTab) newTab.close();

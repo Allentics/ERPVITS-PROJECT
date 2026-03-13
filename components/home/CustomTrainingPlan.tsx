@@ -4,8 +4,6 @@
 import { ClipboardList, Target, Award, Calendar } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase';
-import { submitToGoogleSheets } from '@/app/actions/submitToGoogleSheets';
-
 import { courses } from '@/lib/courseData';
 import { countryCodes } from '@/lib/countryCodes';
 
@@ -98,8 +96,12 @@ export default function CustomTrainingPlan() {
                 ]);
 
             if (error) throw error;
-            // Send to Google Sheets (Fire and forget)
-            submitToGoogleSheets(formData).catch((err: any) => console.error('Google Sheet Error:', err));
+            // Send to Google Sheets via API route (more stable for HMR)
+            fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            }).catch(err => console.error('Google Sheet Error:', err));
 
             setStatus('success');
             // newTab is already at /thank-you

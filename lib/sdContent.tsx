@@ -23,7 +23,7 @@ export const sdContent = {
                 },
                 {
                     "title": "100% Hands-On Learning ",
-                    "description": "SAP SD course emphasizes active learning within the SAP system. You will configure SAP SD master data, explore SAP SD pricing procedure, set up SAP SD item categories, route determiners and output determiners and determine output determinations. Key SAP SD determinations such as tables or <a href=\"https://www.erpvits.com/blogs/sap-transaction-codes-tcodes-list\" target=\"_blank\">TCodes</a> will be practiced extensively so as to build confidence when using system navigation; concepts like document flow, workflow configuration step by step explained."
+                    "description": "SAP SD course emphasizes active learning within the SAP system. You will configure SAP SD master data, explore SAP SD pricing procedure, set up SAP SD item categories, route determiners and output determiners and determine output determinations. Key SAP SD determinations such as tables or <a href=\"https://www.erpvits.com/blog/sap-transaction-codes-tcodes-list\" target=\"_blank\">TCodes</a> will be practiced extensively so as to build confidence when using system navigation; concepts like document flow, workflow configuration step by step explained."
                 },
                 {
                     "title": "Job-Oriented Curriculum Design",
@@ -101,7 +101,7 @@ export const sdContent = {
                 },
                 {
                     "title": "Hands-On Lab Environment",
-                    "description": "Practice and execute sales orders, quotations, deliveries, billing, and customer management <a href=\"https://www.erpvits.com/blogs/sap-sd-workflow/\" target=\"_blank\">workflows in SAP SD systems.</a>"
+                    "description": "Practice and execute sales orders, quotations, deliveries, billing, and customer management <a href=\"https://www.erpvits.com/blog/sap-sd-workflow/\" target=\"_blank\">workflows in SAP SD systems.</a>"
                 },
                 {
                     "title": "Certification Exam Prep",
@@ -213,7 +213,7 @@ export const sdContent = {
                     "learning_points": [
                         "General outbound delivery process.",
                         "Picking, packing, and posting goods.",
-                        "<a href=\"https://www.erpvits.com/blogs/sap-sd-shipping-point-determination/\" target=\"_blank\">Determining and configuring SAP SD Shipping Points.</a>",
+                        "<a href=\"https://www.erpvits.com/blog/sap-sd-shipping-point-determination/\" target=\"_blank\">Determining and configuring SAP SD Shipping Points.</a>",
                         "Managing transport integration.",
                         "Various delivery document types and their statuses.",
                         "Managing freight costs and shipping conditions."

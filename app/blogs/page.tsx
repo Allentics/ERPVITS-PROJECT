@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { supabase } from '@/lib/supabase';
 import { blogPosts as localPosts } from '@/lib/blogData';
 import { Metadata } from 'next';
-import './blogs.css';
+import '../blogs.css';
 
 export const metadata: Metadata = {
     title: 'SAP Blog & Insights | ERPVITS',
@@ -76,7 +76,11 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
         // it likely means the slug was renamed in the CMS (DB) but remains unchanged in local code.
     });
 
-    let allPosts = Array.from(idMap.values()).sort((a, b) => {
+    let allPosts = Array.from(idMap.values()).map((post: any) => ({
+        ...post,
+        // Normalize image paths to use the root /images/ folder for reliability
+        image: post.image?.replace(/\/images\/(blog|blogs)\//, '/images/').replace(/\/assets\/(blog|blogs)\//, '/assets/')
+    })).sort((a, b) => {
         const dateA = new Date(a.date).getTime() || 0;
         const dateB = new Date(b.date).getTime() || 0;
         return dateB - dateA;
@@ -155,7 +159,7 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
                                             <span className="text-xs text-gray-400 uppercase" suppressHydrationWarning>| {weekday}</span>
                                         </div>
 
-                                        <Link href={`/blogs/${post.id}/`} className="group-hover:text-orange-600 transition-colors">
+                                        <Link href={`/blog/${post.id}/`} className="group-hover:text-orange-600 transition-colors">
                                             <h2 className="text-[24px] lg:text-[28px] font-bold text-gray-900 mb-4 leading-snug group-hover:text-[#F58220] transition-colors">
                                                 {post.title}
                                             </h2>
@@ -166,27 +170,30 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
                                         </p>
 
                                         <Link
-                                            href={`/blogs/${post.id}/`}
+                                            href={`/blog/${post.id}/`}
                                             className="inline-block bg-white text-[#222222] border-2 border-[#e8e8e8] text-[12px] font-bold px-4 py-[8px] rounded-none uppercase transition-all hover:bg-[#e6e6e6] hover:border-[#c9c9c9]"
                                         >
                                             View Blog
                                         </Link>
                                     </div>
 
-                                    {/* Featured Image - Right side on desktop, Bottom on mobile */}
-                                    {(post.image || post.featured_image) && (
-                                        <div className="w-full md:w-64 lg:w-72 flex-shrink-0 order-2 md:order-2 overflow-hidden rounded-none shadow-sm group-hover:shadow-md transition-all duration-300">
-                                            <Link href={`/blogs/${post.id}/`}>
-                                                <div className="relative">
-                                                    <img
-                                                        src={post.image || post.featured_image}
-                                                        alt={post.title}
-                                                        className="w-full h-auto object-contain rounded-lg group-hover:scale-105 transition-transform duration-500"
-                                                    />
-                                                </div>
-                                            </Link>
-                                        </div>
-                                    )}
+                                     {/* Featured Image - Right side on desktop, Bottom on mobile */}
+                                     {(post.image || post.featured_image) && (
+                                         <div className="w-full md:w-64 lg:w-72 flex-shrink-0 order-2 md:order-2">
+                                             <Link href={`/blog/${post.id}/`} className="block group">
+                                                 <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-gray-100 shadow-sm group-hover:shadow-md transition-all duration-300">
+                                                     <Image
+                                                         src={post.image || post.featured_image || '/images/logo.webp'}
+                                                         alt={post.title}
+                                                         fill
+                                                         className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                                         sizes="(max-width: 768px) 100vw, 320px"
+                                                         unoptimized={true}
+                                                     />
+                                                 </div>
+                                             </Link>
+                                         </div>
+                                     )}
                                 </div>
                             </div>
                         );

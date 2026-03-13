@@ -34,7 +34,7 @@ export const ficoContent = {
                 },
                 {
                     "title": "100% Hands-On Learning ",
-                    "description": "Our training methodology emphasizes practical learning. Each session features live demonstrations of SAP FICO software, followed by guided lab exercises where you practice creating G/L accounts, posting financial entries, configuring cost centers, performing asset accounting and creating financial reports. You'll also explore <a href=\"https://www.erpvits.com/blogs/sap-transaction-codes/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP FICO TCodes</a> and SAP FICO MM integration in real scenarios to develop functional expertise."
+                    "description": "Our training methodology emphasizes practical learning. Each session features live demonstrations of SAP FICO software, followed by guided lab exercises where you practice creating G/L accounts, posting financial entries, configuring cost centers, performing asset accounting and creating financial reports. You'll also explore <a href=\"https://www.erpvits.com/blog/sap-transaction-codes/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP FICO TCodes</a> and SAP FICO MM integration in real scenarios to develop functional expertise."
                 },
                 {
                     "title": "Job-Oriented Curriculum Design",
@@ -42,7 +42,7 @@ export const ficoContent = {
                 },
                 {
                     "title": "Interactive Q&A Sessions",
-                    "description": "To complement live classes, we also provide dedicated forums and office hours for questions to be clarified by trainers at your own learning pace. Trainers focus on <a href=\"https://www.erpvits.com/blogs/sap-fi-interview-questions-answers-career-guide-for-sap-fico-consultants-worldwide\" target=\"_blank\" rel=\"noopener noreferrer\">SAP FICO Interview Questions & Answers</a>, complex accounting scenarios, consultancy best practices and company strategies so you can confidently approach interviews or client projects with ease."
+                    "description": "To complement live classes, we also provide dedicated forums and office hours for questions to be clarified by trainers at your own learning pace. Trainers focus on <a href=\"https://www.erpvits.com/blog/sap-fi-interview-questions-answers-career-guide-for-sap-fico-consultants-worldwide\" target=\"_blank\" rel=\"noopener noreferrer\">SAP FICO Interview Questions & Answers</a>, complex accounting scenarios, consultancy best practices and company strategies so you can confidently approach interviews or client projects with ease."
                 },
                 {
                     "title": "Flexible Batch Timings",
@@ -84,7 +84,7 @@ export const ficoContent = {
             "title": "Why Professionals Choose ERPVITS for SAP FICO Training",
             "imageSrc": "https://xwcpxwjxqllfwferproi.supabase.co/storage/v1/object/public/media-library/general/sap-fico-training-1771992971708.png",
             "subtitle": "Success Guarantee & Credibility",
-            "description": "Professionals opt for ERPVITS' SAP FICO Training because it combines hands-on, job-oriented learning with guidance from certified instructors with 12+ years of real world SAP FICO experience. The SAP FICO course covers all key modules, T codes and integration with MM; live projects provide interactive Q&A and personalized support as learners master their SAP FICO responsibilities, pass certification tests confidently and secure <a href=\"https://www.erpvits.com/blogs/sap-fico-jobs/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP FICO Jobs</a> both locally and abroad.",
+            "description": "Professionals opt for ERPVITS' SAP FICO Training because it combines hands-on, job-oriented learning with guidance from certified instructors with 12+ years of real world SAP FICO experience. The SAP FICO course covers all key modules, T codes and integration with MM; live projects provide interactive Q&A and personalized support as learners master their SAP FICO responsibilities, pass certification tests confidently and secure <a href=\"https://www.erpvits.com/blog/sap-fico-jobs/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP FICO Jobs</a> both locally and abroad.",
             "supportText": "From pre-evaluation to post-training support, we guide you through every step of your SAP FICO learning journey and accounting career transition.",
             "supportTitle": "Complete support Ecosystem"
         },
@@ -660,7 +660,7 @@ export const ficoContent = {
                     "color": "slate",
                     "title": "Certification & Job Search",
                     "points": [
-                        "Apply for <a href=\"https://www.erpvits.com/blogs/sap-fico-certification-preparation-guide\" target=\"_blank\" rel=\"noopener noreferrer\">SAP FICO Certification</a> exam",
+                        "Apply for <a href=\"https://www.erpvits.com/blog/sap-fico-certification-preparation-guide\" target=\"_blank\" rel=\"noopener noreferrer\">SAP FICO Certification</a> exam",
                         "Start job search with career services support",
                         "Participate in alumni networking events",
                         "Receive interview coaching and mock interview feedback"

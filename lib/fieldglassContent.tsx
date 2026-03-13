@@ -33,7 +33,7 @@ export const fieldglassContent = {
                 },
                 {
                     "title": "100% Hands-On Learning",
-                    "description": "Conventional training teaches Fieldglass System concepts through slide decks. Our <a href=\"https://www.erpvits.com/blogs/what-to-expect-in-sap-fieldglass-training-program\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Fieldglass training</a> does a lot more. Each session has live demonstration and training using SAP Fieldglass systems and afterwards you are given real hands-on Fieldglass system training/labs to complete the exercises. At the end of the course, you will have configured and onboarded worker onboarding workflows, created and managed SOW project structures, handled contingent worker profile management, invoice processing & risk analytic execution."
+                    "description": "Conventional training teaches Fieldglass System concepts through slide decks. Our <a href=\"https://www.erpvits.com/blog/what-to-expect-in-sap-fieldglass-training-program\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Fieldglass training</a> does a lot more. Each session has live demonstration and training using SAP Fieldglass systems and afterwards you are given real hands-on Fieldglass system training/labs to complete the exercises. At the end of the course, you will have configured and onboarded worker onboarding workflows, created and managed SOW project structures, handled contingent worker profile management, invoice processing & risk analytic execution."
                 },
                 {
                     "title": "Job-Oriented Curriculum Design",
@@ -95,7 +95,7 @@ export const fieldglassContent = {
                 {
                     "title": "Module 1: Introduction to SAP Fieldglass & Vendor Management System (VMS) (3 Hours)",
                     "hands_on": [
-                        "<a href=\"https://www.erpvits.com/blogs/sap-fieldglass-login/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Fieldglass Login</a>, Navigate SAP Fieldglass interface and explore key modules",
+                        "<a href=\"https://www.erpvits.com/blog/sap-fieldglass-login/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Fieldglass Login</a>, Navigate SAP Fieldglass interface and explore key modules",
                         "Understand VMS data models and module relationships",
                         "Explore pre-built reports and analytics dashboards"
                     ],
@@ -293,7 +293,7 @@ export const fieldglassContent = {
                 }
             ],
             "title": "Who Can Learn SAP Fieldglass? – Perfect for Diverse Career Paths",
-            "subtitle": "Ideal for individuals from various professional backgrounds aiming for global consulting and implementation positions in <a href=\"https://www.erpvits.com/blogs/how-sap-fieldglass-transforming-global-contingent-workforce-market/\" target=\"_blank\" rel=\"noopener noreferrer\">contingent workforce management</a>"
+            "subtitle": "Ideal for individuals from various professional backgrounds aiming for global consulting and implementation positions in <a href=\"https://www.erpvits.com/blog/how-sap-fieldglass-transforming-global-contingent-workforce-market/\" target=\"_blank\" rel=\"noopener noreferrer\">contingent workforce management</a>"
         },
         {
             "type": "detailed_prerequisites",
@@ -324,7 +324,7 @@ export const fieldglassContent = {
                                 "title": "End-to-End Contingent Worker Lifecycle",
                                 "points": [
                                     "Set up and supervise the entire contingent worker onboarding and offboarding processes.",
-                                    "Manage requisitions, worker assignments and <a href=\"https://www.erpvits.com/blogs/sap-fieldglass-timesheet/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Fieldglass Timesheet</a> approval processes.",
+                                    "Manage requisitions, worker assignments and <a href=\"https://www.erpvits.com/blog/sap-fieldglass-timesheet/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Fieldglass Timesheet</a> approval processes.",
                                     "Execute contingent workforce strategies, compliance, and cost control.",
                                     "Optimize processes and external talent acquisition cost."
                                 ],
@@ -790,7 +790,7 @@ export const fieldglassContent = {
                     "timeline": "1-5 Years"
                 }
             ],
-            "title": "<a href=\"https://www.erpvits.com/blogs/what-to-expect-in-sap-fieldglass-training-program\" target=\"_blank\" rel=\"noopener noreferrer\">What to Expect After Completing SAP Fieldglass Training</a> – Your Growth Roadmap"
+            "title": "<a href=\"https://www.erpvits.com/blog/what-to-expect-in-sap-fieldglass-training-program\" target=\"_blank\" rel=\"noopener noreferrer\">What to Expect After Completing SAP Fieldglass Training</a> – Your Growth Roadmap"
         },
         {
             "type": "detailed_upcoming_batches",

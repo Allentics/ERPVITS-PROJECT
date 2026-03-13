@@ -8,7 +8,6 @@ import { X, Calendar, Clock, User, Phone, Send, Globe, Monitor } from 'lucide-re
 import { supabase } from '@/lib/supabase';
 import { countryCodes } from '@/lib/countryCodes';
 import { courses } from '@/lib/courseData';
-import { submitToGoogleSheets } from '@/app/actions/submitToGoogleSheets';
 
 const WebinarPopup = () => {
     const pathname = usePathname();
@@ -65,15 +64,19 @@ const WebinarPopup = () => {
 
             if (error) throw error;
 
-            // Send to Google Sheets (Fire and forget to speed up UI)
-            submitToGoogleSheets({
-                firstName: formData.name.split(' ')[0] || '',
-                lastName: formData.name.split(' ').slice(1).join(' ') || '',
-                email: formData.email,
-                countryCode: formData.countryCode,
-                phone: formData.phone,
-                course: formData.module
-            }).catch((err: any) => console.error('Google Sheet Error:', err));
+            // Send to Google Sheets via API route (more stable for HMR)
+            fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    firstName: formData.name.split(' ')[0] || '',
+                    lastName: formData.name.split(' ').slice(1).join(' ') || '',
+                    email: formData.email,
+                    countryCode: formData.countryCode,
+                    phone: formData.phone,
+                    course: formData.module
+                })
+            }).catch(err => console.error('Google Sheet Error:', err));
 
             setIsSubmitted(true);
             setTimeout(() => setIsVisible(false), 3000);

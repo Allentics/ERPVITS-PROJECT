@@ -5,7 +5,7 @@ export const ppdsContent = {
     "price": "45,000",
     "duration": "40+ Hours",
     "heroHeading": "SAP PP/DS Training Online – Production Planning & Detailed Scheduling",
-    "heroSubheading": "Designed for professionals seeking to specialize in advanced production planning, this SAP PPDS training equips participants with an in-depth understanding of planning strategies, detailed scheduling, capacity leveling techniques and optimization within SAP S/4HANA. Live interactive sessions combine with hands-on system practice and real world industry scenarios to give learners a practical education beyond theory.\n\nParticipants gain implementation insights, configuration knowledge, and integration knowledge with <a href=\"https://www.erpvits.com/blogs/sap-modules-list/\" target=\"_blank\" rel=\"noopener noreferrer\">Other SAP modules</a>, giving them confidence to manage complex manufacturing and supply chain environments. In addition, participants receive interview preparation, resume guidance, and career support assistance that will enable them to secure high-demand roles within the SAP ecosystem.",
+    "heroSubheading": "Designed for professionals seeking to specialize in advanced production planning, this SAP PPDS training equips participants with an in-depth understanding of planning strategies, detailed scheduling, capacity leveling techniques and optimization within SAP S/4HANA. Live interactive sessions combine with hands-on system practice and real world industry scenarios to give learners a practical education beyond theory.\n\nParticipants gain implementation insights, configuration knowledge, and integration knowledge with <a href=\"https://www.erpvits.com/blog/sap-modules-list/\" target=\"_blank\" rel=\"noopener noreferrer\">Other SAP modules</a>, giving them confidence to manage complex manufacturing and supply chain environments. In addition, participants receive interview preparation, resume guidance, and career support assistance that will enable them to secure high-demand roles within the SAP ecosystem.",
     "heroImage": "/images/ERPVITS - All Modules Infographics/ERPVITS - SAP PPDS Infographic.webp",
     "description": "The SAP PPDS (Production Planning and Detailed Scheduling) Online Training Program from ERPVITS represents a transformative learning pathway for production planning professionals and SAP consultants eager to excel in advanced production scheduling, demand planning, and manufacturing optimization.",
     "metaTitle": "SAP PPDS Training Online | Production Planning Course",
@@ -710,7 +710,7 @@ export const ppdsContent = {
                     "color": "orange",
                     "title": "First Year in Role",
                     "points": [
-                        "Learn <a href=\"https://www.erpvits.com/blogs/sap-ppds-process-flow\" target=\"_blank\" rel=\"noopener noreferrer\">SAP PPDS process flow</a>, understand demand patterns",
+                        "Learn <a href=\"https://www.erpvits.com/blog/sap-ppds-process-flow\" target=\"_blank\" rel=\"noopener noreferrer\">SAP PPDS process flow</a>, understand demand patterns",
                         "Lead planning tasks, optimize scheduling parameters",
                         "Lead planning initiatives, design solutions"
                     ],

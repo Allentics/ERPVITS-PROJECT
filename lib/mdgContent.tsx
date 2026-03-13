@@ -328,7 +328,7 @@ export const mdgContent = {
                 }
             ],
             "title": "Learn SAP MDG from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            "subtitle": "Our **SAP MDG Online Training** curriculum is delivered exclusively by certified SAP professionals with 12+ years of direct hands-on experience in <a href=\"https://www.erpvits.com/blogs/sap-mdg-data-model/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP MDG data model</a>, data governance frameworks and enterprise information management. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex data governance scenarios in a step-by-step manner.",
+            "subtitle": "Our **SAP MDG Online Training** curriculum is delivered exclusively by certified SAP professionals with 12+ years of direct hands-on experience in <a href=\"https://www.erpvits.com/blog/sap-mdg-data-model/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP MDG data model</a>, data governance frameworks and enterprise information management. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex data governance scenarios in a step-by-step manner.",
             "textAlign": "left"
         },
         {
@@ -346,7 +346,7 @@ export const mdgContent = {
             "title": "Why Professionals Choose ERPVITS for SAP MDG Training",
             "imageSrc": "https://xwcpxwjxqllfwferproi.supabase.co/storage/v1/object/public/media-library/general/sap-mdg-training-1771936636057.png",
             "subtitle": "Success Guarantee & Credibility",
-            "description": "ERPVITS has established itself as a trusted training partner for <a href=\"https://www.erpvits.com/blogs/sap-modules-list/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Modules</a>, with hundreds of successful learners working at top consulting firms like Accenture, Capgemini, Deloitte, Infosys, and Wipro, as well as leading financial services and technology companies like JPMorgan Chase, Goldman Sachs, Microsoft, and IBM. Our alumni network testimonials speak to the quality of instruction and the career acceleration our program delivers.",
+            "description": "ERPVITS has established itself as a trusted training partner for <a href=\"https://www.erpvits.com/blog/sap-modules-list/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Modules</a>, with hundreds of successful learners working at top consulting firms like Accenture, Capgemini, Deloitte, Infosys, and Wipro, as well as leading financial services and technology companies like JPMorgan Chase, Goldman Sachs, Microsoft, and IBM. Our alumni network testimonials speak to the quality of instruction and the career acceleration our program delivers.",
             "supportText": "From pre-evaluation to post-training support, we guide you through every step of your SAP MDG learning journey and career transition.",
             "supportTitle": "Complete support Ecosystem"
         },

@@ -52,7 +52,7 @@ export const abapContent = {
                 },
                 {
                     "title": "Placement & Career support",
-                    "description": "Our career support renders real value by working with learners to build an SAP targeted resume and helping with mock interviews relevant to the current market with <a href=\"https://www.erpvits.com/blogs/sap-abap-interview-questions-and-answers/\" target=\"_blank\">SAP ABAP Interview Questions and Answers</a> and offering interview prep focused on cloud modernization to position candidates for **ABAP on HANA certification** and ABAP on Cloud key offers."
+                    "description": "Our career support renders real value by working with learners to build an SAP targeted resume and helping with mock interviews relevant to the current market with <a href=\"https://www.erpvits.com/blog/sap-abap-interview-questions-and-answers/\" target=\"_blank\">SAP ABAP Interview Questions and Answers</a> and offering interview prep focused on cloud modernization to position candidates for **ABAP on HANA certification** and ABAP on Cloud key offers."
                 },
                 {
                     "title": "Active Alumni Network & Community Forum",
@@ -76,7 +76,7 @@ export const abapContent = {
                 "Active alumni network and cloud ABAP developer community forum",
                 "50+ guided lab exercises from basic to advanced cloud scenarios",
                 "Quarterly updated materials aligned with latest BTP and ABAP Cloud releases",
-                "Mock interviews simulating real <a href=\"https://www.erpvits.com/blogs/sap-developer-training\" target=\"_blank\">SAP Developer course</a> scenarios",
+                "Mock interviews simulating real <a href=\"https://www.erpvits.com/blog/sap-developer-training\" target=\"_blank\">SAP Developer course</a> scenarios",
                 "Dedicated **SAP ABAP certification course** prep and technical bootcamp sessions",
                 "Complete support Ecosystem"
             ],
@@ -164,7 +164,7 @@ export const abapContent = {
                         "Create ABAP Cloud business objects",
                         "Implement behavior definitions",
                         "Configure validations and authorizations",
-                        "Execute <a href=\"https://www.erpvits.com/blogs/top-ten-tools-techniques-for-efficient-abap-on-cloud-programming/\" target=\"_blank\">RAP test tools</a>"
+                        "Execute <a href=\"https://www.erpvits.com/blog/top-ten-tools-techniques-for-efficient-abap-on-cloud-programming/\" target=\"_blank\">RAP test tools</a>"
                     ]
                 },
                 {

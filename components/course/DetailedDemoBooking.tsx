@@ -7,7 +7,6 @@
 import React, { useState, useEffect } from 'react';
 import { User, Mail, Phone, Briefcase, MessageSquare, ArrowRight, CheckCircle2, Video, Calendar, HelpCircle, Gift, MapPin, Loader2, AlertCircle } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
-import { submitToGoogleSheets } from '@/app/actions/submitToGoogleSheets';
 import { courses, Section } from '@/lib/courseData';
 import ContactForm from '@/components/ContactForm';
 

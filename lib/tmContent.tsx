@@ -566,7 +566,7 @@ export const tmContent = {
             "type": "detailed_prerequisites",
             "items": {
                 "minimum": [
-                    "Basic understanding of logistics and <a href=\"https://www.erpvits.com/blogs/sap-transportation-management-process\" target=\"_blank\" rel=\"noopener noreferrer\">SAP transportation processes</a>",
+                    "Basic understanding of logistics and <a href=\"https://www.erpvits.com/blog/sap-transportation-management-process\" target=\"_blank\" rel=\"noopener noreferrer\">SAP transportation processes</a>",
                     "Familiarity with supply chain concepts (procurement, inventory, distribution)",
                     "Comfortable with web applications and business software",
                     "Ability to learn independently and ask clarifying questions",

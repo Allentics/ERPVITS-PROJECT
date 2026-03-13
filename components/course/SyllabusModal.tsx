@@ -2,8 +2,6 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { X, Download, Loader2, CheckCircle } from 'lucide-react';
-import { submitToGoogleSheets } from '@/app/actions/submitToGoogleSheets';
-import { sendSyllabusEmail } from '@/app/actions/sendSyllabus';
 import { countryCodes } from '@/lib/countryCodes';
 
 
@@ -64,12 +62,17 @@ export default function SyllabusModal({ isOpen, onClose, courseTitle, pdfUrl }: 
         // 4. Background Processing
         const performBackgroundWork = async () => {
             try {
-                // Send Email
-                await sendSyllabusEmail({
-                    email: formData.email,
-                    name: formData.name,
-                    courseTitle,
-                    pdfUrl
+                // Send Email via API
+                await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        type: 'syllabus-email',
+                        email: formData.email,
+                        name: formData.name,
+                        courseTitle,
+                        pdfUrl
+                    })
                 });
 
                 // Supabase
@@ -83,15 +86,19 @@ export default function SyllabusModal({ isOpen, onClose, courseTitle, pdfUrl }: 
                     message: 'Downloaded Syllabus via Modal'
                 }]);
 
-                // Google Sheets
-                await submitToGoogleSheets({
-                    firstName: formData.name,
-                    lastName: '',
-                    email: formData.email,
-                    phone: formData.phone,
-                    countryCode: formData.countryCode,
-                    course: courseTitle,
-                    message: 'Downloaded Syllabus'
+                // Google Sheets via API
+                await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        firstName: formData.name,
+                        lastName: '',
+                        email: formData.email,
+                        phone: formData.phone,
+                        countryCode: formData.countryCode,
+                        course: courseTitle,
+                        message: 'Downloaded Syllabus'
+                    })
                 });
             } catch (err) {
                 console.error('Background task error:', err);

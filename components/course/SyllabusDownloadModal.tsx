@@ -3,8 +3,6 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { X, Loader2, Download, CheckCircle, AlertCircle } from 'lucide-react';
-import { sendSyllabusEmail } from '@/app/actions/sendSyllabus';
-import { submitCurriculumDownload } from '@/app/actions/submitToGoogleSheets';
 import { countryCodes } from '@/lib/countryCodes';
 
 
@@ -63,20 +61,30 @@ export default function SyllabusDownloadModal({ isOpen, onClose, courseTitle, sy
         // We explicitly do NOT await this in the main interaction flow
         const performBackgroundWork = async () => {
             try {
-                // Send Email
-                await sendSyllabusEmail({
-                    email: formData.email,
-                    name: formData.name,
-                    courseTitle: courseTitle,
-                    pdfUrl: syllabusUrl
+                // Send Email via API
+                await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        type: 'syllabus-email',
+                        email: formData.email,
+                        name: formData.name,
+                        courseTitle: courseTitle,
+                        pdfUrl: syllabusUrl
+                    })
                 });
 
-                // Save to Google Sheets
-                await submitCurriculumDownload({
-                    name: formData.name,
-                    email: formData.email,
-                    phone: `${formData.countryCode} ${formData.phone}`,
-                    course: courseTitle
+                // Save to Google Sheets via API
+                await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        type: 'curriculum',
+                        name: formData.name,
+                        email: formData.email,
+                        phone: `${formData.countryCode} ${formData.phone}`,
+                        course: courseTitle
+                    })
                 });
             } catch (err) {
                 // Log error silently, user is already seeing success

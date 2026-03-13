@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { courses } from '@/lib/courseData';
-import { submitToGoogleSheets } from '@/app/actions/submitToGoogleSheets';
 import { countryCodes } from '@/lib/countryCodes';
 
 interface ContactFormProps {
@@ -67,8 +66,12 @@ export default function ContactForm({ className = "", showLabels = true, success
 
             if (error) throw error;
 
-            // Send to Google Sheets (Fire and forget to speed up UI)
-            submitToGoogleSheets(formData).catch((err: any) => console.error('Google Sheet Error:', err));
+            // Send to Google Sheets via API route (more stable for HMR)
+            fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            }).catch(err => console.error('Google Sheet Error:', err));
 
             setStatus('success');
 

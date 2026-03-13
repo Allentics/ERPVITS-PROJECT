@@ -64,7 +64,7 @@ export const cpiContent = {
                 }
             ],
             "title": "Learn SAP CPI from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            "subtitle": "Our SAP CPI training is taught by certified integration consultants with extensive experience in <a href=\"https://www.erpvits.com/blogs/role-of-sap-cpi-in-s4-hana-cloud-and-hybrid-integration-strategy\" target=\"_blank\" rel=\"noopener noreferrer\">cloud and hybrid integration projects.</a> Ideal for IT professionals as well as aspiring integration specialists, this program includes live instructor-led sessions where participants learn to design, construct, deploy and monitor real-time integration scenarios using SAP Integration Suite.",
+            "subtitle": "Our SAP CPI training is taught by certified integration consultants with extensive experience in <a href=\"https://www.erpvits.com/blog/role-of-sap-cpi-in-s4-hana-cloud-and-hybrid-integration-strategy\" target=\"_blank\" rel=\"noopener noreferrer\">cloud and hybrid integration projects.</a> Ideal for IT professionals as well as aspiring integration specialists, this program includes live instructor-led sessions where participants learn to design, construct, deploy and monitor real-time integration scenarios using SAP Integration Suite.",
             "textAlign": "left"
         },
         {
@@ -130,7 +130,7 @@ export const cpiContent = {
                 },
                 {
                     "title": "Complete Study Materials",
-                    "description": "Complete Study Materials including comprehensive <a href=\"https://www.erpvits.com/blogs/sap-cpi-interview-questions/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP CPI interview questions</a> to help you confidently prepare for real-time scenarios, technical rounds, and certification exams.\n"
+                    "description": "Complete Study Materials including comprehensive <a href=\"https://www.erpvits.com/blog/sap-cpi-interview-questions/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP CPI interview questions</a> to help you confidently prepare for real-time scenarios, technical rounds, and certification exams.\n"
                 },
                 {
                     "title": "Lifetime Recording Access",
@@ -715,7 +715,7 @@ export const cpiContent = {
                 {
                     "title": "First Role & Projects",
                     "points": [
-                        "Secure first <a href=\"https://www.erpvits.com/blogs/advanced-sap-cpi-integration/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP CPI integration</a> opportunity",
+                        "Secure first <a href=\"https://www.erpvits.com/blog/advanced-sap-cpi-integration/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP CPI integration</a> opportunity",
                         "Begin real-world integration project experience",
                         "Continue post-training support from instructors"
                     ],

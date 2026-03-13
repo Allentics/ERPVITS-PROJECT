@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { Send, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { courses } from '@/lib/courseData';
-import { submitToGoogleSheets } from '@/app/actions/submitToGoogleSheets';
 import { countryCodes } from '@/lib/countryCodes';
 
 export default function CourseContactForm({ courseName }: { courseName?: string }) {
@@ -45,7 +44,12 @@ export default function CourseContactForm({ courseName }: { courseName?: string 
             }]);
 
             if (error) throw error;
-            submitToGoogleSheets(formData).catch(console.error);
+            // Send to Google Sheets via API route (more stable for HMR)
+            fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            }).catch(err => console.error('Google Sheet Error:', err));
             setStatus('success');
             setFormData({
                 firstName: '', lastName: '', email: '', countryCode: '+91',

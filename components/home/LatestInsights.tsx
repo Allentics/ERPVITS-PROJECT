@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { Clock, BookOpen } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { supabase } from '@/lib/supabase';
 import { blogPosts as localPosts } from '@/lib/blogData';
 
@@ -24,29 +25,36 @@ export default function LatestInsights() {
                 let combined = [...localPosts];
 
                 if (dbPosts && dbPosts.length > 0) {
-                    // Merge local data into DB posts to ensure consistent dates/images
-                    const mergedDbPosts = dbPosts.map((p: any) => {
+                    // Match DB posts with local images if DB image is missing, and apply path normalization
+                    const merged = dbPosts.map((p: any) => {
                         const local = localPosts.find(lp => lp.id === p.id);
-                        return local ? { ...p, ...local } : p;
+                        const rawImage = p.image || local?.image;
+                        const normalizedImage = rawImage?.replace(/\/images\/(blog|blogs)\//, '/images/').replace(/\/assets\/(blog|blogs)\//, '/assets/');
+                        return { ...p, image: normalizedImage };
+                    }).filter((p: any) => p.id !== 'sap-trm-setup-essentials');
+
+                    // Sort the merged posts by date descending
+                    merged.sort((a: any, b: any) => {
+                        const dateA = a.date ? new Date(a.date).getTime() : 0;
+                        const dateB = b.date ? new Date(b.date).getTime() : 0;
+                        if (isNaN(dateA)) return 1;
+                        if (isNaN(dateB)) return -1;
+                        return dateB - dateA;
                     });
 
-                    const dbIds = new Set(mergedDbPosts.map((p: any) => p.id));
-                    const uniqueLocal = localPosts.filter(p => !dbIds.has(p.id));
-                    combined = [...mergedDbPosts, ...uniqueLocal];
+                    setPosts(merged.slice(0, 3));
+                } else {
+                    // Fallback to local posts if no DB posts
+                    // Sort by date descending (safeguard date parsing)
+                    localPosts.sort((a: any, b: any) => {
+                        const dateA = a.date ? new Date(a.date).getTime() : 0;
+                        const dateB = b.date ? new Date(b.date).getTime() : 0;
+                        if (isNaN(dateA)) return 1;
+                        if (isNaN(dateB)) return -1;
+                        return dateB - dateA;
+                    });
+                    setPosts(localPosts.slice(0, 3));
                 }
-
-                // Sort by date descending (safeguard date parsing)
-                combined.sort((a, b) => {
-                    const dateA = a.date ? new Date(a.date).getTime() : 0;
-                    const dateB = b.date ? new Date(b.date).getTime() : 0;
-                    // Handle invalid dates (NaN results in false for comparisons, keep original order or push down)
-                    if (isNaN(dateA)) return 1;
-                    if (isNaN(dateB)) return -1;
-                    return dateB - dateA;
-                });
-
-                // Take top 3
-                setPosts(combined.slice(0, 3));
             } catch (error) {
                 console.error("Failed to fetch posts", error);
                 // Fallback to local
@@ -98,13 +106,15 @@ export default function LatestInsights() {
 
                             return (
                                 <div key={post.id} className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow group flex flex-col h-full">
-                                    <Link href={`/blogs/${post.id}/`} className="block h-48 overflow-hidden relative">
+                                    <Link href={`/blog/${post.id}/`} className="block h-48 overflow-hidden relative">
                                         {post.image ? (
-                                            /* eslint-disable-next-line @next/next/no-img-element */
-                                            <img
+                                            <Image
                                                 src={post.image}
                                                 alt={post.title || "Blog Post"}
-                                                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                                                fill
+                                                className="object-cover transform group-hover:scale-105 transition-transform duration-500"
+                                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                                unoptimized={true}
                                             />
                                         ) : (
                                             <div className="w-full h-full bg-slate-100 flex items-center justify-center text-slate-300">
@@ -117,7 +127,7 @@ export default function LatestInsights() {
                                             <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold mb-4 ${tagColors[index % tagColors.length]}`}>
                                                 {post.category || "SAP Insights"}
                                             </span>
-                                            <Link href={`/blogs/${post.id}/`}>
+                                            <Link href={`/blog/${post.id}/`}>
                                                 <h3 className="text-lg font-bold text-slate-900 mb-3 line-clamp-2 hover:text-orange-600 transition-colors">
                                                     {post.title}
                                                 </h3>

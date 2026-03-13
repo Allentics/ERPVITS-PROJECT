@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import BlogContactForm from '@/components/blogs/BlogContactForm';
+import BlogContactForm from '@/components/blog/BlogContactForm';
 
 interface BlogPreviewProps {
     data: {

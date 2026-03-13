@@ -271,7 +271,7 @@ export const c4cContent = {
                 }
             ],
             "title": "Learn SAP C4C Technical Development from Experts – 100% Hands-On, Job-Oriented Training",
-            "subtitle": "Our **SAP C4C Technical Online Training** is delivered exclusively by certified SAP professionals, each with 12+ years of direct hands-on experience in cloud application development and <a href=\"https://www.erpvits.com/blogs/sap-c4c-crm\" target=\"_blank\">SAP C4C CRM</a> solutions. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex cloud development scenarios in a step-by-step manner.",
+            "subtitle": "Our **SAP C4C Technical Online Training** is delivered exclusively by certified SAP professionals, each with 12+ years of direct hands-on experience in cloud application development and <a href=\"https://www.erpvits.com/blog/sap-c4c-crm\" target=\"_blank\">SAP C4C CRM</a> solutions. Instead of passive video courses or self-paced modules, you get **live, real-time training** with interactive sessions where instructors share industry-proven methodologies, address your questions, and guide you through complex cloud development scenarios in a step-by-step manner.",
             "textAlign": "left"
         },
         {
@@ -283,7 +283,7 @@ export const c4cContent = {
                 "Active alumni network and cloud developer community forum.",
                 "Over 40 guided lab exercises from intro to advanced cloud development scenarios.",
                 "Materials revised every quarter to align with the latest C4C releases.",
-                "Mock interviews simulating <a href=\"https://www.erpvits.com/blogs/sap-c4c-technical-scenarios/\" target=\"_blank\">SAP C4C Technical Scenarios</a>",
+                "Mock interviews simulating <a href=\"https://www.erpvits.com/blog/sap-c4c-technical-scenarios/\" target=\"_blank\">SAP C4C Technical Scenarios</a>",
                 "Focused bootcamp sessions for cert preparation and advanced training."
             ],
             "title": "Why Professionals Choose ERPVITS for SAP C4C Technical Online Training",
@@ -981,7 +981,7 @@ export const c4cContent = {
                 {
                     "title": "Immediate Post-Training",
                     "points": [
-                        "Receive <a href=\"https://www.erpvits.com/blogs/sap-c4c-certification\" target=\"_blank\">SAP C4C Technical Certification</a>",
+                        "Receive <a href=\"https://www.erpvits.com/blog/sap-c4c-certification\" target=\"_blank\">SAP C4C Technical Certification</a>",
                         "Access lifetime course materials and C4C recordings",
                         "Join alumni network and developer community forum",
                         "Begin resume updates highlighting SAP C4C expertise"

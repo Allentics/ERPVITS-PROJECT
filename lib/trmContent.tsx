@@ -27,7 +27,7 @@ export const trmContent = {
             "items": [
                 {
                     "title": "Certified Instructor Expertise",
-                    "description": "Our trainers are certified in SAP TRM and have substantial experience conducting enterprise-scale implementations of SAP TRM and overseeing corporate liquidity as the primary executor of corporate liquidity, ranging in the billions. They don’t teach just the theoretical aspects of the subject and instead they focus on real time scenarios and <a href=\"https://www.erpvits.com/blogs/sap-trm-complementary-technologies/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP TRM complementary technologies</a> that enhance real-world treasury operations."
+                    "description": "Our trainers are certified in SAP TRM and have substantial experience conducting enterprise-scale implementations of SAP TRM and overseeing corporate liquidity as the primary executor of corporate liquidity, ranging in the billions. They don’t teach just the theoretical aspects of the subject and instead they focus on real time scenarios and <a href=\"https://www.erpvits.com/blog/sap-trm-complementary-technologies/\" target=\"_blank\" rel=\"noopener noreferrer\">SAP TRM complementary technologies</a> that enhance real-world treasury operations."
                 },
                 {
                     "title": "100% Hands-On Learning ",
@@ -59,7 +59,7 @@ export const trmContent = {
                 }
             ],
             "title": "Learn SAP TRM from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            "subtitle": "Our <a href=\"https://www.erpvits.com/blogs/Benefits-of-Online-SAP-TRM-Training\" target=\"_blank\">SAP TRM online training</a> is delivered by certified SAP professionals with 12+ years of hands-on experience in treasury and financial systems implementation. Instead of pre-recorded sessions, our SAP TRM course offers interactive sessions where instructors share industry-proven methodologies, address your questions and guide you through complex financial and treasury scenarios step-by-step.",
+            "subtitle": "Our <a href=\"https://www.erpvits.com/blog/Benefits-of-Online-SAP-TRM-Training\" target=\"_blank\">SAP TRM online training</a> is delivered by certified SAP professionals with 12+ years of hands-on experience in treasury and financial systems implementation. Instead of pre-recorded sessions, our SAP TRM course offers interactive sessions where instructors share industry-proven methodologies, address your questions and guide you through complex financial and treasury scenarios step-by-step.",
             "textAlign": "left"
         },
         {
@@ -151,7 +151,7 @@ export const trmContent = {
                         "Accrual, settlement, and month-end closing procedures"
                     ],
                     "hands_on": [
-                        "<a href=\"https://www.erpvits.com/blogs/sap-trm-setup-essentials/\" target=\"_blank\" rel=\"noopener noreferrer\">Setup SAP TRM Essentials</a>, Navigate SAP TRM Money Market module",
+                        "<a href=\"https://www.erpvits.com/blog/sap-trm-setup-essentials/\" target=\"_blank\" rel=\"noopener noreferrer\">Setup SAP TRM Essentials</a>, Navigate SAP TRM Money Market module",
                         "Create your first money market deal",
                         "Set up interest accrual and settlement workflows",
                         "Configure collective processing for multiple transactions"
