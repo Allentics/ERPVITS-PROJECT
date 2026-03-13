@@ -1,5 +1,6 @@
 import { supabase } from '@/lib/supabase';
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
+import { getCourseUrl } from '@/lib/utils';
 import Curriculum from '@/components/course/Curriculum';
 import FAQ from '@/components/course/FAQ';
 import ComparisonTable from '@/components/home/ComparisonTable';
@@ -70,8 +71,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
 }
 
-export default async function CoursePage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function CoursePage({ params, isCustomProxy = false }: { params: Promise<{ slug: string }>, isCustomProxy?: boolean }) {
     const { slug } = await params;
+    
+    // Prevent duplicate pages: redirect to custom URL if it's accessed from /courses/[slug]
+    const canonicalUrl = getCourseUrl(slug);
+    if (!isCustomProxy && !canonicalUrl.includes(`/courses/${slug}`)) {
+        permanentRedirect(canonicalUrl);
+    }
 
     // Map slugs to their correct database IDs
     const dbId = getDbId(slug);

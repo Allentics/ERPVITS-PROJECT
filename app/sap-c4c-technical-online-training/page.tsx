@@ -18,5 +18,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function Page() {
-    return <CoursePage params={Promise.resolve({ slug: 'c4c-technical' })} />;
+    return <CoursePage isCustomProxy params={Promise.resolve({ slug: 'c4c-technical' })} />;
 }

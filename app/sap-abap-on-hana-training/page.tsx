@@ -20,5 +20,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function Page() {
-    return <CoursePage params={Promise.resolve({ slug: 'sap-abap-on-hana' })} />;
+    return <CoursePage isCustomProxy params={Promise.resolve({ slug: 'sap-abap-on-hana' })} />;
 }

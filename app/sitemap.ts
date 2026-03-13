@@ -49,18 +49,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // 4. Process Course Pages
+  const courseUrls = new Set<string>();
 
-  const courseEntries = dbCourses?.map((course: { id: string }) => {
+  const courseEntries = dbCourses?.reduce((acc: any[], course: { id: string }) => {
     const route = getCourseUrl(course.id);
-    // Ensure trailing slash
     const path = route.endsWith('/') ? route : `${route}/`;
-    return {
-      url: `${baseUrl}${path}`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.9,
-    };
-  }) || [];
+    const fullUrl = `${baseUrl}${path}`;
+    
+    if (!courseUrls.has(fullUrl)) {
+      courseUrls.add(fullUrl);
+      acc.push({
+        url: fullUrl,
+        lastModified: new Date(),
+        changeFrequency: 'weekly' as const,
+        priority: 0.9,
+      });
+    }
+    return acc;
+  }, []) || [];
 
   return [...staticPages, ...blogEntries, ...courseEntries];
 }
