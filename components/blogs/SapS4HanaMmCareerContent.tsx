@@ -212,7 +212,7 @@ export default function SapS4HanaMmCareerContent() {
                 title="Never Miss an SAP Update!"
                 description="Join our WhatsApp Channel for exclusive SAP MM/S/4HANA content, jobs, and training. Get fast updates, free resources, and career guidance."
                 buttonText="Join WhatsApp Channel"
-                buttonLink="#"
+                buttonLink="https://www.whatsapp.com/channel/0029Vb5u9luHwXb481Y1Dx1X"
             />
         </div>
     );

@@ -5311,7 +5311,7 @@ VALUES ('mto-and-sto-process-in-sap', 'MTO & STO Process in SAP: Enhance Supply 
                 title="Never Miss an SAP Update!"
                 description="Join our WhatsApp Channel for exclusive SAP SD/MM content, jobs, and training. Get fast updates, free resources, and detailed career guidance."
                 buttonText="Join WhatsApp Channel"
-                buttonLink="https://whatsapp.com/channel/example" // Assuming generic link or user can update later, using example as placeholder was in original content implies this is fine, but I''ll check if a real one exists. The prompt says "Join our WhatsApp Channel", but no URL provided. I will use a ''#'' or generic.
+                buttonLink="https://www.whatsapp.com/channel/0029Vb5u9luHwXb481Y1Dx1X" // Assuming generic link or user can update later, using example as placeholder was in original content implies this is fine, but I''ll check if a real one exists. The prompt says "Join our WhatsApp Channel", but no URL provided. I will use a ''#'' or generic.
             />
         </div>', '/images/blog/mto-sto-process.webp', 'Jan 02, 2026', 'SAP Functional', 'ERPVITS Expert')
 ON CONFLICT (id) DO UPDATE SET 
@@ -7402,7 +7402,7 @@ VALUES ('sap-s4hana-mm-career-opportunities', 'SAP S/4HANA MM Career Opportuniti
                 title="Never Miss an SAP Update!"
                 description="Join our WhatsApp Channel for exclusive SAP MM/S/4HANA content, jobs, and training. Get fast updates, free resources, and career guidance."
                 buttonText="Join WhatsApp Channel"
-                buttonLink="#"
+                buttonLink="https://www.whatsapp.com/channel/0029Vb5u9luHwXb481Y1Dx1X"
             />
         </div>', '/images/sap-s4hana-mm.webp', 'Dec 13, 2025', 'SAP Career', 'ERPVITS Expert')
 ON CONFLICT (id) DO UPDATE SET 
@@ -10912,7 +10912,7 @@ VALUES ('mto-and-sto-process-in-sap', 'MTO & STO Process in SAP: Enhance Supply 
                 title="Never Miss an SAP Update!"
                 description="Join our WhatsApp Channel for exclusive SAP SD/MM content, jobs, and training. Get fast updates, free resources, and detailed career guidance."
                 buttonText="Join WhatsApp Channel"
-                buttonLink="https://whatsapp.com/channel/example" // Assuming generic link or user can update later, using example as placeholder was in original content implies this is fine, but I''ll check if a real one exists. The prompt says "Join our WhatsApp Channel", but no URL provided. I will use a ''#'' or generic.
+                buttonLink="https://www.whatsapp.com/channel/0029Vb5u9luHwXb481Y1Dx1X" // Assuming generic link or user can update later, using example as placeholder was in original content implies this is fine, but I''ll check if a real one exists. The prompt says "Join our WhatsApp Channel", but no URL provided. I will use a ''#'' or generic.
             />
         </div>', '/images/blog/mto-sto-process.webp', 'Jan 02, 2026', 'SAP Functional', 'ERPVITS Expert')
 ON CONFLICT (id) DO UPDATE SET 
@@ -13003,7 +13003,7 @@ VALUES ('sap-s4hana-mm-career-opportunities', 'SAP S/4HANA MM Career Opportuniti
                 title="Never Miss an SAP Update!"
                 description="Join our WhatsApp Channel for exclusive SAP MM/S/4HANA content, jobs, and training. Get fast updates, free resources, and career guidance."
                 buttonText="Join WhatsApp Channel"
-                buttonLink="#"
+                buttonLink="https://www.whatsapp.com/channel/0029Vb5u9luHwXb481Y1Dx1X"
             />
         </div>', '/images/sap-s4hana-mm.webp', 'Dec 13, 2025', 'SAP Career', 'ERPVITS Expert')
 ON CONFLICT (id) DO UPDATE SET 
@@ -16513,7 +16513,7 @@ VALUES ('mto-and-sto-process-in-sap', 'MTO & STO Process in SAP: Enhance Supply 
                 title="Never Miss an SAP Update!"
                 description="Join our WhatsApp Channel for exclusive SAP SD/MM content, jobs, and training. Get fast updates, free resources, and detailed career guidance."
                 buttonText="Join WhatsApp Channel"
-                buttonLink="https://whatsapp.com/channel/example" // Assuming generic link or user can update later, using example as placeholder was in original content implies this is fine, but I''ll check if a real one exists. The prompt says "Join our WhatsApp Channel", but no URL provided. I will use a ''#'' or generic.
+                buttonLink="https://www.whatsapp.com/channel/0029Vb5u9luHwXb481Y1Dx1X" // Assuming generic link or user can update later, using example as placeholder was in original content implies this is fine, but I''ll check if a real one exists. The prompt says "Join our WhatsApp Channel", but no URL provided. I will use a ''#'' or generic.
             />
         </div>', '/images/blog/mto-sto-process.webp', 'Jan 02, 2026', 'SAP Functional', 'ERPVITS Expert')
 ON CONFLICT (id) DO UPDATE SET 
@@ -18604,7 +18604,7 @@ VALUES ('sap-s4hana-mm-career-opportunities', 'SAP S/4HANA MM Career Opportuniti
                 title="Never Miss an SAP Update!"
                 description="Join our WhatsApp Channel for exclusive SAP MM/S/4HANA content, jobs, and training. Get fast updates, free resources, and career guidance."
                 buttonText="Join WhatsApp Channel"
-                buttonLink="#"
+                buttonLink="https://www.whatsapp.com/channel/0029Vb5u9luHwXb481Y1Dx1X"
             />
         </div>', '/images/sap-s4hana-mm.webp', 'Dec 13, 2025', 'SAP Career', 'ERPVITS Expert')
 ON CONFLICT (id) DO UPDATE SET 

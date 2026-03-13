@@ -317,7 +317,7 @@ const MtoAndStoProcessContent = () => {
                 title="Never Miss an SAP Update!"
                 description="Join our WhatsApp Channel for exclusive SAP SD/MM content, jobs, and training. Get fast updates, free resources, and detailed career guidance."
                 buttonText="Join WhatsApp Channel"
-                buttonLink="https://whatsapp.com/channel/example" // Assuming generic link or user can update later, using example as placeholder was in original content implies this is fine, but I'll check if a real one exists. The prompt says "Join our WhatsApp Channel", but no URL provided. I will use a '#' or generic.
+                buttonLink="https://www.whatsapp.com/channel/0029Vb5u9luHwXb481Y1Dx1X"
             />
         </div>
     );
