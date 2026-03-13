@@ -45,9 +45,23 @@ const SapBtpCockpitContent = dynamic(() => import('@/components/blog/SapBtpCockp
 
 // Blog hero images mapping
 const blogHeroImages: Record<string, string> = {
-    'sap-ariba-sourcing-configuration': '/images/sap-ariba-sourcing.webp',
+    // Legacy / Shorter Slugs
+    'sap-fieldglass-jobs': '/images/sap-fieldglass-jobs-2026.png',
+    'what-is-ppds-in-sap-apo': '/images/sap-apo-ppds.png',
+    'sap-ariba-spend-management': '/images/sap-ariba-spend-management.webp',
+    'top-ten-abap-cloud-tools': '/images/top-10-tools-abap-cloud.webp',
+    'master-sap-ariba': '/images/master-sap-ariba.webp',
+    'sap-mm-course': '/images/master-sap-mm-materials-management.webp',
+    'mto-sto-process': '/images/mto-sto-process.webp',
+    'sap-sd-shipping-point': '/images/sap-sd-shipping-point.png',
+    'sap-finance-career-path': '/images/sap-finance-career-guide.png',
+    'sap-modules-list': '/images/sap-modules-guide.png',
+    'sap-ariba-interview-questions': '/images/sap-ariba-interview-questions.png',
+    'sap-courses-germany': '/images/sap-courses-germany.png',
+    'sap-fieldglass-login-guide': '/images/sap-fieldglass-login-guide.png',
 
-
+    // Full / Long Slugs
+    'sap-ariba-sourcing-configuration': '/images/sap-ariba-sourcing-config.png',
     'sap-fico-cash-journal-configuration': '/assets/sap-fico-cash-journal-header.png',
     'sap-tcodes-list-pdf': '/images/sap-tcodes-list-hero.webp',
     'sap-sd-process-flow': '/images/sap-sd-workflow.webp',
@@ -57,19 +71,17 @@ const blogHeroImages: Record<string, string> = {
     'sap-cpi-interview-questions': '/images/sap-cpi-interview.webp',
     'top-10-sap-c4c-technical-scenarios': '/images/sap-c4c-technical.webp',
     'top-7-sap-training-institutes': '/images/sap-training-institutes.webp',
-
-
     'sap-mm-course-complete-guide': '/images/master-sap-mm-materials-management.webp',
     'how-sap-ariba-is-powering-intelligent-spend-management': '/images/sap-ariba-spend-management.webp',
     'top-ten-tools-techniques-for-efficient-abap-on-cloud-programming': '/images/top-10-tools-abap-cloud.webp',
     'how-sap-fieldglass-transforming-global-contingent-workforce-market': '/images/sap-fieldglass-transformation.webp',
-
     'mto-and-sto-process-in-sap': '/images/mto-sto-process.webp',
     'master-sap-ariba-with-industry-leading-online-training': '/images/master-sap-ariba.webp',
-    'sap-trm-master-data-essentials': '/images/SAP TRM Blog Image ERPVITS.webp',
+    'sap-trm-master-data-essentials': '/images/sap-trm-master-data.webp',
     'sap-trm-complementary-technologies': '/images/sap-trm-complementary.webp',
     'ultimate-guide-to-sap-fieldglass-login-access-setup': '/images/sap-fieldglass-login-guide.png',
     'how-to-get-an-sap-fieldglass-job-in-2026': '/images/sap-fieldglass-jobs-2026.png',
+    'what-is-ppds-in-sap-apo-features-benefits-real-time-business-scenarios': '/images/sap-apo-ppds.png',
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -110,27 +122,45 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         post = localPost;
     }
 
-    // Use DB data if available, otherwise local data
-    const blogPost = post; // Renaming 'post' to 'blogPost' for clarity in this section
+    // Merge DB posts with local posts, prioritising DB posts
+    const idMap = new Map();
+    const titleMap = new Map();
 
-    // Normalize image/featured_image paths
-    if (blogPost) {
-        if (blogPost.image) {
-            blogPost.image = blogPost.image.replace(/\/images\/(blog|blogs)\//, '/images/').replace(/\/assets\/(blog|blogs)\//, '/assets/');
-        }
-        if (blogPost.featured_image) {
-            blogPost.featured_image = blogPost.featured_image.replace(/\/images\/(blog|blogs)\//, '/images/').replace(/\/assets\/(blog|blogs)\//, '/assets/');
-        }
+    if (allPosts) {
+        allPosts.forEach((p: any) => {
+            idMap.set(p.id, p);
+            if (p.title) titleMap.set(p.title.toLowerCase().trim(), p.id);
+        });
     }
 
-    if (!blogPost) {
+    localPosts.forEach(p => {
+        const idConflict = idMap.has(p.id);
+        const titleKey = p.title.toLowerCase().trim();
+        const titleConflict = titleMap.has(titleKey);
+
+        if (!idConflict && !titleConflict) {
+            idMap.set(p.id, p);
+            titleMap.set(titleKey, p.id);
+        } else if (idConflict) {
+            const dbP = idMap.get(p.id);
+            const validDbProps = Object.fromEntries(Object.entries(dbP).filter(([_, v]) => v !== null && v !== ''));
+            idMap.set(p.id, { ...p, ...validDbProps });
+        }
+    });
+
+    const mergedPosts = Array.from(idMap.values()).map((p: any) => ({
+        ...p,
+        image: p.image?.replace(/\/images\/(blog|blogs)\//i, '/images/').replace(/\/assets\/(blog|blogs)\//i, '/assets/')
+    }));
+
+    if (post) {
+        post.image = post.image?.replace(/\/images\/(blog|blogs)\//i, '/images/').replace(/\/assets\/(blog|blogs)\//i, '/assets/');
+    }
+
+    if (!post) {
         notFound();
     }
 
-    // Reassign to 'post' for consistency with existing code
-    post = blogPost;
-
-    const mergedPosts = allPosts || localPosts;
     const recentPosts = mergedPosts.filter((p: any) => p.id !== slug).slice(0, 5);
     const relatedPosts = mergedPosts.filter((p: any) => p.id !== slug && p.category === post.category).slice(0, 4);
 
@@ -152,7 +182,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             case 'sap-tcodes-list-pdf': return SapTCodesContent;
             case 'sap-sd-process-flow': return SapSdProcessFlowContent;
             case 'sap-fico-cash-journal-configuration': return SapFicoCashJournalContent;
-            case 'sap-s4hana-mm-career-opportunities': return SapS4HanaMmCareerContent;
             case 'sap-s4hana-mm-career-opportunities': return SapS4HanaMmCareerContent;
             case 'high-paying-sap-fico-jobs': return HighPayingSapFicoJobsContent;
             case 'sap-ariba-supplier-login-tutorial': return SapAribaSupplierLoginContent;
@@ -239,11 +268,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
                             {/* Hero Image */}
                             {(blogHeroImages[slug] || post.image) && (
-                                <div className="mb-12 rounded-2xl overflow-hidden shadow-2xl shadow-slate-200/50 group">
-                                    <img
+                                <div className="mb-12 rounded-2xl overflow-hidden shadow-2xl shadow-slate-200/50 group relative aspect-[16/9]">
+                                    <Image
                                         src={blogHeroImages[slug] || post.image}
                                         alt={post.title}
-                                        className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                                        fill
+                                        priority
+                                        className="object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                                        unoptimized={true}
                                     />
                                 </div>
                             )}

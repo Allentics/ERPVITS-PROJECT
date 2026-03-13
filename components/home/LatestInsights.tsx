@@ -29,7 +29,7 @@ export default function LatestInsights() {
                     const merged = dbPosts.map((p: any) => {
                         const local = localPosts.find(lp => lp.id === p.id);
                         const rawImage = p.image || local?.image;
-                        const normalizedImage = rawImage?.replace(/\/images\/(blog|blogs)\//, '/images/').replace(/\/assets\/(blog|blogs)\//, '/assets/');
+                        const normalizedImage = rawImage?.replace(/\/images\/(blog|blogs)\//i, '/images/').replace(/\/assets\/(blog|blogs)\//i, '/assets/');
                         return { ...p, image: normalizedImage };
                     }).filter((p: any) => p.id !== 'sap-trm-setup-essentials');
 

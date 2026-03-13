@@ -16,13 +16,18 @@ export default function InteractiveBlogContent({ content, title }: { content: st
         }
     };
 
-    const formattedContent = (() => {
-        if (!content) return '';
+        // Fix image paths in HTML content (normalize /images/blog/ to /images/)
+        let processed = content;
+        processed = processed.replace(/src=["']([^"']+)["']/g, (match, src) => {
+            const normalized = src.replace(/\/images\/(blog|blogs)\//i, '/images/').replace(/\/assets\/(blog|blogs)\//i, '/assets/');
+            return `src="${normalized}"`;
+        });
+
         // If it already has HTML tags, respect them
-        if (/<[a-z][\s\S]*>/i.test(content)) return content;
+        if (/<[a-z][\s\S]*>/i.test(processed)) return processed;
         
         // Otherwise, convert newlines to paragraphs for plain text
-        return content
+        return processed
             .split(/\n\s*\n/)
             .map(p => p.trim())
             .filter(p => p.length > 0)

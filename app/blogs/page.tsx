@@ -76,11 +76,15 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
         // it likely means the slug was renamed in the CMS (DB) but remains unchanged in local code.
     });
 
-    let allPosts = Array.from(idMap.values()).map((post: any) => ({
-        ...post,
-        // Normalize image paths to use the root /images/ folder for reliability
-        image: post.image?.replace(/\/images\/(blog|blogs)\//, '/images/').replace(/\/assets\/(blog|blogs)\//, '/assets/')
-    })).sort((a, b) => {
+    let allPosts = Array.from(idMap.values()).map((post: any) => {
+        const rawImage = post.image;
+        const normalizedImage = rawImage?.replace(/\/images\/(blog|blogs)\//i, '/images/').replace(/\/assets\/(blog|blogs)\//i, '/assets/');
+        return {
+            ...post,
+            // Normalize image paths to use the root /images/ folder for reliability
+            image: normalizedImage
+        };
+    }).sort((a, b) => {
         const dateA = new Date(a.date).getTime() || 0;
         const dateB = new Date(b.date).getTime() || 0;
         return dateB - dateA;

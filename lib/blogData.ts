@@ -11,7 +11,7 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
     {
-        id: "how-to-get-an-sap-fieldglass-job-in-2026",
+        id: "sap-fieldglass-jobs",
         title: "How to Get an SAP Fieldglass Job in 2026 – Complete Career Guide",
         description: "Looking for SAP Fieldglass jobs in 2026? Explore key roles, salary ranges, certification paths, job openings, and expert tips to launch or grow your SAP Fieldglass career globally.",
         image: "/images/sap-fieldglass-jobs-2026.png",
@@ -47,7 +47,7 @@ export const blogPosts: BlogPost[] = [
         author: "ERPVITS Expert"
     },
     {
-        id: "sap-sd-shipping-point-determination",
+        id: "sap-sd-shipping-point",
         title: "End-to-End SAP SD Shipping Point Determination Process",
         description: "Master SAP SD Shipping Point Determination, Route Determination, and Storage Location Determination. Complete guide to configuration, optimization, and best practices for logistics execution in SAP S/4HANA.",
         image: "/images/sap-sd-shipping-point.png",
@@ -56,7 +56,7 @@ export const blogPosts: BlogPost[] = [
         author: "ERPVITS Expert"
     },
     {
-        id: "sap-finance-module-career-path-2026",
+        id: "sap-finance-career-path",
         title: "SAP Finance Module Career Path in 2026: Roles, Salary & Future Scope",
         description: "Explore the career trajectory, salary prospects, and future scope for SAP finance professionals in 2026. Complete guide to SAP FICO, S/4HANA Finance, and FICA careers.",
         image: "/images/sap-finance-career-guide.png",
@@ -65,7 +65,7 @@ export const blogPosts: BlogPost[] = [
         author: "ERPVITS Expert"
     },
     {
-        id: "sap-modules-list-complete-guide-2026",
+        id: "sap-modules-list",
         title: "SAP Modules List: Complete Guide to SAP Functional, Technical & Business Modules (2026)",
         description: "Explore the definitive list of SAP modules. Learn about SAP FI, MM, SD, PP, PM, HR, TM, and more in this comprehensive 2026 guide.",
         image: "/images/sap-modules-guide.png",
@@ -74,7 +74,7 @@ export const blogPosts: BlogPost[] = [
         author: "ERPVITS Expert"
     },
     {
-        id: "sap-ariba-interview-questions-answers-2026",
+        id: "sap-ariba-interview-questions",
         title: "Top 50+ SAP Ariba Interview Questions & Answers (2026) — For Freshers & Experienced",
         description: "Master SAP Ariba interviews with our comprehensive guide featuring 50+ questions and answers for freshers and experienced professionals.",
         image: "/images/sap-ariba-interview-questions.png",
@@ -92,7 +92,7 @@ export const blogPosts: BlogPost[] = [
         author: "ERPVITS"
     },
     {
-        id: "listing-and-exclusion-in-sap-sd",
+        id: "sap-sd-listing-exclusion",
         title: "Listing and Exclusion in SAP SD: Complete Guide to Product Assortment Management",
         description: "Master product assortment management in SAP SD. Complete guide to Listing and Exclusion, configuration steps, and real-world business scenarios.",
         image: "/images/sap-sd-listing-exclusion.png",
@@ -101,7 +101,7 @@ export const blogPosts: BlogPost[] = [
         author: "ERPVITS Expert"
     },
     {
-        id: "best-sap-s4hana-training-institute",
+        id: "sap-s4hana-training",
         title: "Best SAP S/4HANA Training Institute: SAP S4HANA Course & Certification support",
         description: "Join the best SAP S/4HANA training institute. Complete SAP S4HANA course with certification support, expert faculty, and placement assistance.",
         image: "/images/sap-s4hana-training.png",
@@ -110,7 +110,7 @@ export const blogPosts: BlogPost[] = [
         author: "ERPVITS Expert"
     },
     {
-        id: "sap-courses-germany-jobs-2026",
+        id: "sap-courses-germany",
         title: "SAP Courses in Germany: High-Demand SAP Modules for Jobs in 2026",
         description: "Explore high-demand SAP modules in Germany for 2026. Complete guide to SAP courses, salaries, and career prospects in the home of SAP.",
         image: "/images/sap-courses-germany.png",
@@ -146,7 +146,7 @@ export const blogPosts: BlogPost[] = [
         author: "ERPVITS Expert"
     },
     {
-        id: "ultimate-guide-to-sap-fieldglass-login-access-setup",
+        id: "sap-fieldglass-login-guide",
         title: "Ultimate Guide to SAP Fieldglass Login & Access Setup (Step-by-Step)",
         description: "Complete SAP Fieldglass login guide for buyers, suppliers & S-users. Learn step-by-step login processes, fix common issues & secure your account with best practices for workforce management.",
         image: "/images/sap-fieldglass-login-guide.png",
@@ -155,16 +155,16 @@ export const blogPosts: BlogPost[] = [
         author: "ERPVITS Expert"
     },
     {
-        id: "sap-trm-master-data-essentials",
+        id: "sap-trm-master-data",
         title: "Laying the Foundation: Essential SAP TRM Master Data for Treasury Success",
         description: "Discover why accurate master data is the backbone of SAP Treasury and Risk Management (TRM). Learn key components, best practices, and configuration tips for treasury success.",
-        image: "/images/SAP TRM Blog Image ERPVITS.webp",
+        image: "/images/sap-trm-master-data.webp",
         date: "Jan 10, 2026",
         category: "SAP TRM",
         author: "ERPVITS Expert"
     },
     {
-        id: "sap-mm-course-complete-guide",
+        id: "sap-mm-course",
         title: "SAP MM Course: Complete Guide to Materials Management Professional Excellence",
         description: "Join the best SAP MM course at ERPVITS. Get certified with expert-led training in Materials Management, S/4HANA, and procurement. Enroll now!",
         image: "/images/master-sap-mm-materials-management.webp",
@@ -173,7 +173,7 @@ export const blogPosts: BlogPost[] = [
         author: "ERPVITS Expert"
     },
     {
-        id: "how-sap-ariba-is-powering-intelligent-spend-management",
+        id: "sap-ariba-spend-management",
         title: "Revolutionizing Procurement: How SAP Ariba is Powering Intelligent Spend Management in 2025",
         description: "Discover how SAP Ariba is transforming procurement with intelligent spend management in 2025. Boost your career with SAP Ariba training & certification.",
         image: "/images/sap-ariba-spend-management.webp",
@@ -182,7 +182,7 @@ export const blogPosts: BlogPost[] = [
         author: "ERPVITS Expert"
     },
     {
-        id: "top-ten-tools-techniques-for-efficient-abap-on-cloud-programming",
+        id: "top-ten-abap-cloud-tools",
         title: "Top 10 Tools & Techniques for Efficient ABAP on Cloud Programming",
         description: "Discover the essential tools and techniques for modern ABAP Cloud programming. Boost your development efficiency with ADT, abapGit, and clean code practices.",
         image: "/images/top-10-tools-abap-cloud.webp",
@@ -191,7 +191,7 @@ export const blogPosts: BlogPost[] = [
         author: "ERPVITS Expert"
     },
     {
-        id: "how-sap-fieldglass-transforming-global-contingent-workforce-market",
+        id: "sap-fieldglass-transformation",
         title: "How SAP Fieldglass is Transforming the Global Contingent Workforce Market",
         description: "Learn SAP Fieldglass online and master global contingent workforce management. Boost your SAP career with ERPVITS training and real-time projects.",
         image: "/images/sap-fieldglass-transformation.webp",
@@ -200,7 +200,7 @@ export const blogPosts: BlogPost[] = [
         author: "ERPVITS Expert"
     },
     {
-        id: "mto-and-sto-process-in-sap",
+        id: "mto-sto-process",
         title: "MTO & STO Process in SAP: Enhance Supply Chain Performance Through Integrated MM And SD Modules",
         description: "Discover the difference between the MTO and STO processes in SAP and how SAP MM & SD integration boosts supply chain efficiency with ERPVITS expert training.",
         image: "/images/mto-sto-process.webp",
@@ -209,7 +209,7 @@ export const blogPosts: BlogPost[] = [
         author: "ERPVITS Expert"
     },
     {
-        id: "master-sap-ariba-with-industry-leading-online-training",
+        id: "master-sap-ariba",
         title: "Master SAP Ariba with Industry-Leading Online Training",
         description: "Enhance your career with SAP Ariba training, focusing on procurement skills, hands-on projects, and job support for professionals.",
         image: "/images/master-sap-ariba.webp",
