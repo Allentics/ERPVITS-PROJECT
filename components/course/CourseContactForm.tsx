@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Send, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { courses } from '@/lib/courseData';
-import { countryCodes } from '@/lib/countryCodes';
+import { countryCodes } from '@/lib/country-data';
 
 export default function CourseContactForm({ courseName }: { courseName?: string }) {
     const [formData, setFormData] = useState({
@@ -33,10 +33,11 @@ export default function CourseContactForm({ courseName }: { courseName?: string 
 
         try {
             const fullPhone = `${formData.countryCode} ${formData.phone}`;
+            // Refresh for HMR
             const { error } = await supabase.from('contacts').insert([{
                 first_name: formData.firstName,
                 last_name: formData.lastName,
-                name: `${formData.firstName} ${formData.lastName}`,
+                name: `${formData.firstName} ${formData.lastName}`.trim(),
                 email: formData.email,
                 phone: fullPhone,
                 course: formData.course,

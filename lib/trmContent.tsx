@@ -59,7 +59,7 @@ export const trmContent = {
                 }
             ],
             "title": "Learn SAP TRM from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            "subtitle": "Our <a href=\"https://www.erpvits.com/blog/Benefits-of-Online-SAP-TRM-Training\" target=\"_blank\">SAP TRM online training</a> is delivered by certified SAP professionals with 12+ years of hands-on experience in treasury and financial systems implementation. Instead of pre-recorded sessions, our SAP TRM course offers interactive sessions where instructors share industry-proven methodologies, address your questions and guide you through complex financial and treasury scenarios step-by-step.",
+            "subtitle": "Our <a href=\"https://www.bestonlinecareer.com/blog/Benefits-of-Online-SAP-TRM-Training\" target=\"_blank\">SAP TRM online training</a> is delivered by certified SAP professionals with 12+ years of hands-on experience in treasury and financial systems implementation. Instead of pre-recorded sessions, our SAP TRM course offers interactive sessions where instructors share industry-proven methodologies, address your questions and guide you through complex financial and treasury scenarios step-by-step.",
             "textAlign": "left"
         },
         {

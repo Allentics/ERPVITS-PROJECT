@@ -4,7 +4,7 @@ import { X, ClipboardList } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 import { supabase } from '@/lib/supabase';
 import { courses } from '@/lib/courseData';
-import { countryCodes } from '@/lib/countryCodes';
+import { countryCodes } from '@/lib/country-data';
 
 interface CareerGuidanceModalProps {
     isOpen: boolean;
@@ -67,13 +67,14 @@ export default function CareerGuidanceModal({ isOpen, onClose, defaultCourse = "
         setErrorMessage('');
 
         try {
+            // Refresh for HMR
             const { error } = await supabase
                 .from('contacts')
                 .insert([
                     {
                         first_name: formData.fullName.split(' ')[0],
                         last_name: formData.fullName.split(' ').slice(1).join(' ') || '',
-                        name: formData.fullName,
+                        name: formData.fullName.trim(),
                         email: formData.email,
                         phone: `${countryCode} ${formData.phone}`,
                         course: formData.interestedCourse || 'Custom Training Plan Request',

@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { X, Calendar, Clock, User, Phone, Send, Globe, Monitor } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
-import { countryCodes } from '@/lib/countryCodes';
+import { countryCodes } from '@/lib/country-data';
 import { courses } from '@/lib/courseData';
 
 const WebinarPopup = () => {

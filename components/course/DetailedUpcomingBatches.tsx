@@ -7,7 +7,7 @@ import { Calendar, Clock, AlertCircle, CheckCircle2, ShieldCheck, Users, Zap, X,
 import ContactModal from '@/components/ContactModal';
 import { supabase } from '@/lib/supabase';
 import { courses } from '@/lib/courseData';
-import { countryCodes } from '@/lib/countryCodes';
+import { countryCodes } from '@/lib/country-data';
 
 export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batches: propBatches, features: propFeatures }: { courseName?: string, batches?: any[], features?: any[] }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -34,9 +34,11 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
         setSelfPacedStatus('loading');
         setSelfPacedError('');
         try {
+            // Refresh for HMR
             const { error } = await supabase.from('contacts').insert([{
-                name: selfPacedForm.name,
-                first_name: selfPacedForm.name,
+                name: selfPacedForm.name.trim(),
+                first_name: selfPacedForm.name.split(' ')[0],
+                last_name: selfPacedForm.name.split(' ').slice(1).join(' ') || '',
                 email: selfPacedForm.email,
                 phone: selfPacedForm.phone,
                 course: selfPacedForm.course,

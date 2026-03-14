@@ -117,7 +117,7 @@ export const aribaContent = {
                     "hands_on": [
                         "Create sourcing events (RFI/RFQ/RFP) using **SAP Ariba Sourcing**.",
                         "Build and execute contract templates with approval workflows.",
-                        "Negotiation Processes and Supplier Awards on  <a href=\"https://www.erpvits.com/blog/ariba-supplier-network-performance-metrics\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Ariba Supplier Network</a>"
+                        "Negotiation Processes and Supplier Awards on  <a href=\"https://www.bestonlinecareer.com/blog/ariba-supplier-network-performance-metrics\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Ariba Supplier Network</a>"
                     ],
                     "learning_points": [
                         "Overview of **SAP Ariba Sourcing** suite and its business value.",

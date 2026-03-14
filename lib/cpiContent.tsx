@@ -64,7 +64,7 @@ export const cpiContent = {
                 }
             ],
             "title": "Learn SAP CPI from Certified Experts – 100% Hands-On, Job-Oriented Training",
-            "subtitle": "Our SAP CPI training is taught by certified integration consultants with extensive experience in <a href=\"https://www.erpvits.com/blog/role-of-sap-cpi-in-s4-hana-cloud-and-hybrid-integration-strategy\" target=\"_blank\" rel=\"noopener noreferrer\">cloud and hybrid integration projects.</a> Ideal for IT professionals as well as aspiring integration specialists, this program includes live instructor-led sessions where participants learn to design, construct, deploy and monitor real-time integration scenarios using SAP Integration Suite.",
+            "subtitle": "Our SAP CPI training is taught by certified integration consultants with extensive experience in <a href=\"https://www.bestonlinecareer.com/blog/role-of-sap-cpi-in-s4-hana-cloud-and-hybrid-integration-strategy\" target=\"_blank\" rel=\"noopener noreferrer\">cloud and hybrid integration projects.</a> Ideal for IT professionals as well as aspiring integration specialists, this program includes live instructor-led sessions where participants learn to design, construct, deploy and monitor real-time integration scenarios using SAP Integration Suite.",
             "textAlign": "left"
         },
         {

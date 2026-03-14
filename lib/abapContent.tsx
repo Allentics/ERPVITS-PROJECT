@@ -76,7 +76,7 @@ export const abapContent = {
                 "Active alumni network and cloud ABAP developer community forum",
                 "50+ guided lab exercises from basic to advanced cloud scenarios",
                 "Quarterly updated materials aligned with latest BTP and ABAP Cloud releases",
-                "Mock interviews simulating real <a href=\"https://www.erpvits.com/blog/sap-developer-training\" target=\"_blank\">SAP Developer course</a> scenarios",
+                "Mock interviews simulating real <a href=\"https://www.bestonlinecareer.com/blog/sap-developer-training\" target=\"_blank\">SAP Developer course</a> scenarios",
                 "Dedicated **SAP ABAP certification course** prep and technical bootcamp sessions",
                 "Complete support Ecosystem"
             ],

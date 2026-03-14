@@ -33,7 +33,7 @@ export const fieldglassContent = {
                 },
                 {
                     "title": "100% Hands-On Learning",
-                    "description": "Conventional training teaches Fieldglass System concepts through slide decks. Our <a href=\"https://www.erpvits.com/blog/what-to-expect-in-sap-fieldglass-training-program\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Fieldglass training</a> does a lot more. Each session has live demonstration and training using SAP Fieldglass systems and afterwards you are given real hands-on Fieldglass system training/labs to complete the exercises. At the end of the course, you will have configured and onboarded worker onboarding workflows, created and managed SOW project structures, handled contingent worker profile management, invoice processing & risk analytic execution."
+                    "description": "Conventional training teaches Fieldglass System concepts through slide decks. Our <a href=\"https://www.bestonlinecareer.com/blog/what-to-expect-in-sap-fieldglass-training-program\" target=\"_blank\" rel=\"noopener noreferrer\">SAP Fieldglass training</a> does a lot more. Each session has live demonstration and training using SAP Fieldglass systems and afterwards you are given real hands-on Fieldglass system training/labs to complete the exercises. At the end of the course, you will have configured and onboarded worker onboarding workflows, created and managed SOW project structures, handled contingent worker profile management, invoice processing & risk analytic execution."
                 },
                 {
                     "title": "Job-Oriented Curriculum Design",
@@ -790,7 +790,7 @@ export const fieldglassContent = {
                     "timeline": "1-5 Years"
                 }
             ],
-            "title": "<a href=\"https://www.erpvits.com/blog/what-to-expect-in-sap-fieldglass-training-program\" target=\"_blank\" rel=\"noopener noreferrer\">What to Expect After Completing SAP Fieldglass Training</a> – Your Growth Roadmap"
+            "title": "<a href=\"https://www.bestonlinecareer.com/blog/what-to-expect-in-sap-fieldglass-training-program\" target=\"_blank\" rel=\"noopener noreferrer\">What to Expect After Completing SAP Fieldglass Training</a> – Your Growth Roadmap"
         },
         {
             "type": "detailed_upcoming_batches",

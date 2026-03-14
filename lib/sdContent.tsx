@@ -23,7 +23,7 @@ export const sdContent = {
                 },
                 {
                     "title": "100% Hands-On Learning ",
-                    "description": "SAP SD course emphasizes active learning within the SAP system. You will configure SAP SD master data, explore SAP SD pricing procedure, set up SAP SD item categories, route determiners and output determiners and determine output determinations. Key SAP SD determinations such as tables or <a href=\"https://www.erpvits.com/blog/sap-transaction-codes-tcodes-list\" target=\"_blank\">TCodes</a> will be practiced extensively so as to build confidence when using system navigation; concepts like document flow, workflow configuration step by step explained."
+                    "description": "SAP SD course emphasizes active learning within the SAP system. You will configure SAP SD master data, explore SAP SD pricing procedure, set up SAP SD item categories, route determiners and output determiners and determine output determinations. Key SAP SD determinations such as tables or <a href=\"https://www.bestonlinecareer.com/blog/sap-transaction-codes-tcodes-list\" target=\"_blank\">TCodes</a> will be practiced extensively so as to build confidence when using system navigation; concepts like document flow, workflow configuration step by step explained."
                 },
                 {
                     "title": "Job-Oriented Curriculum Design",

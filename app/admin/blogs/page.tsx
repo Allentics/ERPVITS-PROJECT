@@ -153,7 +153,7 @@ export default function BlogsPage() {
                         Sync Missing
                     </button>
                     <Link
-                        href="/admin/blog/new"
+                        href="/admin/blogs/new"
                         className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors shadow-sm"
                     >
                         <Plus size={18} />
@@ -241,7 +241,7 @@ export default function BlogsPage() {
                                         <td className="px-6 py-4 text-right">
                                             <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                                                 <Link
-                                                    href={`/admin/blog/edit/${blog.id}`}
+                                                    href={`/admin/blogs/edit/${blog.id}`}
                                                     className="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"
                                                     title="Edit"
                                                 >

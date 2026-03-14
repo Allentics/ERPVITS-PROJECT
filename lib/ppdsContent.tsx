@@ -710,7 +710,7 @@ export const ppdsContent = {
                     "color": "orange",
                     "title": "First Year in Role",
                     "points": [
-                        "Learn <a href=\"https://www.erpvits.com/blog/sap-ppds-process-flow\" target=\"_blank\" rel=\"noopener noreferrer\">SAP PPDS process flow</a>, understand demand patterns",
+                        "Learn <a href=\"https://www.bestonlinecareer.com/blog/sap-ppds-process-flow\" target=\"_blank\" rel=\"noopener noreferrer\">SAP PPDS process flow</a>, understand demand patterns",
                         "Lead planning tasks, optimize scheduling parameters",
                         "Lead planning initiatives, design solutions"
                     ],

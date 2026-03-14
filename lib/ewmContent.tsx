@@ -127,7 +127,7 @@ export const ewmContent = {
                 {
                     "icon": "TrendingUp",
                     "title": "Placement & Career support",
-                    "description": "After gaining the necessary technical skills and turning that technical competency into a job offer is a matter of strategic career positioning. This is where the career support service comes into play. We will remodel your resume to align with the expectations of SAP EWM consultant jobs. We will also prepare you to answer the <a href=\"https://www.erpvits.com/blog/sap-ewm-interview-questions-and-answers\" target=\"_blank\" rel=\"noopener noreferrer\">SAP EWM interview questions</a> based on real-time recruitment trends & customize your readiness to the market requirements for SAP EWM jobs"
+                    "description": "After gaining the necessary technical skills and turning that technical competency into a job offer is a matter of strategic career positioning. This is where the career support service comes into play. We will remodel your resume to align with the expectations of SAP EWM consultant jobs. We will also prepare you to answer the <a href=\"https://www.bestonlinecareer.com/blog/sap-ewm-interview-questions-and-answers\" target=\"_blank\" rel=\"noopener noreferrer\">SAP EWM interview questions</a> based on real-time recruitment trends & customize your readiness to the market requirements for SAP EWM jobs"
                 },
                 {
                     "icon": "Globe",
@@ -1020,7 +1020,7 @@ export const ewmContent = {
                         "Build domain expertise in specific industries (Manufacturing, E-commerce, Pharma, Logistics)",
                         "Develop leadership and project management capabilities",
                         "Transition to senior consulting roles or warehouse management",
-                        "Explore specializations (<a href=\"https://www.erpvits.com/blog/sap-ewm-and-automation-tools\" target=\"_blank\" rel=\"noopener noreferrer\">warehouse automation</a>, advanced analytics, optimization)",
+                        "Explore specializations (<a href=\"https://www.bestonlinecareer.com/blog/sap-ewm-and-automation-tools\" target=\"_blank\" rel=\"noopener noreferrer\">warehouse automation</a>, advanced analytics, optimization)",
                         "Pursue SAP partnership or independent consulting opportunities"
                     ],
                     "timeline": "1-5 Years"

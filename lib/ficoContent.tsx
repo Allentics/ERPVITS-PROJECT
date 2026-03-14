@@ -42,7 +42,7 @@ export const ficoContent = {
                 },
                 {
                     "title": "Interactive Q&A Sessions",
-                    "description": "To complement live classes, we also provide dedicated forums and office hours for questions to be clarified by trainers at your own learning pace. Trainers focus on <a href=\"https://www.erpvits.com/blog/sap-fi-interview-questions-answers-career-guide-for-sap-fico-consultants-worldwide\" target=\"_blank\" rel=\"noopener noreferrer\">SAP FICO Interview Questions & Answers</a>, complex accounting scenarios, consultancy best practices and company strategies so you can confidently approach interviews or client projects with ease."
+                    "description": "To complement live classes, we also provide dedicated forums and office hours for questions to be clarified by trainers at your own learning pace. Trainers focus on <a href=\"https://www.bestonlinecareer.com/blog/sap-fi-interview-questions-answers-career-guide-for-sap-fico-consultants-worldwide\" target=\"_blank\" rel=\"noopener noreferrer\">SAP FICO Interview Questions & Answers</a>, complex accounting scenarios, consultancy best practices and company strategies so you can confidently approach interviews or client projects with ease."
                 },
                 {
                     "title": "Flexible Batch Timings",
@@ -660,7 +660,7 @@ export const ficoContent = {
                     "color": "slate",
                     "title": "Certification & Job Search",
                     "points": [
-                        "Apply for <a href=\"https://www.erpvits.com/blog/sap-fico-certification-preparation-guide\" target=\"_blank\" rel=\"noopener noreferrer\">SAP FICO Certification</a> exam",
+                        "Apply for <a href=\"https://www.bestonlinecareer.com/blog/sap-fico-certification-preparation-guide\" target=\"_blank\" rel=\"noopener noreferrer\">SAP FICO Certification</a> exam",
                         "Start job search with career services support",
                         "Participate in alumni networking events",
                         "Receive interview coaching and mock interview feedback"
