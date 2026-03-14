@@ -10,8 +10,8 @@ import { Suspense } from 'react';
 import InteractiveBlogContent from '@/components/blog/InteractiveBlogContent';
 import '../../blogs.css';
 
-// ISR: Cache blog posts for 1 hour
-export const revalidate = 3600;
+// ISR: Cache blog posts for 60 seconds
+export const revalidate = 60;
 
 // Lazy-load all legacy blog components — only the one matching the slug is ever loaded
 const SapTCodesContent = dynamic(() => import('@/components/blog/SapTCodesContent'));
