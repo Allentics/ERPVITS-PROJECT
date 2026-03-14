@@ -81,9 +81,12 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
             if (rawImage.startsWith('http')) {
                 displayImage = rawImage;
             } else {
-                // For local paths, extract the filename and ensure it points to the /images/ root
-                const fileName = rawImage.split('/').pop();
-                displayImage = `/images/${fileName}`;
+                // Normalize path: ensure it uses /images/blogs/ (canonical folder)
+                // Handle variants: /images/blog/, /images/blogs/, /images/ (root)
+                displayImage = rawImage
+                    .replace(/^\/images\/blog\/blog\//i, '/images/blogs/')  // fix double-nested blog/blog
+                    .replace(/^\/images\/blog\//i, '/images/blogs/')         // normalize blog -> blogs
+                    .replace(/^\/images\/(?!blogs\/)([^/]+)$/, '/images/blogs/$1'); // bare /images/file -> /images/blogs/file
             }
         }
 
@@ -190,14 +193,14 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
 
                                     {/* Featured Image - Right side on desktop, Bottom on mobile */}
                                     {post.displayImage && (
-                                        <div className="w-full md:w-64 lg:w-72 flex-shrink-0 order-2 md:order-2">
+                                        <div className="w-full md:w-72 lg:w-[350px] xl:w-[400px] flex-shrink-0 order-2 md:order-2">
                                             <Link href={`/blog/${post.id}/`} className="block group">
-                                                <div className="overflow-hidden rounded-xl border border-gray-100 shadow-sm group-hover:shadow-md transition-all duration-300">
+                                                <div className="overflow-hidden rounded-xl border border-gray-100 shadow-sm group-hover:shadow-md transition-all duration-300 bg-gray-50">
                                                     {/* eslint-disable-next-line @next/next/no-img-element */}
                                                     <img
                                                         src={post.displayImage}
                                                         alt={post.title}
-                                                        className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+                                                        className="w-full aspect-[16/10] object-cover object-top transition-transform duration-500 group-hover:scale-105"
                                                         loading="lazy"
                                                     />
                                                 </div>

@@ -18,10 +18,12 @@ export default function InteractiveBlogContent({ content, title }: { content: st
 
     const formattedContent = (() => {
         if (!content) return '';
-        // Fix image paths in HTML content (normalize /images/blog/ to /images/)
+        // Fix image paths in HTML content (normalize all variants to /images/blogs/)
         let processed = content;
         processed = processed.replace(/src=["']([^"']+)["']/g, (match, src) => {
-            const normalized = src.replace(/\/images\/(blog|blogs)\//i, '/images/').replace(/\/assets\/(blog|blogs)\//i, '/assets/');
+            let normalized = src
+                .replace(/\/images\/blog\/blog\//i, '/images/blogs/')  // fix double-nested
+                .replace(/\/images\/blog\//i, '/images/blogs/');        // normalize blog -> blogs
             return `src="${normalized}"`;
         });
 

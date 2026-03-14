@@ -151,8 +151,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     const resolveImagePath = (img: string | null | undefined) => {
         if (!img) return '/images/logo.webp';
         if (img.startsWith('http')) return img;
-        const fileName = img.split('/').pop();
-        return `/images/${fileName}`;
+
+        // Normalize path: ensure it uses /images/blogs/ (canonical folder)
+        // Handle variants: /images/blog/blog/, /images/blog/, /images/blogs/, /images/ (root)
+        return img
+            .replace(/^\/images\/blog\/blog\//i, '/images/blogs/')  // fix double-nested blog/blog
+            .replace(/^\/images\/blog\//i, '/images/blogs/')         // normalize blog -> blogs
+            .replace(/^\/images\/(?!blogs\/)([^/]+)$/, '/images/blogs/$1'); // bare /images/file -> /images/blogs/file
     };
 
     const mergedPosts = Array.from(idMap.values()).map((p: any) => ({
@@ -275,12 +280,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
                             {/* Hero Image */}
                             {(blogHeroImages[slug] || post.image) && (
-                                <div className="mb-12 rounded-2xl overflow-hidden shadow-2xl shadow-slate-200/50 group">
+                                <div className="mb-12 rounded-2xl overflow-hidden shadow-2xl shadow-slate-200/50 group bg-gray-50">
                                     {/* eslint-disable-next-line @next/next/no-img-element */}
                                     <img
                                         src={blogHeroImages[slug] || post.image}
                                         alt={post.title}
-                                        className="w-full h-auto max-h-[500px] object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                                        className="w-full h-auto max-h-[500px] object-cover object-top group-hover:scale-[1.02] transition-transform duration-700"
                                     />
                                 </div>
                             )}
