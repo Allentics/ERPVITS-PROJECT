@@ -81,12 +81,13 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
             if (rawImage.startsWith('http')) {
                 displayImage = rawImage;
             } else {
-                // Normalize path: ensure it uses /images/blogs/ (canonical folder)
-                // Handle variants: /images/blog/, /images/blogs/, /images/ (root)
-                displayImage = rawImage
-                    .replace(/^\/images\/blog\/blog\//i, '/images/blogs/')  // fix double-nested blog/blog
-                    .replace(/^\/images\/blog\//i, '/images/blogs/')         // normalize blog -> blogs
-                    .replace(/^\/images\/(?!blogs\/)([^/]+)$/, '/images/blogs/$1'); // bare /images/file -> /images/blogs/file
+                // Internal paths: extract filename, normalize to lowercase kebab-case, and use /images/blogs/ folder
+                const rawFileName = rawImage.split('/').pop() || '';
+                const fileName = rawFileName
+                    .toLowerCase()
+                    .replace(/\s+/g, '-')
+                    .replace(/_+/g, '-');
+                displayImage = `/images/blogs/${fileName}`;
             }
         }
 
@@ -116,7 +117,7 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
                 </nav>
             </div>
 
-            {/* Header Section - More premium look */}
+            {/* Header Section */}
             <div className="bg-gradient-to-b from-white to-gray-50 py-20 px-4 sm:px-6 lg:px-8 text-center">
                 <div className="max-w-4xl mx-auto">
                     <h1 className="text-3xl sm:text-4xl md:text-4xl font-extrabold text-gray-900 mb-6 tracking-tight">
@@ -126,7 +127,7 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
                         Stay ahead in the SAP ecosystem with expert insights, technical tutorials, and career guidance.
                     </p>
 
-                    {/* Stats - Refined */}
+                    {/* Stats */}
                     <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto border-t border-gray-200 pt-8 mt-4">
                         <div className="text-center group">
                             <div className="text-3xl font-bold text-gray-900 group-hover:text-orange-500 transition-colors">5k+</div>
@@ -150,64 +151,65 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
                     {allPosts.map((post: any) => {
                         const { day, month, weekday } = formatDate(post.date);
                         return (
-                            <div key={post.id} className="flex flex-col md:flex-row gap-8 lg:gap-12 pb-12 border-b border-gray-100 last:border-0 group">
-                                {/* Date Section - Desktop Sidebar Style */}
-                                <div className="hidden md:flex flex-col items-center justify-start w-24 pt-2">
-                                    <div className="text-[42px] font-bold text-[#F58220] leading-none mb-1" suppressHydrationWarning>
+                            <div key={post.id} className="flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-16 pb-16 pt-8 border-b border-gray-100 last:border-0 group items-start">
+                                {/* Date Section - Left Side */}
+                                <div className="hidden md:flex flex-col items-center justify-start w-28 shrink-0 text-center uppercase" suppressHydrationWarning>
+                                    <div className="text-5xl md:text-6xl lg:text-[72px] font-bold text-[#F58220] leading-none mb-1">
                                         {day}
                                     </div>
-                                    <div className="text-[14px] font-medium text-gray-400 uppercase tracking-[2px]" suppressHydrationWarning>
+                                    <div className="text-[12px] md:text-[14px] lg:text-[15px] font-semibold text-gray-500 tracking-[1px]">
                                         {month}
                                     </div>
-                                    <div className="text-[12px] font-medium text-gray-400 uppercase tracking-[1px] mt-1" suppressHydrationWarning>
+                                    <div className="text-[10px] md:text-[11px] lg:text-[12px] font-medium text-gray-400 tracking-[1px] mt-1 lowercase first-letter:uppercase">
                                         {weekday}
                                     </div>
                                 </div>
 
-                                {/* Content Section */}
-                                <div className="flex-grow flex flex-col md:flex-row gap-8 lg:gap-12">
-                                    <div className="flex-grow order-1 md:order-1">
-                                        <div className="md:hidden flex items-center gap-3 mb-4">
-                                            <span className="text-3xl font-bold text-[#F58220]" suppressHydrationWarning>{day}</span>
-                                            <span className="text-sm font-semibold text-gray-400 uppercase tracking-widest" suppressHydrationWarning>{month}</span>
-                                            <span className="text-xs text-gray-400 uppercase" suppressHydrationWarning>| {weekday}</span>
-                                        </div>
-
-                                        <Link href={`/blog/${post.id}/`} className="group-hover:text-orange-600 transition-colors">
-                                            <h2 className="text-[24px] lg:text-[28px] font-bold text-gray-900 mb-4 leading-snug group-hover:text-[#F58220] transition-colors">
-                                                {post.title}
-                                            </h2>
-                                        </Link>
-
-                                        <p className="text-[#666666] text-base mb-8 line-clamp-3 leading-relaxed max-w-2xl">
-                                            {post.description}
-                                        </p>
-
-                                        <Link
-                                            href={`/blog/${post.id}/`}
-                                            className="inline-block bg-white text-[#222222] border-2 border-[#e8e8e8] text-[12px] font-bold px-4 py-[8px] rounded-none uppercase transition-all hover:bg-[#e6e6e6] hover:border-[#c9c9c9]"
-                                        >
-                                            View Blog
-                                        </Link>
+                                {/* Content Section - Middle */}
+                                <div className="flex-1 min-w-0 flex flex-col items-start px-2">
+                                    {/* Mobile Date Header */}
+                                    <div className="md:hidden flex items-center gap-3 mb-4" suppressHydrationWarning>
+                                        <span className="text-3xl font-bold text-[#F58220]">{day}</span>
+                                        <span className="text-sm font-semibold text-gray-500 uppercase">{month}</span>
+                                        <span className="text-xs text-gray-400 uppercase">| {weekday}</span>
                                     </div>
 
-                                    {/* Featured Image - Right side on desktop, Bottom on mobile */}
-                                    {post.displayImage && (
-                                        <div className="w-full md:w-72 lg:w-[350px] xl:w-[400px] flex-shrink-0 order-2 md:order-2">
-                                            <Link href={`/blog/${post.id}/`} className="block group">
-                                                <div className="overflow-hidden rounded-xl border border-gray-100 shadow-sm group-hover:shadow-md transition-all duration-300 bg-gray-50">
-                                                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                                                    <img
-                                                        src={post.displayImage}
-                                                        alt={post.title}
-                                                        className="w-full aspect-[16/10] object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                                                        loading="lazy"
-                                                    />
-                                                </div>
-                                            </Link>
-                                        </div>
-                                    )}
+                                    <Link href={`/blog/${post.id}/`}>
+                                        <h2 className="text-xl md:text-2xl lg:text-[28px] font-bold text-[#222222] mb-4 leading-tight group-hover:text-[#F58220] transition-colors">
+                                            {post.title}
+                                        </h2>
+                                    </Link>
+
+                                    <p className="text-gray-600 text-sm md:text-base mb-8 line-clamp-3 leading-relaxed font-normal text-left w-full">
+                                        {post.description}
+                                    </p>
+
+                                    <div className="mt-2">
+                                        <Link
+                                            href={`/blog/${post.id}/`}
+                                            className="inline-block border border-gray-200 bg-white text-[10px] md:text-[11px] font-bold px-4 md:px-6 py-[8px] md:py-[11px] uppercase tracking-wider text-[#333] hover:bg-gray-50 hover:border-gray-400 transition-all font-sans"
+                                        >
+                                            VIEW BLOG
+                                        </Link>
+                                    </div>
                                 </div>
+
+                                {/* Image Section - Right Side */}
+                                {post.displayImage && (
+                                    <div className="w-full md:w-80 shrink-0 mt-6 md:mt-2">
+                                        <Link href={`/blog/${post.id}/`} className="block group/img">
+                                            <div className="overflow-hidden rounded-xl border border-gray-100 shadow-sm group-hover/img:shadow-lg transition-all duration-300 bg-gray-50">
+                                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                                <img
+                                                    src={post.displayImage}
+                                                    alt={post.title}
+                                                    className="w-full aspect-[16/10] object-cover transition-transform duration-500 group-hover/img:scale-105"
+                                                    loading="lazy"
+                                                />
+                                            </div>
+                                        </Link>
+                                    </div>
+                                )}
                             </div>
                         );
                     })}

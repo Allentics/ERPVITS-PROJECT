@@ -152,12 +152,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         if (!img) return '/images/logo.webp';
         if (img.startsWith('http')) return img;
 
-        // Normalize path: ensure it uses /images/blogs/ (canonical folder)
-        // Handle variants: /images/blog/blog/, /images/blog/, /images/blogs/, /images/ (root)
-        return img
-            .replace(/^\/images\/blog\/blog\//i, '/images/blogs/')  // fix double-nested blog/blog
-            .replace(/^\/images\/blog\//i, '/images/blogs/')         // normalize blog -> blogs
-            .replace(/^\/images\/(?!blogs\/)([^/]+)$/, '/images/blogs/$1'); // bare /images/file -> /images/blogs/file
+        // Internal paths: extract filename, normalize to lowercase kebab-case, and use /images/blogs/ folder
+        const rawFileName = img.split('/').pop() || '';
+        const fileName = rawFileName
+            .toLowerCase()
+            .replace(/\s+/g, '-')
+            .replace(/_+/g, '-');
+        return `/images/blogs/${fileName}`;
     };
 
     const mergedPosts = Array.from(idMap.values()).map((p: any) => ({
