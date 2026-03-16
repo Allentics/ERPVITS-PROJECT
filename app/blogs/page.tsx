@@ -203,7 +203,7 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
                                                 <img
                                                     src={post.displayImage}
                                                     alt={post.title}
-                                                    className="w-full aspect-[16/10] object-cover transition-transform duration-500 group-hover/img:scale-105"
+                                                    className="w-full aspect-video object-cover transition-transform duration-500 group-hover/img:scale-105"
                                                     loading="lazy"
                                                 />
                                             </div>

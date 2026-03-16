@@ -106,7 +106,7 @@ export default function LatestInsights() {
 
                             return (
                                 <div key={post.id} className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow group flex flex-col h-full">
-                                    <Link href={`/blog/${post.id}/`} className="block h-48 overflow-hidden relative">
+                                    <Link href={`/blog/${post.id}/`} className="block aspect-video overflow-hidden relative">
                                         {post.image ? (
                                             <Image
                                                 src={post.image}
