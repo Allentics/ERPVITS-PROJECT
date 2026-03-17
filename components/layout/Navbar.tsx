@@ -130,7 +130,7 @@ const Navbar = () => {
                 onClose={() => setIsContactModalOpen(false)}
                 title="Book Your Free Demo"
             />
-            <header className="sticky top-0 z-40 bg-black font-sans shadow-md">
+            <header className="sticky top-0 z-40 bg-black font-sans shadow-md nav-header-inline" style={{ minHeight: '80px', backgroundColor: '#000000' }}>
                 {/* Top Info Bar */}
                 <div className="bg-slate-900 text-white text-xs py-2.5 px-4 hidden lg:block border-b border-white/10">
                     <div className="max-w-7xl mx-auto flex justify-between items-center">

@@ -41,12 +41,27 @@ export default function RootLayout({
           href="/images/home_hero_bg_v11.jpg"
           media="(max-width: 767px)"
         />
-        {/* Google Analytics */}
+        {/* Critical Styles for Mobile to prevent FOUC and solve Dependency Tree issues */}
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+              @media (max-width: 767px) {
+                body { background: #ffffff; margin: 0; padding: 0; }
+                .hero-container-inline { min-height: 88vh; background: #ffffff; }
+                .nav-header-inline { min-height: 80px; background: #000000; }
+                .announcement-inline { min-height: 35px; background: #fbc02d; }
+                h1 { font-size: 2.25rem; line-height: 1.2; font-weight: 800; }
+              }
+            `,
+          }}
+        />
+
+        {/* Google Analytics - Moved to lazyOnload to clear critical path */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-CRQ7PMM6EV"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -55,8 +70,8 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Microsoft Clarity */}
-        <Script id="microsoft-clarity" strategy="afterInteractive">
+        {/* Microsoft Clarity - Moved to lazyOnload */}
+        <Script id="microsoft-clarity" strategy="lazyOnload">
           {`
             (function(c,l,a,r,i,t,y){
                 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};

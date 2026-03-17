@@ -45,7 +45,7 @@ export default function AnnouncementBar() {
     if (pathname.startsWith('/admin') || !isVisible || !content.visible) return null;
 
     return (
-        <div className="bg-[#fbc02d] text-black text-[13px] py-1.5 px-4 relative z-50 border-b border-black/5">
+        <div className="bg-[#fbc02d] text-black text-[13px] py-1.5 px-4 relative z-50 border-b border-black/5 announcement-inline" style={{ minHeight: '35px', backgroundColor: '#fbc02d' }}>
             <div className="max-w-7xl mx-auto flex justify-center items-center text-center">
                 <span className="font-extrabold mr-2">🔥 {content.highlight}</span>
                 <span className="font-bold">{content.text}</span>

@@ -29,7 +29,7 @@ const Hero = () => {
     const headingParts = content.heading.split(content.highlight_text);
 
     return (
-        <div className="bg-white text-slate-900 relative overflow-hidden min-h-[88vh] flex items-center">
+        <div className="bg-white text-slate-900 relative overflow-hidden min-h-[88vh] flex items-center hero-container-inline" style={{ minHeight: '88vh', backgroundColor: '#ffffff' }}>
             {/* Background Image */}
             <div className="absolute inset-0 w-full h-full z-0">
                 <Image
