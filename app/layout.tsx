@@ -64,14 +64,28 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               @media (max-width: 767px) {
-                body { background: #ffffff; color: #171717; margin: 0; font-family: sans-serif; }
+                body { background: #ffffff; color: #171717; margin: 0; font-family: sans-serif; -webkit-font-smoothing: antialiased; }
                 header { background: #000000; min-height: 80px; }
+                /* Immediate typography skeleton for mobile to improve FCP */
+                h1 { font-family: sans-serif; font-weight: 800; line-height: 1.1; margin: 0; }
+                .hero-text-mobile { min-height: 300px; display: flex; flex-direction: column; justify-content: center; }
               }
               @media (max-width: 767px) and (prefers-color-scheme: dark) {
                 body { background: #0a0a0a; color: #ededed; }
               }
             `,
           }}
+        />
+        {/* Preconnect & DNS-Prefetch for Font Performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+        {/* Mobile-only LCP Preload: Shave off discovery time for the hero image */}
+        <link
+          rel="preload"
+          as="image"
+          href="/images/home_hero_bg_v11.jpg"
+          media="(max-width: 767px)"
         />
         {/* Google Analytics */}
         <Script
@@ -103,6 +117,8 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.clarity.ms" />
         <link rel="dns-prefetch" href="https://www.clarity.ms" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
 
         {/* Next.js Image priority in Navbar handles logo preloading optimally */}
       </head>
