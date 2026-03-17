@@ -158,13 +158,20 @@ export default function NewBlogPage() {
                         </div>
                     </div>
 
-                    <div className="space-y-1">
-                        <RichTextEditor
-                            label="Post Content"
-                            value={formData.content}
-                            onChange={handleContentChange}
-                        />
-                    </div>
+                    <RichTextEditor
+                        label="Post Content"
+                        value={formData.content}
+                        onChange={handleContentChange}
+                        previewContext={{
+                            id: formData.id,
+                            title: formData.title,
+                            image: formData.image,
+                            author: formData.author,
+                            date: formData.date,
+                            category: formData.category,
+                            description: formData.description
+                        }}
+                    />
                 </div>
 
                 {/* SEO & Metadata Section */}

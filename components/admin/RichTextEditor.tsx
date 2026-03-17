@@ -15,6 +15,7 @@ import {
     Wand2
 } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
+import { formatBlogContent } from '@/lib/contentUtils';
 
 import BlogPreview from '@/components/admin/BlogPreview';
 
@@ -120,46 +121,13 @@ export default function RichTextEditor({ value, onChange, label, previewContext 
             e.target.value = '';
         }
     };
-    
+
     /**
      * Helper to auto-format text into clean HTML
      */
     const handleAutoFormat = () => {
-        if (!confirm('This will attempt to wrap your text in <p> tags and clean up common issues. Continue?')) return;
-        
-        let content = value;
-        
-        // 1. If it doesn't look like HTML (missing major tags), wrap paragraphs and detect headings
-        if (!content.includes('<p>') && !content.includes('<div') && !content.includes('<section')) {
-            // Split by newlines (potentially multiple)
-            const blocks = content.split(/\n\s*\n/).map(b => b.trim()).filter(b => b.length > 0);
-            
-            content = blocks.map((block, index) => {
-                // Heuristic for Heading:
-                // - First block is often a title
-                // - Shorter than 100 chars
-                // - Doesn't end in a period (usually)
-                // - Ends in a question mark
-                const isShort = block.length < 100;
-                const noPeriod = !block.endsWith('.');
-                const isQuestion = block.endsWith('?');
-                
-                if (index === 0 || (isShort && (noPeriod || isQuestion))) {
-                    return `<h2>${block}</h2>`;
-                }
-                return `<p>${block}</p>`;
-            }).join('\n\n');
-        }
-        
-        // 2. Wrap loose text lines in <p> if they're not inside tags
-        // This is a bit complex for a textarea, but let's do a basic version
-        
-        // 3. Ensure a <header> or <h1> at the start if missing? No, user might prefer manual.
-        
-        // 4. Basic cleanup: replace multiple newlines
-        content = content.replace(/\n{3,}/g, '\n\n');
-        
-        onChange(content);
+        if (!confirm('This will attempt to wrap your text in HTML tags and clean up structure. Continue?')) return;
+        onChange(formatBlogContent(value));
     };
 
     return (

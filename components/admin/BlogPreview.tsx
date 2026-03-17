@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import BlogContactForm from '@/components/blog/BlogContactForm';
+import { formatBlogContent } from '@/lib/contentUtils';
 
 interface BlogPreviewProps {
     data: {
@@ -103,18 +104,7 @@ export default function BlogPreview({ data }: BlogPreviewProps) {
                                 [&_iframe]:w-full [&_iframe]:aspect-video [&_iframe]:rounded-xl">
 
                                 <div className="blog-content">
-                                    <div dangerouslySetInnerHTML={{ 
-                                        __html: (() => {
-                                            if (!content) return '';
-                                            if (/<[a-z][\s\S]*>/i.test(content)) return content;
-                                            return content
-                                                .split(/\n\s*\n/)
-                                                .map(p => p.trim())
-                                                .filter(p => p.length > 0)
-                                                .map(p => `<p>${p}</p>`)
-                                                .join('\n');
-                                        })() 
-                                    }} />
+                                    <div dangerouslySetInnerHTML={{ __html: formatBlogContent(content) }} />
                                 </div>
                             </div>
                         </article>
