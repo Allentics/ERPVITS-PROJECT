@@ -127,7 +127,7 @@ export default function RichTextEditor({ value, onChange, label, previewContext 
      */
     const handleAutoFormat = () => {
         if (!confirm('This will attempt to wrap your text in HTML tags and clean up structure. Continue?')) return;
-        onChange(formatBlogContent(value));
+        onChange(formatBlogContent(value, true));
     };
 
     return (
