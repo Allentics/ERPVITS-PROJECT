@@ -33,6 +33,46 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Mobile-only Optimization: Defer non-critical CSS to solve render-blocking issues flagged by Lighthouse */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+                  if (isMobile) {
+                    const deblock = (node) => {
+                      if (node.tagName === 'LINK' && node.rel === 'stylesheet' && (node.href.includes('_next/static/css') || node.href.includes('chunks'))) {
+                        node.media = 'print';
+                        node.onload = function() { this.media = 'all'; };
+                      }
+                    };
+                    const observer = new MutationObserver((list) => {
+                      for (const mutation of list) {
+                        for (const node of mutation.addedNodes) deblock(node);
+                      }
+                    });
+                    observer.observe(document.head, { childList: true });
+                    document.querySelectorAll('link[rel="stylesheet"]').forEach(deblock);
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+              @media (max-width: 767px) {
+                body { background: #ffffff; color: #171717; margin: 0; font-family: sans-serif; }
+                header { background: #000000; min-height: 80px; }
+              }
+              @media (max-width: 767px) and (prefers-color-scheme: dark) {
+                body { background: #0a0a0a; color: #ededed; }
+              }
+            `,
+          }}
+        />
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-CRQ7PMM6EV"
