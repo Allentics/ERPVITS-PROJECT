@@ -42,18 +42,19 @@ export default function RootLayout({
                   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
                   if (isMobile) {
                     const deblock = (node) => {
-                      if (node.tagName === 'LINK' && node.rel === 'stylesheet' && (node.href.includes('_next/static/css') || node.href.includes('chunks'))) {
-                        node.media = 'print';
+                      if (node.tagName === 'LINK' && node.rel === 'stylesheet' && (node.href.indexOf('_next/static/css') !== -1 || node.href.indexOf('chunks') !== -1)) {
+                        node.media = 'only x';
                         node.onload = function() { this.media = 'all'; };
                       }
                     };
                     const observer = new MutationObserver((list) => {
                       for (const mutation of list) {
-                        for (const node of mutation.addedNodes) deblock(node);
+                        for (const node of mutation.addedNodes) if (node.tagName === 'LINK') deblock(node);
                       }
                     });
                     observer.observe(document.head, { childList: true });
-                    document.querySelectorAll('link[rel="stylesheet"]').forEach(deblock);
+                    var existing = document.head.querySelectorAll('link[rel="stylesheet"]');
+                    for (var i = 0; i < existing.length; i++) deblock(existing[i]);
                   }
                 } catch (e) {}
               })();
@@ -65,7 +66,11 @@ export default function RootLayout({
             __html: `
               @media (max-width: 767px) {
                 body { background: #ffffff; color: #171717; margin: 0; font-family: sans-serif; -webkit-font-smoothing: antialiased; }
-                header { background: #000000; min-height: 80px; }
+                header { background: #000000; min-height: 80px; position: sticky; top: 0; z-index: 40; }
+                /* Immediate Announcement Bar Skeleton */
+                .announcement-skeleton { background: #fbc02d; height: 35px; width: 100%; position: relative; z-index: 50; }
+                /* Immediate Navbar Skeleton */
+                .navbar-skeleton { background: #000000; height: 80px; width: 100%; }
                 /* Immediate typography skeleton for mobile to improve FCP */
                 h1 { font-family: sans-serif; font-weight: 800; line-height: 1.1; margin: 0; }
                 .hero-text-mobile { min-height: 300px; display: flex; flex-direction: column; justify-content: center; }

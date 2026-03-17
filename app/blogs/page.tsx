@@ -68,7 +68,10 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
             if (titleKey) titleMap.set(titleKey, post.id);
         } else if (idConflict) {
             const dbPost = idMap.get(post.id);
-            const validDbProps = Object.fromEntries(Object.entries(dbPost).filter(([_, v]) => v !== null && v !== ''));
+            const validDbProps = Object.entries(dbPost).reduce((acc: any, [k, v]) => {
+                if (v !== null && v !== '') acc[k] = v;
+                return acc;
+            }, {});
             idMap.set(post.id, { ...post, ...validDbProps });
         }
     });
