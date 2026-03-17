@@ -40,6 +40,7 @@ export default function RootLayout({
           as="image"
           href="/images/home_hero_bg_v11.jpg"
           media="(max-width: 767px)"
+          fetchPriority="high"
         />
         {/* Critical Styles for Mobile to prevent FOUC and solve Dependency Tree issues */}
         <style
@@ -81,11 +82,11 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Preconnect to external services */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://www.clarity.ms" />
-        <link rel="dns-prefetch" href="https://www.clarity.ms" />
+        {/* Preconnect to external services only if absolutely critical. 
+             GTM and Clarity are now lazyOnload, so preconnecting them in the head is 'Unused' in the critical path.
+             Removed them for mobile performance optimization. */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" media="(min-width: 768px)" />
+        <link rel="preconnect" href="https://www.clarity.ms" media="(min-width: 768px)" />
 
         {/* Next.js Image priority in Navbar handles logo preloading optimally */}
       </head>
