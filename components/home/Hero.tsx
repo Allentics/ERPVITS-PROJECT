@@ -38,7 +38,6 @@ const Hero = () => {
                     fill
                     className="object-cover object-[95%_10%]"
                     priority
-                    unoptimized
                     quality={80}
                     sizes="100vw"
                 />
@@ -53,7 +52,7 @@ const Hero = () => {
 
             {/* Main Content Grid */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 lg:pt-10 pb-8 relative z-10 w-full">
-                <div className="max-w-3xl text-center lg:text-left hero-text-inline">
+                <div className="max-w-3xl text-center lg:text-left">
 
                     {/* Heading */}
                     <h1 className="text-4xl lg:text-5xl font-extrabold tracking-tight mb-6 leading-[1.1] text-slate-950 drop-shadow-[0_1.5px_1.5px_rgba(255,255,255,1)]">

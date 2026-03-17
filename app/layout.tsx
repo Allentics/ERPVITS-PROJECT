@@ -33,48 +33,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Mobile-only Optimization: Defer non-critical CSS to solve render-blocking issues flagged by Lighthouse */}
-        <script
-          id="mobile-perf-optimizer"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  // Run de-blocking for both mobile and desktop to solve render-blocking chains
-                  var deblock = function(n) {
-                    if (n && n.tagName === 'LINK' && n.rel === 'stylesheet' && (n.href.indexOf('css') !== -1 || n.href.indexOf('chunk') !== -1)) {
-                      n.media = 'only x';
-                      n.onload = function() { this.media = 'all'; };
-                    }
-                  };
-                  var obs = new MutationObserver(function(ms) {
-                    ms.forEach(function(m) {
-                      m.addedNodes.forEach(function(n) { deblock(n); });
-                    });
-                  });
-                  obs.observe(document.head, { childList: true });
-                  var links = document.getElementsByTagName('link');
-                  for (var i = 0; i < links.length; i++) deblock(links[i]);
-                } catch (e) {}
-              })();
-            `,
-          }}
-        />
-        <style
-          dangerouslySetInnerHTML={{
-            __html: `
-              body { background: #ffffff; color: #171717; margin: 0; font-family: sans-serif; -webkit-font-smoothing: antialiased; }
-              header { background: #000000; min-height: 80px; position: sticky; top: 0; z-index: 40; }
-              .announcement-bar-inline { background: #fbc02d; min-height: 35px; width: 100%; position: relative; z-index: 50; }
-              .navbar-inline { background: #000000; min-height: 80px; width: 100%; }
-              h1 { font-weight: 800; line-height: 1.1; margin: 0; }
-              .hero-text-inline { min-height: 300px; display: flex; flex-direction: column; justify-content: center; }
-              @media (prefers-color-scheme: dark) {
-                body { background: #0a0a0a; color: #ededed; }
-              }
-            `,
-          }}
-        />
 
         {/* Mobile-only LCP Preload: Shave off discovery time for the hero image */}
         <link

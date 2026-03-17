@@ -116,10 +116,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     const localPost = localPosts.find((p: any) => p.id === slug);
 
     if (dbPost) {
-        const validDbProps = Object.entries(dbPost).reduce((acc: any, [k, v]) => {
-            if (v !== null && v !== '') acc[k] = v;
-            return acc;
-        }, {});
+        const validDbProps = Object.fromEntries(Object.entries(dbPost).filter(([_, v]) => v !== null && v !== ''));
         post = localPost ? { ...localPost, ...validDbProps } : dbPost;
     } else {
         post = localPost;
@@ -146,10 +143,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             titleMap.set(titleKey, p.id);
         } else if (idConflict) {
             const dbP = idMap.get(p.id);
-            const validDbProps = Object.entries(dbP).reduce((acc: any, [k, v]) => {
-                if (v !== null && v !== '') acc[k] = v;
-                return acc;
-            }, {});
+            const validDbProps = Object.fromEntries(Object.entries(dbP).filter(([_, v]) => v !== null && v !== ''));
             idMap.set(p.id, { ...p, ...validDbProps });
         }
     });
