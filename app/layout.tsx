@@ -35,26 +35,29 @@ export default function RootLayout({
       <head>
         {/* Mobile-only Optimization: Defer non-critical CSS to solve render-blocking issues flagged by Lighthouse */}
         <script
+          id="mobile-perf-optimizer"
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
                 try {
-                  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+                  var ua = navigator.userAgent;
+                  var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua) || window.innerWidth < 768;
                   if (isMobile) {
-                    const deblock = (node) => {
-                      if (node.tagName === 'LINK' && node.rel === 'stylesheet' && (node.href.indexOf('_next/static/css') !== -1 || node.href.indexOf('chunks') !== -1)) {
-                        node.media = 'only x';
-                        node.onload = function() { this.media = 'all'; };
+                    // Force non-blocking for existing and future CSS
+                    var deblock = function(n) {
+                      if (n && n.tagName === 'LINK' && n.rel === 'stylesheet' && (n.href.indexOf('css') !== -1 || n.href.indexOf('chunk') !== -1)) {
+                        n.media = 'only x';
+                        n.onload = function() { this.media = 'all'; };
                       }
                     };
-                    const observer = new MutationObserver((list) => {
-                      for (const mutation of list) {
-                        for (const node of mutation.addedNodes) if (node.tagName === 'LINK') deblock(node);
-                      }
+                    var obs = new MutationObserver(function(ms) {
+                      ms.forEach(function(m) {
+                        m.addedNodes.forEach(function(n) { deblock(n); });
+                      });
                     });
-                    observer.observe(document.head, { childList: true });
-                    var existing = document.head.querySelectorAll('link[rel="stylesheet"]');
-                    for (var i = 0; i < existing.length; i++) deblock(existing[i]);
+                    obs.observe(document.head, { childList: true });
+                    var links = document.getElementsByTagName('link');
+                    for (var i = 0; i < links.length; i++) deblock(links[i]);
                   }
                 } catch (e) {}
               })();
