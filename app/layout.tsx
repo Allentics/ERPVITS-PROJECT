@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
 import AnnouncementBar from '@/components/layout/AnnouncementBar'
 import Navbar from '@/components/layout/Navbar'
@@ -10,11 +9,6 @@ import Script from 'next/script'
 const Footer = dynamic(() => import('@/components/layout/Footer'));
 const WebinarPopup = dynamic(() => import('@/components/WebinarPopup'));
 
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  preload: true,
-})
 
 export const metadata: Metadata = {
   title: 'ERPVITS - Expert SAP Online Training Institute',
@@ -34,11 +28,11 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
 
-        {/* Mobile-only LCP Preload: Shave off discovery time for the hero image */}
+        {/* Mobile-only LCP Preload: Using the optimized 93KB v9 image for mobile to shave off discovery/download time */}
         <link
           rel="preload"
           as="image"
-          href="/images/home_hero_bg_v11.jpg"
+          href="/images/home_hero_bg_v9.jpg"
           media="(max-width: 767px)"
           fetchPriority="high"
         />
@@ -90,7 +84,7 @@ export default function RootLayout({
 
         {/* Next.js Image priority in Navbar handles logo preloading optimally */}
       </head>
-      <body className={inter.className} suppressHydrationWarning>
+      <body suppressHydrationWarning>
         <AnnouncementBar />
         <Navbar />
         <main className="min-h-screen">

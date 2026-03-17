@@ -25,7 +25,16 @@ const DEFAULT_CONTENT = {
 
 const Hero = () => {
     const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+    const [isMobile, setIsMobile] = React.useState(false);
+
+    React.useEffect(() => {
+        setIsMobile(window.innerWidth < 768);
+    }, []);
+
     const content = DEFAULT_CONTENT;
+    const mobileBg = "/images/home_hero_bg_v9.jpg";
+    const bgImage = isMobile ? mobileBg : (content.bg_image || "/images/home_hero_bg_v11.jpg");
+
     const headingParts = content.heading.split(content.highlight_text);
 
     return (
@@ -33,7 +42,7 @@ const Hero = () => {
             {/* Background Image */}
             <div className="absolute inset-0 w-full h-full z-0">
                 <Image
-                    src={content.bg_image || "/images/home_hero_bg_v11.jpg"}
+                    src={bgImage}
                     alt="Expert SAP Trainer"
                     fill
                     className="object-cover object-[95%_10%]"
