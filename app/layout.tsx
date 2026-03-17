@@ -40,25 +40,21 @@ export default function RootLayout({
             __html: `
               (function() {
                 try {
-                  var ua = navigator.userAgent;
-                  var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua) || window.innerWidth < 768;
-                  if (isMobile) {
-                    // Force non-blocking for existing and future CSS
-                    var deblock = function(n) {
-                      if (n && n.tagName === 'LINK' && n.rel === 'stylesheet' && (n.href.indexOf('css') !== -1 || n.href.indexOf('chunk') !== -1)) {
-                        n.media = 'only x';
-                        n.onload = function() { this.media = 'all'; };
-                      }
-                    };
-                    var obs = new MutationObserver(function(ms) {
-                      ms.forEach(function(m) {
-                        m.addedNodes.forEach(function(n) { deblock(n); });
-                      });
+                  // Run de-blocking for both mobile and desktop to solve render-blocking chains
+                  var deblock = function(n) {
+                    if (n && n.tagName === 'LINK' && n.rel === 'stylesheet' && (n.href.indexOf('css') !== -1 || n.href.indexOf('chunk') !== -1)) {
+                      n.media = 'only x';
+                      n.onload = function() { this.media = 'all'; };
+                    }
+                  };
+                  var obs = new MutationObserver(function(ms) {
+                    ms.forEach(function(m) {
+                      m.addedNodes.forEach(function(n) { deblock(n); });
                     });
-                    obs.observe(document.head, { childList: true });
-                    var links = document.getElementsByTagName('link');
-                    for (var i = 0; i < links.length; i++) deblock(links[i]);
-                  }
+                  });
+                  obs.observe(document.head, { childList: true });
+                  var links = document.getElementsByTagName('link');
+                  for (var i = 0; i < links.length; i++) deblock(links[i]);
                 } catch (e) {}
               })();
             `,
@@ -67,26 +63,18 @@ export default function RootLayout({
         <style
           dangerouslySetInnerHTML={{
             __html: `
-              @media (max-width: 767px) {
-                body { background: #ffffff; color: #171717; margin: 0; font-family: sans-serif; -webkit-font-smoothing: antialiased; }
-                header { background: #000000; min-height: 80px; position: sticky; top: 0; z-index: 40; }
-                /* Immediate Announcement Bar Skeleton */
-                .announcement-skeleton { background: #fbc02d; height: 35px; width: 100%; position: relative; z-index: 50; }
-                /* Immediate Navbar Skeleton */
-                .navbar-skeleton { background: #000000; height: 80px; width: 100%; }
-                /* Immediate typography skeleton for mobile to improve FCP */
-                h1 { font-family: sans-serif; font-weight: 800; line-height: 1.1; margin: 0; }
-                .hero-text-mobile { min-height: 300px; display: flex; flex-direction: column; justify-content: center; }
-              }
-              @media (max-width: 767px) and (prefers-color-scheme: dark) {
+              body { background: #ffffff; color: #171717; margin: 0; font-family: sans-serif; -webkit-font-smoothing: antialiased; }
+              header { background: #000000; min-height: 80px; position: sticky; top: 0; z-index: 40; }
+              .announcement-bar-inline { background: #fbc02d; min-height: 35px; width: 100%; position: relative; z-index: 50; }
+              .navbar-inline { background: #000000; min-height: 80px; width: 100%; }
+              h1 { font-weight: 800; line-height: 1.1; margin: 0; }
+              .hero-text-inline { min-height: 300px; display: flex; flex-direction: column; justify-content: center; }
+              @media (prefers-color-scheme: dark) {
                 body { background: #0a0a0a; color: #ededed; }
               }
             `,
           }}
         />
-        {/* Preconnect & DNS-Prefetch for Font Performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
         {/* Mobile-only LCP Preload: Shave off discovery time for the hero image */}
         <link
@@ -125,8 +113,6 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.clarity.ms" />
         <link rel="dns-prefetch" href="https://www.clarity.ms" />
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
 
         {/* Next.js Image priority in Navbar handles logo preloading optimally */}
       </head>
