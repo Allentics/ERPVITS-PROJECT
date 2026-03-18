@@ -184,15 +184,24 @@ export default function StoryViewer({ stories, initialStoryIndex, onClose }: Sto
                 exit={{ opacity: 0, scale: 0.9 }}
                 className="relative w-full max-w-[420px] h-full md:h-[90vh] md:max-h-[800px] bg-black md:rounded-3xl overflow-hidden shadow-2xl border border-white/10"
             >
-                {/* Background Image/Media */}
-                <div className="absolute inset-0 z-0">
+                {/* Background Image/Media with Blurred Fallback */}
+                <div className="absolute inset-0 z-0 bg-gray-900 flex items-center justify-center overflow-hidden">
+                    {/* Blurred Background to fill space */}
+                    <img
+                        src={currentSlide.image}
+                        alt=""
+                        className="absolute inset-0 w-full h-full object-cover blur-2xl opacity-40 scale-110"
+                    />
+
+                    {/* Main Image - Now using object-contain to avoid cropping */}
                     <img
                         src={currentSlide.image}
                         alt={currentSlide.title}
-                        className="w-full h-full object-cover opacity-60"
+                        className="relative z-10 w-full h-full object-contain pointer-events-none"
                     />
-                    {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/90"></div>
+
+                    {/* Gradient Overlay for Text Readability */}
+                    <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/50 via-transparent to-black/80"></div>
                 </div>
 
                 {/* Top Tools: Progress, Profile, Close */}
