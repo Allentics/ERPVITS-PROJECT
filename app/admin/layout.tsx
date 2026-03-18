@@ -13,7 +13,8 @@ import {
     ChevronRight,
     Layers,
     Globe,
-    Image
+    Image,
+    Smartphone
 } from 'lucide-react';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
@@ -29,6 +30,7 @@ const sidebarItems = [
     { name: 'Dashboard', href: '/admin/dashboard', icon: LayoutDashboard },
     { name: 'Courses', href: '/admin/courses', icon: BookOpen },
     { name: 'Blog Posts', href: '/admin/blogs', icon: FileText },
+    { name: 'Web Stories', href: '/admin/web-stories', icon: Smartphone },
     { name: 'Pages & SEO', href: '/admin/pages', icon: Globe },
     { name: 'Site Content', href: '/admin/content', icon: Layers },
     { name: 'Media Library', href: '/admin/media', icon: Image },

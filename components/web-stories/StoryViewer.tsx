@@ -4,165 +4,14 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, Heart, Send, MoreHorizontal } from 'lucide-react';
 
-// --- Mock Data: Detailed Story Content ---
-const STORY_CONTENT: Record<number, any[]> = {
-    1: [ // How to Crack SAP Interviews
-        {
-            id: 101,
-            image: "/images/stories/generated/story_interview_modern.png",
-            title: "Cracking the SAP Interview",
-            content: "It's not just about technical skills. It's about showing you understand the VALUE of SAP.",
-            duration: 5000
-        },
-        {
-            id: 102,
-            image: "/images/stories/generated/story_interview_resume.png",
-            title: "1. Know Your Career Path",
-            content: "Interviewers love candidates who have a clear vision of their growth from Junior Consultant to Architect.",
-            duration: 5000
-        },
-        {
-            id: 103,
-            image: "/images/stories/generated/story_interview_whiteboard.png",
-            title: "2. Talk About Progression",
-            content: "Don't just discuss what you did. Discuss how you improved process efficiency in your previous projects.",
-            duration: 5000
-        },
-        {
-            id: 104,
-            image: "/images/stories/generated/story_interview_handshake.png",
-            title: "3. Real World Scenarios",
-            content: "Be prepared to whiteboard a solution. Show them how you solve complex procurement problems.",
-            duration: 5000
-        },
-        {
-            id: 105,
-            image: "/images/stories/generated/story_interview_cross_module.png",
-            title: "4. Cross-Module Knowledge",
-            content: "Specialists are good. Generalists who understand integration points (MM-FI, SD-FI) are hired instantly.",
-            duration: 5000
-        }
-    ],
-    2: [ // SAP S/4HANA vs ECC
-        {
-            id: 201,
-            image: "/images/stories/generated/story_erp_dashboard_futuristic.png",
-            title: "S/4HANA: The New Core",
-            content: "Why are companies migrating? It's not just an upgrade; it's a complete business transformation.",
-            duration: 5000
-        },
-        {
-            id: 202,
-            image: "/images/stories/generated/story_hana_server.png",
-            title: "1. In-Memory Computing",
-            content: "With HANA, reports that took hours now run in seconds. This changes how businesses make decisions.",
-            duration: 5000
-        },
-        {
-            id: 203,
-            image: "/images/stories/generated/story_hana_cloud.png",
-            title: "2. The Cloud Advantage",
-            content: "BTP (Business Technology Platform) allows for rapid innovation and extension without touching the core.",
-            duration: 5000
-        },
-        {
-            id: 204,
-            image: "/images/stories/generated/story_erp_dashboard_futuristic.png",
-            title: "3. Simplified Processes",
-            content: "Complex workflows are streamlined. External workforce management becomes seamless.",
-            duration: 5000
-        },
-        {
-            id: 205,
-            image: "/images/stories/generated/story_hana_server.png",
-            title: "4. Intelligent Procurement",
-            content: "Integration with Ariba Network automates the entire procure-to-pay lifecycle.",
-            duration: 5000
-        }
-    ],
-    3: [ // My Journey: Fresher to Architect
-        {
-            id: 301,
-            image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmVzc2lvbmFsJTIwd29tYW58ZW58MHx8MHx8fDA%3D",
-            title: "My Career Roadmap",
-            content: "I didn't start as an expert. I started with a willingness to learn and travel.",
-            duration: 5000
-        },
-        {
-            id: 302,
-            image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            title: "Going Global",
-            content: "My first big break was a rollout project in Germany. Understanding local localization rules is a super power.",
-            duration: 5000
-        },
-        {
-            id: 303,
-            image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            title: "Adapting to Markets",
-            content: "Worked in APAC markets? You learn flexibility. Every region has unique compliance needs.",
-            duration: 5000
-        },
-        {
-            id: 304,
-            image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            title: "Deep Functional Dive",
-            content: "I spent 2 years mastering Shipping Points. Sounds boring? It made me indispensable for logistics projects.",
-            duration: 5000
-        }
-    ],
-    4: [ // ABAP Tricks
-        { id: 401, image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", title: "ABAP on Cloud", content: "The game has changed. Classic ABAP is evolving into a cloud-native language.", duration: 5000 },
-        { id: 402, image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", title: "Code Pushdown", content: "Move logic to the database layer (CDS Views, AMDP). Let HANA do the heavy lifting.", duration: 5000 },
-        { id: 403, image: "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", title: "Essential Tools", content: "Eclipse ADT is your new home. Forget SE80 if you want to be a modern developer.", duration: 5000 },
-        { id: 404, image: "https://images.unsplash.com/photo-1607799275518-d58665d099db?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", title: "Integration is Key", content: "Modern ABAP developers must understand CPI and OData services.", duration: 5000 },
-    ],
-    5: [ // Fiori UX
-        { id: 501, image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", title: "Customer Experience", content: "CX is the new battleground. SAP C4C provides a 360-degree view of the customer.", duration: 5000 },
-        { id: 502, image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", title: "Technical Architecture", content: "Understanding the underlying nodes and BOs in Cloud Applications is crucial.", duration: 5000 },
-        { id: 503, image: "https://images.unsplash.com/photo-1555421689-492a8048ae22?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", title: "Intelligent Planning", content: "Fiori UI makes complex supply chain planning look like a simple dashboard.", duration: 5000 },
-    ],
-    6: [ // Salary Trends
-        { id: 601, image: "https://images.unsplash.com/photo-1543286386-713df548e9cc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", title: "Finance Leads the Way", content: "FICO consultants remain the highest paid due to the critical nature of financial data.", duration: 5000 },
-        { id: 602, image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", title: "Niche Skills Pay More", content: "Treasury and Risk Management (TRM) is a rare skill. Less competition, higher rates.", duration: 5000 },
-        { id: 603, image: "https://images.unsplash.com/photo-1611974765270-ca12586343bb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", title: "Master Data Matters", content: "Governance and accuracy in master data can save millions. Experts here are valued.", duration: 5000 },
-    ],
-    7: [ // Resume Tips (Missing Story Fix)
-        { id: 701, image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", title: "Resume that Hires", content: "Recruiters spend 6 seconds on a resume. Make yours count with clear formatting.", duration: 5000 },
-        { id: 702, image: "https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", title: "Keywords are Key", content: "Use standard SAP terminology. 'Order to Cash', not 'Sales Process'.", duration: 5000 },
-        { id: 703, image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", title: "Project Highlights", content: "List your specific contributions. 'Configured APP' is better than 'Worked in FICO'.", duration: 5000 },
-    ],
-    8: [ // Cloud vs On-Premise
-        { id: 801, image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop", title: "Cloud Deployment", content: "SAP Cloud brings faster innovation cycles and lower total cost of ownership.", duration: 5000 },
-        { id: 802, image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop", title: "On-Premise Flexibility", content: "For heavy customizations or strict data privacy regulations, On-Premise still reigns.", duration: 5000 },
-        { id: 803, image: "https://images.unsplash.com/photo-1504384308090-c54be3855833?q=80&w=1974&auto=format&fit=crop", title: "Hybrid Solutions", content: "The reality for most large enterprises: A mix of both worlds connected via BTP.", duration: 5000 },
-    ],
-    9: [ // SAP Certification Path
-        { id: 901, image: "https://images.unsplash.com/photo-1523289333742-be1143f6b766?q=80&w=2070&auto=format&fit=crop", title: "Start With the Basics", content: "Understand the end-to-end business processes before diving into specific modules.", duration: 5000 },
-        { id: 902, image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop", title: "Choose Your Track", content: "Pick a module that aligns with your background: Finance for FICO, Supply Chain for MM.", duration: 5000 },
-        { id: 903, image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop", title: "Get Certified", content: "Leverage SAP Learning Hub and book your C_TS4FI or C_TS452 exam today.", duration: 5000 },
-    ],
-    10: [ // Future of SAP: AI & BTP
-        { id: 1001, image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop", title: "Joule AI", content: "SAP's new generative AI copilot is changing how users interact with ERP data.", duration: 5000 },
-        { id: 1002, image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop", title: "Clean Core Strategy", content: "Use SAP BTP for extensions to ensure smooth, seamless upgrades in the future.", duration: 5000 },
-        { id: 1003, image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop", title: "Predictive Analytics", content: "Machine Learning models inside S/4HANA are automating routine decision making.", duration: 5000 },
-    ],
-    11: [ // Resume Tips for SAP Freshers
-        { id: 1101, image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=2070&auto=format&fit=crop", title: "Highlight Training", content: "No project experience? Detail the capstone projects and server practice from your training.", duration: 5000 },
-        { id: 1102, image: "https://images.unsplash.com/photo-1507206130118-b5907f817163?q=80&w=2070&auto=format&fit=crop", title: "Focus on Integration", content: "Explain how your module interacts with others. Show you understand the big picture.", duration: 5000 },
-        { id: 1103, image: "https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=2070&auto=format&fit=crop", title: "Soft Skills Matter", content: "Consulting is about communication. Highlight your client-facing or presentation skills.", duration: 5000 },
-    ]
-};
-
 const getSlidesForStory = (story: any) => {
-    // Check if we have specific content for this story
-    if (STORY_CONTENT[story.id]) {
-        return STORY_CONTENT[story.id];
+    // If the story has slides already (from DB), use them
+    if (story.slides && Array.isArray(story.slides) && story.slides.length > 0) {
+        return story.slides;
     }
 
     // Fallback: Generate varied slides for other stories using thematic external images
     const slideCount = 4;
-
-    // Expanded unique theme images to avoid repetition
     const uniqueThemeImages = [
         [
             "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop",
@@ -184,13 +33,13 @@ const getSlidesForStory = (story: any) => {
         ]
     ];
 
-    // Deterministic selection based on ID, ensuring modulo correlates to a valid index
-    const selectedTheme = uniqueThemeImages[story.id % uniqueThemeImages.length] || uniqueThemeImages[0];
+    // Simple deterministic theme selection
+    const themeIndex = typeof story.id === 'number' ? story.id % uniqueThemeImages.length : 0;
+    const selectedTheme = uniqueThemeImages[themeIndex];
 
     return Array.from({ length: slideCount }).map((_, i) => ({
         id: i,
         type: i === 0 ? 'cover' : 'content',
-        // Ensure we don't go out of bounds and cycle through the 4 unique images in the selected theme
         image: selectedTheme[i % selectedTheme.length],
         title: i === 0 ? story.title : `${story.title} - Insight ${i}`,
         content: i === 0
@@ -351,7 +200,7 @@ export default function StoryViewer({ stories, initialStoryIndex, onClose }: Sto
 
                     {/* Progress Bars */}
                     <div className="flex gap-1.5 mb-4">
-                        {slides.map((_, idx) => (
+                        {slides.map((_: any, idx: number) => (
                             <div key={idx} className="h-0.5 bg-white/30 flex-1 rounded-full overflow-hidden">
                                 <div
                                     className={`h-full bg-white transition-all duration-100 ease-linear ${idx < currentSlideIndex ? 'w-full' :

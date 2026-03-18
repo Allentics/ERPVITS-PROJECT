@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
     Play,
@@ -25,143 +25,7 @@ import {
 } from 'lucide-react';
 
 import StoryViewer from './StoryViewer';
-
-// --- Mock Data ---
-
-const STORIES = [
-    {
-        id: 1,
-        title: "How to Crack SAP Interviews",
-        category: "Interview Questions",
-        author: "ERPVITS",
-        role: "SAP Consultant @ Siemens",
-        image: "/images/stories/sap_consultant_amit.png",
-        views: "12.5k",
-        type: "featured"
-    },
-    {
-        id: 2,
-        title: "SAP S/4HANA vs ECC: Key Differences",
-        category: "Module Comparison",
-        author: "ERPVITS",
-        role: "ERPVITS",
-        image: "/images/stories/sap_tech_dashboard.png",
-        views: "8.2k",
-        type: "featured"
-    },
-    {
-        id: 3,
-        title: "My Journey: Fresher to Architect",
-        category: "Success Stories",
-        author: "ERPVITS",
-        role: "Senior Manager",
-        image: "/images/stories/success_story_priya.png",
-        views: "15k",
-        type: "featured"
-    },
-    {
-        id: 4,
-        title: "Top 5 ABAP Tricks for 2025",
-        category: "SAP Technical",
-        author: "ERPVITS",
-        role: "ABAP Lead",
-        image: "/images/stories/sap_training_classroom.png",
-        views: "5.4k",
-        type: "standard"
-    },
-    {
-        id: 5,
-        title: "Understanding SAP Fiori UX",
-        category: "SAP Functional",
-        author: "ERPVITS",
-        role: "UX Specialist",
-        image: "/images/stories/sap_tech_dashboard.png",
-        views: "6.1k",
-        type: "standard"
-    },
-    {
-        id: 6,
-        title: "SAP Salary Trends in USA & India",
-        category: "SAP Salary",
-        author: "ERPVITS",
-        role: "Analytics Team",
-        image: "/images/stories/sap_tech_dashboard.png",
-        views: "22k",
-        type: "standard"
-    },
-    {
-        id: 7,
-        title: "Placement Success: Zero to Hero",
-        category: "Success Stories",
-        author: "ERPVITS",
-        role: "Analyst @ Infosys",
-        image: "/images/stories/success_story_priya.png",
-        views: "9.8k",
-        type: "standard"
-    },
-    {
-        id: 8,
-        title: "Cloud vs On-Premise: A Guide",
-        category: "SAP Cloud",
-        author: "ERPVITS",
-        role: "Solutions Architect",
-        image: "/images/stories/sap_consultant_amit.png",
-        views: "4.3k",
-        type: "standard"
-    },
-    {
-        id: 9,
-        title: "SAP Certification Path 2025",
-        category: "Certification Tips",
-        author: "ERPVITS",
-        role: "SAP Certified Trainer",
-        image: "/images/stories/sap_training_classroom.png",
-        views: "3.2k",
-        type: "standard"
-    },
-    {
-        id: 10,
-        title: "Future of SAP: AI & BTP",
-        category: "SAP Trends",
-        author: "ERPVITS",
-        role: "R&D Team",
-        image: "/images/stories/sap_tech_dashboard.png",
-        views: "7.1k",
-        type: "standard"
-    },
-    {
-        id: 11,
-        title: "Resume Tips for SAP Freshers",
-        category: "Resume Prep",
-        author: "ERPVITS",
-        role: "HR Expert",
-        image: "/images/stories/sap_consultant_amit.png",
-        views: "4.5k",
-        type: "standard"
-    }
-];
-
-const CATEGORIES = [
-    { id: 'all', label: 'All Stories', icon: Zap },
-    { id: 'Success Stories', label: 'Success Stories', icon: Star },
-    { id: 'Certification Tips', label: 'Certification Tips', icon: Award },
-    { id: 'Career Tips', label: 'Career Tips', icon: BriefcaseIcon },
-    { id: 'Interview Questions', label: 'Interview Questions', icon: HelpCircle },
-    { id: 'SAP Functional', label: 'SAP Functional', icon: Settings },
-    { id: 'SAP Technical', label: 'SAP Technical', icon: Code },
-    { id: 'SAP Cloud', label: 'SAP Cloud', icon: Cloud },
-    { id: 'SAP Jobs', label: 'SAP Jobs', icon: Search },
-    { id: 'SAP Salary', label: 'SAP Salary', icon: DollarSign },
-    { id: 'SAP Trends', label: 'SAP Trends', icon: TrendingUp },
-    { id: 'Module Comparison', label: 'Module Comparison', icon: GitCompare },
-    { id: 'Resume Prep', label: 'Resume Prep', icon: FileText },
-    { id: 'SAP Hiring', label: 'SAP Hiring', icon: UserPlus },
-];
-
-function BriefcaseIcon(props: any) {
-    return <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="14" x="2" y="6" rx="2" /><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /></svg>
-}
-
+import { supabase } from '@/lib/supabase';
 
 // --- Components ---
 
@@ -209,7 +73,7 @@ const StoryCard = ({ story, featured = false, onClick }: { story: any, featured?
 
                 <div className="flex items-center gap-3">
                     <div className="h-8 w-8 rounded-full bg-white/20 flex items-center justify-center text-white font-bold text-xs ring-2 ring-white/10">
-                        {story.author.charAt(0)}
+                        {story.author?.charAt(0) || 'E'}
                     </div>
                     <div>
                         <p className="text-white text-xs font-bold">{story.author}</p>
@@ -232,19 +96,63 @@ const StoryCard = ({ story, featured = false, onClick }: { story: any, featured?
     );
 };
 
+const CATEGORIES = [
+    { id: 'all', label: 'All Stories', icon: Zap },
+    { id: 'Success Stories', label: 'Success Stories', icon: Star },
+    { id: 'Certification Tips', label: 'Certification Tips', icon: Award },
+    { id: 'Career Tips', label: 'Career Tips', icon: BriefcaseIcon },
+    { id: 'Interview Questions', label: 'Interview Questions', icon: HelpCircle },
+    { id: 'SAP Functional', label: 'SAP Functional', icon: Settings },
+    { id: 'SAP Technical', label: 'SAP Technical', icon: Code },
+    { id: 'SAP Cloud', label: 'SAP Cloud', icon: Cloud },
+    { id: 'SAP Jobs', label: 'SAP Jobs', icon: Search },
+    { id: 'SAP Salary', label: 'SAP Salary', icon: DollarSign },
+    { id: 'SAP Trends', label: 'SAP Trends', icon: TrendingUp },
+    { id: 'Module Comparison', label: 'Module Comparison', icon: GitCompare },
+    { id: 'Resume Prep', label: 'Resume Prep', icon: FileText },
+    { id: 'SAP Hiring', label: 'SAP Hiring', icon: UserPlus },
+];
+
+function BriefcaseIcon(props: any) {
+    return <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="14" x="2" y="6" rx="2" /><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /></svg>
+}
+
 
 const WebStoriesFeed = () => {
+    const [stories, setStories] = useState<any[]>([]);
+    const [loading, setLoading] = useState(true);
     const [activeCategory, setActiveCategory] = useState('all');
     const [selectedStoryIndex, setSelectedStoryIndex] = useState<number | null>(null);
 
+    useEffect(() => {
+        fetchStories();
+    }, []);
+
+    async function fetchStories() {
+        try {
+            setLoading(true);
+            const { data, error } = await supabase
+                .from('web_stories')
+                .select('*')
+                .order('created_at', { ascending: false });
+
+            if (error) throw error;
+            setStories(data || []);
+        } catch (err) {
+            console.error('Error fetching stories:', err);
+        } finally {
+            setLoading(false);
+        }
+    }
+
     const filteredStories = activeCategory === 'all'
-        ? STORIES
-        : STORIES.filter(s => s.category === activeCategory);
+        ? stories
+        : stories.filter(s => s.category === activeCategory);
 
-    const featuredStories = STORIES.filter(s => s.type === 'featured');
+    const featuredStories = stories.filter(s => s.type === 'featured');
 
-    const handleStoryClick = (storyId: number) => {
-        const index = STORIES.findIndex(s => s.id === storyId);
+    const handleStoryClick = (storyId: string) => {
+        const index = stories.findIndex(s => s.id === storyId);
         if (index !== -1) {
             setSelectedStoryIndex(index);
         }
@@ -257,7 +165,7 @@ const WebStoriesFeed = () => {
             <AnimatePresence>
                 {selectedStoryIndex !== null && (
                     <StoryViewer
-                        stories={STORIES}
+                        stories={stories}
                         initialStoryIndex={selectedStoryIndex}
                         onClose={() => setSelectedStoryIndex(null)}
                     />
@@ -336,8 +244,8 @@ const WebStoriesFeed = () => {
                             const isActive = activeCategory === cat.id;
                             // Calculate count for each category
                             const count = cat.id === 'all'
-                                ? STORIES.length
-                                : STORIES.filter(s => s.category === cat.id).length;
+                                ? stories.length
+                                : stories.filter((s: any) => s.category === cat.id).length;
 
                             return (
                                 <button
