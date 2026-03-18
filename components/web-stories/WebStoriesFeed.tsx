@@ -264,19 +264,19 @@ const WebStoriesFeed = () => {
     async function fetchStories() {
         try {
             setLoading(true);
-            const { data, error } = await supabase
+            const { data: dbStories, error } = await supabase
                 .from('web_stories')
                 .select('*')
                 .order('created_at', { ascending: false });
 
             if (error) throw error;
 
-            // If DB is empty, use MOCK_STORIES as fallback
-            if (!data || data.length === 0) {
-                setStories(MOCK_STORIES);
-            } else {
-                setStories(data);
-            }
+            // Merge DB stories with Mock stories
+            // Use title for de-duplication
+            const dbStoryTitles = new Set((dbStories || []).map((s: any) => s.title));
+            const uniqueMockStories = MOCK_STORIES.filter((s: any) => !dbStoryTitles.has(s.title));
+
+            setStories([...(dbStories || []), ...uniqueMockStories]);
         } catch (err) {
             console.error('Error fetching stories:', err);
             // On error, use MOCK_STORIES as fallback
