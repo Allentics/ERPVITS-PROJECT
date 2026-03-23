@@ -12,14 +12,14 @@ export default function UpcomingWebinars() {
     const demos = [
         {
             label: "Weekend",
-            date: "Jan 18, 2025",
+            date: "Mar 28, 2026",
             time: "7:00 PM",
             registered: "10 Registered",
             status: "Limited Spots Remaining"
         },
         {
             label: "Weekday",
-            date: "Jan 19, 2025",
+            date: "Mar 29, 2026",
             time: "7:30 AM",
             registered: "7 Registered",
             status: "Limited Spots Remaining"
