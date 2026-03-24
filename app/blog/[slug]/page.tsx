@@ -128,6 +128,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
         const title = `${local.title} | ERPVITS Blog`;
         const description = local.description;
+        const imageUrl = resolveMetadataImage(local.image);
         const logoUrl = 'https://www.erpvits.com/images/logo.webp';
 
         return {
