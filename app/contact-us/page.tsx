@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
         description: 'Have questions about our SAP courses? Want to schedule a free demo? Fill out the form or contact us directly.',
         ...meta,
         alternates: {
-            canonical: 'https://www.erpvits.com/contact/',
+            canonical: 'https://www.erpvits.com/contact-us/',
         },
     };
 }
