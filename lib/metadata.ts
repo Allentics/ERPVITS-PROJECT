@@ -3,18 +3,25 @@ import { Metadata } from 'next';
 import { courses as localCourses } from './courseData';
 
 export async function fetchPageMetadata(path: string): Promise<Metadata> {
-    const { data } = await supabase
-        .from('pages')
-        .select('meta_title, meta_description')
-        .eq('path', path)
-        .single();
+    try {
+        const { data } = await supabase
+            .from('pages')
+            .select('meta_title, meta_description')
+            .eq('path', path)
+            .single();
 
-    if (!data) return {};
+        if (!data || (!data.meta_title && !data.meta_description)) return {};
 
-    return {
-        title: data.meta_title,
-        description: data.meta_description,
-    };
+        return {
+            title: data.meta_title ? {
+                absolute: data.meta_title
+            } : undefined,
+            description: data.meta_description || undefined,
+        };
+    } catch (err) {
+        console.error(`Error fetching metadata for path ${path}:`, err);
+        return {};
+    }
 }
 
 export async function fetchPageSchema(path: string): Promise<string | null> {
@@ -68,14 +75,16 @@ export async function fetchCourseMetadata(slug: string, canonicalUrl?: string): 
 
     const title = course?.meta_title ?? local?.metaTitle ?? `${course?.title ?? local?.title ?? ''} Online Training | ERPVITS`;
     const description = course?.meta_description ?? local?.metaDescription ?? `Master ${course?.title ?? local?.title ?? ''} with ERPVITS - Live online training, real projects, and placement assistance.`;
-    
+
     // User requested logo instead of infographic for course pages
     const imageUrl = '/images/logo.webp';
     const absoluteImageUrl = `https://www.erpvits.com${imageUrl}`;
     const url = canonicalUrl ?? `https://www.erpvits.com/courses/${slug}/`;
 
     return {
-        title,
+        title: {
+            absolute: title
+        },
         description,
         openGraph: {
             title,

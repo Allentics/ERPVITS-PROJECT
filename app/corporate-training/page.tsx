@@ -5,11 +5,13 @@ import { supabase } from '@/lib/supabase';
 import { fetchPageMetadata, fetchPageSchema } from '@/lib/metadata';
 import { Metadata } from 'next';
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 60;
 
 export async function generateMetadata(): Promise<Metadata> {
     const meta = await fetchPageMetadata('/corporate-training');
     return {
+        title: 'Corporate SAP Training | ERPVITS',
+        description: 'Empower your workforce with customized SAP training. ERPVITS offers tailored solutions for organizations to upskill their teams.',
         ...meta,
         alternates: {
             canonical: 'https://www.erpvits.com/corporate-training/',

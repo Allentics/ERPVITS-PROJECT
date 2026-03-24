@@ -3,11 +3,13 @@ import ContactForm from '@/components/ContactForm';
 import { fetchPageMetadata, fetchPageSchema } from '@/lib/metadata';
 import { Metadata } from 'next';
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 60;
 
 export async function generateMetadata(): Promise<Metadata> {
     const meta = await fetchPageMetadata('/contact');
     return {
+        title: 'Contact Us | ERPVITS',
+        description: 'Have questions about our SAP courses? Want to schedule a free demo? Fill out the form or contact us directly.',
         ...meta,
         alternates: {
             canonical: 'https://www.erpvits.com/contact/',

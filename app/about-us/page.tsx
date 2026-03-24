@@ -4,13 +4,21 @@ import { CheckCircle, Globe, Users, Award, Clock, Laptop, BookOpen, Target, Rock
 import { Metadata } from 'next';
 import AboutTeamImage from '@/components/AboutTeamImage';
 
-export const metadata: Metadata = {
-    title: 'About ERPVITS | Empowering Careers with SAP Training',
-    description: 'Learn about ERPVITS, a global leader in SAP online training. Our mission is to empower professionals with expert-led courses and real-world project experience.',
-    alternates: {
-        canonical: 'https://www.erpvits.com/about/',
-    },
-};
+import { fetchPageMetadata } from '@/lib/metadata';
+
+export const revalidate = 60;
+
+export async function generateMetadata(): Promise<Metadata> {
+    const meta = await fetchPageMetadata('/about');
+    return {
+        title: 'About ERPVITS | Empowering Careers with SAP Training',
+        description: 'Learn about ERPVITS, a global leader in SAP online training. Our mission is to empower professionals with expert-led courses and real-world project experience.',
+        ...meta,
+        alternates: {
+            canonical: 'https://www.erpvits.com/about/',
+        },
+    };
+}
 
 export default function AboutPage() {
     return (

@@ -20,35 +20,28 @@ const SuccessStories = dynamic(() => import('@/components/home/SuccessStories'))
 const PricingPlans = dynamic(() => import('@/components/home/PricingPlans'));
 const HomeFAQ = dynamic(() => import('@/components/home/HomeFAQ'));
 
-// ISR: Revalidate every hour instead of re-rendering on every request
-export const revalidate = 3600;
+// Revalidate frequently to pick up SEO and content changes from Admin
+export const revalidate = 60;
 
 export async function generateMetadata(): Promise<Metadata> {
   const meta = await fetchPageMetadata('/');
-  const title = meta.title || 'ERPVITS - SAP Training Institute';
-  const description = meta.description || 'Empower your career with expert SAP online training.';
-
   return {
+    title: 'ERPVITS - SAP Training Institute',
+    description: 'Empower your career with expert SAP online training.',
     ...meta,
-    title,
-    description,
     openGraph: {
-      title,
-      description,
+      title: 'ERPVITS - SAP Training Institute',
+      description: 'Empower your career with expert SAP online training.',
       url: 'https://www.erpvits.com',
       siteName: 'ERPVITS',
-      images: [
-        {
-          url: 'https://www.erpvits.com/images/logo.webp',
-        },
-      ],
+      images: [{ url: 'https://www.erpvits.com/images/logo.webp' }],
       locale: 'en_IN',
       type: 'website',
     },
     twitter: {
       card: 'summary',
-      title,
-      description,
+      title: 'ERPVITS - SAP Training Institute',
+      description: 'Empower your career with expert SAP online training.',
       images: ['https://www.erpvits.com/images/logo.webp'],
     },
     alternates: {

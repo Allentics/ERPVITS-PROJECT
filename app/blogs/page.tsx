@@ -5,13 +5,19 @@ import { blogPosts as localPosts } from '@/lib/blogData';
 import { Metadata } from 'next';
 import '../blogs.css';
 
-export const metadata: Metadata = {
-    title: 'SAP Blog & Insights | ERPVITS',
-    description: 'Stay ahead in the SAP ecosystem with expert insights, technical tutorials, and career guidance from ERPVITS.',
-    alternates: {
-        canonical: 'https://www.erpvits.com/blogs/',
-    },
-};
+import { fetchPageMetadata } from '@/lib/metadata';
+
+export async function generateMetadata(): Promise<Metadata> {
+    const meta = await fetchPageMetadata('/blogs');
+    return {
+        title: 'SAP Blog & Insights | ERPVITS',
+        description: 'Stay ahead in the SAP ecosystem with expert insights, technical tutorials, and career guidance from ERPVITS.',
+        ...meta,
+        alternates: {
+            canonical: 'https://www.erpvits.com/blogs/',
+        },
+    };
+}
 
 
 function formatDate(dateStr: string) {
