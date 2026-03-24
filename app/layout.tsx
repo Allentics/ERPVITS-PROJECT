@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     title: 'ERPVITS - SAP Training Institute',
     description: 'Empower your career with expert SAP online training.',
     images: ['https://www.erpvits.com/images/logo.webp'],

@@ -46,7 +46,7 @@ export async function generateMetadata(): Promise<Metadata> {
       type: 'website',
     },
     twitter: {
-      card: 'summary_large_image',
+      card: 'summary',
       title,
       description,
       images: ['https://www.erpvits.com/images/logo.webp'],
