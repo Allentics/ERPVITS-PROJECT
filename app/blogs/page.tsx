@@ -96,9 +96,13 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
             displayImage
         };
     }).sort((a, b) => {
-        const dateA = new Date(a.date).getTime() || 0;
-        const dateB = new Date(b.date).getTime() || 0;
-        return dateB - dateA;
+        const getTimestamp = (dateStr: string) => {
+            if (!dateStr) return 0;
+            const isISODate = dateStr.includes('T');
+            const parseableStr = isISODate ? dateStr : `${dateStr} UTC`;
+            return new Date(parseableStr).getTime() || 0;
+        };
+        return getTimestamp(b.date) - getTimestamp(a.date);
     }).filter(post => post.id !== 'sap-trm-setup-essentials');
 
     // Apply category filter if present

@@ -11,6 +11,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
     {
+        id: "sap-ibp-certification-questions",
+        title: "SAP IBP Certification – Questions, Cost & Exam Pattern",
+        description: "Planning your SAP IBP certification? Explore the latest exam pattern, sample questions, certification cost & training tips to pass on your first attempt.",
+        image: "/images/blogs/sap-ibp-certification-full-guide.png",
+        date: "Mar 23, 2026",
+        category: "SAP Functional",
+        author: "ERPVITS Team"
+    },
+    {
         id: "sap-fieldglass-jobs",
         title: "How to Get an SAP Fieldglass Job in 2026 – Complete Career Guide",
         description: "Looking for SAP Fieldglass jobs in 2026? Explore key roles, salary ranges, certification paths, job openings, and expert tips to launch or grow your SAP Fieldglass career globally.",

@@ -82,7 +82,7 @@ const blogHeroImages: Record<string, string> = {
     'ultimate-guide-to-sap-fieldglass-login-access-setup': '/images/sap-fieldglass-login-guide.png',
     'how-to-get-an-sap-fieldglass-job-in-2026': '/images/sap-fieldglass-jobs-2026.png',
     'what-is-ppds-in-sap-apo-features-benefits-real-time-business-scenarios': '/images/sap-apo-ppds.png',
-    'sap-ibp-certification-questions': '/images/ERPVITS - SAP IBP Infographic.webp',
+    'sap-ibp-certification-questions': '/images/blogs/sap-ibp-certification-full-guide.png',
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -101,11 +101,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             }
             // If the image is known to be in blogs folder but provided without it
             if (blogHeroImages[slug] && blogHeroImages[slug].includes('/blogs/')) {
-                 // Check if the file is historically in /blogs/
+                // Check if the file is historically in /blogs/
             }
             return `${SITE_URL}${cleanPath}`;
         }
-    
+
         // 2. Check hardcoded mapping
         if (blogHeroImages[slug]) {
             return `${SITE_URL}${blogHeroImages[slug]}`;

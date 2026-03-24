@@ -46,7 +46,8 @@ const Hero = () => {
                     alt="Expert SAP Trainer"
                     fill
                     className="object-cover object-[95%_10%]"
-                    priority
+                    loading="eager"
+                    fetchPriority="high"
                     quality={80}
                     sizes="100vw"
                 />
