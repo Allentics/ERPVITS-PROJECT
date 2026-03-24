@@ -3,6 +3,14 @@
 import React from 'react';
 
 const WhatsAppButton: React.FC = () => {
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
   return (
     <a
       href="https://whatsapp.com/channel/0029Vb5u9luHwXb481Y1Dx1X"
