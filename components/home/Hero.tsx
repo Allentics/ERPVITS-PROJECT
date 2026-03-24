@@ -25,8 +25,16 @@ const DEFAULT_CONTENT = {
 
 const Hero = () => {
     const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+    const [mounted, setMounted] = React.useState(false);
+    const [isMobile, setIsMobile] = React.useState(false);
+
+    React.useEffect(() => {
+        setMounted(true);
+        setIsMobile(window.innerWidth < 768);
+    }, []);
 
     const content = DEFAULT_CONTENT;
+
     const headingParts = content.heading.split(content.highlight_text);
 
     return (
@@ -38,7 +46,8 @@ const Hero = () => {
                     alt="Expert SAP Trainer"
                     fill
                     className="object-cover object-[95%_10%]"
-                    priority // Correct Next.js way to handle eager loading and high fetch priority
+                    loading="eager"
+                    fetchPriority="high"
                     quality={80}
                     sizes="100vw"
                 />
