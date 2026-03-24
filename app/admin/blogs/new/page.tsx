@@ -49,6 +49,15 @@ export default function NewBlogPage() {
                 .insert([formData]);
 
             if (error) throw error;
+
+            // Rule 7: Ensure backup runs AFTER successful database operation.
+            // Rule 9: If backup fails, do NOT break admin operation.
+            try {
+                fetch('/api/admin/blogs/backup', { method: 'POST' }).catch(e => console.error('Backup trigger error:', e));
+            } catch (e) {
+                console.error('Backup failed to trigger:', e);
+            }
+
             router.push('/admin/blogs');
         } catch (err: any) {
             alert('Error creating blog post: ' + err.message);

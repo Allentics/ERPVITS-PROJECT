@@ -28,7 +28,7 @@ export default function EditBlogPage({ params }: { params: Promise<{ id: string 
                 .single();
 
             if (error) throw error;
-            
+
             // Format date for the HTML5 date input (must be YYYY-MM-DD)
             // Using UTC methods to prevent timezone shifts (matches website logic)
             if (data.date) {
@@ -44,7 +44,7 @@ export default function EditBlogPage({ params }: { params: Promise<{ id: string 
                     console.error("Error formatting date:", e);
                 }
             }
-            
+
             setFormData(data);
         } catch (err: any) {
             alert('Error fetching blog post: ' + err.message);
@@ -74,6 +74,15 @@ export default function EditBlogPage({ params }: { params: Promise<{ id: string 
                 .eq('id', id);
 
             if (error) throw error;
+
+            // Rule 7: Ensure backup runs AFTER successful database operation.
+            // Rule 9: If backup fails, do NOT break admin operation.
+            try {
+                fetch('/api/admin/blogs/backup', { method: 'POST' }).catch(e => console.error('Backup trigger error:', e));
+            } catch (e) {
+                console.error('Backup failed to trigger:', e);
+            }
+
             alert('Updated successfully!');
             router.push('/admin/blogs');
         } catch (err: any) {

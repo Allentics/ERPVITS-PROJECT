@@ -60,6 +60,15 @@ export default function BlogsPage() {
 
             if (error) throw error;
             setBlogs(blogs.filter(b => b.id !== id));
+
+            // Rule 7: Ensure backup runs AFTER successful database operation.
+            // Rule 9: If backup fails, do NOT break admin operation.
+            try {
+                fetch('/api/admin/blogs/backup', { method: 'POST' }).catch(e => console.error('Backup trigger error:', e));
+            } catch (e) {
+                console.error('Backup failed to trigger:', e);
+            }
+
         } catch (err: any) {
             alert('Error deleting blog: ' + err.message);
         }
@@ -116,6 +125,14 @@ export default function BlogsPage() {
 
             if (count > 0) {
                 alert(`Successfully synced ${count} missing blog posts!`);
+
+                // Rule 7: Ensure backup runs AFTER successful database operation.
+                try {
+                    fetch('/api/admin/blogs/backup', { method: 'POST' }).catch(e => console.error('Backup trigger error:', e));
+                } catch (e) {
+                    console.error('Backup failed to trigger:', e);
+                }
+
                 await fetchBlogs();
             } else if (errors.length > 0) {
                 alert(`Failed to sync blogs due to database permissions (RLS). Please follow the instructions to fix your Supabase settings.`);
