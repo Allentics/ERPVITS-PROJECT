@@ -64,7 +64,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
     const title = course?.meta_title ?? local?.metaTitle ?? `${course?.title ?? local?.title ?? ''} Online Training | ERPVITS`;
     const description = course?.meta_description ?? local?.metaDescription ?? `Master ${course?.title ?? local?.title ?? ''} with ERPVITS - Live online training, real projects, and placement assistance.`;
-    const imageUrl = course?.hero_image || local?.heroImage || '/logo.webp';
+    const imageUrl = course?.hero_image || local?.heroImage || '/images/logo.webp';
     const absoluteImageUrl = imageUrl.startsWith('http') ? imageUrl : `https://www.erpvits.com${imageUrl}`;
 
     return {

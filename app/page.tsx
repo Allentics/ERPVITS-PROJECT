@@ -39,7 +39,7 @@ export async function generateMetadata(): Promise<Metadata> {
       siteName: 'ERPVITS',
       images: [
         {
-          url: 'https://www.erpvits.com/logo.webp',
+          url: 'https://www.erpvits.com/images/logo.webp',
           width: 1200,
           height: 630,
         },
@@ -51,7 +51,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: 'summary_large_image',
       title,
       description,
-      images: ['https://www.erpvits.com/logo.webp'],
+      images: ['https://www.erpvits.com/images/logo.webp'],
     },
     alternates: {
       canonical: 'https://www.erpvits.com/',

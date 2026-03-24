@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     siteName: 'ERPVITS',
     images: [
       {
-        url: 'https://www.erpvits.com/logo.webp', // Ensure this file exists in public/
+        url: 'https://www.erpvits.com/images/logo.webp',
         width: 1200,
         height: 630,
         alt: 'ERPVITS - SAP Training Institute',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'ERPVITS - SAP Training Institute',
     description: 'Empower your career with expert SAP online training.',
-    images: ['https://www.erpvits.com/logo.webp'],
+    images: ['https://www.erpvits.com/images/logo.webp'],
   },
   icons: {
     icon: '/favicon.png',

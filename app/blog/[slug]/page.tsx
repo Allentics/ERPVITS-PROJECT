@@ -106,7 +106,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         }
 
         // 3. Last resort fallback (Global High-Res Logo for LinkedIn)
-        return `${SITE_URL}/logo.webp`;
+        return `${SITE_URL}/images/logo.webp`;
     };
 
     const { data: post } = await supabase
