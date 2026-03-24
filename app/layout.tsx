@@ -52,9 +52,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-
-        {/* Mobile-only LCP Preload: Using the optimized 93KB v9 image for mobile to shave off discovery/download time */}
+      <body suppressHydrationWarning>
+        {/* Mobile-only LCP Preload: Shaves off discovery time on mobile */}
+        {/* Using standard link tag inside body is a Next.js 13+ allowed pattern for hoisting, 
+            but for highest compatibility we use the Script and metadata API where possible. */}
         <link
           rel="preload"
           as="image"
@@ -62,7 +63,8 @@ export default function RootLayout({
           media="(max-width: 767px)"
           fetchPriority="high"
         />
-        {/* Critical Styles for Mobile to prevent FOUC and solve Dependency Tree issues */}
+
+        {/* Critical Styles for Mobile to prevent FOUC */}
         <style
           dangerouslySetInnerHTML={{
             __html: `
@@ -77,7 +79,7 @@ export default function RootLayout({
           }}
         />
 
-        {/* Google Analytics - Moved to lazyOnload to clear critical path */}
+        {/* Google Analytics - strategy: lazyOnload clears critical path */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-CRQ7PMM6EV"
           strategy="lazyOnload"
@@ -91,7 +93,7 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Microsoft Clarity - Moved to lazyOnload */}
+        {/* Microsoft Clarity */}
         <Script id="microsoft-clarity" strategy="lazyOnload">
           {`
             (function(c,l,a,r,i,t,y){
@@ -102,15 +104,6 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Preconnect to external services only if absolutely critical. 
-             GTM and Clarity are now lazyOnload, so preconnecting them in the head is 'Unused' in the critical path.
-             Removed them for mobile performance optimization. */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" media="(min-width: 768px)" />
-        <link rel="preconnect" href="https://www.clarity.ms" media="(min-width: 768px)" />
-
-        {/* Next.js Image priority in Navbar handles logo preloading optimally */}
-      </head>
-      <body suppressHydrationWarning>
         <AnnouncementBar />
         <Navbar />
         <main className="min-h-screen">

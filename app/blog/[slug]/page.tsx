@@ -82,10 +82,32 @@ const blogHeroImages: Record<string, string> = {
     'ultimate-guide-to-sap-fieldglass-login-access-setup': '/images/sap-fieldglass-login-guide.png',
     'how-to-get-an-sap-fieldglass-job-in-2026': '/images/sap-fieldglass-jobs-2026.png',
     'what-is-ppds-in-sap-apo-features-benefits-real-time-business-scenarios': '/images/sap-apo-ppds.png',
+    'sap-ibp-certification-questions': '/images/ERPVITS - SAP IBP Infographic.webp',
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const { slug } = await params;
+
+    // Resolve image path helper for metadata (Internal to generateMetadata to avoid closure issues)
+    const resolveMetadataImage = (img: string | null | undefined) => {
+        const SITE_URL = 'https://www.erpvits.com';
+
+        // 1. If explicit image provided by DB, use it
+        if (img) {
+            if (img.startsWith('http')) return img;
+            const rawFileName = img.split('/').pop() || '';
+            const fileName = rawFileName.toLowerCase().replace(/\s+/g, '-').replace(/_+/g, '-');
+            return `${SITE_URL}/images/blogs/${fileName}`;
+        }
+
+        // 2. Check hardcoded mapping
+        if (blogHeroImages[slug]) {
+            return `${SITE_URL}${blogHeroImages[slug]}`;
+        }
+
+        // 3. Last resort fallback (Global High-Res Logo for LinkedIn)
+        return `${SITE_URL}/logo.webp`;
+    };
 
     const { data: post } = await supabase
         .from('blog_posts')
@@ -100,7 +122,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
         const title = local.title;
         const description = local.description;
-        const imageUrl = local.image?.startsWith('http') ? local.image : `https://www.erpvits.com${local.image || '/logo.webp'}`;
+        const imageUrl = resolveMetadataImage(local.image);
 
         return {
             title: `${title} | ERPVITS Blog`,
@@ -110,7 +132,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
                 description: description,
                 url: `https://www.erpvits.com/blog/${slug}/`,
                 type: 'article',
-                images: [{ url: imageUrl }],
+                images: [{ url: imageUrl, width: 1200, height: 630 }],
             },
             twitter: {
                 card: 'summary_large_image',
@@ -126,20 +148,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
     const title = post.meta_title || post.title;
     const description = post.meta_description || post.description;
-
-    // Resolve image path for metadata
-    const resolveMetadataImage = (img: string | null | undefined) => {
-        if (!img) return 'https://www.erpvits.com/logo.webp';
-        if (img.startsWith('http')) return img;
-
-        // Handle mapping for hero images if they exist in our record
-        if (blogHeroImages[slug]) return `https://www.erpvits.com${blogHeroImages[slug]}`;
-
-        const rawFileName = img.split('/').pop() || '';
-        const fileName = rawFileName.toLowerCase().replace(/\s+/g, '-').replace(/_+/g, '-');
-        return `https://www.erpvits.com/images/blogs/${fileName}`;
-    };
-
     const imageUrl = resolveMetadataImage(post.image);
 
     return {
@@ -150,7 +158,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             description: description,
             url: `https://www.erpvits.com/blog/${slug}/`,
             type: 'article',
-            images: [{ url: imageUrl }],
+            images: [{ url: imageUrl, width: 1200, height: 630 }],
         },
         twitter: {
             card: 'summary_large_image',
