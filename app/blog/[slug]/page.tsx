@@ -126,51 +126,54 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         const local = localPosts.find((p: any) => p.id === slug);
         if (!local) return { title: 'Post Not Found' };
 
-        const title = local.title;
+        const title = `${local.title} | ERPVITS Blog`;
         const description = local.description;
-        const imageUrl = resolveMetadataImage(local.image);
+        const logoUrl = 'https://www.erpvits.com/images/logo.webp';
 
         return {
-            title: `${title} | ERPVITS Blog`,
-            description: description,
+            title,
+            description,
             openGraph: {
-                title: `${title} | ERPVITS Blog`,
-                description: description,
+                title,
+                description,
                 url: `https://www.erpvits.com/blog/${slug}/`,
                 type: 'article',
-                images: [{ url: imageUrl }],
+                images: [{ url: logoUrl }],
             },
             twitter: {
-                card: 'summary_large_image',
-                title: `${title} | ERPVITS Blog`,
-                description: description,
-                images: [imageUrl],
+                card: 'summary', // Same summary card for branding logo
+                title,
+                description,
+                images: [logoUrl],
             },
             alternates: {
                 canonical: `https://www.erpvits.com/blog/${slug}/`,
             },
         };
+}
     }
 
-    const title = post.meta_title || post.title;
+    const title = `${post.meta_title || post.title} | ERPVITS Blog`;
     const description = post.meta_description || post.description;
-    const imageUrl = resolveMetadataImage(post.image);
+    
+    // User requested logo in all pages for consistent shared branding
+    const logoUrl = 'https://www.erpvits.com/images/logo.webp';
 
     return {
-        title: `${title} | ERPVITS Blog`,
-        description: description,
+        title,
+        description,
         openGraph: {
-            title: `${title} | ERPVITS Blog`,
-            description: description,
+            title,
+            description,
             url: `https://www.erpvits.com/blog/${slug}/`,
             type: 'article',
-            images: [{ url: imageUrl }],
+            images: [{ url: logoUrl }],
         },
         twitter: {
-            card: 'summary_large_image',
-            title: `${title} | ERPVITS Blog`,
-            description: description,
-            images: [imageUrl],
+            card: 'summary', // Use summary for logo to avoid cropping
+            title,
+            description,
+            images: [logoUrl],
         },
         alternates: {
             canonical: `https://www.erpvits.com/blog/${slug}/`,
