@@ -25,8 +25,6 @@ export const metadata: Metadata = {
     images: [
       {
         url: 'https://www.erpvits.com/images/logo.webp',
-        width: 1200,
-        height: 630,
         alt: 'ERPVITS - SAP Training Institute',
       },
     ],

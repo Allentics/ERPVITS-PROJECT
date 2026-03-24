@@ -132,7 +132,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
                 description: description,
                 url: `https://www.erpvits.com/blog/${slug}/`,
                 type: 'article',
-                images: [{ url: imageUrl, width: 1200, height: 630 }],
+                images: [{ url: imageUrl }],
             },
             twitter: {
                 card: 'summary_large_image',
@@ -158,7 +158,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             description: description,
             url: `https://www.erpvits.com/blog/${slug}/`,
             type: 'article',
-            images: [{ url: imageUrl, width: 1200, height: 630 }],
+            images: [{ url: imageUrl }],
         },
         twitter: {
             card: 'summary_large_image',

@@ -40,8 +40,6 @@ export async function generateMetadata(): Promise<Metadata> {
       images: [
         {
           url: 'https://www.erpvits.com/images/logo.webp',
-          width: 1200,
-          height: 630,
         },
       ],
       locale: 'en_IN',
