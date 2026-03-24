@@ -37,6 +37,9 @@ export const metadata: Metadata = {
     description: 'Empower your career with expert SAP online training.',
     images: ['https://www.erpvits.com/images/logo.webp'],
   },
+  other: {
+    'og:logo': 'https://www.erpvits.com/images/logo.webp',
+  },
   icons: {
     icon: '/favicon.png',
     shortcut: '/favicon.png',

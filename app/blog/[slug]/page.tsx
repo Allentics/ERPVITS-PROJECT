@@ -138,13 +138,16 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
                 description,
                 url: `https://www.erpvits.com/blog/${slug}/`,
                 type: 'article',
-                images: [{ url: logoUrl }],
+                images: [{ url: imageUrl }],
             },
             twitter: {
-                card: 'summary', // Same summary card for branding logo
+                card: 'summary_large_image', // Back to large image for blogs
                 title,
                 description,
-                images: [logoUrl],
+                images: [imageUrl],
+            },
+            other: {
+                'og:logo': logoUrl,
             },
             alternates: {
                 canonical: `https://www.erpvits.com/blog/${slug}/`,
@@ -154,8 +157,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
     const title = `${post.meta_title || post.title} | ERPVITS Blog`;
     const description = post.meta_description || post.description;
-    
-    // User requested logo in all pages for consistent shared branding
+    const imageUrl = resolveMetadataImage(post.image);
     const logoUrl = 'https://www.erpvits.com/images/logo.webp';
 
     return {
@@ -166,13 +168,16 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             description,
             url: `https://www.erpvits.com/blog/${slug}/`,
             type: 'article',
-            images: [{ url: logoUrl }],
+            images: [{ url: imageUrl }],
         },
         twitter: {
-            card: 'summary', // Use summary for logo to avoid cropping
+            card: 'summary_large_image', // Back to large image for blogs
             title,
             description,
-            images: [logoUrl],
+            images: [imageUrl],
+        },
+        other: {
+            'og:logo': logoUrl,
         },
         alternates: {
             canonical: `https://www.erpvits.com/blog/${slug}/`,

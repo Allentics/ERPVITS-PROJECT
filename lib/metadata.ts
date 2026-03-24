@@ -90,6 +90,9 @@ export async function fetchCourseMetadata(slug: string, canonicalUrl?: string): 
             description,
             images: [absoluteImageUrl],
         },
+        other: {
+            'og:logo': absoluteImageUrl, // Using the logo as requested
+        },
         alternates: {
             canonical: url,
         },
