@@ -150,7 +150,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
                 canonical: `https://www.erpvits.com/blog/${slug}/`,
             },
         };
-}
     }
 
     const title = `${post.meta_title || post.title} | ERPVITS Blog`;
