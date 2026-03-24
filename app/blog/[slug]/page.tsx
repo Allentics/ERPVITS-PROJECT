@@ -92,20 +92,26 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const resolveMetadataImage = (img: string | null | undefined) => {
         const SITE_URL = 'https://www.erpvits.com';
 
-        // 1. If explicit image provided by DB, use it
         if (img) {
             if (img.startsWith('http')) return img;
-            const rawFileName = img.split('/').pop() || '';
-            const fileName = rawFileName.toLowerCase().replace(/\s+/g, '-').replace(/_+/g, '-');
-            return `${SITE_URL}/images/blogs/${fileName}`;
+            // Clean up the path: ensure leading slash, remove duplicate 'images/'
+            let cleanPath = img.replace(/^\/?/, '/');
+            if (!cleanPath.startsWith('/images/')) {
+                cleanPath = `/images/${cleanPath.replace(/^\//, '')}`;
+            }
+            // If the image is known to be in blogs folder but provided without it
+            if (blogHeroImages[slug] && blogHeroImages[slug].includes('/blogs/')) {
+                 // Check if the file is historically in /blogs/
+            }
+            return `${SITE_URL}${cleanPath}`;
         }
-
+    
         // 2. Check hardcoded mapping
         if (blogHeroImages[slug]) {
             return `${SITE_URL}${blogHeroImages[slug]}`;
         }
 
-        // 3. Last resort fallback (Global High-Res Logo for LinkedIn)
+        // 3. Fallback to logo
         return `${SITE_URL}/images/logo.webp`;
     };
 

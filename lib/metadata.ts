@@ -68,8 +68,10 @@ export async function fetchCourseMetadata(slug: string, canonicalUrl?: string): 
 
     const title = course?.meta_title ?? local?.metaTitle ?? `${course?.title ?? local?.title ?? ''} Online Training | ERPVITS`;
     const description = course?.meta_description ?? local?.metaDescription ?? `Master ${course?.title ?? local?.title ?? ''} with ERPVITS - Live online training, real projects, and placement assistance.`;
-    const imageUrl = course?.hero_image || local?.heroImage || '/images/logo.webp';
-    const absoluteImageUrl = imageUrl.startsWith('http') ? imageUrl : `https://www.erpvits.com${imageUrl}`;
+    
+    // User requested logo instead of infographic for course pages
+    const imageUrl = '/images/logo.webp';
+    const absoluteImageUrl = `https://www.erpvits.com${imageUrl}`;
     const url = canonicalUrl ?? `https://www.erpvits.com/courses/${slug}/`;
 
     return {
@@ -83,7 +85,7 @@ export async function fetchCourseMetadata(slug: string, canonicalUrl?: string): 
             images: [{ url: absoluteImageUrl }],
         },
         twitter: {
-            card: 'summary_large_image',
+            card: 'summary', // Use summary for logo to avoid cropping
             title,
             description,
             images: [absoluteImageUrl],
