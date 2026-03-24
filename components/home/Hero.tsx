@@ -34,8 +34,6 @@ const Hero = () => {
     }, []);
 
     const content = DEFAULT_CONTENT;
-    const mobileBg = "/images/home_hero_bg_v9.jpg";
-    const bgImage = (mounted && isMobile) ? mobileBg : (content.bg_image || "/images/home_hero_bg_v11.jpg");
 
     const headingParts = content.heading.split(content.highlight_text);
 

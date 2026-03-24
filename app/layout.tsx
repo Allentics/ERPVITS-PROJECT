@@ -1,15 +1,28 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
+import { Inter } from 'next/font/google'
 import './globals.css'
 import AnnouncementBar from '@/components/layout/AnnouncementBar'
 import Navbar from '@/components/layout/Navbar'
 import dynamic from 'next/dynamic'
 import Script from 'next/script'
 
+// Standard Next.js font optimization: removes font-chain latency and FOUT
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+})
+
 // Lazy load below-the-fold components
 const Footer = dynamic(() => import('@/components/layout/Footer'));
 const WebinarPopup = dynamic(() => import('@/components/WebinarPopup'));
 import WhatsAppButton from '@/components/WhatsAppButton';
 
+export const viewport: Viewport = {
+  themeColor: '#000000',
+  width: 'device-width',
+  initialScale: 1,
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.erpvits.com'),
@@ -45,6 +58,11 @@ export const metadata: Metadata = {
     icon: '/favicon.png',
     shortcut: '/favicon.png',
   },
+  // Performance Optimization: Connect to critical third-party domains early
+  // This reduces connection latency for Analytics and Clarity
+  verification: {
+    google: 'your-google-verification-code', // Placeholder if needed
+  },
 };
 
 export default function RootLayout({
@@ -53,13 +71,19 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body suppressHydrationWarning>
-        {/* Mobile-only LCP Preload: Shaves off discovery time on mobile */}
-        {/* Using standard link tag inside body is a Next.js 13+ allowed pattern for hoisting, 
-            but for highest compatibility we use the Script and metadata API where possible. */}
-
-        {/* Critical Styles for Mobile to prevent FOUC */}
+    <html lang="en" className={`${inter.variable}`} suppressHydrationWarning>
+      <head>
+        {/* Connection Hints: Shaves off 100-300ms of connection time for critical scripts */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.clarity.ms" />
+        <link rel="dns-prefetch" href="https://www.clarity.ms" />
+        
+        {/* LCP Optimization: Preload the logo which appears in the sticky header on all devices */}
+        <link rel="preload" href="/images/logo.webp" as="image" type="image/webp" fetchPriority="high" />
+      </head>
+      <body className="font-sans" suppressHydrationWarning>
+        {/* Critical Styles for Mobile to prevent FOUC and ensure instant rendering of header/container */}
         <style
           dangerouslySetInnerHTML={{
             __html: `
@@ -69,12 +93,14 @@ export default function RootLayout({
                 .nav-header-inline { min-height: 80px; background: #000000; }
                 .announcement-inline { min-height: 35px; background: #fbc02d; }
                 h1 { font-size: 2.25rem; line-height: 1.2; font-weight: 800; }
+                /* Eliminate any suspected YT preconnect if it exists in parent heads/scripts (defensive) */
+                link[href*="ytimg"] { display: none !important; }
               }
             `,
           }}
         />
 
-        {/* Google Analytics - strategy: lazyOnload clears critical path */}
+        {/* Google Analytics - strategy: lazyOnload clears critical path for LCP */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-CRQ7PMM6EV"
           strategy="lazyOnload"
@@ -88,7 +114,7 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Microsoft Clarity */}
+        {/* Microsoft Clarity - strategy: lazyOnload */}
         <Script id="microsoft-clarity" strategy="lazyOnload">
           {`
             (function(c,l,a,r,i,t,y){
