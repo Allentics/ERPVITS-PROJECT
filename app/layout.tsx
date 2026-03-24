@@ -8,6 +8,7 @@ import Script from 'next/script'
 // Lazy load below-the-fold components
 const Footer = dynamic(() => import('@/components/layout/Footer'));
 const WebinarPopup = dynamic(() => import('@/components/WebinarPopup'));
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 
 export const metadata: Metadata = {
@@ -112,6 +113,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <WebinarPopup />
+        <WhatsAppButton />
       </body>
     </html>
   )
