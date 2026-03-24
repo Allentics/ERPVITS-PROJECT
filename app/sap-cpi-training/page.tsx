@@ -1,20 +1,9 @@
 import CoursePage from '../courses/[slug]/page';
 import { Metadata } from 'next';
-import { courses } from '@/lib/courseData';
-import { supabase } from '@/lib/supabase';
+import { fetchCourseMetadata } from '@/lib/metadata';
 
 export async function generateMetadata(): Promise<Metadata> {
-    const slug = 'cpi';
-    const { data: course } = await supabase.from('courses').select('title, meta_title, meta_description').eq('id', slug).single();
-    const local = courses.find(c => c.id === 'cpi' || c.id === 'sap-cpi');
-
-    return {
-        title: course?.meta_title || local?.metaTitle || `${course?.title || local?.title} Online Training | ERPVITS`,
-        description: course?.meta_description || local?.metaDescription || `Master ${course?.title || local?.title} with ERPVITS - Live online training, real projects, and placement assistance.`,
-        alternates: {
-            canonical: 'https://www.erpvits.com/sap-cpi-training/',
-        },
-    };
+    return fetchCourseMetadata('sap-cpi', 'https://www.erpvits.com/sap-cpi-training/');
 }
 
 export default function Page() {

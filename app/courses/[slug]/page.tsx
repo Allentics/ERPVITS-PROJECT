@@ -14,6 +14,7 @@ import CourseEnrollmentCTA from '@/components/course/CourseEnrollmentCTA';
 import ContactForm from '@/components/ContactForm';
 import { Metadata } from 'next';
 import { courses, defaultFaqs, getDefaultDetailedFeatures, Section } from '@/lib/courseData';
+import { fetchCourseMetadata } from '@/lib/metadata';
 import { getGenericPrerequisites, getGenericTargetAudience } from '@/lib/contentHelpers';
 import CourseHeroActionButtons from '@/components/course/CourseHeroActionButtons';
 import JsonLd from '@/components/JsonLd';
@@ -39,55 +40,12 @@ const getDbId = (slug: string) => {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const { slug } = await params;
-    const dbId = getDbId(slug);
-    const { data: course } = await supabase.from('courses').select('title, meta_title, meta_description, hero_image').eq('id', dbId).single();
-
-    // Fallback logic for local mapping
-    const local = courses.find(c => c.id === slug) ||
-        (slug === 'sap-abap-on-cloud' || slug === 'abap-cloud' ? courses.find(c => c.id === 'abap-cloud') : undefined) ||
-        (slug === 'sap-fico' || slug === 'fico' ? courses.find(c => c.id === 'fico') : undefined) ||
-        (slug === 'sap-ariba' || slug === 'ariba' ? courses.find(c => c.id === 'ariba') : undefined) ||
-        (slug === 'sap-mm' || slug === 'mm' || slug === 'sap-s4hana-mm' ? courses.find(c => c.id === 'mm') : undefined) ||
-        (slug === 'sap-tm' || slug === 'tm' || slug === 'sap-transportation-management' ? courses.find(c => c.id === 'sap-tm') : undefined) ||
-        (slug === 'sap-ewm' || slug === 'ewm' || slug === 'sap-extended-warehouse-management' ? courses.find(c => c.id === 'sap-ewm') : undefined) ||
-        (slug === 'sap-ibp' || slug === 'ibp' || slug === 'sap-integrated-business-planning' ? courses.find(c => c.id === 'sap-ibp') : undefined) ||
-        (slug === 'sap-mdg' || slug === 'mdg' || slug === 'sap-master-data-governance' ? courses.find(c => c.id === 'sap-mdg') : undefined) ||
-        (slug === 'sap-ppds' || slug === 'ppds' || slug === 'sap-ppds-training' ? courses.find(c => c.id === 'ppds') : undefined) ||
-        (slug === 'sap-fieldglass' || slug === 'fieldglass' ? courses.find(c => c.id === 'fieldglass' || c.id === 'sap-fieldglass') : undefined) ||
-        (slug === 'sap-sd' || slug === 'sd' || slug === 'sap-sales-and-distribution-training' ? courses.find(c => c.id === 'sd') : undefined) ||
-        (slug === 'sap-trm' || slug === 'trm' || slug === 'sap-treasury-and-risk-management-online-training' ? courses.find(c => c.id === 'trm') : undefined) ||
-        (slug === 'sap-c4c' || slug === 'c4c' || slug === 'sap-c4c-technical-training' || slug === 'c4c-technical' ? courses.find(c => c.id === 'c4c-technical') : undefined) ||
-        (slug === 'sap-cpi' || slug === 'cpi' || slug === 'sap-cpi-training' ? courses.find(c => c.id === 'cpi' || c.id === 'sap-cpi') : undefined) ||
-        (slug === 'sap-c4c-functional' || slug === 'c4c-functional' ? courses.find(c => c.id === 'sap-c4c-functional') : undefined) ||
-        (slug === 'sap-abap-on-hana' || slug === 'abap-hana' || slug === 'abap-on-hana' ? courses.find(c => c.id === 'sap-abap-on-hana') : undefined) ||
-        (slug === 'python-aiml' || slug === 'sap-python-aiml' || slug === 'python-ai-ml' ? courses.find(c => c.id === 'python-aiml') : undefined);
-
-    const title = course?.meta_title ?? local?.metaTitle ?? `${course?.title ?? local?.title ?? ''} Online Training | ERPVITS`;
-    const description = course?.meta_description ?? local?.metaDescription ?? `Master ${course?.title ?? local?.title ?? ''} with ERPVITS - Live online training, real projects, and placement assistance.`;
-    const imageUrl = course?.hero_image || local?.heroImage || '/images/logo.webp';
-    const absoluteImageUrl = imageUrl.startsWith('http') ? imageUrl : `https://www.erpvits.com${imageUrl}`;
-
-    return {
-        title,
-        description,
-        openGraph: {
-            title,
-            description,
-            url: `https://www.erpvits.com/courses/${slug}/`,
-            type: 'website',
-            images: [{ url: absoluteImageUrl }],
-        },
-        twitter: {
-            card: 'summary_large_image',
-            title,
-            description,
-            images: [absoluteImageUrl],
-        },
-        alternates: {
-            canonical: `https://www.erpvits.com/courses/${slug}/`,
-        },
-    };
+    return fetchCourseMetadata(slug);
 }
+
+
+
+
 
 export default async function CoursePage({ params, isCustomProxy = false }: { params: Promise<{ slug: string }>, isCustomProxy?: boolean }) {
     const { slug } = await params;

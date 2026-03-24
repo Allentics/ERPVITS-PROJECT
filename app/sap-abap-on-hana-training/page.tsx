@@ -1,22 +1,9 @@
-
 import CoursePage from '../courses/[slug]/page';
 import { Metadata } from 'next';
-import { courses } from '@/lib/courseData';
-import { supabase } from '@/lib/supabase';
+import { fetchCourseMetadata } from '@/lib/metadata';
 
-// Helper to get metadata directly since we know the slug
 export async function generateMetadata(): Promise<Metadata> {
-    const slug = 'sap-abap-on-hana';
-    const { data: course } = await supabase.from('courses').select('title, meta_title, meta_description').eq('id', slug).single();
-    const local = courses.find(c => c.id === 'sap-abap-on-hana' || c.id === 'abap-hana');
-
-    return {
-        title: course?.meta_title || local?.metaTitle || `${course?.title || local?.title} Online Training | ERPVITS`,
-        description: course?.meta_description || local?.metaDescription || `Master ${course?.title || local?.title} with ERPVITS - Live online training, real projects, and placement assistance.`,
-        alternates: {
-            canonical: 'https://www.erpvits.com/sap-abap-on-hana-training/',
-        },
-    };
+    return fetchCourseMetadata('sap-abap-on-hana', 'https://www.erpvits.com/sap-abap-on-hana-training/');
 }
 
 export default function Page() {
