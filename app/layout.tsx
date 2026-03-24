@@ -11,13 +11,39 @@ const WebinarPopup = dynamic(() => import('@/components/WebinarPopup'));
 
 
 export const metadata: Metadata = {
-  title: 'ERPVITS - Expert SAP Online Training Institute',
-  description: 'Master SAP with confidence. Join ERPVITS for hands-on, expert-led SAP training in Ariba, FICO, MM, SD, and more.',
+  metadataBase: new URL('https://www.erpvits.com'),
+  title: {
+    default: 'ERPVITS - SAP Training Institute',
+    template: '%s | ERPVITS'
+  },
+  description: 'Empower your career with expert SAP online training.',
+  openGraph: {
+    title: 'ERPVITS - SAP Training Institute',
+    description: 'Empower your career with expert SAP online training.',
+    url: 'https://www.erpvits.com',
+    siteName: 'ERPVITS',
+    images: [
+      {
+        url: 'https://www.erpvits.com/logo.webp', // Ensure this file exists in public/
+        width: 1200,
+        height: 630,
+        alt: 'ERPVITS - SAP Training Institute',
+      },
+    ],
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ERPVITS - SAP Training Institute',
+    description: 'Empower your career with expert SAP online training.',
+    images: ['https://www.erpvits.com/logo.webp'],
+  },
   icons: {
     icon: '/favicon.png',
     shortcut: '/favicon.png',
   },
-}
+};
 
 export default function RootLayout({
   children,

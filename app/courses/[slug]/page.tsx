@@ -40,7 +40,7 @@ const getDbId = (slug: string) => {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const { slug } = await params;
     const dbId = getDbId(slug);
-    const { data: course } = await supabase.from('courses').select('title, meta_title, meta_description').eq('id', dbId).single();
+    const { data: course } = await supabase.from('courses').select('title, meta_title, meta_description, hero_image').eq('id', dbId).single();
 
     // Fallback logic for local mapping
     const local = courses.find(c => c.id === slug) ||
@@ -62,9 +62,27 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         (slug === 'sap-abap-on-hana' || slug === 'abap-hana' || slug === 'abap-on-hana' ? courses.find(c => c.id === 'sap-abap-on-hana') : undefined) ||
         (slug === 'python-aiml' || slug === 'sap-python-aiml' || slug === 'python-ai-ml' ? courses.find(c => c.id === 'python-aiml') : undefined);
 
+    const title = course?.meta_title ?? local?.metaTitle ?? `${course?.title ?? local?.title ?? ''} Online Training | ERPVITS`;
+    const description = course?.meta_description ?? local?.metaDescription ?? `Master ${course?.title ?? local?.title ?? ''} with ERPVITS - Live online training, real projects, and placement assistance.`;
+    const imageUrl = course?.hero_image || local?.heroImage || '/logo.webp';
+    const absoluteImageUrl = imageUrl.startsWith('http') ? imageUrl : `https://www.erpvits.com${imageUrl}`;
+
     return {
-        title: course?.meta_title ?? local?.metaTitle ?? `${course?.title ?? local?.title ?? ''} Online Training | ERPVITS`,
-        description: course?.meta_description ?? local?.metaDescription ?? `Master ${course?.title ?? local?.title ?? ''} with ERPVITS - Live online training, real projects, and placement assistance.`,
+        title,
+        description,
+        openGraph: {
+            title,
+            description,
+            url: `https://www.erpvits.com/courses/${slug}/`,
+            type: 'website',
+            images: [{ url: absoluteImageUrl }],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title,
+            description,
+            images: [absoluteImageUrl],
+        },
         alternates: {
             canonical: `https://www.erpvits.com/courses/${slug}/`,
         },
@@ -73,7 +91,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function CoursePage({ params, isCustomProxy = false }: { params: Promise<{ slug: string }>, isCustomProxy?: boolean }) {
     const { slug } = await params;
-    
+
     // Prevent duplicate pages: redirect to custom URL if it's accessed from /courses/[slug]
     const canonicalUrl = getCourseUrl(slug);
     if (!isCustomProxy && !canonicalUrl.includes(`/courses/${slug}`)) {

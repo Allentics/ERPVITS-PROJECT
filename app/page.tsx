@@ -25,10 +25,34 @@ export const revalidate = 3600;
 
 export async function generateMetadata(): Promise<Metadata> {
   const meta = await fetchPageMetadata('/');
+  const title = meta.title || 'ERPVITS - SAP Training Institute';
+  const description = meta.description || 'Empower your career with expert SAP online training.';
+
   return {
     ...meta,
-    title: meta.title || 'ERPVITS - Best SAP Training Institute',
-    description: meta.description || 'Master SAP with ERPVITS. Expert-led training, hands-on projects, and certification guidance.',
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: 'https://www.erpvits.com',
+      siteName: 'ERPVITS',
+      images: [
+        {
+          url: 'https://www.erpvits.com/logo.webp',
+          width: 1200,
+          height: 630,
+        },
+      ],
+      locale: 'en_IN',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['https://www.erpvits.com/logo.webp'],
+    },
     alternates: {
       canonical: 'https://www.erpvits.com/',
     },

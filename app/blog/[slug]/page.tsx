@@ -86,17 +86,78 @@ const blogHeroImages: Record<string, string> = {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const { slug } = await params;
+
     const { data: post } = await supabase
         .from('blog_posts')
-        .select('title, description, meta_title, meta_description')
+        .select('title, description, meta_title, meta_description, image')
         .eq('id', slug)
         .single();
 
-    if (!post) return { title: 'Post Not Found' };
+    if (!post) {
+        // Fallback to local posts if DB post is missing
+        const local = localPosts.find((p: any) => p.id === slug);
+        if (!local) return { title: 'Post Not Found' };
+
+        const title = local.title;
+        const description = local.description;
+        const imageUrl = local.image?.startsWith('http') ? local.image : `https://www.erpvits.com${local.image || '/logo.webp'}`;
+
+        return {
+            title: `${title} | ERPVITS Blog`,
+            description: description,
+            openGraph: {
+                title: `${title} | ERPVITS Blog`,
+                description: description,
+                url: `https://www.erpvits.com/blog/${slug}/`,
+                type: 'article',
+                images: [{ url: imageUrl }],
+            },
+            twitter: {
+                card: 'summary_large_image',
+                title: `${title} | ERPVITS Blog`,
+                description: description,
+                images: [imageUrl],
+            },
+            alternates: {
+                canonical: `https://www.erpvits.com/blog/${slug}/`,
+            },
+        };
+    }
+
+    const title = post.meta_title || post.title;
+    const description = post.meta_description || post.description;
+
+    // Resolve image path for metadata
+    const resolveMetadataImage = (img: string | null | undefined) => {
+        if (!img) return 'https://www.erpvits.com/logo.webp';
+        if (img.startsWith('http')) return img;
+
+        // Handle mapping for hero images if they exist in our record
+        if (blogHeroImages[slug]) return `https://www.erpvits.com${blogHeroImages[slug]}`;
+
+        const rawFileName = img.split('/').pop() || '';
+        const fileName = rawFileName.toLowerCase().replace(/\s+/g, '-').replace(/_+/g, '-');
+        return `https://www.erpvits.com/images/blogs/${fileName}`;
+    };
+
+    const imageUrl = resolveMetadataImage(post.image);
 
     return {
-        title: post.meta_title || `${post.title} | ERPVITS Blog`,
-        description: post.meta_description || post.description,
+        title: `${title} | ERPVITS Blog`,
+        description: description,
+        openGraph: {
+            title: `${title} | ERPVITS Blog`,
+            description: description,
+            url: `https://www.erpvits.com/blog/${slug}/`,
+            type: 'article',
+            images: [{ url: imageUrl }],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: `${title} | ERPVITS Blog`,
+            description: description,
+            images: [imageUrl],
+        },
         alternates: {
             canonical: `https://www.erpvits.com/blog/${slug}/`,
         },
