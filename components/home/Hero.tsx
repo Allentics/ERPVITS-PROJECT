@@ -41,21 +41,19 @@ const Hero = () => {
 
     return (
         <div className="bg-white text-slate-900 relative overflow-hidden min-h-[88vh] flex items-center hero-container-inline">
-            {/* Background Image: Only visible on Desktop */}
-            {mounted && !isMobile && (
-                <div className="absolute inset-0 w-full h-full z-0">
-                    <Image
-                        src={content.bg_image || "/images/home_hero_bg_v11.jpg"}
-                        alt="Expert SAP Trainer"
-                        fill
-                        className="object-cover object-[95%_10%]"
-                        priority
-                        quality={80}
-                        sizes="100vw"
-                    />
-                    <div className="absolute inset-y-0 left-0 w-full md:w-[75%] lg:w-[60%] bg-gradient-to-r from-rose-50/80 via-rose-50/40 to-transparent z-10 pointer-events-none" />
-                </div>
-            )}
+            {/* Background Image: Optimized for instant desktop load via CSS */}
+            <div className="absolute inset-0 w-full h-full z-0 hidden md:block">
+                <Image
+                    src={content.bg_image || "/images/home_hero_bg_v11.jpg"}
+                    alt="Expert SAP Trainer"
+                    fill
+                    className="object-cover object-[95%_10%]"
+                    priority
+                    quality={80}
+                    sizes="100vw"
+                />
+                <div className="absolute inset-y-0 left-0 w-full md:w-[75%] lg:w-[60%] bg-gradient-to-r from-rose-50/80 via-rose-50/40 to-transparent z-10 pointer-events-none" />
+            </div>
 
             <ContactModal
                 isOpen={isContactModalOpen}

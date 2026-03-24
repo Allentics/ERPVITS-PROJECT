@@ -58,13 +58,6 @@ export default function RootLayout({
         {/* Mobile-only LCP Preload: Shaves off discovery time on mobile */}
         {/* Using standard link tag inside body is a Next.js 13+ allowed pattern for hoisting, 
             but for highest compatibility we use the Script and metadata API where possible. */}
-        <link
-          rel="preload"
-          as="image"
-          href="/images/home_hero_bg_v9.jpg"
-          media="(max-width: 767px)"
-          fetchPriority="high"
-        />
 
         {/* Critical Styles for Mobile to prevent FOUC */}
         <style
