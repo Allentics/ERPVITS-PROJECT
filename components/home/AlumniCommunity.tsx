@@ -3,6 +3,8 @@
 
 import { Users, Briefcase, Building2, Linkedin, MessageCircle, HeartHandshake } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
+import { getWhatsAppChatLink } from '@/lib/utils';
 import { supabase } from '@/lib/supabase';
 import ContactModal from '../ContactModal';
 
@@ -31,10 +33,11 @@ const DEFAULT_CONTENT = {
         }
     ],
     linkedin_url: "https://www.linkedin.com/company/13357826/",
-    whatsapp_url: "https://www.whatsapp.com/channel/0029Vb5u9luHwXb481Y1Dx1X"
+    whatsapp_url: "https://api.whatsapp.com/send/?phone=918408878222"
 };
 
 export default function AlumniCommunity() {
+    const pathname = usePathname();
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [content, setContent] = useState(DEFAULT_CONTENT);
 

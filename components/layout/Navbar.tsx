@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X, ChevronDown, Phone, Mail, MessageCircle } from 'lucide-react';
 import { usePathname } from 'next/navigation';
-import { cn, getCourseUrl } from '@/lib/utils';
+import { cn, getCourseUrl, getWhatsAppChatLink } from '@/lib/utils';
 import { courses as localCourses } from '@/lib/courseData';
 import { supabase } from '@/lib/supabase';
 import ContactModal from '../ContactModal';

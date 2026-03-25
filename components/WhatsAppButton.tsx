@@ -1,9 +1,12 @@
 'use client';
 
 import React from 'react';
+import { usePathname } from 'next/navigation';
+import { getWhatsAppChatLink } from '@/lib/utils';
 
 const WhatsAppButton: React.FC = () => {
   const [mounted, setMounted] = React.useState(false);
+  const pathname = usePathname();
 
   React.useEffect(() => {
     setMounted(true);
@@ -11,18 +14,21 @@ const WhatsAppButton: React.FC = () => {
 
   if (!mounted) return null;
 
+  // Use dynamic WhatsApp link based on current page
+  const whatsappLink = getWhatsAppChatLink(pathname);
+
   return (
     <a
-      href="https://whatsapp.com/channel/0029Vb5u9luHwXb481Y1Dx1X"
+      href={whatsappLink}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Join our WhatsApp Channel"
+      aria-label="Chat with us on WhatsApp"
       style={{
         position: 'fixed',
-        bottom: '20px',
-        right: '20px', 
-        width: '56px',
-        height: '56px',
+        bottom: '24px',
+        right: '24px', // Set to right side as per standard and screenshot 3
+        width: '60px',
+        height: '60px',
         backgroundColor: '#25D366',
         borderRadius: '50%',
         display: 'flex',
@@ -30,7 +36,7 @@ const WhatsAppButton: React.FC = () => {
         justifyContent: 'center',
         boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
         zIndex: 9999,
-        transition: 'transform 0.3s ease, background-color 0.3s ease',
+        transition: 'transform 0.3s ease',
         cursor: 'pointer',
       }}
       className="whatsapp-float-btn"
