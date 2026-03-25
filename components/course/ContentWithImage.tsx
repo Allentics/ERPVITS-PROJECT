@@ -1,4 +1,6 @@
-import React from 'react';
+"use client";
+
+import React, { useState, useEffect, useRef } from 'react';
 import { CheckCircle2 } from 'lucide-react';
 import Image from 'next/image';
 import ContactForm from '@/components/ContactForm';
@@ -19,21 +21,51 @@ interface ContentWithImageProps {
 }
 
 export default function ContentWithImage({ title, subtitle, description, items, imageSrc, imageAlt, videoSrc, layout = 'left', supportTitle, supportText, courseName }: ContentWithImageProps) {
+    const [isVisible, setIsVisible] = useState(false);
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (!videoSrc) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    observer.disconnect();
+                }
+            },
+            { rootMargin: '200px' } // Load slightly before coming into view
+        );
+
+        if (containerRef.current) {
+            observer.observe(containerRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, [videoSrc]);
+
     return (
-        <div className="py-12 bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-sm">
+        <div className="py-12 bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-sm" ref={containerRef}>
             <div className={`flex flex-col ${layout === 'right' ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-start gap-12 p-8 lg:p-12`}>
                 <div className="w-full lg:w-1/2 flex flex-col gap-8">
                     {(imageSrc || videoSrc) ? (
                         <div className="relative rounded-2xl overflow-hidden shadow-2xl w-full">
                             {videoSrc ? (
-                                <div className="aspect-video">
-                                    <iframe
-                                        className="w-full h-full"
-                                        src={videoSrc}
-                                        title={typeof title === 'string' ? title : "Course Video"}
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowFullScreen
-                                    ></iframe>
+                                <div className="aspect-video bg-slate-200">
+                                    {isVisible ? (
+                                        <iframe
+                                            className="w-full h-full border-0"
+                                            src={`${videoSrc}${videoSrc.includes('?') ? '&' : '?'}autoplay=0`}
+                                            title={typeof title === 'string' ? title : "Course Video"}
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowFullScreen
+                                            loading="lazy"
+                                        ></iframe>
+                                    ) : (
+                                        <div className="w-full h-full flex items-center justify-center animate-pulse">
+                                            <div className="w-12 h-12 rounded-full border-4 border-slate-300 border-t-orange-500 animate-spin"></div>
+                                        </div>
+                                    )}
                                 </div>
                             ) : (
                                 <img
@@ -75,8 +107,6 @@ export default function ContentWithImage({ title, subtitle, description, items, 
                             })}
                         </div>
                     )}
-
-
                 </div>
             </div>
         </div>

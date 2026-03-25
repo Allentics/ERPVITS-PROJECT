@@ -11,7 +11,7 @@ const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter',
-  weight: ['400', '500', '600', '700', '800', '900'], // Optimization: Limit weights to used values to reduce binary size
+  weight: ['400', '600', '700', '800'], // Further reduce weights to minimize font binary size
   preload: true,
 })
 
@@ -78,6 +78,8 @@ export default function RootLayout({
         {/* Connection Hints: Simplified to dns-prefetch as per LSP recommendation to reduce active preconnects < 4 */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.clarity.ms" />
+        <link rel="dns-prefetch" href="https://i.ytimg.com" />
+        <link rel="preconnect" href="https://www.erpvits.com" crossOrigin="anonymous" />
 
         {/* LCP Optimization: Preload the logo - critical for desktop and mobile header */}
         <link rel="preload" href="/images/logo.webp" as="image" type="image/webp" fetchPriority="high" />
@@ -101,6 +103,10 @@ export default function RootLayout({
                 .nav-header-inline { min-height: 80px; background: #000000; }
                 .announcement-inline { min-height: 35px; background: #fbc02d; }
                 h1 { font-size: 2.25rem; line-height: 1.2; font-weight: 800; }
+                /* Explicitly use the optimized font family for critical headings to ensure it's prioritized */
+                .hero-course-inline h1, .hero-course-inline p { font-family: var(--font-inter), sans-serif !important; }
+                .hero-course-inline { min-height: 400px; }
+              }
                 /* Eliminate any suspected YT preconnect if it exists in parent heads/scripts (defensive) */
                 link[href*="ytimg"] { display: none !important; }
               }
