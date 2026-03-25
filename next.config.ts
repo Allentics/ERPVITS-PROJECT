@@ -23,6 +23,7 @@ const nextConfig: NextConfig = {
 
   // Experimental performance features
   experimental: {
+    serverComponentsExternalPackages: ["googleapis", "nodemailer", "mammoth"], // Mandatory: Prevents Node-only libs from bloating client-side JS
     optimizePackageImports: [
       "lucide-react",
       "framer-motion",
@@ -30,6 +31,9 @@ const nextConfig: NextConfig = {
       "@radix-ui/react-tabs",
     ],
   },
+
+  // Shave off TTFB by disabling X-Powered-By header
+  poweredByHeader: false,
 
   // HTTP caching headers for static assets
   async headers() {
