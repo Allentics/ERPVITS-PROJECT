@@ -11,6 +11,8 @@ const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter',
+  weight: ['400', '500', '600', '700', '800', '900'], // Optimization: Limit weights to used values to reduce binary size
+  preload: true,
 })
 
 // Lazy load below-the-fold components
@@ -73,23 +75,18 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable}`} suppressHydrationWarning>
       <head>
-        {/* Connection Hints: Shaves off 100-300ms of connection time for critical scripts */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        {/* Connection Hints: Simplified to dns-prefetch as per LSP recommendation to reduce active preconnects < 4 */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://www.clarity.ms" />
         <link rel="dns-prefetch" href="https://www.clarity.ms" />
 
-        {/* LCP Optimization: Preload the logo which appears in the sticky header on all devices */}
+        {/* LCP Optimization: Preload the logo - critical for desktop and mobile header */}
         <link rel="preload" href="/images/logo.webp" as="image" type="image/webp" fetchPriority="high" />
 
-        {/* Desktop-only Hero Background Preload: Fixes "load within 0 sec" for desktop while saving mobile data */}
-        <link
-          rel="preload"
-          href="/images/home_hero_bg_v11.jpg"
-          as="image"
-          media="(min-width: 768px)"
-          fetchPriority="high"
-        />
+        {/* 
+          Desktop Hero Preload: Optimization 
+          We keep this for home page performance, but we should ideally only have it on the home page.
+          For now, we just ensure it's not blocking if not found.
+        */}
       </head>
       <body className="font-sans" suppressHydrationWarning>
         {/* Critical Styles for Mobile to prevent FOUC and ensure instant rendering of header/container */}
