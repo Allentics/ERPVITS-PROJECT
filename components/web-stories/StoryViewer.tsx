@@ -45,9 +45,13 @@ const getSlidesForStory = (story: any) => {
         content: i === 0
             ? `Deep dive into ${story.title}.`
             : `Expert Insight #${i}: This concept is fundamental to mastering the module.`,
-        duration: 5000
+        duration: 5000,
+        isBold: false,
+        textColor: '#ffffff',
+        textBackground: false
     }));
 };
+
 
 interface StoryViewerProps {
     stories: any[];
@@ -193,15 +197,15 @@ export default function StoryViewer({ stories, initialStoryIndex, onClose }: Sto
                         className="absolute inset-0 w-full h-full object-cover blur-2xl opacity-40 scale-110"
                     />
 
-                    {/* Main Image - Now using object-contain to avoid cropping */}
+                    {/* Main Image - Now using object-cover for webstory ratio */}
                     <img
                         src={currentSlide.image}
                         alt={currentSlide.title}
-                        className="relative z-10 w-full h-full object-contain pointer-events-none"
+                        className="relative z-10 w-full h-full object-cover pointer-events-none"
                     />
 
                     {/* Gradient Overlay for Text Readability */}
-                    <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/50 via-transparent to-black/80"></div>
+                    <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/20 via-transparent to-black/90"></div>
                 </div>
 
                 {/* Top Tools: Progress, Profile, Close */}
@@ -230,7 +234,7 @@ export default function StoryViewer({ stories, initialStoryIndex, onClose }: Sto
                                 <div className="w-full h-full bg-black rounded-full overflow-hidden">
                                     {/* Placeholder Avatar */}
                                     <div className="w-full h-full bg-gray-600 flex items-center justify-center text-xs font-bold text-white">
-                                        {currentStory.author.charAt(0)}
+                                        {currentStory.author?.charAt(0) || 'E'}
                                     </div>
                                 </div>
                             </div>
@@ -252,25 +256,56 @@ export default function StoryViewer({ stories, initialStoryIndex, onClose }: Sto
                 </div>
 
                 {/* Content Layer */}
-                <div className="absolute inset-0 z-10 flex flex-col justify-end p-8 pb-32">
-                    <motion.h2
-                        key={currentSlide.title}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="text-2xl font-black text-white mb-4 leading-tight drop-shadow-lg"
-                    >
-                        {currentSlide.title}
-                    </motion.h2>
-                    <motion.p
-                        key={currentSlide.content}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.1 }}
-                        className="text-white/90 text-base font-medium leading-relaxed drop-shadow-md"
-                    >
-                        {currentSlide.content}
-                    </motion.p>
+                <div className="absolute inset-0 z-10 flex flex-col justify-end p-8 pb-20 items-center text-center">
+                    <div className="max-w-[90%] w-full">
+                        {/* Title Box */}
+                        <motion.div
+                            key={currentSlide.title}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className={`${currentSlide.textBackground ? 'bg-black/60 p-6 rounded-xl backdrop-blur-md border border-white/10' : ''} mb-6 shadow-2xl`}
+                        >
+                            <h2
+                                style={{
+                                    color: currentSlide.textColor || '#ffffff',
+                                    fontWeight: currentSlide.isBold ? '900' : '700'
+                                }}
+                                className="text-2xl md:text-3xl leading-[1.2] drop-shadow-xl uppercase tracking-tight"
+                            >
+                                {currentSlide.title}
+                            </h2>
+                        </motion.div>
+
+                        {/* Author Tag (SS Style) */}
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: 0.2 }}
+                            className="inline-block bg-[#9c8421] px-6 py-2 rounded-sm shadow-lg mb-3"
+                        >
+                            <p className="text-white text-sm font-black uppercase tracking-widest whitespace-nowrap">
+                                {currentSlide.customAuthor || `By ${currentStory.author}`}
+                            </p>
+                        </motion.div>
+
+                        {/* Date */}
+                        <motion.p
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.3 }}
+                            className="text-white font-black text-sm drop-shadow-lg uppercase tracking-wider"
+                        >
+                            {currentSlide.customDate || (currentStory.created_at ? new Date(currentStory.created_at).toLocaleDateString('en-US', {
+                                month: 'long',
+                                day: 'numeric',
+                                year: 'numeric'
+                            }) : '')}
+                        </motion.p>
+                    </div>
                 </div>
+
+
+
 
                 {/* Tap Navigation Zones (Invisible) */}
                 <div className="absolute inset-0 z-10 flex">

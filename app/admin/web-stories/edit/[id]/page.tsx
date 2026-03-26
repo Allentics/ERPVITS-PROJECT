@@ -16,8 +16,12 @@ import {
     Smartphone,
     Star,
     Zap,
-    AlertCircle
+    AlertCircle,
+    Bold,
+    Palette,
+    Square
 } from 'lucide-react';
+
 import Link from 'next/link';
 
 export default function EditWebStoryPage({ params }: { params: Promise<{ id: string }> }) {
@@ -82,7 +86,12 @@ export default function EditWebStoryPage({ params }: { params: Promise<{ id: str
                     title: '',
                     content: '',
                     image: '',
-                    duration: 5000
+                    duration: 5000,
+                    isBold: false,
+                    textColor: '#ffffff',
+                    textBackground: true,
+                    customAuthor: '',
+                    customDate: ''
                 }
             ]
         }));
@@ -246,8 +255,8 @@ export default function EditWebStoryPage({ params }: { params: Promise<{ id: str
                                 type="button"
                                 onClick={() => setFormData((prev: any) => ({ ...prev, type: 'standard' }))}
                                 className={`flex-1 flex items-center justify-center gap-2 py-3 px-6 rounded-xl border-2 transition-all font-bold ${formData.type === 'standard'
-                                        ? 'bg-orange-50 border-orange-500 text-orange-700'
-                                        : 'bg-white border-gray-100 text-gray-500 hover:border-gray-200'
+                                    ? 'bg-orange-50 border-orange-500 text-orange-700'
+                                    : 'bg-white border-gray-100 text-gray-500 hover:border-gray-200'
                                     }`}
                             >
                                 <Zap size={18} />
@@ -257,8 +266,8 @@ export default function EditWebStoryPage({ params }: { params: Promise<{ id: str
                                 type="button"
                                 onClick={() => setFormData((prev: any) => ({ ...prev, type: 'featured' }))}
                                 className={`flex-1 flex items-center justify-center gap-2 py-3 px-6 rounded-xl border-2 transition-all font-bold ${formData.type === 'featured'
-                                        ? 'bg-amber-50 border-amber-500 text-amber-700 shadow-sm'
-                                        : 'bg-white border-gray-100 text-gray-500 hover:border-gray-200'
+                                    ? 'bg-amber-50 border-amber-500 text-amber-700 shadow-sm'
+                                    : 'bg-white border-gray-100 text-gray-500 hover:border-gray-200'
                                     }`}
                             >
                                 <Star size={18} className={formData.type === 'featured' ? 'fill-amber-700' : ''} />
@@ -352,7 +361,65 @@ export default function EditWebStoryPage({ params }: { params: Promise<{ id: str
                                         </div>
                                     </div>
 
+                                    <div className="pt-2 flex flex-wrap gap-4 items-center border-t border-gray-50 mt-2">
+                                        <button
+                                            type="button"
+                                            onClick={() => handleSlideChange(index, 'isBold', !slide.isBold)}
+                                            className={`p-2 rounded-lg flex items-center gap-2 text-xs font-bold transition-all ${slide.isBold ? 'bg-black text-white' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'}`}
+                                        >
+                                            <Bold size={14} />
+                                            Bold
+                                        </button>
+
+                                        <div className="flex items-center gap-2 bg-gray-100 p-1.5 rounded-lg border border-gray-100">
+                                            <Palette size={14} className="text-gray-500 ml-1" />
+                                            <input
+                                                type="color"
+                                                value={slide.textColor || '#ffffff'}
+                                                onChange={(e) => handleSlideChange(index, 'textColor', e.target.value)}
+                                                className="w-6 h-6 rounded cursor-pointer p-0 border-0 bg-transparent"
+                                            />
+                                            <span className="text-[10px] uppercase font-black text-gray-500 tracking-wider">Color</span>
+                                        </div>
+
+                                        <button
+                                            type="button"
+                                            onClick={() => handleSlideChange(index, 'textBackground', !slide.textBackground)}
+                                            className={`p-2 rounded-lg flex items-center gap-2 text-xs font-bold transition-all ${slide.textBackground ? 'bg-blue-100 text-blue-700 border-blue-200' : 'bg-gray-100 text-gray-500 hover:bg-gray-200 border-gray-100'} border`}
+                                        >
+                                            <Square size={14} className={slide.textBackground ? 'fill-blue-700' : ''} />
+                                            Style: {slide.textBackground ? 'Screenshot Style' : 'Standard'}
+                                        </button>
+                                    </div>
+
+                                    <div className="grid grid-cols-2 gap-4 pt-2">
+                                        <div className="space-y-1">
+                                            <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest flex items-center gap-1">
+                                                Override Author (Optional)
+                                            </label>
+                                            <input
+                                                value={slide.customAuthor}
+                                                onChange={(e) => handleSlideChange(index, 'customAuthor', e.target.value)}
+                                                placeholder="e.g. By Garima Johar"
+                                                className="w-full px-0 py-1 border-b border-gray-100 focus:border-blue-500 focus:outline-none transition-colors text-[11px]"
+                                            />
+                                        </div>
+                                        <div className="space-y-1">
+                                            <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest flex items-center gap-1">
+                                                Override Date (Optional)
+                                            </label>
+                                            <input
+                                                value={slide.customDate}
+                                                onChange={(e) => handleSlideChange(index, 'customDate', e.target.value)}
+                                                placeholder="e.g. March 24, 2026"
+                                                className="w-full px-0 py-1 border-b border-gray-100 focus:border-blue-500 focus:outline-none transition-colors text-[11px]"
+                                            />
+                                        </div>
+                                    </div>
+
+
                                     {/* Preview Small Image */}
+
                                     {slide.image && (
                                         <div className="mt-4 rounded-xl overflow-hidden h-32 relative group">
                                             <img src={slide.image} alt="" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
