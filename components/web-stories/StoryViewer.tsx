@@ -162,6 +162,23 @@ export default function StoryViewer({ stories, initialStoryIndex, onClose }: Sto
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [nextSlide, prevSlide, onClose]);
 
+    const handleShare = () => {
+        const shareUrl = window.location.href;
+        const shareText = `Check out this SAP Web Story: ${currentStory.title}`;
+
+        if (navigator.share) {
+            navigator.share({
+                title: currentStory.title,
+                text: shareText,
+                url: shareUrl,
+            }).catch(() => { });
+        } else {
+            // Fallback
+            const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText + ' ' + shareUrl)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+    };
+
     if (!currentStory || !currentSlide) return null;
 
     return (
@@ -181,13 +198,15 @@ export default function StoryViewer({ stories, initialStoryIndex, onClose }: Sto
             </button>
 
 
-            {/* Story Container */}
+            {/* Story Container (Correct 9:16 Aspect Ratio) */}
             <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
+                initial={{ opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                className="relative w-full max-w-[420px] h-full md:h-[90vh] md:max-h-[800px] bg-black md:rounded-3xl overflow-hidden shadow-2xl border border-white/10"
+                exit={{ opacity: 0, scale: 0.95 }}
+                className="relative h-full w-full md:w-auto md:aspect-[9/16] bg-black overflow-hidden shadow-[0_0_100px_rgba(0,0,0,0.5)] mx-auto"
             >
+
+
                 {/* Background Image/Media with Blurred Fallback */}
                 <div className="absolute inset-0 z-0 bg-gray-900 flex items-center justify-center overflow-hidden">
                     {/* Blurred Background to fill space */}
@@ -230,23 +249,30 @@ export default function StoryViewer({ stories, initialStoryIndex, onClose }: Sto
                     {/* Header Info */}
                     <div className="flex justify-between items-center">
                         <div className="flex items-center gap-3">
-                            <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-orange-500 to-pink-500 p-[2px]">
-                                <div className="w-full h-full bg-black rounded-full overflow-hidden">
-                                    {/* Placeholder Avatar */}
-                                    <div className="w-full h-full bg-gray-600 flex items-center justify-center text-xs font-bold text-white">
-                                        {currentStory.author?.charAt(0) || 'E'}
-                                    </div>
+                            <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-orange-500 to-pink-500 p-[1.5px] shadow-lg">
+                                <div className="w-full h-full bg-black rounded-full overflow-hidden flex items-center justify-center">
+                                    <img
+                                        src="/favicon.png"
+                                        alt="ERPVITS"
+                                        className="w-[85%] h-[85%] object-contain rounded-full"
+                                    />
                                 </div>
                             </div>
                             <div>
-                                <h4 className="text-white text-sm font-bold shadow-black drop-shadow-md">{currentStory.author}</h4>
-                                <span className="text-white/70 text-xs">2h ago</span>
+                                <h4 className="text-white text-[13px] font-bold shadow-black drop-shadow-md">
+                                    {currentStory.author}
+                                </h4>
                             </div>
                         </div>
 
+
                         <div className="flex items-center gap-4">
-                            <button className="text-white/80 hover:text-white">
-                                <MoreHorizontal size={20} />
+                            <button
+                                onClick={handleShare}
+                                className="text-white/80 hover:text-white transition-all transform hover:scale-110 active:scale-95"
+                                title="Share"
+                            >
+                                <Send size={20} />
                             </button>
                             <button onClick={onClose} className="text-white hover:text-red-400 transition-colors">
                                 <X size={24} />
@@ -255,69 +281,88 @@ export default function StoryViewer({ stories, initialStoryIndex, onClose }: Sto
                     </div>
                 </div>
 
-                {/* Content Layer */}
-                <div className="absolute inset-0 z-10 flex flex-col justify-end p-8 pb-20 items-center text-center">
-                    <div className="max-w-[90%] w-full">
+                {/* Content Layer (Improved Spacing and Font Sizes) */}
+                <div className="absolute inset-0 z-10 flex flex-col justify-end p-8 pt-24 pb-28 items-center text-center pointer-events-none">
+                    <div className="max-w-[100%] w-full">
                         {/* Title Box */}
                         <motion.div
                             key={currentSlide.title}
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className={`${currentSlide.textBackground ? 'bg-black/60 p-6 rounded-xl backdrop-blur-md border border-white/10' : ''} mb-6 shadow-2xl`}
+                            className={`${currentSlide.textBackground ? 'bg-black/60 p-5 rounded-xl backdrop-blur-md border border-white/10' : ''} mb-4 shadow-xl`}
                         >
                             <h2
                                 style={{
                                     color: currentSlide.textColor || '#ffffff',
                                     fontWeight: currentSlide.isBold ? '900' : '700'
                                 }}
-                                className="text-2xl md:text-3xl leading-[1.2] drop-shadow-xl uppercase tracking-tight"
+                                className="text-xl md:text-2xl leading-[1.1] drop-shadow-xl tracking-tight"
                             >
                                 {currentSlide.title}
                             </h2>
                         </motion.div>
 
-                        {/* Meta Info (SS Style) - Only on First Slide */}
-                        {currentSlideIndex === 0 ? (
-                            <>
-                                {/* Author Tag */}
-                                <motion.div
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    transition={{ delay: 0.2 }}
-                                    className="inline-block bg-[#9c8421] px-6 py-2 rounded-sm shadow-lg mb-3"
-                                >
-                                    <p className="text-white text-sm font-black uppercase tracking-widest whitespace-nowrap">
-                                        {currentSlide.customAuthor || `By ${currentStory.author}`}
-                                    </p>
-                                </motion.div>
+                        {/* Slide Content Meta */}
+                        <div className="space-y-4">
+                            {currentSlideIndex === 0 ? (
+                                <>
+                                    {/* Restored Content Text on Cover */}
+                                    {currentSlide.content && (
+                                        <motion.p
+                                            key={currentSlide.content}
+                                            initial={{ opacity: 0, y: 10 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            transition={{ delay: 0.1 }}
+                                            className="text-white/90 text-xs md:text-sm font-medium leading-normal drop-shadow-lg mb-4 px-2 line-clamp-4"
+                                        >
+                                            {currentSlide.content}
+                                        </motion.p>
+                                    )}
 
-                                {/* Date */}
+                                    {/* Author & Date Box */}
+                                    <div className="flex flex-col items-center gap-2 mt-2">
+                                        {/* Author Tag */}
+                                        <motion.div
+                                            initial={{ opacity: 0, scale: 0.9 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            transition={{ delay: 0.2 }}
+                                            className="inline-block bg-[#9c8421] px-4 py-1.5 rounded shadow-lg"
+                                        >
+                                            <p className="text-white text-[11px] font-black tracking-widest whitespace-nowrap">
+                                                {currentSlide.customAuthor || `By ${currentStory.author}`}
+                                            </p>
+                                        </motion.div>
+
+                                        {/* Date */}
+                                        <motion.p
+                                            initial={{ opacity: 0 }}
+                                            animate={{ opacity: 1 }}
+                                            transition={{ delay: 0.3 }}
+                                            className="text-white font-bold text-[10px] drop-shadow-lg tracking-wider"
+                                        >
+                                            {currentSlide.customDate || (currentStory.created_at ? new Date(currentStory.created_at).toLocaleDateString('en-US', {
+                                                month: 'long',
+                                                day: 'numeric',
+                                                year: 'numeric'
+                                            }) : '')}
+                                        </motion.p>
+                                    </div>
+                                </>
+                            ) : (
+                                /* Internal Slide Content */
                                 <motion.p
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ delay: 0.3 }}
-                                    className="text-white font-black text-sm drop-shadow-lg uppercase tracking-wider"
+                                    key={currentSlide.content}
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    className="text-white/95 text-base md:text-lg font-medium leading-relaxed drop-shadow-lg px-2"
                                 >
-                                    {currentSlide.customDate || (currentStory.created_at ? new Date(currentStory.created_at).toLocaleDateString('en-US', {
-                                        month: 'long',
-                                        day: 'numeric',
-                                        year: 'numeric'
-                                    }) : '')}
+                                    {currentSlide.content}
                                 </motion.p>
-                            </>
-                        ) : (
-                            /* Slide Content - On Following Slides */
-                            <motion.p
-                                key={currentSlide.content}
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                className="text-white/90 text-base md:text-lg font-medium leading-relaxed drop-shadow-lg px-4"
-                            >
-                                {currentSlide.content}
-                            </motion.p>
-                        )}
+                            )}
+                        </div>
                     </div>
                 </div>
+
 
 
 
@@ -344,16 +389,13 @@ export default function StoryViewer({ stories, initialStoryIndex, onClose }: Sto
                 </div>
 
                 {/* Footer Engagement (Bottom) */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 pb-8 z-20 bg-gradient-to-t from-black/90 to-transparent flex items-center justify-between gap-4">
+                <div className="absolute bottom-0 left-0 right-0 p-4 pb-8 z-20 bg-gradient-to-t from-black/90 to-transparent flex items-center justify-center">
                     <a
                         href="/"
-                        className="flex-1 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full h-12 flex items-center justify-center px-4 border border-white/20 text-white font-bold transition-colors"
+                        className="w-full max-w-[280px] bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full h-12 flex items-center justify-center px-6 border border-white/20 text-white font-bold transition-colors"
                     >
                         Visit Website
                     </a>
-                    <button className="text-white hover:text-blue-400 transition-colors">
-                        <Send size={28} />
-                    </button>
                 </div>
 
             </motion.div>
