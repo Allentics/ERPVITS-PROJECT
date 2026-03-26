@@ -392,30 +392,33 @@ export default function EditWebStoryPage({ params }: { params: Promise<{ id: str
                                         </button>
                                     </div>
 
-                                    <div className="grid grid-cols-2 gap-4 pt-2">
-                                        <div className="space-y-1">
-                                            <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest flex items-center gap-1">
-                                                Override Author (Optional)
-                                            </label>
-                                            <input
-                                                value={slide.customAuthor || ''}
-                                                onChange={(e) => handleSlideChange(index, 'customAuthor', e.target.value)}
-                                                placeholder="e.g. By Garima Johar"
-                                                className="w-full px-0 py-1 border-b border-gray-100 focus:border-blue-500 focus:outline-none transition-colors text-[11px]"
-                                            />
+                                    {index === 0 && (
+                                        <div className="grid grid-cols-2 gap-4 pt-2">
+                                            <div className="space-y-1">
+                                                <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest flex items-center gap-1">
+                                                    Override Author (Optional)
+                                                </label>
+                                                <input
+                                                    value={slide.customAuthor || ''}
+                                                    onChange={(e) => handleSlideChange(index, 'customAuthor', e.target.value)}
+                                                    placeholder="e.g. By Garima Johar"
+                                                    className="w-full px-0 py-1 border-b border-gray-100 focus:border-blue-500 focus:outline-none transition-colors text-[11px]"
+                                                />
+                                            </div>
+                                            <div className="space-y-1">
+                                                <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest flex items-center gap-1">
+                                                    Override Date (Optional)
+                                                </label>
+                                                <input
+                                                    value={slide.customDate || ''}
+                                                    onChange={(e) => handleSlideChange(index, 'customDate', e.target.value)}
+                                                    placeholder="e.g. March 24, 2026"
+                                                    className="w-full px-0 py-1 border-b border-gray-100 focus:border-blue-500 focus:outline-none transition-colors text-[11px]"
+                                                />
+                                            </div>
                                         </div>
-                                        <div className="space-y-1">
-                                            <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest flex items-center gap-1">
-                                                Override Date (Optional)
-                                            </label>
-                                            <input
-                                                value={slide.customDate || ''}
-                                                onChange={(e) => handleSlideChange(index, 'customDate', e.target.value)}
-                                                placeholder="e.g. March 24, 2026"
-                                                className="w-full px-0 py-1 border-b border-gray-100 focus:border-blue-500 focus:outline-none transition-colors text-[11px]"
-                                            />
-                                        </div>
-                                    </div>
+                                    )}
+
 
 
                                     {/* Preview Small Image */}

@@ -276,33 +276,49 @@ export default function StoryViewer({ stories, initialStoryIndex, onClose }: Sto
                             </h2>
                         </motion.div>
 
-                        {/* Author Tag (SS Style) */}
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: 0.2 }}
-                            className="inline-block bg-[#9c8421] px-6 py-2 rounded-sm shadow-lg mb-3"
-                        >
-                            <p className="text-white text-sm font-black uppercase tracking-widest whitespace-nowrap">
-                                {currentSlide.customAuthor || `By ${currentStory.author}`}
-                            </p>
-                        </motion.div>
+                        {/* Meta Info (SS Style) - Only on First Slide */}
+                        {currentSlideIndex === 0 ? (
+                            <>
+                                {/* Author Tag */}
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ delay: 0.2 }}
+                                    className="inline-block bg-[#9c8421] px-6 py-2 rounded-sm shadow-lg mb-3"
+                                >
+                                    <p className="text-white text-sm font-black uppercase tracking-widest whitespace-nowrap">
+                                        {currentSlide.customAuthor || `By ${currentStory.author}`}
+                                    </p>
+                                </motion.div>
 
-                        {/* Date */}
-                        <motion.p
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ delay: 0.3 }}
-                            className="text-white font-black text-sm drop-shadow-lg uppercase tracking-wider"
-                        >
-                            {currentSlide.customDate || (currentStory.created_at ? new Date(currentStory.created_at).toLocaleDateString('en-US', {
-                                month: 'long',
-                                day: 'numeric',
-                                year: 'numeric'
-                            }) : '')}
-                        </motion.p>
+                                {/* Date */}
+                                <motion.p
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ delay: 0.3 }}
+                                    className="text-white font-black text-sm drop-shadow-lg uppercase tracking-wider"
+                                >
+                                    {currentSlide.customDate || (currentStory.created_at ? new Date(currentStory.created_at).toLocaleDateString('en-US', {
+                                        month: 'long',
+                                        day: 'numeric',
+                                        year: 'numeric'
+                                    }) : '')}
+                                </motion.p>
+                            </>
+                        ) : (
+                            /* Slide Content - On Following Slides */
+                            <motion.p
+                                key={currentSlide.content}
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                className="text-white/90 text-base md:text-lg font-medium leading-relaxed drop-shadow-lg px-4"
+                            >
+                                {currentSlide.content}
+                            </motion.p>
+                        )}
                     </div>
                 </div>
+
 
 
 
