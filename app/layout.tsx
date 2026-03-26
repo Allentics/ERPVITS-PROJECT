@@ -75,41 +75,34 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable}`} suppressHydrationWarning>
       <head>
-        {/* Connection Hints: Simplified to dns-prefetch as per LSP recommendation to reduce active preconnects < 4 */}
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="https://www.clarity.ms" />
+        {/* Connection Hints: High-performance preconnect for critical third-party latency reduction */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.clarity.ms" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://i.ytimg.com" />
         <link rel="preconnect" href="https://www.erpvits.com" crossOrigin="anonymous" />
 
         {/* LCP Optimization: Preload the logo - critical for desktop and mobile header */}
         <link rel="preload" href="/images/logo.webp" as="image" type="image/webp" fetchPriority="high" />
-
-        {/* 
-          Desktop Hero Preload: Optimization 
-          We keep this for home page performance, but we should ideally only have it on the home page.
-          For now, we just ensure it's not blocking if not found.
-        */}
       </head>
       <body className="font-sans" suppressHydrationWarning>
-        {/* Critical Styles for Mobile to prevent FOUC and ensure instant rendering of header/container */}
+        {/* Advanced Critical Styles: Minimize FOUC and eliminate layout shifts for headers */}
         <style
           dangerouslySetInnerHTML={{
             __html: `
+                body { background: #ffffff; margin: 0; padding: 0; min-height: 100vh; font-family: sans-serif; }
+                .hero-container-inline { min-height: 85vh; background: #ffffff; width: 100%; visibility: visible; }
+                .nav-header-inline { min-height: 80px; background: #000000; width: 100%; display: block; }
+                .announcement-inline { min-height: 35px; background: #fbc02d; width: 100%; display: flex; align-items: center; justify-content: center; }
+                .layout-container { max-width: 80rem; margin: 0 auto; padding: 0 1rem; }
                 @media (max-width: 767px) {
-                body { background: #ffffff; margin: 0; padding: 0; }
-                .hero-container-inline { min-height: 88vh; background: #ffffff; }
-                .hero-course-inline { background: #F2F6FD; padding-top: 2.5rem; padding-bottom: 3rem; }
-                .course-h1-inline { font-size: 1.5rem !important; line-height: 1.25 !important; font-weight: 800 !important; color: #0F172A !important; margin-bottom: 2rem !important; }
-                .nav-header-inline { min-height: 80px; background: #000000; }
-                .announcement-inline { min-height: 35px; background: #fbc02d; }
-                h1 { font-size: 2.25rem; line-height: 1.2; font-weight: 800; }
-                /* Explicitly use the optimized font family for critical headings to ensure it's prioritized */
-                .hero-course-inline h1, .hero-course-inline p { font-family: var(--font-inter), sans-serif !important; }
-                .hero-course-inline { min-height: 400px; }
-              }
-                /* Eliminate any suspected YT preconnect if it exists in parent heads/scripts (defensive) */
+                  .hero-course-inline { background: #F2F6FD; padding-top: 2rem; padding-bottom: 2rem; }
+                  .course-h1-inline { font-size: 1.5rem !important; line-height: 1.3 !important; font-weight: 800; color: #0F172A; }
+                  h1 { font-size: 2.25rem !important; line-height: 1.2 !important; }
+                  .nav-header-inline { min-height: 80px; }
+                }
+                /* Eliminate YT preconnect overhead and font-chain latency */
                 link[href*="ytimg"] { display: none !important; }
-              }
+                img[priority] { fetchpriority: high; }
             `,
           }}
         />
