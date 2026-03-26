@@ -61,7 +61,6 @@ const blogHeroImages: Record<string, string> = {
     'sap-fieldglass-login-guide': '/images/sap-fieldglass-login-guide.png',
 
     // Full / Long Slugs
-    'sap-ariba-sourcing-configuration': '/images/sap-ariba-sourcing-config.png',
     'sap-fico-cash-journal-configuration': '/assets/sap-fico-cash-journal-header.png',
     'sap-tcodes-list-pdf': '/images/sap-tcodes-list-hero.webp',
     'sap-sd-process-flow': '/images/sap-sd-workflow.webp',

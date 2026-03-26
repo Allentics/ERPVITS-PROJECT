@@ -230,7 +230,7 @@ export const blogPosts: BlogPost[] = [
         id: "sap-ariba-sourcing-configuration",
         title: "SAP Ariba Sourcing Configuration Guide: Complete Setup & Best Practices",
         description: "Complete guide to configuring SAP Ariba Sourcing for optimal procurement. Learn setup steps, templates, workflows, integration, and best practices for strategic sourcing success.",
-        image: "/images/sap-ariba-sourcing.webp",
+        image: "/images/blogs/sap-ariba-infographic-hero.png",
         date: "Dec 27, 2025",
         category: "SAP Ariba",
         author: "ERPVITS Expert"
