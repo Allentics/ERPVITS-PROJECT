@@ -352,7 +352,7 @@ export default function NewWebStoryPage() {
                                                 Override Author (Optional)
                                             </label>
                                             <input
-                                                value={slide.customAuthor}
+                                                value={slide.customAuthor || ''}
                                                 onChange={(e) => handleSlideChange(index, 'customAuthor', e.target.value)}
                                                 placeholder="e.g. By Garima Johar"
                                                 className="w-full px-0 py-1 border-b border-gray-100 focus:border-blue-500 focus:outline-none transition-colors text-[11px]"
@@ -363,7 +363,7 @@ export default function NewWebStoryPage() {
                                                 Override Date (Optional)
                                             </label>
                                             <input
-                                                value={slide.customDate}
+                                                value={slide.customDate || ''}
                                                 onChange={(e) => handleSlideChange(index, 'customDate', e.target.value)}
                                                 placeholder="e.g. March 24, 2026"
                                                 className="w-full px-0 py-1 border-b border-gray-100 focus:border-blue-500 focus:outline-none transition-colors text-[11px]"

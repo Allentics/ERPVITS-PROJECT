@@ -317,7 +317,7 @@ export default function EditWebStoryPage({ params }: { params: Promise<{ id: str
                                             <Type size={10} /> Slide Title
                                         </label>
                                         <input
-                                            value={slide.title}
+                                            value={slide.title || ''}
                                             onChange={(e) => handleSlideChange(index, 'title', e.target.value)}
                                             placeholder="Slide Headline"
                                             required
@@ -327,7 +327,7 @@ export default function EditWebStoryPage({ params }: { params: Promise<{ id: str
                                     <div className="space-y-1">
                                         <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Slide Content</label>
                                         <textarea
-                                            value={slide.content}
+                                            value={slide.content || ''}
                                             onChange={(e) => handleSlideChange(index, 'content', e.target.value)}
                                             placeholder="Tell your story..."
                                             rows={2}
@@ -341,7 +341,7 @@ export default function EditWebStoryPage({ params }: { params: Promise<{ id: str
                                                 <ImageIcon size={10} /> Image URL
                                             </label>
                                             <input
-                                                value={slide.image}
+                                                value={slide.image || ''}
                                                 onChange={(e) => handleSlideChange(index, 'image', e.target.value)}
                                                 placeholder="https://..."
                                                 required
@@ -398,7 +398,7 @@ export default function EditWebStoryPage({ params }: { params: Promise<{ id: str
                                                 Override Author (Optional)
                                             </label>
                                             <input
-                                                value={slide.customAuthor}
+                                                value={slide.customAuthor || ''}
                                                 onChange={(e) => handleSlideChange(index, 'customAuthor', e.target.value)}
                                                 placeholder="e.g. By Garima Johar"
                                                 className="w-full px-0 py-1 border-b border-gray-100 focus:border-blue-500 focus:outline-none transition-colors text-[11px]"
@@ -409,7 +409,7 @@ export default function EditWebStoryPage({ params }: { params: Promise<{ id: str
                                                 Override Date (Optional)
                                             </label>
                                             <input
-                                                value={slide.customDate}
+                                                value={slide.customDate || ''}
                                                 onChange={(e) => handleSlideChange(index, 'customDate', e.target.value)}
                                                 placeholder="e.g. March 24, 2026"
                                                 className="w-full px-0 py-1 border-b border-gray-100 focus:border-blue-500 focus:outline-none transition-colors text-[11px]"
