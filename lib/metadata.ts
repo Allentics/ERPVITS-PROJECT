@@ -51,7 +51,7 @@ const getDbId = (slug: string) => {
 
 export async function fetchCourseMetadata(slug: string, canonicalUrl?: string): Promise<Metadata> {
     const dbId = getDbId(slug);
-    const { data: course } = await supabase.from('courses').select('title, meta_title, meta_description, hero_image').eq('id', dbId).single();
+    const { data: course } = await supabase.from('courses').select('title, meta_title, meta_description, schema, hero_image').eq('id', dbId).single();
 
     // Fallback logic for local mapping
     const local = localCourses.find(c => c.id === slug) ||
