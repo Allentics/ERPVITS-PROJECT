@@ -48,7 +48,6 @@ const Hero = () => {
                     className="object-cover object-[95%_10%]"
                     loading="eager"
                     fetchPriority="high"
-                    quality={80}
                     sizes="100vw"
                 />
                 <div className="absolute inset-y-0 left-0 w-full md:w-[75%] lg:w-[60%] bg-gradient-to-r from-rose-50/80 via-rose-50/40 to-transparent z-10 pointer-events-none" />
