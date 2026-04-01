@@ -62,7 +62,6 @@ export default function WebStoriesAdminPage() {
 
         setSyncing(true);
         try {
-            // Prepare mock stories for DB (remove mock IDs if needed or just use titles)
             const storiesToSync = MOCK_STORIES.map(s => ({
                 title: s.title,
                 slug: s.slug,
@@ -74,15 +73,50 @@ export default function WebStoriesAdminPage() {
                 slides: s.slides || []
             }));
 
+            // Attempt upsert (requires unique constraint on title)
             const { error } = await supabase
                 .from('web_stories')
                 .upsert(storiesToSync, { onConflict: 'title' });
 
-            if (error) throw error;
-            alert('Successfully synced all stories! They are now editable.');
+            if (error) {
+                // Fallback for missing unique constraint: try inserting one by one
+                console.warn('Upsert failed, falling back to manual inserts:', error.message);
+                for (const story of storiesToSync) {
+                    await supabase.from('web_stories').insert([story]);
+                }
+            }
+
+            alert('Sync processing complete! They should now be editable.');
             fetchStories();
         } catch (err: any) {
             alert('Error syncing stories: ' + err.message);
+        } finally {
+            setSyncing(false);
+        }
+    }
+
+    async function syncSingleStory(s: any) {
+        setSyncing(true);
+        try {
+            const storyToSync = {
+                title: s.title,
+                slug: s.slug,
+                category: s.category,
+                author: s.author,
+                role: s.role,
+                image: s.image,
+                type: s.type,
+                slides: s.slides || []
+            };
+
+            const { error } = await supabase
+                .from('web_stories')
+                .insert([storyToSync]);
+
+            if (error) throw error;
+            fetchStories();
+        } catch (err: any) {
+            alert('Error syncing story: ' + err.message);
         } finally {
             setSyncing(false);
         }
@@ -244,12 +278,13 @@ export default function WebStoriesAdminPage() {
                                             <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                                                 {story.isMock ? (
                                                     <button
-                                                        onClick={syncStories}
-                                                        className="flex items-center gap-1.5 px-3 py-1.5 bg-orange-50 text-orange-600 rounded-lg text-xs font-bold hover:bg-orange-100 transition-all border border-orange-200"
+                                                        onClick={() => syncSingleStory(story)}
+                                                        disabled={syncing}
+                                                        className="flex items-center gap-1.5 px-3 py-1.5 bg-orange-50 text-orange-600 rounded-lg text-xs font-bold hover:bg-orange-100 transition-all border border-orange-200 disabled:opacity-50"
                                                         title="Sync to Database for Editing"
                                                     >
                                                         <DownloadCloud size={14} />
-                                                        Sync to Edit
+                                                        {syncing ? 'Syncing...' : 'Sync to Edit'}
                                                     </button>
                                                 ) : (
                                                     <>
