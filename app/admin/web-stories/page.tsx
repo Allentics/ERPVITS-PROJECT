@@ -57,6 +57,7 @@ export default function WebStoriesAdminPage() {
             const mockStories = [
                 {
                     title: "How to Crack SAP Interviews",
+                    slug: "how-to-crack-sap-interviews",
                     category: "Interview Questions",
                     author: "ERPVITS",
                     role: "SAP Consultant @ Siemens",
@@ -73,6 +74,7 @@ export default function WebStoriesAdminPage() {
                 },
                 {
                     title: "SAP S/4HANA vs ECC: Key Differences",
+                    slug: "sap-s4hana-vs-ecc-key-differences",
                     category: "Module Comparison",
                     author: "ERPVITS",
                     role: "SAP Architect",
@@ -89,6 +91,7 @@ export default function WebStoriesAdminPage() {
                 },
                 {
                     title: "My Journey: Fresher to Architect",
+                    slug: "my-journey-fresher-to-architect",
                     category: "Success Stories",
                     author: "ERPVITS",
                     role: "Senior Manager",
@@ -238,7 +241,10 @@ export default function WebStoriesAdminPage() {
                                                 </div>
                                                 <div className="min-w-0">
                                                     <p className="text-sm font-bold text-gray-900 truncate" title={story.title}>{story.title}</p>
-                                                    <div className="flex items-center gap-2 mt-1">
+                                                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1">
+                                                        <span className="text-[10px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono border border-slate-200" title="URL Slug">
+                                                            /{story.slug || 'no-slug'}
+                                                        </span>
                                                         <span className="text-xs text-gray-500 flex items-center gap-1">
                                                             <Calendar size={12} />
                                                             {new Date(story.created_at).toLocaleDateString()}
