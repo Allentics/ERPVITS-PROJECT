@@ -33,7 +33,6 @@ export default function NewWebStoryPage() {
         role: 'SAP Expert',
         image: '',
         type: 'standard',
-        date: new Date().toISOString().split('T')[0],
         slides: [
 
             {
