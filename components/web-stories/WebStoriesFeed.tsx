@@ -258,7 +258,18 @@ const WebStoriesFeed = () => {
     const [selectedStoryIndex, setSelectedStoryIndex] = useState<number | null>(null);
 
     useEffect(() => {
-        fetchStories();
+        fetchStories().then((fetchedStories) => {
+            // Check for slug in URL on load
+            const pathSegments = window.location.pathname.split('/');
+            const urlSlug = pathSegments[pathSegments.length - 1];
+
+            if (urlSlug && urlSlug !== 'web-stories') {
+                const index = fetchedStories.findIndex((s: any) => s.slug === urlSlug);
+                if (index !== -1) {
+                    setSelectedStoryIndex(index);
+                }
+            }
+        });
     }, []);
 
     async function fetchStories() {
@@ -276,11 +287,14 @@ const WebStoriesFeed = () => {
             const dbStoryTitles = new Set((dbStories || []).map((s: any) => s.title));
             const uniqueMockStories = MOCK_STORIES.filter((s: any) => !dbStoryTitles.has(s.title));
 
-            setStories([...(dbStories || []), ...uniqueMockStories]);
+            const allStories = [...(dbStories || []), ...uniqueMockStories];
+            setStories(allStories);
+            return allStories;
         } catch (err) {
             console.error('Error fetching stories:', err);
             // On error, use MOCK_STORIES as fallback
             setStories(MOCK_STORIES);
+            return MOCK_STORIES;
         } finally {
             setLoading(false);
         }
@@ -296,7 +310,16 @@ const WebStoriesFeed = () => {
         const index = stories.findIndex(s => s.id === storyId);
         if (index !== -1) {
             setSelectedStoryIndex(index);
+            const story = stories[index];
+            if (story.slug) {
+                window.history.pushState(null, '', `/web-stories/${story.slug}`);
+            }
         }
+    };
+
+    const handleCloseViewer = () => {
+        setSelectedStoryIndex(null);
+        window.history.pushState(null, '', '/web-stories');
     };
 
     return (
@@ -308,7 +331,7 @@ const WebStoriesFeed = () => {
                     <StoryViewer
                         stories={stories}
                         initialStoryIndex={selectedStoryIndex}
-                        onClose={() => setSelectedStoryIndex(null)}
+                        onClose={handleCloseViewer}
                     />
                 )}
             </AnimatePresence>

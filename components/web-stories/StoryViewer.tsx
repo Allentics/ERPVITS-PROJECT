@@ -146,10 +146,18 @@ export default function StoryViewer({ stories, initialStoryIndex, onClose }: Sto
         }
     }, [progress, nextSlide]);
 
-    // Reset progress when slide changes
+    // Reset progress and update URL when story changes
     useEffect(() => {
         setProgress(0);
-    }, [currentSlideIndex, currentStoryIndex]);
+        // Sync URL with story slug
+        if (currentStory && currentStory.slug) {
+            window.history.pushState(null, '', `/web-stories/${currentStory.slug}`);
+        }
+    }, [currentStoryIndex, currentStory]);
+
+    useEffect(() => {
+        setProgress(0);
+    }, [currentSlideIndex]);
 
     // Keyboard Navigation
     useEffect(() => {
