@@ -27,7 +27,7 @@ async function ensureBucketExists(supabaseAdmin: any) {
             await supabaseAdmin.storage.createBucket(BUCKET, {
                 public: true,
                 fileSizeLimit: 5 * 1024 * 1024, // 5MB
-                allowedMimeTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/svg+xml'],
+                allowedMimeTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/svg+xml', 'application/pdf'],
             });
         }
     } catch {
@@ -36,7 +36,7 @@ async function ensureBucketExists(supabaseAdmin: any) {
             await supabaseAdmin.storage.createBucket(BUCKET, {
                 public: true,
                 fileSizeLimit: 5 * 1024 * 1024,
-                allowedMimeTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/svg+xml'],
+                allowedMimeTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/svg+xml', 'application/pdf'],
             });
         } catch {
             // Already exists — proceed
@@ -57,9 +57,9 @@ export async function POST(request: NextRequest) {
         }
 
         // Validate type
-        const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/svg+xml'];
+        const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/svg+xml', 'application/pdf'];
         if (!allowedTypes.includes(file.type)) {
-            return NextResponse.json({ error: 'Invalid file type. Allowed: JPEG, PNG, GIF, WebP, SVG' }, { status: 400 });
+            return NextResponse.json({ error: 'Invalid file type. Allowed: JPEG, PNG, GIF, WebP, SVG, PDF' }, { status: 400 });
         }
 
         // Validate size (5MB)

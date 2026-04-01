@@ -5,12 +5,12 @@ import { supabase } from '@/lib/supabase';
 import {
     Upload, Search, X, Copy, Trash2, Check,
     FolderOpen, Image as ImageIcon, Loader2,
-    AlertCircle, RefreshCw, ExternalLink
+    AlertCircle, RefreshCw, ExternalLink, FileText
 } from 'lucide-react';
 
 // ── ERPVITS-specific folder categories ──────────────────────────────────────
 const FOLDERS = [
-    { value: 'all', label: 'All Images' },
+    { value: 'all', label: 'All Files' },
     { value: 'general', label: 'General' },
     { value: 'blogs', label: 'Blogs' },
     { value: 'courses', label: 'Modules / Courses' },
@@ -19,6 +19,7 @@ const FOLDERS = [
     { value: 'infographics', label: 'Infographics' },
     { value: 'team', label: 'Team / Trainers' },
     { value: 'logos', label: 'Logos & Branding' },
+    { value: 'documents', label: 'Documents / PDFs' },
 ];
 
 const BUCKET = 'media-library';
@@ -101,9 +102,9 @@ export default function MediaLibraryPage() {
         const file = fileList[0];
 
         // Client-side validate
-        const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/svg+xml'];
+        const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/svg+xml', 'application/pdf'];
         if (!allowedTypes.includes(file.type)) {
-            setUploadError('Invalid file type. Allowed: JPEG, PNG, GIF, WebP, SVG');
+            setUploadError('Invalid file type. Allowed: JPEG, PNG, GIF, WebP, SVG, PDF');
             return;
         }
         if (file.size > 5 * 1024 * 1024) {
@@ -180,13 +181,13 @@ export default function MediaLibraryPage() {
                         <ImageIcon size={22} className="text-orange-400" />
                         Media Library
                     </h1>
-                    <p className="text-slate-400 text-sm mt-0.5">Manage your images and media files</p>
+                    <p className="text-slate-400 text-sm mt-0.5">Manage your files and media assets</p>
                 </div>
                 <button
                     onClick={() => { setShowUpload(true); setUploadError(''); }}
                     className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-5 py-2.5 rounded-lg font-bold text-sm transition-colors shadow-lg"
                 >
-                    <Upload size={16} /> Upload Image
+                    <Upload size={16} /> Upload Media
                 </button>
             </div>
 
@@ -199,7 +200,7 @@ export default function MediaLibraryPage() {
                         type="text"
                         value={search}
                         onChange={e => setSearch(e.target.value)}
-                        placeholder="Search images..."
+                        placeholder="Search files..."
                         className="w-full pl-9 pr-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-orange-300"
                     />
                     {search && (
@@ -245,8 +246,8 @@ export default function MediaLibraryPage() {
                 ) : filtered.length === 0 ? (
                     <div className="flex flex-col items-center justify-center py-32 text-gray-400">
                         <ImageIcon size={48} className="mb-4 opacity-30" />
-                        <p className="text-base font-medium">No images found</p>
-                        <p className="text-sm mt-1">{search ? 'Try a different search term.' : 'Upload your first image to get started.'}</p>
+                        <p className="text-base font-medium">No files found</p>
+                        <p className="text-sm mt-1">{search ? 'Try a different search term.' : 'Upload your first file to get started.'}</p>
                     </div>
                 ) : (
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
@@ -257,15 +258,22 @@ export default function MediaLibraryPage() {
                                 onClick={() => setSelected(selected?.id === file.id ? null : file)}
                             >
                                 {/* Thumbnail */}
-                                <div className="aspect-square bg-gray-50 overflow-hidden">
-                                    <img
-                                        src={file.publicUrl}
-                                        alt={file.name}
-                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                                        onError={(e) => {
-                                            (e.target as HTMLImageElement).src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="%23ccc" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m3 9 4-4 4 4"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>';
-                                        }}
-                                    />
+                                <div className="aspect-square bg-gray-50 overflow-hidden flex items-center justify-center">
+                                    {file.name.toLowerCase().endsWith('.pdf') || file.metadata?.mimetype === 'application/pdf' ? (
+                                        <div className="flex flex-col items-center gap-2 text-red-500">
+                                            <FileText size={48} strokeWidth={1.5} />
+                                            <span className="text-[10px] font-bold bg-red-100 px-1.5 py-0.5 rounded uppercase">PDF</span>
+                                        </div>
+                                    ) : (
+                                        <img
+                                            src={file.publicUrl}
+                                            alt={file.name}
+                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                            onError={(e) => {
+                                                (e.target as HTMLImageElement).src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="%23ccc" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m3 9 4-4 4 4"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>';
+                                            }}
+                                        />
+                                    )}
                                 </div>
 
                                 {/* Quick actions overlay */}
@@ -314,8 +322,15 @@ export default function MediaLibraryPage() {
                         <button onClick={() => setSelected(null)} className="text-gray-400 hover:text-gray-700"><X size={18} /></button>
                     </div>
                     <div className="flex-1 overflow-y-auto p-4 space-y-4">
-                        <div className="bg-gray-50 rounded-xl overflow-hidden aspect-square">
-                            <img src={selected.publicUrl} alt={selected.name} className="w-full h-full object-contain" />
+                        <div className="bg-gray-50 rounded-xl overflow-hidden aspect-square flex items-center justify-center">
+                            {selected.name.toLowerCase().endsWith('.pdf') || selected.metadata?.mimetype === 'application/pdf' ? (
+                                <div className="flex flex-col items-center gap-3 text-red-500">
+                                    <FileText size={80} strokeWidth={1} />
+                                    <span className="text-sm font-bold bg-red-100 text-red-700 px-3 py-1 rounded-full uppercase tracking-wider">PDF Document</span>
+                                </div>
+                            ) : (
+                                <img src={selected.publicUrl} alt={selected.name} className="w-full h-full object-contain" />
+                            )}
                         </div>
                         <div className="space-y-3 text-sm">
                             <div>
@@ -366,7 +381,7 @@ export default function MediaLibraryPage() {
                     <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md">
                         {/* Modal Header */}
                         <div className="flex items-center justify-between p-6 border-b border-gray-100">
-                            <h2 className="text-xl font-bold text-gray-900">Upload Image</h2>
+                            <h2 className="text-xl font-bold text-gray-900">Upload Media</h2>
                             <button
                                 onClick={() => { setShowUpload(false); setUploadError(''); }}
                                 className="text-gray-400 hover:text-gray-700 hover:bg-gray-100 rounded-full p-1.5 transition-colors"
@@ -399,16 +414,16 @@ export default function MediaLibraryPage() {
                                             <Upload size={24} className="text-gray-400" />
                                         </div>
                                         <div>
-                                            <p className="text-sm text-gray-700">Drag and drop images here, or</p>
+                                            <p className="text-sm text-gray-700">Drag and drop files here, or</p>
                                             <p className="text-sm font-bold text-orange-600 mt-1 hover:text-orange-700">Browse Files</p>
                                         </div>
-                                        <p className="text-xs text-gray-400">Max 5MB · JPEG, PNG, GIF, WebP, SVG</p>
+                                        <p className="text-xs text-gray-400">Max 5MB · JPG, PNG, WebP, SVG, PDF</p>
                                     </div>
                                 )}
                                 <input
                                     ref={fileInputRef}
                                     type="file"
-                                    accept="image/jpeg,image/png,image/gif,image/webp,image/svg+xml"
+                                    accept="image/jpeg,image/png,image/gif,image/webp,image/svg+xml,application/pdf"
                                     className="hidden"
                                     onChange={(e) => handleUpload(e.target.files)}
                                 />
