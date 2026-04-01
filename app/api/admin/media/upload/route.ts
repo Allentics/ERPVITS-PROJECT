@@ -29,9 +29,16 @@ async function ensureBucketExists(supabaseAdmin: any) {
                 fileSizeLimit: 5 * 1024 * 1024, // 5MB
                 allowedMimeTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/svg+xml', 'application/pdf'],
             });
+        } else {
+            // Update existing bucket to allow PDFs if not already allowed
+            await supabaseAdmin.storage.updateBucket(BUCKET, {
+                public: true,
+                fileSizeLimit: 5 * 1024 * 1024,
+                allowedMimeTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/svg+xml', 'application/pdf'],
+            });
         }
     } catch {
-        // Bucket might already exist — attempt creation anyway
+        // Fallback for any errors during check/creation
         try {
             await supabaseAdmin.storage.createBucket(BUCKET, {
                 public: true,
@@ -39,7 +46,16 @@ async function ensureBucketExists(supabaseAdmin: any) {
                 allowedMimeTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/svg+xml', 'application/pdf'],
             });
         } catch {
-            // Already exists — proceed
+            // Already exists or other error — attempt to update anyway
+            try {
+                await supabaseAdmin.storage.updateBucket(BUCKET, {
+                    public: true,
+                    fileSizeLimit: 5 * 1024 * 1024,
+                    allowedMimeTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/svg+xml', 'application/pdf'],
+                });
+            } catch (updateErr) {
+                console.error('Failed to update bucket:', updateErr);
+            }
         }
     }
 }
