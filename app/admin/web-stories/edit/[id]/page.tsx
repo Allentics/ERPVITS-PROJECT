@@ -38,6 +38,7 @@ export default function EditWebStoryPage({ params }: { params: Promise<{ id: str
         role: 'SAP Expert',
         image: '',
         type: 'standard',
+        slug: '',
         slides: []
     });
 
@@ -67,7 +68,16 @@ export default function EditWebStoryPage({ params }: { params: Promise<{ id: str
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
-        setFormData((prev: any) => ({ ...prev, [name]: value }));
+        setFormData((prev: any) => {
+            const newData = { ...prev, [name]: value };
+            if (name === 'title' && !prev.slug) {
+                newData.slug = value
+                    .toLowerCase()
+                    .replace(/[^a-z0-9]+/g, '-')
+                    .replace(/(^-|-$)+/g, '');
+            }
+            return newData;
+        });
     };
 
     const handleSlideChange = (index: number, field: string, value: any) => {
@@ -117,6 +127,7 @@ export default function EditWebStoryPage({ params }: { params: Promise<{ id: str
                     role: formData.role,
                     image: formData.image,
                     type: formData.type,
+                    slug: formData.slug,
                     slides: formData.slides,
                     updated_at: new Date().toISOString()
                 })
@@ -186,6 +197,20 @@ export default function EditWebStoryPage({ params }: { params: Promise<{ id: str
                                 className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-4 focus:ring-orange-500/10 focus:border-orange-500 outline-none transition-all font-medium"
                             />
                         </div>
+                        <div className="space-y-2">
+                            <label className="text-sm font-bold text-gray-700 uppercase tracking-wider">URL Slug</label>
+                            <input
+                                name="slug"
+                                required
+                                value={formData.slug}
+                                onChange={handleChange}
+                                placeholder="how-to-master-sap-fico"
+                                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-4 focus:ring-orange-500/10 focus:border-orange-500 outline-none transition-all font-medium"
+                            />
+                        </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div className="space-y-2">
                             <label className="text-sm font-bold text-gray-700 uppercase tracking-wider">Category</label>
                             <select
