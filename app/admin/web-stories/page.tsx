@@ -17,8 +17,10 @@ import {
     Smartphone,
     RefreshCw,
     Star,
-    Zap
+    Zap,
+    DownloadCloud
 } from 'lucide-react';
+import { MOCK_STORIES } from '@/lib/constants/mockStories';
 
 export default function WebStoriesAdminPage() {
     const router = useRouter();
@@ -35,13 +37,19 @@ export default function WebStoriesAdminPage() {
     async function fetchStories() {
         try {
             setLoading(true);
-            const { data, error } = await supabase
+            const { data: dbStories, error } = await supabase
                 .from('web_stories')
                 .select('*')
                 .order('created_at', { ascending: false });
 
             if (error) throw error;
-            setStories(data || []);
+
+            // Merge DB stories with Mock stories
+            const dbStoryTitles = new Set((dbStories || []).map((s: any) => s.title));
+            const availableMocks = MOCK_STORIES.map(m => ({ ...m, isMock: true }))
+                .filter(m => !dbStoryTitles.has(m.title));
+
+            setStories([...(dbStories || []), ...availableMocks]);
         } catch (err: any) {
             setError(err.message);
         } finally {
@@ -50,69 +58,28 @@ export default function WebStoriesAdminPage() {
     }
 
     async function syncStories() {
-        if (!confirm('This will import initial mock stories into the database. Continue?')) return;
+        if (!confirm('This will import all initial mock stories into the database so you can edit them. Continue?')) return;
 
         setSyncing(true);
         try {
-            const mockStories = [
-                {
-                    title: "How to Crack SAP Interviews",
-                    slug: "how-to-crack-sap-interviews",
-                    category: "Interview Questions",
-                    author: "ERPVITS",
-                    role: "SAP Consultant @ Siemens",
-                    image: "/images/stories/sap_consultant_amit.png",
-                    views: "12.5k",
-                    type: "featured",
-                    slides: [
-                        { id: 101, image: "/images/stories/generated/story_interview_modern.png", title: "Cracking the SAP Interview", content: "It's not just about technical skills. It's about showing you understand the VALUE of SAP.", duration: 5000 },
-                        { id: 102, image: "/images/stories/generated/story_interview_resume.png", title: "1. Know Your Career Path", content: "Interviewers love candidates who have a clear vision of their growth from Junior Consultant to Architect.", duration: 5000 },
-                        { id: 103, image: "/images/stories/generated/story_interview_whiteboard.png", title: "2. Talk About Progression", content: "Don't just discuss what you did. Discuss how you improved process efficiency in your previous projects.", duration: 5000 },
-                        { id: 104, image: "/images/stories/generated/story_interview_handshake.png", title: "3. Real World Scenarios", content: "Be prepared to whiteboard a solution. Show them how you solve complex procurement problems.", duration: 5000 },
-                        { id: 105, image: "/images/stories/generated/story_interview_cross_module.png", title: "4. Cross-Module Knowledge", content: "Specialists are good. Generalists who understand integration points (MM-FI, SD-FI) are hired instantly.", duration: 5000 }
-                    ]
-                },
-                {
-                    title: "SAP S/4HANA vs ECC: Key Differences",
-                    slug: "sap-s4hana-vs-ecc-key-differences",
-                    category: "Module Comparison",
-                    author: "ERPVITS",
-                    role: "SAP Architect",
-                    image: "/images/stories/sap_tech_dashboard.png",
-                    views: "8.2k",
-                    type: "featured",
-                    slides: [
-                        { id: 201, image: "/images/stories/generated/story_erp_dashboard_futuristic.png", title: "S/4HANA: The New Core", content: "Why are companies migrating? It's not just an upgrade; it's a complete business transformation.", duration: 5000 },
-                        { id: 202, image: "/images/stories/generated/story_hana_server.png", title: "1. In-Memory Computing", content: "With HANA, reports that took hours now run in seconds. This changes how businesses make decisions.", duration: 5000 },
-                        { id: 203, image: "/images/stories/generated/story_hana_cloud.png", title: "2. The Cloud Advantage", content: "BTP (Business Technology Platform) allows for rapid innovation and extension without touching the core.", duration: 5000 },
-                        { id: 204, image: "/images/stories/generated/story_erp_dashboard_futuristic.png", title: "3. Simplified Processes", content: "Complex workflows are streamlined. External workforce management becomes seamless.", duration: 5000 },
-                        { id: 205, image: "/images/stories/generated/story_hana_server.png", title: "4. Intelligent Procurement", content: "Integration with Ariba Network automates the entire procure-to-pay lifecycle.", duration: 5000 }
-                    ]
-                },
-                {
-                    title: "My Journey: Fresher to Architect",
-                    slug: "my-journey-fresher-to-architect",
-                    category: "Success Stories",
-                    author: "ERPVITS",
-                    role: "Senior Manager",
-                    image: "/images/stories/success_story_priya.png",
-                    views: "15k",
-                    type: "featured",
-                    slides: [
-                        { id: 301, image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmVzc2lvbmFsJTIwd29tYW58ZW58MHx8MHx8fDA%3D", title: "My Career Roadmap", content: "I didn't start as an expert. I started with a willingness to learn and travel.", duration: 5000 },
-                        { id: 302, image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", title: "Going Global", content: "My first big break was a rollout project in Germany. Understanding local localization rules is a super power.", duration: 5000 },
-                        { id: 303, image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", title: "Adapting to Markets", content: "Worked in APAC markets? You learn flexibility. Every region has unique compliance needs.", duration: 5000 },
-                        { id: 304, image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=2070&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", title: "Deep Functional Dive", content: "I spent 2 years mastering Shipping Points. Sounds boring? It made me indispensable for logistics projects.", duration: 5000 }
-                    ]
-                }
-            ];
+            // Prepare mock stories for DB (remove mock IDs if needed or just use titles)
+            const storiesToSync = MOCK_STORIES.map(s => ({
+                title: s.title,
+                slug: s.slug,
+                category: s.category,
+                author: s.author,
+                role: s.role,
+                image: s.image,
+                type: s.type,
+                slides: s.slides || []
+            }));
 
             const { error } = await supabase
                 .from('web_stories')
-                .upsert(mockStories, { onConflict: 'title' });
+                .upsert(storiesToSync, { onConflict: 'title' });
 
             if (error) throw error;
-            alert('Successfully synced initial stories!');
+            alert('Successfully synced all stories! They are now editable.');
             fetchStories();
         } catch (err: any) {
             alert('Error syncing stories: ' + err.message);
@@ -275,22 +242,35 @@ export default function WebStoriesAdminPage() {
                                         </td>
                                         <td className="px-6 py-4 text-right">
                                             <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                {story.isMock ? (
+                                                    <button
+                                                        onClick={syncStories}
+                                                        className="flex items-center gap-1.5 px-3 py-1.5 bg-orange-50 text-orange-600 rounded-lg text-xs font-bold hover:bg-orange-100 transition-all border border-orange-200"
+                                                        title="Sync to Database for Editing"
+                                                    >
+                                                        <DownloadCloud size={14} />
+                                                        Sync to Edit
+                                                    </button>
+                                                ) : (
+                                                    <>
+                                                        <Link
+                                                            href={`/admin/web-stories/edit/${story.id}`}
+                                                            className="p-2 text-gray-400 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-all"
+                                                            title="Edit"
+                                                        >
+                                                            <Edit size={18} />
+                                                        </Link>
+                                                        <button
+                                                            onClick={() => deleteStory(story.id)}
+                                                            className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-all"
+                                                            title="Delete"
+                                                        >
+                                                            <Trash2 size={18} />
+                                                        </button>
+                                                    </>
+                                                )}
                                                 <Link
-                                                    href={`/admin/web-stories/edit/${story.id}`}
-                                                    className="p-2 text-gray-400 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-all"
-                                                    title="Edit"
-                                                >
-                                                    <Edit size={18} />
-                                                </Link>
-                                                <button
-                                                    onClick={() => deleteStory(story.id)}
-                                                    className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-all"
-                                                    title="Delete"
-                                                >
-                                                    <Trash2 size={18} />
-                                                </button>
-                                                <Link
-                                                    href={`/web-stories/`}
+                                                    href={`/web-stories/${story.slug || ''}`}
                                                     target="_blank"
                                                     className="p-2 text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all"
                                                     title="View Stories"
