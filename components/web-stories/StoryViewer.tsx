@@ -1,6 +1,5 @@
 "use client";
 
-import Image from 'next/image';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, Heart, Send, MoreHorizontal } from 'lucide-react';
@@ -219,28 +218,18 @@ export default function StoryViewer({ stories, initialStoryIndex, onClose }: Sto
                 {/* Background Image/Media with Blurred Fallback */}
                 <div className="absolute inset-0 z-0 bg-gray-900 flex items-center justify-center overflow-hidden">
                     {/* Blurred Background to fill space */}
-                    <div className="absolute inset-0 w-full h-full">
-                        <Image
-                            src={currentSlide.image}
-                            alt=""
-                            fill
-                            className="object-cover blur-2xl opacity-40 scale-110"
-                            quality={10}
-                        />
-                    </div>
+                    <img
+                        src={currentSlide.image}
+                        alt=""
+                        className="absolute inset-0 w-full h-full object-cover blur-2xl opacity-40 scale-110"
+                    />
 
                     {/* Main Image - Now using object-cover for webstory ratio */}
-                    <div className="relative z-10 w-full h-full">
-                        <Image
-                            src={currentSlide.image}
-                            alt={currentSlide.title}
-                            fill
-                            className="object-cover pointer-events-none"
-                            quality={65}
-                            sizes="(max-width: 768px) 100vw, 550px"
-                            priority
-                        />
-                    </div>
+                    <img
+                        src={currentSlide.image}
+                        alt={currentSlide.title}
+                        className="relative z-10 w-full h-full object-cover pointer-events-none"
+                    />
 
                     {/* Gradient Overlay for Text Readability */}
                     <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/20 via-transparent to-black/90"></div>
@@ -268,13 +257,11 @@ export default function StoryViewer({ stories, initialStoryIndex, onClose }: Sto
                     {/* Header Info */}
                     <div className="flex justify-between items-center">
                         <div className="flex items-center gap-3">
-                            <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-orange-500 to-pink-500 p-[1.5px] shadow-lg flex items-center justify-center overflow-hidden">
-                                <div className="w-full h-full bg-black rounded-full overflow-hidden flex items-center justify-center relative">
-                                    <Image
+                            <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-orange-500 to-pink-500 p-[1.5px] shadow-lg">
+                                <div className="w-full h-full bg-black rounded-full overflow-hidden flex items-center justify-center">
+                                    <img
                                         src="/favicon.png"
                                         alt="ERPVITS"
-                                        width={32}
-                                        height={32}
                                         className="w-[85%] h-[85%] object-contain rounded-full"
                                     />
                                 </div>

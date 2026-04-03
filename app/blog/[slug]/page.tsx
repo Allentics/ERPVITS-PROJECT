@@ -125,13 +125,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         const local = localPosts.find((p: any) => p.id === slug);
         if (!local) return { title: 'Post Not Found' };
 
-        const title = `${local.title} | ERPVITS Blog`;
+        const title = local.title;
         const description = local.description;
         const imageUrl = resolveMetadataImage(local.image);
         const logoUrl = 'https://www.erpvits.com/images/logo.webp';
 
         return {
-            title,
+            title: { absolute: title },
             description,
             openGraph: {
                 title,
@@ -155,13 +155,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         };
     }
 
-    const title = `${post.meta_title || post.title} | ERPVITS Blog`;
+    const title = post.meta_title || post.title;
     const description = post.meta_description || post.description;
     const imageUrl = resolveMetadataImage(post.image);
     const logoUrl = 'https://www.erpvits.com/images/logo.webp';
 
     return {
-        title,
+        title: { absolute: title },
         description,
         openGraph: {
             title,

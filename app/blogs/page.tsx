@@ -10,7 +10,7 @@ import { fetchPageMetadata } from '@/lib/metadata';
 export async function generateMetadata(): Promise<Metadata> {
     const meta = await fetchPageMetadata('/blogs');
     return {
-        title: 'SAP Blog & Insights | ERPVITS',
+        title: { absolute: 'SAP Blog & Insights' },
         description: 'Stay ahead in the SAP ecosystem with expert insights, technical tutorials, and career guidance from ERPVITS.',
         ...meta,
         alternates: {
