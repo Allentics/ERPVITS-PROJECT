@@ -166,7 +166,7 @@ const Navbar = () => {
                                     alt="ERPVITS"
                                     width={230}
                                     height={84}
-                                    className="h-12 w-auto"
+                                    className="h-12 w-auto logo-img-mobile"
                                     priority
                                 />
                             </Link>

@@ -83,6 +83,30 @@ export default function RootLayout({
 
         {/* LCP Optimization: Preload the logo - critical for desktop and mobile header */}
         <link rel="preload" href="/images/logo.webp" as="image" type="image/webp" fetchPriority="high" />
+
+        {/* Mobile-Only CSS Unblocking Script: Strictly for mobile view, defer non-critical CSS to clear the render-blocking path */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                if (typeof window !== 'undefined' && window.innerWidth < 768) {
+                  const observer = new MutationObserver((mutations) => {
+                    mutations.forEach((mutation) => {
+                      mutation.addedNodes.forEach((node) => {
+                        // Defer all external stylesheets for mobile to eliminate render-blocking (except those marked as data-critical)
+                        if (node.tagName === 'LINK' && node.rel === 'stylesheet' && !node.hasAttribute('data-critical')) {
+                          node.media = 'only x';
+                          node.onload = function() { this.media = 'all'; };
+                        }
+                      });
+                    });
+                  });
+                  observer.observe(document.head, { childList: true });
+                }
+              })();
+            `,
+          }}
+        />
       </head>
       <body className="font-sans" suppressHydrationWarning>
         {/* Advanced Critical Styles: Minimize FOUC and eliminate layout shifts for headers */}
@@ -132,6 +156,14 @@ export default function RootLayout({
                   /* Navbar & Announcement Bar mobile height locking */
                   .nav-header-inline { height: 80px !important; min-height: 80px !important; }
                   .announcement-inline { height: 35px !important; min-height: 35px !important; font-size: 11px !important; }
+                  
+                  /* Mobile logo sizing lock */
+                  .logo-img-mobile { 
+                    height: 40px !important; 
+                    width: auto !important; 
+                    object-fit: contain !important;
+                    display: block !important;
+                  }
                   
                   /* Prevent large images from causing CLS before CSS loads */
                   img { max-width: 100%; height: auto; }
