@@ -89,17 +89,56 @@ export default function RootLayout({
         <style
           dangerouslySetInnerHTML={{
             __html: `
-                body { background: #ffffff; margin: 0; padding: 0; min-height: 100vh; font-family: sans-serif; }
+                body { background: #ffffff; margin: 0; padding: 0; min-height: 100vh; font-family: sans-serif; overflow-x: hidden; }
                 .hero-container-inline { min-height: 85vh; background: #ffffff; width: 100%; visibility: visible; }
                 .nav-header-inline { min-height: 80px; background: #000000; width: 100%; display: block; }
                 .announcement-inline { min-height: 35px; background: #fbc02d; width: 100%; display: flex; align-items: center; justify-content: center; }
                 .layout-container { max-width: 80rem; margin: 0 auto; padding: 0 1rem; }
+                
                 @media (max-width: 767px) {
+                  /* Ensure primary mobile container loads instantly without waiting for chunk.css */
+                  .hero-container-inline { padding-top: 1.5rem; background-color: #ffffff !important; }
+                  
+                  /* Fast-render for main typography to prevent blank screen */
+                  h1 { 
+                    font-size: 2.25rem !important; 
+                    line-height: 1.1 !important; 
+                    font-weight: 800 !important; 
+                    color: #0f172a !important; 
+                    margin-bottom: 1.5rem !important;
+                    display: block !important;
+                  }
+                  
+                  h2 {
+                    font-size: 1.125rem !important;
+                    line-height: 1.5 !important;
+                    font-weight: 700 !important;
+                    color: #1e293b !important;
+                    margin-bottom: 1.5rem !important;
+                  }
+
+                  /* Pre-style mobile CTA buttons to avoid layout shift */
+                  .btn-primary-mobile-inline {
+                    background-color: #FF5722 !important;
+                    color: #ffffff !important;
+                    padding: 1rem 2rem !important;
+                    border-radius: 0.375rem !important;
+                    font-weight: 700 !important;
+                    text-align: center !important;
+                    display: block !important;
+                    width: 100% !important;
+                  }
+
+                  /* Navbar & Announcement Bar mobile height locking */
+                  .nav-header-inline { height: 80px !important; min-height: 80px !important; }
+                  .announcement-inline { height: 35px !important; min-height: 35px !important; font-size: 11px !important; }
+                  
+                  /* Prevent large images from causing CLS before CSS loads */
+                  img { max-width: 100%; height: auto; }
                   .hero-course-inline { background: #F2F6FD; padding-top: 2rem; padding-bottom: 2rem; }
                   .course-h1-inline { font-size: 1.5rem !important; line-height: 1.3 !important; font-weight: 800; color: #0F172A; }
-                  h1 { font-size: 2.25rem !important; line-height: 1.2 !important; }
-                  .nav-header-inline { min-height: 80px; }
                 }
+                
                 /* Eliminate YT preconnect overhead and font-chain latency */
                 link[href*="ytimg"] { display: none !important; }
                 img[priority] { fetchpriority: high; }

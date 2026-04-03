@@ -84,7 +84,7 @@ const Hero = () => {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                         <button
                             onClick={() => setIsContactModalOpen(true)}
-                            className="bg-[#FF5722] hover:bg-[#F4511E] text-white px-8 py-4 rounded-md font-bold text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                            className="bg-[#FF5722] hover:bg-[#F4511E] text-white px-8 py-4 rounded-md font-bold text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 btn-primary-mobile-inline"
                         >
                             {content.cta_primary}
                         </button>
