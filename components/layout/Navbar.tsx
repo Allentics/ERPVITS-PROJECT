@@ -164,10 +164,11 @@ const Navbar = () => {
                                 <Image
                                     src="/images/logo.webp"
                                     alt="ERPVITS"
-                                    width={230}
-                                    height={84}
+                                    width={115}
+                                    height={42}
                                     className="h-12 w-auto logo-img-mobile"
                                     priority
+                                    quality={75}
                                 />
                             </Link>
 

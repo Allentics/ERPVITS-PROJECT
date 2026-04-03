@@ -27,7 +27,7 @@ import {
 import StoryViewer from './StoryViewer';
 import { supabase } from '@/lib/supabase';
 
-// --- Components ---
+import Image from 'next/image';
 
 const StoryCard = ({ story, featured = false, onClick }: { story: any, featured?: boolean, onClick?: () => void }) => {
     return (
@@ -36,11 +36,16 @@ const StoryCard = ({ story, featured = false, onClick }: { story: any, featured?
             onClick={onClick}
             className={`relative rounded-3xl overflow-hidden shadow-lg cursor-pointer group ${featured ? 'w-full h-[450px] md:h-[500px]' : 'w-full h-[350px]'}`}
         >
-            {/* Background */}
-            <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                style={{ backgroundImage: `url(${story.image})` }}
-            >
+            {/* Optimized Background Image */}
+            <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
+                <Image
+                    src={story.image}
+                    alt={story.title}
+                    fill
+                    className="object-cover"
+                    sizes={featured ? "(max-width: 768px) 100vw, 33vw" : "(max-width: 768px) 50vw, 25vw"}
+                    quality={80}
+                />
                 {/* Fallback Gradient if image fails */}
                 <div className="absolute inset-0 bg-slate-200 -z-10 bg-gradient-to-br from-slate-400 to-slate-500 opacity-50"></div>
                 {/* Placeholder Pattern to make images look nicer */}
