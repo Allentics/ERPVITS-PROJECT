@@ -10,6 +10,8 @@ import { courses as localCourses } from '@/lib/courseData';
 import { supabase } from '@/lib/supabase';
 import ContactModal from '../ContactModal';
 
+import logo from '@/public/images/logo.webp';
+
 const Navbar = () => {
     const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
@@ -162,13 +164,13 @@ const Navbar = () => {
                             {/* Logo */}
                             <Link href="/" className="flex-shrink-0 flex items-center">
                                 <Image
-                                    src="/images/logo.webp"
+                                    src={logo}
                                     alt="ERPVITS"
-                                    width={115}
-                                    height={42}
-                                    className="h-12 w-auto logo-img-mobile"
+                                    width={110}
+                                    height={40}
+                                    className="h-10 lg:h-12 w-auto logo-img-mobile"
                                     priority
-                                    quality={75}
+                                    quality={60}
                                 />
                             </Link>
 

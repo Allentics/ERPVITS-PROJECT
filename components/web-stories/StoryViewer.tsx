@@ -236,8 +236,8 @@ export default function StoryViewer({ stories, initialStoryIndex, onClose }: Sto
                             alt={currentSlide.title}
                             fill
                             className="object-cover pointer-events-none"
-                            quality={75}
-                            sizes="(max-width: 768px) 100vw, 400px"
+                            quality={65}
+                            sizes="(max-width: 768px) 100vw, 550px"
                             priority
                         />
                     </div>
