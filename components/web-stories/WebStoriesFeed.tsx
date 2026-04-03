@@ -129,13 +129,17 @@ const WebStoriesFeed = () => {
     useEffect(() => {
         fetchStories().then((fetchedStories) => {
             // Check for slug in URL on load
-            const pathSegments = window.location.pathname.split('/');
-            const urlSlug = pathSegments[pathSegments.length - 1];
+            // Handle trailing slashes by filtering out empty segments
+            const pathSegments = window.location.pathname.split('/').filter(Boolean);
 
-            if (urlSlug && urlSlug !== 'web-stories') {
-                const index = fetchedStories.findIndex((s: any) => s.slug === urlSlug);
-                if (index !== -1) {
-                    setSelectedStoryIndex(index);
+            if (pathSegments.length > 0) {
+                const urlSlug = pathSegments[pathSegments.length - 1];
+
+                if (urlSlug && urlSlug !== 'web-stories') {
+                    const index = fetchedStories.findIndex((s: any) => s.slug === urlSlug);
+                    if (index !== -1) {
+                        setSelectedStoryIndex(index);
+                    }
                 }
             }
         });
@@ -181,14 +185,14 @@ const WebStoriesFeed = () => {
             setSelectedStoryIndex(index);
             const story = stories[index];
             if (story.slug) {
-                window.history.pushState(null, '', `/web-stories/${story.slug}`);
+                window.history.pushState(null, '', `/web-stories/${story.slug}/`);
             }
         }
     };
 
     const handleCloseViewer = () => {
         setSelectedStoryIndex(null);
-        window.history.pushState(null, '', '/web-stories');
+        window.history.pushState(null, '', '/web-stories/');
     };
 
     return (

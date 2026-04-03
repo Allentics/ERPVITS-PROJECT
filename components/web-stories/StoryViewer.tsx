@@ -151,7 +151,7 @@ export default function StoryViewer({ stories, initialStoryIndex, onClose }: Sto
         setProgress(0);
         // Sync URL with story slug
         if (currentStory && currentStory.slug) {
-            window.history.pushState(null, '', `/web-stories/${currentStory.slug}`);
+            window.history.pushState(null, '', `/web-stories/${currentStory.slug}/`);
         }
     }, [currentStoryIndex, currentStory]);
 

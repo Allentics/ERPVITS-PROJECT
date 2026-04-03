@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next';
 import { supabase } from '@/lib/supabase';
 import { blogPosts as localBlogs } from '@/lib/blogData';
 import { getCourseUrl } from '@/lib/utils';
+import { MOCK_STORIES } from '@/lib/constants/mockStories';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://www.erpvits.com';
@@ -31,9 +32,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   });
 
   // 2. Fetch Dynamic Data from Supabase
-  const [{ data: dbBlogs }, { data: dbCourses }] = await Promise.all([
+  const [{ data: dbBlogs }, { data: dbCourses }, { data: dbStories }] = await Promise.all([
     supabase.from('blog_posts').select('id, date').order('date', { ascending: false }),
     supabase.from('courses').select('id'),
+    supabase.from('web_stories').select('slug'),
   ]);
 
   // 3. Process Blog Posts (Local + DB)
@@ -50,12 +52,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // 4. Process Course Pages
   const courseUrls = new Set<string>();
-
   const courseEntries = dbCourses?.reduce((acc: any[], course: { id: string }) => {
     const route = getCourseUrl(course.id);
     const path = route.endsWith('/') ? route : `${route}/`;
     const fullUrl = `${baseUrl}${path}`;
-    
+
     if (!courseUrls.has(fullUrl)) {
       courseUrls.add(fullUrl);
       acc.push({
@@ -68,5 +69,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     return acc;
   }, []) || [];
 
-  return [...staticPages, ...blogEntries, ...courseEntries];
+  // 5. Process Web Stories
+  const storySlugs = new Set<string>();
+  dbStories?.forEach((s: { slug: string }) => storySlugs.add(s.slug));
+  MOCK_STORIES.forEach((s: { slug: string }) => storySlugs.add(s.slug));
+
+  const storyEntries = Array.from(storySlugs).map(slug => ({
+    url: `${baseUrl}/web-stories/${slug}/`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.6,
+  }));
+
+  return [...staticPages, ...blogEntries, ...courseEntries, ...storyEntries];
 }
