@@ -46,9 +46,9 @@ const Hero = () => {
                     alt="Expert SAP Trainer"
                     fill
                     className="object-cover object-[95%_10%]"
-                    loading="eager"
-                    fetchPriority="high"
+                    priority
                     sizes="100vw"
+                    {...({ fetchPriority: "high" } as any)}
                 />
                 <div className="absolute inset-y-0 left-0 w-full md:w-[75%] lg:w-[60%] bg-gradient-to-r from-rose-50/80 via-rose-50/40 to-transparent z-10 pointer-events-none" />
             </div>

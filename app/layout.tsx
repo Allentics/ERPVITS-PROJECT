@@ -18,7 +18,7 @@ const inter = Inter({
 // Lazy load below-the-fold components
 const Footer = dynamic(() => import('@/components/layout/Footer'));
 const WebinarPopup = dynamic(() => import('@/components/WebinarPopup'));
-import WhatsAppButton from '@/components/WhatsAppButton';
+const WhatsAppButton = dynamic(() => import('@/components/WhatsAppButton'));
 
 export const viewport: Viewport = {
   themeColor: '#000000',
@@ -79,6 +79,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.clarity.ms" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://salesiq.zohopublic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://api.whatsapp.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://i.ytimg.com" />
         <link rel="preconnect" href="https://www.erpvits.com" crossOrigin="anonymous" />
 
