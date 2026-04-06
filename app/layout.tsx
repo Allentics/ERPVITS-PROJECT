@@ -203,6 +203,26 @@ export default function RootLayout({
           `}
         </Script>
 
+        {/* Zoho SalesIQ - strategy: lazyOnload for performance optimization */}
+        {process.env.NEXT_PUBLIC_ZOHO_WIDGET_CODE && (
+          <>
+            <Script id="zoho-salesiq-init" strategy="lazyOnload">
+              {`
+                window.$zoho = window.$zoho || {};
+                window.$zoho.salesiq = window.$zoho.salesiq || { ready: function() {} };
+                window.$zoho.salesiq.ready = function() {
+                  window.$zoho.salesiq.floatbutton.position('bottomleft');
+                };
+              `}
+            </Script>
+            <Script
+              id="zsiqscript"
+              src={`https://salesiq.zohopublic.com/widget?wc=${process.env.NEXT_PUBLIC_ZOHO_WIDGET_CODE}`}
+              strategy="lazyOnload"
+            />
+          </>
+        )}
+
         <AnnouncementBar />
         <Navbar />
         <main className="min-h-screen">
