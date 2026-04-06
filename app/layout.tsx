@@ -126,8 +126,8 @@ export default function RootLayout({
                   
                   /* Fast-render for main typography to prevent blank screen */
                   h1 { 
-                    font-size: 2.25rem !important; 
-                    line-height: 1.1 !important; 
+                    font-size: 1.875rem !important; 
+                    line-height: 1.2 !important; 
                     font-weight: 800 !important; 
                     color: #0f172a !important; 
                     margin-bottom: 1.5rem !important;
