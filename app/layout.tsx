@@ -102,17 +102,8 @@ export default function RootLayout({
             `,
           }}
         />
-        {/* LCP Optimization: Preload essential assets for mobile and desktop */}
+        {/* LCP Optimization: Preload essential assets for initial render */}
         <link rel="preload" href="/images/logo.webp" as="image" type="image/webp" fetchPriority="high" />
-        <link
-          rel="preload"
-          as="image"
-          href="/images/home_hero_bg_v11.jpg"
-          imageSrcSet="/images/home_hero_bg_v11.jpg"
-          imageSizes="100vw"
-          fetchPriority="high"
-          media="(max-width: 767px)"
-        />
 
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.clarity.ms" crossOrigin="anonymous" />
