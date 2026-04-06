@@ -78,8 +78,6 @@ export default function RootLayout({
         {/* Connection Hints: High-performance preconnect for critical third-party latency reduction */}
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.clarity.ms" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://salesiq.zohopublic.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://api.whatsapp.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://i.ytimg.com" />
         <link rel="preconnect" href="https://www.erpvits.com" crossOrigin="anonymous" />
 
@@ -205,10 +203,10 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Zoho SalesIQ - high priority loading for immediate visibility */}
+        {/* Zoho SalesIQ - strategy: lazyOnload for performance optimization */}
         {process.env.NEXT_PUBLIC_ZOHO_WIDGET_CODE && (
           <>
-            <Script id="zoho-salesiq-init">
+            <Script id="zoho-salesiq-init" strategy="lazyOnload">
               {`
                 window.$zoho = window.$zoho || {};
                 window.$zoho.salesiq = window.$zoho.salesiq || { ready: function() {} };
@@ -220,6 +218,7 @@ export default function RootLayout({
             <Script
               id="zsiqscript"
               src={`https://salesiq.zohopublic.com/widget?wc=${process.env.NEXT_PUBLIC_ZOHO_WIDGET_CODE}`}
+              strategy="lazyOnload"
             />
           </>
         )}
