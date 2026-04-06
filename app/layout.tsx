@@ -89,20 +89,23 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
-                if (typeof window !== 'undefined' && window.innerWidth < 768) {
-                  const observer = new MutationObserver((mutations) => {
-                    mutations.forEach((mutation) => {
-                      mutation.addedNodes.forEach((node) => {
-                        // Defer all external stylesheets for mobile to eliminate render-blocking (except those marked as data-critical)
-                        if (node.tagName === 'LINK' && node.rel === 'stylesheet' && !node.hasAttribute('data-critical')) {
-                          node.media = 'only x';
-                          node.onload = function() { this.media = 'all'; };
-                        }
-                      });
-                    });
-                  });
-                  observer.observe(document.head, { childList: true });
-                }
+                try {
+                  const isMobile = window.matchMedia('(max-width: 767px)').matches;
+                  if (isMobile) {
+                    function deferCSS(l) {
+                      if (l.rel === 'stylesheet' && !l.hasAttribute('data-critical')) {
+                        l.media = 'only x';
+                        l.onload = function() { this.media = 'all'; };
+                      }
+                    }
+                    document.querySelectorAll('link[rel="stylesheet"]').forEach(deferCSS);
+                    new MutationObserver((m) => {
+                      m.forEach((it) => it.addedNodes.forEach(n => {
+                        if (n.tagName === 'LINK') deferCSS(n);
+                      }));
+                    }).observe(document.head, { childList: true });
+                  }
+                } catch(e) {}
               })();
             `,
           }}
