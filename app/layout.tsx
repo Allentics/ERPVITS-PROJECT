@@ -18,7 +18,7 @@ const inter = Inter({
 // Lazy load below-the-fold components
 const Footer = dynamic(() => import('@/components/layout/Footer'));
 const WebinarPopup = dynamic(() => import('@/components/WebinarPopup'));
-const WhatsAppButton = dynamic(() => import('@/components/WhatsAppButton'));
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 export const viewport: Viewport = {
   themeColor: '#000000',
