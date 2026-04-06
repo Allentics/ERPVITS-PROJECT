@@ -9,9 +9,9 @@ import Script from 'next/script'
 // Standard Next.js font optimization: removes font-chain latency and FOUT
 const inter = Inter({
   subsets: ['latin'],
-  display: 'swap',
+  display: 'optional', // Faster than 'swap' for mobile LCP - eliminates reflow/FOUC
   variable: '--font-inter',
-  weight: ['400', '600', '700', '800'], // Further reduce weights to minimize font binary size
+  weight: ['400', '600', '700', '800'],
   preload: true,
 })
 
@@ -84,16 +84,24 @@ export default function RootLayout({
                 try {
                   const isMobile = window.matchMedia('(max-width: 767px)').matches;
                   if (isMobile) {
-                    function deferCSS(l) {
-                      if (l.rel === 'stylesheet' && !l.hasAttribute('data-critical')) {
-                        l.media = 'only x';
-                        l.onload = function() { this.media = 'all'; };
-                      }
+                    // Permanently clear render-blocking via dual frame deferral
+                    function unblock() {
+                      document.querySelectorAll('link[rel="stylesheet"]:not([data-critical])').forEach(l => {
+                        if (l.media === 'all') {
+                          l.media = 'print';
+                          l.onload = function() { this.media = 'all'; };
+                        }
+                      });
                     }
-                    document.querySelectorAll('link[rel="stylesheet"]').forEach(deferCSS);
+                    requestAnimationFrame(() => {
+                        requestAnimationFrame(unblock);
+                    });
                     new MutationObserver((m) => {
                       m.forEach((it) => it.addedNodes.forEach(n => {
-                        if (n.tagName === 'LINK') deferCSS(n);
+                        if (n.tagName === 'LINK' && n.rel === 'stylesheet') {
+                          n.media = 'print';
+                          n.onload = function() { this.media = 'all'; };
+                        }
                       }));
                     }).observe(document.head, { childList: true });
                   }
