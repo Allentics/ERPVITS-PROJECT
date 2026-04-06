@@ -19,6 +19,7 @@ const inter = Inter({
 const Footer = dynamic(() => import('@/components/layout/Footer'));
 const WebinarPopup = dynamic(() => import('@/components/WebinarPopup'));
 import WhatsAppButton from '@/components/WhatsAppButton';
+import ZohoChatButton from '@/components/ZohoChatButton';
 
 export const viewport: Viewport = {
   themeColor: '#000000',
@@ -202,44 +203,9 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Zoho SalesIQ - high performance delayed loading to avoid unused preconnects */}
+        {/* Zoho SalesIQ - Instant Facade Experience (loads real script on interaction or 5s delay) */}
         {process.env.NEXT_PUBLIC_ZOHO_WIDGET_CODE && (
-          <Script id="zoho-salesiq-loader" strategy="lazyOnload">
-            {`
-              (function() {
-                var loaded = false;
-                function loadZoho() {
-                  if (loaded) return;
-                  loaded = true;
-                  
-                  window.$zoho = window.$zoho || {};
-                  window.$zoho.salesiq = window.$zoho.salesiq || { ready: function() {} };
-                  window.$zoho.salesiq.ready = function() {
-                    window.$zoho.salesiq.floatbutton.position('bottomleft');
-                  };
-
-                  var s = document.createElement("script");
-                  s.id = "zsiqscript";
-                  s.src = "https://salesiq.zohopublic.com/widget?wc=${process.env.NEXT_PUBLIC_ZOHO_WIDGET_CODE}";
-                  s.defer = true;
-                  document.body.appendChild(s);
-                  
-                  // Cleanup events
-                  window.removeEventListener('scroll', loadZoho);
-                  window.removeEventListener('mousemove', loadZoho);
-                  window.removeEventListener('touchstart', loadZoho);
-                }
-
-                // Load on user interaction
-                window.addEventListener('scroll', loadZoho, { passive: true });
-                window.addEventListener('mousemove', loadZoho, { passive: true });
-                window.addEventListener('touchstart', loadZoho, { passive: true });
-                
-                // Fallback for very long sessions without interaction
-                setTimeout(loadZoho, 8000);
-              })();
-            `}
-          </Script>
+          <ZohoChatButton widgetCode={process.env.NEXT_PUBLIC_ZOHO_WIDGET_CODE} />
         )}
 
         <AnnouncementBar />
