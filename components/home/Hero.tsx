@@ -30,7 +30,7 @@ const Hero = () => {
 
     React.useEffect(() => {
         setMounted(true);
-        setIsMobile(window.innerWidth < 768);
+        setIsMobile(window.matchMedia('(max-width: 767px)').matches);
     }, []);
 
     const content = DEFAULT_CONTENT;

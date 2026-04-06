@@ -76,15 +76,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable}`} suppressHydrationWarning>
       <head>
-        {/* Connection Hints: High-performance preconnect for critical third-party latency reduction */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://www.clarity.ms" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://i.ytimg.com" />
-
-        {/* LCP Optimization: Preload the logo - critical for desktop and mobile header */}
-        <link rel="preload" href="/images/logo.webp" as="image" type="image/webp" fetchPriority="high" />
-
-        {/* Mobile-Only CSS Unblocking Script: Strictly for mobile view, defer non-critical CSS to clear the render-blocking path */}
+        {/* Mobile-Only CSS Unblocking Script: Top-priority execution to unblock render path immediately */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -110,6 +102,12 @@ export default function RootLayout({
             `,
           }}
         />
+        {/* LCP Optimization: Preload the logo - critical for desktop and mobile header */}
+        <link rel="preload" href="/images/logo.webp" as="image" type="image/webp" fetchPriority="high" />
+
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.clarity.ms" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://i.ytimg.com" />
       </head>
       <body className="font-sans" suppressHydrationWarning>
         {/* Advanced Critical Styles: Minimize FOUC and eliminate layout shifts for headers */}
