@@ -2,24 +2,56 @@
 
 import { Calendar, Clock, Users, GraduationCap } from 'lucide-react';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ContactModal from '../ContactModal';
 
 export default function UpcomingWebinars() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedWebinar, setSelectedWebinar] = useState("");
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    const getUpcomingDate = (dayName: string) => {
+        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const now = new Date();
+        const targetDay = days.indexOf(dayName);
+        const currentDay = now.getDay();
+
+        // Find days until next targetDay
+        let daysToAdd = (targetDay - currentDay + 7) % 7;
+
+        // If it's today, and we want a future date, or just show today if it's before the time.
+        // For simplicity, let's always show the NEXT one if it's already past the typical start time or just always show next.
+        if (daysToAdd === 0) daysToAdd = 7;
+
+        const nextDate = new Date(now);
+        nextDate.setDate(now.getDate() + daysToAdd);
+
+        return nextDate.toLocaleDateString('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric'
+        });
+    };
+
+    // Use hardcoded dates for SSR/Initial render to avoid hydration mismatch, then update
+    const weekendDate = mounted ? getUpcomingDate('Saturday') : "Mar 28, 2026";
+    const weekdayDate = mounted ? getUpcomingDate('Monday') : "Mar 29, 2026";
 
     const demos = [
         {
             label: "Weekend",
-            date: "Mar 28, 2026",
+            date: weekendDate,
             time: "7:00 PM",
             registered: "10 Registered",
             status: "Limited Spots Remaining"
         },
         {
             label: "Weekday",
-            date: "Mar 29, 2026",
+            date: weekdayDate,
             time: "7:30 AM",
             registered: "7 Registered",
             status: "Limited Spots Remaining"
