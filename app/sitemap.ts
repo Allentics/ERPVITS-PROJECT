@@ -4,6 +4,9 @@ import { blogPosts as localBlogs } from '@/lib/blogData';
 import { getCourseUrl } from '@/lib/utils';
 import { MOCK_STORIES } from '@/lib/constants/mockStories';
 
+// Revalidate every hour to pick up new stories/blogs from Supabase
+export const revalidate = 3600;
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://www.erpvits.com';
 
