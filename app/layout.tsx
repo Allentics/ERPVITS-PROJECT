@@ -123,13 +123,13 @@ export default function RootLayout({
         <style
           dangerouslySetInnerHTML={{
             __html: `
-                body { background: #ffffff; margin: 0; padding: 0; min-height: 100vh; font-family: sans-serif; overflow-x: hidden; }
                 .hero-container-inline { min-height: 85vh; background: #ffffff; width: 100%; visibility: visible; }
                 .nav-header-inline { min-height: 80px; background: #000000; width: 100%; display: block; }
                 .announcement-inline { min-height: 35px; background: #fbc02d; width: 100%; display: flex; align-items: center; justify-content: center; }
                 .layout-container { max-width: 80rem; margin: 0 auto; padding: 0 1rem; }
                 
                 @media (max-width: 767px) {
+                  body { background: #ffffff; margin: 0; padding: 0; min-height: 100vh; overflow-x: hidden; }
                   /* Ensure primary mobile container loads instantly without waiting for chunk.css */
                   .hero-container-inline { padding-top: 1.5rem; background-color: #ffffff !important; }
                   
