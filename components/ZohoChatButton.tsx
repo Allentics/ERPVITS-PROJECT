@@ -23,28 +23,35 @@ const ZohoChatButton: React.FC<ZohoChatButtonProps> = ({ widgetCode }) => {
         win.$zoho = win.$zoho || {};
         win.$zoho.salesiq = win.$zoho.salesiq || { ready: function () { } };
 
-        // Explicitly handle the ready event to hide our facade
+        // Explicitly handle the ready event
         const originalReady = win.$zoho.salesiq.ready;
         win.$zoho.salesiq.ready = function () {
             if (typeof originalReady === 'function') originalReady();
 
-            // Only hide our facade after a slight delay to ensure the real Zoho button has rendered
-            setTimeout(() => {
-                const facade = document.getElementById('zoho-facade-button');
-                if (facade) {
-                    requestAnimationFrame(() => {
-                        facade.style.opacity = '0';
-                        setTimeout(() => {
-                            requestAnimationFrame(() => {
-                                if (facade) facade.style.display = 'none';
-                            });
-                        }, 500);
-                    });
-                }
-            }, 1000);
+            const isMobile = window.matchMedia('(max-width: 767px)').matches;
 
-            if (win.$zoho.salesiq.floatbutton) {
-                win.$zoho.salesiq.floatbutton.position('bottomleft');
+            // On Desktop: standard behavior (hide facade)
+            // On Mobile: KEEP facade visible as the primary button for reliability
+            if (!isMobile) {
+                setTimeout(() => {
+                    const facade = document.getElementById('zoho-facade-button');
+                    if (facade) {
+                        requestAnimationFrame(() => {
+                            facade.style.opacity = '0';
+                            setTimeout(() => {
+                                requestAnimationFrame(() => {
+                                    if (facade) facade.style.display = 'none';
+                                });
+                            }, 500);
+                        });
+                    }
+                }, 1000);
+            } else {
+                // On mobile, ensure the real Zoho float button is hidden to avoid duplication
+                // We will use our facade exclusively to trigger the window
+                if (win.$zoho.salesiq.floatbutton) {
+                    win.$zoho.salesiq.floatbutton.visible('hide');
+                }
             }
         };
 
@@ -53,6 +60,11 @@ const ZohoChatButton: React.FC<ZohoChatButtonProps> = ({ widgetCode }) => {
         s.src = `https://salesiq.zohopublic.com/widget?wc=${widgetCode}`;
         s.defer = true;
         document.body.appendChild(s);
+
+        // If Zoho is already ready, and we're on mobile, try to show the window
+        if (win.$zoho.salesiq.floatwindow && window.matchMedia('(max-width: 767px)').matches) {
+            win.$zoho.salesiq.floatwindow.visible('show');
+        }
     };
 
     return (
