@@ -86,29 +86,29 @@ export default function RootLayout({
                   if (!isMobile) return;
 
                   function unblockResource(l) {
-                    if (l.media !== 'print') {
+                    if (l.rel === 'stylesheet' && l.media !== 'print' && !l.hasAttribute('data-critical')) {
                       l.media = 'print';
                       l.onload = function() { this.media = 'all'; };
-                      // Fail-safe: Ensure styles are applied even if onload fails or is skipped
+                      // Fail-safe fallback
                       setTimeout(function() { if (l.media !== 'all') l.media = 'all'; }, 1000);
                     }
                   }
 
-                  // 1. Unblock existing links
-                  Array.from(document.querySelectorAll('link[rel="stylesheet"]:not([data-critical])')).forEach(unblockResource);
+                  // Pass 1: Immediate run for static links
+                  function scan() { Array.from(document.querySelectorAll('link[rel="stylesheet"]')).forEach(unblockResource); }
+                  scan();
 
-                  // 2. Observer for late-injected chunks
-                  setTimeout(() => {
-                    new MutationObserver((m) => {
-                      const addedLinks = [];
-                      m.forEach((it) => it.addedNodes.forEach(n => {
-                        if (n.tagName === 'LINK' && n.rel === 'stylesheet' && !n.hasAttribute('data-critical')) {
-                          addedLinks.push(n);
-                        }
-                      }));
-                      addedLinks.forEach(unblockResource);
-                    }).observe(document.head, { childList: true });
-                  }, 2000);
+                  // Pass 2: Short-interval interval to catch late static injections
+                  const interval = setInterval(scan, 100);
+                  setTimeout(() => clearInterval(interval), 3000);
+
+                  // Pass 3: MutationObserver for any dynamic additions
+                  const observer = new MutationObserver((m) => {
+                    m.forEach((it) => it.addedNodes.forEach(n => {
+                      if (n.tagName === 'LINK') unblockResource(n);
+                    }));
+                  });
+                  observer.observe(document.head, { childList: true });
                 } catch(e) {}
               })();
             `,
