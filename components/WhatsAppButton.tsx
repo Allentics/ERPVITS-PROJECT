@@ -5,17 +5,9 @@ import { usePathname } from 'next/navigation';
 import { getWhatsAppChatLink } from '@/lib/utils';
 
 const WhatsAppButton: React.FC = () => {
-  const [mounted, setMounted] = React.useState(false);
   const pathname = usePathname();
-
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
-
-  // Use dynamic WhatsApp link based on current page
-  const whatsappLink = getWhatsAppChatLink(pathname);
+  // Provide a safe fallback for SSR
+  const whatsappLink = getWhatsAppChatLink(pathname || '/');
 
   return (
     <a
@@ -26,7 +18,7 @@ const WhatsAppButton: React.FC = () => {
       style={{
         position: 'fixed',
         bottom: '24px',
-        right: '24px', // Set to right side as per standard and screenshot 3
+        right: '24px',
         width: '60px',
         height: '60px',
         backgroundColor: '#25D366',

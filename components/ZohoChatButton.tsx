@@ -23,35 +23,16 @@ const ZohoChatButton: React.FC<ZohoChatButtonProps> = ({ widgetCode }) => {
         win.$zoho = win.$zoho || {};
         win.$zoho.salesiq = win.$zoho.salesiq || { ready: function () { } };
 
-        // Explicitly handle the ready event
+        // Handle the ready event
         const originalReady = win.$zoho.salesiq.ready;
         win.$zoho.salesiq.ready = function () {
             if (typeof originalReady === 'function') originalReady();
 
-            const isMobile = window.matchMedia('(max-width: 767px)').matches;
-
-            // On Desktop: standard behavior (hide facade)
-            // On Mobile: KEEP facade visible as the primary button for reliability
-            if (!isMobile) {
-                setTimeout(() => {
-                    const facade = document.getElementById('zoho-facade-button');
-                    if (facade) {
-                        requestAnimationFrame(() => {
-                            facade.style.opacity = '0';
-                            setTimeout(() => {
-                                requestAnimationFrame(() => {
-                                    if (facade) facade.style.display = 'none';
-                                });
-                            }, 500);
-                        });
-                    }
-                }, 1000);
-            } else {
-                // On mobile, ensure the real Zoho float button is hidden to avoid duplication
-                // We will use our facade exclusively to trigger the window
-                if (win.$zoho.salesiq.floatbutton) {
-                    win.$zoho.salesiq.floatbutton.visible('hide');
-                }
+            // Always keep our facade as the primary button for consistency and speed
+            // and hide the default Zoho float button on all devices
+            if (win.$zoho.salesiq.floatbutton) {
+                win.$zoho.salesiq.floatbutton.visible('hide');
+                win.$zoho.salesiq.floatbutton.position('bottomleft');
             }
         };
 
@@ -61,9 +42,11 @@ const ZohoChatButton: React.FC<ZohoChatButtonProps> = ({ widgetCode }) => {
         s.defer = true;
         document.body.appendChild(s);
 
-        // If Zoho is already ready, and we're on mobile, try to show the window
-        if (win.$zoho.salesiq.floatwindow && window.matchMedia('(max-width: 767px)').matches) {
-            win.$zoho.salesiq.floatwindow.visible('show');
+        // If Zoho is already ready/loaded, try to show the window immediately
+        if (win.$zoho.salesiq.floatwindow) {
+            try {
+                win.$zoho.salesiq.floatwindow.visible('show');
+            } catch (e) { }
         }
     };
 
@@ -89,17 +72,11 @@ const ZohoChatButton: React.FC<ZohoChatButtonProps> = ({ widgetCode }) => {
             }}
             className="zoho-float-btn"
             onMouseEnter={(e) => {
-                const isMobile = window.matchMedia('(max-width: 767px)').matches;
-                if (!isMobile) {
-                    e.currentTarget.style.transform = 'scale(1.1)';
-                    loadRealZoho();
-                }
+                e.currentTarget.style.transform = 'scale(1.1)';
+                loadRealZoho();
             }}
             onMouseLeave={(e) => {
-                const isMobile = window.matchMedia('(max-width: 767px)').matches;
-                if (!isMobile) {
-                    e.currentTarget.style.transform = 'scale(1)';
-                }
+                e.currentTarget.style.transform = 'scale(1)';
             }}
         >
             <svg
