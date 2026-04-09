@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { Course } from '@/lib/courseData';
 import { Plus, Minus } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { motion, AnimatePresence } from 'framer-motion';
 
 interface FAQProps {
     course?: Course;
@@ -43,21 +42,16 @@ const FAQ = ({ course, items }: FAQProps) => {
                                 )}
                             </button>
 
-                            <AnimatePresence>
-                                {openIndex === idx && (
-                                    <motion.div
-                                        initial={{ height: 0, opacity: 0 }}
-                                        animate={{ height: "auto", opacity: 1 }}
-                                        exit={{ height: 0, opacity: 0 }}
-                                        transition={{ duration: 0.2 }}
-                                        className="overflow-hidden"
-                                    >
-                                        <div className="p-5 pt-0 text-gray-600 text-sm leading-relaxed border-t border-transparent">
-                                            {(faq as any).answer || (faq as any).a}
-                                        </div>
-                                    </motion.div>
+                            <div
+                                className={cn(
+                                    "overflow-hidden transition-all duration-300 ease-in-out",
+                                    openIndex === idx ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
                                 )}
-                            </AnimatePresence>
+                            >
+                                <div className="p-5 pt-0 text-gray-600 text-sm leading-relaxed border-t border-transparent">
+                                    {(faq as any).answer || (faq as any).a}
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </div>

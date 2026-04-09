@@ -83,28 +83,35 @@ export default function RootLayout({
               (function() {
                 try {
                   const isMobile = window.matchMedia('(max-width: 767px)').matches;
-                  if (isMobile) {
-                    // Permanently clear render-blocking via dual frame deferral
-                    function unblock() {
-                      document.querySelectorAll('link[rel="stylesheet"]:not([data-critical])').forEach(l => {
-                        if (l.media === 'all') {
+                  if (!isMobile) return;
+
+                  function unblock(links) {
+                    if (!links || links.length === 0) return;
+                    requestAnimationFrame(() => {
+                      links.forEach(l => {
+                        if (l.media !== 'print') {
                           l.media = 'print';
                           l.onload = function() { this.media = 'all'; };
                         }
                       });
-                    }
-                    requestAnimationFrame(() => {
-                        requestAnimationFrame(unblock);
                     });
+                  }
+
+                  // 1. Initial pass for static links
+                  unblock(Array.from(document.querySelectorAll('link[rel="stylesheet"]:not([data-critical])')));
+
+                  // 2. Observer for dynamic chunks - Delayed to avoid clashing with hydration
+                  setTimeout(() => {
                     new MutationObserver((m) => {
+                      const addedLinks = [];
                       m.forEach((it) => it.addedNodes.forEach(n => {
-                        if (n.tagName === 'LINK' && n.rel === 'stylesheet') {
-                          n.media = 'print';
-                          n.onload = function() { this.media = 'all'; };
+                        if (n.tagName === 'LINK' && n.rel === 'stylesheet' && !n.hasAttribute('data-critical')) {
+                          addedLinks.push(n);
                         }
                       }));
+                      if (addedLinks.length > 0) unblock(addedLinks);
                     }).observe(document.head, { childList: true });
-                  }
+                  }, 1000);
                 } catch(e) {}
               })();
             `,
@@ -113,8 +120,8 @@ export default function RootLayout({
         {/* LCP Optimization: Preload essential assets for initial render */}
         <link rel="preload" href="/images/logo.webp" as="image" type="image/webp" fetchPriority="high" />
 
-        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://www.clarity.ms" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.clarity.ms" />
         <link rel="dns-prefetch" href="https://i.ytimg.com" />
       </head>
       <body className="font-sans" suppressHydrationWarning>
@@ -132,14 +139,12 @@ export default function RootLayout({
                   /* Ensure primary mobile container loads instantly without waiting for chunk.css */
                   .hero-container-inline { padding-top: 1.5rem; background-color: #ffffff !important; }
                   
-                  /* Fast-render for main typography to prevent blank screen */
                   h1 { 
-                    font-size: 1.875rem !important; 
-                    line-height: 1.2 !important; 
-                    font-weight: 800 !important; 
-                    color: #0f172a !important; 
-                    margin-bottom: 1.5rem !important;
-                    display: block !important;
+                    font-size: 1.5rem !important; 
+                    line-height: 1.25 !important; 
+                    margin-bottom: 1rem !important;
+                    font-weight: 800 !important;
+                    color: #0F172A !important;
                   }
                   
                   h2 {
@@ -164,7 +169,7 @@ export default function RootLayout({
 
                   /* Navbar & Announcement Bar mobile height locking */
                   .nav-header-inline { height: 80px !important; min-height: 80px !important; }
-                  .announcement-inline { height: 35px !important; min-height: 35px !important; font-size: 11px !important; }
+                  .announcement-inline { min-height: 35px !important; font-size: 11px !important; }
                   
                   /* Mobile logo sizing lock */
                   .logo-img-mobile { 
@@ -176,8 +181,10 @@ export default function RootLayout({
                   
                   /* Prevent large images from causing CLS before CSS loads */
                   img { max-width: 100%; height: auto; }
-                  .hero-course-inline { background: #F2F6FD; padding-top: 2rem; padding-bottom: 2rem; }
+                  .hero-course-inline { background: #F2F6FD !important; padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; min-height: 50vh !important; }
                   .course-h1-inline { font-size: 1.5rem !important; line-height: 1.3 !important; font-weight: 800; color: #0F172A; }
+                  .course-sub-inline { font-size: 0.875rem !important; color: #475569 !important; line-height: 1.5 !important; }
+                  .course-form-card-mobile { background: #ffffff !important; border-radius: 1rem !important; padding: 1.25rem !important; border: 1px solid #e2e8f0 !important; margin-top: 1rem !important; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important; }
                 }
                 
                 /* Eliminate YT preconnect overhead and font-chain latency */
@@ -201,14 +208,31 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Microsoft Clarity - strategy: lazyOnload */}
+        {/* Microsoft Clarity - strategy: lazyOnload with Mobile-specific deferral */}
         <Script id="microsoft-clarity" strategy="lazyOnload">
           {`
-            (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "rt6no7h6fv");
+            (function() {
+              function loadClarity() {
+                if (window.clarityLoaded) return;
+                window.clarityLoaded = true;
+                (function(c,l,a,r,i,t,y){
+                    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                })(window, document, "clarity", "script", "rt6no7h6fv");
+              }
+
+              const isMobile = window.matchMedia('(max-width: 767px)').matches;
+              if (isMobile) {
+                // For mobile, wait for interaction or 10s delay
+                const events = ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart'];
+                events.forEach(e => window.addEventListener(e, loadClarity, { once: true, passive: true }));
+                setTimeout(loadClarity, 10000); // Fail-safe
+              } else {
+                // Desktop stays as was
+                loadClarity();
+              }
+            })();
           `}
         </Script>
 

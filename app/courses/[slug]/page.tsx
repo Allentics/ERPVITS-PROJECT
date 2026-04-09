@@ -240,7 +240,7 @@ export default async function CoursePage({ params, isCustomProxy = false }: { pa
                             </h1>
 
                             {/* Subheading */}
-                            <div className="text-lg text-slate-600 mb-10 leading-relaxed max-w-2xl">
+                            <div className="text-lg text-slate-600 mb-10 leading-relaxed max-w-2xl course-sub-inline">
                                 {renderRichText(mappedCourse.heroSubheading || (mappedCourse.description ? (mappedCourse.description.length > 250 ? mappedCourse.description.substring(0, 250) + "..." : mappedCourse.description) : ""))}
                             </div>
 
@@ -424,7 +424,7 @@ export default async function CoursePage({ params, isCustomProxy = false }: { pa
 
                         {/* Right Form Side */}
                         <div className="lg:col-span-5 lg:-mt-12">
-                            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-xl border border-slate-100 relative overflow-hidden">
+                            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-xl border border-slate-100 relative overflow-hidden course-form-card-mobile">
                                 <div className={`absolute top-0 left-0 w-full h-1.5 ${mappedCourse.themeColor === 'purple' ? 'bg-blue-600' : 'bg-orange-500'}`}></div>
                                 <h3 className="text-xl font-bold text-slate-900 mb-6">
                                     Enquiry more about {mappedCourse.title} Training

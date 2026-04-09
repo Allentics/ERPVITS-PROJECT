@@ -30,10 +30,16 @@ const ZohoChatButton: React.FC<ZohoChatButtonProps> = ({ widgetCode }) => {
 
             // Hide our custom button once the real Zoho widget is visible
             const facade = document.getElementById('zoho-facade-button');
-            if (facade) facade.style.opacity = '0';
-            setTimeout(() => {
-                if (facade) facade.style.display = 'none';
-            }, 500);
+            if (facade) {
+                requestAnimationFrame(() => {
+                    facade.style.opacity = '0';
+                    setTimeout(() => {
+                        requestAnimationFrame(() => {
+                            if (facade) facade.style.display = 'none';
+                        });
+                    }, 500);
+                });
+            }
 
             if (win.$zoho.salesiq.floatbutton) {
                 win.$zoho.salesiq.floatbutton.position('bottomleft');
