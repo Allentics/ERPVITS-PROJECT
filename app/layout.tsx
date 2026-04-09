@@ -85,8 +85,19 @@ export default function RootLayout({
                   const isMobile = window.matchMedia('(max-width: 767px)').matches;
                   if (!isMobile) return;
 
-                  // Only unblock dynamic chunks added after initial load
-                  // Initial stylesheets (like globals.css) should remain render-blocking for stability
+                  function unblockResource(l) {
+                    if (l.media !== 'print') {
+                      l.media = 'print';
+                      l.onload = function() { this.media = 'all'; };
+                      // Fail-safe: Ensure styles are applied even if onload fails or is skipped
+                      setTimeout(function() { if (l.media !== 'all') l.media = 'all'; }, 1000);
+                    }
+                  }
+
+                  // 1. Unblock existing links
+                  Array.from(document.querySelectorAll('link[rel="stylesheet"]:not([data-critical])')).forEach(unblockResource);
+
+                  // 2. Observer for late-injected chunks
                   setTimeout(() => {
                     new MutationObserver((m) => {
                       const addedLinks = [];
@@ -95,15 +106,7 @@ export default function RootLayout({
                           addedLinks.push(n);
                         }
                       }));
-                      
-                      if (addedLinks.length > 0) {
-                        requestAnimationFrame(() => {
-                          addedLinks.forEach(l => {
-                            l.media = 'print';
-                            l.onload = function() { this.media = 'all'; };
-                          });
-                        });
-                      }
+                      addedLinks.forEach(unblockResource);
                     }).observe(document.head, { childList: true });
                   }, 2000);
                 } catch(e) {}
