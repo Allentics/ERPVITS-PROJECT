@@ -86,29 +86,33 @@ export default function RootLayout({
                   if (!isMobile) return;
 
                   function unblockResource(l) {
-                    if (l.media !== 'print') {
-                      l.media = 'print';
-                      l.onload = function() { this.media = 'all'; };
-                      // Fail-safe: Ensure styles are applied even if onload fails or is skipped
-                      setTimeout(function() { if (l.media !== 'all') l.media = 'all'; }, 1000);
+                    if (l.rel === 'stylesheet' && !l.hasAttribute('data-critical')) {
+                      l.rel = 'preload';
+                      l.as = 'style';
+                      l.onload = function() { 
+                        this.rel = 'stylesheet';
+                        this.onload = null;
+                      };
+                      // Fail-safe to prevent FOUC if onload fails
+                      setTimeout(function() { 
+                        if (l.rel !== 'stylesheet') l.rel = 'stylesheet';
+                      }, 1200);
                     }
                   }
 
-                  // 1. Unblock existing links
-                  Array.from(document.querySelectorAll('link[rel="stylesheet"]:not([data-critical])')).forEach(unblockResource);
-
-                  // 2. Observer for late-injected chunks
-                  setTimeout(() => {
-                    new MutationObserver((m) => {
-                      const addedLinks = [];
-                      m.forEach((it) => it.addedNodes.forEach(n => {
-                        if (n.tagName === 'LINK' && n.rel === 'stylesheet' && !n.hasAttribute('data-critical')) {
-                          addedLinks.push(n);
-                        }
-                      }));
-                      addedLinks.forEach(unblockResource);
-                    }).observe(document.head, { childList: true });
-                  }, 2000);
+                  // Passes to catch Next.js injected stylesheets
+                  function scan() { Array.from(document.querySelectorAll('link[rel="stylesheet"]')).forEach(unblockResource); }
+                  scan();
+                  
+                  const observer = new MutationObserver((m) => {
+                    m.forEach((it) => it.addedNodes.forEach(n => {
+                      if (n.tagName === 'LINK') unblockResource(n);
+                    }));
+                  });
+                  observer.observe(document.head, { childList: true });
+                  
+                  setTimeout(scan, 200);
+                  setTimeout(scan, 800);
                 } catch(e) {}
               })();
             `,
