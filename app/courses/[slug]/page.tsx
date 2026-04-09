@@ -223,7 +223,7 @@ export default async function CoursePage({ params, isCustomProxy = false }: { pa
 
             {/* Hero Section */}
             <div className="bg-[#F2F6FD] text-slate-900 relative overflow-hidden pt-10 lg:pt-16 pb-12 lg:pb-16 hero-course-inline">
-                <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-[0.03] hidden md:block"></div>
+                <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-[0.03] hidden md:block hero-pattern-mobile-hide"></div>
                 <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[500px] blur-[100px] rounded-full opacity-50 pointer-events-none ${mappedCourse.themeColor === 'purple' ? 'bg-purple-100/40' : 'bg-orange-100/40'}`}></div>
 
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
