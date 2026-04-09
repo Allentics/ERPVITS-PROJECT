@@ -85,22 +85,8 @@ export default function RootLayout({
                   const isMobile = window.matchMedia('(max-width: 767px)').matches;
                   if (!isMobile) return;
 
-                  function unblock(links) {
-                    if (!links || links.length === 0) return;
-                    requestAnimationFrame(() => {
-                      links.forEach(l => {
-                        if (l.media !== 'print') {
-                          l.media = 'print';
-                          l.onload = function() { this.media = 'all'; };
-                        }
-                      });
-                    });
-                  }
-
-                  // 1. Initial pass for static links
-                  unblock(Array.from(document.querySelectorAll('link[rel="stylesheet"]:not([data-critical])')));
-
-                  // 2. Observer for dynamic chunks - Delayed to avoid clashing with hydration
+                  // Only unblock dynamic chunks added after initial load
+                  // Initial stylesheets (like globals.css) should remain render-blocking for stability
                   setTimeout(() => {
                     new MutationObserver((m) => {
                       const addedLinks = [];
@@ -109,9 +95,17 @@ export default function RootLayout({
                           addedLinks.push(n);
                         }
                       }));
-                      if (addedLinks.length > 0) unblock(addedLinks);
+                      
+                      if (addedLinks.length > 0) {
+                        requestAnimationFrame(() => {
+                          addedLinks.forEach(l => {
+                            l.media = 'print';
+                            l.onload = function() { this.media = 'all'; };
+                          });
+                        });
+                      }
                     }).observe(document.head, { childList: true });
-                  }, 1000);
+                  }, 2000);
                 } catch(e) {}
               })();
             `,
