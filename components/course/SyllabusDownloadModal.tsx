@@ -61,20 +61,7 @@ export default function SyllabusDownloadModal({ isOpen, onClose, courseTitle, sy
         // We explicitly do NOT await this in the main interaction flow
         const performBackgroundWork = async () => {
             try {
-                // Send Email via API
-                await fetch('/api/contact', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        type: 'syllabus-email',
-                        email: formData.email,
-                        name: formData.name,
-                        courseTitle: courseTitle,
-                        pdfUrl: syllabusUrl
-                    })
-                });
-
-                // Save to Google Sheets via API
+                // Unified API call: Logs to sheets + Sends Syllabus Email + Notifies Admin
                 await fetch('/api/contact', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -83,7 +70,8 @@ export default function SyllabusDownloadModal({ isOpen, onClose, courseTitle, sy
                         name: formData.name,
                         email: formData.email,
                         phone: `${formData.countryCode} ${formData.phone}`,
-                        course: courseTitle
+                        course: courseTitle,
+                        pdfUrl: syllabusUrl // This triggers the syllabus email in the backend
                     })
                 });
             } catch (err) {
@@ -91,6 +79,7 @@ export default function SyllabusDownloadModal({ isOpen, onClose, courseTitle, sy
                 console.error('Background task failed:', err);
             }
         };
+
 
         // Trigger background work
         performBackgroundWork();

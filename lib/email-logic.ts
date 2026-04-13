@@ -62,3 +62,51 @@ export async function sendSyllabusEmailLogic({ email, name, courseTitle, pdfUrl 
 
     return await transporter.sendMail(mailOptions);
 }
+
+export async function sendContactAutoReplyLogic({ email, name, course }: { email: string, name: string, course?: string }) {
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) return;
+
+    const mailOptions = {
+        from: `"ERPVITS Training" <${process.env.EMAIL_USER}>`,
+        to: email,
+        subject: `Thank you for contacting ERPVITS`,
+        html: `
+            <div style="font-family: Arial, sans-serif; color: #333;">
+                <h2>Hi ${name},</h2>
+                <p>Thank you for reaching out to us regarding <strong>${course || 'our courses'}</strong>.</p>
+                <p>Our team has received your enquiry and will get back to you within 24 hours to discuss your requirements and schedule a free demo session.</p>
+                <p>In the meantime, feel free to visit our website to explore more about our training programs.</p>
+                <br/>
+                <p>Best Regards,</p>
+                <p><strong>ERPVITS Team</strong></p>
+                <p><a href="https://erpvits.com">www.erpvits.com</a></p>
+            </div>
+        `
+    };
+
+    return await transporter.sendMail(mailOptions);
+}
+
+export async function sendAdminNotificationLogic(data: any) {
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) return;
+
+    const mailOptions = {
+        from: `"ERPVITS Lead" <${process.env.EMAIL_USER}>`,
+        to: process.env.EMAIL_USER, // Send to self (Vaishnavi)
+        subject: `New Lead: ${data.name || (data.firstName + ' ' + data.lastName)} - ${data.course || 'Enquiry'}`,
+        html: `
+            <div style="font-family: Arial, sans-serif; color: #333;">
+                <h2>New Lead Received</h2>
+                <p><strong>Name:</strong> ${data.name || (data.firstName + ' ' + data.lastName)}</p>
+                <p><strong>Email:</strong> ${data.email}</p>
+                <p><strong>Phone:</strong> ${data.phone}</p>
+                <p><strong>Course:</strong> ${data.course}</p>
+                <p><strong>Message:</strong> ${data.message || 'N/A'}</p>
+                <p><strong>Type:</strong> ${data.type || 'Contact Form'}</p>
+            </div>
+        `
+    };
+
+    return await transporter.sendMail(mailOptions);
+}
+

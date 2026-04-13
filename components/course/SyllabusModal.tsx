@@ -62,20 +62,21 @@ export default function SyllabusModal({ isOpen, onClose, courseTitle, pdfUrl }: 
         // 4. Background Processing
         const performBackgroundWork = async () => {
             try {
-                // Send Email via API
+                // Unified API call: Logs to sheets + Sends Syllabus Email + Notifies Admin
                 await fetch('/api/contact', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        type: 'syllabus-email',
-                        email: formData.email,
+                        type: 'curriculum',
                         name: formData.name,
-                        courseTitle,
-                        pdfUrl
+                        email: formData.email,
+                        phone: `${formData.countryCode} ${formData.phone}`,
+                        course: courseTitle,
+                        pdfUrl: pdfUrl // This triggers the syllabus email in the backend
                     })
                 });
 
-                // Supabase
+                // Supabase (Keeping as is since backend doesn't handle it yet)
                 const { supabase } = await import('@/lib/supabase');
                 await supabase.from('contacts').insert([{
                     first_name: formData.name,
@@ -85,27 +86,13 @@ export default function SyllabusModal({ isOpen, onClose, courseTitle, pdfUrl }: 
                     course: courseTitle,
                     message: 'Downloaded Syllabus via Modal'
                 }]);
-
-                // Google Sheets via API
-                await fetch('/api/contact', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        firstName: formData.name,
-                        lastName: '',
-                        email: formData.email,
-                        phone: formData.phone,
-                        countryCode: formData.countryCode,
-                        course: courseTitle,
-                        message: 'Downloaded Syllabus'
-                    })
-                });
             } catch (err) {
                 console.error('Background task error:', err);
             } finally {
                 setIsSubmitting(false);
             }
         };
+
 
         performBackgroundWork();
 
