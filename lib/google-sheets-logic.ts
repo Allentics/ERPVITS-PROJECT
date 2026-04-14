@@ -27,7 +27,8 @@ export async function submitToGoogleSheetsLogic(formData: any) {
         country_code: countryCode,
         countryCode: countryCode,
         phone: phone,
-        course: course
+        course: course,
+        skipEmail: 'true'
     };
 
     const formBody = new URLSearchParams();
@@ -80,7 +81,8 @@ export async function submitCurriculumDownloadLogic(formData: any) {
         country_code: countryCode,
         countryCode: countryCode,
         phone: phoneNumber,
-        course: course
+        course: course,
+        skipEmail: 'true'
     };
 
     const formBody = new URLSearchParams();
