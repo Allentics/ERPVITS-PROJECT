@@ -10,8 +10,8 @@ import { Suspense } from 'react';
 import InteractiveBlogContent from '@/components/blog/InteractiveBlogContent';
 import '../../blogs.css';
 
-// ISR: Cache blog posts for 60 seconds
-export const revalidate = 60;
+// ISR: Cache blog posts for 10 seconds to ensure Admin updates reflect quickly
+export const revalidate = 10;
 
 // Lazy-load all legacy blog components — only the one matching the slug is ever loaded
 const SapTCodesContent = dynamic(() => import('@/components/blog/SapTCodesContent'));
@@ -266,7 +266,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     });
     const categories = Object.entries(categoryCounts).map(([name, count]) => ({ name, count }));
 
-    const useDbContent = post.content && post.content.length > 50;
+    // Priority: If DB has content (at least 10 chars), use it. Otherwise fall back to Legacy Components.
+    const useDbContent = post.content && post.content.length > 10;
 
     // Check if it's one of the legacy component paths
     // Check if it's one of the legacy component paths

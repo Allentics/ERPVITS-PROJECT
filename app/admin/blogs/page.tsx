@@ -64,9 +64,15 @@ export default function BlogsPage() {
             // Rule 7: Ensure backup runs AFTER successful database operation.
             // Rule 9: If backup fails, do NOT break admin operation.
             try {
+                // Trigger revalidation for the list page
+                fetch('/api/revalidate', {
+                    method: 'POST',
+                    body: JSON.stringify({ path: '/blogs' }),
+                }).catch(e => console.error('Revalidation error:', e));
+
                 fetch('/api/admin/blogs/backup', { method: 'POST' }).catch(e => console.error('Backup trigger error:', e));
             } catch (e) {
-                console.error('Backup failed to trigger:', e);
+                console.error('Secondary operations failed:', e);
             }
 
         } catch (err: any) {
@@ -128,9 +134,15 @@ export default function BlogsPage() {
 
                 // Rule 7: Ensure backup runs AFTER successful database operation.
                 try {
+                    // Trigger revalidation for the list page
+                    fetch('/api/revalidate', {
+                        method: 'POST',
+                        body: JSON.stringify({ path: '/blogs' }),
+                    }).catch(e => console.error('Revalidation error:', e));
+
                     fetch('/api/admin/blogs/backup', { method: 'POST' }).catch(e => console.error('Backup trigger error:', e));
                 } catch (e) {
-                    console.error('Backup failed to trigger:', e);
+                    console.error('Secondary operations failed:', e);
                 }
 
                 await fetchBlogs();

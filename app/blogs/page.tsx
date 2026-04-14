@@ -36,7 +36,7 @@ function formatDate(dateStr: string) {
     return { day, month, weekday };
 }
 
-export const revalidate = 60; // Revalidate every 60 seconds for fast Admin updates
+export const revalidate = 10; // Revalidate every 10 seconds for fast Admin updates
 
 export default async function BlogPage({ searchParams }: { searchParams: Promise<{ category?: string }> }) {
     const { category: filterCategory } = await searchParams;
