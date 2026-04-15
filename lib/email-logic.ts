@@ -1,6 +1,8 @@
 import nodemailer from 'nodemailer';
 import path from 'path';
 import fs from 'fs';
+// Trigger Vercel Build: Switching to info@erpvits.com SMTP config
+
 
 const transporter = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
