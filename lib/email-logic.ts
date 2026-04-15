@@ -45,19 +45,47 @@ export async function sendSyllabusEmailLogic({ email, name, courseTitle, pdfUrl 
     }
 
     const mailOptions = {
-        from: `"ERPVITS Training" <${process.env.EMAIL_USER}>`,
+        from: {
+            name: "ERPVITS Training",
+            address: process.env.EMAIL_USER as string
+        },
         to: email,
+        replyTo: process.env.EMAIL_USER,
         subject: `${courseTitle} Course Syllabus - ERPVITS`,
         html: `
-            <div style="font-family: Arial, sans-serif; color: #333;">
-                <h2>Hi ${name},</h2>
-                <p>Thank you for your interest in the <strong>${courseTitle}</strong> course at ERPVITS.</p>
-                <p>Please find the requested course curriculum attached to this email.</p>
-                <p>If you have any questions or would like to schedule a free demo session, simply reply to this email or call us.</p>
-                <br/>
-                <p>Best Regards,</p>
-                <p><strong>ERPVITS Team</strong></p>
-                <p><a href="https://erpvits.com">www.erpvits.com</a></p>
+            <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; background-color: #ffffff;">
+                <div style="background-color: #004a99; color: #ffffff; padding: 25px; text-align: center;">
+                    <h1 style="margin: 0; font-size: 24px;">${courseTitle} Training Program</h1>
+                    <p style="margin: 5px 0 0 0; opacity: 0.9;">Empowering Growth Through SAP Knowledge</p>
+                </div>
+                <div style="padding: 30px; color: #333333; line-height: 1.6;">
+                    <h2 style="color: #004a99; margin-top: 0;">Dear ${name},</h2>
+                    <p>We're pleased to invite you to our comprehensive <strong>${courseTitle} Training</strong> — designed for professionals aiming to master processes and sourcing with SAP.</p>
+                    
+                    <div style="background-color: #f8f9fa; border-left: 4px solid #004a99; padding: 15px; margin: 20px 0;">
+                        <p style="margin: 0;">📎 The <strong>detailed course syllabus</strong> is attached to this email for your quick review.</p>
+                    </div>
+
+                    <p>Our program highlights include:</p>
+                    <ul style="padding-left: 20px;">
+                        <li>50 hours of structured training with real-world scenarios</li>
+                        <li>24/7 server access for 2 months</li>
+                        <li>Lifetime access to recordings and study materials</li>
+                        <li>Career support: resume building and interview preparation</li>
+                    </ul>
+
+                    <div style="text-align: center; margin: 30px 0;">
+                        <a href="https://erpvits.com/upcoming-demos" style="background-color: #ff9800; color: #ffffff; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">📅 Check Live Demo Schedule</a>
+                    </div>
+
+                    <p>If you have any questions, simply reply to this email or call us at <a href="tel:+918785687906" style="color: #004a99; text-decoration: none;">+91 87856 87906</a>.</p>
+                    
+                    <hr style="border: 0; border-top: 1px solid #eeeeee; margin: 30px 0;">
+                    
+                    <p style="margin-bottom: 5px;">Best Regards,</p>
+                    <p style="margin-top: 0; font-weight: bold; color: #004a99;">ERPVITS Team</p>
+                    <p style="font-size: 12px; color: #999999;"><a href="https://erpvits.com" style="color: #999999;">www.erpvits.com</a> | Industry-Leading SAP Online Training</p>
+                </div>
             </div>
         `,
         attachments: [
