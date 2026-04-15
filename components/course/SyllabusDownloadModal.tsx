@@ -38,7 +38,6 @@ export default function SyllabusDownloadModal({ isOpen, onClose, courseTitle, sy
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setErrorMessage('');
-        alert('Form Submission Triggered! Checking data...');
 
         // 1. Sync Validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
