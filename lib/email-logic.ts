@@ -34,9 +34,13 @@ export async function sendSyllabusEmailLogic({ email, name, courseTitle, pdfUrl 
 
     const decodedUrl = decodeURIComponent(pdfUrl);
     const cleanRelativePath = decodedUrl.startsWith('/') ? decodedUrl.slice(1) : decodedUrl;
-    const filePath = path.join(process.cwd(), 'public', cleanRelativePath);
+    // On Vercel, public files are in the root during runtime
+    const filePath = path.resolve(process.cwd(), 'public', cleanRelativePath);
+
+    console.log('Attempting to send syllabus from path:', filePath);
 
     if (!fs.existsSync(filePath)) {
+        console.error('File not found at:', filePath);
         throw new Error('Syllabus file not found on server.');
     }
 
