@@ -38,6 +38,7 @@ const getDbId = (slug: string) => {
     if (slug === 'sap-mdg' || slug === 'mdg' || slug === 'sap-master-data-governance') return 'sap-mdg';
     if (slug === 'sap-c4c' || slug === 'c4c' || slug === 'sap-c4c-technical-training' || slug === 'sap-c4c-technical-online-training' || slug === 'c4c-technical') return 'c4c-technical';
     if (slug === 'sap-trm' || slug === 'trm' || slug === 'sap-treasury-and-risk-management-online-training') return 'trm';
+    if (slug === 'sap-ppds' || slug === 'ppds' || slug === 'sap-ppds-training') return 'ppds';
     return slug;
 };
 

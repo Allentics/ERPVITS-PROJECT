@@ -2,8 +2,8 @@ import CoursePage from '../courses/[slug]/page';
 import { Metadata } from 'next';
 import { fetchCourseMetadata } from '@/lib/metadata';
 
-// Revalidate every 30 minutes to catch metadata updates from Admin Dashboard
-export const revalidate = 1800;
+// Revalidate every 0 seconds (Dynamic Rendering) to catch metadata updates immediately
+export const revalidate = 0;
 
 
 export async function generateMetadata(): Promise<Metadata> {
