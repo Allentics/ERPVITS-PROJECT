@@ -175,6 +175,7 @@ export default function SyllabusModal({ isOpen, onClose, courseTitle, pdfUrl }: 
                                     <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
                                     <div className="flex gap-2">
                                         <select
+                                            aria-label="Country Code"
                                             className="w-[120px] px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ff4500] outline-none bg-gray-50"
                                             value={formData.countryCode}
                                             onChange={(e) => setFormData({ ...formData, countryCode: e.target.value })}

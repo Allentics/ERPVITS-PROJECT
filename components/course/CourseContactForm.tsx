@@ -115,7 +115,10 @@ export default function CourseContactForm({ courseName }: { courseName?: string 
                 <div className="flex gap-2">
                     <div className="relative w-[90px] flex-shrink-0">
                         <select
-                            name="countryCode" value={formData.countryCode} onChange={handleChange}
+                            name="countryCode"
+                            aria-label="Country Code"
+                            value={formData.countryCode}
+                            onChange={handleChange}
                             className="w-full px-2 py-2 text-[13px] rounded-lg border border-slate-200 bg-white outline-none focus:border-slate-400"
                         >
                             {countryCodes.map(c => (
@@ -134,7 +137,11 @@ export default function CourseContactForm({ courseName }: { courseName?: string 
             <div className="space-y-1">
                 <label className="text-[9px] font-bold text-slate-500 uppercase ml-0.5 tracking-wider">Interested Course</label>
                 <select
-                    name="course" value={formData.course} onChange={handleChange} required
+                    name="course"
+                    aria-label="Interested Course"
+                    value={formData.course}
+                    onChange={handleChange}
+                    required
                     className="w-full px-3 py-2 text-[13px] rounded-lg border border-slate-200 bg-white outline-none focus:border-slate-400 text-slate-600"
                 >
                     <option value="">Select a course...</option>

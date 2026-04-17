@@ -60,6 +60,7 @@ export default function ROICalculator() {
                         <div>
                             <label className="block text-sm font-bold text-slate-700 mb-2">Target SAP Role</label>
                             <select
+                                aria-label="Target SAP Role"
                                 className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                                 onChange={(e) => {
                                     const role = roles.find(r => r.title === e.target.value);
@@ -73,7 +74,10 @@ export default function ROICalculator() {
                         </div>
                         <div>
                             <label className="block text-sm font-bold text-slate-700 mb-2">Months to Job Placement</label>
-                            <select className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                            <select
+                                aria-label="Months to Job Placement"
+                                className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                            >
                                 <option>3 months</option>
                                 <option>6 months</option>
                                 <option>9 months</option>
@@ -82,6 +86,7 @@ export default function ROICalculator() {
                         <div>
                             <label className="block text-sm font-bold text-slate-700 mb-2">Years in Role (for projection)</label>
                             <select
+                                aria-label="Years in Role"
                                 className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                                 value={years}
                                 onChange={(e) => setYears(parseInt(e.target.value))}

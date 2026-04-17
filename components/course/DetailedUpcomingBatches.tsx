@@ -370,6 +370,7 @@ export default function DetailedUpcomingBatches({ courseName = "SAP Ariba", batc
                                         <label className="block text-xs font-bold text-slate-700 mb-1">Select Module <span className="text-orange-500">*</span></label>
                                         <select
                                             name="course"
+                                            aria-label="Select SAP Module"
                                             value={selfPacedForm.course}
                                             onChange={handleSelfPacedChange}
                                             required

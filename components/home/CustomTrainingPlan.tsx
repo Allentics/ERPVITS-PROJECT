@@ -210,6 +210,7 @@ export default function CustomTrainingPlan() {
                                         <label className="block text-sm font-semibold mb-1">Phone Number</label>
                                         <div className="flex gap-3">
                                             <select
+                                                aria-label="Country Code"
                                                 value={countryCode}
                                                 onChange={(e) => setCountryCode(e.target.value)}
                                                 className="w-[140px] px-3 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none bg-white text-gray-700"
@@ -234,6 +235,7 @@ export default function CustomTrainingPlan() {
                                         <label className="block text-sm font-semibold mb-1">Current Role / Background</label>
                                         <select
                                             required
+                                            aria-label="Current Role or Background"
                                             value={formData.background}
                                             onChange={(e) => setFormData({ ...formData, background: e.target.value })}
                                             className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
@@ -250,6 +252,7 @@ export default function CustomTrainingPlan() {
                                     <div>
                                         <label className="block text-sm font-semibold mb-1">SAP Module *</label>
                                         <select
+                                            aria-label="SAP Module Selection"
                                             value={formData.interestedCourse}
                                             onChange={(e) => setFormData({ ...formData, interestedCourse: e.target.value })}
                                             className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent"

@@ -163,6 +163,7 @@ export default function SyllabusDownloadModal({ isOpen, onClose, courseTitle, sy
                                     <div className="flex gap-2">
                                         <select
                                             name="countryCode"
+                                            aria-label="Country Code"
                                             value={formData.countryCode}
                                             onChange={handleChange}
                                             className="w-[120px] px-2 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#ff4500] focus:border-[#ff4500] outline-none bg-white text-sm"

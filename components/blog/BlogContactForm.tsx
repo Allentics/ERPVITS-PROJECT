@@ -123,6 +123,7 @@ export default function BlogContactForm({ slug, isPreview = false }: BlogContact
                     <div className="flex gap-2">
                         <select
                             name="countryCode"
+                            aria-label="Country Code"
                             value={formData.countryCode}
                             onChange={handleChange}
                             className="w-24 px-2 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none bg-white text-sm"
@@ -149,6 +150,7 @@ export default function BlogContactForm({ slug, isPreview = false }: BlogContact
                     <div>
                         <select
                             name="course"
+                            aria-label="Interested Course"
                             value={formData.course}
                             onChange={handleChange}
                             className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none bg-white text-sm"
