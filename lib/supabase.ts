@@ -1,8 +1,8 @@
 // HMR Refresh - Standardizing client
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || ''
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ''
+const supabaseUrl = (process.env.NEXT_PUBLIC_SUPABASE_URL || '').replace(/['"\s]/g, '').trim();
+const supabaseAnonKey = (process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '').replace(/['"\s]/g, '').trim();
 
 if (!supabaseUrl || !supabaseAnonKey) {
     if (typeof window !== 'undefined') {
