@@ -183,6 +183,7 @@ export default function CareerGuidanceModal({ isOpen, onClose, defaultCourse = "
                                     <label className="block text-xs font-semibold mb-0.5 text-slate-700">Phone Number</label>
                                     <div className="flex gap-2">
                                         <select
+                                            aria-label="Country Code"
                                             value={countryCode}
                                             onChange={(e) => setCountryCode(e.target.value)}
                                             className="w-[110px] px-2 py-2 text-sm rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none bg-white text-gray-700"
@@ -207,6 +208,7 @@ export default function CareerGuidanceModal({ isOpen, onClose, defaultCourse = "
                                     <label className="block text-xs font-semibold mb-0.5 text-slate-700">Current Role / Background</label>
                                     <select
                                         required
+                                        aria-label="Current Role or Background"
                                         value={formData.background}
                                         onChange={(e) => setFormData({ ...formData, background: e.target.value })}
                                         className="w-full px-3 py-2 text-sm rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-white"
@@ -223,6 +225,7 @@ export default function CareerGuidanceModal({ isOpen, onClose, defaultCourse = "
                                 <div>
                                     <label className="block text-xs font-semibold mb-0.5 text-slate-700">SAP Module *</label>
                                     <select
+                                        aria-label="SAP Module"
                                         value={formData.interestedCourse}
                                         onChange={(e) => setFormData({ ...formData, interestedCourse: e.target.value })}
                                         className="w-full px-3 py-2 text-sm rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-white"
