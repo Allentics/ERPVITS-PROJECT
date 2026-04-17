@@ -15,39 +15,47 @@ const ZohoChatButton: React.FC<ZohoChatButtonProps> = ({ widgetCode }) => {
         return () => clearTimeout(timer);
     }, []);
 
+    const openOnReadyRef = React.useRef(false);
+
     const loadRealZoho = () => {
-        if (isRealZohoLoaded || typeof window === 'undefined') return;
+        const win = window as any;
+
+        // If already loaded, just show it
+        if (isRealZohoLoaded) {
+            if (win.$zoho?.salesiq?.floatwindow) {
+                try { win.$zoho.salesiq.floatwindow.visible('show'); } catch (e) { }
+            }
+            return;
+        }
+
+        openOnReadyRef.current = true;
         setIsRealZohoLoaded(true);
 
-        const win = window as any;
         win.$zoho = win.$zoho || {};
         win.$zoho.salesiq = win.$zoho.salesiq || { ready: function () { } };
 
-        // Handle the ready event
         const originalReady = win.$zoho.salesiq.ready;
         win.$zoho.salesiq.ready = function () {
             if (typeof originalReady === 'function') originalReady();
 
-            // Always keep our facade as the primary button for consistency and speed
-            // and hide the default Zoho float button on all devices
             if (win.$zoho.salesiq.floatbutton) {
                 win.$zoho.salesiq.floatbutton.visible('hide');
-                win.$zoho.salesiq.floatbutton.position('bottomleft');
+            }
+
+            // Automatically open if the user clicked the facade
+            if (openOnReadyRef.current && win.$zoho.salesiq.floatwindow) {
+                try {
+                    win.$zoho.salesiq.floatwindow.visible('show');
+                    openOnReadyRef.current = false;
+                } catch (e) { }
             }
         };
 
         const s = document.createElement("script");
         s.id = "zsiqscript";
-        s.src = `https://salesiq.zohopublic.com/widget?wc=${widgetCode}`;
+        s.src = `https://salesiq.zohopublic.com/widget?wc=${widgetCode.replace(/["']/g, '').trim()}`;
         s.defer = true;
         document.body.appendChild(s);
-
-        // If Zoho is already ready/loaded, try to show the window immediately
-        if (win.$zoho.salesiq.floatwindow) {
-            try {
-                win.$zoho.salesiq.floatwindow.visible('show');
-            } catch (e) { }
-        }
     };
 
     return (
