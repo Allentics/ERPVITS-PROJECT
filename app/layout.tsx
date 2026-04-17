@@ -117,7 +117,7 @@ export default function RootLayout({
                   style.id = 'mobile-reflow-fix';
                   style.innerHTML = \`
                     @media (max-width: 767px) {
-                      .nav-header-inline, .announcement-inline, .hero-container-inline { contain: paint layout; }
+                      .hero-container-inline { contain: layout; }
                       body { overflow-anchor: none; }
                       footer { content-visibility: auto; contain-intrinsic-size: 0 500px; }
                     }
@@ -170,7 +170,6 @@ export default function RootLayout({
                     margin-bottom: 1rem !important;
                     font-weight: 800 !important;
                     color: #0F172A !important;
-                    contain: content;
                   }
                   
                   h2 {
