@@ -76,7 +76,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable}`} suppressHydrationWarning>
       <head>
-        {/* Mobile-Only CSS Unblocking Script: Top-priority execution to unblock render path immediately */}
+        {/* Advanced Mobile-Only Critical Infrastructure: Resolves Render-Blocking (Lighthouse fix) */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -85,36 +85,63 @@ export default function RootLayout({
                   const isMobile = window.matchMedia('(max-width: 767px)').matches;
                   if (!isMobile) return;
 
+                  // 1. Resolve Network Dependency Tree: Establish early connections for mobile
+                  const preconnects = ['https://www.googletagmanager.com', 'https://www.clarity.ms', 'https://i.ytimg.com'];
+                  preconnects.forEach(url => {
+                    const l = document.createElement('link');
+                    l.rel = 'preconnect';
+                    l.href = url;
+                    l.crossOrigin = 'anonymous';
+                    document.head.appendChild(l);
+                  });
+
+                  // 2. Resolve Render Blocking: Defer all non-critical stylesheets for mobile
                   function unblockResource(l) {
-                    if (l.media !== 'print') {
+                    if (l.rel === 'stylesheet' && l.media !== 'print' && !l.hasAttribute('data-critical')) {
                       l.media = 'print';
-                      l.onload = function() { this.media = 'all'; };
-                      // Fail-safe: Ensure styles are applied even if onload fails or is skipped
-                      setTimeout(function() { if (l.media !== 'all') l.media = 'all'; }, 1000);
+                      l.onload = function() { 
+                        this.media = 'all';
+                        this.setAttribute('data-loaded', 'true');
+                      };
+                      // Safety override: Ensure styles application within 1.5s
+                      setTimeout(() => { if (l.media !== 'all') l.media = 'all'; }, 1500);
                     }
                   }
 
-                  // 1. Unblock existing links
-                  Array.from(document.querySelectorAll('link[rel="stylesheet"]:not([data-critical])')).forEach(unblockResource);
+                  // Immediate unblocking for static and early-injected links
+                  const existing = document.querySelectorAll('link[rel="stylesheet"]');
+                  existing.forEach(unblockResource);
 
-                  // 2. Observer for late-injected chunks
-                  setTimeout(() => {
-                    new MutationObserver((m) => {
-                      const addedLinks = [];
-                      m.forEach((it) => it.addedNodes.forEach(n => {
-                        if (n.tagName === 'LINK' && n.rel === 'stylesheet' && !n.hasAttribute('data-critical')) {
-                          addedLinks.push(n);
-                        }
-                      }));
-                      addedLinks.forEach(unblockResource);
-                    }).observe(document.head, { childList: true });
-                  }, 2000);
+                  // 3. Resolve Forced Reflow: Prevent geometric queries from triggering layout thrashing
+                  const style = document.createElement('style');
+                  style.id = 'mobile-reflow-fix';
+                  style.innerHTML = \`
+                    @media (max-width: 767px) {
+                      .nav-header-inline, .announcement-inline, .hero-container-inline { contain: paint layout; }
+                      body { overflow-anchor: none; }
+                      footer { content-visibility: auto; contain-intrinsic-size: 0 500px; }
+                    }
+                  \`;
+                  document.head.appendChild(style);
+
+                  // MutationObserver to catch Next.js dynamic chunks
+                  const observer = new MutationObserver((mutations) => {
+                    mutations.forEach((mutation) => {
+                      mutation.addedNodes.forEach((node) => {
+                        if (node.tagName === 'LINK') unblockResource(node);
+                      });
+                    });
+                  });
+                  observer.observe(document.head, { childList: true });
+                  
+                  // Clean up observer after 5 seconds
+                  setTimeout(() => observer.disconnect(), 5000);
                 } catch(e) {}
               })();
             `,
           }}
         />
-        {/* LCP Optimization: Preload essential assets for initial render */}
+        {/* LCP Optimization: High-priority logo for mobile + desktop */}
         <link rel="preload" href="/images/logo.webp" as="image" type="image/webp" fetchPriority="high" />
 
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
@@ -122,7 +149,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://i.ytimg.com" />
       </head>
       <body className="font-sans" suppressHydrationWarning>
-        {/* Advanced Critical Styles: Minimize FOUC and eliminate layout shifts for headers */}
+        {/* Advanced Critical Styles for Mobile: Fixes CLS and Forced Reflow by locking dimensions */}
         <style
           dangerouslySetInnerHTML={{
             __html: `
@@ -133,8 +160,9 @@ export default function RootLayout({
                 
                 @media (max-width: 767px) {
                   body { background: #ffffff; margin: 0; padding: 0; min-height: 100vh; overflow-x: hidden; }
-                  /* Ensure primary mobile container loads instantly without waiting for chunk.css */
-                  .hero-container-inline { padding-top: 1.5rem; background-color: #ffffff !important; }
+                  /* Content visibility to solve reflow on scroll for mobile */
+                  section { content-visibility: auto; contain-intrinsic-size: 0 200px; }
+                  .hero-container-inline { content-visibility: visible; min-height: 60vh !important; padding-top: 1.5rem; background-color: #ffffff !important; }
                   
                   h1 { 
                     font-size: 1.5rem !important; 
@@ -142,6 +170,7 @@ export default function RootLayout({
                     margin-bottom: 1rem !important;
                     font-weight: 800 !important;
                     color: #0F172A !important;
+                    contain: content;
                   }
                   
                   h2 {
@@ -152,7 +181,6 @@ export default function RootLayout({
                     margin-bottom: 1.5rem !important;
                   }
 
-                  /* Pre-style mobile CTA buttons to avoid layout shift */
                   .btn-primary-mobile-inline {
                     background-color: #FF5722 !important;
                     color: #ffffff !important;
@@ -164,27 +192,26 @@ export default function RootLayout({
                     width: 100% !important;
                   }
 
-                  /* Navbar & Announcement Bar mobile height locking */
-                  .nav-header-inline { height: 80px !important; min-height: 80px !important; }
-                  .announcement-inline { min-height: 35px !important; font-size: 11px !important; }
+                  /* Dimension locking to prevent reflows during font hydration */
+                  .nav-header-inline { height: 80px !important; min-height: 80px !important; width: 100% !important; flex-shrink: 0 !important; }
+                  .announcement-inline { height: 35px !important; min-height: 35px !important; font-size: 11px !important; }
                   
-                  /* Mobile logo sizing lock */
                   .logo-img-mobile { 
                     height: 40px !important; 
                     width: auto !important; 
+                    min-width: 100px;
                     object-fit: contain !important;
                     display: block !important;
                   }
                   
-                  /* Prevent large images from causing CLS before CSS loads */
-                  img { max-width: 100%; height: auto; }
+                  img { max-width: 100%; height: auto; content-visibility: auto; }
                   .hero-course-inline { background: #F2F6FD !important; padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; min-height: 50vh !important; }
                   .course-h1-inline { font-size: 1.5rem !important; line-height: 1.3 !important; font-weight: 800; color: #0F172A; }
                   .course-sub-inline { font-size: 0.875rem !important; color: #475569 !important; line-height: 1.5 !important; }
                   .course-form-card-mobile { background: #ffffff !important; border-radius: 1rem !important; padding: 1.25rem !important; border: 1px solid #e2e8f0 !important; margin-top: 1rem !important; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important; }
                 }
                 
-                /* Ensure Zoho's default button doesn't pop in and eliminate YT overhead */
+                /* Hide heavy third-party elements initially to clear critical path */
                 #zsiq_float, .zsiq_float_main, .zsiq-float-btn, link[href*="ytimg"] { display: none !important; }
                 img[priority] { fetchpriority: high; }
             `,
@@ -221,12 +248,11 @@ export default function RootLayout({
 
               const isMobile = window.matchMedia('(max-width: 767px)').matches;
               if (isMobile) {
-                // For mobile, wait for interaction or 10s delay
+                // For mobile, wait for interaction or 6s delay
                 const events = ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart'];
                 events.forEach(e => window.addEventListener(e, loadClarity, { once: true, passive: true }));
-                setTimeout(loadClarity, 10000); // Fail-safe
+                setTimeout(loadClarity, 6000); 
               } else {
-                // Desktop stays as was
                 loadClarity();
               }
             })();
