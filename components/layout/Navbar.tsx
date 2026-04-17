@@ -267,7 +267,11 @@ const Navbar = () => {
 
                             {/* Mobile Button */}
                             <div className="lg:hidden flex items-center">
-                                <button onClick={() => setIsOpen(!isOpen)} className="p-2 rounded-md text-white hover:text-orange-500 hover:bg-white/10 focus:outline-none transition-colors">
+                                <button
+                                    onClick={() => setIsOpen(!isOpen)}
+                                    className="p-2 rounded-md text-white hover:text-orange-500 hover:bg-white/10 focus:outline-none transition-colors"
+                                    aria-label={isOpen ? "Close main menu" : "Open main menu"}
+                                >
                                     {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
                                 </button>
                             </div>
