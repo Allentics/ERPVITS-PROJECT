@@ -277,6 +277,7 @@ const WebinarPopup = () => {
                                             <Phone className="w-4 h-4 text-gray-400 mr-2 flex-shrink-0" />
                                             <select
                                                 required
+                                                aria-label="Country Code"
                                                 className="w-[85px] py-3 outline-none text-gray-800 text-sm font-medium bg-transparent cursor-pointer border-r border-gray-200 pr-2 mr-2 flex-shrink-0"
                                                 value={formData.countryCode}
                                                 onChange={(e) => setFormData({ ...formData, countryCode: e.target.value })}
@@ -314,6 +315,7 @@ const WebinarPopup = () => {
                                             <Monitor className="w-4 h-4 text-gray-400 mr-2.5 flex-shrink-0" />
                                             <select
                                                 required
+                                                aria-label="SAP Module"
                                                 className="w-full py-3 outline-none text-gray-800 text-sm font-medium appearance-none bg-transparent cursor-pointer pr-6"
                                                 value={formData.module}
                                                 onChange={(e) => setFormData({ ...formData, module: e.target.value })}
@@ -333,6 +335,7 @@ const WebinarPopup = () => {
                                             <Clock className="w-4 h-4 text-gray-400 mr-2.5 flex-shrink-0" />
                                             <select
                                                 required
+                                                aria-label="Preferred Timing"
                                                 className="w-full py-3 outline-none text-gray-800 text-sm font-medium appearance-none bg-transparent cursor-pointer pr-6"
                                                 value={formData.preferredTiming}
                                                 onChange={(e) => setFormData({ ...formData, preferredTiming: e.target.value })}

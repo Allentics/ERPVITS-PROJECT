@@ -184,6 +184,7 @@ export default function ContactForm({ className = "", showLabels = true, success
                 <div className="flex gap-2">
                     <select
                         name="countryCode"
+                        aria-label="Country Code"
                         value={formData.countryCode}
                         onChange={handleChange}
                         className="w-[120px] px-3 py-1.5 rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white outline-none transition-all text-sm text-slate-700 appearance-none cursor-pointer"
@@ -210,6 +211,7 @@ export default function ContactForm({ className = "", showLabels = true, success
                 {showLabels && <label className="block text-[11px] font-bold text-slate-700 mb-0.5 ml-1">SAP Module *</label>}
                 <select
                     name="course"
+                    aria-label="SAP Module"
                     value={formData.course}
                     onChange={handleChange}
                     required
