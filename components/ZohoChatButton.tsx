@@ -10,8 +10,8 @@ const ZohoChatButton: React.FC<ZohoChatButtonProps> = ({ widgetCode }) => {
     const [isRealZohoLoaded, setIsRealZohoLoaded] = useState(false);
 
     useEffect(() => {
-        // Auto-load Zoho after a 1 second delay if user doesn't click
-        const timer = setTimeout(loadRealZoho, 1000);
+        // Auto-load Zoho script silently in background after 1s (pre-warm)
+        const timer = setTimeout(() => loadRealZoho(false), 1000);
         return () => clearTimeout(timer);
     }, []);
 
@@ -22,8 +22,13 @@ const ZohoChatButton: React.FC<ZohoChatButtonProps> = ({ widgetCode }) => {
 
         // If already loaded, just show it
         if (isRealZohoLoaded) {
-            if (shouldOpen && win.$zoho?.salesiq?.floatwindow) {
-                try { win.$zoho.salesiq.floatwindow.visible('show'); } catch (e) { }
+            if (shouldOpen) {
+                if (win.$zoho?.salesiq?.floatwindow) {
+                    try { win.$zoho.salesiq.floatwindow.visible('show'); } catch (e) { }
+                } else {
+                    // Script is loading but not ready. Set flag to open on ready.
+                    openOnReadyRef.current = true;
+                }
             }
             return;
         }

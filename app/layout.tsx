@@ -208,12 +208,12 @@ export default function RootLayout({
                   .course-h1-inline { font-size: 1.5rem !important; line-height: 1.3 !important; font-weight: 800; color: #0F172A; }
                   .course-sub-inline { font-size: 0.875rem !important; color: #475569 !important; line-height: 1.5 !important; }
                   .course-form-card-mobile { background: #ffffff !important; border-radius: 1rem !important; padding: 1.25rem !important; border: 1px solid #e2e8f0 !important; margin-top: 1rem !important; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important; }
-                  /* Hide heavy third-party elements initially to clear critical path (Mobile Only) */
-                  #zsiq_float, .zsiq_float_main, .zsiq-float-btn, link[href*="ytimg"] { display: none !important; }
+                  /* Hide ONLY the default floating button to clear critical path (Mobile Only) */
+                  .zsiq-float-btn, link[href*="ytimg"] { display: none !important; }
                 }
                 
-                /* Desktop: Hide real Zoho button to allow facade to show, but without !important to allow API to show window */
-                #zsiq_float, .zsiq_float_main, .zsiq-float-btn { display: none; }
+                /* Desktop: Hide ONLY the default floating button to allow facade to show */
+                .zsiq-float-btn { display: none; }
                 img[priority] { fetchpriority: high; }
             `,
           }}
