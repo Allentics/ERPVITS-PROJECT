@@ -223,17 +223,36 @@ export default function RootLayout({
           }}
         />
 
-        {/* Google Analytics - strategy: lazyOnload clears critical path for LCP */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-CRQ7PMM6EV"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
+        {/* Google Analytics - strategy: lazyOnload with Mobile-specific deferral to reduce Main Thread blocking */}
+        <Script id="google-analytics-loader" strategy="lazyOnload">
           {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-CRQ7PMM6EV');
+            (function() {
+              function loadGA() {
+                if (window.gaLoaded) return;
+                window.gaLoaded = true;
+                
+                var script = document.createElement('script');
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=G-CRQ7PMM6EV';
+                script.async = true;
+                document.head.appendChild(script);
+
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){window.dataLayer.push(arguments);}
+                window.gtag = gtag;
+                gtag('js', new Date());
+                gtag('config', 'G-CRQ7PMM6EV');
+              }
+
+              const isMobile = window.matchMedia('(max-width: 767px)').matches;
+              if (isMobile) {
+                // For mobile, wait for interaction or 6s delay
+                const events = ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart'];
+                events.forEach(e => window.addEventListener(e, loadGA, { once: true, passive: true }));
+                setTimeout(loadGA, 6000); 
+              } else {
+                loadGA();
+              }
+            })();
           `}
         </Script>
 

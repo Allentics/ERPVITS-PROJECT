@@ -10,9 +10,24 @@ const ZohoChatButton: React.FC<ZohoChatButtonProps> = ({ widgetCode }) => {
     const [isRealZohoLoaded, setIsRealZohoLoaded] = useState(false);
 
     useEffect(() => {
-        // Auto-load Zoho script silently in background after 1s (pre-warm)
-        const timer = setTimeout(() => loadRealZoho(false), 1000);
-        return () => clearTimeout(timer);
+        const isMobile = window.matchMedia('(max-width: 767px)').matches;
+        // Auto-load Zoho script silently in background after 1s on desktop, wait 8s or interaction on mobile
+        const delay = isMobile ? 8000 : 1000;
+
+        const loadOnInteract = () => { loadRealZoho(false); };
+        if (isMobile) {
+            window.addEventListener('scroll', loadOnInteract, { once: true, passive: true });
+            window.addEventListener('touchstart', loadOnInteract, { once: true, passive: true });
+        }
+
+        const timer = setTimeout(() => loadRealZoho(false), delay);
+        return () => {
+            clearTimeout(timer);
+            if (isMobile) {
+                window.removeEventListener('scroll', loadOnInteract);
+                window.removeEventListener('touchstart', loadOnInteract);
+            }
+        };
     }, []);
 
     const openOnReadyRef = React.useRef(false);
