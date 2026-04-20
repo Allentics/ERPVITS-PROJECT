@@ -1,6 +1,8 @@
 "use client";
 
 import Link from 'next/link';
+import Image from 'next/image';
+import logo from '@/public/images/logo.webp';
 import { usePathname } from 'next/navigation';
 import { Facebook, Twitter, Linkedin, Instagram, Youtube, Mail, Phone, MapPin } from 'lucide-react';
 import React, { useState, useEffect } from 'react';
@@ -59,7 +61,7 @@ const Footer = () => {
                     {/* Column 1: About */}
                     <div>
                         <Link href="/" className="mb-4 block">
-                            <img src="/images/logo.webp" alt="ERPVITS" className="h-10 w-auto" />
+                            <Image src={logo} alt="ERPVITS Logo" className="h-10 w-auto" priority />
                         </Link>
                         <p className="text-sm leading-relaxed mb-4">
                             Industry-leading SAP Online Training Institute with 95%+ placement success.

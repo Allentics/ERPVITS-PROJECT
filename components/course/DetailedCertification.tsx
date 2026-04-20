@@ -3,6 +3,7 @@
 import React from 'react';
 import { Award, CheckCircle2, BookOpen, Trophy, TrendingUp, FileCheck } from 'lucide-react';
 import { renderRichText } from '@/lib/richText';
+import Image from 'next/image';
 
 export default function DetailedCertification({ items, title, subtitle, badge, stats, courseName = "SAP Ariba", description, imageSrc, imageSrc2, supportFeatures, benefits, whyMattersTitle, targetAudienceLabel }: {
     items?: any[],
@@ -191,16 +192,20 @@ export default function DetailedCertification({ items, title, subtitle, badge, s
                         {/* Image - Improved fitting for Infographics */}
                         {imageSrc && (
                             <div className="rounded-2xl overflow-hidden shadow-xl bg-white border border-slate-100 group p-4 flex flex-col gap-4">
-                                <img
+                                <Image
                                     src={imageSrc}
                                     alt="SAP Certification Professional"
+                                    width={800}
+                                    height={800}
                                     className="w-full h-auto object-contain"
                                 />
                                 {imageSrc2 && (
                                     <div className="mt-4 pt-4 border-t border-slate-100 flex justify-center">
-                                        <img
+                                        <Image
                                             src={imageSrc2}
                                             alt="Certification Logo"
+                                            width={250}
+                                            height={100}
                                             className="h-16 w-auto object-contain"
                                         />
                                     </div>
