@@ -34,7 +34,7 @@ import {
     Users, Layers, Terminal, MessageSquare, LifeBuoy
 } from 'lucide-react';
 
-const IconMap: Record<string, any> = {
+export const IconMap: Record<string, any> = {
     'Award': Award,
     'Terminal': Terminal,
     'Briefcase': Briefcase,
@@ -86,12 +86,23 @@ interface FeatureItem {
     description: string;
 }
 
-export function DetailedFeatures({ badge, title, subtitle, items, textAlign = 'left' }: { badge?: string; title?: string | React.ReactNode; subtitle?: string | React.ReactNode; items: (string | FeatureItem)[]; textAlign?: 'center' | 'left' }) {
+function DynamicHeading({ title, tag = 'h2' }: { title?: string | React.ReactNode; tag?: string }) {
+    if (!title) return null;
+    const Tag = ((tag && ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(tag)) ? tag : 'h2') as any;
+    const baseClass = "font-bold text-slate-900 mb-6 leading-tight";
+    const sizeClass = Tag === 'h1' ? "text-3xl lg:text-4xl" :
+        Tag === 'h2' ? "text-2xl lg:text-3xl" :
+            Tag === 'h3' ? "text-xl lg:text-2xl" : "text-lg lg:text-xl";
+
+    return (<Tag className={`${baseClass} ${sizeClass}`}>{renderRichText(title)}</Tag>);
+}
+
+export function DetailedFeatures({ badge, title, subtitle, items, textAlign = 'left', titleTag }: { badge?: string; title?: string | React.ReactNode; subtitle?: string | React.ReactNode; items: (string | FeatureItem)[]; textAlign?: 'center' | 'left'; titleTag?: string }) {
     return (
         <div className="py-8 detailed-features-section bg-white">
             <div className={`mb-6 max-w-7xl mx-auto px-4 ${textAlign === 'left' ? 'text-left' : 'text-center'}`}>
                 {badge && <span className="bg-[#ff4500] text-white px-4 py-1.5 rounded-full text-sm font-medium mb-5 inline-block shadow-sm">{badge}</span>}
-                <H2Heading title={title} />
+                <DynamicHeading title={title} tag={titleTag} />
                 {subtitle && (
                     <div className={`text-gray-600 text-base leading-relaxed ${textAlign === 'center' ? 'max-w-3xl mx-auto' : 'max-w-5xl'}`}>
                         {renderRichText(subtitle)}
@@ -124,11 +135,6 @@ export function DetailedFeatures({ badge, title, subtitle, items, textAlign = 'l
             </div>
         </div>
     );
-}
-
-function H2Heading({ title }: { title?: string | React.ReactNode }) {
-    if (!title) return null;
-    return <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-6 leading-tight">{renderRichText(title)}</h2>;
 }
 
 export function RichTextSection({ title, content }: { title?: string | React.ReactNode; content: string }) {

@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
 import { ArrowLeft, Save, Loader2, Link as LinkIcon, Plus, Trash2, ClipboardList, Target, BookOpen, Library, Laptop, Star, TrendingUp, Users, Trophy, Link as Link2, NotebookPen, AlarmClock, HelpCircle, MessageSquareQuote, FileText, Calendar, MessageSquare, Briefcase, Layers, ShieldCheck, Building2 } from 'lucide-react';
 import Link from 'next/link';
+import { IconMap } from '@/components/course/SectionRenderer';
 
 // Section Metadata Mapping for Dynamic Tabs
 const SECTION_MAP: Record<string, { label: string, icon: any, id: string }> = {
@@ -32,6 +33,74 @@ const SECTION_MAP: Record<string, { label: string, icon: any, id: string }> = {
     'list_checker': { id: 'tools', label: 'Tools Covered', icon: Laptop },
     'detailed_demo_booking': { id: 'demo', label: 'Demo Booking', icon: MessageSquare },
     'detailed_sap_integrations': { id: 'integrations', label: 'SAP Integrations', icon: LinkIcon },
+};
+
+const SectionHeaderFields = ({ section, updateSectionData, idPrefix, insertHyperlink }: { section: any, updateSectionData: (newData: any) => void, idPrefix: string, insertHyperlink: (id: string) => void }) => {
+    return (
+        <div className="space-y-4 mb-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="md:col-span-2 space-y-2">
+                    <label className="text-sm font-semibold text-gray-700">Section Title</label>
+                    <div className="flex gap-2">
+                        <input
+                            value={section.title || ''}
+                            onChange={(e) => updateSectionData({ title: e.target.value })}
+                            className="w-full p-2 border rounded font-bold"
+                            placeholder="Heading Text"
+                        />
+                        <select
+                            value={section.titleTag || 'h2'}
+                            onChange={(e) => updateSectionData({ titleTag: e.target.value })}
+                            className="w-24 p-2 border rounded bg-slate-50 font-mono text-xs"
+                            title="Heading Tag (SEO)"
+                        >
+                            <option value="h1">H1</option>
+                            <option value="h2">H2</option>
+                            <option value="h3">H3</option>
+                            <option value="h4">H4</option>
+                            <option value="h5">H5</option>
+                            <option value="h6">H6</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div className="space-y-2">
+                    <label className="text-sm font-semibold text-gray-700">Tag / Badge</label>
+                    <input
+                        value={section.badge || ''}
+                        onChange={(e) => updateSectionData({ badge: e.target.value })}
+                        className="w-full p-2 border rounded"
+                        placeholder="e.g. Why Choose Us"
+                    />
+                </div>
+            </div>
+
+            <div className="space-y-2">
+                <label className="text-sm font-semibold text-gray-700">Subtitle / Description Content</label>
+                <div className="relative">
+                    <textarea
+                        id={`${idPrefix}_subtitle`}
+                        value={section.subtitle || section.description || section.content || ''}
+                        onChange={(e) => {
+                            const field = section.subtitle !== undefined ? 'subtitle' : (section.description !== undefined ? 'description' : (section.content !== undefined ? 'content' : 'subtitle'));
+                            updateSectionData({ [field]: e.target.value });
+                        }}
+                        className="w-full p-2 border rounded pr-10 min-h-[80px]"
+                        placeholder="Enter sub-text or description here..."
+                    />
+                    <button
+                        type="button"
+                        onClick={() => insertHyperlink(`${idPrefix}_subtitle`)}
+                        className="absolute top-2 right-2 p-1.5 text-gray-400 hover:text-orange-600 hover:bg-orange-50 rounded transition-all"
+                        title="Add Hyperlink"
+                    >
+                        <LinkIcon size={18} />
+                    </button>
+                </div>
+                <p className="text-[10px] text-gray-400 uppercase tracking-wider font-bold">Supports Markdown: **bold**, _italic_, [link](url)</p>
+            </div>
+        </div>
+    );
 };
 
 export default function EditCoursePage({ params }: { params: Promise<{ id: string }> }) {
@@ -377,10 +446,30 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                 <h3 className="text-xl font-bold text-slate-900">Section 1: Hero Banner (Top of Page)</h3>
                 <p className="text-sm text-slate-500 italic">The first thing users see. Includes the main heading, subheading, and trust indicators.</p>
             </div>
-            <div className="space-y-2">
-                <label className="text-sm font-semibold text-gray-700">Hero Heading</label>
-                <input name="hero_heading" value={formData.hero_heading || ''} onChange={handleChange} className="w-full p-2 border rounded" />
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="md:col-span-2 space-y-2">
+                    <label className="text-sm font-semibold text-gray-700">Hero Heading</label>
+                    <div className="flex gap-2">
+                        <input name="hero_heading" value={formData.hero_heading || ''} onChange={handleChange} className="w-full p-2 border rounded font-bold" />
+                        <select
+                            value={formData.heroTitleTag || 'h1'}
+                            onChange={(e) => setFormData((p: any) => ({ ...p, heroTitleTag: e.target.value }))}
+                            className="w-24 p-2 border rounded bg-slate-50 font-mono text-xs"
+                            title="Heading Tag (SEO)"
+                        >
+                            <option value="h1">H1</option>
+                            <option value="h2">H2</option>
+                            <option value="h3">H3</option>
+                        </select>
+                    </div>
+                </div>
+                <div className="space-y-2">
+                    <label className="text-sm font-semibold text-gray-700">Tag / Badge</label>
+                    <input name="hero_badge" value={formData.hero_badge || ''} onChange={handleChange} className="w-full p-2 border rounded" placeholder="e.g. Most Popular" />
+                </div>
             </div>
+
             <div className="space-y-2">
                 <label className="text-sm font-semibold text-gray-700">Hero Subheading</label>
                 <div className="relative">
@@ -392,15 +481,15 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                         onChange={handleChange}
                         className="w-full p-2 border rounded pr-10"
                     />
-                    <button type="button" onClick={() => insertHyperlink('hero_subheading')} className="absolute top-2 right-2 text-gray-400 hover:text-orange-500" title="Copy Markdown Link">
-                        <LinkIcon size={16} />
+                    <button type="button" onClick={() => insertHyperlink('hero_subheading')} className="absolute top-2 right-2 text-gray-400 hover:text-orange-500" title="Add Hyperlink">
+                        <LinkIcon size={18} />
                     </button>
                 </div>
-                <p className="text-xs text-gray-500">supports Markdown. Use **bold** for bold text.</p>
+                <p className="text-xs text-gray-400 uppercase tracking-wider font-bold mt-1">Supports Markdown: **bold**, _italic_, [link](url)</p>
             </div>
             <div className="space-y-2">
                 <label className="text-sm font-semibold text-gray-700">Hero Image URL</label>
-                <input name="hero_image" value={formData.hero_image || ''} onChange={handleChange} className="w-full p-2 border rounded" />
+                <input name="hero_image" value={formData.hero_image || ''} onChange={handleChange} className="w-full p-2 border rounded font-mono text-sm" />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t">
                 <div className="space-y-2">
@@ -466,39 +555,89 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                     const updateItems = (newItems: any[]) => updateSectionData(section, { items: newItems });
 
                     return (
-                        <div key={sIdx} className="space-y-6 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm relative">
-                            <div className="flex justify-between items-center mb-4">
-                                <h4 className="font-bold text-gray-700">Section Instance {sIdx + 1}</h4>
-                            </div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div className="space-y-2">
-                                    <label className="text-sm font-semibold text-gray-700">Section Title</label>
-                                    <input value={section.title || ''} onChange={(e) => updateSectionData(section, { title: e.target.value })} className="w-full p-2 border rounded" />
-                                </div>
-                                <div className="space-y-2">
-                                    <label className="text-sm font-semibold text-gray-700">Badge Label</label>
-                                    <input value={section.badge || ''} onChange={(e) => updateSectionData(section, { badge: e.target.value })} className="w-full p-2 border rounded" />
-                                </div>
-                            </div>
-                            <div className="space-y-2">
-                                <label className="text-sm font-semibold text-gray-700">Section Subtitle</label>
-                                <textarea value={section.subtitle || ''} onChange={(e) => updateSectionData(section, { subtitle: e.target.value })} className="w-full p-2 border rounded" rows={2} />
+                        <div key={sIdx} className="space-y-6 bg-slate-50/50 p-6 rounded-2xl border border-slate-200 shadow-sm relative">
+                            <div className="flex justify-between items-center mb-6">
+                                <span className="bg-slate-900 text-white text-[10px] uppercase font-black px-2 py-1 rounded">SECTION INSTANCE {sIdx + 1}</span>
                             </div>
 
-                            <div className="space-y-4 pt-4 border-t">
-                                <h5 className="font-bold text-gray-900 flex justify-between items-center">
-                                    Feature Items ({items.length})
-                                    <button type="button" onClick={() => updateItems([...items, { title: 'New Feature', description: '' }])} className="text-xs bg-black text-white px-2 py-1 rounded">Add Item</button>
-                                </h5>
-                                {items.map((item: any, idx: number) => (
-                                    <div key={idx} className="bg-gray-50 p-4 rounded-lg border relative group">
-                                        <button type="button" onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))} className="absolute top-2 right-2 text-red-400 opacity-0 group-hover:opacity-100"><Trash2 size={16} /></button>
-                                        <div className="grid gap-2">
-                                            <input value={item.title || ''} onChange={(e) => { const n = [...items]; n[idx].title = e.target.value; updateItems(n); }} className="w-full p-2 border rounded text-sm font-bold" placeholder="Title" />
-                                            <textarea value={item.description || ''} onChange={(e) => { const n = [...items]; n[idx].description = e.target.value; updateItems(n); }} className="w-full p-2 border rounded text-sm" placeholder="Description" rows={2} />
+                            <SectionHeaderFields
+                                section={section}
+                                updateSectionData={(newData) => updateSectionData(section, newData)}
+                                idPrefix={`feat_${sIdx}`}
+                                insertHyperlink={insertHyperlink}
+                            />
+
+                            <div className="space-y-4">
+                                <div className="flex justify-between items-center">
+                                    <h4 className="font-bold text-slate-800 flex items-center gap-2">
+                                        <Layers size={16} className="text-[#ff4500]" /> Feature Cards ({items.length})
+                                    </h4>
+                                    <button
+                                        type="button"
+                                        onClick={() => updateItems([...items, { title: '', description: '', icon: 'CheckCircle2' }])}
+                                        className="text-xs bg-[#ff4500] text-white px-3 py-1.5 rounded-lg font-bold hover:bg-[#e63e00] transition-colors"
+                                    >
+                                        + Add Feature
+                                    </button>
+                                </div>
+
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    {items.map((item: any, idx: number) => (
+                                        <div key={idx} className="p-4 bg-white rounded-xl border border-slate-200 group relative shadow-sm">
+                                            <button
+                                                type="button"
+                                                onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))}
+                                                className="absolute top-2 right-2 text-slate-300 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-all"
+                                            >
+                                                <Trash2 size={16} />
+                                            </button>
+                                            <div className="space-y-3">
+                                                <div className="flex gap-2">
+                                                    <div className="relative flex-1">
+                                                        <input
+                                                            id={`feat_${sIdx}_item_title_${idx}`}
+                                                            value={item.title || ''}
+                                                            onChange={(e) => { const n = [...items]; n[idx].title = e.target.value; updateItems(n); }}
+                                                            className="w-full p-2 border rounded font-bold text-sm pr-8"
+                                                            placeholder="Card Title"
+                                                        />
+                                                        <button
+                                                            type="button"
+                                                            onClick={() => insertHyperlink(`feat_${sIdx}_item_title_${idx}`)}
+                                                            className="absolute top-2 right-2 text-slate-300 hover:text-orange-500 transition-colors"
+                                                        >
+                                                            <LinkIcon size={14} />
+                                                        </button>
+                                                    </div>
+                                                    <select
+                                                        value={item.icon || 'CheckCircle2'}
+                                                        onChange={(e) => { const n = [...items]; n[idx].icon = e.target.value; updateItems(n); }}
+                                                        className="w-24 p-2 border rounded text-xs bg-slate-50"
+                                                    >
+                                                        {Object.keys(IconMap).map(key => <option key={key} value={key}>{key}</option>)}
+                                                    </select>
+                                                </div>
+                                                <div className="relative">
+                                                    <textarea
+                                                        id={`feat_${sIdx}_item_${idx}`}
+                                                        value={item.description || ''}
+                                                        onChange={(e) => { const n = [...items]; n[idx].description = e.target.value; updateItems(n); }}
+                                                        className="w-full p-2 border rounded text-sm bg-slate-50 focus:bg-white transition-colors pr-8 min-h-[60px]"
+                                                        placeholder="Card Description"
+                                                        rows={2}
+                                                    />
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => insertHyperlink(`feat_${sIdx}_item_${idx}`)}
+                                                        className="absolute top-2 right-2 text-slate-300 hover:text-orange-500 transition-colors"
+                                                    >
+                                                        <LinkIcon size={14} />
+                                                    </button>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                ))}
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     );
@@ -519,9 +658,17 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                     <h3 className="text-xl font-bold text-slate-900">Section 6: Comprehensive Curriculum</h3>
                     <p className="text-sm text-slate-500 italic">Phase-by-phase learning modules and laboratory work.</p>
                 </div>
-                <div className="flex justify-between items-center bg-gray-100 p-4 rounded-lg">
-                    <h4 className="font-bold text-gray-900">Comprehensive Curriculum ({modules.length})</h4>
-                    <button type="button" onClick={() => updateModules([...modules, { title: 'New Module', duration: '5 hours', learning_points: [], hands_on: [] }])} className="text-sm bg-black text-white px-3 py-1.5 rounded-lg flex items-center gap-2">
+
+                <SectionHeaderFields
+                    section={section}
+                    updateSectionData={(newData) => updateSection('detailed_curriculum', { ...section, ...newData })}
+                    idPrefix="curriculum"
+                    insertHyperlink={insertHyperlink}
+                />
+
+                <div className="flex justify-between items-center bg-slate-900 text-white p-4 rounded-xl shadow-lg">
+                    <h4 className="font-bold">Comprehensive Curriculum ({modules.length} Modules)</h4>
+                    <button type="button" onClick={() => updateModules([{ title: 'New Module', duration: '5 hours', learning_points: [], hands_on: [] }, ...modules])} className="text-sm bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 font-bold transition-colors">
                         <Plus size={16} /> Add Module
                     </button>
                 </div>
@@ -637,12 +784,15 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                     <h3 className="text-xl font-bold text-slate-900">Section 4: Success Guarantee & Credibility</h3>
                     <p className="text-sm text-slate-500 italic">Video evidence and core training guarantees.</p>
                 </div>
+                <SectionHeaderFields
+                    section={section}
+                    updateSectionData={(newData) => updateSection('content_with_image', { ...section, ...newData })}
+                    idPrefix="success"
+                    insertHyperlink={insertHyperlink}
+                />
+
                 <div className="space-y-2">
-                    <label className="text-sm font-semibold text-gray-700">Title</label>
-                    <input value={section.title || ''} onChange={(e) => updateSection('content_with_image', { ...section, title: e.target.value })} className="w-full p-2 border rounded" />
-                </div>
-                <div className="space-y-2">
-                    <label className="text-sm font-semibold text-gray-700">Description</label>
+                    <label className="text-sm font-semibold text-gray-700">Detailed Description (Markdown)</label>
                     <div className="relative">
                         <textarea
                             id="why_choose_desc"
@@ -651,7 +801,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                             className="w-full p-2 border rounded pr-10"
                             rows={3}
                         />
-                        <button type="button" onClick={() => insertHyperlink('why_choose_desc')} className="absolute top-2 right-2 text-gray-400 hover:text-orange-500" title="Copy Markdown Link">
+                        <button type="button" onClick={() => insertHyperlink('why_choose_desc')} className="absolute top-2 right-2 text-gray-400 hover:text-orange-500" title="Add Link">
                             <LinkIcon size={16} />
                         </button>
                     </div>
@@ -717,24 +867,13 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                     <h3 className="text-xl font-bold text-slate-900">Section 7: Who Should Enroll (Audience)</h3>
                     <p className="text-sm text-slate-500 italic">Ideal background and target roles for this training.</p>
                 </div>
-                <div className="space-y-2">
-                    <label className="text-sm font-semibold text-gray-700">Section Title</label>
-                    <input
-                        value={section.title || ''}
-                        onChange={(e) => updateSection('detailed_target_audience', { ...section, title: e.target.value })}
-                        className="w-full p-2 border rounded"
-                        placeholder="Who Can Learn This Course?"
-                    />
-                </div>
-                <div className="space-y-2">
-                    <label className="text-sm font-semibold text-gray-700">Subtitle</label>
-                    <input
-                        value={section.subtitle || ''}
-                        onChange={(e) => updateSection('detailed_target_audience', { ...section, subtitle: e.target.value })}
-                        className="w-full p-2 border rounded"
-                        placeholder="Our training is designed..."
-                    />
-                </div>
+
+                <SectionHeaderFields
+                    section={section}
+                    updateSectionData={(newData) => updateSection('detailed_target_audience', { ...section, ...newData })}
+                    idPrefix="audience"
+                    insertHyperlink={insertHyperlink}
+                />
 
                 <div className="space-y-4">
                     <div className="flex justify-between items-center bg-gray-100 p-4 rounded-lg">
@@ -831,7 +970,15 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                     <h3 className="text-xl font-bold text-slate-900">Section 8: Prerequisites</h3>
                     <p className="text-sm text-slate-500 italic">Entry requirements and recommended background.</p>
                 </div>
-                <h4 className="font-bold text-gray-900 border-b pb-2">Course Prerequisites</h4>
+
+                <SectionHeaderFields
+                    section={section}
+                    updateSectionData={(newData) => updateSection('detailed_prerequisites', { ...section, ...newData })}
+                    idPrefix="prereq"
+                    insertHyperlink={insertHyperlink}
+                />
+
+                <h4 className="font-bold text-gray-900 border-b pb-2">Course Prerequisites Configuration</h4>
 
                 <div className="bg-orange-50 p-4 rounded-lg border border-orange-100">
                     <h5 className="font-bold text-orange-800 mb-2 flex items-center gap-2"><Target size={18} /> Minimum Requirements</h5>
@@ -884,45 +1031,43 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
 
                     return (
                         <div key={sIdx} className="space-y-6 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm relative">
+                            <SectionHeaderFields
+                                section={section}
+                                updateSectionData={(newData) => updateSectionData(section, newData)}
+                                idPrefix={`included_${sIdx}`}
+                                insertHyperlink={insertHyperlink}
+                            />
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div className="space-y-2">
-                                    <label className="text-sm font-semibold text-gray-700">Section Title</label>
-                                    <input value={section.title || ''} onChange={(e) => updateSectionData(section, { title: e.target.value })} className="w-full p-2 border rounded" />
-                                </div>
-                                <div className="space-y-2">
-                                    <label className="text-sm font-semibold text-gray-700">Badge</label>
-                                    <input value={section.badge || ''} onChange={(e) => updateSectionData(section, { badge: e.target.value })} className="w-full p-2 border rounded" />
-                                </div>
-                            </div>
 
-                            <div className="space-y-4 pt-4 border-t">
-                                <h4 className="font-bold text-gray-900 flex justify-between items-center">
-                                    Features List
-                                    <button type="button" onClick={() => updateSectionData(section, { features: [...features, { title: 'New', description: '' }] })} className="text-xs bg-black text-white px-2 py-1 rounded">Add Feature</button>
-                                </h4>
-                                <div className="grid gap-4">
-                                    {features.map((item: any, idx: number) => (
-                                        <div key={idx} className="bg-white p-4 border rounded-lg shadow-sm group relative">
-                                            <button type="button" onClick={() => updateSectionData(section, { features: features.filter((_: any, i: number) => i !== idx) })} className="absolute top-2 right-2 text-red-400 opacity-0 group-hover:opacity-100"><Trash2 size={16} /></button>
-                                            <input value={typeof item === 'string' ? item : (item.title || '')} onChange={(e) => {
-                                                const n = [...features];
-                                                if (typeof item === 'string') n[idx] = e.target.value;
-                                                else n[idx].title = e.target.value;
-                                                updateSectionData(section, { features: n });
-                                            }} className="w-full p-2 border rounded font-bold text-sm mb-1" />
-                                            {typeof item !== 'string' && <textarea value={item.description || ''} onChange={(e) => { const n = [...features]; n[idx].description = e.target.value; updateSectionData(section, { features: n }); }} className="w-full p-2 border rounded text-xs" rows={2} />}
-                                        </div>
-                                    ))}
+                                <div className="space-y-4 pt-4 border-t">
+                                    <h4 className="font-bold text-gray-900 flex justify-between items-center">
+                                        Features List
+                                        <button type="button" onClick={() => updateSectionData(section, { features: [...features, { title: 'New', description: '' }] })} className="text-xs bg-black text-white px-2 py-1 rounded">Add Feature</button>
+                                    </h4>
+                                    <div className="grid gap-4">
+                                        {features.map((item: any, idx: number) => (
+                                            <div key={idx} className="bg-white p-4 border rounded-lg shadow-sm group relative">
+                                                <button type="button" onClick={() => updateSectionData(section, { features: features.filter((_: any, i: number) => i !== idx) })} className="absolute top-2 right-2 text-red-400 opacity-0 group-hover:opacity-100"><Trash2 size={16} /></button>
+                                                <input value={typeof item === 'string' ? item : (item.title || '')} onChange={(e) => {
+                                                    const n = [...features];
+                                                    if (typeof item === 'string') n[idx] = e.target.value;
+                                                    else n[idx].title = e.target.value;
+                                                    updateSectionData(section, { features: n });
+                                                }} className="w-full p-2 border rounded font-bold text-sm mb-1" />
+                                                {typeof item !== 'string' && <textarea value={item.description || ''} onChange={(e) => { const n = [...features]; n[idx].description = e.target.value; updateSectionData(section, { features: n }); }} className="w-full p-2 border rounded text-xs" rows={2} />}
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div className="space-y-4 pt-4 border-t">
-                                <h4 className="font-bold text-gray-900">Stats Cards (JSON)</h4>
-                                <textarea
-                                    value={JSON.stringify(stats, null, 2)}
-                                    onChange={(e) => { try { updateSectionData(section, { stats: JSON.parse(e.target.value) }) } catch { } }}
-                                    className="w-full p-3 border rounded font-mono text-xs h-32 bg-gray-50"
-                                />
+                                <div className="space-y-4 pt-4 border-t">
+                                    <h4 className="font-bold text-gray-900">Stats Cards (JSON)</h4>
+                                    <textarea
+                                        value={JSON.stringify(stats, null, 2)}
+                                        onChange={(e) => { try { updateSectionData(section, { stats: JSON.parse(e.target.value) }) } catch { } }}
+                                        className="w-full p-3 border rounded font-mono text-xs h-32 bg-gray-50"
+                                    />
+                                </div>
                             </div>
                         </div>
                     );
@@ -935,14 +1080,14 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
         // Handle FAQs which might be in sections OR top level
         let items = formData.faqs || [];
         const sectionMode = items.length === 0;
+        const section = getSection('detailed_faq', { items: [] });
         if (sectionMode) {
-            const section = getSection('detailed_faq', { items: [] });
             items = section.items || [];
         }
 
         const updateFAQs = (newItems: any[]) => {
             if (sectionMode) {
-                updateSection('detailed_faq', { ...getSection('detailed_faq'), items: newItems });
+                updateSection('detailed_faq', { ...section, items: newItems });
             } else {
                 setFormData((prev: any) => ({ ...prev, faqs: newItems }));
             }
@@ -950,9 +1095,23 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
 
         return (
             <div className="space-y-6">
-                <div className="flex justify-between items-center mb-4">
-                    <h4 className="font-bold">Section 14: FAQ</h4>
-                    <button type="button" onClick={() => updateFAQs([...items, { question: 'New Question', answer: '' }])} className="text-sm bg-black text-white px-3 py-1.5 rounded flex items-center gap-2">
+                <div className="border-b pb-4 mb-6">
+                    <h3 className="text-xl font-bold text-slate-900">Section 14: FAQ Management</h3>
+                    <p className="text-sm text-slate-500 italic">Manage common questions and answers for this course.</p>
+                </div>
+
+                {sectionMode && (
+                    <SectionHeaderFields
+                        section={section}
+                        updateSectionData={(newData) => updateSection('detailed_faq', { ...section, ...newData })}
+                        idPrefix="faq"
+                        insertHyperlink={insertHyperlink}
+                    />
+                )}
+
+                <div className="flex justify-between items-center bg-slate-100 p-4 rounded-xl">
+                    <h4 className="font-bold text-slate-700">FAQ Items ({items.length})</h4>
+                    <button type="button" onClick={() => updateFAQs([{ question: '', answer: '' }, ...items])} className="text-sm bg-[#ff4500] text-white px-4 py-2 rounded-lg flex items-center gap-2 font-bold hover:bg-[#e63e00] transition-colors">
                         <Plus size={16} /> Add FAQ
                     </button>
                 </div>
@@ -966,31 +1125,41 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                         >
                             <Trash2 size={16} />
                         </button>
-                        <input
-                            value={item.question || ''}
-                            onChange={(e) => {
-                                const newItems = [...items];
-                                newItems[idx].question = e.target.value;
-                                // Keep q in sync for database compatibility if needed
-                                newItems[idx].q = e.target.value;
-                                updateFAQs(newItems);
-                            }}
-                            className="w-full p-2 border rounded font-semibold"
-                            placeholder="Question"
-                        />
-                        <textarea
-                            value={item.answer || item.a || ''}
-                            onChange={(e) => {
-                                const newItems = [...items];
-                                newItems[idx].answer = e.target.value;
-                                // Keep a in sync
-                                newItems[idx].a = e.target.value;
-                                updateFAQs(newItems);
-                            }}
-                            className="w-full p-2 border rounded text-sm"
-                            placeholder="Answer"
-                            rows={3}
-                        />
+                        <div className="relative">
+                            <input
+                                id={`faq_q_${idx}`}
+                                value={item.question || ''}
+                                onChange={(e) => {
+                                    const newItems = [...items];
+                                    newItems[idx].question = e.target.value;
+                                    newItems[idx].q = e.target.value;
+                                    updateFAQs(newItems);
+                                }}
+                                className="w-full p-2 border rounded font-semibold pr-10"
+                                placeholder="Question"
+                            />
+                            <button type="button" onClick={() => insertHyperlink(`faq_q_${idx}`)} className="absolute top-2 right-2 text-slate-300 hover:text-orange-500" title="Add Link">
+                                <LinkIcon size={16} />
+                            </button>
+                        </div>
+                        <div className="relative">
+                            <textarea
+                                id={`faq_a_${idx}`}
+                                value={item.answer || item.a || ''}
+                                onChange={(e) => {
+                                    const newItems = [...items];
+                                    newItems[idx].answer = e.target.value;
+                                    newItems[idx].a = e.target.value;
+                                    updateFAQs(newItems);
+                                }}
+                                className="w-full p-2 border rounded text-sm pr-10"
+                                placeholder="Answer"
+                                rows={3}
+                            />
+                            <button type="button" onClick={() => insertHyperlink(`faq_a_${idx}`)} className="absolute top-2 right-2 text-slate-300 hover:text-orange-500" title="Add Link">
+                                <LinkIcon size={16} />
+                            </button>
+                        </div>
                     </div>
                 ))}
             </div>
@@ -1057,26 +1226,22 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                 </div>
 
                 {/* Section Header Fields */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                        <label className="text-sm font-semibold text-gray-700">Section Title</label>
-                        <input
-                            value={section.title || ''}
-                            onChange={(e) => updateSection('detailed_certification', { ...section, title: e.target.value })}
-                            className="w-full p-2 border rounded"
-                            placeholder="SAP Certification – Your Global Career Credential"
-                        />
-                    </div>
-                    <div className="space-y-2">
-                        <label className="text-sm font-semibold text-gray-700">Certification Image URL</label>
-                        <input
-                            value={section.imageSrc || ''}
-                            onChange={(e) => updateSection('detailed_certification', { ...section, imageSrc: e.target.value })}
-                            className="w-full p-2 border rounded"
-                            placeholder="/images/..."
-                        />
-                        <p className="text-xs text-gray-500">URL to the side image (infographic)</p>
-                    </div>
+                <SectionHeaderFields
+                    section={section}
+                    updateSectionData={(newData) => updateSection('detailed_certification', { ...section, ...newData })}
+                    idPrefix="cert"
+                    insertHyperlink={insertHyperlink}
+                />
+
+                <div className="space-y-2 mb-8">
+                    <label className="text-sm font-semibold text-gray-700">Certification Image URL</label>
+                    <input
+                        value={section.imageSrc || ''}
+                        onChange={(e) => updateSection('detailed_certification', { ...section, imageSrc: e.target.value })}
+                        className="w-full p-2 border rounded"
+                        placeholder="/images/..."
+                    />
+                    <p className="text-xs text-gray-500">URL to the side image (infographic)</p>
                 </div>
 
                 {/* ─── CERTIFICATION CARDS ─── */}
@@ -1438,22 +1603,12 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                     <p className="text-sm text-slate-500 italic">Skills and mastery students will acquire.</p>
                 </div>
 
-                <div className="space-y-2 border-b pb-4">
-                    <label className="text-sm font-semibold text-gray-700">Section Title</label>
-                    <input
-                        value={section.title || ''}
-                        onChange={(e) => updateSection('detailed_learning_outcomes', { ...section, title: e.target.value })}
-                        className="w-full p-2 border rounded"
-                        placeholder="What You'll Master..."
-                    />
-                    <label className="text-sm font-semibold text-gray-700">Subtitle</label>
-                    <textarea
-                        value={section.subtitle || ''}
-                        onChange={(e) => updateSection('detailed_learning_outcomes', { ...section, subtitle: e.target.value })}
-                        className="w-full p-2 border rounded"
-                        rows={2}
-                    />
-                </div>
+                <SectionHeaderFields
+                    section={section}
+                    updateSectionData={(newData) => updateSection('detailed_learning_outcomes', { ...section, ...newData })}
+                    idPrefix="outcomes"
+                    insertHyperlink={insertHyperlink}
+                />
 
                 {!isTabbed ? (
                     <div className="space-y-4">
@@ -2008,6 +2163,21 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                     const items = section.items || [];
                     return (
                         <div key={sIdx} className="space-y-6 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                            <SectionHeaderFields
+                                section={section}
+                                updateSectionData={(newData) => {
+                                    const actualIdx = formData.sections.indexOf(section);
+                                    const newSections = [...formData.sections];
+                                    if (actualIdx !== -1) {
+                                        newSections[actualIdx] = { ...section, ...newData };
+                                    } else {
+                                        newSections.push({ ...section, ...newData });
+                                    }
+                                    setFormData({ ...formData, sections: newSections });
+                                }}
+                                idPrefix={`jobroles_${sIdx}`}
+                                insertHyperlink={insertHyperlink}
+                            />
                             <div className="bg-emerald-600 text-white p-6 rounded-2xl flex justify-between items-center">
                                 <div>
                                     <h4 className="text-xl font-bold">Career Paths & Job Roles {displaySections.length > 1 ? `#${sIdx + 1}` : ''}</h4>
