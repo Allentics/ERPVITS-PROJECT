@@ -11,24 +11,25 @@ export const renderRichText = (text: any) => {
         processedText = processedText.replace("100% Hands-On", '<span class="text-[#ff4500]">100% Hands-On</span>');
     }
 
-    // Regex for: 1. HTML links, 2. Markdown links, 3. Bold/Italic (Markdown & HTML), 4. Orange highlights, 5. Spans with classes, 6. Line breaks
+    // Regex for: 1. HTML links, 2. Markdown links, 3. Bold/Italic (Markdown & HTML), 4. Orange highlights, 5. Spans with/without classes, 6. Line breaks with/without classes
     // Using [\s\S]*? to handle multi-line content correctly
-    const pattern = /(<a\s+[\s\S]*?href=["'][\s\S]*?["'][\s\S]*?>[\s\S]*?<\/a>|\[[^\]]+\]\([^)]+\)|\*\*[\s\S]*?\*\*|__[\s\S]*?__|<b>[\s\S]*?<\/b>|<strong>[\s\S]*?<\/strong>|<i>[\s\S]*?<\/i>|<em>[\s\S]*?<\/em>|<orange>[\s\S]*?<\/orange>|<span[\s\S]*?class=["'][\s\S]*?["'][\s\S]*?>[\s\S]*?<\/span>|<br\s*\/?>)/gi;
+    const pattern = /(<a\s+[\s\S]*?href=["'][\s\S]*?["'][\s\S]*?>[\s\S]*?<\/a>|\[[^\]]+\]\([^)]+\)|\*\*[\s\S]*?\*\*|__[\s\S]*?__|<b>[\s\S]*?<\/b>|<strong>[\s\S]*?<\/strong>|<i>[\s\S]*?<\/i>|<em>[\s\S]*?<\/em>|<orange>[\s\S]*?<\/orange>|<span[\s\S]*?>[\s\S]*?<\/span>|<br[\s\S]*?\/?>)/gi;
     const parts = processedText.split(pattern);
 
     return parts.map((part, index) => {
         if (!part) return null;
 
-        // Line breaks
-        if (part.toLowerCase().match(/^<br\s*\/?>$/)) {
-            return <br key={index} />;
+        // Line breaks with optional classes
+        const brMatch = part.match(/^<br(?:\s+[\s\S]*?class=["']([\s\S]*?)["'])?[\s\S]*?\/?>$/i);
+        if (brMatch) {
+            return <br key={index} className={brMatch[1] || undefined} />;
         }
 
-        // Check for span with classes
-        const spanMatch = part.match(/^<span\s+[\s\S]*?class=["']([\s\S]*?)["'][\s\S]*?>([\s\S]*?)<\/span>$/i);
+        // Check for span with optional classes
+        const spanMatch = part.match(/^<span(?:\s+[\s\S]*?class=["']([\s\S]*?)["'])?[\s\S]*?>([\s\S]*?)<\/span>$/i);
         if (spanMatch) {
             return (
-                <span key={index} className={spanMatch[1]}>
+                <span key={index} className={spanMatch[1] || undefined}>
                     {spanMatch[2]}
                 </span>
             );
