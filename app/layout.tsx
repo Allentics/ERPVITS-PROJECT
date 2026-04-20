@@ -208,10 +208,12 @@ export default function RootLayout({
                   .course-h1-inline { font-size: 1.5rem !important; line-height: 1.3 !important; font-weight: 800; color: #0F172A; }
                   .course-sub-inline { font-size: 0.875rem !important; color: #475569 !important; line-height: 1.5 !important; }
                   .course-form-card-mobile { background: #ffffff !important; border-radius: 1rem !important; padding: 1.25rem !important; border: 1px solid #e2e8f0 !important; margin-top: 1rem !important; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important; }
+                  /* Hide heavy third-party elements initially to clear critical path (Mobile Only) */
+                  #zsiq_float, .zsiq_float_main, .zsiq-float-btn, link[href*="ytimg"] { display: none !important; }
                 }
                 
-                /* Hide heavy third-party elements initially to clear critical path */
-                #zsiq_float, .zsiq_float_main, .zsiq-float-btn, link[href*="ytimg"] { display: none !important; }
+                /* Desktop: Hide real Zoho button to allow facade to show, but without !important to allow API to show window */
+                #zsiq_float, .zsiq_float_main, .zsiq-float-btn { display: none; }
                 img[priority] { fetchpriority: high; }
             `,
           }}
@@ -220,9 +222,9 @@ export default function RootLayout({
         {/* Google Analytics - strategy: lazyOnload clears critical path for LCP */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-CRQ7PMM6EV"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
         />
-        <Script id="google-analytics" strategy="lazyOnload">
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -258,7 +260,7 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Zoho SalesIQ - Instant Facade Experience (loads real script on interaction or 5s delay) */}
+        {/* Zoho SalesIQ - Instant Facade Experience (loads real script on interaction or 1s delay) */}
         {process.env.NEXT_PUBLIC_ZOHO_WIDGET_CODE && (
           <ZohoChatButton widgetCode={process.env.NEXT_PUBLIC_ZOHO_WIDGET_CODE} />
         )}

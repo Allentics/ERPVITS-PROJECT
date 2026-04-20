@@ -10,25 +10,25 @@ const ZohoChatButton: React.FC<ZohoChatButtonProps> = ({ widgetCode }) => {
     const [isRealZohoLoaded, setIsRealZohoLoaded] = useState(false);
 
     useEffect(() => {
-        // Auto-load Zoho after a delay if user doesn't click
-        const timer = setTimeout(loadRealZoho, 5000);
+        // Auto-load Zoho after a 1 second delay if user doesn't click
+        const timer = setTimeout(loadRealZoho, 1000);
         return () => clearTimeout(timer);
     }, []);
 
     const openOnReadyRef = React.useRef(false);
 
-    const loadRealZoho = () => {
+    const loadRealZoho = (shouldOpen = true) => {
         const win = window as any;
 
         // If already loaded, just show it
         if (isRealZohoLoaded) {
-            if (win.$zoho?.salesiq?.floatwindow) {
+            if (shouldOpen && win.$zoho?.salesiq?.floatwindow) {
                 try { win.$zoho.salesiq.floatwindow.visible('show'); } catch (e) { }
             }
             return;
         }
 
-        openOnReadyRef.current = true;
+        if (shouldOpen) openOnReadyRef.current = true;
         setIsRealZohoLoaded(true);
 
         win.$zoho = win.$zoho || {};
@@ -61,7 +61,6 @@ const ZohoChatButton: React.FC<ZohoChatButtonProps> = ({ widgetCode }) => {
     return (
         <div
             id="zoho-facade-button"
-            onClick={loadRealZoho}
             style={{
                 position: 'fixed',
                 bottom: '30px',
@@ -79,9 +78,11 @@ const ZohoChatButton: React.FC<ZohoChatButtonProps> = ({ widgetCode }) => {
                 transition: 'transform 0.3s ease, opacity 0.5s ease',
             }}
             className="zoho-float-btn"
-            onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'scale(1.1)';
-                loadRealZoho();
+            onMouseEnter={() => {
+                loadRealZoho(false); // Warm up on hover but don't pop open
+            }}
+            onClick={() => {
+                loadRealZoho(true); // Pop open on click
             }}
             onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'scale(1)';
