@@ -31,13 +31,37 @@ import CurriculumTable from './CurriculumTable';
 import {
     Quote, CheckCircle2, UserCheck, Laptop, Briefcase, Clock,
     Award, Globe, BookOpen, Video, TrendingUp, Headphones,
-    Users, Layers
+    Users, Layers, Terminal, MessageSquare, LifeBuoy
 } from 'lucide-react';
 
+const IconMap: Record<string, any> = {
+    'Award': Award,
+    'Terminal': Terminal,
+    'Briefcase': Briefcase,
+    'MessageSquare': MessageSquare,
+    'Clock': Clock,
+    'Users': Users,
+    'TrendingUp': TrendingUp,
+    'Globe': Globe,
+    'LifeBuoy': LifeBuoy,
+    'Video': Video,
+    'CheckCircle2': CheckCircle2,
+    'UserCheck': UserCheck,
+    'Laptop': Laptop,
+    'BookOpen': BookOpen,
+    'Layers': Layers,
+    'Headphones': Headphones
+};
+
 // specific icon mapping based on title keywords
-const getIconForTitle = (title: string | null | undefined) => {
+const getIconForTitle = (title: string | null | undefined, explicitIcon?: string) => {
+    if (explicitIcon && IconMap[explicitIcon]) return IconMap[explicitIcon];
     if (typeof title !== 'string') return CheckCircle2;
     const t = title.toLowerCase();
+
+    // Specific local overrides
+    if (t.includes('in-memory computing expertise')) return CheckCircle2;
+
     if (t.includes('instructor') || t.includes('expert')) return UserCheck;
     if (t.includes('hands-on') || t.includes('practical')) return Laptop;
     if (t.includes('job') || t.includes('curriculum')) return Briefcase;
@@ -77,7 +101,7 @@ export function DetailedFeatures({ badge, title, subtitle, items, textAlign = 'l
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 max-w-7xl mx-auto px-4">
                 {items?.map((item, i: number) => {
                     const isObject = typeof item === 'object' && item !== null && 'title' in item;
-                    const ItemIcon = isObject ? getIconForTitle((item as FeatureItem).title) : CheckCircle2;
+                    const ItemIcon = isObject ? getIconForTitle((item as FeatureItem).title, (item as any).icon) : CheckCircle2;
 
                     return (
                         <div key={i} className="flex flex-col p-8 bg-white rounded-2xl border border-slate-100 shadow-sm h-full group">
