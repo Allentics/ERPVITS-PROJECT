@@ -66,6 +66,18 @@ function ContentManagerContent() {
                 .eq('id', item.id);
 
             if (error) throw error;
+
+            // Revalidate the page cache immediately
+            try {
+                await fetch('/api/revalidate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ path: item.page_path })
+                });
+            } catch (revalidateErr) {
+                console.error('Revalidation failed:', revalidateErr);
+            }
+
             alert(`${item.section_key} updated successfully!`);
         } catch (err: any) {
             alert('Error saving content: ' + err.message);

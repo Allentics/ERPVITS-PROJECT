@@ -206,8 +206,26 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                 .eq('id', id);
 
             if (error) throw error;
-            // No redirect, just notify success
-            alert('Course updated successfully!');
+
+            // Revalidate the cache for this course page so changes reflect immediately
+            try {
+                // Determine the public URL path for this course
+                let revalidatePath = `/courses/${id}`;
+                if (typeof window !== 'undefined') {
+                    const { getCourseUrl } = await import('@/lib/utils');
+                    revalidatePath = getCourseUrl(id);
+                }
+
+                await fetch('/api/revalidate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ path: revalidatePath })
+                });
+            } catch (revalidateErr) {
+                console.error('Revalidation failed:', revalidateErr);
+            }
+
+            alert('Course updated successfully! The website has been refreshed with your latest changes.');
             // Update local state with parsed object
             setFormData(submissionData);
         } catch (err: any) {

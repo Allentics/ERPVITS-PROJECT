@@ -63,8 +63,8 @@ export const renderRichText = (text: any) => {
             );
         }
 
-        // Check if it's a markdown link
-        const mdLinkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+        // Check if it's a markdown link [text](url) or [text] (url)
+        const mdLinkMatch = part.match(/^\[([^\]]+)\]\s*\(([^)]+)\)$/);
         if (mdLinkMatch) {
             return (
                 <a

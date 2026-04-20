@@ -43,10 +43,6 @@ const ZohoChatButton: React.FC<ZohoChatButtonProps> = ({ widgetCode }) => {
         win.$zoho.salesiq.ready = function () {
             if (typeof originalReady === 'function') originalReady();
 
-            if (win.$zoho.salesiq.floatbutton) {
-                win.$zoho.salesiq.floatbutton.visible('hide');
-            }
-
             // Automatically open if the user clicked the facade
             if (openOnReadyRef.current && win.$zoho.salesiq.floatwindow) {
                 try {

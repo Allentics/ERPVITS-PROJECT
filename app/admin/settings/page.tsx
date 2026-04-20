@@ -47,7 +47,19 @@ export default function SettingsPage() {
                 .eq('key', setting.key);
 
             if (error) throw error;
-            alert(`${setting.key} updated successfully!`);
+
+            // Revalidate homepage/layout since settings are global
+            try {
+                await fetch('/api/revalidate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ path: '/' })
+                });
+            } catch (revalidateErr) {
+                console.error('Revalidation failed:', revalidateErr);
+            }
+
+            alert(`${setting.key} updated successfully! Site refreshed.`);
         } catch (err: any) {
             alert('Error saving setting: ' + err.message);
         } finally {
