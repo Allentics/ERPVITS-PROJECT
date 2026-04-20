@@ -60,6 +60,7 @@ const SectionHeaderFields = ({ section, updateSectionData, idPrefix, insertHyper
                             <option value="h4">H4</option>
                             <option value="h5">H5</option>
                             <option value="h6">H6</option>
+                            <option value="p">Normal</option>
                         </select>
                     </div>
                 </div>
@@ -620,6 +621,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                                                         <option value="h4">H4</option>
                                                         <option value="h5">H5</option>
                                                         <option value="h6">H6</option>
+                                                        <option value="p">Normal</option>
                                                     </select>
                                                     <select
                                                         value={item.icon || 'CheckCircle2'}
@@ -708,6 +710,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                                                 <option value="h4">H4</option>
                                                 <option value="h5">H5</option>
                                                 <option value="h6">H6</option>
+                                                <option value="p">Normal</option>
                                             </select>
                                         </div>
                                         <div className="relative">
@@ -949,6 +952,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                                             <option value="h4">H4</option>
                                             <option value="h5">H5</option>
                                             <option value="h6">H6</option>
+                                            <option value="p">Normal</option>
                                         </select>
                                     </div>
                                     <input
@@ -1121,6 +1125,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                                                         <option value="h4">H4</option>
                                                         <option value="h5">H5</option>
                                                         <option value="h6">H6</option>
+                                                        <option value="p">Normal</option>
                                                     </select>
                                                 </div>
                                                 <div className="relative">
@@ -1226,6 +1231,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                                     <option value="h4">H4</option>
                                     <option value="h5">H5</option>
                                     <option value="h6">H6</option>
+                                    <option value="p">Normal</option>
                                 </select>
                             </div>
                             <input
@@ -1387,6 +1393,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                                                 <option value="h4">H4</option>
                                                 <option value="h5">H5</option>
                                                 <option value="h6">H6</option>
+                                                <option value="p">Normal</option>
                                             </select>
                                         </div>
                                         <input
@@ -1480,6 +1487,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                                                 <option value="h4">H4</option>
                                                 <option value="h5">H5</option>
                                                 <option value="h6">H6</option>
+                                                <option value="p">Normal</option>
                                             </select>
                                         </div>
                                         <input
@@ -1542,6 +1550,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                                                 <option value="h4">H4</option>
                                                 <option value="h5">H5</option>
                                                 <option value="h6">H6</option>
+                                                <option value="p">Normal</option>
                                             </select>
                                         </div>
                                         <input
@@ -1605,6 +1614,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                             <option value="h4">H4</option>
                             <option value="h5">H5</option>
                             <option value="h6">H6</option>
+                            <option value="p">Normal</option>
                         </select>
                     </div>
                     <input
@@ -1655,6 +1665,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                             <option value="h4">H4</option>
                             <option value="h5">H5</option>
                             <option value="h6">H6</option>
+                            <option value="p">Normal</option>
                         </select>
                     </div>
                     <div className="space-y-1">
@@ -1771,6 +1782,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                                         <option value="h4">H4</option>
                                         <option value="h5">H5</option>
                                         <option value="h6">H6</option>
+                                        <option value="p">Normal</option>
                                     </select>
                                 </div>
                                 <input
@@ -1926,6 +1938,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                                             <option value="h4">H4</option>
                                             <option value="h5">H5</option>
                                             <option value="h6">H6</option>
+                                            <option value="p">Normal</option>
                                         </select>
                                     </div>
                                     <input value={item.title || ''} onChange={(e) => { const n = [...items]; n[idx].title = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" />
@@ -1978,6 +1991,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                                             <option value="h4">H4</option>
                                             <option value="h5">H5</option>
                                             <option value="h6">H6</option>
+                                            <option value="p">Normal</option>
                                         </select>
                                     </div>
                                     <input value={item.title || ''} onChange={(e) => { const n = [...items]; n[idx].title = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" />
@@ -2046,6 +2060,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                                         <option value="h4">H4</option>
                                         <option value="h5">H5</option>
                                         <option value="h6">H6</option>
+                                        <option value="p">Normal</option>
                                     </select>
                                 </div>
                                 <input value={item.title || ''} onChange={(e) => { const n = [...items]; n[idx].title = e.target.value; updateItems(n); }} className="w-full p-2 border rounded font-bold" />
@@ -2109,6 +2124,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                                             <option value="h4">H4</option>
                                             <option value="h5">H5</option>
                                             <option value="h6">H6</option>
+                                            <option value="p">Normal</option>
                                         </select>
                                     </div>
                                     <input value={item.author || item.name || ''} onChange={(e) => {
@@ -2168,6 +2184,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                                         <option value="h4">H4</option>
                                         <option value="h5">H5</option>
                                         <option value="h6">H6</option>
+                                        <option value="p">Normal</option>
                                     </select>
                                 </div>
                                 <input value={item.name || ''} onChange={(e) => { const n = [...items]; n[idx].name = e.target.value; updateItems(n); }} className="w-full p-2 border rounded font-bold" />
@@ -2257,6 +2274,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                                             <option value="h4">H4</option>
                                             <option value="h5">H5</option>
                                             <option value="h6">H6</option>
+                                            <option value="p">Normal</option>
                                         </select>
                                     </div>
                                 </div>
@@ -2386,6 +2404,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                                                         <option value="h4">H4</option>
                                                         <option value="h5">H5</option>
                                                         <option value="h6">H6</option>
+                                                        <option value="p">Normal</option>
                                                     </select>
                                                 </div>
                                                 <input value={item.title || ''} onChange={(e) => { const n = [...items]; n[idx].title = e.target.value; updateSectionItems(section, n); }} className="w-full p-2 border rounded font-bold text-lg bg-white" />
@@ -2561,6 +2580,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                                                     <option value="h4">H4</option>
                                                     <option value="h5">H5</option>
                                                     <option value="h6">H6</option>
+                                                    <option value="p">Normal</option>
                                                 </select>
                                             </label>
                                             <input value={item.role || ''} onChange={(e) => { const n = [...items]; n[idx].role = e.target.value; updateSectionItems(section, n); }} className="w-full p-0 bg-transparent border-none font-bold text-lg text-slate-900 focus:ring-0" placeholder="Data Scientist..." />
@@ -2628,6 +2648,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                                             <option value="h4">H4</option>
                                             <option value="h5">H5</option>
                                             <option value="h6">H6</option>
+                                            <option value="p">Normal</option>
                                         </select>
                                     </div>
                                     <input
