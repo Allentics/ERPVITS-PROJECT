@@ -19,7 +19,7 @@ const inter = Inter({
 const Footer = dynamic(() => import('@/components/layout/Footer'));
 const WebinarPopup = dynamic(() => import('@/components/WebinarPopup'));
 import WhatsAppButton from '@/components/WhatsAppButton';
-import ZohoChatButton from '@/components/ZohoChatButton';
+
 
 export const viewport: Viewport = {
   themeColor: '#000000',
@@ -147,6 +147,16 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.clarity.ms" />
         <link rel="dns-prefetch" href="https://i.ytimg.com" />
+        <Script id="zsiq-init" strategy="beforeInteractive">
+          {`
+            window.$zoho = window.$zoho || {};
+            window.$zoho.salesiq = window.$zoho.salesiq || { ready: function() {
+              if (window.$zoho.salesiq.floatwindow) {
+                window.$zoho.salesiq.floatwindow.position("right");
+              }
+            } };
+          `}
+        </Script>
       </head>
       <body className="font-sans" suppressHydrationWarning>
         {/* Advanced Critical Styles for Mobile: Fixes CLS and Forced Reflow by locking dimensions */}
@@ -208,16 +218,10 @@ export default function RootLayout({
                   .course-h1-inline { font-size: 1.5rem !important; line-height: 1.3 !important; font-weight: 800; color: #0F172A; }
                   .course-sub-inline { font-size: 0.875rem !important; color: #475569 !important; line-height: 1.5 !important; }
                   .course-form-card-mobile { background: #ffffff !important; border-radius: 1rem !important; padding: 1.25rem !important; border: 1px solid #e2e8f0 !important; margin-top: 1rem !important; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important; }
-                  /* Performance Fix: Hide default Zoho bubble via CSS to allow facade to take its place */
-                  #zsiq_float, .zsiq_float_main, .zsiq-float-btn, [id^="zsiq"] { display: none !important; }
-                  /* Ensure the chat window itself is NOT hidden by the above rule */
-                  #zsiq_chatctl, .zsiq_chatwindow_main, #zsiq_window { display: block !important; }
                   link[href*="ytimg"] { display: none !important; }
                 }
                 
-                /* Desktop: Hide default Zoho bubble while allowing window to show */
-                #zsiq_float, .zsiq_float_main, .zsiq-float-btn, [id^="zsiq"] { display: none; }
-                #zsiq_chatctl, .zsiq_chatwindow_main, #zsiq_window { display: block !important; }
+
                 img[priority] { fetchpriority: high; }
             `,
           }}
@@ -283,11 +287,6 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Zoho SalesIQ - Instant Facade Experience (loads real script on interaction or 1s delay) */}
-        {process.env.NEXT_PUBLIC_ZOHO_WIDGET_CODE && (
-          <ZohoChatButton widgetCode={process.env.NEXT_PUBLIC_ZOHO_WIDGET_CODE} />
-        )}
-
         <AnnouncementBar />
         <Navbar />
         <main className="min-h-screen">
@@ -296,6 +295,12 @@ export default function RootLayout({
         <Footer />
         <WebinarPopup />
         <WhatsAppButton />
+
+        <Script
+          id="zsiqscript"
+          src="https://salesiq.zohopublic.com/widget?wc=siq815cfd3c18ee4fd5f5d3814ff80e3c42393aa3eefeba913b73d9582d23b70924"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   )

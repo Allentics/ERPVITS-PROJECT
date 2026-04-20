@@ -18,7 +18,7 @@ const WhatsAppButton: React.FC = () => {
       style={{
         position: 'fixed',
         bottom: '24px',
-        right: '24px',
+        left: '24px',
         width: '60px',
         height: '60px',
         backgroundColor: '#25D366',
