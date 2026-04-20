@@ -3,7 +3,7 @@
 import React, { useEffect, useState, use } from 'react';
 import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
-import { ArrowLeft, Save, Loader2, Link as LinkIcon, Plus, Trash2, ClipboardList, Target, BookOpen, Library, Laptop, Star, TrendingUp, Users, Trophy, Link as Link2, NotebookPen, AlarmClock, HelpCircle, MessageSquareQuote, FileText, Calendar, MessageSquare, Briefcase, Layers, ShieldCheck, Building2 } from 'lucide-react';
+import { ArrowLeft, Save, Loader2, Link as LinkIcon, Plus, Trash2, ClipboardList, Target, BookOpen, Library, Laptop, Star, TrendingUp, Users, Trophy, Link as Link2, NotebookPen, AlarmClock, HelpCircle, MessageSquareQuote, FileText, Calendar, MessageSquare, Briefcase, Layers, ShieldCheck, Building2, Globe } from 'lucide-react';
 import Link from 'next/link';
 import { IconMap } from '@/components/course/SectionRenderer';
 
@@ -610,6 +610,18 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                                                         </button>
                                                     </div>
                                                     <select
+                                                        value={item.titleTag || 'h3'}
+                                                        onChange={(e) => { const n = [...items]; n[idx].titleTag = e.target.value; updateItems(n); }}
+                                                        className="w-16 p-2 border rounded text-xs bg-slate-50 font-mono"
+                                                    >
+                                                        <option value="h1">H1</option>
+                                                        <option value="h2">H2</option>
+                                                        <option value="h3">H3</option>
+                                                        <option value="h4">H4</option>
+                                                        <option value="h5">H5</option>
+                                                        <option value="h6">H6</option>
+                                                    </select>
+                                                    <select
                                                         value={item.icon || 'CheckCircle2'}
                                                         onChange={(e) => { const n = [...items]; n[idx].icon = e.target.value; updateItems(n); }}
                                                         className="w-24 p-2 border rounded text-xs bg-slate-50"
@@ -678,16 +690,41 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                         <div key={idx} className="border border-gray-200 rounded-xl overflow-hidden">
                             <div className="bg-gray-50 p-4 border-b border-gray-100 flex justify-between items-start">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full mr-8">
-                                    <input
-                                        value={module.title || ''}
-                                        onChange={(e) => {
-                                            const newMods = [...modules];
-                                            newMods[idx].title = e.target.value;
-                                            updateModules(newMods);
-                                        }}
-                                        className="p-2 border rounded font-bold"
-                                        placeholder="Module Title"
-                                    />
+                                    <div className="flex flex-col gap-1">
+                                        <div className="flex justify-between items-center px-1">
+                                            <label className="text-[10px] font-bold text-gray-400 uppercase">Module Title</label>
+                                            <select
+                                                value={module.titleTag || 'h4'}
+                                                onChange={(e) => {
+                                                    const newMods = [...modules];
+                                                    newMods[idx].titleTag = e.target.value;
+                                                    updateModules(newMods);
+                                                }}
+                                                className="bg-transparent border-none p-0 text-[10px] font-mono"
+                                            >
+                                                <option value="h1">H1</option>
+                                                <option value="h2">H2</option>
+                                                <option value="h3">H3</option>
+                                                <option value="h4">H4</option>
+                                                <option value="h5">H5</option>
+                                                <option value="h6">H6</option>
+                                            </select>
+                                        </div>
+                                        <div className="relative">
+                                            <input
+                                                id={`mod_title_${idx}`}
+                                                value={module.title || ''}
+                                                onChange={(e) => {
+                                                    const newMods = [...modules];
+                                                    newMods[idx].title = e.target.value;
+                                                    updateModules(newMods);
+                                                }}
+                                                className="w-full p-2 border rounded font-bold pr-10"
+                                                placeholder="Module Title"
+                                            />
+                                            <button type="button" onClick={() => insertHyperlink(`mod_title_${idx}`)} className="absolute top-2 right-2 text-slate-300 hover:text-orange-500"><LinkIcon size={14} /></button>
+                                        </div>
+                                    </div>
                                     <input
                                         value={module.duration || ''}
                                         onChange={(e) => {
@@ -895,7 +932,25 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
 
                             <div className="grid md:grid-cols-2 gap-4">
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold text-gray-500">Title</label>
+                                    <div className="flex justify-between items-center">
+                                        <label className="text-xs font-bold text-gray-500">Title</label>
+                                        <select
+                                            value={item.titleTag || 'h4'}
+                                            onChange={(e) => {
+                                                const newItems = [...displayItems];
+                                                newItems[idx].titleTag = e.target.value;
+                                                updateItems(newItems);
+                                            }}
+                                            className="bg-transparent border-none p-0 text-[10px] font-mono"
+                                        >
+                                            <option value="h1">H1</option>
+                                            <option value="h2">H2</option>
+                                            <option value="h3">H3</option>
+                                            <option value="h4">H4</option>
+                                            <option value="h5">H5</option>
+                                            <option value="h6">H6</option>
+                                        </select>
+                                    </div>
                                     <input
                                         value={item.title || ''}
                                         onChange={(e) => {
@@ -1048,12 +1103,40 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                                         {features.map((item: any, idx: number) => (
                                             <div key={idx} className="bg-white p-4 border rounded-lg shadow-sm group relative">
                                                 <button type="button" onClick={() => updateSectionData(section, { features: features.filter((_: any, i: number) => i !== idx) })} className="absolute top-2 right-2 text-red-400 opacity-0 group-hover:opacity-100"><Trash2 size={16} /></button>
-                                                <input value={typeof item === 'string' ? item : (item.title || '')} onChange={(e) => {
-                                                    const n = [...features];
-                                                    if (typeof item === 'string') n[idx] = e.target.value;
-                                                    else n[idx].title = e.target.value;
-                                                    updateSectionData(section, { features: n });
-                                                }} className="w-full p-2 border rounded font-bold text-sm mb-1" />
+                                                <div className="flex justify-between items-center mb-1 px-1">
+                                                    <label className="text-[10px] font-bold text-gray-400 uppercase">Feature Title</label>
+                                                    <select
+                                                        value={item.titleTag || 'h4'}
+                                                        onChange={(e) => {
+                                                            const n = [...features];
+                                                            if (typeof n[idx] === 'object') n[idx].titleTag = e.target.value;
+                                                            else n[idx] = { title: typeof item === 'string' ? item : item.title, titleTag: e.target.value };
+                                                            updateSectionData(section, { features: n });
+                                                        }}
+                                                        className="bg-transparent border-none p-0 text-[10px] font-mono"
+                                                    >
+                                                        <option value="h1">H1</option>
+                                                        <option value="h2">H2</option>
+                                                        <option value="h3">H3</option>
+                                                        <option value="h4">H4</option>
+                                                        <option value="h5">H5</option>
+                                                        <option value="h6">H6</option>
+                                                    </select>
+                                                </div>
+                                                <div className="relative">
+                                                    <input
+                                                        id={`included_${sIdx}_feat_${idx}`}
+                                                        value={typeof item === 'string' ? item : (item.title || '')}
+                                                        onChange={(e) => {
+                                                            const n = [...features];
+                                                            if (typeof item === 'string') n[idx] = { title: e.target.value, titleTag: 'h4' };
+                                                            else n[idx].title = e.target.value;
+                                                            updateSectionData(section, { features: n });
+                                                        }}
+                                                        className="w-full p-2 border rounded font-bold text-sm mb-1 pr-8"
+                                                    />
+                                                    <button type="button" onClick={() => insertHyperlink(`included_${sIdx}_feat_${idx}`)} className="absolute top-2 right-2 text-slate-300 hover:text-orange-500"><LinkIcon size={14} /></button>
+                                                </div>
                                                 {typeof item !== 'string' && <textarea value={item.description || ''} onChange={(e) => { const n = [...features]; n[idx].description = e.target.value; updateSectionData(section, { features: n }); }} className="w-full p-2 border rounded text-xs" rows={2} />}
                                             </div>
                                         ))}
@@ -1126,6 +1209,25 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                             <Trash2 size={16} />
                         </button>
                         <div className="relative">
+                            <div className="flex justify-between items-center mb-1">
+                                <span className="text-[10px] font-bold text-gray-400 uppercase">Question Title</span>
+                                <select
+                                    value={item.titleTag || 'h4'}
+                                    onChange={(e) => {
+                                        const newItems = [...items];
+                                        newItems[idx].titleTag = e.target.value;
+                                        updateFAQs(newItems);
+                                    }}
+                                    className="bg-transparent border-none p-0 text-[10px] font-mono"
+                                >
+                                    <option value="h1">H1</option>
+                                    <option value="h2">H2</option>
+                                    <option value="h3">H3</option>
+                                    <option value="h4">H4</option>
+                                    <option value="h5">H5</option>
+                                    <option value="h6">H6</option>
+                                </select>
+                            </div>
                             <input
                                 id={`faq_q_${idx}`}
                                 value={item.question || ''}
@@ -1272,7 +1374,21 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                                 </button>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                                     <div className="md:col-span-2 space-y-1">
-                                        <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Certification Title</label>
+                                        <div className="flex justify-between items-center">
+                                            <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Certification Title</label>
+                                            <select
+                                                value={cert.titleTag || 'h4'}
+                                                onChange={(e) => { const n = [...certs]; n[idx].titleTag = e.target.value; updateCerts(n); }}
+                                                className="bg-transparent border-none p-0 text-[10px] font-mono"
+                                            >
+                                                <option value="h1">H1</option>
+                                                <option value="h2">H2</option>
+                                                <option value="h3">H3</option>
+                                                <option value="h4">H4</option>
+                                                <option value="h5">H5</option>
+                                                <option value="h6">H6</option>
+                                            </select>
+                                        </div>
                                         <input
                                             value={cert.title || ''}
                                             onChange={(e) => { const n = [...certs]; n[idx].title = e.target.value; updateCerts(n); }}
@@ -1351,7 +1467,21 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                                         <Trash2 size={14} />
                                     </button>
                                     <div className="space-y-1">
-                                        <label className="text-[10px] font-bold text-gray-400 uppercase">Title</label>
+                                        <div className="flex justify-between items-center">
+                                            <label className="text-[10px] font-bold text-gray-400 uppercase">Title</label>
+                                            <select
+                                                value={feat.titleTag || 'h5'}
+                                                onChange={(e) => { const n = [...supportFeatures]; n[idx].titleTag = e.target.value; updateSupport(n); }}
+                                                className="bg-transparent border-none p-0 text-[10px] font-mono"
+                                            >
+                                                <option value="h1">H1</option>
+                                                <option value="h2">H2</option>
+                                                <option value="h3">H3</option>
+                                                <option value="h4">H4</option>
+                                                <option value="h5">H5</option>
+                                                <option value="h6">H6</option>
+                                            </select>
+                                        </div>
                                         <input
                                             value={feat.title || ''}
                                             onChange={(e) => { const n = [...supportFeatures]; n[idx].title = e.target.value; updateSupport(n); }}
@@ -1399,12 +1529,26 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                                         <Trash2 size={14} />
                                     </button>
                                     <div className="space-y-1">
-                                        <label className="text-[10px] font-bold text-gray-400 uppercase">Title</label>
+                                        <div className="flex justify-between items-center">
+                                            <label className="text-[10px] font-bold text-gray-400 uppercase">Title</label>
+                                            <select
+                                                value={benefit.titleTag || 'h5'}
+                                                onChange={(e) => { const n = [...benefits]; n[idx].titleTag = e.target.value; updateBenefits(n); }}
+                                                className="bg-transparent border-none p-0 text-[10px] font-mono"
+                                            >
+                                                <option value="h1">H1</option>
+                                                <option value="h2">H2</option>
+                                                <option value="h3">H3</option>
+                                                <option value="h4">H4</option>
+                                                <option value="h5">H5</option>
+                                                <option value="h6">H6</option>
+                                            </select>
+                                        </div>
                                         <input
                                             value={benefit.title || ''}
                                             onChange={(e) => { const n = [...benefits]; n[idx].title = e.target.value; updateBenefits(n); }}
                                             className="w-full p-1.5 border rounded text-sm font-semibold"
-                                            placeholder="Global Recognition"
+                                            placeholder="Benefit Title"
                                         />
                                     </div>
                                     <div className="space-y-1">
@@ -1413,7 +1557,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                                             value={benefit.desc || ''}
                                             onChange={(e) => { const n = [...benefits]; n[idx].desc = e.target.value; updateBenefits(n); }}
                                             className="w-full p-1.5 border rounded text-sm text-gray-600"
-                                            placeholder="SAP certifications recognized worldwide..."
+                                            placeholder="Benefit description..."
                                         />
                                     </div>
                                 </div>
@@ -1421,7 +1565,6 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                         </div>
                     </div>
                 </div>
-
             </div>
         );
     };
@@ -1449,7 +1592,21 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
             <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                 <h5 className="font-bold text-gray-800 mb-2">{label}</h5>
                 <div className="space-y-2">
-                    <label className="text-xs font-bold text-gray-500">Tier Title</label>
+                    <div className="flex justify-between items-center">
+                        <label className="text-xs font-bold text-gray-500">Tier Title</label>
+                        <select
+                            value={customData[tierKey]?.titleTag || 'h5'}
+                            onChange={(e) => updateCompanySection(tierKey, 'titleTag', e.target.value)}
+                            className="bg-transparent border-none p-0 text-[10px] font-mono"
+                        >
+                            <option value="h1">H1</option>
+                            <option value="h2">H2</option>
+                            <option value="h3">H3</option>
+                            <option value="h4">H4</option>
+                            <option value="h5">H5</option>
+                            <option value="h6">H6</option>
+                        </select>
+                    </div>
                     <input
                         value={customData[tierKey]?.title || ''}
                         onChange={(e) => updateCompanySection(tierKey, 'title', e.target.value)}
@@ -1469,8 +1626,14 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
         );
 
         return (
-            <div className="space-y-6">
-                <h4 className="font-bold text-gray-900 border-b pb-2">Hiring Companies</h4>
+            <div className="space-y-8">
+                <SectionHeaderFields
+                    section={section}
+                    updateSectionData={(newData) => updateSection('detailed_companies', { ...section, ...newData })}
+                    idPrefix="hire"
+                    insertHyperlink={insertHyperlink}
+                />
+
                 <div className="grid md:grid-cols-2 gap-4">
                     {renderTierEditor('tier1', 'Tier 1 Companies')}
                     {renderTierEditor('tier2', 'Tier 2 Companies')}
@@ -1478,17 +1641,41 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                     {renderTierEditor('tier4', 'Tier 4 Companies')}
                 </div>
 
-                <div className="bg-blue-50 p-4 rounded-lg border border-blue-100 mt-4">
-                    <h5 className="font-bold text-blue-800 mb-2">Hiring Trends Stats (JSON)</h5>
+                <div className="bg-blue-50 p-4 rounded-lg border border-blue-100 mt-4 space-y-3">
+                    <div className="flex justify-between items-center">
+                        <h5 className="font-bold text-blue-800">Hiring Trends Configuration</h5>
+                        <select
+                            value={customData.hiringTrends?.titleTag || 'h5'}
+                            onChange={(e) => updateSection('detailed_companies', { ...section, customData: { ...customData, hiringTrends: { ...customData.hiringTrends, titleTag: e.target.value } } })}
+                            className="bg-transparent border-none p-0 text-[10px] font-mono text-blue-600"
+                        >
+                            <option value="h1">H1</option>
+                            <option value="h2">H2</option>
+                            <option value="h3">H3</option>
+                            <option value="h4">H4</option>
+                            <option value="h5">H5</option>
+                            <option value="h6">H6</option>
+                        </select>
+                    </div>
+                    <div className="space-y-1">
+                        <label className="text-[10px] font-bold text-blue-400 uppercase">Section Title</label>
+                        <input
+                            value={customData.hiringTrends?.title || ''}
+                            onChange={(e) => updateSection('detailed_companies', { ...section, customData: { ...customData, hiringTrends: { ...customData.hiringTrends, title: e.target.value } } })}
+                            className="w-full p-2 border border-blue-200 rounded bg-white text-sm font-bold"
+                            placeholder="Hiring Trends"
+                        />
+                    </div>
+                    <label className="text-[10px] font-bold text-blue-400 uppercase block mt-2">Stats Data (JSON)</label>
                     <textarea
-                        value={JSON.stringify(customData.hiringTrends || {}, null, 2)}
+                        value={JSON.stringify(customData.hiringTrends?.stats || [], null, 2)}
                         onChange={(e) => {
                             try {
-                                updateSection('detailed_companies', { ...section, customData: { ...customData, hiringTrends: JSON.parse(e.target.value) } });
+                                updateSection('detailed_companies', { ...section, customData: { ...customData, hiringTrends: { ...customData.hiringTrends, stats: JSON.parse(e.target.value) } } });
                             } catch { }
                         }}
-                        className="w-full p-3 border rounded font-mono text-sm h-32 bg-white"
-                        placeholder='{"title": "Trends", "stats": [{"value": "200%", "label": "Growth"}]}'
+                        className="w-full p-3 border border-blue-200 rounded font-mono text-xs h-32 bg-white"
+                        placeholder='[{"value": "200%", "label": "Growth"}]'
                     />
                 </div>
             </div>
@@ -1567,7 +1754,25 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                                 <Trash2 size={16} />
                             </button>
                             <div className="space-y-2">
-                                <label className="text-[10px] font-bold text-gray-400 uppercase">Skill Title</label>
+                                <div className="flex justify-between items-center">
+                                    <label className="text-[10px] font-bold text-gray-400 uppercase">Skill Title</label>
+                                    <select
+                                        value={item.titleTag || 'h4'}
+                                        onChange={(e) => {
+                                            const newList = [...list];
+                                            newList[idx].titleTag = e.target.value;
+                                            onUpdate(newList);
+                                        }}
+                                        className="bg-transparent border-none p-0 text-[10px] font-mono"
+                                    >
+                                        <option value="h1">H1</option>
+                                        <option value="h2">H2</option>
+                                        <option value="h3">H3</option>
+                                        <option value="h4">H4</option>
+                                        <option value="h5">H5</option>
+                                        <option value="h6">H6</option>
+                                    </select>
+                                </div>
                                 <input
                                     value={item.title || ''}
                                     onChange={(e) => {
@@ -1687,20 +1892,46 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
         const updateItems = (newItems: any[]) => updateSection('detailed_career_roadmap', { ...section, items: newItems });
 
         return (
-            <div className="space-y-6">
-                <div className="flex justify-between items-center bg-gray-100 p-4 rounded-lg">
+            <div className="space-y-8">
+                <SectionHeaderFields
+                    section={section}
+                    updateSectionData={(newData) => updateSection('detailed_career_roadmap', { ...section, ...newData })}
+                    idPrefix="roadmap"
+                    insertHyperlink={insertHyperlink}
+                />
+
+                <div className="flex justify-between items-center bg-gray-50 border border-gray-200 p-4 rounded-xl">
                     <h4 className="font-bold text-gray-900">Roadmap Steps ({items.length})</h4>
-                    <button type="button" onClick={() => updateItems([...items, { stage: 'Phase X', title: 'Title', description: '' }])} className="text-sm bg-black text-white px-3 py-1.5 rounded flex items-center gap-2">
+                    <button type="button" onClick={() => updateItems([...items, { stage: 'Phase X', title: 'Title', description: '', titleTag: 'h5' }])} className="text-sm bg-black text-white px-3 py-1.5 rounded flex items-center gap-2">
                         <Plus size={16} /> Add Step
                     </button>
                 </div>
                 <div className="space-y-4">
                     {items.map((item: any, idx: number) => (
-                        <div key={idx} className="bg-white p-4 border rounded-lg shadow-sm group relative grid md:grid-cols-3 gap-4">
-                            <button type="button" onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))} className="absolute top-2 right-2 text-red-400 opacity-0 group-hover:opacity-100"><Trash2 size={16} /></button>
-                            <div><label className="text-xs font-bold text-gray-500">Stage / Year / Phase</label><input value={item.stage || item.phase || ''} onChange={(e) => { const n = [...items]; n[idx].stage = e.target.value; n[idx].phase = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" placeholder="e.g. Phase 1" /></div>
-                            <div><label className="text-xs font-bold text-gray-500">Role Title / Milestone</label><input value={item.title || ''} onChange={(e) => { const n = [...items]; n[idx].title = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" /></div>
-                            <div className="md:col-span-3"><label className="text-xs font-bold text-gray-500">Description</label><textarea value={item.description || ''} onChange={(e) => { const n = [...items]; n[idx].description = e.target.value; updateItems(n); }} className="w-full p-2 border rounded h-16" /></div>
+                        <div key={idx} className="bg-white p-5 border rounded-xl shadow-sm group relative space-y-3">
+                            <button type="button" onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))} className="absolute top-3 right-3 text-red-400 opacity-0 group-hover:opacity-100"><Trash2 size={16} /></button>
+                            <div className="grid md:grid-cols-3 gap-4">
+                                <div><label className="text-xs font-bold text-gray-500">Stage / Year / Phase</label><input value={item.stage || item.phase || ''} onChange={(e) => { const n = [...items]; n[idx].stage = e.target.value; n[idx].phase = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" placeholder="e.g. Phase 1" /></div>
+                                <div className="md:col-span-2 space-y-1">
+                                    <div className="flex justify-between items-center">
+                                        <label className="text-xs font-bold text-gray-500">Role Title / Milestone</label>
+                                        <select
+                                            value={item.titleTag || 'h5'}
+                                            onChange={(e) => { const n = [...items]; n[idx].titleTag = e.target.value; updateItems(n); }}
+                                            className="bg-transparent border-none p-0 text-[10px] font-mono"
+                                        >
+                                            <option value="h1">H1</option>
+                                            <option value="h2">H2</option>
+                                            <option value="h3">H3</option>
+                                            <option value="h4">H4</option>
+                                            <option value="h5">H5</option>
+                                            <option value="h6">H6</option>
+                                        </select>
+                                    </div>
+                                    <input value={item.title || ''} onChange={(e) => { const n = [...items]; n[idx].title = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" />
+                                </div>
+                                <div className="md:col-span-3"><label className="text-xs font-bold text-gray-500">Description</label><textarea value={item.description || ''} onChange={(e) => { const n = [...items]; n[idx].description = e.target.value; updateItems(n); }} className="w-full p-2 border rounded h-16" /></div>
+                            </div>
                         </div>
                     ))}
                 </div>
@@ -1714,24 +1945,47 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
         const updateItems = (newItems: any[]) => updateSection('detailed_post_training_journey', { ...section, items: newItems });
 
         return (
-            <div className="space-y-6">
-                <div className="space-y-2 border-b pb-4">
-                    <label className="text-sm font-semibold text-gray-700">Section Title</label>
-                    <input value={section.title || ''} onChange={(e) => updateSection('detailed_post_training_journey', { ...section, title: e.target.value })} className="w-full p-2 border rounded" />
-                </div>
-                <div className="flex justify-between items-center bg-gray-100 p-4 rounded-lg">
-                    <h4 className="font-bold text-gray-900">Section 13: Your Career Journey ({items.length})</h4>
-                    <button type="button" onClick={() => updateItems([...items, { title: 'Step Name', timeline: '', points: [] }])} className="text-sm bg-black text-white px-3 py-1.5 rounded flex items-center gap-2">
+            <div className="space-y-8">
+                <SectionHeaderFields
+                    section={section}
+                    updateSectionData={(newData) => updateSection('detailed_post_training_journey', { ...section, ...newData })}
+                    idPrefix="journey"
+                    insertHyperlink={insertHyperlink}
+                />
+
+                <div className="flex justify-between items-center bg-gray-50 border border-gray-200 p-4 rounded-xl">
+                    <h4 className="font-bold text-gray-900">Career Journey Steps ({items.length})</h4>
+                    <button type="button" onClick={() => updateItems([...items, { title: 'Step Name', timeline: '', points: [], titleTag: 'h5' }])} className="text-sm bg-black text-white px-3 py-1.5 rounded flex items-center gap-2">
                         <Plus size={16} /> Add Step
                     </button>
                 </div>
                 <div className="space-y-4">
                     {items.map((item: any, idx: number) => (
-                        <div key={idx} className="bg-white p-4 border rounded-lg shadow-sm group relative space-y-3">
-                            <button type="button" onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))} className="absolute top-2 right-2 text-red-400 opacity-0 group-hover:opacity-100"><Trash2 size={16} /></button>
+                        <div key={idx} className="bg-white p-5 border rounded-xl shadow-sm group relative space-y-3">
+                            <button type="button" onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))} className="absolute top-3 right-3 text-red-400 opacity-0 group-hover:opacity-100"><Trash2 size={16} /></button>
                             <div className="grid md:grid-cols-2 gap-4">
-                                <div><label className="text-xs font-bold text-gray-500">Step Title</label><input value={item.title || ''} onChange={(e) => { const n = [...items]; n[idx].title = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" /></div>
-                                <div><label className="text-xs font-bold text-gray-500">Timeline</label><input value={item.timeline || ''} onChange={(e) => { const n = [...items]; n[idx].timeline = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" /></div>
+                                <div className="space-y-1">
+                                    <div className="flex justify-between items-center">
+                                        <label className="text-xs font-bold text-gray-500">Step Title</label>
+                                        <select
+                                            value={item.titleTag || 'h5'}
+                                            onChange={(e) => { const n = [...items]; n[idx].titleTag = e.target.value; updateItems(n); }}
+                                            className="bg-transparent border-none p-0 text-[10px] font-mono"
+                                        >
+                                            <option value="h1">H1</option>
+                                            <option value="h2">H2</option>
+                                            <option value="h3">H3</option>
+                                            <option value="h4">H4</option>
+                                            <option value="h5">H5</option>
+                                            <option value="h6">H6</option>
+                                        </select>
+                                    </div>
+                                    <input value={item.title || ''} onChange={(e) => { const n = [...items]; n[idx].title = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" />
+                                </div>
+                                <div className="space-y-1 pt-4">
+                                    <label className="text-xs font-bold text-gray-500">Timeline</label>
+                                    <input value={item.timeline || ''} onChange={(e) => { const n = [...items]; n[idx].timeline = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" />
+                                </div>
                             </div>
                             <div>
                                 <label className="text-xs font-bold text-gray-500">Points (One per line)</label>
@@ -1750,40 +2004,53 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
         const updateItems = (newItems: any[]) => updateSection('detailed_career_opportunities', { ...section, items: newItems });
 
         return (
-            <div className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                        <label className="text-sm font-semibold text-gray-700">Section Title</label>
-                        <input value={section.title || ''} onChange={(e) => updateSection('detailed_career_opportunities', { ...section, title: e.target.value })} className="w-full p-2 border rounded" placeholder="Career Opportunities..." />
-                    </div>
-                    <div className="space-y-2">
-                        <label className="text-sm font-semibold text-gray-700">Section Subtitle</label>
-                        <input value={section.subtitle || ''} onChange={(e) => updateSection('detailed_career_opportunities', { ...section, subtitle: e.target.value })} className="w-full p-2 border rounded" placeholder="Step Into Global Roles..." />
-                    </div>
-                </div>
+            <div className="space-y-8">
+                <SectionHeaderFields
+                    section={section}
+                    updateSectionData={(newData) => updateSection('detailed_career_opportunities', { ...section, ...newData })}
+                    idPrefix="career"
+                    insertHyperlink={insertHyperlink}
+                />
 
-                <div className="space-y-2">
-                    <label className="text-sm font-semibold text-gray-700">Career Stats (JSON)</label>
+                <div className="space-y-2 bg-blue-50/50 p-4 rounded-xl border border-blue-100">
+                    <label className="text-[10px] font-bold text-blue-400 uppercase">Career Stats (JSON)</label>
                     <textarea
                         value={JSON.stringify(section.stats || [], null, 2)}
                         onChange={(e) => { try { updateSection('detailed_career_opportunities', { ...section, stats: JSON.parse(e.target.value) }) } catch { } }}
-                        className="w-full p-2 border rounded font-mono text-xs h-24"
+                        className="w-full p-2 border rounded font-mono text-xs h-24 bg-white"
                         placeholder='[{"value": "190%+", "label": "Job Growth"}]'
                     />
                 </div>
 
-                <div className="flex justify-between items-center bg-gray-100 p-4 rounded-lg">
+                <div className="flex justify-between items-center bg-gray-50 border border-gray-200 p-4 rounded-xl">
                     <h4 className="font-bold text-gray-900">Career Roles ({items.length})</h4>
-                    <button type="button" onClick={() => updateItems([...items, { title: 'New Role', salary: '', responsibilities: '' }])} className="text-sm bg-black text-white px-3 py-1.5 rounded flex items-center gap-2">
+                    <button type="button" onClick={() => updateItems([...items, { title: 'New Role', salary: '', responsibilities: '', titleTag: 'h5' }])} className="text-sm bg-black text-white px-3 py-1.5 rounded flex items-center gap-2">
                         <Plus size={16} /> Add Role
                     </button>
                 </div>
                 {items.map((item: any, idx: number) => (
                     <div key={idx} className="bg-white p-6 border rounded-xl shadow-sm group relative space-y-4">
-                        <button type="button" onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))} className="absolute top-4 right-4 text-red-400 opacity-0 group-hover:opacity-100"><Trash2 size={16} /></button>
+                        <button type="button" onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))} className="absolute top-4 right-4 text-red-400 opacity-0 group-hover:opacity-100 transition-opacity"><Trash2 size={16} /></button>
                         <div className="grid md:grid-cols-2 gap-4">
-                            <div><label className="text-xs font-bold text-gray-500">Role Title</label><input value={item.title || ''} onChange={(e) => { const n = [...items]; n[idx].title = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" /></div>
-                            <div><label className="text-xs font-bold text-gray-500">Salary Range</label><input value={item.salary || ''} onChange={(e) => { const n = [...items]; n[idx].salary = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" /></div>
+                            <div className="space-y-1">
+                                <div className="flex justify-between items-center">
+                                    <label className="text-xs font-bold text-gray-500">Role Title</label>
+                                    <select
+                                        value={item.titleTag || 'h5'}
+                                        onChange={(e) => { const n = [...items]; n[idx].titleTag = e.target.value; updateItems(n); }}
+                                        className="bg-transparent border-none p-0 text-[10px] font-mono"
+                                    >
+                                        <option value="h1">H1</option>
+                                        <option value="h2">H2</option>
+                                        <option value="h3">H3</option>
+                                        <option value="h4">H4</option>
+                                        <option value="h5">H5</option>
+                                        <option value="h6">H6</option>
+                                    </select>
+                                </div>
+                                <input value={item.title || ''} onChange={(e) => { const n = [...items]; n[idx].title = e.target.value; updateItems(n); }} className="w-full p-2 border rounded font-bold" />
+                            </div>
+                            <div className="pt-4"><label className="text-xs font-bold text-gray-500">Salary Range</label><input value={item.salary || ''} onChange={(e) => { const n = [...items]; n[idx].salary = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" /></div>
                             <div className="md:col-span-2"><label className="text-xs font-bold text-gray-500">Responsibilities</label><textarea value={item.responsibilities || ''} onChange={(e) => { const n = [...items]; n[idx].responsibilities = e.target.value; updateItems(n); }} className="w-full p-2 border rounded h-16" /></div>
                             <div><label className="text-xs font-bold text-gray-500">Employers</label><input value={item.employers || ''} onChange={(e) => { const n = [...items]; n[idx].employers = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" /></div>
                             <div><label className="text-xs font-bold text-gray-500">Career Path</label><input value={item.path || ''} onChange={(e) => { const n = [...items]; n[idx].path = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" /></div>
@@ -1800,17 +2067,24 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
         const updateItems = (newItems: any[]) => updateSection('detailed_testimonials', { ...section, items: newItems });
 
         return (
-            <div className="space-y-6">
-                <div className="flex justify-between items-center bg-gray-100 p-4 rounded-lg">
+            <div className="space-y-8">
+                <SectionHeaderFields
+                    section={section}
+                    updateSectionData={(newData) => updateSection('detailed_testimonials', { ...section, ...newData })}
+                    idPrefix="testimonials"
+                    insertHyperlink={insertHyperlink}
+                />
+
+                <div className="flex justify-between items-center bg-gray-50 border border-gray-200 p-4 rounded-xl">
                     <h4 className="font-bold text-gray-900">Student Testimonials ({items.length})</h4>
-                    <button type="button" onClick={() => updateItems([...items, { text: '', author: '', role: '' }])} className="text-sm bg-black text-white px-3 py-1.5 rounded flex items-center gap-2">
+                    <button type="button" onClick={() => updateItems([...items, { text: '', author: '', role: '', titleTag: 'h6' }])} className="text-sm bg-black text-white px-3 py-1.5 rounded flex items-center gap-2">
                         <Plus size={16} /> Add Review
                     </button>
                 </div>
                 <div className="grid gap-4">
                     {items.map((item: any, idx: number) => (
-                        <div key={idx} className="bg-white p-4 border rounded-lg shadow-sm group relative">
-                            <button type="button" onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))} className="absolute top-2 right-2 text-red-400 opacity-0 group-hover:opacity-100"><Trash2 size={16} /></button>
+                        <div key={idx} className="bg-white p-5 border rounded-xl shadow-sm group relative space-y-4">
+                            <button type="button" onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))} className="absolute top-4 right-4 text-red-400 opacity-0 group-hover:opacity-100 transition-opacity"><Trash2 size={16} /></button>
                             <div className="grid md:grid-cols-2 gap-4">
                                 <div className="md:col-span-2">
                                     <label className="text-xs font-bold text-gray-500">Review Text</label>
@@ -1821,16 +2095,30 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                                         updateItems(n);
                                     }} className="w-full p-2 border rounded text-sm h-20" />
                                 </div>
-                                <div>
-                                    <label className="text-xs font-bold text-gray-500">Author Name</label>
+                                <div className="space-y-1">
+                                    <div className="flex justify-between items-center">
+                                        <label className="text-xs font-bold text-gray-500">Author Name</label>
+                                        <select
+                                            value={item.titleTag || 'h6'}
+                                            onChange={(e) => { const n = [...items]; n[idx].titleTag = e.target.value; updateItems(n); }}
+                                            className="bg-transparent border-none p-0 text-[10px] font-mono"
+                                        >
+                                            <option value="h1">H1</option>
+                                            <option value="h2">H2</option>
+                                            <option value="h3">H3</option>
+                                            <option value="h4">H4</option>
+                                            <option value="h5">H5</option>
+                                            <option value="h6">H6</option>
+                                        </select>
+                                    </div>
                                     <input value={item.author || item.name || ''} onChange={(e) => {
                                         const n = [...items];
                                         n[idx].author = e.target.value;
                                         n[idx].name = e.target.value;
                                         updateItems(n);
-                                    }} className="w-full p-2 border rounded text-sm" />
+                                    }} className="w-full p-2 border rounded text-sm font-bold" />
                                 </div>
-                                <div>
+                                <div className="pt-4">
                                     <label className="text-xs font-bold text-gray-500">Role / Job Title</label>
                                     <input value={item.role || ''} onChange={(e) => { const n = [...items]; n[idx].role = e.target.value; updateItems(n); }} className="w-full p-2 border rounded text-sm" />
                                 </div>
@@ -1839,7 +2127,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                     ))}
                 </div>
             </div>
-        )
+        );
     };
 
     const BatchesTab = () => {
@@ -1848,18 +2136,42 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
         const updateItems = (newItems: any[]) => updateSection('detailed_upcoming_batches', { ...section, items: newItems });
 
         return (
-            <div className="space-y-6">
-                <div className="flex justify-between items-center bg-gray-100 p-4 rounded-lg">
+            <div className="space-y-8">
+                <SectionHeaderFields
+                    section={section}
+                    updateSectionData={(newData) => updateSection('detailed_upcoming_batches', { ...section, ...newData })}
+                    idPrefix="batches"
+                    insertHyperlink={insertHyperlink}
+                />
+
+                <div className="flex justify-between items-center bg-gray-50 border border-gray-200 p-4 rounded-xl">
                     <h4 className="font-bold text-gray-900">Upcoming Batches ({items.length})</h4>
-                    <button type="button" onClick={() => updateItems([...items, { name: 'New Batch', date: '', schedule: '', duration: '10 Weeks' }])} className="text-sm bg-black text-white px-3 py-1.5 rounded flex items-center gap-2">
+                    <button type="button" onClick={() => updateItems([...items, { name: 'New Batch', date: '', schedule: '', duration: '10 Weeks', titleTag: 'h5' }])} className="text-sm bg-black text-white px-3 py-1.5 rounded flex items-center gap-2">
                         <Plus size={16} /> Add Batch
                     </button>
                 </div>
                 {items.map((item: any, idx: number) => (
-                    <div key={idx} className="bg-white p-4 border rounded-lg shadow-sm group relative">
-                        <button type="button" onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))} className="absolute top-2 right-2 text-red-400 opacity-0 group-hover:opacity-100"><Trash2 size={16} /></button>
+                    <div key={idx} className="bg-white p-5 border rounded-xl shadow-sm group relative space-y-3">
+                        <button type="button" onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))} className="absolute top-3 right-3 text-red-400 opacity-0 group-hover:opacity-100"><Trash2 size={16} /></button>
                         <div className="grid md:grid-cols-2 gap-4">
-                            <div className="md:col-span-2"><label className="text-xs font-bold text-gray-500">Batch Name</label><input value={item.name || ''} onChange={(e) => { const n = [...items]; n[idx].name = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" /></div>
+                            <div className="md:col-span-2 space-y-1">
+                                <div className="flex justify-between items-center">
+                                    <label className="text-xs font-bold text-gray-500">Batch Name</label>
+                                    <select
+                                        value={item.titleTag || 'h5'}
+                                        onChange={(e) => { const n = [...items]; n[idx].titleTag = e.target.value; updateItems(n); }}
+                                        className="bg-transparent border-none p-0 text-[10px] font-mono"
+                                    >
+                                        <option value="h1">H1</option>
+                                        <option value="h2">H2</option>
+                                        <option value="h3">H3</option>
+                                        <option value="h4">H4</option>
+                                        <option value="h5">H5</option>
+                                        <option value="h6">H6</option>
+                                    </select>
+                                </div>
+                                <input value={item.name || ''} onChange={(e) => { const n = [...items]; n[idx].name = e.target.value; updateItems(n); }} className="w-full p-2 border rounded font-bold" />
+                            </div>
                             <div><label className="text-xs font-bold text-gray-500">Start Date</label><input value={item.date || ''} onChange={(e) => { const n = [...items]; n[idx].date = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" /></div>
                             <div><label className="text-xs font-bold text-gray-500">Schedule</label><input value={item.schedule || ''} onChange={(e) => { const n = [...items]; n[idx].schedule = e.target.value; updateItems(n); }} className="w-full p-2 border rounded" /></div>
                             <div><label className="text-xs font-bold text-gray-500">Status</label><select value={item.status || 'Open'} onChange={(e) => { const n = [...items]; n[idx].status = e.target.value; updateItems(n); }} className="w-full p-2 border rounded"><option>Open</option><option>Filling Fast</option><option>Sold Out</option></select></div>
@@ -1884,35 +2196,30 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                 </div>
 
                 <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-4">
-                    <h4 className="font-bold text-slate-800 flex items-center gap-2"><Layers size={18} /> Section Header & Note</h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="space-y-2">
-                            <label className="text-xs font-bold text-gray-500 uppercase">Section Title</label>
-                            <input
-                                value={section.title || ''}
-                                onChange={(e) => updateSection('real_world_scenarios', { ...section, title: e.target.value })}
-                                className="w-full p-2 border rounded"
-                                placeholder="Experience Real-World Scenarios..."
-                            />
-                        </div>
-                        <div className="space-y-2">
-                            <label className="text-xs font-bold text-gray-500 uppercase">Section Subtitle</label>
-                            <input
-                                value={section.subtitle || ''}
-                                onChange={(e) => updateSection('real_world_scenarios', { ...section, subtitle: e.target.value })}
-                                className="w-full p-2 border rounded"
-                                placeholder="Work on authentic Fortune 500 projects..."
-                            />
-                        </div>
-                    </div>
+                    <SectionHeaderFields
+                        section={section}
+                        updateSectionData={(newData) => updateSection('real_world_scenarios', { ...section, ...newData })}
+                        idPrefix="real_world"
+                        insertHyperlink={insertHyperlink}
+                    />
                     <div className="space-y-2">
                         <label className="text-xs font-bold text-gray-500 uppercase">Portfolio Note (Bottom)</label>
-                        <textarea
-                            value={section.portfolioNote || ''}
-                            onChange={(e) => updateSection('real_world_scenarios', { ...section, portfolioNote: e.target.value })}
-                            className="w-full p-2 border rounded h-20"
-                            placeholder="These capstone projects ensure you graduate..."
-                        />
+                        <div className="relative">
+                            <textarea
+                                id="real_world_portfolio_note"
+                                value={section.portfolioNote || ''}
+                                onChange={(e) => updateSection('real_world_scenarios', { ...section, portfolioNote: e.target.value })}
+                                className="w-full p-2 border rounded h-20 pr-10"
+                                placeholder="These capstone projects ensure you graduate..."
+                            />
+                            <button
+                                type="button"
+                                onClick={() => insertHyperlink('real_world_portfolio_note')}
+                                className="absolute top-2 right-2 p-1.5 text-gray-400 hover:text-orange-600 rounded"
+                            >
+                                <LinkIcon size={16} />
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -1937,7 +2244,21 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                             <div className="grid md:grid-cols-2 gap-4">
                                 <div className="space-y-2">
                                     <label className="text-xs font-bold text-gray-500 uppercase">Project Title</label>
-                                    <input value={item.title || ''} onChange={(e) => { const n = [...items]; n[idx].title = e.target.value; updateItems(n); }} className="w-full p-2 border rounded font-bold" />
+                                    <div className="flex gap-2">
+                                        <input value={item.title || ''} onChange={(e) => { const n = [...items]; n[idx].title = e.target.value; updateItems(n); }} className="w-full p-2 border rounded font-bold" />
+                                        <select
+                                            value={item.titleTag || 'h3'}
+                                            onChange={(e) => { const n = [...items]; n[idx].titleTag = e.target.value; updateItems(n); }}
+                                            className="w-16 p-2 border rounded text-xs bg-white font-mono"
+                                        >
+                                            <option value="h1">H1</option>
+                                            <option value="h2">H2</option>
+                                            <option value="h3">H3</option>
+                                            <option value="h4">H4</option>
+                                            <option value="h5">H5</option>
+                                            <option value="h6">H6</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-xs font-bold text-gray-500 uppercase">Icon</label>
@@ -2010,11 +2331,13 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
             setFormData({ ...formData, sections: newSections });
         };
 
-        const updateSectionTitle = (section: any, title: string) => {
+        const updateSectionData = (section: any, newData: any) => {
             const actualIdx = formData.sections.indexOf(section);
             const newSections = [...formData.sections];
             if (actualIdx !== -1) {
-                newSections[actualIdx] = { ...section, sectionTitle: title };
+                newSections[actualIdx] = { ...section, ...newData };
+            } else {
+                newSections.push({ ...section, ...newData });
             }
             setFormData({ ...formData, sections: newSections });
         };
@@ -2029,18 +2352,17 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                 {displaySections.map((section: any, sIdx: number) => {
                     const items = section.items || [];
                     return (
-                        <div key={sIdx} className="space-y-8 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-                            <div className="flex justify-between items-center bg-purple-50 p-4 rounded-xl border border-purple-100">
-                                <div className="flex-1 mr-4">
-                                    <label className="text-xs font-bold text-purple-700 uppercase">Section Module Title (Optional)</label>
-                                    <input
-                                        value={section.sectionTitle || ''}
-                                        onChange={(e) => updateSectionTitle(section, e.target.value)}
-                                        className="w-full bg-transparent border-none font-bold text-lg focus:ring-0 p-0"
-                                        placeholder="e.g. Assessment Methodology"
-                                    />
-                                </div>
-                                <button type="button" onClick={() => updateSectionItems(section, [...items, { title: 'New Topic', content: '' }])} className="text-sm bg-purple-600 text-white px-4 py-2 rounded-lg font-bold shadow-lg hover:bg-purple-700 transition-colors flex items-center gap-2">
+                        <div key={sIdx} className="space-y-8 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm relative">
+                            <SectionHeaderFields
+                                section={section}
+                                updateSectionData={(newData) => updateSectionData(section, newData)}
+                                idPrefix={`ov_${sIdx}`}
+                                insertHyperlink={insertHyperlink}
+                            />
+
+                            <div className="flex justify-between items-center bg-purple-50 p-4 rounded-xl border border-purple-100 mt-6">
+                                <h4 className="font-bold text-purple-700">Course Overview Content Blocks ({items.length})</h4>
+                                <button type="button" onClick={() => updateSectionItems(section, [...items, { title: 'New Topic', content: '', titleTag: 'h4' }])} className="text-sm bg-purple-600 text-white px-4 py-2 rounded-lg font-bold shadow-lg hover:bg-purple-700 transition-colors flex items-center gap-2">
                                     <Plus size={18} /> Add Block
                                 </button>
                             </div>
@@ -2050,7 +2372,22 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                                     <div key={idx} className="bg-gray-50/50 p-6 rounded-2xl border border-gray-100 relative group">
                                         <button type="button" onClick={() => updateSectionItems(section, items.filter((_: any, i: number) => i !== idx))} className="absolute top-4 right-4 text-gray-300 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity"><Trash2 size={18} /></button>
                                         <div className="space-y-4">
-                                            <div><label className="text-xs font-bold text-gray-400 uppercase">Block Title</label>
+                                            <div className="space-y-1">
+                                                <div className="flex justify-between items-center">
+                                                    <label className="text-xs font-bold text-gray-400 uppercase">Block Title</label>
+                                                    <select
+                                                        value={item.titleTag || 'h4'}
+                                                        onChange={(e) => { const n = [...items]; n[idx].titleTag = e.target.value; updateSectionItems(section, n); }}
+                                                        className="bg-transparent border-none p-0 text-[10px] font-mono"
+                                                    >
+                                                        <option value="h1">H1</option>
+                                                        <option value="h2">H2</option>
+                                                        <option value="h3">H3</option>
+                                                        <option value="h4">H4</option>
+                                                        <option value="h5">H5</option>
+                                                        <option value="h6">H6</option>
+                                                    </select>
+                                                </div>
                                                 <input value={item.title || ''} onChange={(e) => { const n = [...items]; n[idx].title = e.target.value; updateSectionItems(section, n); }} className="w-full p-2 border rounded font-bold text-lg bg-white" />
                                             </div>
                                             <div><label className="text-xs font-bold text-gray-400 uppercase">Description / Long Text (Markdown)</label>
@@ -2085,13 +2422,31 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
             setFormData({ ...formData, sections: newSections });
         };
 
+        const updateSectionData = (section: any, newData: any) => {
+            const actualIdx = formData.sections.indexOf(section);
+            const newSections = [...formData.sections];
+            if (actualIdx !== -1) {
+                newSections[actualIdx] = { ...section, ...newData };
+            } else {
+                newSections.push({ ...section, ...newData });
+            }
+            setFormData({ ...formData, sections: newSections });
+        };
+
         return (
             <div className="space-y-12">
                 {displaySections.map((section: any, sIdx: number) => {
                     const items = section.items || [];
                     return (
-                        <div key={sIdx} className="space-y-6 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-                            <div className="bg-slate-900 text-white p-6 rounded-2xl flex justify-between items-center">
+                        <div key={sIdx} className="space-y-6 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm relative">
+                            <SectionHeaderFields
+                                section={section}
+                                updateSectionData={(newData) => updateSectionData(section, newData)}
+                                idPrefix={`tblcur_${sIdx}`}
+                                insertHyperlink={insertHyperlink}
+                            />
+
+                            <div className="bg-slate-900 text-white p-6 rounded-2xl flex justify-between items-center mt-6">
                                 <div>
                                     <h4 className="text-xl font-bold">Curriculum Table {displaySections.length > 1 ? `#${sIdx + 1}` : ''}</h4>
                                     <p className="text-slate-400 text-sm">Session-by-session breakdown</p>
@@ -2193,7 +2548,21 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                                     <div key={idx} className="bg-gray-50 p-6 rounded-2xl border border-slate-200 relative group grid md:grid-cols-4 gap-6">
                                         <button type="button" onClick={() => updateSectionItems(section, items.filter((_: any, i: number) => i !== idx))} className="absolute top-2 right-2 text-slate-300 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity"><Trash2 size={18} /></button>
                                         <div className="space-y-1">
-                                            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Role Name</label>
+                                            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest flex justify-between">
+                                                Role Name
+                                                <select
+                                                    value={item.titleTag || 'h4'}
+                                                    onChange={(e) => { const n = [...items]; n[idx].titleTag = e.target.value; updateSectionItems(section, n); }}
+                                                    className="bg-transparent border-none p-0 text-[10px] font-mono"
+                                                >
+                                                    <option value="h1">H1</option>
+                                                    <option value="h2">H2</option>
+                                                    <option value="h3">H3</option>
+                                                    <option value="h4">H4</option>
+                                                    <option value="h5">H5</option>
+                                                    <option value="h6">H6</option>
+                                                </select>
+                                            </label>
                                             <input value={item.role || ''} onChange={(e) => { const n = [...items]; n[idx].role = e.target.value; updateSectionItems(section, n); }} className="w-full p-0 bg-transparent border-none font-bold text-lg text-slate-900 focus:ring-0" placeholder="Data Scientist..." />
                                         </div>
                                         <div className="space-y-1">
@@ -2230,23 +2599,128 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                         <h4 className="text-xl font-bold text-slate-900">List of Tools / Modules</h4>
                         <p className="text-sm text-slate-500">Simple checkbox list of tools covered in the course</p>
                     </div>
-                    <button type="button" onClick={() => updateItems([...items, ''])} className="bg-slate-900 text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2">
+                    <button type="button" onClick={() => updateItems([...items, { title: '', titleTag: 'h5' }])} className="bg-slate-900 text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2">
                         <Plus size={18} /> Add Item
                     </button>
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-                    {items.map((item: any, idx: number) => (
-                        <div key={idx} className="flex gap-2 items-center bg-gray-50 p-3 rounded-lg border group">
-                            <input
-                                value={item}
-                                onChange={(e) => { const n = [...items]; n[idx] = e.target.value; updateItems(n); }}
-                                className="flex-1 bg-transparent border-none p-0 text-sm font-medium focus:ring-0"
-                                placeholder="Tool name..."
-                            />
-                            <button type="button" onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))} className="text-slate-300 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity"><Trash2 size={16} /></button>
+                    {items.map((item: any, idx: number) => {
+                        const itemTitle = typeof item === 'object' ? item.title : item;
+                        const itemTag = typeof item === 'object' ? item.titleTag : 'h5';
+                        return (
+                            <div key={idx} className="flex gap-2 items-center bg-gray-50 p-2 rounded-lg border group">
+                                <div className="flex-1 space-y-1">
+                                    <div className="flex justify-between items-center px-1">
+                                        <select
+                                            value={itemTag}
+                                            onChange={(e) => {
+                                                const n = [...items];
+                                                if (typeof item === 'string') n[idx] = { title: item, titleTag: e.target.value };
+                                                else n[idx].titleTag = e.target.value;
+                                                updateItems(n);
+                                            }}
+                                            className="bg-transparent border-none p-0 text-[8px] font-mono"
+                                        >
+                                            <option value="h1">H1</option>
+                                            <option value="h2">H2</option>
+                                            <option value="h3">H3</option>
+                                            <option value="h4">H4</option>
+                                            <option value="h5">H5</option>
+                                            <option value="h6">H6</option>
+                                        </select>
+                                    </div>
+                                    <input
+                                        value={itemTitle || ''}
+                                        onChange={(e) => {
+                                            const n = [...items];
+                                            if (typeof item === 'string') n[idx] = { title: e.target.value, titleTag: 'h5' };
+                                            else n[idx].title = e.target.value;
+                                            updateItems(n);
+                                        }}
+                                        className="w-full p-1 bg-transparent border-none text-sm font-medium focus:ring-0"
+                                    />
+                                </div>
+                                <button type="button" onClick={() => updateItems(items.filter((_: any, i: number) => i !== idx))} className="text-red-300 opacity-0 group-hover:opacity-100 hover:text-red-500 transition-opacity"><Trash2 size={14} /></button>
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+        );
+    };
+
+    const DemoBookingTab = () => {
+        const section = getSection('detailed_demo_booking', {
+            title: 'Book Your Free Demo Session',
+            subtitle: 'Experience the training before you commit. Get all your questions answered by experts.',
+            bookingLink: '#',
+            benefits: [
+                '1-on-1 Q&A with Senior SAP Consultant',
+                'Live Course Curriculum Walkthrough',
+                'Explore Real-world Project Scenarios',
+                'Career Guidance & Job Market Insights'
+            ]
+        });
+
+        const updateData = (newData: any) => updateSection('detailed_demo_booking', { ...section, ...newData });
+
+        return (
+            <div className="space-y-8">
+                <SectionHeaderFields
+                    section={section}
+                    updateSectionData={updateData}
+                    idPrefix="demo"
+                    insertHyperlink={insertHyperlink}
+                />
+
+                <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-4">
+                        <div className="bg-gray-50 p-4 rounded-xl border border-gray-100 space-y-3">
+                            <h5 className="font-bold text-gray-800 text-sm">Booking Action</h5>
+                            <div className="space-y-2">
+                                <label className="text-xs font-bold text-gray-500 uppercase">Booking Button Link</label>
+                                <input
+                                    value={section.bookingLink || ''}
+                                    onChange={(e) => updateData({ bookingLink: e.target.value })}
+                                    className="w-full p-2 border rounded bg-white"
+                                    placeholder="https://calendly.com/..."
+                                />
+                            </div>
                         </div>
-                    ))}
+
+                        <div className="bg-white p-4 rounded-xl border border-gray-200 space-y-3">
+                            <div className="flex justify-between items-center">
+                                <h5 className="font-bold text-gray-800 text-sm">Key Benefits List</h5>
+                                <button type="button" onClick={() => updateData({ benefits: [...(section.benefits || []), 'New Benefit'] })} className="text-xs font-bold text-blue-600">+ Add</button>
+                            </div>
+                            <div className="space-y-2">
+                                {(section.benefits || []).map((b: string, idx: number) => (
+                                    <div key={idx} className="flex gap-2 group">
+                                        <input
+                                            value={b}
+                                            onChange={(e) => {
+                                                const n = [...section.benefits];
+                                                n[idx] = e.target.value;
+                                                updateData({ benefits: n });
+                                            }}
+                                            className="flex-1 p-2 border rounded text-sm"
+                                        />
+                                        <button type="button" onClick={() => updateData({ benefits: section.benefits.filter((_: any, i: number) => i !== idx) })} className="text-red-300 opacity-0 group-hover:opacity-100"><Trash2 size={14} /></button>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="bg-slate-900 rounded-2xl p-8 flex flex-col items-center justify-center text-center space-y-4 text-white">
+                        <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mb-2">
+                            <MessageSquare className="text-blue-400" size={32} />
+                        </div>
+                        <h4 className="text-xl font-bold">{section.title}</h4>
+                        <p className="text-slate-400 text-sm">{section.subtitle}</p>
+                        <button className="bg-blue-600 px-8 py-3 rounded-full font-bold shadow-lg shadow-blue-500/20">Book Now Preview</button>
+                    </div>
                 </div>
             </div>
         );
@@ -2395,7 +2869,7 @@ export default function EditCoursePage({ params }: { params: Promise<{ id: strin
                 {activeTab === 'resources' && ResourcesTab()}
                 {activeTab === 'tools' && ListCheckerTab()}
                 {activeTab === 'table_curriculum' && TableCurriculumTab()}
-                {activeTab === 'demo' && GenericJsonTab({ type: "detailed_demo_booking", title: "Demo Booking" })}
+                {activeTab === 'demo' && DemoBookingTab()}
                 {activeTab === 'integrations' && GenericJsonTab({ type: "detailed_sap_integrations", title: "SAP Integrations" })}
                 {activeTab === 'career' && CareerGrowthTab()}
                 {activeTab === 'raw_sections' && RawSectionsTab()}
